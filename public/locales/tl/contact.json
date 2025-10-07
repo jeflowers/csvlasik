@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "badge": "Mag-schedule ng Inyong Revolutionary Consultation",
+    "title": "Simulan ang Inyong",
+    "titleAccent": "Vision Journey",
+    "subtitle": "Gawin ang unang hakbang tungo sa revolutionary vision care. Mag-schedule ng inyong free consultation kay Dr. Flowers at tuklasin kung paano ang kanyang pioneering techniques ay makakapagbago sa inyong paningin at buhay."
+  },
+  "form": {
+    "title": "Mag-schedule ng Inyong Free Consultation",
+    "selectProcedure": "Pumili ng procedure"
+  },
+  "info": {
+    "title": "Makipag-ugnayan",
+    "subtitle": "Ready na ba kayong maranasan ang revolutionary vision care? Makipag-ugnayan sa amin ngayon para mag-schedule ng inyong free consultation at gawin ang unang hakbang tungo sa perfect vision."
+  },
+  "office": {
+    "name": "Lakewood Office",
+    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712"
+  },
+  "phone": {
+    "title": "Telepono",
+    "number": "(844) 211-5462",
+    "note": "I-click para tumawag directly"
+  },
+  "email": {
+    "title": "Email",
+    "address": "info@clearsightlasik.com",
+    "note": "Sumasagot kami sa loob ng 24 oras"
+  },
+  "hours": {
+    "title": "Office Hours",
+    "weekdays": "Lunes - Biyernes: 8:00 AM - 6:00 PM",
+    "saturday": "Sabado: 9:00 AM - 3:00 PM",
+    "sunday": "Linggo: Sarado",
+    "emergency": "Emergency consultations available"
+  },
+  "quickActions": {
+    "title": "Mga Mabilis na Aksyon",
+    "callNow": "Tumawag Ngayon para sa Immediate Scheduling",
+    "learnProcedures": "Matuto Tungkol sa mga Procedure",
+    "financing": "Mga Financing Option"
+  },
+  "consultation": {
+    "title": "Ano ang Aasahan sa Inyong Consultation",
+    "subtitle": "Ang inyong free consultation ay comprehensive, educational, at completely pressure-free",
+    "steps": {
+      "exam": {
+        "title": "Comprehensive Eye Exam",
+        "description": "Advanced diagnostic testing kasama ang corneal mapping, pupil measurement, at vision assessment",
+        "duration": "45-60 minuto"
+      },
+      "personal": {
+        "title": "Personal Consultation",
+        "description": "One-on-one discussion kay Dr. Flowers tungkol sa inyong vision goals, lifestyle, at procedure options",
+        "duration": "30-45 minuto"
+      },
+      "plan": {
+        "title": "Customized Treatment Plan",
+        "description": "Tanggapin ang inyong personalized recommendation na may detailed explanation ng benefits at expectations",
+        "duration": "15-30 minuto"
+      }
+    },
+    "bring": {
+      "title": "Ano ang Dalhin",
+      "glasses": "Current glasses o contacts",
+      "insurance": "Insurance cards",
+      "medications": "List ng current medications",
+      "id": "Driver's license o ID",
+      "questions": "List ng mga tanong",
+      "driver": "Someone na magdadrive sa inyo pauwi"
+    }
+  },
+  "emergency": {
+    "title": "Post-Operative Emergency Contact",
+    "description": "Kung kayo ay current patient na naka-experience ng post-operative emergency outside ng normal business hours:",
+    "phone": "Emergency Line: (844) 211-5462",
+    "note": "Para sa non-emergency questions, gamitin ang aming regular contact methods sa taas."
+  },
+  "cta": {
+    "title": "Ready na ba kayong i-Transform ang Inyong Vision?",
+    "subtitle": "Sumama sa mga daan-daang patients na nagtiwala kay Dr. Flowers sa kanilang vision. Ang inyong revolutionary journey tungo sa perfect sight ay nagsisimula sa simple phone call.",
+    "call": "Tumawag (844) 211-5462",
+    "testimonials": "Tingnan ang mga Testimonial"
+  }
+}

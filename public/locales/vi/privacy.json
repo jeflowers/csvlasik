@@ -1,0 +1,114 @@
+{
+  "title": "Chính Sách Bảo Mật",
+  "subtitle": "Viện Thị Lực ClearSight - Bác sĩ Charles Flowers",
+  "lastUpdated": "Cập nhật lần cuối",
+  "sections": {
+    "collection": {
+      "title": "Thông Tin Chúng Tôi Thu Thập",
+      "medicalNotice": {
+        "title": "Thông Báo Thực Hành Y Tế",
+        "description": "Là một thực hành y tế, chúng tôi thu thập và duy trì thông tin sức khỏe theo quy định HIPAA và luật bảo mật y tế của tiểu bang."
+      },
+      "personal": {
+        "title": "Thông Tin Cá Nhân",
+        "items": {
+          "contact": "Thông tin liên hệ (tên, email, số điện thoại, địa chỉ)",
+          "medical": "Lịch sử y tế và thông tin liên quan đến thị lực",
+          "insurance": "Thông tin bảo hiểm và chi tiết thanh toán",
+          "appointments": "Hồ sơ cuộc hẹn và tư vấn",
+          "outcomes": "Kết quả điều trị và thông tin theo dõi"
+        }
+      },
+      "technical": {
+        "title": "Thông Tin Kỹ Thuật",
+        "items": {
+          "ip": "Địa chỉ IP và thông tin trình duyệt",
+          "usage": "Mẫu sử dụng trang web và sở thích",
+          "language": "Sở thích ngôn ngữ và khả năng tiếp cận",
+          "device": "Thông tin thiết bị và hệ điều hành"
+        }
+      }
+    },
+    "usage": {
+      "title": "Cách Chúng Tôi Sử Dụng Thông Tin Của Bạn",
+      "medical": {
+        "title": "Chăm Sóc Y Tế",
+        "items": {
+          "consultations": "Cung cấp tư vấn và điều trị chỉnh sửa thị lực",
+          "scheduling": "Lên lịch cuộc hẹn và chăm sóc theo dõi",
+          "communication": "Giao tiếp về điều trị và phục hồi của bạn",
+          "records": "Duy trì hồ sơ y tế theo yêu cầu của pháp luật"
+        }
+      },
+      "website": {
+        "title": "Chức Năng Trang Web",
+        "items": {
+          "personalization": "Cá nhân hóa trải nghiệm trang web của bạn",
+          "language": "Cung cấp nội dung bằng ngôn ngữ ưa thích của bạn",
+          "improvement": "Cải thiện trang web và dịch vụ của chúng tôi",
+          "inquiries": "Phản hồi các câu hỏi và yêu cầu của bạn"
+        }
+      }
+    },
+    "gdpr": {
+      "title": "Quyền Của Bạn Theo GDPR",
+      "euNotice": {
+        "title": "Cư Dân EU",
+        "description": "Nếu bạn ở Liên minh Châu Âu, bạn có quyền bổ sung theo GDPR."
+      },
+      "rights": {
+        "title": "Quyền Của Bạn Bao Gồm",
+        "access": {
+          "title": "Quyền Truy Cập",
+          "description": "Yêu cầu bản sao dữ liệu cá nhân của bạn"
+        },
+        "rectification": {
+          "title": "Quyền Chỉnh Sửa",
+          "description": "Sửa thông tin không chính xác"
+        },
+        "erasure": {
+          "title": "Quyền Xóa",
+          "description": "Yêu cầu xóa dữ liệu của bạn"
+        },
+        "portability": {
+          "title": "Quyền Di Chuyển",
+          "description": "Nhận dữ liệu của bạn ở định dạng di động"
+        },
+        "object": {
+          "title": "Quyền Phản Đối",
+          "description": "Phản đối việc xử lý dữ liệu nhất định"
+        },
+        "restriction": {
+          "title": "Quyền Hạn Chế",
+          "description": "Giới hạn cách chúng tôi xử lý dữ liệu của bạn"
+        }
+      },
+      "exercise": {
+        "title": "Cách Thực Hiện Quyền Của Bạn",
+        "email": "Email",
+        "phone": "Điện Thoại",
+        "response": "Chúng tôi sẽ phản hồi yêu cầu của bạn trong vòng 30 ngày theo yêu cầu của GDPR."
+      }
+    },
+    "security": {
+      "title": "Bảo Mật Dữ Liệu",
+      "description": "Chúng tôi thực hiện các biện pháp kỹ thuật và tổ chức thích hợp để bảo vệ thông tin cá nhân của bạn",
+      "measures": {
+        "encryption": "Mã hóa dữ liệu trong quá trình truyền và lưu trữ",
+        "assessments": "Đánh giá bảo mật thường xuyên và cập nhật",
+        "access": "Kiểm soát truy cập và hệ thống xác thực",
+        "training": "Đào tạo nhân viên về bảo vệ dữ liệu",
+        "incident": "Quy trình ứng phó sự cố và thông báo vi phạm"
+      }
+    },
+    "contact": {
+      "title": "Thông Tin Liên Hệ",
+      "dpo": {
+        "title": "Nhân Viên Bảo Vệ Dữ Liệu",
+        "organization": "Viện Thị Lực ClearSight",
+        "address1": "5750 Downey Ave., Suite 101",
+        "address2": "Lakewood, CA 90712"
+      }
+    }
+  }
+}

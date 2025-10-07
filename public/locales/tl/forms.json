@@ -1,0 +1,80 @@
+{
+  "labels": {
+    "firstName": "Unang Pangalan",
+    "lastName": "Apelyido",
+    "email": "Email Address",
+    "phone": "Numero ng Telepono",
+    "message": "Mensahe",
+    "procedure": "Pamamaraang Interesado",
+    "preferredContact": "Preferred na Paraan ng Pakikipag-ugnayan",
+    "comments": "Mga Tanong o Komento",
+    "age": "Edad",
+    "occupation": "Trabaho",
+    "location": "Lokasyon",
+    "visionBefore": "Paningin Dati",
+    "visionAfter": "Paningin Pagkatapos",
+    "rating": "Rating",
+    "testimonialText": "Inyong Karanasan"
+  },
+  "placeholders": {
+    "firstName": "Inyong unang pangalan",
+    "lastName": "Inyong apelyido",
+    "email": "inyong.email@halimbawa.com",
+    "phone": "(02) 123-4567",
+    "message": "Sabihin sa amin ang inyong mga layunin sa paningin...",
+    "comments": "May mga tanong o special na request?...",
+    "age": "Inyong edad",
+    "occupation": "Inyong propesyon",
+    "location": "Lungsod, Estado",
+    "testimonialText": "Ibahagi ang inyong karanasan kay Dr. Flowers..."
+  },
+  "options": {
+    "procedures": {
+      "lasik": "LASIK",
+      "prk": "PRK", 
+      "icl": "ICL",
+      "consultation": "General na Konsultasyon"
+    },
+    "contactMethods": {
+      "phone": "Telepono",
+      "email": "Email",
+      "text": "Text Message"
+    },
+    "ratings": {
+      "1": "Masama",
+      "2": "Okay Lang",
+      "3": "Mabuti",
+      "4": "Napakabuti",
+      "5": "Napakahusay"
+    }
+  },
+  "buttons": {
+    "submit": "Ipasa",
+    "cancel": "Kanselahin",
+    "reset": "I-reset",
+    "save": "I-save",
+    "scheduleConsultation": "Mag-schedule ng Konsultasyon",
+    "requestCallback": "Humingi ng Callback",
+    "downloadInfo": "I-download ang Info",
+    "shareTestimonial": "Ibahagi ang Inyong Kwento"
+  },
+  "validation": {
+    "required": "Kailangan ang field na ito",
+    "invalidEmail": "Maglagay ng valid na email address",
+    "invalidPhone": "Maglagay ng valid na phone number",
+    "tooShort": "Masyadong maikli ang field na ito",
+    "tooLong": "Masyadong mahaba ang field na ito",
+    "invalidRating": "Pumili ng rating"
+  },
+  "success": {
+    "submitted": "Salamat! Matagumpay na naipadala ang inyong form.",
+    "scheduled": "Na-schedule na ang inyong konsultasyon.",
+    "contacted": "Makikipag-ugnayan kami sa inyo sa loob ng 24 oras.",
+    "testimonialSubmitted": "Salamat sa pagbabahagi ng inyong karanasan!"
+  },
+  "privacy": {
+    "notice": "Sa pag-submit ng form na ito, pumapayag kayo na makipag-ugnayan kami tungkol sa aming mga serbisyo.",
+    "security": "Secure ang inyong impormasyon at hindi ito ibabahagi.",
+    "hipaa": "Lahat ng komunikasyon ay HIPAA compliant."
+  }
+}

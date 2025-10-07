@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "badge": "Đặt Lịch Tư Vấn Cách Mạng Của Bạn",
+    "title": "Bắt Đầu",
+    "titleAccent": "Hành Trình Thị Lực Của Bạn",
+    "subtitle": "Thực hiện bước đầu tiên hướng tới chăm sóc thị lực cách mạng. Đặt lịch tư vấn miễn phí với Bác sĩ Flowers và khám phá cách các kỹ thuật tiên phong của ông có thể biến đổi thị lực và cuộc sống của bạn."
+  },
+  "form": {
+    "title": "Đặt Lịch Tư Vấn Miễn Phí Của Bạn",
+    "selectProcedure": "Chọn một thủ thuật"
+  },
+  "info": {
+    "title": "Liên Hệ",
+    "subtitle": "Sẵn sàng trải nghiệm chăm sóc thị lực cách mạng? Liên hệ với chúng tôi ngay hôm nay để đặt lịch tư vấn miễn phí và thực hiện bước đầu tiên hướng tới thị lực hoàn hảo."
+  },
+  "office": {
+    "name": "Văn Phòng Lakewood",
+    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712"
+  },
+  "phone": {
+    "title": "Điện Thoại",
+    "number": "(844) 211-5462",
+    "note": "Nhấp để gọi trực tiếp"
+  },
+  "email": {
+    "title": "Email",
+    "address": "info@clearsightlasik.com",
+    "note": "Chúng tôi phản hồi trong vòng 24 giờ"
+  },
+  "hours": {
+    "title": "Giờ Làm Việc",
+    "weekdays": "Thứ Hai - Thứ Sáu: 8:00 AM - 6:00 PM",
+    "saturday": "Thứ Bảy: 9:00 AM - 3:00 PM",
+    "sunday": "Chủ Nhật: Đóng cửa",
+    "emergency": "Tư vấn khẩn cấp có sẵn"
+  },
+  "quickActions": {
+    "title": "Hành Động Nhanh",
+    "callNow": "Gọi Ngay Để Đặt Lịch Ngay Lập Tức",
+    "learnProcedures": "Tìm Hiểu Về Các Thủ Thuật",
+    "financing": "Tùy Chọn Tài Chính"
+  },
+  "consultation": {
+    "title": "Điều Gì Mong Đợi Tại Cuộc Tư Vấn Của Bạn",
+    "subtitle": "Cuộc tư vấn miễn phí của bạn là toàn diện, giáo dục và hoàn toàn không áp lực",
+    "steps": {
+      "exam": {
+        "title": "Khám Mắt Toàn Diện",
+        "description": "Xét nghiệm chẩn đoán tiên tiến bao gồm lập bản đồ giác mạc, đo đồng tử và đánh giá thị lực",
+        "duration": "45-60 phút"
+      },
+      "personal": {
+        "title": "Tư Vấn Cá Nhân",
+        "description": "Thảo luận một-đối-một với Bác sĩ Flowers về mục tiêu thị lực, lối sống và các lựa chọn thủ thuật của bạn",
+        "duration": "30-45 phút"
+      },
+      "plan": {
+        "title": "Kế Hoạch Điều Trị Tùy Chỉnh",
+        "description": "Nhận khuyến nghị cá nhân của bạn với giải thích chi tiết về lợi ích và kỳ vọng",
+        "duration": "15-30 phút"
+      }
+    },
+    "bring": {
+      "title": "Những Gì Cần Mang",
+      "glasses": "Kính hoặc kính áp tròng hiện tại",
+      "insurance": "Thẻ bảo hiểm",
+      "medications": "Danh sách thuốc hiện tại",
+      "id": "Bằng lái xe hoặc ID",
+      "questions": "Danh sách câu hỏi",
+      "driver": "Ai đó để lái xe đưa bạn về nhà"
+    }
+  },
+  "emergency": {
+    "title": "Liên Hệ Khẩn Cấp Sau Phẫu Thuật",
+    "description": "Nếu bạn là bệnh nhân hiện tại đang gặp tình huống khẩn cấp sau phẫu thuật ngoài giờ làm việc bình thường:",
+    "phone": "Đường Dây Khẩn Cấp: (844) 211-5462",
+    "note": "Đối với các câu hỏi không khẩn cấp, vui lòng sử dụng các phương thức liên hệ thường xuyên ở trên."
+  },
+  "cta": {
+    "title": "Sẵn Sàng Biến Đổi Thị Lực Của Bạn?",
+    "subtitle": "Tham gia cùng hàng trăm bệnh nhân đã tin tưởng Bác sĩ Flowers với thị lực của họ. Hành trình cách mạng của bạn đến thị lực hoàn hảo bắt đầu bằng một cuộc gọi điện thoại đơn giản.",
+    "call": "Gọi (844) 211-5462",
+    "testimonials": "Xem Lời Chứng Thực"
+  }
+}

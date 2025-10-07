@@ -1,0 +1,144 @@
+{
+  "hero": {
+    "badge": "Đầu tư vào Chăm sóc Thị lực Cách mạng",
+    "title": "Các Lựa chọn Đầu tư",
+    "subtitle": "cho Hành trình Thị lực của Bạn",
+    "description": "Thị lực của bạn là vô giá. Chúng tôi cung cấp các giải pháp đầu tư tinh vi giúp chăm sóc cách mạng của Bác sĩ Flowers dễ tiếp cận thông qua các thỏa thuận linh hoạt, trang nhã được điều chỉnh theo lối sống của bạn.",
+    "cta": "Thảo luận Các Lựa chọn Đầu tư"
+  },
+  "investment": {
+    "title": "Một Khoản Đầu tư cho Tương lai của Bạn",
+    "description": "Chăm sóc thị lực cách mạng là một trong những khoản đầu tư có giá trị nhất bạn có thể thực hiện. Sự tự do khỏi kính và kính áp tròng, chất lượng cuộc sống được nâng cao, và hàng thập kỷ nhìn rõ tạo ra lợi nhuận vô lượng tích lũy hàng ngày.",
+    "benefits": {
+      "lifetime": {
+        "title": "Giá trị Trọn đời",
+        "description": "Hàng thập kỷ tự do khỏi kính và kính áp tròng"
+      },
+      "lifestyle": {
+        "title": "Lối sống Nâng cao",
+        "description": "Hoạt động không hạn chế và cơ hội nghề nghiệp"
+      },
+      "expertise": {
+        "title": "Chuyên môn Cách mạng",
+        "description": "Kỹ thuật đã được chứng minh ở Thái Bình Dương và kinh nghiệm vô song"
+      }
+    }
+  },
+  "solutions": {
+    "title": "Giải pháp Đầu tư Tinh vi",
+    "subtitle": "Chúng tôi cung cấp các thỏa thuận trang nhã, linh hoạt tôn vinh giá trị khoản đầu tư của bạn",
+    "immediate": {
+      "title": "Đầu tư Ngay lập tức",
+      "subtitle": "Gói Chăm sóc Toàn diện",
+      "description": "Đầu tư đầy đủ vào hành trình thị lực cách mạng của bạn với chăm sóc toàn diện đi kèm",
+      "highlight": "Toàn diện Nhất",
+      "features": {
+        "coverage": "Bao gồm toàn bộ thủ thuật",
+        "followup": "Tất cả các cuộc hẹn theo dõi",
+        "guarantee": "Bảo hành nâng cao trọn đời",
+        "priority": "Lịch hẹn ưu tiên",
+        "concierge": "Trải nghiệm chăm sóc đặc biệt"
+      }
+    },
+    "structured": {
+      "title": "Đầu tư Có Cấu trúc",
+      "subtitle": "Thỏa thuận Linh hoạt",
+      "description": "Thỏa thuận hàng tháng trang nhã phù hợp hoàn hảo với lối sống của bạn",
+      "highlight": "Phổ biến Nhất",
+      "features": {
+        "noInitial": "Không cần đầu tư ban đầu",
+        "flexible": "Thỏa thuận hàng tháng linh hoạt",
+        "competitive": "Điều khoản cạnh tranh có sẵn",
+        "approval": "Quy trình phê duyệt nhanh chóng",
+        "care": "Cùng chăm sóc cách mạng"
+      }
+    },
+    "healthcare": {
+      "title": "Đầu tư Chăm sóc Sức khỏe",
+      "subtitle": "Đủ điều kiện HSA/FSA",
+      "description": "Tối đa hóa tài khoản đầu tư chăm sóc sức khỏe của bạn để được chăm sóc có lợi thế thuế",
+      "highlight": "Lợi thế Thuế",
+      "features": {
+        "eligible": "Thủ thuật đủ điều kiện HSA/FSA",
+        "tax": "Đầu tư có lợi thế thuế",
+        "documentation": "Tài liệu được cung cấp",
+        "optimization": "Tối ưu hóa chi tiêu linh hoạt",
+        "guidance": "Hướng dẫn chuyên nghiệp"
+      }
+    },
+    "exploreOption": "Khám phá Lựa chọn Này"
+  },
+  "value": {
+    "title": "Giá trị Thực sự của Thị lực Cách mạng",
+    "subtitle": "Hãy xem xét giá trị trọn đời của khoản đầu tư của bạn vào chăm sóc thị lực cách mạng",
+    "benefits": {
+      "freedom": {
+        "title": "Tự do",
+        "value": "Vô giá",
+        "description": "Không còn kính hoặc kính áp tròng hạn chế hoạt động của bạn"
+      },
+      "convenience": {
+        "title": "Tiện lợi",
+        "value": "Hàng ngày",
+        "description": "Thị lực rõ ràng ngay khi thức dậy mỗi sáng"
+      },
+      "confidence": {
+        "title": "Tự tin",
+        "value": "Trọn đời",
+        "description": "Nâng cao hình ảnh bản thân và sự hiện diện chuyên nghiệp"
+      },
+      "experience": {
+        "title": "Kinh nghiệm",
+        "value": "15+ Năm",
+        "description": "Chuyên môn cách mạng đã được chứng minh ở Thái Bình Dương của Bác sĩ Flowers"
+      }
+    }
+  },
+  "journey": {
+    "title": "Hành trình Đầu tư của Bạn",
+    "subtitle": "Một quy trình liền mạch, trang nhã được thiết kế cho sự thuận tiện của bạn",
+    "steps": {
+      "consultation": {
+        "title": "Tư vấn",
+        "description": "Đánh giá toàn diện và lập kế hoạch điều trị cá nhân"
+      },
+      "discussion": {
+        "title": "Thảo luận Đầu tư",
+        "description": "Tư vấn riêng về các lựa chọn đầu tư và thỏa thuận"
+      },
+      "finalization": {
+        "title": "Hoàn thiện Thỏa thuận",
+        "description": "Xử lý liền mạch và lên lịch cho thủ thuật của bạn"
+      },
+      "care": {
+        "title": "Chăm sóc Cách mạng",
+        "description": "Chuyển đổi thị lực của bạn với theo dõi toàn diện"
+      }
+    }
+  },
+  "concierge": {
+    "title": "Dịch vụ Tài chính Đặc biệt",
+    "description": "Đội ngũ tài chính đặc biệt tận tâm của chúng tôi cung cấp hướng dẫn cá nhân để giúp bạn chọn thỏa thuận đầu tư phù hợp nhất với lối sống và sở thích của bạn. Mọi cuộc trò chuyện đều riêng tư, chuyên nghiệp và không áp lực.",
+    "services": {
+      "confidential": {
+        "title": "Tư vấn Bảo mật",
+        "description": "Thảo luận riêng tư, trang nhã về các lựa chọn của bạn"
+      },
+      "personalized": {
+        "title": "Giải pháp Cá nhân hóa",
+        "description": "Thỏa thuận được điều chỉnh theo tình huống độc đáo của bạn"
+      },
+      "whiteGlove": {
+        "title": "Dịch vụ Cao cấp",
+        "description": "Xử lý liền mạch và hỗ trợ liên tục"
+      }
+    },
+    "cta": "Lên lịch Tư vấn Riêng"
+  },
+  "cta": {
+    "title": "Khoản Đầu tư Thị lực của Bạn Đang Chờ",
+    "description": "Đừng để những lo lắng về đầu tư trì hoãn hành trình đến với thị lực cách mạng của bạn. Đội ngũ đặc biệt của chúng tôi sẽ làm việc với bạn để tạo ra một thỏa thuận giúp chuyên môn của Bác sĩ Flowers dễ tiếp cận và thoải mái cho lối sống của bạn.",
+    "schedule": "Lên lịch Tư vấn Đầu tư",
+    "explore": "Khám phá Các Thủ thuật"
+  }
+}

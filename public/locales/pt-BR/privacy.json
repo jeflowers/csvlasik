@@ -1,0 +1,114 @@
+{
+  "title": "Política de Privacidade",
+  "subtitle": "Instituto de Visão ClearSight - Dr. Charles Flowers",
+  "lastUpdated": "Última atualização",
+  "sections": {
+    "collection": {
+      "title": "Informações que Coletamos",
+      "medicalNotice": {
+        "title": "Aviso de Prática Médica",
+        "description": "Como prática médica, coletamos e mantemos informações de saúde de acordo com as regulamentações HIPAA e leis estaduais de privacidade médica."
+      },
+      "personal": {
+        "title": "Informações Pessoais",
+        "items": {
+          "contact": "Informações de contato (nome, email, número de telefone, endereço)",
+          "medical": "Histórico médico e informações relacionadas à visão",
+          "insurance": "Informações de seguro e detalhes de pagamento",
+          "appointments": "Registros de consultas e agendamentos",
+          "outcomes": "Resultados do tratamento e informações de acompanhamento"
+        }
+      },
+      "technical": {
+        "title": "Informações Técnicas",
+        "items": {
+          "ip": "Endereço IP e informações do navegador",
+          "usage": "Padrões de uso do site e preferências",
+          "language": "Preferências de idioma e acessibilidade",
+          "device": "Informações do dispositivo e sistema operacional"
+        }
+      }
+    },
+    "usage": {
+      "title": "Como Usamos Suas Informações",
+      "medical": {
+        "title": "Cuidados Médicos",
+        "items": {
+          "consultations": "Fornecer consultas e tratamentos de correção de visão",
+          "scheduling": "Agendar consultas e cuidados de acompanhamento",
+          "communication": "Comunicar sobre seu tratamento e recuperação",
+          "records": "Manter registros médicos conforme exigido por lei"
+        }
+      },
+      "website": {
+        "title": "Funcionalidade do Site",
+        "items": {
+          "personalization": "Personalizar sua experiência no site",
+          "language": "Fornecer conteúdo em seu idioma preferido",
+          "improvement": "Melhorar nosso site e serviços",
+          "inquiries": "Responder às suas consultas e solicitações"
+        }
+      }
+    },
+    "gdpr": {
+      "title": "Seus Direitos Sob GDPR",
+      "euNotice": {
+        "title": "Residentes da UE",
+        "description": "Se você está localizado na União Europeia, você tem direitos adicionais sob GDPR."
+      },
+      "rights": {
+        "title": "Seus Direitos Incluem",
+        "access": {
+          "title": "Direito de Acesso",
+          "description": "Solicitar uma cópia de seus dados pessoais"
+        },
+        "rectification": {
+          "title": "Direito de Retificação",
+          "description": "Corrigir informações imprecisas"
+        },
+        "erasure": {
+          "title": "Direito ao Esquecimento",
+          "description": "Solicitar a exclusão de seus dados"
+        },
+        "portability": {
+          "title": "Direito à Portabilidade",
+          "description": "Receber seus dados em formato portátil"
+        },
+        "object": {
+          "title": "Direito de Objeção",
+          "description": "Objetar a certo processamento de dados"
+        },
+        "restriction": {
+          "title": "Direito de Restrição",
+          "description": "Limitar como processamos seus dados"
+        }
+      },
+      "exercise": {
+        "title": "Como Exercer Seus Direitos",
+        "email": "Email",
+        "phone": "Telefone",
+        "response": "Responderemos à sua solicitação dentro de 30 dias conforme exigido pelo GDPR."
+      }
+    },
+    "security": {
+      "title": "Segurança de Dados",
+      "description": "Implementamos medidas técnicas e organizacionais apropriadas para proteger suas informações pessoais",
+      "measures": {
+        "encryption": "Criptografia de dados em trânsito e em repouso",
+        "assessments": "Avaliações de segurança regulares e atualizações",
+        "access": "Controles de acesso e sistemas de autenticação",
+        "training": "Treinamento de funcionários sobre proteção de dados",
+        "incident": "Procedimentos de resposta a incidentes e notificação de violações"
+      }
+    },
+    "contact": {
+      "title": "Informações de Contato",
+      "dpo": {
+        "title": "Oficial de Proteção de Dados",
+        "organization": "Instituto de Visão ClearSight",
+        "address1": "5750 Downey Ave., Suite 101",
+        "address2": "Lakewood, CA 90712"
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "procedures": {
+    "lasik": "LASIK",
+    "prk": "PRK",
+    "icl": "ICL",
+    "cataract": "Cirurgia de Catarata",
+    "cornealTransplant": "Transplante de Córnea"
+  },
+  "vision": {
+    "nearsighted": "Miopia",
+    "farsighted": "Hipermetropia",
+    "astigmatism": "Astigmatismo",
+    "presbyopia": "Presbiopia",
+    "perfect": "Visão 20/20",
+    "before": "Antes",
+    "after": "Depois",
+    "improvement": "Melhoria",
+    "correction": "Correção"
+  },
+  "terms": {
+    "cornea": "Córnea",
+    "retina": "Retina",
+    "pupil": "Pupila",
+    "iris": "Íris",
+    "lens": "Cristalino",
+    "opticNerve": "Nervo Óptico",
+    "diopter": "Dioptria",
+    "refraction": "Refração",
+    "aberration": "Aberração",
+    "topography": "Topografia",
+    "epithelium": "Epitélio",
+    "stroma": "Estroma",
+    "endothelium": "Endotélio"
+  },
+  "safety": {
+    "fdaApproved": "Aprovado pela FDA",
+    "clinicallyProven": "Clinicamente Comprovado",
+    "safeAndEffective": "Seguro e Eficaz",
+    "minimallyInvasive": "Minimamente Invasivo",
+    "outpatientProcedure": "Procedimento Ambulatorial",
+    "noHospitalStay": "Não Requer Internação"
+  },
+  "recovery": {
+    "immediate": "Imediato",
+    "sameDay": "No Mesmo Dia",
+    "nextDay": "No Dia Seguinte",
+    "oneWeek": "Uma Semana",
+    "oneMonth": "Um Mês",
+    "fullHealing": "Cicatrização Completa",
+    "followUp": "Consulta de Acompanhamento"
+  },
+  "benefits": {
+    "noGlasses": "Sem Óculos",
+    "noContacts": "Sem Lentes de Contato",
+    "clearVision": "Visão Cristalina",
+    "activeLifestyle": "Estilo de Vida Ativo",
+    "careerAdvancement": "Avanço na Carreira",
+    "confidence": "Maior Confiança"
+  },
+  "disclaimers": {
+    "resultsVary": "Os resultados individuais podem variar",
+    "consultationRequired": "Consulta necessária para determinar candidatura",
+    "risksBenefits": "Discuta riscos e benefícios com seu médico",
+    "followInstructions": "Siga todas as instruções pós-operatórias",
+    "medicalAdvice": "Esta informação não substitui aconselhamento médico profissional"
+  }
+}

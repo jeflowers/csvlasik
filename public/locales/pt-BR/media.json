@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Insights Revolucionários e Educação",
+    "title": "Mídia e Recursos",
+    "description": "Mantenha-se informado com as últimas percepções da prática revolucionária do Dr. Flowers. Desde procedimentos de ponta até atualizações da missão do Pacífico, descubra o futuro do cuidado visual através de perspectivas especializadas e histórias de pacientes."
+  },
+  "featured": {
+    "sectionTitle": "Artigo em Destaque",
+    "title": "A Jornada Revolucionária: Como as Missões do Pacífico Moldaram o LASIK Moderno",
+    "excerpt": "Descubra como condições desafiadoras em ilhas remotas do Pacífico levaram a inovações revolucionárias na correção visual a laser que agora beneficiam pacientes em todo o mundo.",
+    "readMore": "Ler Artigo"
+  },
+  "sidebar": {
+    "categories": "Categorias",
+    "newsletter": {
+      "title": "Mantenha-se Atualizado",
+      "description": "Receba as últimas percepções e atualizações da missão do Pacífico",
+      "placeholder": "Seu e-mail",
+      "subscribe": "Inscrever-se"
+    }
+  },
+  "posts": {
+    "telemedicine": {
+      "title": "Telemedicina no Cuidado Ocular: Conectando Ilhas do Pacífico ao Tratamento Avançado",
+      "excerpt": "Como soluções inovadoras de telemedicina estão preenchendo a lacuna entre locais remotos e cuidados oculares de classe mundial."
+    },
+    "recovery": {
+      "title": "Cronograma de Recuperação: O Que Esperar Após Sua Cirurgia LASIK",
+      "excerpt": "Um guia detalhado para o processo de recuperação do LASIK, das primeiras 24 horas aos resultados a longo prazo, baseado em experiências reais de pacientes."
+    },
+    "icl": {
+      "title": "Cirurgia ICL: A Solução Revolucionária para Prescrições Altas",
+      "excerpt": "Compreendendo as Lentes de Contato Implantáveis e por que elas são frequentemente a melhor escolha para pacientes com miopia severa."
+    },
+    "infrastructure": {
+      "title": "Construindo Infraestrutura de Saúde em Ilhas Remotas do Pacífico",
+      "excerpt": "Os desafios e triunfos de estabelecer programas sustentáveis de cuidados oculares em comunidades carentes."
+    },
+    "readMore": "Leia Mais",
+    "loadMore": "Carregar Mais Artigos"
+  },
+  "categories": {
+    "all": "Todas as Postagens",
+    "innovation": "Inovação",
+    "procedures": "Procedimentos",
+    "technology": "Tecnologia",
+    "patientCare": "Cuidado ao Paciente",
+    "mission": "Missão"
+  },
+  "resources": {
+    "title": "Recursos Educacionais",
+    "description": "Guias e recursos abrangentes para ajudá-lo a entender a correção visual",
+    "items": {
+      "lasik": {
+        "title": "Guia LASIK",
+        "description": "Guia completo para cirurgia LASIK, da elegibilidade à recuperação"
+      },
+      "comparison": {
+        "title": "Comparação de Procedimentos",
+        "description": "Comparação lado a lado de todos os procedimentos de correção visual"
+      },
+      "pacific": {
+        "title": "Atualizações da Missão do Pacífico",
+        "description": "Últimas notícias das missões revolucionárias de saúde do Dr. Flowers no Pacífico"
+      }
+    },
+    "learnMore": "Saiba Mais"
+  },
+  "cta": {
+    "title": "Pronto para Começar Sua Jornada Visual?",
+    "description": "Tem perguntas sobre correção visual? Quer saber mais sobre as técnicas revolucionárias do Dr. Flowers? Agende sua consulta gratuita hoje.",
+    "schedule": "Agendar Consulta Gratuita",
+    "explore": "Explorar Procedimentos"
+  }
+}

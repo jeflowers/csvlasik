@@ -1,0 +1,144 @@
+{
+  "hero": {
+    "badge": "Inversión en Cuidado de Visión Revolucionario",
+    "title": "Opciones de Inversión",
+    "subtitle": "para Su Viaje de Visión",
+    "description": "Su visión no tiene precio. Ofrecemos soluciones de inversión sofisticadas que hacen que el cuidado revolucionario del Dr. Flowers sea accesible a través de arreglos flexibles y dignos adaptados a su estilo de vida.",
+    "cta": "Discutir Opciones de Inversión"
+  },
+  "investment": {
+    "title": "Una Inversión en Su Futuro",
+    "description": "El cuidado de visión revolucionario representa una de las inversiones más valiosas que puede hacer. La libertad de anteojos y lentes de contacto, la calidad de vida mejorada y décadas de visión clara crean retornos inconmensurables que se acumulan diariamente.",
+    "benefits": {
+      "lifetime": {
+        "title": "Valor de por Vida",
+        "description": "Décadas de libertad de anteojos y lentes de contacto"
+      },
+      "lifestyle": {
+        "title": "Estilo de Vida Mejorado",
+        "description": "Actividades sin restricciones y oportunidades profesionales"
+      },
+      "expertise": {
+        "title": "Experiencia Revolucionaria",
+        "description": "Técnicas probadas en el Pacífico y experiencia incomparable"
+      }
+    }
+  },
+  "solutions": {
+    "title": "Soluciones de Inversión Sofisticadas",
+    "subtitle": "Ofrecemos arreglos dignos y flexibles que honran el valor de su inversión",
+    "immediate": {
+      "title": "Inversión Inmediata",
+      "subtitle": "Paquete de Cuidado Completo",
+      "description": "Inversión completa en su viaje de visión revolucionario con cuidado integral incluido",
+      "highlight": "Más Integral",
+      "features": {
+        "coverage": "Cobertura completa del procedimiento",
+        "followup": "Todas las citas de seguimiento",
+        "guarantee": "Garantía de mejora de por vida",
+        "priority": "Programación prioritaria",
+        "concierge": "Experiencia de cuidado concierge"
+      }
+    },
+    "structured": {
+      "title": "Inversión Estructurada",
+      "subtitle": "Arreglos Flexibles",
+      "description": "Arreglos mensuales dignos que se adaptan perfectamente a su estilo de vida",
+      "highlight": "Más Popular",
+      "features": {
+        "noInitial": "No se requiere inversión inicial",
+        "flexible": "Arreglos mensuales flexibles",
+        "competitive": "Términos competitivos disponibles",
+        "approval": "Proceso de aprobación rápido",
+        "care": "El mismo cuidado revolucionario"
+      }
+    },
+    "healthcare": {
+      "title": "Inversión en Salud",
+      "subtitle": "Elegible para HSA/FSA",
+      "description": "Maximice sus cuentas de inversión en salud para cuidado con ventajas fiscales",
+      "highlight": "Ventaja Fiscal",
+      "features": {
+        "eligible": "Procedimientos elegibles para HSA/FSA",
+        "tax": "Inversión con ventajas fiscales",
+        "documentation": "Documentación proporcionada",
+        "optimization": "Optimización de gastos flexibles",
+        "guidance": "Orientación profesional"
+      }
+    },
+    "exploreOption": "Explorar Esta Opción"
+  },
+  "value": {
+    "title": "El Verdadero Valor de la Visión Revolucionaria",
+    "subtitle": "Considere el valor de por vida de su inversión en cuidado de visión revolucionario",
+    "benefits": {
+      "freedom": {
+        "title": "Libertad",
+        "value": "Sin Precio",
+        "description": "No más anteojos o lentes de contacto limitando sus actividades"
+      },
+      "convenience": {
+        "title": "Conveniencia",
+        "value": "Diaria",
+        "description": "Visión clara inmediata al despertar cada mañana"
+      },
+      "confidence": {
+        "title": "Confianza",
+        "value": "De por Vida",
+        "description": "Imagen personal mejorada y presencia profesional"
+      },
+      "experience": {
+        "title": "Experiencia",
+        "value": "15+ Años",
+        "description": "Experiencia revolucionaria probada en el Pacífico del Dr. Flowers"
+      }
+    }
+  },
+  "journey": {
+    "title": "Su Viaje de Inversión",
+    "subtitle": "Un proceso fluido y digno diseñado para su conveniencia",
+    "steps": {
+      "consultation": {
+        "title": "Consulta",
+        "description": "Evaluación integral y planificación de tratamiento personalizado"
+      },
+      "discussion": {
+        "title": "Discusión de Inversión",
+        "description": "Consulta privada sobre opciones de inversión y arreglos"
+      },
+      "finalization": {
+        "title": "Finalización del Arreglo",
+        "description": "Procesamiento fluido y programación de su procedimiento"
+      },
+      "care": {
+        "title": "Cuidado Revolucionario",
+        "description": "Su transformación de visión con seguimiento integral"
+      }
+    }
+  },
+  "concierge": {
+    "title": "Servicios Financieros Concierge",
+    "description": "Nuestro equipo dedicado de concierge financiero proporciona orientación personalizada para ayudarle a seleccionar el arreglo de inversión que mejor se adapte a su estilo de vida y preferencias. Cada conversación es privada, profesional y sin presión.",
+    "services": {
+      "confidential": {
+        "title": "Consulta Confidencial",
+        "description": "Discusiones privadas y dignas sobre sus opciones"
+      },
+      "personalized": {
+        "title": "Soluciones Personalizadas",
+        "description": "Arreglos adaptados a su situación única"
+      },
+      "whiteGlove": {
+        "title": "Servicio de Guante Blanco",
+        "description": "Procesamiento fluido y soporte continuo"
+      }
+    },
+    "cta": "Programar Consulta Privada"
+  },
+  "cta": {
+    "title": "Su Inversión en Visión Le Espera",
+    "description": "No permita que las preocupaciones de inversión retrasen su viaje hacia la visión revolucionaria. Nuestro equipo concierge trabajará con usted para crear un arreglo que haga que la experiencia del Dr. Flowers sea accesible y cómoda para su estilo de vida.",
+    "schedule": "Programar Consulta de Inversión",
+    "explore": "Explorar Procedimientos"
+  }
+}

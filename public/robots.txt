@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://csvlasik.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /procedures/
+Allow: /contact
+Allow: /patient-results
+Allow: /blog
+Allow: /financing
+Allow: /pacific-story
+Allow: /technology
+
+# Crawl delay (optional)
+Crawl-delay: 1

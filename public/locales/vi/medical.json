@@ -1,0 +1,67 @@
+{
+  "procedures": {
+    "lasik": "LASIK",
+    "prk": "PRK",
+    "icl": "ICL",
+    "cataract": "Phẫu thuật đục thủy tinh thể",
+    "cornealTransplant": "Ghép giác mạc"
+  },
+  "vision": {
+    "nearsighted": "Cận thị",
+    "farsighted": "Viễn thị",
+    "astigmatism": "Loạn thị",
+    "presbyopia": "Lão thị",
+    "perfect": "Thị lực 20/20",
+    "before": "Trước",
+    "after": "Sau",
+    "improvement": "Cải thiện",
+    "correction": "Điều chỉnh"
+  },
+  "terms": {
+    "cornea": "Giác mạc",
+    "retina": "Võng mạc",
+    "pupil": "Con ngươi",
+    "iris": "Mống mắt",
+    "lens": "Thủy tinh thể",
+    "opticNerve": "Dây thần kinh thị giác",
+    "diopter": "Độ cận",
+    "refraction": "Khúc xạ",
+    "aberration": "Quang sai",
+    "topography": "Địa hình",
+    "epithelium": "Biểu mô",
+    "stroma": "Chất nền",
+    "endothelium": "Nội mô"
+  },
+  "safety": {
+    "fdaApproved": "Được FDA phê duyệt",
+    "clinicallyProven": "Được chứng minh lâm sàng",
+    "safeAndEffective": "An toàn và hiệu quả",
+    "minimallyInvasive": "Xâm lấn tối thiểu",
+    "outpatientProcedure": "Thủ thuật ngoại trú",
+    "noHospitalStay": "Không cần nằm viện"
+  },
+  "recovery": {
+    "immediate": "Ngay lập tức",
+    "sameDay": "Cùng ngày",
+    "nextDay": "Ngày hôm sau",
+    "oneWeek": "Một tuần",
+    "oneMonth": "Một tháng",
+    "fullHealing": "Lành hoàn toàn",
+    "followUp": "Tái khám"
+  },
+  "benefits": {
+    "noGlasses": "Không cần kính",
+    "noContacts": "Không cần kính áp tròng",
+    "clearVision": "Thị lực trong trẻo",
+    "activeLifestyle": "Lối sống năng động",
+    "careerAdvancement": "Thăng tiến sự nghiệp",
+    "confidence": "Tăng tự tin"
+  },
+  "disclaimers": {
+    "resultsVary": "Kết quả cá nhân có thể khác nhau",
+    "consultationRequired": "Cần tư vấn để xác định ứng viên",
+    "risksBenefits": "Thảo luận về rủi ro và lợi ích với bác sĩ",
+    "followInstructions": "Tuân theo tất cả hướng dẫn sau phẫu thuật",
+    "medicalAdvice": "Thông tin này không thay thế lời khuyên y tế chuyên nghiệp"
+  }
+}

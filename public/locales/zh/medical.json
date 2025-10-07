@@ -1,0 +1,67 @@
+{
+  "procedures": {
+    "lasik": "LASIK",
+    "prk": "PRK",
+    "icl": "ICL",
+    "cataract": "白内障手术",
+    "cornealTransplant": "角膜移植"
+  },
+  "vision": {
+    "nearsighted": "近视",
+    "farsighted": "远视",
+    "astigmatism": "散光",
+    "presbyopia": "老花",
+    "perfect": "20/20视力",
+    "before": "之前",
+    "after": "之后",
+    "improvement": "改善",
+    "correction": "矫正"
+  },
+  "terms": {
+    "cornea": "角膜",
+    "retina": "视网膜",
+    "pupil": "瞳孔",
+    "iris": "虹膜",
+    "lens": "晶状体",
+    "opticNerve": "视神经",
+    "diopter": "屈光度",
+    "refraction": "屈光",
+    "aberration": "像差",
+    "topography": "地形图",
+    "epithelium": "上皮",
+    "stroma": "基质",
+    "endothelium": "内皮"
+  },
+  "safety": {
+    "fdaApproved": "FDA批准",
+    "clinicallyProven": "临床验证",
+    "safeAndEffective": "安全有效",
+    "minimallyInvasive": "微创",
+    "outpatientProcedure": "门诊手术",
+    "noHospitalStay": "无需住院"
+  },
+  "recovery": {
+    "immediate": "立即",
+    "sameDay": "当天",
+    "nextDay": "次日",
+    "oneWeek": "一周",
+    "oneMonth": "一个月",
+    "fullHealing": "完全愈合",
+    "followUp": "复查"
+  },
+  "benefits": {
+    "noGlasses": "无需眼镜",
+    "noContacts": "无需隐形眼镜",
+    "clearVision": "清晰视力",
+    "activeLifestyle": "活跃生活方式",
+    "careerAdvancement": "职业发展",
+    "confidence": "增强信心"
+  },
+  "disclaimers": {
+    "resultsVary": "个人结果可能有所不同",
+    "consultationRequired": "需要咨询以确定候选资格",
+    "risksBenefits": "与医生讨论风险和益处",
+    "followInstructions": "遵循所有术后指示",
+    "medicalAdvice": "此信息不能替代专业医疗建议"
+  }
+}

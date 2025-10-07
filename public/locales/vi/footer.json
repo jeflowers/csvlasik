@@ -1,0 +1,51 @@
+{
+  "company": {
+    "name": "ClearSight",
+    "tagline": "Viện Thị Lực",
+    "description": "Tiên phong phẫu thuật LASIK trong khu vực Thái Bình Dương và mang chăm sóc thị lực cách mạng đến Los Angeles."
+  },
+  "quickLinks": {
+    "title": "Liên Kết Nhanh",
+    "about": "Về Bác sĩ Flowers",
+    "allProcedures": "Tất Cả Thủ Thuật",
+    "pacificStory": "Câu Chuyện Thái Bình Dương",
+    "testimonials": "Lời Chứng Thực",
+    "technology": "Công Nghệ"
+  },
+  "procedures": {
+    "title": "Thủ Thuật",
+    "lasik": "Phẫu Thuật LASIK",
+    "prk": "Phẫu Thuật PRK",
+    "icl": "ICL",
+    "blog": "Blog và Tài Nguyên",
+    "consultation": "Đặt Lịch Tư Vấn"
+  },
+  "contact": {
+    "title": "Thông Tin Liên Hệ",
+    "office": "Văn Phòng Lakewood",
+    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712",
+    "phone": "(844) 211-5462",
+    "email": "info@clearsightlasik.com"
+  },
+  "newsletter": {
+    "title": "Cập Nhật Thông Tin",
+    "description": "Nhận tin tức mới nhất từ sứ mệnh Thái Bình Dương và các đổi mới chăm sóc thị lực",
+    "placeholder": "Email của bạn",
+    "subscribe": "Đăng Ký"
+  },
+  "social": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "youtube": "YouTube",
+    "twitter": "Twitter",
+    "tiktok": "TikTok"
+  },
+  "legal": {
+    "copyright": "© 2025 ClearSight - Dr. Charles Flowers, MD. Tất cả quyền được bảo lưu.",
+    "privacy": "Chính Sách Bảo Mật",
+    "terms": "Điều Khoản Dịch Vụ"
+  },
+  "badge": {
+    "pacificMission": "🌊 Người Ủng Hộ Sứ Mệnh Thái Bình Dương"
+  }
+}

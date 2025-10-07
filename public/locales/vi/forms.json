@@ -1,0 +1,80 @@
+{
+  "labels": {
+    "firstName": "Tên",
+    "lastName": "Họ",
+    "email": "Địa chỉ Email",
+    "phone": "Số điện thoại",
+    "message": "Tin nhắn",
+    "procedure": "Thủ thuật quan tâm",
+    "preferredContact": "Phương thức liên hệ ưa thích",
+    "comments": "Câu hỏi hoặc bình luận",
+    "age": "Tuổi",
+    "occupation": "Nghề nghiệp",
+    "location": "Vị trí",
+    "visionBefore": "Thị lực trước",
+    "visionAfter": "Thị lực sau",
+    "rating": "Đánh giá",
+    "testimonialText": "Trải nghiệm của bạn"
+  },
+  "placeholders": {
+    "firstName": "Tên của bạn",
+    "lastName": "Họ của bạn",
+    "email": "email.cua.ban@example.com",
+    "phone": "0123 456 789",
+    "message": "Hãy cho chúng tôi biết về mục tiêu thị lực của bạn...",
+    "comments": "Có câu hỏi hoặc yêu cầu đặc biệt nào không?...",
+    "age": "Tuổi của bạn",
+    "occupation": "Nghề nghiệp của bạn",
+    "location": "Thành phố, Tỉnh",
+    "testimonialText": "Chia sẻ trải nghiệm của bạn với Bác sĩ Flowers..."
+  },
+  "options": {
+    "procedures": {
+      "lasik": "LASIK",
+      "prk": "PRK", 
+      "icl": "ICL",
+      "consultation": "Tư vấn chung"
+    },
+    "contactMethods": {
+      "phone": "Điện thoại",
+      "email": "Email",
+      "text": "Tin nhắn văn bản"
+    },
+    "ratings": {
+      "1": "Kém",
+      "2": "Trung bình",
+      "3": "Tốt",
+      "4": "Rất tốt",
+      "5": "Xuất sắc"
+    }
+  },
+  "buttons": {
+    "submit": "Gửi",
+    "cancel": "Hủy",
+    "reset": "Đặt lại",
+    "save": "Lưu",
+    "scheduleConsultation": "Đặt lịch tư vấn",
+    "requestCallback": "Yêu cầu gọi lại",
+    "downloadInfo": "Tải thông tin",
+    "shareTestimonial": "Chia sẻ câu chuyện của bạn"
+  },
+  "validation": {
+    "required": "Trường này là bắt buộc",
+    "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ",
+    "invalidPhone": "Vui lòng nhập số điện thoại hợp lệ",
+    "tooShort": "Trường này quá ngắn",
+    "tooLong": "Trường này quá dài",
+    "invalidRating": "Vui lòng chọn đánh giá"
+  },
+  "success": {
+    "submitted": "Cảm ơn! Biểu mẫu của bạn đã được gửi thành công.",
+    "scheduled": "Cuộc tư vấn của bạn đã được lên lịch.",
+    "contacted": "Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ.",
+    "testimonialSubmitted": "Cảm ơn bạn đã chia sẻ trải nghiệm!"
+  },
+  "privacy": {
+    "notice": "Bằng cách gửi biểu mẫu này, bạn đồng ý được liên hệ về dịch vụ của chúng tôi.",
+    "security": "Thông tin của bạn được bảo mật và không bao giờ được chia sẻ.",
+    "hipaa": "Tất cả giao tiếp đều tuân thủ HIPAA."
+  }
+}

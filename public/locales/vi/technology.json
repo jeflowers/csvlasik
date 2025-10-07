@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "badge": "Công Nghệ và Đổi Mới Cách Mạng",
+    "title": "Công Nghệ Tiên Tiến",
+    "description": "ClearSight kết hợp công nghệ tiên tiến với các kỹ thuật đổi mới được phát triển qua nhiều năm thực hiện các sứ mệnh Thái Bình Dương đầy thách thức, mang lại độ chính xác và an toàn vô song trong việc chỉnh sửa thị lực.",
+    "cta": "Trải Nghiệm Công Nghệ Cách Mạng"
+  },
+  "innovation": {
+    "title": "Đổi Mới Sinh Ra Từ Sự Cần Thiết",
+    "description": "Cách tiếp cận cách mạng của Bác sĩ Flowers đối với công nghệ không được phát triển trong phòng thí nghiệm—nó được rèn luyện trong những điều kiện thách thức của các sứ mệnh đảo Thái Bình Dương nơi độ tin cậy, tính di động và độ chính xác là vấn đề an toàn bệnh nhân.",
+    "features": {
+      "reliability": {
+        "title": "Độ Tin Cậy Đã Được Thử Nghiệm Thực Địa",
+        "description": "Công nghệ được chứng minh trong điều kiện nhiệt đới khắc nghiệt"
+      },
+      "adaptive": {
+        "title": "Đổi Mới Thích Ứng",
+        "description": "Giải pháp được tạo ra để vượt qua thách thức thực tế"
+      },
+      "focused": {
+        "title": "Thiết Kế Tập Trung Vào Bệnh Nhân",
+        "description": "Mọi đổi mới được thiết kế cho kết quả tối ưu cho bệnh nhân"
+      }
+    }
+  },
+  "equipment": {
+    "title": "Thiết Bị Hiện Đại Nhất",
+    "subtitle": "Công nghệ mới nhất được nâng cao bởi các kỹ thuật và giao thức cách mạng"
+  },
+  "safety": {
+    "title": "Tiêu Chuẩn An Toàn Không Thỏa Hiệp",
+    "subtitle": "Công nghệ cách mạng kết hợp với tiêu chuẩn an toàn cao nhất trong ngành"
+  },
+  "innovations": {
+    "title": "Đổi Mới Cách Mạng",
+    "subtitle": "Các kỹ thuật và giao thức đột phá được phát triển thông qua các sứ mệnh Thái Bình Dương"
+  },
+  "telemedicine": {
+    "title": "Cách Mạng Y Học Từ Xa",
+    "description": "Sinh ra từ sự cần thiết kết nối với bệnh nhân qua hàng nghìn dặm đại dương, các đổi mới y học từ xa của Bác sĩ Flowers giờ đây nâng cao mọi khía cạnh của chăm sóc bệnh nhân."
+  },
+  "philosophy": {
+    "title": "Triết Lý Đổi Mới",
+    "quote": "Công nghệ nên phục vụ nhân loại, không phải ngược lại. Mọi đổi mới chúng tôi phát triển phải làm cho việc chỉnh sửa thị lực an toàn hơn, dễ tiếp cận hơn và hiệu quả hơn cho bệnh nhân bất kể họ ở đâu trên thế giới.",
+    "attribution": "— Bác sĩ Charles Flowers"
+  },
+  "cta": {
+    "title": "Trải Nghiệm Công Nghệ Cách Mạng",
+    "subtitle": "Hưởng lợi từ công nghệ tiên tiến được nâng cao bởi nhiều năm đổi mới và thử nghiệm thực địa. Đặt lịch tư vấn để trải nghiệm sự khác biệt mà công nghệ cách mạng mang lại.",
+    "schedule": "Đặt Lịch Tư Vấn Công Nghệ",
+    "procedures": "Xem Các Thủ Thuật"
+  }
+}

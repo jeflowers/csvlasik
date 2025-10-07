@@ -1,0 +1,51 @@
+{
+  "company": {
+    "name": "ClearSight",
+    "tagline": "视力研究所",
+    "description": "太平洋地区LASIK手术的先驱，为洛杉矶带来革命性的视力护理。"
+  },
+  "quickLinks": {
+    "title": "快速链接",
+    "about": "关于Flowers医生",
+    "allProcedures": "所有手术",
+    "pacificStory": "太平洋故事",
+    "testimonials": "患者见证",
+    "technology": "技术"
+  },
+  "procedures": {
+    "title": "手术",
+    "lasik": "LASIK手术",
+    "prk": "PRK手术",
+    "icl": "ICL",
+    "blog": "博客和资源",
+    "consultation": "预约咨询"
+  },
+  "contact": {
+    "title": "联系信息",
+    "office": "莱克伍德办公室",
+    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712",
+    "phone": "(844) 211-5462",
+    "email": "info@clearsightlasik.com"
+  },
+  "newsletter": {
+    "title": "保持更新",
+    "description": "获取我们太平洋使命和视力护理创新的最新消息",
+    "placeholder": "您的邮箱",
+    "subscribe": "订阅"
+  },
+  "social": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "youtube": "YouTube",
+    "twitter": "Twitter",
+    "tiktok": "TikTok"
+  },
+  "legal": {
+    "copyright": "© 2025 ClearSight - Dr. Charles Flowers, MD. 版权所有。",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  },
+  "badge": {
+    "pacificMission": "🌊 太平洋使命支持者"
+  }
+}

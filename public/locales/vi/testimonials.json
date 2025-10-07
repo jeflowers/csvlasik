@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "badge": "Kết Quả Cách Mạng - Bệnh Nhân Thực",
+    "title": "Lời Chứng Thực",
+    "titleAccent": "Thay Đổi Cuộc Sống",
+    "description": "Khám phá những kết quả biến đổi mà bệnh nhân của chúng tôi đã trải nghiệm với các kỹ thuật chỉnh sửa thị lực cách mạng của Bác sĩ Flowers. Từ các đảo Thái Bình Dương đến Los Angeles, cuộc sống đang được thay đổi từng thủ thuật một.",
+    "cta": "Bắt Đầu Sự Biến Đổi Của Bạn"
+  },
+  "results": {
+    "title": "Kết Quả Cách Mạng Đã Được Chứng Minh",
+    "description": "Những con số nói lên tất cả - kết quả đặc biệt trong tất cả các thủ thuật",
+    "stats": {
+      "vision": {
+        "label": "Đạt Được Thị Lực 20/20",
+        "description": "Hoặc tốt hơn trong vòng 24-48 giờ"
+      },
+      "satisfaction": {
+        "label": "Sự Hài Lòng Của Bệnh Nhân",
+        "description": "Sẽ giới thiệu Bác sĩ Flowers"
+      },
+      "rating": {
+        "label": "Đánh Giá Trung Bình",
+        "description": "Trên tất cả các nền tảng đánh giá"
+      },
+      "stories": {
+        "label": "Câu Chuyện Thành Công",
+        "description": "Cuộc sống được biến đổi bởi thị lực"
+      }
+    }
+  },
+  "featured": {
+    "title": "Câu Chuyện Thành Công Nổi Bật",
+    "description": "Bệnh nhân thực chia sẻ hành trình biến đổi thị lực cách mạng của họ"
+  },
+  "pacific": {
+    "title": "Sự Biến Đổi Khu Vực Thái Bình Dương",
+    "description": "Kết quả cách mạng từ các sứ mệnh tiên phong của Bác sĩ Flowers ở Thái Bình Dương"
+  },
+  "badges": {
+    "pacific": "Bệnh Nhân Thái Bình Dương",
+    "military": "Quân Đội",
+    "success": "Thành Công"
+  },
+  "cta": {
+    "title": "Sẵn Sàng Tham Gia Câu Chuyện Thành Công Của Chúng Tôi?",
+    "description": "Trải nghiệm chăm sóc thị lực cách mạng đã biến đổi hơn 30,000 cuộc sống. Câu chuyện thành công của bạn bắt đầu với một cuộc tư vấn miễn phí.",
+    "schedule": "Đặt Lịch Tư Vấn Miễn Phí Của Bạn",
+    "procedures": "Chọn Thủ Thuật Của Bạn"
+  }
+}

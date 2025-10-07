@@ -1,0 +1,43 @@
+{
+  "banner": {
+    "title": "Pinahahalagahan namin ang inyong privacy",
+    "description": "Gumagamit kami ng cookies para mapahusay ang inyong experience, ma-analyze ang site usage, at makatulong sa aming marketing efforts. Sa pag-click ng \"Accept All\", pumapayag kayo sa aming paggamit ng cookies.",
+    "learnMore": "Matuto pa",
+    "preferences": "Mga Preference",
+    "necessaryOnly": "Necessary Lang",
+    "acceptAll": "Accept All"
+  },
+  "preferences": {
+    "title": "Cookie Preferences",
+    "description": "Pwede ninyong piliin kung anong uri ng cookies ang papayagan. Tandaan na ang pag-block ng ilang uri ng cookies ay maaaring makaapekto sa inyong experience sa aming site.",
+    "categories": {
+      "necessary": {
+        "title": "Necessary Cookies",
+        "description": "Ang mga cookies na ito ay essential para sa website na gumana nang maayos. Hindi sila pwedeng i-disable."
+      },
+      "analytics": {
+        "title": "Analytics Cookies",
+        "description": "Tumutulong sa amin na maintindihan kung paano nakikipag-ugnayan ang mga visitors sa aming website sa pamamagitan ng pag-collect at pag-report ng information nang anonymous."
+      },
+      "marketing": {
+        "title": "Marketing Cookies",
+        "description": "Ginagamit para i-track ang mga visitors sa mga website para makapag-display ng relevant at engaging advertisements."
+      },
+      "personalization": {
+        "title": "Personalization Cookies",
+        "description": "Nagbibigay-daan sa amin na matandaan ang inyong preferences at magbigay ng enhanced, personalized features."
+      }
+    },
+    "rights": {
+      "title": "Inyong mga Karapatan",
+      "change": "Pwede ninyong baguhin ang inyong preferences anumang oras",
+      "access": "Pwede ninyong hilingin ang access sa inyong personal data",
+      "deletion": "Pwede ninyong hilingin ang deletion ng inyong personal data",
+      "withdraw": "Pwede ninyong bawiin ang consent anumang oras"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "I-save ang Preferences"
+    }
+  }
+}

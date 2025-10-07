@@ -1,0 +1,179 @@
+{
+  "pageTitle": "Términos de Servicio",
+  "hero": {
+    "title": "Términos de Servicio",
+    "subtitle": "Acuerdo de uso del sitio web de ClearSight"
+  },
+  "lastUpdated": "Última actualización: {date}",
+  "sections": {
+    "acceptance": {
+      "title": "1. Aceptación de Términos",
+      "content": "Al acceder y utilizar el sitio web de ClearSight ('el Sitio'), usted acepta estar sujeto a estos Términos de Servicio y todas las leyes y regulaciones aplicables. Si no está de acuerdo con estos términos, no debe usar este sitio."
+    },
+    "useOfSite": {
+      "title": "2. Uso del Sitio Web",
+      "subsections": {
+        "permittedUse": {
+          "title": "2.1 Uso Permitido",
+          "content": "Este sitio está destinado a proporcionar información sobre nuestros servicios revolucionarios de corrección de visión. Puede usar este sitio para:",
+          "items": [
+            "Aprender sobre nuestros procedimientos y tecnología",
+            "Programar consultas",
+            "Acceder a recursos educativos para pacientes",
+            "Contactar a nuestro equipo",
+            "Revisar testimonios de pacientes"
+          ]
+        },
+        "prohibitedUse": {
+          "title": "2.2 Uso Prohibido",
+          "content": "Usted acepta no:",
+          "items": [
+            "Usar el sitio para cualquier propósito ilegal",
+            "Intentar acceso no autorizado a nuestros sistemas",
+            "Interferir con el funcionamiento del sitio",
+            "Transmitir virus o código malicioso",
+            "Recopilar información de usuario sin consentimiento",
+            "Usar contenido del sitio sin permiso",
+            "Hacerse pasar por otra persona o entidad"
+          ]
+        }
+      }
+    },
+    "medicalDisclaimer": {
+      "title": "3. Descargo de Responsabilidad Médica",
+      "content": "IMPORTANTE: La información en este sitio web es solo para fines educativos y no sustituye el consejo médico profesional.",
+      "disclaimers": [
+        "No se establece relación médico-paciente a través de este sitio",
+        "Siempre consulte con un profesional de salud ocular calificado",
+        "Los resultados individuales pueden variar",
+        "No todos los pacientes son candidatos para todos los procedimientos",
+        "Se requiere evaluación médica para determinar la elegibilidad"
+      ]
+    },
+    "intellectualProperty": {
+      "title": "4. Propiedad Intelectual",
+      "subsections": {
+        "ownership": {
+          "title": "4.1 Propiedad",
+          "content": "Todo el contenido en este sitio, incluidos textos, gráficos, logotipos, imágenes y software, es propiedad de ClearSight o sus licenciantes y está protegido por las leyes de derechos de autor."
+        },
+        "limitedLicense": {
+          "title": "4.2 Licencia Limitada",
+          "content": "Se le otorga una licencia limitada, no exclusiva y no transferible para acceder y usar el sitio para fines personales y no comerciales."
+        },
+        "trademarks": {
+          "title": "4.3 Marcas Registradas",
+          "content": "ClearSight y los logotipos relacionados son marcas registradas. El uso no autorizado está estrictamente prohibido."
+        }
+      }
+    },
+    "privacyAndData": {
+      "title": "5. Privacidad y Protección de Datos",
+      "content": "Su uso de nuestro sitio está sujeto a nuestra Política de Privacidad. Al usar el sitio, consiente al procesamiento de información como se describe en la Política de Privacidad.",
+      "hipaa": "Cumplimos con HIPAA y todas las regulaciones aplicables de privacidad de datos de salud."
+    },
+    "appointmentBooking": {
+      "title": "6. Reserva de Citas",
+      "terms": {
+        "scheduling": "Las citas están sujetas a disponibilidad",
+        "cancellation": "Se requiere aviso de 24 horas para cancelaciones",
+        "noShow": "Las ausencias repetidas pueden resultar en restricciones de programación",
+        "confirmation": "Las citas deben ser confirmadas 48 horas antes",
+        "rescheduling": "Nos reservamos el derecho de reprogramar por emergencias médicas"
+      }
+    },
+    "paymentTerms": {
+      "title": "7. Términos de Pago",
+      "policies": {
+        "consultation": "Las tarifas de consulta se deben al momento del servicio",
+        "procedures": "Los procedimientos requieren depósito según lo discutido durante la consulta",
+        "insurance": "Aceptamos varios planes de seguro - la verificación es responsabilidad del paciente",
+        "financing": "Opciones de financiamiento disponibles para pacientes calificados",
+        "refunds": "La política de reembolso se proporciona durante la consulta"
+      }
+    },
+    "disclaimers": {
+      "title": "8. Descargos de Responsabilidad",
+      "warranties": {
+        "title": "8.1 Sin Garantías",
+        "content": "Este sitio se proporciona 'tal cual' sin garantías de ningún tipo, expresas o implícitas."
+      },
+      "accuracy": {
+        "title": "8.2 Precisión de la Información",
+        "content": "Si bien nos esforzamos por mantener información precisa, no garantizamos la integridad o precisión del contenido del sitio."
+      },
+      "thirdParty": {
+        "title": "8.3 Enlaces de Terceros",
+        "content": "No somos responsables del contenido o prácticas de sitios web de terceros enlazados."
+      }
+    },
+    "limitationOfLiability": {
+      "title": "9. Limitación de Responsabilidad",
+      "content": "En ningún caso ClearSight, el Dr. Charles Flowers, o nuestros afiliados serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos resultantes de su uso o incapacidad para usar el sitio.",
+      "exceptions": "Algunas jurisdicciones no permiten la exclusión de ciertas garantías o limitaciones de responsabilidad, por lo que algunas de las anteriores pueden no aplicarse a usted."
+    },
+    "indemnification": {
+      "title": "10. Indemnización",
+      "content": "Usted acepta indemnizar y eximir de responsabilidad a ClearSight, sus oficiales, directores, empleados y agentes de cualquier reclamo o demanda, incluidos honorarios razonables de abogados, hechos por terceros debido a o como resultado de su uso del sitio o violación de estos Términos."
+    },
+    "modifications": {
+      "title": "11. Modificaciones a los Términos",
+      "content": "Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios entran en vigencia inmediatamente después de su publicación en el sitio. Su uso continuado del sitio constituye aceptación de los términos modificados."
+    },
+    "termination": {
+      "title": "12. Terminación",
+      "content": "Podemos terminar o suspender su acceso al sitio inmediatamente, sin previo aviso, por cualquier motivo, incluida la violación de estos Términos."
+    },
+    "governingLaw": {
+      "title": "13. Ley Aplicable",
+      "content": "Estos Términos se rigen por las leyes del Estado de California, Estados Unidos, sin tener en cuenta sus disposiciones sobre conflictos de leyes.",
+      "jurisdiction": "Cualquier disputa relacionada con estos Términos estará sujeta a la jurisdicción exclusiva de los tribunales en el Condado de Los Ángeles, California."
+    },
+    "severability": {
+      "title": "14. Divisibilidad",
+      "content": "Si alguna disposición de estos Términos se considera inválida o inaplicable, las disposiciones restantes continuarán en pleno vigor y efecto."
+    },
+    "entireAgreement": {
+      "title": "15. Acuerdo Completo",
+      "content": "Estos Términos constituyen el acuerdo completo entre usted y ClearSight con respecto al uso del sitio y reemplazan todos los acuerdos anteriores."
+    },
+    "contact": {
+      "title": "16. Información de Contacto",
+      "content": "Para preguntas sobre estos Términos de Servicio, contáctenos en:",
+      "details": {
+        "name": "ClearSight Vision Center",
+        "address": "3650 Martin Luther King Jr Blvd, Lakewood, CA 90712",
+        "phone": "(562) 555-EYES (3937)",
+        "email": "legal@clearsight-la.com"
+      }
+    },
+    "accessibility": {
+      "title": "17. Accesibilidad",
+      "content": "Nos comprometemos a hacer nuestro sitio accesible para todos. Si encuentra barreras de accesibilidad, contáctenos para asistencia."
+    },
+    "minorUse": {
+      "title": "18. Uso por Menores",
+      "content": "Este sitio no está destinado a menores de 18 años. Los padres o tutores deben supervisar el uso del sitio por menores."
+    },
+    "californiaRights": {
+      "title": "19. Derechos de los Residentes de California",
+      "content": "Los residentes de California tienen derechos específicos bajo la Ley de Privacidad del Consumidor de California (CCPA). Consulte nuestra Política de Privacidad para más información."
+    },
+    "dispute": {
+      "title": "20. Resolución de Disputas",
+      "arbitration": {
+        "title": "20.1 Arbitraje",
+        "content": "Cualquier disputa se resolverá mediante arbitraje vinculante de acuerdo con las reglas de la Asociación Americana de Arbitraje."
+      },
+      "classAction": {
+        "title": "20.2 Renuncia a Demanda Colectiva",
+        "content": "Usted renuncia al derecho de participar en demandas colectivas contra ClearSight."
+      }
+    }
+  },
+  "acknowledgment": {
+    "title": "Reconocimiento",
+    "content": "Al usar este sitio, usted reconoce que ha leído, entendido y acepta estar sujeto a estos Términos de Servicio."
+  },
+  "effectiveDate": "Fecha de Vigencia: {date}"
+}

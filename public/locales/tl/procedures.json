@@ -1,0 +1,484 @@
+{
+  "hero": {
+    "badge": "Revolutionary Vision Correction",
+    "title": "ClearSight Vision Correction Options",
+    "subtitle": "Si Dr. Flowers ay nag-aalok ng advanced vision correction procedures, bawat isa ay tailored sa specific needs at lifestyles. Ikumpara ang options at hanapin ang perfect solution para sa inyong revolutionary vision transformation."
+  },
+  "procedures": {
+    "keyFeatures": "Key Features",
+    "lasik": {
+      "tagline": "Pinaka-Popular na Pagpipilian",
+      "description": "Advanced laser vision correction na may mabilis na recovery at excellent results",
+      "recoveryTime": "1-2 araw",
+      "successRate": "98%",
+      "ideal": "Nearsighted, farsighted, astigmatism",
+      "features": {
+        "quick": "Mabilis na 15-minute procedure",
+        "comfort": "Minimal na discomfort",
+        "recovery": "Mabilis na visual recovery",
+        "lasting": "Tumatagal na results"
+      }
+    },
+    "prk": {
+      "tagline": "Surface Treatment",
+      "description": "Alternative laser correction para sa mga pasyenteng hindi angkop sa LASIK",
+      "recoveryTime": "3-5 araw",
+      "successRate": "96%",
+      "ideal": "Manipis na corneas, active lifestyles",
+      "features": {
+        "noFlap": "Walang corneal flap",
+        "thinCorneas": "Angkop para sa manipis na corneas",
+        "stability": "Excellent long-term stability",
+        "athletes": "Ideal para sa athletes"
+      }
+    },
+    "icl": {
+      "tagline": "Implantable Solution",
+      "description": "Permanent implantable contact lenses para sa mataas na prescriptions",
+      "recoveryTime": "1-3 araw",
+      "successRate": "99%",
+      "ideal": "Mataas na prescriptions, manipis na corneas",
+      "features": {
+        "reversible": "Reversible procedure",
+        "nightVision": "Excellent night vision",
+        "uvProtection": "UV protection",
+        "maintenance": "Hindi kailangan ng maintenance"
+      }
+    }
+  },
+  "lasik": {
+    "hero": {
+      "badge": "Pinaka-Popular na Pagpipilian - Revolutionary Results",
+      "title": "ClearSight LASIK Surgery",
+      "subtitle": "Maranasan ang revolutionary LASIK technique na pioneered ni Dr. Flowers sa buong Pacific region, available na ngayon sa ClearSight sa Los Angeles. Mabilis na recovery, excellent results, at life-changing clarity ang naghihintay.",
+      "stats": {
+        "procedureTime": "15 min",
+        "recoveryTime": "1-2 araw",
+        "successRate": "98%"
+      }
+    },
+    "technology": {
+      "title": "Revolutionary LASIK Technology",
+      "description": "Ang LASIK (Laser-Assisted In Situ Keratomileusis) ay ang pinaka-advanced at popular na vision correction procedure sa mundo. Ginagamit ni Dr. Flowers ang state-of-the-art femtosecond laser technology para gumawa ng precise corneal flap, pagkatapos ay reshape ang underlying cornea gamit ang excimer laser para itama ang refractive errors.",
+      "features": {
+        "bladeFree": {
+          "title": "Blade-Free Technology",
+          "description": "Advanced femtosecond laser ang gumagawa ng precise flaps"
+        },
+        "wavefront": {
+          "title": "Wavefront-Guided Treatment",
+          "description": "Customized correction para sa inyong unique vision"
+        },
+        "recovery": {
+          "title": "Rapid Visual Recovery",
+          "description": "Karamihan ng patients ay nakakakita nang malinaw sa loob ng 24 oras"
+        }
+      }
+    },
+    "benefits": {
+      "title": "Life-Changing Benefits",
+      "subtitle": "Tuklasin kung bakit ang LASIK ang preferred choice para sa vision correction",
+      "items": {
+        "clarity": {
+          "title": "Instant Clarity",
+          "description": "Makita nang malinaw nang walang glasses o contacts kaagad pagkatapos ng surgery"
+        },
+        "quick": {
+          "title": "Mabilis na Procedure",
+          "description": "15 minuto lang kabuuan, ang actual laser time ay wala pang 60 segundo bawat mata"
+        },
+        "safety": {
+          "title": "Proven Safety",
+          "description": "FDA-approved na may mahigit 20 taon ng safety data at milyun-milyong procedures"
+        },
+        "satisfaction": {
+          "title": "Patient Satisfaction",
+          "description": "Mahigit 98% ng mga patients ni Dr. Flowers ay magrerekomenda ng LASIK sa friends"
+        },
+        "lasting": {
+          "title": "Tumatagal na Results",
+          "description": "Permanent vision correction na tumatagal ng decades"
+        },
+        "lifestyle": {
+          "title": "Active Lifestyle",
+          "description": "Kalayaan na makalangoy, mag-exercise, at mamuhay nang walang visual restrictions"
+        }
+      }
+    },
+    "process": {
+      "title": "Ang LASIK Process",
+      "subtitle": "Ang revolutionary approach ni Dr. Flowers ay nagsisiguro ng comfort at precision sa bawat hakbang",
+      "steps": {
+        "examination": {
+          "title": "Comprehensive Eye Examination",
+          "description": "Advanced diagnostic testing kasama ang corneal mapping, wavefront analysis, at pupil measurement para gumawa ng inyong personalized treatment plan."
+        },
+        "flap": {
+          "title": "Corneal Flap Creation",
+          "description": "Gamit ang revolutionary femtosecond laser, gumagawa si Dr. Flowers ng manipis at precise flap sa cornea. Ang blade-free approach na ito ay nagsisiguro ng maximum safety at accuracy."
+        },
+        "correction": {
+          "title": "Laser Vision Correction",
+          "description": "Ang excimer laser ay nag-reshape ng cornea ayon sa inyong unique prescription. Ang advanced eye tracking ay nagsisiguro ng precise treatment kahit may maliliit na eye movements."
+        },
+        "recovery": {
+          "title": "Recovery & Follow-up",
+          "description": "Ang corneal flap ay natural na nakakaposisyon nang walang sutures. Karamihan ng patients ay nakakaranas ng immediate vision improvement na may complete healing sa loob ng mga araw."
+        }
+      }
+    },
+    "candidacy": {
+      "title": "Ako ba ay LASIK Candidate?",
+      "subtitle": "Ang LASIK ay maaaring magtama ng malawak na range ng vision problems para sa qualified candidates",
+      "ideal": {
+        "title": "Ideal Candidates",
+        "items": [
+          "18 taong gulang o mas matanda na may stable prescription",
+          "Nearsightedness hanggang -12.00 diopters",
+          "Farsightedness hanggang +6.00 diopters",
+          "Astigmatism hanggang 6.00 diopters",
+          "Healthy corneas na may adequate thickness",
+          "Walang severe dry eye syndrome",
+          "Realistic expectations tungkol sa outcomes"
+        ]
+      },
+      "notSuitable": {
+        "title": "Maaaring Hindi Angkop",
+        "items": [
+          "Buntis o nagpapasuso",
+          "Unstable vision prescription",
+          "Severe autoimmune conditions",
+          "Napaka-manipis na corneas",
+          "Ilang eye diseases o conditions",
+          "Unrealistic expectations",
+          "Active eye infections o inflammation"
+        ]
+      },
+      "evaluation": "Ang tanging paraan para sigurado ay sa pamamagitan ng comprehensive evaluation kay Dr. Flowers."
+    },
+    "testimonials": {
+      "title": "LASIK Success Stories",
+      "subtitle": "Tunay na patients, tunay na results sa revolutionary LASIK ni Dr. Flowers"
+    },
+    "cta": {
+      "title": "Handa na ba para sa Revolutionary Vision?",
+      "subtitle": "Sumama sa libu-libong nagtiwala kay Dr. Flowers sa kanilang LASIK surgery. Maranasan ang kalayaan ng perfect vision gamit ang proven revolutionary techniques.",
+      "schedule": "Mag-schedule ng Free LASIK Consultation",
+      "results": "Makita ang Higit pang Results"
+    }
+  },
+  "prk": {
+    "hero": {
+      "badge": "Surface Treatment Alternative - Proven Results",
+      "title": "ClearSight PRK Surgery",
+      "subtitle": "Maranasan ang PRK (Photorefractive Keratectomy), ang original laser vision correction procedure. Perpekto para sa mga pasyenteng may manipis na corneas o active lifestyles, nag-aalok ng excellent long-term stability.",
+      "stats": {
+        "procedureTime": "15 min",
+        "recoveryTime": "3-5 araw",
+        "successRate": "96%"
+      }
+    },
+    "technology": {
+      "title": "Ang Original Laser Vision Correction",
+      "description": "Ang PRK (Photorefractive Keratectomy) ay ang unang laser vision correction procedure at nananatiling gold standard para sa ilang patients. Hindi tulad ng LASIK, ang PRK ay direktang tumatrato ng surface ng cornea, na ginagawang ideal para sa patients na may manipis na corneas o nasa high-impact professions.",
+      "features": {
+        "noFlap": {
+          "title": "Walang Corneal Flap",
+          "description": "Ang surface treatment ay nag-aalis ng flap-related complications"
+        },
+        "thinCorneas": {
+          "title": "Angkop para sa Manipis na Corneas",
+          "description": "Perpektong option kapag hindi recommended ang LASIK"
+        },
+        "stability": {
+          "title": "Excellent Long-term Stability",
+          "description": "Proven track record na may decades ng data"
+        }
+      }
+    },
+    "advantages": {
+      "title": "Bakit Piliin ang PRK?",
+      "subtitle": "Pag-unawa sa unique advantages ng PRK kumpara sa ibang procedures",
+      "prk": {
+        "title": "PRK Advantages",
+        "items": [
+          "Walang risk ng flap complications",
+          "Angkop para sa manipis na corneas",
+          "Ideal para sa contact sports at military",
+          "Excellent long-term stability",
+          "Nag-preserve ng mas maraming corneal tissue",
+          "Maaaring magtama ng mas mataas na prescriptions",
+          "Walang risk ng dry eyes mula sa flap"
+        ]
+      },
+      "lasik": {
+        "title": "LASIK Comparison",
+        "items": [
+          "Kailangan ng corneal flap creation",
+          "Kailangan ng adequate corneal thickness",
+          "Mas mabilis na initial recovery",
+          "Immediate vision improvement",
+          "Mas kaunting post-op discomfort",
+          "Pinaka-popular na procedure",
+          "Mabilis na pagbabalik sa activities"
+        ]
+      }
+    },
+    "recovery": {
+      "title": "PRK Recovery Timeline",
+      "subtitle": "Ano ang dapat asahan sa inyong healing journey",
+      "phases": {
+        "initial": {
+          "period": "Mga Araw 1-3",
+          "title": "Initial Healing",
+          "symptoms": ["Mild discomfort", "Light sensitivity", "Tearing", "Blurry vision"],
+          "care": ["Gumamit ng prescribed drops", "Magsuot ng sunglasses", "Magpahinga ng mata madalas", "Iwasan ang screens"]
+        },
+        "clearing": {
+          "period": "Mga Araw 4-7",
+          "title": "Vision Clearing",
+          "symptoms": ["Bumubuti ang comfort", "Mas malinaw na vision", "Mas kaunting sensitivity", "Contact lens removal"],
+          "care": ["Magpatuloy sa medications", "Follow-up appointment", "Gradual activity return", "Protektahan ang mata"]
+        },
+        "stabilization": {
+          "period": "Mga Linggo 2-4",
+          "title": "Stabilization",
+          "symptoms": ["Stable vision", "Minimal symptoms", "Normal activities", "Clear sight"],
+          "care": ["Regular check-ups", "UV protection", "Normal routine", "Final healing"]
+        }
+      }
+    },
+    "candidates": {
+      "title": "Sino ang Pinaka-Nakikinabang sa PRK?",
+      "subtitle": "Ang PRK ay madalas na preferred choice para sa specific patient profiles",
+      "active": {
+        "title": "Active Professionals",
+        "description": "Military personnel, law enforcement, firefighters, at athletes na nahaharap sa potential eye trauma",
+        "benefits": ["Walang flap displacement risk", "Safe sa contact sport", "High-impact activities"]
+      },
+      "thin": {
+        "title": "Manipis na Corneas",
+        "description": "Mga pasyenteng ang corneas ay masyadong manipis para sa LASIK o may irregular corneal shapes",
+        "benefits": ["Nag-preserve ng corneal tissue", "Tumatrato ng irregular astigmatism", "Safe para sa manipis na corneas"]
+      },
+      "high": {
+        "title": "Mataas na Prescriptions",
+        "description": "Mga pasyenteng may mas mataas na degrees ng nearsightedness, farsightedness, o astigmatism",
+        "benefits": ["Tumatrato ng severe myopia", "Nag-correct ng high astigmatism", "Long-term stability"]
+      }
+    },
+    "cta": {
+      "title": "Tama ba ang PRK para sa Inyo?",
+      "subtitle": "Tuklasin kung ang PRK ay perpektong solution para sa inyong vision needs at lifestyle. Si Dr. Flowers ay magbibigay ng expert guidance at personalized recommendations.",
+      "schedule": "Mag-schedule ng PRK Consultation",
+      "compare": "Ikumpara ang Lahat ng Procedures"
+    }
+  },
+  "icl": {
+    "hero": {
+      "badge": "Implantable Solution - Reversible Results",
+      "title": "ClearSight ICL Surgery",
+      "subtitle": "Maranasan ang ICL (Implantable Contact Lens), ang revolutionary permanent solution para sa mataas na prescriptions. Reversible, protective, at nag-aalok ng superior vision quality para sa patients na lampas sa traditional laser limits.",
+      "stats": {
+        "procedureTime": "30 min",
+        "recoveryTime": "1-3 araw",
+        "successRate": "99%"
+      }
+    },
+    "technology": {
+      "title": "Revolutionary Implantable Technology",
+      "description": "Ang ICL (Implantable Contact Lens) ay revolutionary refractive surgery na naglalagay ng soft, biocompatible lens sa loob ng inyong mata, sa pagitan ng iris at natural lens. Ang permanent solution na ito ay nag-correct ng vision nang hindi nag-aalis ng anumang corneal tissue.",
+      "features": {
+        "reversible": {
+          "title": "Reversible Procedure",
+          "description": "Ang ICL ay maaaring tanggalin o palitan kung kinakailangan"
+        },
+        "noAlteration": {
+          "title": "Walang Corneal Alteration",
+          "description": "Nag-preserve ng natural corneal structure nang buo"
+        },
+        "nightVision": {
+          "title": "Superior Night Vision",
+          "description": "Exceptional vision quality sa lahat ng lighting"
+        }
+      }
+    },
+    "advantages": {
+      "title": "Unique ICL Advantages",
+      "subtitle": "Tuklasin kung bakit ang ICL ang preferred choice para sa mataas na prescriptions at demanding patients",
+      "items": {
+        "reversible": {
+          "title": "Reversible",
+          "description": "Hindi tulad ng laser procedures, ang ICL ay maaaring tanggalin o palitan kung magbabago ang inyong vision"
+        },
+        "quality": {
+          "title": "Superior Vision Quality",
+          "description": "Exceptional clarity at contrast, lalo na sa low-light conditions"
+        },
+        "protection": {
+          "title": "UV Protection",
+          "description": "Built-in UV filter ang nagpoprotekta sa inyong retina mula sa harmful ultraviolet rays"
+        },
+        "preservation": {
+          "title": "Walang Corneal Changes",
+          "description": "Nag-preserve ng natural corneal structure at biomechanical properties"
+        },
+        "recovery": {
+          "title": "Mabilis na Recovery",
+          "description": "Karamihan ng patients ay bumabalik sa normal activities sa loob ng 24-48 oras"
+        },
+        "prescriptions": {
+          "title": "Mataas na Prescriptions",
+          "description": "Nag-correct ng severe myopia na lampas sa limits ng laser surgery"
+        }
+      }
+    },
+    "comparison": {
+      "title": "ICL vs Laser Surgery",
+      "subtitle": "Pag-unawa kung kailan ang ICL ang superior choice",
+      "icl": {
+        "title": "ICL Advantages",
+        "items": [
+          "Nag-correct ng prescriptions hanggang -20.00 D",
+          "Ganap na reversible procedure",
+          "Walang dry eye complications",
+          "Superior night vision quality",
+          "Nag-preserve ng natural corneal structure",
+          "Built-in UV protection",
+          "Walang kinakailangang corneal healing"
+        ]
+      },
+      "laser": {
+        "title": "Laser Limitations",
+        "items": [
+          "Limited prescription range",
+          "Permanent corneal changes",
+          "Potential para sa dry eyes",
+          "Maaaring makaapekto sa night vision",
+          "Kailangan ng adequate corneal thickness",
+          "Hindi maaaring mag-correct ng extreme myopia",
+          "Irreversible tissue removal"
+        ]
+      }
+    },
+    "candidates": {
+      "title": "Sino ang Pinaka-Nakikinabang sa ICL?",
+      "subtitle": "Ang ICL ay ideal solution para sa specific patient needs at prescription ranges",
+      "high": {
+        "title": "Mataas na Prescriptions",
+        "description": "Mga pasyenteng may severe myopia (-3.00 to -20.00 D) o hyperopia (+0.50 to +10.00 D)",
+        "benefits": ["Lampas sa laser limits", "Exceptional correction", "Stable results"]
+      },
+      "thin": {
+        "title": "Manipis na Corneas",
+        "description": "Kapag ang corneal thickness ay hindi sapat para sa laser procedures",
+        "benefits": ["Walang corneal tissue removal", "Nag-preserve ng eye structure", "Safe alternative"]
+      },
+      "quality": {
+        "title": "Quality Seekers",
+        "description": "Mga pasyenteng nag-prioritize ng superior vision quality at reversibility",
+        "benefits": ["Premium vision quality", "Reversible option", "UV protection"]
+      },
+      "requirements": {
+        "title": "Pre-Procedure Requirements",
+        "qualifying": {
+          "title": "Qualifying Factors:",
+          "items": [
+            "Age 21-45 para sa optimal results",
+            "Stable prescription para sa 1+ years",
+            "Adequate anterior chamber depth",
+            "Healthy corneal endothelium",
+            "Walang active eye disease"
+          ]
+        },
+        "disqualifying": {
+          "title": "Disqualifying Conditions:",
+          "items": [
+            "Glaucoma o high eye pressure",
+            "Previous eye surgeries",
+            "Shallow anterior chamber",
+            "Active eye inflammation",
+            "Unrealistic expectations"
+          ]
+        }
+      }
+    },
+    "cta": {
+      "title": "Tama ba ang ICL para sa Inyong Mataas na Prescription?",
+      "subtitle": "Tuklasin kung ang ICL ay perpektong reversible solution para sa inyong vision needs. Mag-schedule ng comprehensive evaluation kay Dr. Flowers para i-explore ang revolutionary option na ito.",
+      "schedule": "Mag-schedule ng ICL Consultation",
+      "compare": "Ikumpara ang Lahat ng Procedures"
+    }
+  },
+  "comparison": {
+    "title": "Side-by-Side Comparison",
+    "subtitle": "Ikumpara ang key features ng bawat procedure para makatulong sa inyo na gumawa ng informed decision",
+    "featureHeader": "Feature",
+    "recommendation": "Hindi sigurado kung aling procedure ang tama para sa inyo?",
+    "cta": "Kumuha ng Personalized Recommendation",
+    "features": {
+      "recoveryTime": "Recovery Time",
+      "procedureTime": "Procedure Time",
+      "painLevel": "Pain Level",
+      "highRx": "Angkop para sa High Rx",
+      "nightVision": "Night Vision",
+      "reversibility": "Reversibility",
+      "successRate": "Success Rate",
+      "idealFor": "Ideal Para sa"
+    },
+    "values": {
+      "lasik": {
+        "recoveryTime": "1-2 araw",
+        "procedureTime": "15 minuto",
+        "painLevel": "Minimal",
+        "highRx": "Limited",
+        "nightVision": "Excellent",
+        "reversibility": "Hindi"
+      },
+      "prk": {
+        "recoveryTime": "3-5 araw",
+        "procedureTime": "15 minuto",
+        "painLevel": "Mild-Moderate",
+        "highRx": "Limited",
+        "nightVision": "Excellent",
+        "reversibility": "Hindi"
+      },
+      "icl": {
+        "recoveryTime": "1-3 araw",
+        "procedureTime": "30 minuto",
+        "painLevel": "Minimal",
+        "highRx": "Excellent",
+        "nightVision": "Superior",
+        "reversibility": "Oo"
+      }
+    }
+  },
+  "process": {
+    "title": "Ang Inyong Revolutionary Journey",
+    "subtitle": "Ang bawat procedure ay sumusunod sa proven process ni Dr. Flowers para sa optimal results",
+    "steps": {
+      "consultation": {
+        "title": "Free Consultation",
+        "description": "Comprehensive eye exam at procedure recommendation"
+      },
+      "preparation": {
+        "title": "Pre-Op Preparation",
+        "description": "Detailed measurements at surgical planning"
+      },
+      "procedure": {
+        "title": "Revolutionary Procedure",
+        "description": "Mabilis, comfortable surgery na may advanced technology"
+      },
+      "recovery": {
+        "title": "Recovery & Follow-up",
+        "description": "Personalized care at monitoring para sa optimal healing"
+      }
+    }
+  },
+  "cta": {
+    "title": "Handa na ba para Baguhin ang Inyong Vision?",
+    "subtitle": "Mag-schedule ng inyong free consultation kay Dr. Flowers at tuklasin kung aling revolutionary procedure ang perpekto para sa inyong lifestyle at vision needs.",
+    "schedule": "Mag-schedule ng Free Consultation",
+    "testimonials": "Makita ang Testimonials"
+  }
+}

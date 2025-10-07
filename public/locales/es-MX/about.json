@@ -1,0 +1,192 @@
+{
+  "hero": {
+    "badge": "Revolucionario de la Salud y Pionero en el Cuidado de la Visión",
+    "title": "Dr. Charles W. Flowers Jr., MD",
+    "subtitle": "Visión Revolucionaria. Excelencia Accesible.",
+    "description": "Una figura transformadora en la oftalmología moderna, distinguido no solo por la excelencia quirúrgica sino por su enfoque revolucionario hacia la accesibilidad de la atención médica. Con más de 30,000 procedimientos de corrección de visión láser y trabajo pionero en la región del Pacífico.",
+    "cta": {
+      "schedule": "Programar Consulta",
+      "pacific": "La Revolución del Pacífico"
+    }
+  },
+  "excellence": {
+    "title": "Liderazgo Revolucionario en Salud",
+    "clinical": {
+      "title": "Excelencia Clínica",
+      "description": "Más de 30,000 procedimientos de corrección de visión láser con 98% de satisfacción del paciente"
+    },
+    "academic": {
+      "title": "Liderazgo Académico",
+      "description": "Director del Programa de Entrenamiento de Residencia en Oftalmología de USC"
+    },
+    "global": {
+      "title": "Impacto Global",
+      "description": "Primer cirujano en realizar LASIK en Guam, sirviendo a más de 200,000 residentes del Pacífico"
+    },
+    "quote": "Antes de que comenzara a ofrecer procedimientos de corrección de visión láser en Guam, cualquiera que quisiera corrección de visión láser tenía que viajar a Filipinas o Estados Unidos, un vuelo de trece horas. No podías recibir atención si no tenías los medios para salir de la isla. Ahora, el cuidado ocular de clase mundial está disponible aquí mismo, en casa.",
+    "attribution": "— Dr. Charles W. Flowers Jr., MD"
+  },
+  "education": {
+    "title": "Excelencia Educativa",
+    "subtitle": "Una base de logros académicos de las instituciones más prestigiosas de la nación",
+    "institutions": {
+      "stanford": {
+        "name": "Universidad Stanford",
+        "years": "1981-1985",
+        "degree": "Licenciatura en Ciencias, Química"
+      },
+      "cornell": {
+        "name": "Facultad de Medicina de la Universidad Cornell",
+        "years": "1985-1989",
+        "degree": "Doctor en Medicina",
+        "honors": ["Becario Nacional de Medicina"]
+      },
+      "drew": {
+        "name": "Facultad de Medicina de la Universidad Charles R. Drew",
+        "years": "1989-1993",
+        "degree": "Internado, Cirugía General y Residencia, Oftalmología",
+        "honors": ["Residente Jefe (1992-1993)", "Interno del Año", "Beneficiario de la Beca del Instituto Nacional del Ojo"]
+      },
+      "usc": {
+        "name": "USC/Instituto del Ojo Doheny",
+        "years": "1993-1995",
+        "degree": "Beca, Cirugía Corneal y Refractiva y Enfermedad Externa",
+        "honors": ["Premio al Mérito de la Fundación Familia Henry J. Kaiser", "Premio de Excelencia en Entrenamiento de Residentes"]
+      }
+    }
+  },
+  "mission": {
+    "title": "La Misión del Pacífico: Transformando una Región Entera",
+    "subtitle": "Desde 2010 hasta el presente, revolucionando la accesibilidad de la salud para más de 200,000 residentes del Pacífico",
+    "innovation": {
+      "title": "Innovación Revolucionaria en Salud",
+      "description1": "En 2010, el Dr. Flowers emprendió lo que se convertiría en su iniciativa de salud más impactante. Respondiendo a una solicitud del ex residente Dr. Anthony Smith, viajó a Guam para evaluar la viabilidad de establecer el primer centro LASIK de la región. Lo que descubrió fue una crisis de salud que afectaba a más de 200,000 residentes del Pacífico que no tenían acceso a cirugía de corrección de visión sin viajar 13 horas a Hawái o Filipinas.",
+      "description2": "De 2010 a 2013, el Dr. Flowers se dedicó a diseñar y establecer un centro LASIK en Island Eye Institute. Sus esfuerzos culminaron en 2013 cuando realizó el primer procedimiento LASIK en la región del Pacífico, transformando instantáneamente la accesibilidad de la salud para toda una población."
+    },
+    "stats": {
+      "procedures": {
+        "number": "600+",
+        "label": "Procedimientos LASIK en Guam",
+        "description": "Cirugías exitosas realizadas"
+      },
+      "residents": {
+        "number": "200,000+",
+        "label": "Residentes Atendidos",
+        "description": "Con acceso a cuidado ocular avanzado"
+      },
+      "savings": {
+        "number": "$3,000+",
+        "label": "Costos de Viaje Ahorrados",
+        "description": "Ahorro promedio por paciente"
+      },
+      "time": {
+        "number": "13 Horas",
+        "label": "Tiempo de Vuelo Eliminado",
+        "description": "Para cada procedimiento del paciente"
+      }
+    }
+  },
+  "telemedicine": {
+    "title": "Pionero en Telemedicina",
+    "description": "La innovación del Dr. Flowers va más allá de la excelencia quirúrgica. Reconociendo la alta prevalencia de diabetes y la predisposición genética en Guam, aseguró fondos para una iniciativa innovadora de telemedicina. Este proyecto piloto de teleretinopatía involucró:",
+    "features": [
+      "Despliegue de cámaras de imagen retiniana de última generación en clínicas de atención primaria en todo Guam",
+      "Implementación de infraestructura híbrida en la nube segura para almacenamiento de imágenes compatible con HIPAA y análisis en tiempo real",
+      "Aprovechamiento de inteligencia artificial y algoritmos de aprendizaje automático para detección y clasificación automatizada de retinopatía diabética",
+      "Establecimiento de vías de teleconsulta fluidas conectando clínicas de Guam con especialistas en retina de USC",
+      "Permitir detección e intervención temprana de retinopatía diabética amenazante para la vista antes de que ocurra pérdida de visión",
+      "Desarrollo de programas de capacitación integrales para certificar a médicos locales en imágenes retinianas avanzadas y protocolos de diagnóstico"
+    ]
+  },
+  "expertise": {
+    "title": "Excelencia y Experiencia Clínica",
+    "surgical": {
+      "title": "Especializaciones Quirúrgicas",
+      "procedures": [
+        "Queratomileusis In Situ Asistida por Láser (LASIK)",
+        "Cirugía Avanzada de Cataratas",
+        "Trasplante de Córnea (incluyendo DSAEK)",
+        "Lente Colámera Implantable Visian (ICL)",
+        "Queratectomía Fotorrefractiva (PRK)",
+        "Implantación de Intacs para Queratocono",
+        "Cirugía de Pterigión",
+        "Entrecruzamiento de Colágeno"
+      ]
+    },
+    "research": {
+      "title": "Prioridades de Investigación",
+      "areas": [
+        "Optimización de resultados visuales en LASIK y cirugía de cataratas",
+        "Entrenamiento de visión deportiva y mejora del rendimiento atlético",
+        "Aplicaciones de telemedicina en oftalmología",
+        "Estudios poblacionales de retinopatía diabética"
+      ],
+      "funding": "Financiamiento de Subvenciones: Más de $1 millón asegurado en fondos de investigación"
+    }
+  },
+  "awards": {
+    "title": "Reconocimiento y Premios",
+    "subtitle": "Reconocimiento nacional por innovación, excelencia e impacto humanitario",
+    "list": [
+      "Los Mejores Oftalmólogos de América - Consejo de Investigación de Consumidores de América (2000)",
+      "Laureado Computer World Smithsonian - La Cara de la Innovación (1998)",
+      "Becario Nacional de Medicina - Facultad de Medicina de la Universidad Cornell",
+      "Premio al Mérito de la Fundación Familia Henry J. Kaiser",
+      "Premio de Excelencia - RCMI/Universidad Charles R. Drew (2000)",
+      "Premio Memorial Sara Stivelman - Comisión de Calidad y Productividad del Condado de LA (1999)",
+      "Homenajeado Masters In Medicine - Recycling Black Dollars Communications (1999)",
+      "Premio del Innovador - Departamento de Servicios de Salud del Condado de Los Ángeles (1998)",
+      "Mejor Cirujano LASIK - Revista San Diego"
+    ]
+  },
+  "dualMission": {
+    "title": "El Modelo de Misión Dual",
+    "subtitle": "Un modelo de práctica único que sirve como plan para abordar las disparidades en salud",
+    "la": {
+      "title": "Práctica de Los Ángeles",
+      "features": [
+        "Instalación de última generación",
+        "Servicios integrales de corrección de visión",
+        "Experiencia revolucionaria del paciente",
+        "Integración de tecnología avanzada",
+        "Liderazgo del programa de residencia",
+        "Centro de investigación e innovación"
+      ]
+    },
+    "pacific": {
+      "title": "Misión del Pacífico",
+      "features": [
+        "Misiones quirúrgicas trimestrales a Guam",
+        "Capacidades quirúrgicas móviles",
+        "Capacitación y mentoría de médicos locales",
+        "Desarrollo de infraestructura de telemedicina",
+        "Construcción de sistemas de salud sostenibles"
+      ]
+    },
+    "cta": "Aprenda Más Sobre la Misión del Pacífico"
+  },
+  "impact": {
+    "title": "Impacto en Números",
+    "stats": [
+      { "number": "30,000+", "label": "Procedimientos Totales" },
+      { "number": "600+", "label": "Procedimientos en Guam" },
+      { "number": "200,000+", "label": "Residentes del Pacífico Atendidos" },
+      { "number": "98%", "label": "Satisfacción del Paciente" },
+      { "number": "20+", "label": "Años de Experiencia" },
+      { "number": "15+", "label": "Años de Servicio en el Pacífico" },
+      { "number": "12", "label": "Islas del Pacífico" },
+      { "number": "$1M+", "label": "Fondos de Investigación" },
+      { "number": "4", "label": "Misiones Anuales a Guam" }
+    ]
+  },
+  "philosophy": {
+    "title": "Filosofía de Cuidado del Paciente",
+    "quote": "Trato a cada paciente como si estuviera cuidando a un miembro de la familia. Establecer una relación personal es una prioridad, para que pueda tener lugar una comunicación abierta, honesta y transparente sobre cada aspecto de su condición visual y las intervenciones de cuidado.",
+    "description": "Esta filosofía se extiende más allá del cuidado individual del paciente para abarcar comunidades enteras. El Dr. Flowers cree que la atención médica debe llegar a todos los rincones del mundo, y que la innovación no se trata solo de tecnología, se trata de encontrar formas de llevar tratamientos que cambian la vida a quienes más los necesitan, independientemente de la ubicación o las circunstancias."
+  },
+  "cta": {
+    "title": "Experimente el Cuidado de Visión Revolucionario",
+    "subtitle": "Únase a los miles de pacientes que han confiado su visión al Dr. Flowers. Programe su consulta hoy y descubra la diferencia que hace el cuidado revolucionario.",
+    "schedule": "Programe Su Consulta"
+  }
+}

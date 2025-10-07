@@ -1,0 +1,80 @@
+{
+  "labels": {
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo Electrónico",
+    "phone": "Número de Teléfono",
+    "message": "Mensaje",
+    "procedure": "Procedimiento de Interés",
+    "preferredContact": "Método de Contacto Preferido",
+    "comments": "Preguntas o Comentarios",
+    "age": "Edad",
+    "occupation": "Ocupación",
+    "location": "Ubicación",
+    "visionBefore": "Visión Antes",
+    "visionAfter": "Visión Después",
+    "rating": "Calificación",
+    "testimonialText": "Su Experiencia"
+  },
+  "placeholders": {
+    "firstName": "Su nombre",
+    "lastName": "Su apellido",
+    "email": "su.correo@ejemplo.com",
+    "phone": "(555) 123-4567",
+    "message": "Platíquenos sobre sus metas de visión...",
+    "comments": "¿Alguna pregunta o solicitud especial?...",
+    "age": "Su edad",
+    "occupation": "Su profesión",
+    "location": "Ciudad, Estado",
+    "testimonialText": "Comparta su experiencia con el Dr. Flowers..."
+  },
+  "options": {
+    "procedures": {
+      "lasik": "LASIK",
+      "prk": "PRK", 
+      "icl": "ICL",
+      "consultation": "Consulta General"
+    },
+    "contactMethods": {
+      "phone": "Teléfono",
+      "email": "Correo Electrónico",
+      "text": "Mensaje de Texto"
+    },
+    "ratings": {
+      "1": "Malo",
+      "2": "Regular",
+      "3": "Bueno",
+      "4": "Muy Bueno",
+      "5": "Excelente"
+    }
+  },
+  "buttons": {
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "reset": "Restablecer",
+    "save": "Guardar",
+    "scheduleConsultation": "Programar Consulta",
+    "requestCallback": "Solicitar Llamada",
+    "downloadInfo": "Descargar Información",
+    "shareTestimonial": "Comparta Su Historia"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "invalidEmail": "Por favor ingrese un correo electrónico válido",
+    "invalidPhone": "Por favor ingrese un número de teléfono válido",
+    "tooShort": "Este campo es muy corto",
+    "tooLong": "Este campo es muy largo",
+    "invalidRating": "Por favor seleccione una calificación"
+  },
+  "success": {
+    "submitted": "¡Gracias! Su formulario ha sido enviado exitosamente.",
+    "scheduled": "Su consulta ha sido programada.",
+    "contacted": "Nos pondremos en contacto con usted dentro de 24 horas.",
+    "testimonialSubmitted": "¡Gracias por compartir su experiencia!"
+  },
+  "privacy": {
+    "notice": "Al enviar este formulario, usted consiente ser contactado sobre nuestros servicios.",
+    "security": "Su información es segura y nunca será compartida.",
+    "hipaa": "Todas las comunicaciones cumplen con HIPAA."
+  }
+}

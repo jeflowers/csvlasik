@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "badge": "Unang LASIK Pioneer sa Pacific Region",
+    "title": "Revolutionary",
+    "titleAccent": "Vision Care",
+    "subtitle": "Mula sa pagiging pioneer sa LASIK surgery sa Pacific islands hanggang sa pag-revolutionize ng vision care sa Los Angeles, si Dr. Flowers ay nagdadala ng decades ng expertise sa bawat procedure.",
+    "cta": {
+      "schedule": "MAG-SCHEDULE NG CONSULTATION",
+      "phone": "(844) 211-5462"
+    }
+  },
+  "stats": {
+    "livesTransformed": {
+      "label": "Mga Buhay na Nabago",
+      "description": "Mga matagumpay na procedure na natapos"
+    },
+    "pacificIslands": {
+      "label": "Pacific Islands",
+      "description": "Mga remote na lugar na naserve"
+    },
+    "successRate": {
+      "label": "Success Rate",
+      "description": "Mga pasyente na nakakuha ng 20/20 vision"
+    },
+    "yearsExperience": {
+      "label": "Taon ng Karanasan",
+      "description": "Revolutionary healthcare delivery"
+    }
+  },
+  "cta": {
+    "title": "Maranasan ang Revolutionary Vision Care",
+    "subtitle": "Sumama sa mga daan-daang pasyente na nagtiwala kay Dr. Flowers sa kanilang vision. Mula sa Pacific islands hanggang Los Angeles, maranasan ang pagkakaiba na ginagawa ng revolutionary care.",
+    "schedule": "MAG-SCHEDULE NG CONSULTATION",
+    "pacificStory": "ANG PACIFIC STORY"
+  }
+}

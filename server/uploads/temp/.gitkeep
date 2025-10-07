@@ -1,0 +1,12 @@
+# Temporary files directory
+# Used for:
+# - File processing intermediate steps
+# - Image optimization temporary files
+# - Upload validation staging
+# - Batch processing operations
+
+# Cleanup:
+# - Files automatically cleaned after 24 hours
+# - Failed upload cleanup
+# - Processing error cleanup
+# - Temporary file monitoring

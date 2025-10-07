@@ -1,0 +1,185 @@
+/* =========================================
+   CSVLASIK.COM COLOR PALETTE
+   Complete Color System Reference
+   ========================================= */
+
+/* =========================================
+   PRIMARY BRAND COLORS
+   ========================================= */
+
+/* Charcoal/Dark Colors */
+--charcoal-primary: #2c2c2c;
+--charcoal-dark: #1a1a1a;
+
+/* Gold Colors */
+--gold-primary: #c9a96e;
+--gold-dark: #b8956a;
+--gold-accent: #d4af37;
+
+/* Text Colors */
+--text-primary: #2c2c2c;
+--text-secondary: #666666;
+--text-accent: #c9a96e;
+
+/* =========================================
+   LUXURY COLOR SYSTEM
+   ========================================= */
+
+/* Navy Shades */
+--luxury-navy: #1a1a2e;
+--luxury-navy-light: #16213e;
+--luxury-navy-dark: #0f3460;
+
+/* Gold Shades */
+--luxury-gold: #d4af37;
+--luxury-gold-light: #ffd700;
+--luxury-gold-dark: #b8860b;
+
+/* Neutral Shades */
+--luxury-cream: #f8f9fa;
+--luxury-pearl: #ffffff;
+--luxury-charcoal: #2d3748;
+--luxury-silver: #a0aec0;
+
+/* =========================================
+   PRIMARY COLOR SCALE (GOLD)
+   ========================================= */
+
+--primary-50: #fefdf8;    /* Lightest */
+--primary-100: #fefbf0;
+--primary-200: #fcf4d9;
+--primary-300: #f9edc2;
+--primary-400: #f4df94;
+--primary-500: #d4af37;   /* Base */
+--primary-600: #b8860b;
+--primary-700: #9a6f0a;
+--primary-800: #7c5808;
+--primary-900: #654607;   /* Darkest */
+
+/* =========================================
+   GRADIENT DEFINITIONS
+   ========================================= */
+
+/* Dark Gradients */
+--gradient-chopard: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+--gradient-luxury: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+
+/* Gold Gradients */
+--gradient-accent: linear-gradient(135deg, #c9a96e 0%, #b8956a 100%);
+--gradient-gold: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #b8860b 100%);
+
+/* Light Gradients */
+--gradient-hero: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+--gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+
+/* Special Effects */
+--gradient-marble: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.8) 0%, transparent 50%), 
+                   radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.1) 0%, transparent 50%), 
+                   linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+
+/* =========================================
+   SHADOW DEFINITIONS
+   ========================================= */
+
+--shadow-luxury: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.1);
+--shadow-luxury-lg: 0 35px 60px -12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(212, 175, 55, 0.15);
+--shadow-gold: 0 10px 25px -5px rgba(212, 175, 55, 0.3);
+--shadow-gold-lg: 0 15px 35px -5px rgba(212, 175, 55, 0.4);
+--shadow-crystal: 0 25px 50px -12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+--shadow-chopard: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+--shadow-glow: 0 0 30px rgba(201, 169, 110, 0.2);
+
+/* =========================================
+   OPACITY VARIANTS
+   ========================================= */
+
+/* White with opacity */
+--white-98: rgba(255, 255, 255, 0.98);
+--white-95: rgba(255, 255, 255, 0.95);
+--white-80: rgba(255, 255, 255, 0.80);
+--white-70: rgba(255, 255, 255, 0.70);
+--white-60: rgba(255, 255, 255, 0.60);
+--white-50: rgba(255, 255, 255, 0.50);
+--white-20: rgba(255, 255, 255, 0.20);
+--white-10: rgba(255, 255, 255, 0.10);
+
+/* Black with opacity */
+--black-80: rgba(0, 0, 0, 0.80);
+--black-60: rgba(0, 0, 0, 0.60);
+--black-40: rgba(0, 0, 0, 0.40);
+--black-20: rgba(0, 0, 0, 0.20);
+--black-15: rgba(0, 0, 0, 0.15);
+--black-10: rgba(0, 0, 0, 0.10);
+--black-08: rgba(0, 0, 0, 0.08);
+--black-05: rgba(0, 0, 0, 0.05);
+
+/* Gold with opacity */
+--gold-accent-30: rgba(201, 169, 110, 0.3);
+--gold-accent-20: rgba(201, 169, 110, 0.2);
+--gold-accent-10: rgba(201, 169, 110, 0.1);
+
+/* =========================================
+   USAGE EXAMPLES
+   ========================================= */
+
+/*
+BACKGROUNDS:
+- Primary sections: var(--luxury-pearl)
+- Hero sections: var(--gradient-hero)
+- Dark sections: var(--gradient-chopard)
+- Cards: var(--white-95) with backdrop-filter
+
+TEXT:
+- Headings: var(--text-primary)
+- Body text: var(--text-secondary)
+- Accents: var(--text-accent)
+- Light text on dark: var(--luxury-pearl)
+
+BUTTONS:
+- Primary: var(--charcoal-primary) background, var(--luxury-pearl) text
+- Hover: var(--gold-primary) background, var(--charcoal-primary) text
+- Secondary: transparent with border
+
+BORDERS:
+- Default: var(--gold-accent-20)
+- Cards: var(--gold-accent-10)
+- Inputs: var(--black-20)
+
+SHADOWS:
+- Cards: var(--shadow-chopard)
+- Hover states: var(--shadow-luxury)
+- Focus states: var(--shadow-glow)
+*/
+
+/* =========================================
+   IMPLEMENTATION IN CSS
+   ========================================= */
+
+/* 
+Example Usage:
+
+.luxury-card {
+    background: var(--white-95);
+    border: 1px solid var(--gold-accent-10);
+    box-shadow: var(--shadow-chopard);
+}
+
+.primary-button {
+    background: var(--gradient-chopard);
+    color: var(--luxury-pearl);
+}
+
+.primary-button:hover {
+    background: var(--gradient-accent);
+    color: var(--charcoal-primary);
+}
+
+.hero-section {
+    background: var(--gradient-hero);
+}
+
+.glass-effect {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(15px);
+}
+*/

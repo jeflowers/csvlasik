@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "badge": "혁신적인 상담 예약하기",
+    "title": "당신의",
+    "titleAccent": "시력 여정을 시작하세요",
+    "subtitle": "혁신적인 시력 관리를 향한 첫 걸음을 내디디세요. Dr. Flowers와 무료 상담을 예약하고 그의 선구적인 기술이 어떻게 당신의 시력과 삶을 변화시킬 수 있는지 알아보세요."
+  },
+  "form": {
+    "title": "무료 상담 예약하기",
+    "selectProcedure": "시술 선택"
+  },
+  "info": {
+    "title": "연락하기",
+    "subtitle": "혁신적인 시력 관리를 경험할 준비가 되셨나요? 오늘 저희에게 연락하여 무료 상담을 예약하고 완벽한 시력을 향한 첫 걸음을 내디디세요."
+  },
+  "office": {
+    "name": "레이크우드 사무소",
+    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712"
+  },
+  "phone": {
+    "title": "전화",
+    "number": "(844) 211-5462",
+    "note": "직접 전화하려면 클릭"
+  },
+  "email": {
+    "title": "이메일",
+    "address": "info@clearsightlasik.com",
+    "note": "24시간 내에 응답합니다"
+  },
+  "hours": {
+    "title": "진료 시간",
+    "weekdays": "월요일 - 금요일: 오전 8:00 - 오후 6:00",
+    "saturday": "토요일: 오전 9:00 - 오후 3:00",
+    "sunday": "일요일: 휴무",
+    "emergency": "응급 상담 가능"
+  },
+  "quickActions": {
+    "title": "빠른 작업",
+    "callNow": "즉시 예약을 위해 지금 전화",
+    "learnProcedures": "시술에 대해 알아보기",
+    "financing": "금융 옵션"
+  },
+  "consultation": {
+    "title": "상담에서 기대할 수 있는 것",
+    "subtitle": "무료 상담은 포괄적이고 교육적이며 완전히 압박 없이 진행됩니다",
+    "steps": {
+      "exam": {
+        "title": "종합 눈 검사",
+        "description": "각막 매핑, 동공 측정, 시력 평가를 포함한 고급 진단 검사",
+        "duration": "45-60분"
+      },
+      "personal": {
+        "title": "개인 상담",
+        "description": "시력 목표, 라이프스타일, 시술 옵션에 대한 Dr. Flowers와의 일대일 논의",
+        "duration": "30-45분"
+      },
+      "plan": {
+        "title": "맞춤형 치료 계획",
+        "description": "혜택과 기대치에 대한 자세한 설명과 함께 개인화된 추천을 받으세요",
+        "duration": "15-30분"
+      }
+    },
+    "bring": {
+      "title": "가져올 것",
+      "glasses": "현재 안경이나 콘택트렌즈",
+      "insurance": "보험 카드",
+      "medications": "현재 복용 중인 약물 목록",
+      "id": "운전면허증 또는 신분증",
+      "questions": "질문 목록",
+      "driver": "집까지 데려다 줄 사람"
+    }
+  },
+  "emergency": {
+    "title": "수술 후 응급 연락처",
+    "description": "정상 진료 시간 외에 수술 후 응급상황을 겪고 있는 현재 환자인 경우:",
+    "phone": "응급 라인: (844) 211-5462",
+    "note": "응급이 아닌 질문의 경우 위의 일반 연락 방법을 사용해 주세요."
+  },
+  "cta": {
+    "title": "시력을 변화시킬 준비가 되셨나요?",
+    "subtitle": "Dr. Flowers에게 시력을 맡긴 수백 명의 환자들과 함께하세요. 완벽한 시력을 향한 혁신적인 여정은 간단한 전화 통화로 시작됩니다.",
+    "call": "전화 (844) 211-5462",
+    "testimonials": "후기 보기"
+  }
+}

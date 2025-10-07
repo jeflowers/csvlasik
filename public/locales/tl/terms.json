@@ -1,0 +1,74 @@
+{
+  "title": "Mga Tuntunin ng Serbisyo",
+  "subtitle": "ClearSight Vision Institute - Dr. Charles Flowers",
+  "lastUpdated": "Huling na-update",
+  "sections": {
+    "acceptance": {
+      "title": "Pagtanggap ng mga Tuntunin",
+      "description": "Sa pag-access at paggamit ng website na ito, tinatanggap at sumasang-ayon ka na maging obligado sa mga tuntunin at probisyon ng kasunduang ito."
+    },
+    "services": {
+      "title": "Mga Serbisyong Medikal",
+      "medicalNotice": {
+        "title": "Paunawa sa Medikal na Pagsasanay",
+        "description": "Ang ClearSight Vision Institute ay isang medikal na pagsasanay na nagbibigay ng propesyonal na mga serbisyo sa pangangalaga ng mata sa ilalim ng pangangasiwa ni Dr. Charles Flowers, MD."
+      },
+      "vision": {
+        "title": "Mga Serbisyo sa Pagwawasto ng Paningin",
+        "items": {
+          "lasik": "LASIK laser vision correction surgery",
+          "prk": "PRK photorefractive keratectomy",
+          "icl": "ICL implantable contact lens surgery",
+          "consultations": "Komprehensibong mga pagsusuri ng mata at konsultasyon"
+        }
+      },
+      "website": {
+        "title": "Mga Serbisyo ng Website",
+        "items": {
+          "information": "Impormasyon pang-edukasyon tungkol sa pagwawasto ng paningin",
+          "scheduling": "Online na pag-iskedyul ng appointment",
+          "resources": "Mga mapagkukunan at materyales ng pasyente",
+          "communication": "Secure na portal ng komunikasyon ng pasyente"
+        }
+      }
+    },
+    "responsibilities": {
+      "title": "Mga Responsibilidad ng User",
+      "user": {
+        "title": "Mga Responsibilidad ng Pasyente",
+        "items": {
+          "accurate": "Magbigay ng tumpak at kumpletong medikal na impormasyon",
+          "lawful": "Gamitin lamang ang aming mga serbisyo para sa mga layuning legal",
+          "confidential": "Panatilihin ang pagiging kumpidensyal ng mga kredensyal sa pag-login",
+          "instructions": "Sundin ang lahat ng mga tagubilin bago at pagkatapos ng operasyon"
+        }
+      },
+      "medical": {
+        "title": "Mga Responsibilidad sa Medikal na Pangangalaga",
+        "items": {
+          "consultation": "Dumalo sa lahat ng naka-iskedyul na konsultasyon at appointment",
+          "disclosure": "Ibunyag ang lahat ng nauugnay na kasaysayang medikal at mga gamot",
+          "followup": "Kumpletuhin ang lahat ng kinakailangang follow-up na pagsusuri",
+          "emergency": "Makipag-ugnayan kaagad para sa anumang mga alalahanin pagkatapos ng operasyon"
+        }
+      }
+    },
+    "limitations": {
+      "title": "Mga Limitasyon ng Pananagutan",
+      "disclaimer": {
+        "title": "Medikal na Disclaimer",
+        "description": "Ang mga indibidwal na resulta ay maaaring mag-iba. Ang website na ito ay nagbibigay ng pangkalahatang impormasyon at hindi kapalit ng propesyonal na payong medikal."
+      },
+      "description": "Ang pananagutan ng ClearSight Vision Institute ay limitado sa lawak na pinahihintulutan ng batas. Hindi kami mananagot para sa hindi direkta, hindi sinasadya, o mga konsekwenteng pinsala."
+    },
+    "contact": {
+      "title": "Impormasyon sa Pakikipag-ugnayan",
+      "legal": {
+        "title": "Legal na Departamento",
+        "organization": "ClearSight Vision Institute",
+        "address1": "5750 Downey Ave., Suite 101",
+        "address2": "Lakewood, CA 90712"
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "title": "服务条款",
+  "subtitle": "ClearSight 视力研究所 - 查尔斯·弗劳尔斯医生",
+  "lastUpdated": "最后更新",
+  "sections": {
+    "acceptance": {
+      "title": "接受条款",
+      "description": "通过访问和使用本网站，您接受并同意受本协议条款和条件的约束。"
+    },
+    "services": {
+      "title": "医疗服务",
+      "medicalNotice": {
+        "title": "医疗实践通知",
+        "description": "ClearSight 视力研究所是一家医疗机构，在查尔斯·弗劳尔斯医学博士的监督下提供专业眼科护理服务。"
+      },
+      "vision": {
+        "title": "视力矫正服务",
+        "items": {
+          "lasik": "LASIK激光视力矫正手术",
+          "prk": "PRK屈光性角膜切削术",
+          "icl": "ICL可植入式隐形眼镜手术",
+          "consultations": "综合眼科检查和咨询"
+        }
+      },
+      "website": {
+        "title": "网站服务",
+        "items": {
+          "information": "关于视力矫正的教育信息",
+          "scheduling": "在线预约安排",
+          "resources": "患者资源和材料",
+          "communication": "安全的患者通信门户"
+        }
+      }
+    },
+    "responsibilities": {
+      "title": "用户责任",
+      "user": {
+        "title": "患者责任",
+        "items": {
+          "accurate": "提供准确完整的医疗信息",
+          "lawful": "仅将我们的服务用于合法目的",
+          "confidential": "保持登录凭证的机密性",
+          "instructions": "遵守所有术前和术后指导"
+        }
+      },
+      "medical": {
+        "title": "医疗护理责任",
+        "items": {
+          "consultation": "参加所有预定的咨询和预约",
+          "disclosure": "披露所有相关的病史和药物",
+          "followup": "完成所有必需的后续检查",
+          "emergency": "如有任何术后问题立即联系我们"
+        }
+      }
+    },
+    "limitations": {
+      "title": "责任限制",
+      "disclaimer": {
+        "title": "医疗免责声明",
+        "description": "个体结果可能有所不同。本网站提供一般信息，不能替代专业医疗建议。"
+      },
+      "description": "ClearSight 视力研究所的责任仅限于法律允许的范围。我们不对间接、偶然或后果性损害负责。"
+    },
+    "contact": {
+      "title": "联系信息",
+      "legal": {
+        "title": "法务部",
+        "organization": "ClearSight 视力研究所",
+        "address1": "5750 Downey Ave., Suite 101",
+        "address2": "Lakewood, CA 90712"
+      }
+    }
+  }
+}

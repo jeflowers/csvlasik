@@ -1,0 +1,144 @@
+{
+  "hero": {
+    "badge": "Investment sa Revolutionary Vision Care",
+    "title": "Mga Investment Option",
+    "subtitle": "para sa Inyong Vision Journey",
+    "description": "Ang inyong vision ay walang presyo. Nag-offer kami ng sophisticated investment solutions na ginagawang accessible ang revolutionary care ni Dr. Flowers sa pamamagitan ng flexible, dignified arrangements na tailored sa inyong lifestyle.",
+    "cta": "Pag-usapan ang Investment Options"
+  },
+  "investment": {
+    "title": "Investment sa Inyong Future",
+    "description": "Ang revolutionary vision care ay kumakatawan sa isa sa pinaka-valuable na investments na pwede ninyong gawin. Ang freedom mula sa glasses at contacts, enhanced quality of life, at decades ng clear vision ay lumilikha ng immeasurable returns na nag-compound araw-araw.",
+    "benefits": {
+      "lifetime": {
+        "title": "Lifetime Value",
+        "description": "Decades ng freedom mula sa glasses at contacts"
+      },
+      "lifestyle": {
+        "title": "Enhanced Lifestyle",
+        "description": "Unrestricted activities at professional opportunities"
+      },
+      "expertise": {
+        "title": "Revolutionary Expertise",
+        "description": "Pacific-proven techniques at unmatched experience"
+      }
+    }
+  },
+  "solutions": {
+    "title": "Sophisticated Investment Solutions",
+    "subtitle": "Nag-offer kami ng dignified, flexible arrangements na nirerespeto ang value ng inyong investment",
+    "immediate": {
+      "title": "Immediate Investment",
+      "subtitle": "Complete Care Package",
+      "description": "Full investment sa inyong revolutionary vision journey na may comprehensive care na kasama",
+      "highlight": "Most Comprehensive",
+      "features": {
+        "coverage": "Complete procedure coverage",
+        "followup": "Lahat ng follow-up appointments",
+        "guarantee": "Lifetime enhancement guarantee",
+        "priority": "Priority scheduling",
+        "concierge": "Concierge care experience"
+      }
+    },
+    "structured": {
+      "title": "Structured Investment",
+      "subtitle": "Flexible Arrangements",
+      "description": "Dignified monthly arrangements na seamlessly fit sa inyong lifestyle",
+      "highlight": "Most Popular",
+      "features": {
+        "noInitial": "Walang initial investment na kailangan",
+        "flexible": "Flexible monthly arrangements",
+        "competitive": "Competitive terms available",
+        "approval": "Quick approval process",
+        "care": "Same revolutionary care"
+      }
+    },
+    "healthcare": {
+      "title": "Healthcare Investment",
+      "subtitle": "HSA/FSA Eligible",
+      "description": "I-maximize ang inyong healthcare investment accounts para sa tax-advantaged care",
+      "highlight": "Tax Advantaged",
+      "features": {
+        "eligible": "HSA/FSA eligible procedures",
+        "tax": "Tax-advantaged investment",
+        "documentation": "Documentation provided",
+        "optimization": "Flexible spending optimization",
+        "guidance": "Professional guidance"
+      }
+    },
+    "exploreOption": "I-explore ang Option na Ito"
+  },
+  "value": {
+    "title": "Ang True Value ng Revolutionary Vision",
+    "subtitle": "Isaalang-alang ang lifetime value ng inyong investment sa revolutionary vision care",
+    "benefits": {
+      "freedom": {
+        "title": "Freedom",
+        "value": "Priceless",
+        "description": "Walang glasses o contacts na naglilimit sa inyong activities"
+      },
+      "convenience": {
+        "title": "Convenience",
+        "value": "Daily",
+        "description": "Immediate clear vision sa paggising bawat umaga"
+      },
+      "confidence": {
+        "title": "Confidence",
+        "value": "Lifetime",
+        "description": "Enhanced self-image at professional presence"
+      },
+      "experience": {
+        "title": "Experience",
+        "value": "15+ Years",
+        "description": "Revolutionary Pacific-proven expertise ni Dr. Flowers"
+      }
+    }
+  },
+  "journey": {
+    "title": "Inyong Investment Journey",
+    "subtitle": "Seamless, dignified process na designed para sa inyong convenience",
+    "steps": {
+      "consultation": {
+        "title": "Consultation",
+        "description": "Comprehensive evaluation at personalized treatment planning"
+      },
+      "discussion": {
+        "title": "Investment Discussion",
+        "description": "Private consultation tungkol sa investment options at arrangements"
+      },
+      "finalization": {
+        "title": "Arrangement Finalization",
+        "description": "Seamless processing at scheduling ng inyong procedure"
+      },
+      "care": {
+        "title": "Revolutionary Care",
+        "description": "Inyong vision transformation na may comprehensive follow-up"
+      }
+    }
+  },
+  "concierge": {
+    "title": "Concierge Financial Services",
+    "description": "Ang aming dedicated financial concierge team ay nagbibigay ng personalized guidance para matulungan kayong pumili ng investment arrangement na best fit sa inyong lifestyle at preferences. Bawat conversation ay private, professional, at pressure-free.",
+    "services": {
+      "confidential": {
+        "title": "Confidential Consultation",
+        "description": "Private, dignified discussions tungkol sa inyong options"
+      },
+      "personalized": {
+        "title": "Personalized Solutions",
+        "description": "Arrangements na tailored sa inyong unique situation"
+      },
+      "whiteGlove": {
+        "title": "White-Glove Service",
+        "description": "Seamless processing at ongoing support"
+      }
+    },
+    "cta": "Mag-schedule ng Private Consultation"
+  },
+  "cta": {
+    "title": "Ang Inyong Vision Investment ay Naghihintay",
+    "description": "Huwag hayaang ang investment concerns ay mag-delay sa inyong journey sa revolutionary vision. Ang aming concierge team ay makikipagtulungan sa inyo para makagawa ng arrangement na ginagawang accessible at comfortable ang expertise ni Dr. Flowers para sa inyong lifestyle.",
+    "schedule": "Mag-schedule ng Investment Consultation",
+    "explore": "I-explore ang mga Procedure"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "banner": {
+    "title": "We value your privacy",
+    "description": "We use cookies to enhance your experience, analyze site usage, and assist in our marketing efforts. By clicking \"Accept All\", you consent to our use of cookies.",
+    "learnMore": "Learn more",
+    "preferences": "Preferences",
+    "necessaryOnly": "Necessary Only",
+    "acceptAll": "Accept All"
+  },
+  "preferences": {
+    "title": "Cookie Preferences",
+    "description": "You can choose which types of cookies to allow. Note that blocking some types of cookies may impact your experience on our site.",
+    "categories": {
+      "necessary": {
+        "title": "Necessary Cookies",
+        "description": "These cookies are essential for the website to function properly. They cannot be disabled."
+      },
+      "analytics": {
+        "title": "Analytics Cookies",
+        "description": "Help us understand how visitors interact with our website by collecting and reporting information anonymously."
+      },
+      "marketing": {
+        "title": "Marketing Cookies",
+        "description": "Used to track visitors across websites to display relevant and engaging advertisements."
+      },
+      "personalization": {
+        "title": "Personalization Cookies",
+        "description": "Allow us to remember your preferences and provide enhanced, personalized features."
+      }
+    },
+    "rights": {
+      "title": "Your Rights",
+      "change": "You can change your preferences at any time",
+      "access": "You can request access to your personal data",
+      "deletion": "You can request deletion of your personal data",
+      "withdraw": "You can withdraw consent at any time"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save Preferences"
+    }
+  }
+}

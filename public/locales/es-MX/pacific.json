@@ -1,0 +1,135 @@
+{
+  "pageTitle": "La Historia del Pacífico",
+  "hero": {
+    "title": "La Revolución del Pacífico",
+    "subtitle": "Cómo un cirujano transformó la atención médica para 200,000+ personas",
+    "badge": "Pionero desde 2013"
+  },
+  "timeline": {
+    "title": "Cronología de la Transformación",
+    "events": {
+      "2013_challenge": {
+        "year": "2013",
+        "title": "El Desafío del Pacífico",
+        "description": "Identificó una brecha crítica en la atención médica: más de 200,000 residentes del Pacífico sin acceso a cirugía de corrección de visión. La opción más cercana requería vuelos de 13 horas a Hawaii o Filipinas."
+      },
+      "2013_first": {
+        "year": "2013",
+        "title": "Primer LASIK en el Pacífico",
+        "description": "El Dr. Flowers realizó el primer procedimiento LASIK en la región del Pacífico, transformando instantáneamente la accesibilidad a la atención médica para toda una población."
+      },
+      "2013_2024": {
+        "year": "2013-2024",
+        "title": "600+ Vidas Transformadas",
+        "description": "Durante una década, realizó más de 600 procedimientos exitosos, ahorrando a los pacientes miles de dólares en costos de viaje y semanas lejos de sus familias."
+      },
+      "2024_dual": {
+        "year": "2024",
+        "title": "Misión Dual Los Ángeles + Pacífico",
+        "description": "Ahora sirviendo a Los Ángeles mientras continúa con misiones trimestrales a Guam, llevando atención revolucionaria a dos comunidades distintas."
+      }
+    }
+  },
+  "impact": {
+    "title": "El Impacto Geográfico",
+    "subtitle": "Transformación de la atención médica en toda la región",
+    "stats": {
+      "peopleServed": {
+        "number": "200,000+",
+        "label": "Personas con Acceso"
+      },
+      "flightTime": {
+        "number": "13 Horas",
+        "label": "Tiempo de Vuelo Eliminado"
+      },
+      "savings": {
+        "number": "$3,000+",
+        "label": "Ahorro por Paciente en Viajes"
+      },
+      "procedures": {
+        "number": "600+",
+        "label": "Procedimientos Realizados"
+      }
+    },
+    "regions": {
+      "title": "Territorios Atendidos",
+      "list": ["Guam", "Saipán", "Islas Marianas del Norte", "Micronesia", "Palau"]
+    }
+  },
+  "challenges": {
+    "title": "Rompiendo las Barreras",
+    "subtitle": "Los desafíos superados para llevar LASIK al Pacífico",
+    "items": {
+      "regulations": "Navegar complejas regulaciones médicas internacionales",
+      "environment": "Establecer entornos quirúrgicos estériles en condiciones tropicales",
+      "training": "Capacitar al personal médico local para cuidados pre y postoperatorios",
+      "supply": "Crear cadenas de suministro para equipos y medicamentos especializados",
+      "followup": "Desarrollar protocolos para seguimiento a través de vastas distancias oceánicas"
+    }
+  },
+  "firstProcedure": {
+    "title": "El Primer Procedimiento",
+    "date": "Una mañana húmeda en 2013",
+    "description": "El Dr. Flowers realizó el primer procedimiento LASIK en la región del Pacífico. La paciente, una maestra de Guam, había estado ahorrando durante años para costear el vuelo y procedimiento en Hawaii. En cambio, se convirtió en la paciente cero de una revolución en la atención médica.",
+    "quote": {
+      "text": "En cuestión de meses, el Dr. Flowers tenía una lista de espera de pacientes que se habían resignado a una vida con anteojos o turismo médico peligroso.",
+      "context": "El impacto fue inmediato y profundo"
+    }
+  },
+  "beyondProcedures": {
+    "title": "Más Allá de los Procedimientos Individuales",
+    "subtitle": "El impacto extendido de la presencia del Dr. Flowers",
+    "impacts": {
+      "families": "Las familias permanecieron unidas en lugar de viajar semanas para atención médica",
+      "economy": "La economía local se benefició de la reducción del turismo médico",
+      "inspiration": "Inspiración para que otros especialistas traigan servicios a áreas desatendidas",
+      "proof": "Prueba de que el aislamiento geográfico no significa aislamiento médico",
+      "model": "Un modelo para brindar atención médica avanzada en regiones remotas del mundo"
+    }
+  },
+  "continuingMission": {
+    "title": "La Misión Continua",
+    "description": "Hoy, el Dr. Flowers mantiene su compromiso con el Pacífico mientras sirve a Los Ángeles. Cada trimestre, regresa a Guam, asegurando que la revolución que comenzó continúe.",
+    "schedule": {
+      "title": "Calendario de Misiones del Pacífico",
+      "frequency": "Visitas Trimestrales",
+      "next": "Próxima Misión: Marzo 2025",
+      "locations": "Guam y Territorios Circundantes"
+    },
+    "commitment": "Esta doble misión—sirviendo tanto a un área metropolitana importante como a islas remotas del Pacífico—demuestra un nivel de dedicación que define la atención médica revolucionaria."
+  },
+  "testimonials": {
+    "title": "Voces del Pacífico",
+    "items": {
+      "teacher": {
+        "quote": "El Dr. Flowers no solo me dio una visión perfecta - me salvó de viajes anuales a Hawaii para atención ocular. Revolucionario no es solo una palabra, es lo que hizo por toda nuestra isla.",
+        "author": "Ana Torres",
+        "role": "Primera Paciente LASIK, Guam"
+      },
+      "military": {
+        "quote": "Como militar estacionado en Guam, PRK era perfecta para mis requisitos de servicio activo. El Dr. Flowers entendió las necesidades militares y entregó resultados que excedieron los estándares de vuelo de la Marina.",
+        "author": "Capitán James Davidson",
+        "role": "Marina de EE.UU., Base Naval de Guam"
+      },
+      "family": {
+        "quote": "Tres generaciones de mi familia han tenido procedimientos con el Dr. Flowers. Mi abuela fue una de sus primeras pacientes en Guam. ¡El cuidado revolucionario ahora corre en nuestra familia!",
+        "author": "Lisa Matsumoto",
+        "role": "Residente de Guam"
+      }
+    }
+  },
+  "joinRevolution": {
+    "title": "Únete a la Revolución",
+    "description": "Experimenta el mismo cuidado pionero que transformó la atención médica para toda una región.",
+    "cta": "Agenda Tu Consulta",
+    "locations": {
+      "la": "Los Ángeles, California",
+      "pacific": "Guam y Territorios del Pacífico"
+    }
+  },
+  "mediaHighlight": {
+    "title": "Reconocimiento Internacional",
+    "quote": "Lo que el Dr. Flowers logró en el Pacífico es nada menos que revolucionario. Él no solo trajo un servicio médico - transformó la accesibilidad a la atención médica para toda una región.",
+    "source": "Pacific Medical Journal, 2014"
+  }
+}

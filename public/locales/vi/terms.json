@@ -1,0 +1,74 @@
+{
+  "title": "Điều khoản Dịch vụ",
+  "subtitle": "Viện Thị lực ClearSight - Bác sĩ Charles Flowers",
+  "lastUpdated": "Cập nhật lần cuối",
+  "sections": {
+    "acceptance": {
+      "title": "Chấp nhận Điều khoản",
+      "description": "Bằng cách truy cập và sử dụng trang web này, bạn chấp nhận và đồng ý bị ràng buộc bởi các điều khoản và điều kiện của thỏa thuận này."
+    },
+    "services": {
+      "title": "Dịch vụ Y tế",
+      "medicalNotice": {
+        "title": "Thông báo Thực hành Y khoa",
+        "description": "Viện Thị lực ClearSight là một cơ sở y tế cung cấp dịch vụ chăm sóc mắt chuyên nghiệp dưới sự giám sát của Bác sĩ Charles Flowers, MD."
+      },
+      "vision": {
+        "title": "Dịch vụ Điều chỉnh Thị lực",
+        "items": {
+          "lasik": "Phẫu thuật điều chỉnh thị lực bằng laser LASIK",
+          "prk": "Phẫu thuật cắt giác mạc khúc xạ PRK",
+          "icl": "Phẫu thuật cấy kính tiếp xúc ICL",
+          "consultations": "Khám mắt toàn diện và tư vấn"
+        }
+      },
+      "website": {
+        "title": "Dịch vụ Trang web",
+        "items": {
+          "information": "Thông tin giáo dục về điều chỉnh thị lực",
+          "scheduling": "Đặt lịch hẹn trực tuyến",
+          "resources": "Tài nguyên và tài liệu cho bệnh nhân",
+          "communication": "Cổng giao tiếp an toàn cho bệnh nhân"
+        }
+      }
+    },
+    "responsibilities": {
+      "title": "Trách nhiệm của Người dùng",
+      "user": {
+        "title": "Trách nhiệm của Bệnh nhân",
+        "items": {
+          "accurate": "Cung cấp thông tin y tế chính xác và đầy đủ",
+          "lawful": "Chỉ sử dụng dịch vụ của chúng tôi cho mục đích hợp pháp",
+          "confidential": "Duy trì tính bảo mật của thông tin đăng nhập",
+          "instructions": "Tuân theo tất cả các hướng dẫn trước và sau phẫu thuật"
+        }
+      },
+      "medical": {
+        "title": "Trách nhiệm Chăm sóc Y tế",
+        "items": {
+          "consultation": "Tham dự tất cả các cuộc tư vấn và lịch hẹn đã lên lịch",
+          "disclosure": "Tiết lộ toàn bộ lịch sử bệnh và thuốc liên quan",
+          "followup": "Hoàn thành tất cả các khám theo dõi cần thiết",
+          "emergency": "Liên hệ ngay lập tức với chúng tôi về bất kỳ mối lo ngại sau phẫu thuật nào"
+        }
+      }
+    },
+    "limitations": {
+      "title": "Giới hạn Trách nhiệm",
+      "disclaimer": {
+        "title": "Tuyên bố Miễn trừ Y tế",
+        "description": "Kết quả cá nhân có thể khác nhau. Trang web này cung cấp thông tin chung và không thay thế lời khuyên y tế chuyên nghiệp."
+      },
+      "description": "Trách nhiệm của Viện Thị lực ClearSight bị giới hạn trong phạm vi cho phép của pháp luật. Chúng tôi không chịu trách nhiệm về các thiệt hại gián tiếp, ngẫu nhiên hoặc hậu quả."
+    },
+    "contact": {
+      "title": "Thông tin Liên hệ",
+      "legal": {
+        "title": "Phòng Pháp chế",
+        "organization": "Viện Thị lực ClearSight",
+        "address1": "5750 Downey Ave., Suite 101",
+        "address2": "Lakewood, CA 90712"
+      }
+    }
+  }
+}

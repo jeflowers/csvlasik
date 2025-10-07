@@ -1,0 +1,51 @@
+{
+  "company": {
+    "name": "ClearSight",
+    "tagline": "비전 연구소",
+    "description": "태평양 지역의 LASIK 수술 개척자이며 로스앤젤레스에 혁신적인 시력 관리를 제공합니다."
+  },
+  "quickLinks": {
+    "title": "빠른 링크",
+    "about": "Dr. Flowers 소개",
+    "allProcedures": "모든 시술",
+    "pacificStory": "태평양 이야기",
+    "testimonials": "후기",
+    "technology": "기술"
+  },
+  "procedures": {
+    "title": "시술",
+    "lasik": "LASIK 수술",
+    "prk": "PRK 수술",
+    "icl": "ICL",
+    "blog": "블로그 및 자료",
+    "consultation": "상담 예약"
+  },
+  "contact": {
+    "title": "연락처 정보",
+    "office": "레이크우드 사무소",
+    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712",
+    "phone": "(844) 211-5462",
+    "email": "info@clearsightlasik.com"
+  },
+  "newsletter": {
+    "title": "최신 소식 받기",
+    "description": "태평양 미션과 시력 관리 혁신의 최신 소식을 받아보세요",
+    "placeholder": "이메일 주소",
+    "subscribe": "구독"
+  },
+  "social": {
+    "facebook": "페이스북",
+    "instagram": "인스타그램",
+    "youtube": "유튜브",
+    "twitter": "트위터",
+    "tiktok": "틱톡"
+  },
+  "legal": {
+    "copyright": "© 2025 ClearSight - Dr. Charles Flowers, MD. 모든 권리 보유.",
+    "privacy": "개인정보 보호정책",
+    "terms": "서비스 약관"
+  },
+  "badge": {
+    "pacificMission": "🌊 태평양 미션 후원자"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "badge": "혁신적인 결과 - 실제 환자",
+    "title": "인생을 바꾸는",
+    "titleAccent": "환자 후기",
+    "description": "Dr. Flowers의 혁신적인 시력 교정 기술로 우리 환자들이 경험한 변화의 결과를 발견하세요. 태평양 섬들부터 로스앤젤레스까지, 한 번에 하나의 시술로 삶이 변화되고 있습니다.",
+    "cta": "당신의 변화 시작하기"
+  },
+  "results": {
+    "title": "입증된 혁신적 결과",
+    "description": "숫자가 모든 것을 말해줍니다 - 모든 시술에서 뛰어난 결과",
+    "stats": {
+      "vision": {
+        "label": "20/20 시력 달성",
+        "description": "24-48시간 내에 또는 더 좋게"
+      },
+      "satisfaction": {
+        "label": "환자 만족도",
+        "description": "Dr. Flowers를 추천할 것"
+      },
+      "rating": {
+        "label": "평균 평점",
+        "description": "모든 리뷰 플랫폼에서"
+      },
+      "stories": {
+        "label": "성공 사례",
+        "description": "시력으로 변화된 삶"
+      }
+    }
+  },
+  "featured": {
+    "title": "주요 성공 사례",
+    "description": "혁신적인 시력 변화 여정을 공유하는 실제 환자들"
+  },
+  "pacific": {
+    "title": "태평양 지역 변화",
+    "description": "Dr. Flowers의 태평양 개척 미션에서 나온 혁신적 결과"
+  },
+  "badges": {
+    "pacific": "태평양 환자",
+    "military": "군인",
+    "success": "성공"
+  },
+  "gallery": {
+    "title": "시력 변화 갤러리",
+    "description": "모든 시술에서 시력 품질의 극적인 개선을 확인하세요",
+    "before": "치료 전",
+    "after": "치료 후",
+    "satisfaction": "환자 만족도"
+  },
+  "reviews": {
+    "title": "환자들의 말",
+    "description": "혁신적인 치료를 경험한 실제 환자들의 진정한 리뷰"
+  },
+  "cta": {
+    "title": "우리의 성공 사례에 합류할 준비가 되셨나요?",
+    "description": "30,000명 이상의 삶을 변화시킨 혁신적인 시력 관리를 경험하세요. 당신의 성공 사례는 무료 상담으로 시작됩니다.",
+    "schedule": "무료 상담 예약하기",
+    "procedures": "시술 선택하기"
+  }
+}

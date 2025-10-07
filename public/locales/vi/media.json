@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "badge": "Những Hiểu Biết và Giáo Dục Cách Mạng",
+    "title": "Phương Tiện & Tài Nguyên",
+    "description": "Luôn cập nhật với những hiểu biết mới nhất từ thực hành cách mạng của Bác sĩ Flowers. Từ các thủ thuật tiên tiến đến cập nhật sứ mệnh Thái Bình Dương, khám phá tương lai của chăm sóc thị lực thông qua quan điểm chuyên gia và câu chuyện bệnh nhân."
+  },
+  "featured": {
+    "sectionTitle": "Bài Viết Nổi Bật",
+    "title": "Hành Trình Cách Mạng: Làm Thế Nào Các Sứ Mệnh Thái Bình Dương Định Hình LASIK Hiện Đại",
+    "excerpt": "Khám phá cách những điều kiện thách thức ở các đảo Thái Bình Dương xa xôi đã dẫn đến những đổi mới đột phá trong chỉnh sửa thị lực bằng laser hiện đang mang lại lợi ích cho bệnh nhân trên toàn thế giới.",
+    "readMore": "Đọc Bài Viết"
+  },
+  "sidebar": {
+    "categories": "Danh Mục",
+    "newsletter": {
+      "title": "Cập Nhật Thông Tin",
+      "description": "Nhận những hiểu biết mới nhất và cập nhật sứ mệnh Thái Bình Dương",
+      "placeholder": "Email của bạn",
+      "subscribe": "Đăng Ký"
+    }
+  },
+  "posts": {
+    "readMore": "Đọc Thêm",
+    "loadMore": "Tải Thêm Bài Viết"
+  },
+  "categories": {
+    "all": "Tất Cả Bài Viết",
+    "innovation": "Đổi Mới",
+    "procedures": "Thủ Thuật",
+    "technology": "Công Nghệ",
+    "patientCare": "Chăm Sóc Bệnh Nhân",
+    "mission": "Sứ Mệnh"
+  },
+  "resources": {
+    "title": "Tài Nguyên Giáo Dục",
+    "description": "Hướng dẫn và tài nguyên toàn diện để giúp bạn hiểu về chỉnh sửa thị lực",
+    "learnMore": "Tìm Hiểu Thêm"
+  },
+  "cta": {
+    "title": "Sẵn Sàng Bắt Đầu Hành Trình Thị Lực Của Bạn?",
+    "description": "Có câu hỏi về chỉnh sửa thị lực? Muốn tìm hiểu thêm về các kỹ thuật cách mạng của Bác sĩ Flowers? Đặt lịch tư vấn miễn phí ngay hôm nay.",
+    "schedule": "Đặt Lịch Tư Vấn Miễn Phí",
+    "explore": "Khám Phá Thủ Thuật"
+  }
+}

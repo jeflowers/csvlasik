@@ -1,0 +1,235 @@
+{
+  "pageTitle": "Tecnología Avanzada",
+  "hero": {
+    "title": "Tecnología Revolucionaria de Corrección de Visión",
+    "subtitle": "Equipos de vanguardia del Pacífico a Los Ángeles",
+    "badge": "Tecnología Líder en la Industria"
+  },
+  "introduction": {
+    "title": "Precisión Más Allá de los Límites",
+    "description": "El Dr. Flowers utiliza la misma tecnología avanzada que revolucionó el cuidado ocular en el Pacífico, ahora disponible en Los Ángeles. Nuestro compromiso con la tecnología de vanguardia garantiza los mejores resultados posibles para cada paciente."
+  },
+  "technologies": {
+    "wavefront": {
+      "title": "Tecnología Wavefront",
+      "subtitle": "LASIK Personalizado Guiado por Wavefront",
+      "description": "Crea un mapa 3D detallado de su ojo, identificando imperfecciones únicas que los exámenes tradicionales pueden pasar por alto.",
+      "benefits": {
+        "title": "Beneficios",
+        "items": [
+          "Tratamiento 100% personalizado",
+          "Visión nocturna superior",
+          "Reducción de halos y resplandor",
+          "Mayor precisión que el LASIK tradicional",
+          "Resultados de visión HD"
+        ]
+      },
+      "stats": {
+        "precision": "25x más preciso",
+        "satisfaction": "98% de satisfacción",
+        "nightVision": "3x mejor visión nocturna"
+      }
+    },
+    "femtosecond": {
+      "title": "Láser de Femtosegundo",
+      "subtitle": "LASIK Sin Cuchilla de Precisión",
+      "description": "Tecnología láser ultrarrápida que crea colgajos corneales con precisión sin precedentes, eliminando la necesidad de cuchillas mecánicas.",
+      "advantages": {
+        "title": "Ventajas",
+        "items": [
+          "100% sin cuchilla",
+          "Colgajos más precisos",
+          "Curación más rápida",
+          "Riesgo reducido de complicaciones",
+          "Mayor previsibilidad"
+        ]
+      },
+      "specs": {
+        "speed": "Velocidad del pulso de femtosegundo",
+        "precision": "Precisión de +/- 5 micrones",
+        "time": "Creación del colgajo en 20 segundos"
+      }
+    },
+    "excimer": {
+      "title": "Láser Excimer",
+      "subtitle": "Remodelación Corneal de Precisión",
+      "description": "Sistemas láser de última generación que remodelan la córnea con precisión microscópica, corrigiendo errores refractivos con exactitud incomparable.",
+      "features": {
+        "title": "Características",
+        "items": [
+          "Seguimiento ocular de alta velocidad",
+          "Perfiles de ablación personalizados",
+          "Control de temperatura",
+          "Sistema de seguimiento 3D",
+          "Velocidad de tratamiento ultrarrápida"
+        ]
+      },
+      "performance": {
+        "trackingSpeed": "Seguimiento de 1000Hz",
+        "spotSize": "Tamaño de punto de 0.65mm",
+        "treatmentTime": "Tratamiento en < 10 segundos"
+      }
+    },
+    "diagnostic": {
+      "title": "Suite de Diagnóstico Avanzado",
+      "subtitle": "Evaluación Integral del Ojo",
+      "equipment": {
+        "cornealTopography": {
+          "name": "Topografía Corneal",
+          "description": "Mapea la superficie de su córnea con precisión de 10,000 puntos de datos"
+        },
+        "pachymetry": {
+          "name": "Paquimetría",
+          "description": "Mide el grosor corneal con precisión ultrasónica"
+        },
+        "aberrometry": {
+          "name": "Aberrometría",
+          "description": "Detecta imperfecciones de orden superior para tratamiento personalizado"
+        },
+        "oct": {
+          "name": "OCT (Tomografía de Coherencia Óptica)",
+          "description": "Imágenes de alta resolución de las estructuras oculares"
+        },
+        "pupillometry": {
+          "name": "Pupilometría",
+          "description": "Mide el tamaño de la pupila en diferentes condiciones de iluminación"
+        }
+      }
+    },
+    "smile": {
+      "title": "Tecnología SMILE",
+      "subtitle": "Small Incision Lenticule Extraction",
+      "description": "El procedimiento de corrección de visión más mínimamente invasivo disponible, utilizando solo un láser de femtosegundo.",
+      "innovations": {
+        "title": "Innovaciones",
+        "items": [
+          "Incisión de solo 2-4mm",
+          "Sin creación de colgajo",
+          "Preserva la integridad corneal",
+          "Menos sequedad ocular",
+          "Recuperación más rápida"
+        ]
+      },
+      "ideal": "Ideal para estilos de vida activos y prescripciones más altas"
+    },
+    "icl": {
+      "title": "Tecnología de Lentes ICL",
+      "subtitle": "Lentes de Collamer Implantables",
+      "description": "Lentes biocompatibles avanzados para prescripciones extremas o córneas delgadas.",
+      "materials": {
+        "title": "Material de Collamer",
+        "benefits": [
+          "100% biocompatible",
+          "Protección UV incorporada",
+          "No causa sequedad ocular",
+          "Completamente reversible",
+          "Invisible y no perceptible"
+        ]
+      },
+      "process": {
+        "title": "Proceso de Precisión",
+        "steps": [
+          "Medición personalizada del lente",
+          "Procedimiento de microincisión",
+          "Colocación suave del lente",
+          "Recuperación visual inmediata"
+        ]
+      }
+    }
+  },
+  "safetyFeatures": {
+    "title": "Características de Seguridad",
+    "subtitle": "Su seguridad es nuestra máxima prioridad",
+    "features": {
+      "eyeTracking": {
+        "title": "Seguimiento Ocular Activo",
+        "description": "Sistemas de seguimiento de 1000Hz que compensan hasta los más pequeños movimientos oculares"
+      },
+      "irisRecognition": {
+        "title": "Reconocimiento de Iris",
+        "description": "Garantiza el tratamiento correcto para el ojo correcto con verificación biométrica"
+      },
+      "autoStop": {
+        "title": "Parada Automática de Seguridad",
+        "description": "Detención instantánea si se detecta alguna irregularidad"
+      },
+      "backupSystems": {
+        "title": "Sistemas de Respaldo Redundantes",
+        "description": "Múltiples sistemas de respaldo garantizan un tratamiento ininterrumpido"
+      }
+    }
+  },
+  "pacificInnovation": {
+    "title": "Innovación del Pacífico a LA",
+    "subtitle": "Tecnología probada en condiciones desafiantes",
+    "content": "La experiencia del Dr. Flowers manteniendo tecnología avanzada en condiciones tropicales del Pacífico significa que nuestros sistemas en Los Ángeles operan con confiabilidad y precisión excepcionales.",
+    "achievements": [
+      "Primer láser de femtosegundo en la región del Pacífico",
+      "Desarrolló protocolos para ambientes tropicales",
+      "Mantuvo tasas de éxito del 98% en condiciones desafiantes",
+      "Ahora trayendo estándares mejorados a Los Ángeles"
+    ]
+  },
+  "maintenance": {
+    "title": "Mantenimiento y Calibración",
+    "description": "Nuestro equipo recibe mantenimiento y calibración diarios para garantizar un rendimiento óptimo:",
+    "schedule": {
+      "daily": "Verificaciones de calibración diarias",
+      "weekly": "Mantenimiento preventivo semanal",
+      "monthly": "Auditorías de rendimiento mensuales",
+      "annual": "Certificación anual del fabricante"
+    }
+  },
+  "comparison": {
+    "title": "Comparación de Tecnología",
+    "subtitle": "ClearSight vs. LASIK Tradicional",
+    "table": {
+      "headers": ["Característica", "ClearSight", "LASIK Tradicional"],
+      "rows": [
+        ["Creación del Colgajo", "Láser de Femtosegundo", "Microquerátomo con Cuchilla"],
+        ["Mapeo Personalizado", "Wavefront 3D", "Mediciones Estándar"],
+        ["Seguimiento Ocular", "1000Hz Activo", "60Hz o Ninguno"],
+        ["Tiempo de Tratamiento", "< 10 segundos", "30-60 segundos"],
+        ["Precisión", "+/- 5 micrones", "+/- 30 micrones"],
+        ["Visión Nocturna", "Mejorada", "Puede Disminuir"]
+      ]
+    }
+  },
+  "futureReady": {
+    "title": "Preparados para el Futuro",
+    "description": "Invertimos continuamente en la última tecnología para mantener nuestra ventaja revolucionaria:",
+    "investments": [
+      "Actualizaciones regulares de software",
+      "Entrenamiento continuo del equipo",
+      "Participación en ensayos de tecnología beta",
+      "Colaboración con fabricantes líderes",
+      "Investigación y desarrollo continuos"
+    ]
+  },
+  "patientBenefit": {
+    "title": "¿Qué Significa Esto Para Usted?",
+    "benefits": {
+      "precision": {
+        "title": "Precisión Sin Igual",
+        "description": "Cada aspecto de su tratamiento se adapta a la estructura única de su ojo"
+      },
+      "safety": {
+        "title": "Máxima Seguridad",
+        "description": "Múltiples sistemas de seguridad protegen su visión en cada paso"
+      },
+      "comfort": {
+        "title": "Mayor Comodidad",
+        "description": "Procedimientos más rápidos y suaves con menos molestias"
+      },
+      "outcomes": {
+        "title": "Resultados Superiores",
+        "description": "Mejor agudeza visual y calidad de visión que los métodos tradicionales"
+      }
+    }
+  },
+  "cta": {
+    "title": "Experimente la Tecnología Revolucionaria",
+    "description": "Descubra cómo nuestra tecnología avanzada puede transformar su visión.",
+    "button": "Agende Su Evaluación Tecnológica"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "badge": "First LASIK Pioneer in the Pacific Region",
+    "title": "Revolutionary",
+    "titleAccent": "Vision Care",
+    "subtitle": "From pioneering LASIK surgery across Pacific islands to revolutionizing vision care in Los Angeles, Dr. Flowers brings decades of expertise to every procedure.",
+    "cta": {
+      "schedule": "SCHEDULE CONSULTATION",
+      "phone": "(844) 211-5462"
+    }
+  },
+  "stats": {
+    "livesTransformed": {
+      "label": "Lives Transformed",
+      "description": "Successful procedures completed"
+    },
+    "pacificIslands": {
+      "label": "Pacific Islands",
+      "description": "Remote locations served"
+    },
+    "successRate": {
+      "label": "Success Rate",
+      "description": "Patients achieving 20/20 vision"
+    },
+    "yearsExperience": {
+      "label": "Years Experience",
+      "description": "Revolutionary healthcare delivery"
+    }
+  },
+  "cta": {
+    "title": "Experience Revolutionary Vision Care",
+    "subtitle": "Join the hundreds of patients who have trusted Dr. Flowers with their vision. From Pacific islands to Los Angeles, experience the difference revolutionary care makes.",
+    "schedule": "SCHEDULE CONSULTATION",
+    "pacificStory": "THE PACIFIC STORY"
+  }
+}

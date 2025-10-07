@@ -1,0 +1,192 @@
+{
+  "hero": {
+    "badge": "Healthcare Revolutionary at Pioneer sa Vision Care",
+    "title": "Dr. Charles W. Flowers Jr., MD",
+    "subtitle": "Revolutionary Vision. Accessible Excellence.",
+    "description": "Isang transformative na figure sa modern ophthalmology, kilala hindi lang sa surgical excellence kundi sa kanyang revolutionary approach sa healthcare accessibility. May mahigit 30,000 laser vision correction procedures at pioneering work sa buong Pacific region.",
+    "cta": {
+      "schedule": "Mag-schedule ng Consultation",
+      "pacific": "Ang Pacific Revolution"
+    }
+  },
+  "excellence": {
+    "title": "Revolutionary Healthcare Leadership",
+    "clinical": {
+      "title": "Clinical Excellence",
+      "description": "Mahigit 30,000 laser vision correction procedures na may 98% patient satisfaction rate"
+    },
+    "academic": {
+      "title": "Academic Leadership",
+      "description": "Program Director ng USC Ophthalmology Residency Training Program"
+    },
+    "global": {
+      "title": "Global Impact",
+      "description": "Unang surgeon na nag-perform ng LASIK sa Guam, nagserve sa 200,000+ Pacific residents"
+    },
+    "quote": "Bago ako nagsimulang mag-offer ng laser vision correction procedures sa Guam, sinuman na gustong mag-laser vision correction ay kailangan pumunta sa Philippines o United States—isang thirteen-hour flight. Hindi ka makakakuha ng care kung wala kang means na makaalis sa island. Ngayon, world-class eye care ay available dito mismo, sa bahay.",
+    "attribution": "— Dr. Charles W. Flowers Jr., MD"
+  },
+  "education": {
+    "title": "Educational Excellence",
+    "subtitle": "Pundasyon ng academic achievements mula sa pinakamahuhusay na institusyon ng bansa",
+    "institutions": {
+      "stanford": {
+        "name": "Stanford University",
+        "years": "1981-1985",
+        "degree": "Bachelor of Science, Chemistry"
+      },
+      "cornell": {
+        "name": "Cornell University Medical College",
+        "years": "1985-1989",
+        "degree": "Doctor of Medicine",
+        "honors": ["National Medical Fellowship Scholar"]
+      },
+      "drew": {
+        "name": "Charles R. Drew University School of Medicine",
+        "years": "1989-1993",
+        "degree": "Internship, General Surgery at Residency, Ophthalmology",
+        "honors": ["Chief Resident (1992-1993)", "Intern of the Year", "National Eye Institute Fellowship Recipient"]
+      },
+      "usc": {
+        "name": "USC/Doheny Eye Institute",
+        "years": "1993-1995",
+        "degree": "Fellowship, Corneal and Refractive Surgery at External Disease",
+        "honors": ["Henry J. Kaiser Family Foundation Merit Award", "Award of Excellence in Resident Training"]
+      }
+    }
+  },
+  "mission": {
+    "title": "Ang Pacific Mission: Pagbabago ng Isang Buong Rehiyon",
+    "subtitle": "Mula 2010 hanggang kasalukuyan, rebolusyunaryo sa healthcare accessibility para sa 200,000+ Pacific residents",
+    "innovation": {
+      "title": "Revolutionary Healthcare Innovation",
+      "description1": "Noong 2010, sinimulan ni Dr. Flowers ang magiging pinaka-impactful na healthcare initiative niya. Bilang tugon sa request ng dating resident na si Dr. Anthony Smith, bumyahe siya sa Guam para i-assess ang feasibility ng pagtatayo ng unang LASIK center sa rehiyon. Ang nakita niya ay isang healthcare crisis na nakakaapekto sa mahigit 200,000 Pacific residents na walang access sa vision correction surgery nang hindi kailangan mag-travel ng 13 oras papuntang Hawaii o Philippines.",
+      "description2": "Mula 2010 hanggang 2013, inilaan ni Dr. Flowers ang kanyang sarili sa pagdidisenyo at pagtatayo ng LASIK center sa Island Eye Institute. Ang kanyang mga pagsisikap ay umabot sa tuktok noong 2013 nang gawin niya ang unang LASIK procedure sa Pacific region, agad na binago ang healthcare accessibility para sa buong populasyon."
+    },
+    "stats": {
+      "procedures": {
+        "number": "600+",
+        "label": "LASIK Procedures sa Guam",
+        "description": "Successful surgeries na naisagawa"
+      },
+      "residents": {
+        "number": "200,000+",
+        "label": "Residents na Naserve",
+        "description": "Nabigyan ng access sa advanced eye care"
+      },
+      "savings": {
+        "number": "$3,000+",
+        "label": "Travel Costs na Na-save",
+        "description": "Average savings per patient"
+      },
+      "time": {
+        "number": "13 Hours",
+        "label": "Flight Time na Natanggal",
+        "description": "Para sa bawat patient procedure"
+      }
+    }
+  },
+  "telemedicine": {
+    "title": "Telemedicine Pioneer",
+    "description": "Ang innovation ni Dr. Flowers ay lumalampas sa surgical excellence. Sa pagkilala sa mataas na prevalence ng diabetes at genetic predisposition sa Guam, nakakuha siya ng funding para sa groundbreaking telemedicine initiative. Ang teleretinopathy pilot project na ito ay kasama ang:",
+    "features": [
+      "Pagkakabit ng state-of-the-art retinal imaging cameras sa primary care clinics sa buong Guam",
+      "Pagpapatupad ng secure hybrid-cloud infrastructure para sa HIPAA-compliant image storage at real-time analysis",
+      "Paggamit ng artificial intelligence at machine learning algorithms para sa automated detection at grading ng diabetic retinopathy",
+      "Pagtatatag ng seamless teleconsultation pathways na nag-uugnay sa Guam clinics at USC retinal specialists",
+      "Pagbibigay-daan sa early detection at intervention para sa sight-threatening diabetic retinopathy bago maganap ang vision loss",
+      "Pagbuo ng comprehensive training programs para ma-certify ang local physicians sa advanced retinal imaging at diagnostic protocols"
+    ]
+  },
+  "expertise": {
+    "title": "Clinical Excellence at Expertise",
+    "surgical": {
+      "title": "Surgical Specializations",
+      "procedures": [
+        "Laser-Assisted In Situ Keratomileusis (LASIK)",
+        "Advanced Cataract Surgery",
+        "Corneal Transplantation (kasama ang DSAEK)",
+        "Visian Implantable Collamer Lens (ICL)",
+        "Photorefractive Keratectomy (PRK)",
+        "Intacs Implantation para sa Keratoconus",
+        "Pterygium Surgery",
+        "Collagen Cross-Linking"
+      ]
+    },
+    "research": {
+      "title": "Research Priorities",
+      "areas": [
+        "Visual outcomes optimization sa LASIK at cataract surgery",
+        "Sports vision training at athletic performance enhancement",
+        "Telemedicine applications sa ophthalmology",
+        "Population-based diabetic retinopathy studies"
+      ],
+      "funding": "Grant Funding: Mahigit $1 million secured sa research funding"
+    }
+  },
+  "awards": {
+    "title": "Recognition at Awards",
+    "subtitle": "National recognition para sa innovation, excellence, at humanitarian impact",
+    "list": [
+      "America's Top Ophthalmologists - Consumers' Research Council of America (2000)",
+      "Computer World Smithsonian Laureate - The Face of Innovation (1998)",
+      "National Medical Fellowship Scholar - Cornell University Medical College",
+      "Henry J. Kaiser Family Foundation Merit Award",
+      "Award of Excellence - RCMI/Charles R. Drew University (2000)",
+      "Sara Stivelman Memorial Award - LA County Quality & Productivity Commission (1999)",
+      "Masters In Medicine Honoree - Recycling Black Dollars Communications (1999)",
+      "Innovator's Award - Los Angeles County Department of Health Services (1998)",
+      "Top LASIK Surgeon - San Diego Magazine"
+    ]
+  },
+  "dualMission": {
+    "title": "Ang Dual Mission Model",
+    "subtitle": "Isang unique practice model na nagsisilbing blueprint para sa pag-address ng healthcare disparities",
+    "la": {
+      "title": "Los Angeles Practice",
+      "features": [
+        "State-of-the-art facility",
+        "Comprehensive vision correction services",
+        "Revolutionary patient experience",
+        "Advanced technology integration",
+        "Residency program leadership",
+        "Research and innovation center"
+      ]
+    },
+    "pacific": {
+      "title": "Pacific Mission",
+      "features": [
+        "Quarterly surgical missions sa Guam",
+        "Mobile surgical capabilities",
+        "Local physician training at mentorship",
+        "Telemedicine infrastructure development",
+        "Sustainable healthcare system building"
+      ]
+    },
+    "cta": "Alamin Pa ang Tungkol sa Pacific Mission"
+  },
+  "impact": {
+    "title": "Impact sa Mga Numero",
+    "stats": [
+      { "number": "30,000+", "label": "Total Procedures" },
+      { "number": "600+", "label": "Guam Procedures" },
+      { "number": "200,000+", "label": "Pacific Residents na Naserve" },
+      { "number": "98%", "label": "Patient Satisfaction" },
+      { "number": "20+", "label": "Years Experience" },
+      { "number": "15+", "label": "Years Pacific Service" },
+      { "number": "12", "label": "Pacific Islands" },
+      { "number": "$1M+", "label": "Research Funding" },
+      { "number": "4", "label": "Annual Guam Missions" }
+    ]
+  },
+  "philosophy": {
+    "title": "Patient Care Philosophy",
+    "quote": "Tinatrato ko ang bawat pasyente na parang nag-aalaga ako ng miyembro ng pamilya. Ang pagtatatag ng personal na ugnayan ay priority, para magkaroon ng bukas, tapat at transparent na komunikasyon tungkol sa lahat ng aspeto ng kanilang visual condition at care interventions.",
+    "description": "Ang pilosopiyang ito ay lumalampas sa individual patient care para saklawin ang buong komunidad. Naniniwala si Dr. Flowers na ang healthcare ay dapat makarating sa bawat sulok ng mundo, at ang innovation ay hindi lang tungkol sa technology—ito ay tungkol sa paghahanap ng paraan para dalhin ang life-changing treatments sa mga pinaka-nangangailangan, anuman ang lokasyon o sitwasyon."
+  },
+  "cta": {
+    "title": "Maranasan ang Revolutionary Vision Care",
+    "subtitle": "Sumama sa libu-libong patients na nagtiwala kay Dr. Flowers sa kanilang vision. Mag-schedule ng inyong consultation ngayon at tuklasin ang difference na ginagawa ng revolutionary care.",
+    "schedule": "Mag-schedule ng Inyong Consultation"
+  }
+}

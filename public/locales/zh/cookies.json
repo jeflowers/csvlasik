@@ -1,0 +1,43 @@
+{
+  "banner": {
+    "title": "我们重视您的隐私",
+    "description": "我们使用cookies来增强您的体验、分析网站使用情况并协助我们的营销工作。点击"全部接受"，即表示您同意我们使用cookies。",
+    "learnMore": "了解更多",
+    "preferences": "偏好设置",
+    "necessaryOnly": "仅必要",
+    "acceptAll": "全部接受"
+  },
+  "preferences": {
+    "title": "Cookie偏好设置",
+    "description": "您可以选择允许哪些类型的cookies。请注意，阻止某些类型的cookies可能会影响您在我们网站上的体验。",
+    "categories": {
+      "necessary": {
+        "title": "必要Cookies",
+        "description": "这些cookies对网站正常运行至关重要。它们无法被禁用。"
+      },
+      "analytics": {
+        "title": "分析Cookies",
+        "description": "通过匿名收集和报告信息，帮助我们了解访问者如何与我们的网站互动。"
+      },
+      "marketing": {
+        "title": "营销Cookies",
+        "description": "用于跨网站跟踪访问者，以显示相关且引人入胜的广告。"
+      },
+      "personalization": {
+        "title": "个性化Cookies",
+        "description": "允许我们记住您的偏好并提供增强的个性化功能。"
+      }
+    },
+    "rights": {
+      "title": "您的权利",
+      "change": "您可以随时更改您的偏好设置",
+      "access": "您可以请求访问您的个人数据",
+      "deletion": "您可以请求删除您的个人数据",
+      "withdraw": "您可以随时撤回同意"
+    },
+    "buttons": {
+      "cancel": "取消",
+      "save": "保存偏好设置"
+    }
+  }
+}

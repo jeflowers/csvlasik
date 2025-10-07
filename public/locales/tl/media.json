@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Rebolusyonaryong Pananaw at Edukasyon",
+    "title": "Media at Mga Mapagkukunan",
+    "description": "Manatiling may alam sa pinakabagong pananaw mula sa rebolusyonaryong praktika ni Dr. Flowers. Mula sa makabagong mga pamamaraan hanggang sa mga update ng misyon sa Pasipiko, tuklasin ang hinaharap ng pangangalaga ng paningin sa pamamagitan ng mga pananaw ng eksperto at mga kuwento ng pasyente."
+  },
+  "featured": {
+    "sectionTitle": "Tampok na Artikulo",
+    "title": "Ang Rebolusyonaryong Paglalakbay: Paano Binuo ng mga Misyon sa Pasipiko ang Modernong LASIK",
+    "excerpt": "Tuklasin kung paano ang mahirap na mga kondisyon sa malalayong isla ng Pasipiko ay nag-udyok sa mga makabagong inobasyon sa laser vision correction na ngayon ay nakikinabang ang mga pasyente sa buong mundo.",
+    "readMore": "Basahin ang Artikulo"
+  },
+  "sidebar": {
+    "categories": "Mga Kategorya",
+    "newsletter": {
+      "title": "Manatiling Nakapagsapanibago",
+      "description": "Kunin ang pinakabagong pananaw at mga update ng misyon sa Pasipiko",
+      "placeholder": "Ang iyong email",
+      "subscribe": "Mag-subscribe"
+    }
+  },
+  "posts": {
+    "telemedicine": {
+      "title": "Telemedicine sa Pangangalaga ng Mata: Pagkonekta ng mga Isla ng Pasipiko sa Advanced na Paggamot",
+      "excerpt": "Paano ang mga makabagong solusyon ng telemedicine ay tumatawid sa agwat sa pagitan ng mga malalayong lokasyon at world-class na pangangalaga ng mata."
+    },
+    "recovery": {
+      "title": "Timeline ng Pagbawi: Ano ang Aasahan Pagkatapos ng Iyong LASIK Surgery",
+      "excerpt": "Isang detalyadong gabay sa proseso ng pagbawi ng LASIK, mula sa unang 24 na oras hanggang sa mga pangmatagalang resulta, batay sa mga tunay na karanasan ng pasyente."
+    },
+    "icl": {
+      "title": "ICL Surgery: Ang Rebolusyonaryong Solusyon para sa Mataas na mga Reseta",
+      "excerpt": "Pag-unawa sa mga Implantable Contact Lenses at kung bakit sila ay madalas na ang pinakamahusay na pagpipilian para sa mga pasyenteng may matinding myopia."
+    },
+    "infrastructure": {
+      "title": "Pagtatayo ng Healthcare Infrastructure sa mga Malalayong Isla ng Pasipiko",
+      "excerpt": "Ang mga hamon at tagumpay ng pagtatatag ng mga sustainable na programa ng pangangalaga ng mata sa mga kulang sa serbisyo na komunidad."
+    },
+    "readMore": "Magbasa pa",
+    "loadMore": "Mag-load ng Higit pang mga Artikulo"
+  },
+  "categories": {
+    "all": "Lahat ng mga Post",
+    "innovation": "Inobasyon",
+    "procedures": "Mga Pamamaraan",
+    "technology": "Teknolohiya",
+    "patientCare": "Pangangalaga ng Pasyente",
+    "mission": "Misyon"
+  },
+  "resources": {
+    "title": "Mga Mapagkukunang Pang-edukasyon",
+    "description": "Komprehensibong mga gabay at mapagkukunan upang matulungan kang maunawaan ang pagwawasto ng paningin",
+    "items": {
+      "lasik": {
+        "title": "Gabay sa LASIK",
+        "description": "Kumpletong gabay sa LASIK surgery, mula sa pagiging karapat-dapat hanggang sa pagbawi"
+      },
+      "comparison": {
+        "title": "Paghahambing ng mga Pamamaraan",
+        "description": "Magkatabi na paghahambing ng lahat ng mga pamamaraan ng pagwawasto ng paningin"
+      },
+      "pacific": {
+        "title": "Mga Update ng Misyon sa Pasipiko",
+        "description": "Pinakabagong balita mula sa mga rebolusyonaryong misyon sa kalusugan sa Pasipiko ni Dr. Flowers"
+      }
+    },
+    "learnMore": "Matuto Pa"
+  },
+  "cta": {
+    "title": "Handa na Bang Simulan ang Iyong Paglalakbay ng Paningin?",
+    "description": "May mga tanong tungkol sa pagwawasto ng paningin? Gusto mong matuto pa tungkol sa mga rebolusyonaryong teknik ni Dr. Flowers? I-schedule ang iyong libreng konsultasyon ngayon.",
+    "schedule": "I-schedule ang Libreng Konsultasyon",
+    "explore": "Tuklasin ang mga Pamamaraan"
+  }
+}

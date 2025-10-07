@@ -1,0 +1,332 @@
+{
+  "pageTitle": "Testimonios de Pacientes",
+  "hero": {
+    "title": "Resultados Revolucionarios",
+    "subtitle": "Pacientes reales. Transformaciones reales. Impacto real.",
+    "stats": {
+      "procedures": "600+ Procedimientos",
+      "satisfaction": "98% de Satisfacción",
+      "visionQuality": "20/20 o Mejor"
+    }
+  },
+  "featured": {
+    "title": "Historia Destacada",
+    "patient": {
+      "name": "Ana Torres",
+      "location": "Primera Paciente de Guam",
+      "procedure": "LASIK - 2013",
+      "headline": "La Paciente Cero de una Revolución Médica",
+      "story": "Fui la primera persona en recibir LASIK en toda la región del Pacífico. El Dr. Flowers no solo cambió mi visión - cambió lo que era posible para nuestra isla entera. Antes de él, tendría que haber volado 13 horas a Hawaii y gastar miles de dólares. Ahora, mis hijos y nietos pueden recibir atención ocular de clase mundial aquí mismo en casa.",
+      "outcome": "Visión 20/15 - Mejor que perfecta después de 10 años",
+      "image": "ana-torres-testimonial.jpg"
+    }
+  },
+  "categories": {
+    "pacific": {
+      "title": "Pioneros del Pacífico",
+      "description": "Los primeros pacientes que experimentaron atención revolucionaria en Guam",
+      "testimonials": [
+        {
+          "id": "maria-k",
+          "name": "María K.",
+          "age": 45,
+          "location": "Guam",
+          "procedure": "LASIK",
+          "date": "2014",
+          "quote": "El Dr. Flowers no solo me dio una visión perfecta - me salvó de viajes anuales a Hawaii para cuidado ocular. Revolucionario no es solo una palabra, es lo que hizo por nuestra isla entera.",
+          "rating": 5,
+          "verified": true
+        },
+        {
+          "id": "joseph-t",
+          "name": "Joseph T.",
+          "age": 52,
+          "location": "Saipán",
+          "procedure": "PRK",
+          "date": "2015",
+          "quote": "Como pescador comercial, necesitaba una visión perfecta pero no podía permitirme semanas fuera para viajar. El Dr. Flowers trajo el tratamiento a nosotros. Cambió mi vida y mi sustento.",
+          "rating": 5,
+          "verified": true
+        },
+        {
+          "id": "lisa-m",
+          "name": "Lisa Matsumoto",
+          "age": 38,
+          "location": "Guam",
+          "procedure": "SMILE",
+          "date": "2018",
+          "quote": "Tres generaciones de mi familia han tenido procedimientos con el Dr. Flowers. Mi abuela fue una de sus primeras pacientes en Guam. ¡El cuidado revolucionario ahora corre en nuestra familia!",
+          "rating": 5,
+          "verified": true
+        }
+      ]
+    },
+    "military": {
+      "title": "Héroes Militares",
+      "description": "Personal de servicio activo que confió su visión al Dr. Flowers",
+      "testimonials": [
+        {
+          "id": "captain-davidson",
+          "name": "Capitán James Davidson",
+          "age": 35,
+          "location": "Base Naval de Guam",
+          "procedure": "PRK",
+          "date": "2016",
+          "quote": "Soy un Marine estacionado en Guam. PRK era perfecto para mis requisitos de servicio activo. El Dr. Flowers entendió las necesidades militares y entregó resultados que excedieron los estándares de vuelo de la Marina.",
+          "rating": 5,
+          "verified": true,
+          "branch": "Marina de EE.UU."
+        },
+        {
+          "id": "lt-rodriguez",
+          "name": "Teniente Sarah Rodriguez",
+          "age": 29,
+          "location": "Base Aérea Andersen",
+          "procedure": "LASIK",
+          "date": "2019",
+          "quote": "Como piloto de la Fuerza Aérea, la visión perfecta no es negociable. El Dr. Flowers me dio 20/15 en ambos ojos. Su experiencia con personal militar es incomparable.",
+          "rating": 5,
+          "verified": true,
+          "branch": "Fuerza Aérea de EE.UU."
+        }
+      ]
+    },
+    "losAngeles": {
+      "title": "Visionarios de Los Ángeles",
+      "description": "Pacientes de LA experimentando atención revolucionaria",
+      "testimonials": [
+        {
+          "id": "michael-r",
+          "name": "Michael R.",
+          "age": 41,
+          "location": "Santa Mónica",
+          "procedure": "LASIK",
+          "date": "2023",
+          "quote": "Como fundador de tecnología, aprecio la innovación. El Dr. Flowers aborda la corrección de visión como una startup - identificando problemas que otros ignoran y creando soluciones que escalan. ¡Visión perfecta en 24 horas!",
+          "rating": 5,
+          "verified": true,
+          "profession": "CEO de Tecnología"
+        },
+        {
+          "id": "sarah-c",
+          "name": "Sarah Chen",
+          "age": 33,
+          "location": "Pasadena",
+          "procedure": "SMILE",
+          "date": "2024",
+          "quote": "El hecho de que todavía vuele a Guam trimestralmente mientras mantiene su práctica en LA muestra una dedicación increíble. Este es alguien que realmente se preocupa por el impacto, no solo por los ingresos.",
+          "rating": 5,
+          "verified": true,
+          "profession": "Cirujana"
+        },
+        {
+          "id": "david-k",
+          "name": "David Kim",
+          "age": 28,
+          "location": "Long Beach",
+          "procedure": "ICL",
+          "date": "2024",
+          "quote": "Me dijeron que mi prescripción de -15 era demasiado extrema para cirugía láser. El Dr. Flowers recomendó ICL y ahora tengo visión 20/20. Encuentra soluciones donde otros ven limitaciones.",
+          "rating": 5,
+          "verified": true,
+          "profession": "Ingeniero de Software"
+        }
+      ]
+    },
+    "athletes": {
+      "title": "Atletas y Vida Activa",
+      "description": "Atletas profesionales y entusiastas del fitness",
+      "testimonials": [
+        {
+          "id": "jennifer-w",
+          "name": "Jennifer Williams",
+          "age": 26,
+          "location": "Manhattan Beach",
+          "procedure": "PRK",
+          "date": "2023",
+          "quote": "Como surfista profesional, necesitaba una solución sin colgajo. PRK fue perfecto. El Dr. Flowers entendió mis necesidades únicas y ahora puedo ver cada ola perfectamente.",
+          "rating": 5,
+          "verified": true,
+          "sport": "Surf Profesional"
+        },
+        {
+          "id": "marcus-j",
+          "name": "Marcus Johnson",
+          "age": 31,
+          "location": "Beverly Hills",
+          "procedure": "SMILE",
+          "date": "2024",
+          "quote": "Como artista de MMA, la integridad corneal era crucial. SMILE me dio visión perfecta sin comprometer la fuerza de mi ojo. Revolucionario es la palabra correcta.",
+          "rating": 5,
+          "verified": true,
+          "sport": "Artes Marciales Mixtas"
+        }
+      ]
+    },
+    "professionals": {
+      "title": "Profesionales",
+      "description": "Profesionales ocupados que necesitaban resultados rápidos",
+      "testimonials": [
+        {
+          "id": "rachel-g",
+          "name": "Rachel Green",
+          "age": 44,
+          "location": "Downtown LA",
+          "procedure": "LASIK",
+          "date": "2023",
+          "quote": "Como abogada litigante, no podía permitirme tiempo de inactividad. Tuve LASIK el viernes, visión perfecta el sábado, en el tribunal el lunes. Absolutamente revolucionario.",
+          "rating": 5,
+          "verified": true,
+          "profession": "Abogada Senior"
+        },
+        {
+          "id": "dr-patel",
+          "name": "Dr. Arun Patel",
+          "age": 39,
+          "location": "UCLA Area",
+          "procedure": "LASIK Personalizado",
+          "date": "2024",
+          "quote": "Como cirujano yo mismo, aprecio la precisión. El enfoque del Dr. Flowers es meticuloso, innovador y verdaderamente revolucionario. Mi visión ahora es 20/10.",
+          "rating": 5,
+          "verified": true,
+          "profession": "Neurocirujano"
+        }
+      ]
+    },
+    "seniors": {
+      "title": "Adultos Mayores Activos",
+      "description": "Pacientes mayores recuperando su independencia visual",
+      "testimonials": [
+        {
+          "id": "robert-m",
+          "name": "Robert Miller",
+          "age": 67,
+          "location": "Lakewood",
+          "procedure": "Cirugía de Cataratas con Lente Premium",
+          "date": "2024",
+          "quote": "Después de 50 años con anteojos, finalmente puedo ver claramente. El Dr. Flowers explicó todo perfectamente y los resultados superaron mis expectativas.",
+          "rating": 5,
+          "verified": true
+        },
+        {
+          "id": "patricia-s",
+          "name": "Patricia Santos",
+          "age": 72,
+          "location": "Cerritos",
+          "procedure": "Intercambio de Lente Refractivo",
+          "date": "2023",
+          "quote": "Pensé que era demasiado mayor para la corrección de visión. El Dr. Flowers me mostró que nunca es tarde para una visión revolucionaria. ¡Ahora puedo ver a mis bisnietos claramente!",
+          "rating": 5,
+          "verified": true
+        }
+      ]
+    }
+  },
+  "videoTestimonials": {
+    "title": "Testimonios en Video",
+    "description": "Escuche directamente de nuestros pacientes",
+    "videos": [
+      {
+        "id": "ana-story",
+        "title": "Ana's Story: Primera Paciente LASIK del Pacífico",
+        "duration": "3:45",
+        "thumbnail": "ana-video-thumb.jpg"
+      },
+      {
+        "id": "military-heroes",
+        "title": "Héroes Militares: Visión para Servir",
+        "duration": "5:20",
+        "thumbnail": "military-video-thumb.jpg"
+      },
+      {
+        "id": "la-professionals",
+        "title": "Profesionales de LA: Sin Tiempo de Inactividad",
+        "duration": "4:15",
+        "thumbnail": "professionals-video-thumb.jpg"
+      }
+    ]
+  },
+  "statistics": {
+    "title": "Nuestros Resultados Hablan",
+    "data": {
+      "totalProcedures": {
+        "number": "600+",
+        "label": "Procedimientos Totales"
+      },
+      "visionQuality": {
+        "number": "98%",
+        "label": "Logran 20/20 o Mejor"
+      },
+      "satisfaction": {
+        "number": "4.9/5",
+        "label": "Calificación Promedio"
+      },
+      "referrals": {
+        "number": "75%",
+        "label": "De Pacientes por Referencia"
+      },
+      "complications": {
+        "number": "0",
+        "label": "Complicaciones Mayores"
+      },
+      "yearsExperience": {
+        "number": "11+",
+        "label": "Años de Experiencia Revolucionaria"
+      }
+    }
+  },
+  "beforeAfter": {
+    "title": "Transformaciones de Visión",
+    "cases": [
+      {
+        "prescription": "-8.50",
+        "result": "20/15",
+        "procedure": "LASIK",
+        "timeToResult": "24 horas"
+      },
+      {
+        "prescription": "-15.00",
+        "result": "20/20",
+        "procedure": "ICL",
+        "timeToResult": "Inmediato"
+      },
+      {
+        "prescription": "-6.25 con Astigmatismo",
+        "result": "20/20",
+        "procedure": "SMILE",
+        "timeToResult": "48 horas"
+      }
+    ]
+  },
+  "submitTestimonial": {
+    "title": "Comparte Tu Historia",
+    "description": "¿Ha experimentado la atención revolucionaria del Dr. Flowers? Nos encantaría escuchar su historia.",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "procedure": "Procedimiento",
+      "date": "Fecha del Procedimiento",
+      "story": "Su Historia",
+      "rating": "Calificación",
+      "consent": "Consiento compartir mi testimonio",
+      "submit": "Enviar Testimonio"
+    }
+  },
+  "trust": {
+    "title": "Por Qué los Pacientes Confían en el Dr. Flowers",
+    "reasons": [
+      "Pionero que trajo LASIK a toda una región",
+      "600+ procedimientos exitosos",
+      "Compromiso con comunidades desatendidas",
+      "Tecnología de vanguardia",
+      "Enfoque consultivo personalizado",
+      "Misión dual sirviendo a LA y el Pacífico"
+    ]
+  },
+  "cta": {
+    "title": "Únase a Cientos de Pacientes Satisfechos",
+    "description": "Experimente la diferencia revolucionaria por sí mismo",
+    "button": "Programe Su Consulta",
+    "disclaimer": "Los resultados individuales pueden variar. Todos los testimonios son de pacientes reales."
+  }
+}

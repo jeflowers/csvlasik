@@ -1,0 +1,74 @@
+{
+  "title": "서비스 약관",
+  "subtitle": "ClearSight 시력 연구소 - 찰스 플라워스 박사",
+  "lastUpdated": "마지막 업데이트",
+  "sections": {
+    "acceptance": {
+      "title": "약관 동의",
+      "description": "이 웹사이트에 접속하고 사용함으로써 귀하는 이 계약의 약관과 조항에 구속되는 것을 수락하고 동의합니다."
+    },
+    "services": {
+      "title": "의료 서비스",
+      "medicalNotice": {
+        "title": "의료 실습 공지",
+        "description": "ClearSight 시력 연구소는 찰스 플라워스 의학박사의 감독 하에 전문 안과 진료 서비스를 제공하는 의료 기관입니다."
+      },
+      "vision": {
+        "title": "시력 교정 서비스",
+        "items": {
+          "lasik": "라식 레이저 시력 교정 수술",
+          "prk": "PRK 굴절 각막 절제술",
+          "icl": "ICL 이식 가능한 콘택트 렌즈 수술",
+          "consultations": "종합 안과 검사 및 상담"
+        }
+      },
+      "website": {
+        "title": "웹사이트 서비스",
+        "items": {
+          "information": "시력 교정에 대한 교육 정보",
+          "scheduling": "온라인 예약 일정 관리",
+          "resources": "환자 자료 및 자료",
+          "communication": "안전한 환자 통신 포털"
+        }
+      }
+    },
+    "responsibilities": {
+      "title": "사용자 책임",
+      "user": {
+        "title": "환자 책임",
+        "items": {
+          "accurate": "정확하고 완전한 의료 정보 제공",
+          "lawful": "합법적인 목적으로만 서비스 사용",
+          "confidential": "로그인 자격 증명의 기밀 유지",
+          "instructions": "모든 수술 전후 지침 준수"
+        }
+      },
+      "medical": {
+        "title": "의료 관리 책임",
+        "items": {
+          "consultation": "예정된 모든 상담 및 약속 참석",
+          "disclosure": "관련 병력 및 약물 정보 공개",
+          "followup": "필요한 모든 후속 검사 완료",
+          "emergency": "수술 후 문제 발생 시 즉시 연락"
+        }
+      }
+    },
+    "limitations": {
+      "title": "책임 제한",
+      "disclaimer": {
+        "title": "의료 면책 조항",
+        "description": "개인별 결과는 다를 수 있습니다. 이 웹사이트는 일반 정보를 제공하며 전문 의료 조언을 대체하지 않습니다."
+      },
+      "description": "ClearSight 시력 연구소의 책임은 법률이 허용하는 범위로 제한됩니다. 우리는 간접적, 우발적 또는 결과적 손해에 대해 책임지지 않습니다."
+    },
+    "contact": {
+      "title": "연락처 정보",
+      "legal": {
+        "title": "법무부",
+        "organization": "ClearSight 시력 연구소",
+        "address1": "5750 Downey Ave., Suite 101",
+        "address2": "Lakewood, CA 90712"
+      }
+    }
+  }
+}

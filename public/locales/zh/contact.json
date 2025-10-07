@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "badge": "预约您的革命性咨询",
+    "title": "开始您的",
+    "titleAccent": "视力之旅",
+    "subtitle": "迈出革命性视力护理的第一步。与Flowers医生预约免费咨询，了解他的开创性技术如何改变您的视力和生活。"
+  },
+  "form": {
+    "title": "预约您的免费咨询",
+    "selectProcedure": "选择手术"
+  },
+  "info": {
+    "title": "联系我们",
+    "subtitle": "准备体验革命性视力护理？今天就联系我们预约免费咨询，迈出完美视力的第一步。"
+  },
+  "office": {
+    "name": "莱克伍德办公室",
+    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712"
+  },
+  "phone": {
+    "title": "电话",
+    "number": "(844) 211-5462",
+    "note": "点击直接拨打"
+  },
+  "email": {
+    "title": "电子邮件",
+    "address": "info@clearsightlasik.com",
+    "note": "我们在24小时内回复"
+  },
+  "hours": {
+    "title": "办公时间",
+    "weekdays": "周一 - 周五: 上午8:00 - 下午6:00",
+    "saturday": "周六: 上午9:00 - 下午3:00",
+    "sunday": "周日: 休息",
+    "emergency": "紧急咨询可用"
+  },
+  "quickActions": {
+    "title": "快速操作",
+    "callNow": "立即致电预约",
+    "learnProcedures": "了解手术",
+    "financing": "融资选择"
+  },
+  "consultation": {
+    "title": "咨询中的期待",
+    "subtitle": "您的免费咨询是全面的、教育性的且完全无压力的",
+    "steps": {
+      "exam": {
+        "title": "全面眼部检查",
+        "description": "先进的诊断测试，包括角膜映射、瞳孔测量和视力评估",
+        "duration": "45-60分钟"
+      },
+      "personal": {
+        "title": "个人咨询",
+        "description": "与Flowers医生一对一讨论您的视力目标、生活方式和手术选择",
+        "duration": "30-45分钟"
+      },
+      "plan": {
+        "title": "定制治疗计划",
+        "description": "获得您的个性化建议，详细解释益处和期望",
+        "duration": "15-30分钟"
+      }
+    },
+    "bring": {
+      "title": "需要携带",
+      "glasses": "当前的眼镜或隐形眼镜",
+      "insurance": "保险卡",
+      "medications": "当前药物清单",
+      "id": "驾驶执照或身份证",
+      "questions": "问题清单",
+      "driver": "有人开车送您回家"
+    }
+  },
+  "emergency": {
+    "title": "术后紧急联系",
+    "description": "如果您是当前患者在正常营业时间外遇到术后紧急情况:",
+    "phone": "紧急热线: (844) 211-5462",
+    "note": "对于非紧急问题，请使用上面的常规联系方式。"
+  },
+  "cta": {
+    "title": "准备改变您的视力？",
+    "subtitle": "加入数百名信任Flowers医生视力的患者。您的革命性完美视力之旅从一个简单的电话开始。",
+    "call": "致电 (844) 211-5462",
+    "testimonials": "查看见证"
+  }
+}

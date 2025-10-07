@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "badge": "Primer Pionero LASIK en la Región del Pacífico",
+    "title": "Revolucionario",
+    "titleAccent": "Cuidado de la Visión",
+    "subtitle": "Desde ser pionero en cirugía LASIK a través de las islas del Pacífico hasta revolucionar el cuidado de la visión en Los Ángeles, el Dr. Flowers aporta décadas de experiencia a cada procedimiento.",
+    "cta": {
+      "schedule": "PROGRAMAR CONSULTA",
+      "phone": "(844) 211-5462"
+    }
+  },
+  "stats": {
+    "livesTransformed": {
+      "label": "Vidas Transformadas",
+      "description": "Procedimientos exitosos completados"
+    },
+    "pacificIslands": {
+      "label": "Islas del Pacífico",
+      "description": "Ubicaciones remotas atendidas"
+    },
+    "successRate": {
+      "label": "Tasa de Éxito",
+      "description": "Pacientes logrando visión 20/20"
+    },
+    "yearsExperience": {
+      "label": "Años de Experiencia",
+      "description": "Entrega revolucionaria de atención médica"
+    }
+  },
+  "cta": {
+    "title": "Experimente el Cuidado Revolucionario de la Visión",
+    "subtitle": "Únase a los cientos de pacientes que han confiado en el Dr. Flowers con su visión. Desde las islas del Pacífico hasta Los Ángeles, experimente la diferencia que hace el cuidado revolucionario.",
+    "schedule": "PROGRAMAR CONSULTA",
+    "pacificStory": "LA HISTORIA DEL PACÍFICO"
+  }
+}

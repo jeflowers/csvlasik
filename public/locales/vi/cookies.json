@@ -1,0 +1,43 @@
+{
+  "banner": {
+    "title": "Chúng tôi trân trọng quyền riêng tư của bạn",
+    "description": "Chúng tôi sử dụng cookies để nâng cao trải nghiệm của bạn, phân tích việc sử dụng trang web và hỗ trợ các nỗ lực tiếp thị của chúng tôi. Bằng cách nhấp \"Chấp Nhận Tất Cả\", bạn đồng ý với việc sử dụng cookies của chúng tôi.",
+    "learnMore": "Tìm hiểu thêm",
+    "preferences": "Tùy chọn",
+    "necessaryOnly": "Chỉ Cần Thiết",
+    "acceptAll": "Chấp Nhận Tất Cả"
+  },
+  "preferences": {
+    "title": "Tùy Chọn Cookie",
+    "description": "Bạn có thể chọn loại cookies nào được phép. Lưu ý rằng việc chặn một số loại cookies có thể ảnh hưởng đến trải nghiệm của bạn trên trang web của chúng tôi.",
+    "categories": {
+      "necessary": {
+        "title": "Cookies Cần Thiết",
+        "description": "Những cookies này rất cần thiết để trang web hoạt động bình thường. Chúng không thể bị vô hiệu hóa."
+      },
+      "analytics": {
+        "title": "Cookies Phân Tích",
+        "description": "Giúp chúng tôi hiểu cách khách truy cập tương tác với trang web bằng cách thu thập và báo cáo thông tin một cách ẩn danh."
+      },
+      "marketing": {
+        "title": "Cookies Tiếp Thị",
+        "description": "Được sử dụng để theo dõi khách truy cập trên các trang web để hiển thị quảng cáo phù hợp và hấp dẫn."
+      },
+      "personalization": {
+        "title": "Cookies Cá Nhân Hóa",
+        "description": "Cho phép chúng tôi ghi nhớ sở thích của bạn và cung cấp các tính năng nâng cao, được cá nhân hóa."
+      }
+    },
+    "rights": {
+      "title": "Quyền Của Bạn",
+      "change": "Bạn có thể thay đổi tùy chọn của mình bất cứ lúc nào",
+      "access": "Bạn có thể yêu cầu truy cập dữ liệu cá nhân của mình",
+      "deletion": "Bạn có thể yêu cầu xóa dữ liệu cá nhân của mình",
+      "withdraw": "Bạn có thể rút lại sự đồng ý bất cứ lúc nào"
+    },
+    "buttons": {
+      "cancel": "Hủy",
+      "save": "Lưu Tùy Chọn"
+    }
+  }
+}

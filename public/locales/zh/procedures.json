@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "badge": "革命性视力矫正",
+    "title": "ClearSight视力矫正选择",
+    "subtitle": "Flowers医生提供先进的视力矫正手术，每种都针对特定需求和生活方式量身定制。比较选择并找到您革命性视力转变的完美解决方案。"
+  },
+  "procedures": {
+    "keyFeatures": "主要特点",
+    "lasik": {
+      "tagline": "最受欢迎的选择",
+      "description": "先进的激光视力矫正，恢复快，效果优异",
+      "recoveryTime": "1-2天",
+      "successRate": "98%",
+      "ideal": "近视、远视、散光",
+      "features": {
+        "quick": "快速15分钟手术",
+        "comfort": "最小不适",
+        "recovery": "快速视觉恢复",
+        "lasting": "持久效果"
+      }
+    },
+    "prk": {
+      "tagline": "表面治疗",
+      "description": "不适合LASIK患者的替代激光矫正",
+      "recoveryTime": "3-5天",
+      "successRate": "96%",
+      "ideal": "薄角膜，活跃生活方式",
+      "features": {
+        "noFlap": "无角膜瓣",
+        "thinCorneas": "适合薄角膜",
+        "stability": "优异的长期稳定性",
+        "athletes": "运动员理想选择"
+      }
+    },
+    "icl": {
+      "tagline": "植入式解决方案",
+      "description": "高度数永久植入式隐形眼镜",
+      "recoveryTime": "1-3天",
+      "successRate": "99%",
+      "ideal": "高度数，薄角膜",
+      "features": {
+        "reversible": "可逆手术",
+        "nightVision": "优异夜视力",
+        "uvProtection": "紫外线防护",
+        "maintenance": "无需维护"
+      }
+    }
+  },
+  "comparison": {
+    "title": "并排比较",
+    "subtitle": "比较每种手术的关键特征，帮助您做出明智决定",
+    "featureHeader": "特征",
+    "recommendation": "不确定哪种手术适合您？",
+    "cta": "获得个性化建议",
+    "features": {
+      "recoveryTime": "恢复时间",
+      "procedureTime": "手术时间",
+      "painLevel": "疼痛程度",
+      "highRx": "适合高度数",
+      "nightVision": "夜视力",
+      "reversibility": "可逆性",
+      "successRate": "成功率",
+      "idealFor": "理想适用"
+    },
+    "values": {
+      "lasik": {
+        "recoveryTime": "1-2天",
+        "procedureTime": "15分钟",
+        "painLevel": "最小",
+        "highRx": "有限",
+        "nightVision": "优异",
+        "reversibility": "否"
+      },
+      "prk": {
+        "recoveryTime": "3-5天",
+        "procedureTime": "15分钟",
+        "painLevel": "轻度-中度",
+        "highRx": "有限",
+        "nightVision": "优异",
+        "reversibility": "否"
+      },
+      "icl": {
+        "recoveryTime": "1-3天",
+        "procedureTime": "30分钟",
+        "painLevel": "最小",
+        "highRx": "优异",
+        "nightVision": "卓越",
+        "reversibility": "是"
+      }
+    }
+  },
+  "process": {
+    "title": "您的革命性旅程",
+    "subtitle": "每个手术都遵循Flowers医生经过验证的流程以获得最佳效果",
+    "steps": {
+      "consultation": {
+        "title": "免费咨询",
+        "description": "全面眼部检查和手术建议"
+      },
+      "preparation": {
+        "title": "术前准备",
+        "description": "详细测量和手术规划"
+      },
+      "procedure": {
+        "title": "革命性手术",
+        "description": "快速、舒适的先进技术手术"
+      },
+      "recovery": {
+        "title": "恢复和随访",
+        "description": "个性化护理和监测以获得最佳愈合"
+      }
+    }
+  },
+  "cta": {
+    "title": "准备改变您的视力？",
+    "subtitle": "与Flowers医生预约免费咨询，发现哪种革命性手术最适合您的生活方式和视力需求。",
+    "schedule": "预约免费咨询",
+    "testimonials": "查看患者见证"
+  }
+}

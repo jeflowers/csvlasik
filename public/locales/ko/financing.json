@@ -1,0 +1,144 @@
+{
+  "hero": {
+    "badge": "혁신적인 시력 관리 투자",
+    "title": "투자 옵션",
+    "subtitle": "당신의 시력 여정을 위한",
+    "description": "당신의 시력은 값을 매길 수 없습니다. 우리는 Dr. Flowers의 혁신적인 관리를 당신의 라이프스타일에 맞춘 유연하고 품위 있는 방식을 통해 접근 가능하게 만드는 정교한 투자 솔루션을 제공합니다.",
+    "cta": "투자 옵션 논의"
+  },
+  "investment": {
+    "title": "당신의 미래에 대한 투자",
+    "description": "혁신적인 시력 관리는 당신이 할 수 있는 가장 가치 있는 투자 중 하나를 나타냅니다. 안경과 콘택트렌즈로부터의 자유, 향상된 삶의 질, 그리고 수십 년간의 맑은 시력은 매일 복리로 증가하는 측정할 수 없는 수익을 창출합니다.",
+    "benefits": {
+      "lifetime": {
+        "title": "평생 가치",
+        "description": "안경과 콘택트렌즈로부터 수십 년간의 자유"
+      },
+      "lifestyle": {
+        "title": "향상된 라이프스타일",
+        "description": "제한 없는 활동과 전문적 기회"
+      },
+      "expertise": {
+        "title": "혁신적인 전문성",
+        "description": "태평양에서 검증된 기술과 비교할 수 없는 경험"
+      }
+    }
+  },
+  "solutions": {
+    "title": "정교한 투자 솔루션",
+    "subtitle": "우리는 당신의 투자 가치를 존중하는 품위 있고 유연한 방식을 제공합니다",
+    "immediate": {
+      "title": "즉시 투자",
+      "subtitle": "완전한 케어 패키지",
+      "description": "포괄적인 케어가 포함된 혁신적인 시력 여정에 대한 완전한 투자",
+      "highlight": "가장 포괄적",
+      "features": {
+        "coverage": "완전한 시술 커버리지",
+        "followup": "모든 후속 예약",
+        "guarantee": "평생 개선 보장",
+        "priority": "우선 스케줄링",
+        "concierge": "컨시어지 케어 경험"
+      }
+    },
+    "structured": {
+      "title": "구조화된 투자",
+      "subtitle": "유연한 방식",
+      "description": "당신의 라이프스타일에 완벽하게 맞는 품위 있는 월별 방식",
+      "highlight": "가장 인기",
+      "features": {
+        "noInitial": "초기 투자 불필요",
+        "flexible": "유연한 월별 방식",
+        "competitive": "경쟁력 있는 조건 제공",
+        "approval": "빠른 승인 과정",
+        "care": "동일한 혁신적인 케어"
+      }
+    },
+    "healthcare": {
+      "title": "의료 투자",
+      "subtitle": "HSA/FSA 자격",
+      "description": "세금 혜택 케어를 위해 의료 투자 계정을 최대화하세요",
+      "highlight": "세금 혜택",
+      "features": {
+        "eligible": "HSA/FSA 자격 시술",
+        "tax": "세금 혜택 투자",
+        "documentation": "문서 제공",
+        "optimization": "유연한 지출 최적화",
+        "guidance": "전문적 안내"
+      }
+    },
+    "exploreOption": "이 옵션 탐색"
+  },
+  "value": {
+    "title": "혁신적인 시력의 진정한 가치",
+    "subtitle": "혁신적인 시력 관리 투자의 평생 가치를 고려하세요",
+    "benefits": {
+      "freedom": {
+        "title": "자유",
+        "value": "무가치",
+        "description": "더 이상 안경이나 콘택트렌즈가 활동을 제한하지 않습니다"
+      },
+      "convenience": {
+        "title": "편의성",
+        "value": "매일",
+        "description": "매일 아침 깨어나자마자 즉시 맑은 시력"
+      },
+      "confidence": {
+        "title": "자신감",
+        "value": "평생",
+        "description": "향상된 자아 이미지와 전문적 존재감"
+      },
+      "experience": {
+        "title": "경험",
+        "value": "15+년",
+        "description": "Dr. Flowers의 혁신적인 태평양 검증 전문성"
+      }
+    }
+  },
+  "journey": {
+    "title": "당신의 투자 여정",
+    "subtitle": "당신의 편의를 위해 설계된 매끄럽고 품위 있는 과정",
+    "steps": {
+      "consultation": {
+        "title": "상담",
+        "description": "포괄적인 평가와 개인화된 치료 계획"
+      },
+      "discussion": {
+        "title": "투자 논의",
+        "description": "투자 옵션과 방식에 대한 사적 상담"
+      },
+      "finalization": {
+        "title": "방식 최종화",
+        "description": "당신의 시술의 매끄러운 처리와 스케줄링"
+      },
+      "care": {
+        "title": "혁신적인 케어",
+        "description": "포괄적인 후속 관리와 함께하는 시력 변화"
+      }
+    }
+  },
+  "concierge": {
+    "title": "컨시어지 금융 서비스",
+    "description": "우리의 전담 금융 컨시어지 팀은 당신의 라이프스타일과 선호도에 가장 적합한 투자 방식을 선택하는 데 도움이 되는 개인화된 안내를 제공합니다. 모든 대화는 사적이고 전문적이며 압박이 없습니다.",
+    "services": {
+      "confidential": {
+        "title": "기밀 상담",
+        "description": "당신의 옵션에 대한 사적이고 품위 있는 논의"
+      },
+      "personalized": {
+        "title": "개인화된 솔루션",
+        "description": "당신의 독특한 상황에 맞춘 방식"
+      },
+      "whiteGlove": {
+        "title": "화이트 글러브 서비스",
+        "description": "매끄러운 처리와 지속적인 지원"
+      }
+    },
+    "cta": "사적 상담 스케줄"
+  },
+  "cta": {
+    "title": "당신의 시력 투자가 기다립니다",
+    "description": "투자 우려가 혁신적인 시력으로의 여정을 지연시키지 마세요. 우리의 컨시어지 팀은 Dr. Flowers의 전문성을 당신의 라이프스타일에 접근 가능하고 편안하게 만드는 방식을 만들기 위해 당신과 함께 일할 것입니다.",
+    "schedule": "투자 상담 스케줄",
+    "explore": "시술 탐색"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "procedures": {
+    "lasik": "LASIK",
+    "prk": "PRK",
+    "icl": "ICL",
+    "cataract": "Կատարակտի վիրահատություն",
+    "cornealTransplant": "Եղջերաթաղանթի փոխպատվաստում"
+  },
+  "vision": {
+    "nearsighted": "Մոտատեսություն",
+    "farsighted": "Հեռատեսություն",
+    "astigmatism": "Աստիգմատիզմ",
+    "presbyopia": "Ծերական մոտատեսություն",
+    "perfect": "20/20 տեսողություն",
+    "before": "Մինչև",
+    "after": "Հետո",
+    "improvement": "Բարելավում",
+    "correction": "Ուղղում"
+  },
+  "terms": {
+    "cornea": "Եղջերաթաղանթ",
+    "retina": "Ցանցաթաղանթ",
+    "pupil": "Աչքի բիբ",
+    "iris": "Ծիածանաթաղանթ",
+    "lens": "Ոսկրիկ",
+    "opticNerve": "Տեսողական նյարդ",
+    "diopter": "Դիոպտր",
+    "refraction": "Կոտրում",
+    "aberration": "Շեղում",
+    "topography": "Տոպոգրաֆիա",
+    "epithelium": "Էպիթել",
+    "stroma": "Ստրոմա",
+    "endothelium": "Էնդոթել"
+  },
+  "safety": {
+    "fdaApproved": "FDA հաստատված",
+    "clinicallyProven": "Կլինիկորեն ապացուցված",
+    "safeAndEffective": "Անվտանգ և արդյունավետ",
+    "minimallyInvasive": "Նվազագույն ինվազիվ",
+    "outpatientProcedure": "Արտահիվանդանոցային ընթացակարգ",
+    "noHospitalStay": "Հիվանդանոցում մնալու անհրաժեշտություն չկա"
+  },
+  "recovery": {
+    "immediate": "Անմիջական",
+    "sameDay": "Նույն օրը",
+    "nextDay": "Հաջորդ օրը",
+    "oneWeek": "Մեկ շաբաթ",
+    "oneMonth": "Մեկ ամիս",
+    "fullHealing": "Ամբողջական բուժում",
+    "followUp": "Հետագա այց"
+  },
+  "benefits": {
+    "noGlasses": "Ակնոցներ չեն պահանջվում",
+    "noContacts": "Կոնտակտային ոսպնյակներ չեն պահանջվում",
+    "clearVision": "Պարզ տեսողություն",
+    "activeLifestyle": "Ակտիվ ապրելակերպ",
+    "careerAdvancement": "Կարիերային առաջխաղացում",
+    "confidence": "Ինքնավստահության աճ"
+  },
+  "disclaimers": {
+    "resultsVary": "Անհատական արդյունքները կարող են տարբեր լինել",
+    "consultationRequired": "Թեկնածուությունը որոշելու համար խորհրդատվություն է պահանջվում",
+    "risksBenefits": "Քննարկեք ռիսկերը և օգուտները ձեր բժշկի հետ",
+    "followInstructions": "Հետևեք բոլոր վիրահատության հետո հրահանգներին",
+    "medicalAdvice": "Այս տեղեկատվությունը չի փոխարինում մասնագիտական բժշկական խորհուրդը"
+  }
+}

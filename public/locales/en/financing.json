@@ -1,0 +1,144 @@
+{
+  "hero": {
+    "badge": "Investment in Revolutionary Vision Care",
+    "title": "Investment Options",
+    "subtitle": "for Your Vision Journey",
+    "description": "Your vision is priceless. We offer sophisticated investment solutions that make Dr. Flowers' revolutionary care accessible through flexible, dignified arrangements tailored to your lifestyle.",
+    "cta": "Discuss Investment Options"
+  },
+  "investment": {
+    "title": "An Investment in Your Future",
+    "description": "Revolutionary vision care represents one of the most valuable investments you can make. The freedom from glasses and contacts, enhanced quality of life, and decades of clear vision create immeasurable returns that compound daily.",
+    "benefits": {
+      "lifetime": {
+        "title": "Lifetime Value",
+        "description": "Decades of freedom from glasses and contacts"
+      },
+      "lifestyle": {
+        "title": "Enhanced Lifestyle",
+        "description": "Unrestricted activities and professional opportunities"
+      },
+      "expertise": {
+        "title": "Revolutionary Expertise",
+        "description": "Pacific-proven techniques and unmatched experience"
+      }
+    }
+  },
+  "solutions": {
+    "title": "Sophisticated Investment Solutions",
+    "subtitle": "We offer dignified, flexible arrangements that honor the value of your investment",
+    "immediate": {
+      "title": "Immediate Investment",
+      "subtitle": "Complete Care Package",
+      "description": "Full investment in your revolutionary vision journey with comprehensive care included",
+      "highlight": "Most Comprehensive",
+      "features": {
+        "coverage": "Complete procedure coverage",
+        "followup": "All follow-up appointments",
+        "guarantee": "Lifetime enhancement guarantee",
+        "priority": "Priority scheduling",
+        "concierge": "Concierge care experience"
+      }
+    },
+    "structured": {
+      "title": "Structured Investment",
+      "subtitle": "Flexible Arrangements",
+      "description": "Dignified monthly arrangements that fit seamlessly into your lifestyle",
+      "highlight": "Most Popular",
+      "features": {
+        "noInitial": "No initial investment required",
+        "flexible": "Flexible monthly arrangements",
+        "competitive": "Competitive terms available",
+        "approval": "Quick approval process",
+        "care": "Same revolutionary care"
+      }
+    },
+    "healthcare": {
+      "title": "Healthcare Investment",
+      "subtitle": "HSA/FSA Eligible",
+      "description": "Maximize your healthcare investment accounts for tax-advantaged care",
+      "highlight": "Tax Advantaged",
+      "features": {
+        "eligible": "HSA/FSA eligible procedures",
+        "tax": "Tax-advantaged investment",
+        "documentation": "Documentation provided",
+        "optimization": "Flexible spending optimization",
+        "guidance": "Professional guidance"
+      }
+    },
+    "exploreOption": "Explore This Option"
+  },
+  "value": {
+    "title": "The True Value of Revolutionary Vision",
+    "subtitle": "Consider the lifetime value of your investment in revolutionary vision care",
+    "benefits": {
+      "freedom": {
+        "title": "Freedom",
+        "value": "Priceless",
+        "description": "No more glasses or contacts limiting your activities"
+      },
+      "convenience": {
+        "title": "Convenience",
+        "value": "Daily",
+        "description": "Immediate clear vision upon waking every morning"
+      },
+      "confidence": {
+        "title": "Confidence",
+        "value": "Lifetime",
+        "description": "Enhanced self-image and professional presence"
+      },
+      "experience": {
+        "title": "Experience",
+        "value": "15+ Years",
+        "description": "Dr. Flowers' revolutionary Pacific-proven expertise"
+      }
+    }
+  },
+  "journey": {
+    "title": "Your Investment Journey",
+    "subtitle": "A seamless, dignified process designed for your convenience",
+    "steps": {
+      "consultation": {
+        "title": "Consultation",
+        "description": "Comprehensive evaluation and personalized treatment planning"
+      },
+      "discussion": {
+        "title": "Investment Discussion",
+        "description": "Private consultation about investment options and arrangements"
+      },
+      "finalization": {
+        "title": "Arrangement Finalization",
+        "description": "Seamless processing and scheduling of your procedure"
+      },
+      "care": {
+        "title": "Revolutionary Care",
+        "description": "Your vision transformation with comprehensive follow-up"
+      }
+    }
+  },
+  "concierge": {
+    "title": "Concierge Financial Services",
+    "description": "Our dedicated financial concierge team provides personalized guidance to help you select the investment arrangement that best suits your lifestyle and preferences. Every conversation is private, professional, and pressure-free.",
+    "services": {
+      "confidential": {
+        "title": "Confidential Consultation",
+        "description": "Private, dignified discussions about your options"
+      },
+      "personalized": {
+        "title": "Personalized Solutions",
+        "description": "Arrangements tailored to your unique situation"
+      },
+      "whiteGlove": {
+        "title": "White-Glove Service",
+        "description": "Seamless processing and ongoing support"
+      }
+    },
+    "cta": "Schedule Private Consultation"
+  },
+  "cta": {
+    "title": "Your Vision Investment Awaits",
+    "description": "Don't let investment concerns delay your journey to revolutionary vision. Our concierge team will work with you to create an arrangement that makes Dr. Flowers' expertise accessible and comfortable for your lifestyle.",
+    "schedule": "Schedule Investment Consultation",
+    "explore": "Explore Procedures"
+  }
+}

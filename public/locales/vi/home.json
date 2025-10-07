@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "badge": "Người tiên phong LASIK đầu tiên trong khu vực Thái Bình Dương",
+    "title": "Cách mạng",
+    "titleAccent": "Chăm sóc thị lực",
+    "subtitle": "Từ việc tiên phong phẫu thuật LASIK trên các đảo Thái Bình Dương đến cách mạng hóa chăm sóc thị lực ở Los Angeles, Bác sĩ Flowers mang đến hàng thập kỷ chuyên môn cho mỗi thủ thuật.",
+    "cta": {
+      "schedule": "ĐẶT LỊCH TỬ VẤN",
+      "phone": "(844) 211-5462"
+    }
+  },
+  "stats": {
+    "livesTransformed": {
+      "label": "Cuộc sống được thay đổi",
+      "description": "Các thủ thuật thành công đã hoàn thành"
+    },
+    "pacificIslands": {
+      "label": "Đảo Thái Bình Dương",
+      "description": "Các địa điểm xa xôi được phục vụ"
+    },
+    "successRate": {
+      "label": "Tỷ lệ thành công",
+      "description": "Bệnh nhân đạt được thị lực 20/20"
+    },
+    "yearsExperience": {
+      "label": "Năm kinh nghiệm",
+      "description": "Cung cấp dịch vụ y tế cách mạng"
+    }
+  },
+  "cta": {
+    "title": "Trải nghiệm chăm sóc thị lực cách mạng",
+    "subtitle": "Tham gia cùng hàng trăm bệnh nhân đã tin tưởng Bác sĩ Flowers với thị lực của họ. Từ các đảo Thái Bình Dương đến Los Angeles, trải nghiệm sự khác biệt mà chăm sóc cách mạng mang lại.",
+    "schedule": "ĐẶT LỊCH TỬ VẤN",
+    "pacificStory": "CÂU CHUYỆN THÁI BÌNH DƯƠNG"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "title": "隐私政策",
+  "subtitle": "ClearSight视力研究所 - Charles Flowers医生",
+  "lastUpdated": "最后更新",
+  "sections": {
+    "collection": {
+      "title": "我们收集的信息",
+      "medicalNotice": {
+        "title": "医疗实践通知",
+        "description": "作为医疗实践，我们根据HIPAA法规和州医疗隐私法收集和维护健康信息。"
+      },
+      "personal": {
+        "title": "个人信息",
+        "items": {
+          "contact": "联系信息（姓名、电子邮件、电话号码、地址）",
+          "medical": "病史和视力相关信息",
+          "insurance": "保险信息和付款详情",
+          "appointments": "预约和咨询记录",
+          "outcomes": "治疗结果和随访信息"
+        }
+      },
+      "technical": {
+        "title": "技术信息",
+        "items": {
+          "ip": "IP地址和浏览器信息",
+          "usage": "网站使用模式和偏好",
+          "language": "语言和可访问性偏好",
+          "device": "设备和操作系统信息"
+        }
+      }
+    },
+    "usage": {
+      "title": "我们如何使用您的信息",
+      "medical": {
+        "title": "医疗护理",
+        "items": {
+          "consultations": "提供视力矫正咨询和治疗",
+          "scheduling": "安排预约和后续护理",
+          "communication": "就您的治疗和康复进行沟通",
+          "records": "按法律要求维护医疗记录"
+        }
+      },
+      "website": {
+        "title": "网站功能",
+        "items": {
+          "personalization": "个性化您的网站体验",
+          "language": "以您的首选语言提供内容",
+          "improvement": "改进我们的网站和服务",
+          "inquiries": "回应您的询问和请求"
+        }
+      }
+    },
+    "gdpr": {
+      "title": "您在GDPR下的权利",
+      "euNotice": {
+        "title": "欧盟居民",
+        "description": "如果您位于欧盟，您在GDPR下拥有额外权利。"
+      },
+      "rights": {
+        "title": "您的权利包括",
+        "access": {
+          "title": "访问权",
+          "description": "请求您个人数据的副本"
+        },
+        "rectification": {
+          "title": "更正权",
+          "description": "更正不准确的信息"
+        },
+        "erasure": {
+          "title": "删除权",
+          "description": "请求删除您的数据"
+        },
+        "portability": {
+          "title": "可携带权",
+          "description": "以可携带格式接收您的数据"
+        },
+        "object": {
+          "title": "反对权",
+          "description": "反对某些数据处理"
+        },
+        "restriction": {
+          "title": "限制权",
+          "description": "限制我们如何处理您的数据"
+        }
+      },
+      "exercise": {
+        "title": "如何行使您的权利",
+        "email": "电子邮件",
+        "phone": "电话",
+        "response": "我们将在GDPR要求的30天内回应您的请求。"
+      }
+    },
+    "security": {
+      "title": "数据安全",
+      "description": "我们实施适当的技术和组织措施来保护您的个人信息",
+      "measures": {
+        "encryption": "传输中和静态数据加密",
+        "assessments": "定期安全评估和更新",
+        "access": "访问控制和身份验证系统",
+        "training": "员工数据保护培训",
+        "incident": "事件响应和违规通知程序"
+      }
+    },
+    "contact": {
+      "title": "联系信息",
+      "dpo": {
+        "title": "数据保护官",
+        "organization": "ClearSight视力研究所",
+        "address1": "5750 Downey Ave., Suite 101",
+        "address2": "Lakewood, CA 90712"
+      }
+    }
+  }
+}

@@ -1,0 +1,486 @@
+{
+  "hero": {
+    "badge": "Revolutionary Vision Correction",
+    "title": "ClearSight Vision Correction Options",
+    "subtitle": "Dr. Flowers offers advanced vision correction procedures, each tailored to specific needs and lifestyles. Compare options and find the perfect solution for your revolutionary vision transformation."
+  },
+  "procedures": {
+    "keyFeatures": "Key Features",
+    "lasik": {
+      "tagline": "Most Popular Choice",
+      "description": "Advanced laser vision correction with quick recovery and excellent results",
+      "recoveryTime": "1-2 days",
+      "successRate": "98%",
+      "ideal": "Nearsighted, farsighted, astigmatism",
+      "features": {
+        "quick": "Quick 15-minute procedure",
+        "comfort": "Minimal discomfort",
+        "recovery": "Rapid visual recovery",
+        "lasting": "Long-lasting results"
+      }
+    },
+    "prk": {
+      "tagline": "Surface Treatment",
+      "description": "Alternative laser correction for patients not suitable for LASIK",
+      "recoveryTime": "3-5 days",
+      "successRate": "96%",
+      "ideal": "Thin corneas, active lifestyles",
+      "features": {
+        "noFlap": "No corneal flap",
+        "thinCorneas": "Suitable for thin corneas",
+        "stability": "Excellent long-term stability",
+        "athletes": "Ideal for athletes"
+      }
+    },
+    "icl": {
+      "tagline": "Implantable Solution",
+      "description": "Permanent implantable contact lenses for high prescriptions",
+      "recoveryTime": "1-3 days",
+      "successRate": "99%",
+      "ideal": "High prescriptions, thin corneas",
+      "features": {
+        "reversible": "Reversible procedure",
+        "nightVision": "Excellent night vision",
+        "uvProtection": "UV protection",
+        "maintenance": "No maintenance required"
+      }
+    }
+  },
+  "lasik": {
+    "hero": {
+      "badge": "Most Popular Choice - Revolutionary Results",
+      "title": "ClearSight LASIK Surgery",
+      "subtitle": "Experience the revolutionary LASIK technique that Dr. Flowers pioneered across the Pacific region, now available at ClearSight in Los Angeles. Quick recovery, excellent results, and life-changing clarity await.",
+      "stats": {
+        "procedureTime": "15 min",
+        "recoveryTime": "1-2 days",
+        "successRate": "98%"
+      }
+    },
+    "technology": {
+      "title": "Revolutionary LASIK Technology",
+      "description": "LASIK (Laser-Assisted In Situ Keratomileusis) is the most advanced and popular vision correction procedure in the world. Dr. Flowers uses state-of-the-art femtosecond laser technology to create a precise corneal flap, then reshapes the underlying cornea with an excimer laser to correct refractive errors.",
+      "features": {
+        "bladeFree": {
+          "title": "Blade-Free Technology",
+          "description": "Advanced femtosecond laser creates precise flaps"
+        },
+        "wavefront": {
+          "title": "Wavefront-Guided Treatment",
+          "description": "Customized correction for your unique vision"
+        },
+        "recovery": {
+          "title": "Rapid Visual Recovery",
+          "description": "Most patients see clearly within 24 hours"
+        }
+      }
+    },
+    "benefits": {
+      "title": "Life-Changing Benefits",
+      "subtitle": "Discover why LASIK is the preferred choice for vision correction",
+      "items": {
+        "clarity": {
+          "title": "Instant Clarity",
+          "description": "See clearly without glasses or contacts immediately after surgery"
+        },
+        "quick": {
+          "title": "Quick Procedure",
+          "description": "Only 15 minutes total, with actual laser time under 60 seconds per eye"
+        },
+        "safety": {
+          "title": "Proven Safety",
+          "description": "FDA-approved with over 20 years of safety data and millions of procedures"
+        },
+        "satisfaction": {
+          "title": "Patient Satisfaction",
+          "description": "Over 98% of Dr. Flowers' patients would recommend LASIK to friends"
+        },
+        "lasting": {
+          "title": "Long-Lasting Results",
+          "description": "Permanent vision correction that lasts for decades"
+        },
+        "lifestyle": {
+          "title": "Active Lifestyle",
+          "description": "Freedom to swim, exercise, and live without visual restrictions"
+        }
+      }
+    },
+    "process": {
+      "title": "The LASIK Process",
+      "subtitle": "Dr. Flowers' revolutionary approach ensures comfort and precision at every step",
+      "steps": {
+        "examination": {
+          "title": "Comprehensive Eye Examination",
+          "description": "Advanced diagnostic testing including corneal mapping, wavefront analysis, and pupil measurement to create your personalized treatment plan."
+        },
+        "flap": {
+          "title": "Corneal Flap Creation",
+          "description": "Using the revolutionary femtosecond laser, Dr. Flowers creates a thin, precise flap in the cornea. This blade-free approach ensures maximum safety and accuracy."
+        },
+        "correction": {
+          "title": "Laser Vision Correction",
+          "description": "The excimer laser reshapes the cornea according to your unique prescription. Advanced eye tracking ensures precise treatment even with small eye movements."
+        },
+        "recovery": {
+          "title": "Recovery & Follow-up",
+          "description": "The corneal flap is repositioned naturally without sutures. Most patients experience immediate vision improvement with complete healing in days."
+        }
+      }
+    },
+    "candidacy": {
+      "title": "Am I a LASIK Candidate?",
+      "subtitle": "LASIK can correct a wide range of vision problems for qualified candidates",
+      "ideal": {
+        "title": "Ideal Candidates",
+        "items": [
+          "Age 18 or older with stable prescription",
+          "Nearsightedness up to -12.00 diopters",
+          "Farsightedness up to +6.00 diopters",
+          "Astigmatism up to 6.00 diopters",
+          "Healthy corneas with adequate thickness",
+          "No severe dry eye syndrome",
+          "Realistic expectations about outcomes"
+        ]
+      },
+      "notSuitable": {
+        "title": "May Not Be Suitable",
+        "items": [
+          "Pregnancy or nursing mothers",
+          "Unstable vision prescription",
+          "Severe autoimmune conditions",
+          "Very thin corneas",
+          "Certain eye diseases or conditions",
+          "Unrealistic expectations",
+          "Active eye infections or inflammation"
+        ]
+      },
+      "evaluation": "The only way to know for sure is through a comprehensive evaluation with Dr. Flowers."
+    },
+    "testimonials": {
+      "title": "LASIK Success Stories",
+      "subtitle": "Real patients, real results with Dr. Flowers' revolutionary LASIK"
+    },
+    "cta": {
+      "title": "Ready for Revolutionary Vision?",
+      "subtitle": "Join the thousands who have trusted Dr. Flowers with their LASIK surgery. Experience the freedom of perfect vision with proven revolutionary techniques.",
+      "schedule": "Schedule Free LASIK Consultation",
+      "results": "See More Results"
+    }
+  },
+  "prk": {
+    "hero": {
+      "badge": "Surface Treatment Alternative - Proven Results",
+      "title": "ClearSight PRK Surgery",
+      "subtitle": "Experience PRK (Photorefractive Keratectomy), the original laser vision correction procedure. Perfect for patients with thin corneas or active lifestyles, offering excellent long-term stability.",
+      "stats": {
+        "procedureTime": "15 min",
+        "recoveryTime": "3-5 days",
+        "successRate": "96%"
+      }
+    },
+    "technology": {
+      "title": "The Original Laser Vision Correction",
+      "description": "PRK (Photorefractive Keratectomy) was the first laser vision correction procedure and remains the gold standard for certain patients. Unlike LASIK, PRK treats the surface of the cornea directly, making it ideal for patients with thin corneas or those in high-impact professions.",
+      "features": {
+        "noFlap": {
+          "title": "No Corneal Flap",
+          "description": "Surface treatment eliminates flap-related complications"
+        },
+        "thinCorneas": {
+          "title": "Suitable for Thin Corneas",
+          "description": "Perfect option when LASIK isn't recommended"
+        },
+        "stability": {
+          "title": "Excellent Long-term Stability",
+          "description": "Proven track record with decades of data"
+        }
+      }
+    },
+    "advantages": {
+      "title": "Why Choose PRK?",
+      "subtitle": "Understanding the unique advantages of PRK over other procedures",
+      "prk": {
+        "title": "PRK Advantages",
+        "items": [
+          "No risk of flap complications",
+          "Suitable for thin corneas",
+          "Ideal for contact sports and military",
+          "Excellent long-term stability",
+          "Preserves more corneal tissue",
+          "Can correct higher prescriptions",
+          "No risk of dry eyes from flap"
+        ]
+      },
+      "lasik": {
+        "title": "LASIK Comparison",
+        "items": [
+          "Requires corneal flap creation",
+          "Needs adequate corneal thickness",
+          "Faster initial recovery",
+          "Immediate vision improvement",
+          "Less post-op discomfort",
+          "Most popular procedure",
+          "Quick return to activities"
+        ]
+      }
+    },
+    "recovery": {
+      "title": "PRK Recovery Timeline",
+      "subtitle": "What to expect during your healing journey",
+      "phases": {
+        "initial": {
+          "period": "Days 1-3",
+          "title": "Initial Healing",
+          "symptoms": ["Mild discomfort", "Light sensitivity", "Tearing", "Blurry vision"],
+          "care": ["Use prescribed drops", "Wear sunglasses", "Rest eyes frequently", "Avoid screens"]
+        },
+        "clearing": {
+          "period": "Days 4-7",
+          "title": "Vision Clearing",
+          "symptoms": ["Improving comfort", "Clearer vision", "Less sensitivity", "Contact lens removal"],
+          "care": ["Continue medications", "Follow-up appointment", "Gradual activity return", "Protect eyes"]
+        },
+        "stabilization": {
+          "period": "Weeks 2-4",
+          "title": "Stabilization",
+          "symptoms": ["Stable vision", "Minimal symptoms", "Normal activities", "Clear sight"],
+          "care": ["Regular check-ups", "UV protection", "Normal routine", "Final healing"]
+        }
+      }
+    },
+    "candidates": {
+      "title": "Who Benefits Most from PRK?",
+      "subtitle": "PRK is often the preferred choice for specific patient profiles",
+      "active": {
+        "title": "Active Professionals",
+        "description": "Military personnel, law enforcement, firefighters, and athletes who face potential eye trauma",
+        "benefits": ["No flap displacement risk", "Contact sport safe", "High-impact activities"]
+      },
+      "thin": {
+        "title": "Thin Corneas",
+        "description": "Patients whose corneas are too thin for LASIK or who have irregular corneal shapes",
+        "benefits": ["Preserves corneal tissue", "Treats irregular astigmatism", "Safe for thin corneas"]
+      },
+      "high": {
+        "title": "High Prescriptions",
+        "description": "Patients with higher degrees of nearsightedness, farsightedness, or astigmatism",
+        "benefits": ["Treats severe myopia", "Corrects high astigmatism", "Long-term stability"]
+      }
+    },
+    "cta": {
+      "title": "Is PRK Right for You?",
+      "subtitle": "Discover if PRK is the perfect solution for your vision needs and lifestyle. Dr. Flowers will provide expert guidance and personalized recommendations.",
+      "schedule": "Schedule PRK Consultation",
+      "compare": "Compare All Procedures"
+    }
+  },
+  "icl": {
+    "hero": {
+      "badge": "Implantable Solution - Reversible Results",
+      "title": "ClearSight ICL Surgery",
+      "subtitle": "Experience ICL (Implantable Contact Lens), the revolutionary permanent solution for high prescriptions. Reversible, protective, and offering superior vision quality for patients beyond traditional laser limits.",
+      "stats": {
+        "procedureTime": "30 min",
+        "recoveryTime": "1-3 days",
+        "successRate": "99%"
+      }
+    },
+    "technology": {
+      "title": "Revolutionary Implantable Technology",
+      "description": "ICL (Implantable Contact Lens) is a revolutionary refractive surgery that places a soft, biocompatible lens inside your eye, between the iris and natural lens. This permanent solution corrects vision without removing any corneal tissue.",
+      "features": {
+        "reversible": {
+          "title": "Reversible Procedure",
+          "description": "ICL can be removed or replaced if needed"
+        },
+        "noAlteration": {
+          "title": "No Corneal Alteration",
+          "description": "Preserves natural corneal structure completely"
+        },
+        "nightVision": {
+          "title": "Superior Night Vision",
+          "description": "Exceptional vision quality in all lighting"
+        }
+      }
+    },
+    "advantages": {
+      "title": "Unique ICL Advantages",
+      "subtitle": "Discover why ICL is the preferred choice for high prescriptions and demanding patients",
+      "items": {
+        "reversible": {
+          "title": "Reversible",
+          "description": "Unlike laser procedures, ICL can be removed or replaced if your vision changes"
+        },
+        "quality": {
+          "title": "Superior Vision Quality",
+          "description": "Exceptional clarity and contrast, especially in low-light conditions"
+        },
+        "protection": {
+          "title": "UV Protection",
+          "description": "Built-in UV filter protects your retina from harmful ultraviolet rays"
+        },
+        "preservation": {
+          "title": "No Corneal Changes",
+          "description": "Preserves natural corneal structure and biomechanical properties"
+        },
+        "recovery": {
+          "title": "Quick Recovery",
+          "description": "Most patients return to normal activities within 24-48 hours"
+        },
+        "prescriptions": {
+          "title": "High Prescriptions",
+          "description": "Corrects severe myopia beyond the limits of laser surgery"
+        }
+      }
+    },
+    "comparison": {
+      "title": "ICL vs Laser Surgery",
+      "subtitle": "Understanding when ICL is the superior choice",
+      "icl": {
+        "title": "ICL Advantages",
+        "items": [
+          "Corrects prescriptions up to -20.00 D",
+          "Completely reversible procedure",
+          "No dry eye complications",
+          "Superior night vision quality",
+          "Preserves natural corneal structure",
+          "Built-in UV protection",
+          "No corneal healing required"
+        ]
+      },
+      "laser": {
+        "title": "Laser Limitations",
+        "items": [
+          "Limited prescription range",
+          "Permanent corneal changes",
+          "Potential for dry eyes",
+          "May affect night vision",
+          "Requires adequate corneal thickness",
+          "Cannot correct extreme myopia",
+          "Irreversible tissue removal"
+        ]
+      }
+    },
+    "candidates": {
+      "title": "Who Benefits Most from ICL?",
+      "subtitle": "ICL is the ideal solution for specific patient needs and prescription ranges",
+      "high": {
+        "title": "High Prescriptions",
+        "description": "Patients with severe myopia (-3.00 to -20.00 D) or hyperopia (+0.50 to +10.00 D)",
+        "benefits": ["Beyond laser limits", "Exceptional correction", "Stable results"]
+      },
+      "thin": {
+        "title": "Thin Corneas",
+        "description": "When corneal thickness is insufficient for laser procedures",
+        "benefits": ["No corneal tissue removal", "Preserves eye structure", "Safe alternative"]
+      },
+      "quality": {
+        "title": "Quality Seekers",
+        "description": "Patients who prioritize superior vision quality and reversibility",
+        "benefits": ["Premium vision quality", "Reversible option", "UV protection"]
+      },
+      "requirements": {
+        "title": "Pre-Procedure Requirements",
+        "qualifying": {
+          "title": "Qualifying Factors:",
+          "items": [
+            "Age 21-45 for optimal results",
+            "Stable prescription for 1+ years",
+            "Adequate anterior chamber depth",
+            "Healthy corneal endothelium",
+            "No active eye disease"
+          ]
+        },
+        "disqualifying": {
+          "title": "Disqualifying Conditions:",
+          "items": [
+            "Glaucoma or high eye pressure",
+            "Previous eye surgeries",
+            "Shallow anterior chamber",
+            "Active eye inflammation",
+            "Unrealistic expectations"
+          ]
+        }
+      }
+    },
+    "cta": {
+      "title": "Is ICL Right for Your High Prescription?",
+      "subtitle": "Discover if ICL is the perfect reversible solution for your vision needs. Schedule a comprehensive evaluation with Dr. Flowers to explore this revolutionary option.",
+      "schedule": "Schedule ICL Consultation",
+      "compare": "Compare All Procedures"
+    }
+  },
+  "comparison": {
+    "title": "Side-by-Side Comparison",
+    "subtitle": "Compare key features of each procedure to help you make an informed decision",
+    "featureHeader": "Feature",
+    "recommendation": "Not sure which procedure is right for you?",
+    "cta": "Get Personalized Recommendation",
+    "features": {
+      "recoveryTime": "Recovery Time",
+      "procedureTime": "Procedure Time",
+      "painLevel": "Pain Level",
+      "highRx": "Suitable for High Rx",
+      "nightVision": "Night Vision",
+      "reversibility": "Reversibility",
+      "successRate": "Success Rate",
+      "idealFor": "Ideal For"
+    },
+    "values": {
+      "lasik": {
+        "recoveryTime": "1-2 days",
+        "procedureTime": "15 minutes",
+        "painLevel": "Minimal",
+        "highRx": "Limited",
+        "nightVision": "Excellent",
+        "reversibility": "No"
+      },
+      "prk": {
+        "recoveryTime": "3-5 days",
+        "procedureTime": "15 minutes",
+        "painLevel": "Mild-Moderate",
+        "highRx": "Limited",
+        "nightVision": "Excellent",
+        "reversibility": "No"
+      },
+      "icl": {
+        "recoveryTime": "1-3 days",
+        "procedureTime": "30 minutes",
+        "painLevel": "Minimal",
+        "highRx": "Excellent",
+        "nightVision": "Superior",
+        "reversibility": "Yes"
+      }
+    },
+    "recommendation": "Not sure which procedure is right for you?",
+    "cta": "Get Personalized Recommendation"
+  },
+  "process": {
+    "title": "Your Revolutionary Journey",
+    "subtitle": "Every procedure follows Dr. Flowers' proven process for optimal results",
+    "steps": {
+      "consultation": {
+        "title": "Free Consultation",
+        "description": "Comprehensive eye exam and procedure recommendation"
+      },
+      "preparation": {
+        "title": "Pre-Op Preparation",
+        "description": "Detailed measurements and surgical planning"
+      },
+      "procedure": {
+        "title": "Revolutionary Procedure",
+        "description": "Quick, comfortable surgery with advanced technology"
+      },
+      "recovery": {
+        "title": "Recovery & Follow-up",
+        "description": "Personalized care and monitoring for optimal healing"
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to Transform Your Vision?",
+    "subtitle": "Schedule your free consultation with Dr. Flowers and discover which revolutionary procedure is perfect for your lifestyle and vision needs.",
+    "schedule": "Schedule Free Consultation",
+    "testimonials": "See Testimonials"
+  }
+}

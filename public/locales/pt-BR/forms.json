@@ -1,0 +1,80 @@
+{
+  "labels": {
+    "firstName": "Nome",
+    "lastName": "Sobrenome",
+    "email": "Endereço de Email",
+    "phone": "Número de Telefone",
+    "message": "Mensagem",
+    "procedure": "Procedimento de Interesse",
+    "preferredContact": "Método de Contato Preferido",
+    "comments": "Perguntas ou Comentários",
+    "age": "Idade",
+    "occupation": "Ocupação",
+    "location": "Localização",
+    "visionBefore": "Visão Antes",
+    "visionAfter": "Visão Depois",
+    "rating": "Avaliação",
+    "testimonialText": "Sua Experiência"
+  },
+  "placeholders": {
+    "firstName": "Seu nome",
+    "lastName": "Seu sobrenome",
+    "email": "seu.email@exemplo.com",
+    "phone": "(11) 99999-9999",
+    "message": "Conte-nos sobre seus objetivos de visão...",
+    "comments": "Alguma pergunta ou solicitação especial?...",
+    "age": "Sua idade",
+    "occupation": "Sua profissão",
+    "location": "Cidade, Estado",
+    "testimonialText": "Compartilhe sua experiência com o Dr. Flowers..."
+  },
+  "options": {
+    "procedures": {
+      "lasik": "LASIK",
+      "prk": "PRK", 
+      "icl": "ICL",
+      "consultation": "Consulta Geral"
+    },
+    "contactMethods": {
+      "phone": "Telefone",
+      "email": "Email",
+      "text": "Mensagem de Texto"
+    },
+    "ratings": {
+      "1": "Ruim",
+      "2": "Regular",
+      "3": "Bom",
+      "4": "Muito Bom",
+      "5": "Excelente"
+    }
+  },
+  "buttons": {
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "reset": "Redefinir",
+    "save": "Salvar",
+    "scheduleConsultation": "Agendar Consulta",
+    "requestCallback": "Solicitar Retorno",
+    "downloadInfo": "Baixar Informações",
+    "shareTestimonial": "Compartilhe Sua História"
+  },
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "invalidEmail": "Por favor, insira um endereço de email válido",
+    "invalidPhone": "Por favor, insira um número de telefone válido",
+    "tooShort": "Este campo é muito curto",
+    "tooLong": "Este campo é muito longo",
+    "invalidRating": "Por favor, selecione uma avaliação"
+  },
+  "success": {
+    "submitted": "Obrigado! Seu formulário foi enviado com sucesso.",
+    "scheduled": "Sua consulta foi agendada.",
+    "contacted": "Entraremos em contato em até 24 horas.",
+    "testimonialSubmitted": "Obrigado por compartilhar sua experiência!"
+  },
+  "privacy": {
+    "notice": "Ao enviar este formulário, você consente em ser contatado sobre nossos serviços.",
+    "security": "Suas informações são seguras e nunca serão compartilhadas.",
+    "hipaa": "Todas as comunicações são compatíveis com HIPAA."
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "hero": {
+    "badge": "Revolutionary Technology & Innovation",
+    "title": "Advanced Technology",
+    "description": "ClearSight combines cutting-edge technology with innovative techniques developed through years of challenging Pacific missions, delivering unmatched precision and safety in vision correction.",
+    "cta": "Experience Revolutionary Technology"
+  },
+  "innovation": {
+    "title": "Innovation Born from Necessity",
+    "description": "Dr. Flowers' revolutionary approach to technology wasn't developed in a lab—it was forged in the challenging conditions of Pacific island missions where reliability, portability, and precision were matters of patient safety.",
+    "features": {
+      "reliability": {
+        "title": "Field-Tested Reliability",
+        "description": "Technology proven in demanding tropical conditions"
+      },
+      "adaptive": {
+        "title": "Adaptive Innovation",
+        "description": "Solutions created to overcome real-world challenges"
+      },
+      "focused": {
+        "title": "Patient-Focused Design",
+        "description": "Every innovation designed for optimal patient outcomes"
+      }
+    }
+  },
+  "equipment": {
+    "title": "State-of-the-Art Equipment",
+    "subtitle": "The latest technology enhanced by revolutionary techniques and protocols",
+    "femtosecond": {
+      "name": "Femtosecond Laser System",
+      "technology": "Ultra-precise corneal flap creation",
+      "innovation": "Dr. Flowers' humidity-resistant protocols",
+      "benefits": ["Blade-free surgery", "15-micron precision", "Tropical climate optimized"]
+    },
+    "excimer": {
+      "name": "Excimer Laser Platform",
+      "technology": "Advanced wavefront-guided correction",
+      "innovation": "Custom Pacific-tested profiles",
+      "benefits": ["Personalized treatment", "Aberration reduction", "Enhanced night vision"]
+    },
+    "topographer": {
+      "name": "Corneal Topographer",
+      "technology": "Ultra-high resolution mapping",
+      "innovation": "Mobile-adapted diagnostics",
+      "benefits": ["22,000 data points", "Instant analysis", "Portable precision"]
+    }
+  },
+  "safety": {
+    "title": "Uncompromising Safety Standards",
+    "subtitle": "Revolutionary technology paired with the highest safety standards in the industry",
+    "systems": {
+      "redundancy": {
+        "title": "Triple Redundancy Systems",
+        "description": "Every critical system has multiple backups to ensure uninterrupted precision.",
+        "stats": ["3 backup systems", "99.99% uptime", "0 system failures"]
+      },
+      "monitoring": {
+        "title": "Real-Time Monitoring",
+        "description": "Advanced sensors monitor every aspect of the procedure in real-time.",
+        "stats": ["1000+ data points/sec", "Instant feedback", "24/7 monitoring"]
+      },
+      "quality": {
+        "title": "Quality Assurance",
+        "description": "Rigorous testing and calibration protocols ensure consistent excellence.",
+        "stats": ["Daily calibrations", "Weekly deep testing", "Monthly certifications"]
+      }
+    }
+  },
+  "innovations": {
+    "title": "Revolutionary Innovations",
+    "subtitle": "Breakthrough techniques and protocols developed through Pacific missions",
+    "tropical": {
+      "title": "Tropical Climate Protocols",
+      "description": "Specialized techniques for maintaining laser precision in high-humidity environments, ensuring consistent results regardless of weather conditions.",
+      "features": [
+        "Humidity compensation algorithms",
+        "Temperature stability protocols",
+        "Equipment calibration procedures",
+        "Quality assurance systems"
+      ]
+    },
+    "mobile": {
+      "title": "Mobile Surgery Optimization",
+      "description": "Revolutionary approaches to portable surgical excellence, allowing world-class procedures in challenging locations.",
+      "features": [
+        "Rapid setup procedures (< 30 minutes)",
+        "Portable sterilization systems",
+        "Battery-powered backup systems",
+        "Compact storage solutions"
+      ]
+    },
+    "safety": {
+      "title": "Enhanced Safety Protocols",
+      "description": "Multi-layered safety systems developed for situations where traditional medical support isn't immediately available.",
+      "features": [
+        "Redundant safety checks",
+        "Remote monitoring capabilities",
+        "Emergency response protocols",
+        "Complication prevention systems"
+      ]
+    },
+    "telemedicine": {
+      "title": "Telemedicine Integration",
+      "description": "Advanced remote consultation and follow-up systems connecting patients across vast Pacific distances.",
+      "features": [
+        "High-resolution imaging transmission",
+        "Real-time consultation platforms",
+        "Remote diagnostic capabilities",
+        "Digital health record systems"
+      ]
+    }
+  },
+  "telemedicine": {
+    "title": "Telemedicine Revolution",
+    "description": "Born from the necessity of connecting with patients across thousands of miles of ocean, Dr. Flowers' telemedicine innovations now enhance every aspect of patient care, from initial consultations to long-term follow-ups.",
+    "virtual": {
+      "title": "Virtual Consultations",
+      "description": "High-definition video consultations with real-time diagnostic capabilities, allowing initial assessments and follow-up care from anywhere."
+    },
+    "mobile": {
+      "title": "Mobile Health Monitoring",
+      "description": "Revolutionary mobile apps for tracking recovery, reporting symptoms, and maintaining connection with the care team throughout your journey."
+    },
+    "remote": {
+      "title": "Remote Diagnostics",
+      "description": "Advanced imaging systems that can transmit detailed eye measurements and photographs for expert analysis, regardless of location."
+    }
+  },
+  "philosophy": {
+    "title": "Innovation Philosophy",
+    "quote": "Technology should serve humanity, not the other way around. Every innovation we develop must make vision correction safer, more accessible, and more effective for patients regardless of where they are in the world.",
+    "attribution": "— Dr. Charles Flowers",
+    "principles": {
+      "patient": {
+        "title": "Patient-First Innovation",
+        "description": "Every technological advancement must directly benefit patient outcomes and experience."
+      },
+      "accessibility": {
+        "title": "Accessibility Focus",
+        "description": "Technology should break down barriers, not create them—making care available everywhere."
+      },
+      "reliability": {
+        "title": "Proven Reliability",
+        "description": "Real-world testing in challenging conditions ensures technology performs when it matters most."
+      }
+    }
+  },
+  "cta": {
+    "title": "Experience Revolutionary Technology",
+    "subtitle": "Benefit from cutting-edge technology enhanced by years of innovation and field testing. Schedule your consultation to experience the difference revolutionary technology makes.",
+    "schedule": "Schedule Technology Consultation",
+    "procedures": "See Procedures"
+  }
+}

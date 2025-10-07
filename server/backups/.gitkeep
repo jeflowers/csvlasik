@@ -1,0 +1,12 @@
+# Backup directory for database and system backups
+# Used for:
+# - Automated database backups
+# - Encrypted backup storage
+# - Compliance backup retention
+# - Disaster recovery procedures
+
+# Security:
+# - All backups encrypted at rest
+# - Access logging for backup operations
+# - Retention policies enforced
+# - Secure deletion of expired backups

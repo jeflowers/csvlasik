@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "badge": "Agende Sua Consulta Revolucionária",
+    "title": "Comece Sua",
+    "titleAccent": "Jornada da Visão",
+    "subtitle": "Dê o primeiro passo em direção ao cuidado revolucionário da visão. Agende sua consulta gratuita com o Dr. Flowers e descubra como suas técnicas pioneiras podem transformar sua visão e sua vida."
+  },
+  "form": {
+    "title": "Agende Sua Consulta Gratuita",
+    "selectProcedure": "Selecione um procedimento"
+  },
+  "info": {
+    "title": "Entre em Contato",
+    "subtitle": "Pronto para experimentar o cuidado revolucionário da visão? Entre em contato conosco hoje para agendar sua consulta gratuita e dar o primeiro passo em direção à visão perfeita."
+  },
+  "office": {
+    "name": "Escritório de Lakewood",
+    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712"
+  },
+  "phone": {
+    "title": "Telefone",
+    "number": "(844) 211-5462",
+    "note": "Clique para ligar diretamente"
+  },
+  "email": {
+    "title": "Email",
+    "address": "info@clearsightlasik.com",
+    "note": "Respondemos dentro de 24 horas"
+  },
+  "hours": {
+    "title": "Horário de Funcionamento",
+    "weekdays": "Segunda - Sexta: 8:00 AM - 6:00 PM",
+    "saturday": "Sábado: 9:00 AM - 3:00 PM",
+    "sunday": "Domingo: Fechado",
+    "emergency": "Consultas de emergência disponíveis"
+  },
+  "quickActions": {
+    "title": "Ações Rápidas",
+    "callNow": "Ligue Agora para Agendamento Imediato",
+    "learnProcedures": "Saiba Sobre Procedimentos",
+    "financing": "Opções de Financiamento"
+  },
+  "consultation": {
+    "title": "O Que Esperar na Sua Consulta",
+    "subtitle": "Sua consulta gratuita é abrangente, educativa e completamente sem pressão",
+    "steps": {
+      "exam": {
+        "title": "Exame Abrangente dos Olhos",
+        "description": "Testes diagnósticos avançados incluindo mapeamento corneano, medição pupilar e avaliação da visão",
+        "duration": "45-60 minutos"
+      },
+      "personal": {
+        "title": "Consulta Pessoal",
+        "description": "Discussão individual com o Dr. Flowers sobre seus objetivos de visão, estilo de vida e opções de procedimento",
+        "duration": "30-45 minutos"
+      },
+      "plan": {
+        "title": "Plano de Tratamento Personalizado",
+        "description": "Receba sua recomendação personalizada com explicação detalhada de benefícios e expectativas",
+        "duration": "15-30 minutos"
+      }
+    },
+    "bring": {
+      "title": "O Que Trazer",
+      "glasses": "Óculos ou lentes de contato atuais",
+      "insurance": "Cartões de seguro",
+      "medications": "Lista de medicamentos atuais",
+      "id": "Carteira de motorista ou RG",
+      "questions": "Lista de perguntas",
+      "driver": "Alguém para levá-lo para casa"
+    }
+  },
+  "emergency": {
+    "title": "Contato de Emergência Pós-Operatório",
+    "description": "Se você é um paciente atual experimentando uma emergência pós-operatória fora do horário normal de funcionamento:",
+    "phone": "Linha de Emergência: (844) 211-5462",
+    "note": "Para perguntas não emergenciais, use nossos métodos de contato regulares acima."
+  },
+  "cta": {
+    "title": "Pronto para Transformar Sua Visão?",
+    "subtitle": "Junte-se às centenas de pacientes que confiaram no Dr. Flowers com sua visão. Sua jornada revolucionária para a visão perfeita começa com uma simples ligação telefônica.",
+    "call": "Ligar (844) 211-5462",
+    "testimonials": "Ver Depoimentos"
+  }
+}

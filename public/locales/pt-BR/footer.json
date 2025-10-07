@@ -1,0 +1,51 @@
+{
+  "company": {
+    "name": "ClearSight",
+    "tagline": "Instituto de Visão",
+    "description": "Pioneiros em cirurgia LASIK na região do Pacífico e trazendo cuidados revolucionários da visão para Los Angeles."
+  },
+  "quickLinks": {
+    "title": "Links Rápidos",
+    "about": "Sobre o Dr. Flowers",
+    "allProcedures": "Todos os Procedimentos",
+    "pacificStory": "A História do Pacífico",
+    "testimonials": "Depoimentos",
+    "technology": "Tecnologia"
+  },
+  "procedures": {
+    "title": "Procedimentos",
+    "lasik": "Cirurgia LASIK",
+    "prk": "Cirurgia PRK",
+    "icl": "ICL",
+    "blog": "Blog e Recursos",
+    "consultation": "Agendar Consulta"
+  },
+  "contact": {
+    "title": "Informações de Contato",
+    "office": "Escritório de Lakewood",
+    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712",
+    "phone": "(844) 211-5462",
+    "email": "info@clearsightlasik.com"
+  },
+  "newsletter": {
+    "title": "Mantenha-se Atualizado",
+    "description": "Receba as últimas novidades de nossa missão no Pacífico e inovações em cuidados da visão",
+    "placeholder": "Seu email",
+    "subscribe": "Inscrever-se"
+  },
+  "social": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "youtube": "YouTube",
+    "twitter": "Twitter",
+    "tiktok": "TikTok"
+  },
+  "legal": {
+    "copyright": "© 2025 ClearSight - Dr. Charles Flowers, MD. Todos os direitos reservados.",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço"
+  },
+  "badge": {
+    "pacificMission": "🌊 Apoiador da Missão do Pacífico"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "title": "Privacy Policy",
+  "subtitle": "ClearSight Vision Institute - Dr. Charles Flowers",
+  "lastUpdated": "Huling na-update",
+  "sections": {
+    "collection": {
+      "title": "Impormasyon na Kinokolekta Namin",
+      "medicalNotice": {
+        "title": "Medical Practice Notice",
+        "description": "Bilang medical practice, kinokolekta at pinapanatili namin ang health information ayon sa HIPAA regulations at state medical privacy laws."
+      },
+      "personal": {
+        "title": "Personal na Impormasyon",
+        "items": {
+          "contact": "Contact information (pangalan, email, phone number, address)",
+          "medical": "Medical history at vision-related na impormasyon",
+          "insurance": "Insurance information at payment details",
+          "appointments": "Appointment at consultation records",
+          "outcomes": "Treatment outcomes at follow-up information"
+        }
+      },
+      "technical": {
+        "title": "Technical na Impormasyon",
+        "items": {
+          "ip": "IP address at browser information",
+          "usage": "Website usage patterns at preferences",
+          "language": "Language at accessibility preferences",
+          "device": "Device at operating system information"
+        }
+      }
+    },
+    "usage": {
+      "title": "Paano Namin Ginagamit ang Inyong Impormasyon",
+      "medical": {
+        "title": "Medical Care",
+        "items": {
+          "consultations": "Pagbibigay ng vision correction consultations at treatments",
+          "scheduling": "Pag-schedule ng appointments at follow-up care",
+          "communication": "Pakikipag-ugnayan tungkol sa inyong treatment at recovery",
+          "records": "Pagpapanatili ng medical records ayon sa batas"
+        }
+      },
+      "website": {
+        "title": "Website Functionality",
+        "items": {
+          "personalization": "Pag-personalize ng inyong website experience",
+          "language": "Pagbibigay ng content sa inyong preferred language",
+          "improvement": "Pagpapabuti ng aming website at services",
+          "inquiries": "Pagtugon sa inyong mga tanong at requests"
+        }
+      }
+    },
+    "gdpr": {
+      "title": "Inyong mga Karapatan sa ilalim ng GDPR",
+      "euNotice": {
+        "title": "EU Residents",
+        "description": "Kung nasa European Union kayo, may additional rights kayo sa ilalim ng GDPR."
+      },
+      "rights": {
+        "title": "Inyong mga Karapatan ay Kasama",
+        "access": {
+          "title": "Right to Access",
+          "description": "Humingi ng copy ng inyong personal data"
+        },
+        "rectification": {
+          "title": "Right to Rectification",
+          "description": "Itama ang hindi tamang impormasyon"
+        },
+        "erasure": {
+          "title": "Right to Erasure",
+          "description": "Humingi ng deletion ng inyong data"
+        },
+        "portability": {
+          "title": "Right to Portability",
+          "description": "Tanggapin ang inyong data sa portable format"
+        },
+        "object": {
+          "title": "Right to Object",
+          "description": "Tumutol sa certain data processing"
+        },
+        "restriction": {
+          "title": "Right to Restriction",
+          "description": "Limitahan kung paano namin pine-process ang inyong data"
+        }
+      },
+      "exercise": {
+        "title": "Paano I-exercise ang Inyong mga Karapatan",
+        "email": "Email",
+        "phone": "Telepono",
+        "response": "Tutugon namin sa inyong request sa loob ng 30 araw ayon sa GDPR."
+      }
+    },
+    "security": {
+      "title": "Data Security",
+      "description": "Nagpapatupad kami ng appropriate technical at organizational measures para protektahan ang inyong personal information",
+      "measures": {
+        "encryption": "Encryption ng data sa transit at at rest",
+        "assessments": "Regular security assessments at updates",
+        "access": "Access controls at authentication systems",
+        "training": "Employee training sa data protection",
+        "incident": "Incident response at breach notification procedures"
+      }
+    },
+    "contact": {
+      "title": "Contact Information",
+      "dpo": {
+        "title": "Data Protection Officer",
+        "organization": "ClearSight Vision Institute",
+        "address1": "5750 Downey Ave., Suite 101",
+        "address2": "Lakewood, CA 90712"
+      }
+    }
+  }
+}

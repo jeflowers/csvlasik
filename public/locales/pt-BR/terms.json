@@ -1,0 +1,74 @@
+{
+  "title": "Termos de Serviço",
+  "subtitle": "Instituto de Visão ClearSight - Dr. Charles Flowers",
+  "lastUpdated": "Última atualização",
+  "sections": {
+    "acceptance": {
+      "title": "Aceitação dos Termos",
+      "description": "Ao acessar e usar este site, você aceita e concorda em ficar vinculado aos termos e disposições deste acordo."
+    },
+    "services": {
+      "title": "Serviços Médicos",
+      "medicalNotice": {
+        "title": "Aviso de Prática Médica",
+        "description": "O Instituto de Visão ClearSight é uma prática médica que fornece serviços profissionais de cuidados oculares sob a supervisão do Dr. Charles Flowers, MD."
+      },
+      "vision": {
+        "title": "Serviços de Correção Visual",
+        "items": {
+          "lasik": "Cirurgia de correção visual a laser LASIK",
+          "prk": "Ceratectomia fotorrefrativa PRK",
+          "icl": "Cirurgia de lente de contato implantável ICL",
+          "consultations": "Exames oculares abrangentes e consultas"
+        }
+      },
+      "website": {
+        "title": "Serviços do Site",
+        "items": {
+          "information": "Informações educacionais sobre correção visual",
+          "scheduling": "Agendamento de consultas online",
+          "resources": "Recursos e materiais para pacientes",
+          "communication": "Portal de comunicação seguro para pacientes"
+        }
+      }
+    },
+    "responsibilities": {
+      "title": "Responsabilidades do Usuário",
+      "user": {
+        "title": "Responsabilidades do Paciente",
+        "items": {
+          "accurate": "Fornecer informações médicas precisas e completas",
+          "lawful": "Usar nossos serviços apenas para fins legais",
+          "confidential": "Manter a confidencialidade das credenciais de login",
+          "instructions": "Seguir todas as instruções pré e pós-operatórias"
+        }
+      },
+      "medical": {
+        "title": "Responsabilidades de Cuidados Médicos",
+        "items": {
+          "consultation": "Comparecer a todas as consultas e compromissos agendados",
+          "disclosure": "Divulgar todo o histórico médico e medicamentos relevantes",
+          "followup": "Completar todos os exames de acompanhamento necessários",
+          "emergency": "Entrar em contato imediatamente para quaisquer preocupações pós-operatórias"
+        }
+      }
+    },
+    "limitations": {
+      "title": "Limitações de Responsabilidade",
+      "disclaimer": {
+        "title": "Isenção de Responsabilidade Médica",
+        "description": "Os resultados individuais podem variar. Este site fornece informações gerais e não substitui o aconselhamento médico profissional."
+      },
+      "description": "A responsabilidade do Instituto de Visão ClearSight é limitada ao máximo permitido por lei. Não somos responsáveis por danos indiretos, incidentais ou consequenciais."
+    },
+    "contact": {
+      "title": "Informações de Contato",
+      "legal": {
+        "title": "Departamento Jurídico",
+        "organization": "Instituto de Visão ClearSight",
+        "address1": "5750 Downey Ave., Suite 101",
+        "address2": "Lakewood, CA 90712"
+      }
+    }
+  }
+}

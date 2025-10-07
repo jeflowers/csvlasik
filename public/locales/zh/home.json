@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "badge": "太平洋地区首位LASIK先驱",
+    "title": "革命性",
+    "titleAccent": "视力护理",
+    "subtitle": "从在太平洋岛屿开创LASIK手术到在洛杉矶革新视力护理，Flowers医生为每个手术带来数十年的专业知识。",
+    "cta": {
+      "schedule": "预约咨询",
+      "phone": "(844) 211-5462"
+    }
+  },
+  "stats": {
+    "livesTransformed": {
+      "label": "改变的生活",
+      "description": "成功完成的手术"
+    },
+    "pacificIslands": {
+      "label": "太平洋岛屿",
+      "description": "服务的偏远地区"
+    },
+    "successRate": {
+      "label": "成功率",
+      "description": "达到20/20视力的患者"
+    },
+    "yearsExperience": {
+      "label": "经验年数",
+      "description": "革命性医疗服务提供"
+    }
+  },
+  "cta": {
+    "title": "体验革命性视力护理",
+    "subtitle": "加入数百名信任Flowers医生视力的患者。从太平洋岛屿到洛杉矶，体验革命性护理带来的不同。",
+    "schedule": "预约咨询",
+    "pacificStory": "太平洋故事"
+  }
+}

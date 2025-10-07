@@ -1,0 +1,67 @@
+{
+  "procedures": {
+    "lasik": "LASIK",
+    "prk": "PRK",
+    "icl": "ICL",
+    "cataract": "ניתוח קטרקט",
+    "cornealTransplant": "השתלת קרנית"
+  },
+  "vision": {
+    "nearsighted": "קוצר ראייה",
+    "farsighted": "רוחק ראייה",
+    "astigmatism": "אסטיגמטיזם",
+    "presbyopia": "פרסביופיה",
+    "perfect": "ראייה 20/20",
+    "before": "לפני",
+    "after": "אחרי",
+    "improvement": "שיפור",
+    "correction": "תיקון"
+  },
+  "terms": {
+    "cornea": "קרנית",
+    "retina": "רשתית",
+    "pupil": "אישון",
+    "iris": "קשתית",
+    "lens": "עדשה",
+    "opticNerve": "עצב הראייה",
+    "diopter": "דיופטר",
+    "refraction": "שבירה",
+    "aberration": "סטייה",
+    "topography": "טופוגרפיה",
+    "epithelium": "אפיתל",
+    "stroma": "סטרומה",
+    "endothelium": "אנדותל"
+  },
+  "safety": {
+    "fdaApproved": "מאושר FDA",
+    "clinicallyProven": "מוכח קלינית",
+    "safeAndEffective": "בטוח ויעיל",
+    "minimallyInvasive": "פולשני מינימלי",
+    "outpatientProcedure": "הליך אמבולטורי",
+    "noHospitalStay": "אין צורך באשפוז"
+  },
+  "recovery": {
+    "immediate": "מיידי",
+    "sameDay": "באותו יום",
+    "nextDay": "למחרת",
+    "oneWeek": "שבוע אחד",
+    "oneMonth": "חודש אחד",
+    "fullHealing": "ריפוי מלא",
+    "followUp": "ביקור מעקב"
+  },
+  "benefits": {
+    "noGlasses": "ללא משקפיים",
+    "noContacts": "ללא עדשות מגע",
+    "clearVision": "ראייה צלולה",
+    "activeLifestyle": "אורח חיים פעיל",
+    "careerAdvancement": "קידום קריירה",
+    "confidence": "הגברת ביטחון"
+  },
+  "disclaimers": {
+    "resultsVary": "תוצאות אישיות עשויות להשתנות",
+    "consultationRequired": "נדרש ייעוץ לקביעת מועמדות",
+    "risksBenefits": "דון בסיכונים ויתרונות עם הרופא שלך",
+    "followInstructions": "עקוב אחר כל ההוראות לאחר הניתוח",
+    "medicalAdvice": "מידע זה אינו מחליף ייעוץ רפואי מקצועי"
+  }
+}

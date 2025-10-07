@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "badge": "Chỉnh Sửa Thị Lực Cách Mạng",
+    "title": "Các Lựa Chọn Chỉnh Sửa Thị Lực ClearSight",
+    "subtitle": "Bác sĩ Flowers cung cấp các thủ thuật chỉnh sửa thị lực tiên tiến, mỗi thủ thuật được thiết kế riêng cho nhu cầu và lối sống cụ thể. So sánh các lựa chọn và tìm giải pháp hoàn hảo cho sự biến đổi thị lực cách mạng của bạn."
+  },
+  "procedures": {
+    "keyFeatures": "Tính Năng Chính",
+    "lasik": {
+      "tagline": "Lựa Chọn Phổ Biến Nhất",
+      "description": "Chỉnh sửa thị lực laser tiên tiến với phục hồi nhanh và kết quả xuất sắc",
+      "recoveryTime": "1-2 ngày",
+      "successRate": "98%",
+      "ideal": "Cận thị, viễn thị, loạn thị",
+      "features": {
+        "quick": "Thủ thuật nhanh 15 phút",
+        "comfort": "Khó chịu tối thiểu",
+        "recovery": "Phục hồi thị lực nhanh",
+        "lasting": "Kết quả lâu dài"
+      }
+    },
+    "prk": {
+      "tagline": "Điều Trị Bề Mặt",
+      "description": "Chỉnh sửa laser thay thế cho bệnh nhân không phù hợp với LASIK",
+      "recoveryTime": "3-5 ngày",
+      "successRate": "96%",
+      "ideal": "Giác mạc mỏng, lối sống năng động",
+      "features": {
+        "noFlap": "Không có vạt giác mạc",
+        "thinCorneas": "Phù hợp cho giác mạc mỏng",
+        "stability": "Ổn định dài hạn xuất sắc",
+        "athletes": "Lý tưởng cho vận động viên"
+      }
+    },
+    "icl": {
+      "tagline": "Giải Pháp Cấy Ghép",
+      "description": "Kính áp tròng cấy ghép vĩnh viễn cho độ cận cao",
+      "recoveryTime": "1-3 ngày",
+      "successRate": "99%",
+      "ideal": "Độ cận cao, giác mạc mỏng",
+      "features": {
+        "reversible": "Thủ thuật có thể đảo ngược",
+        "nightVision": "Thị lực ban đêm xuất sắc",
+        "uvProtection": "Bảo vệ tia UV",
+        "maintenance": "Không cần bảo trì"
+      }
+    }
+  },
+  "comparison": {
+    "title": "So Sánh Từng Bước",
+    "subtitle": "So sánh các tính năng chính của mỗi thủ thuật để giúp bạn đưa ra quyết định sáng suốt",
+    "featureHeader": "Tính Năng",
+    "recommendation": "Không chắc thủ thuật nào phù hợp với bạn?",
+    "cta": "Nhận Khuyến Nghị Cá Nhân",
+    "features": {
+      "recoveryTime": "Thời Gian Phục Hồi",
+      "procedureTime": "Thời Gian Thủ Thuật",
+      "painLevel": "Mức Độ Đau",
+      "highRx": "Phù Hợp Cho Độ Cao",
+      "nightVision": "Thị Lực Ban Đêm",
+      "reversibility": "Tính Đảo Ngược",
+      "successRate": "Tỷ Lệ Thành Công",
+      "idealFor": "Lý Tưởng Cho"
+    },
+    "values": {
+      "lasik": {
+        "recoveryTime": "1-2 ngày",
+        "procedureTime": "15 phút",
+        "painLevel": "Tối thiểu",
+        "highRx": "Hạn chế",
+        "nightVision": "Xuất sắc",
+        "reversibility": "Không"
+      },
+      "prk": {
+        "recoveryTime": "3-5 ngày",
+        "procedureTime": "15 phút",
+        "painLevel": "Nhẹ-Vừa",
+        "highRx": "Hạn chế",
+        "nightVision": "Xuất sắc",
+        "reversibility": "Không"
+      },
+      "icl": {
+        "recoveryTime": "1-3 ngày",
+        "procedureTime": "30 phút",
+        "painLevel": "Tối thiểu",
+        "highRx": "Xuất sắc",
+        "nightVision": "Vượt trội",
+        "reversibility": "Có"
+      }
+    }
+  },
+  "process": {
+    "title": "Hành Trình Cách Mạng Của Bạn",
+    "subtitle": "Mỗi thủ thuật đều tuân theo quy trình đã được chứng minh của Bác sĩ Flowers để có kết quả tối ưu",
+    "steps": {
+      "consultation": {
+        "title": "Tư Vấn Miễn Phí",
+        "description": "Khám mắt toàn diện và khuyến nghị thủ thuật"
+      },
+      "preparation": {
+        "title": "Chuẩn Bị Trước Phẫu Thuật",
+        "description": "Đo lường chi tiết và lập kế hoạch phẫu thuật"
+      },
+      "procedure": {
+        "title": "Thủ Thuật Cách Mạng",
+        "description": "Phẫu thuật nhanh, thoải mái với công nghệ tiên tiến"
+      },
+      "recovery": {
+        "title": "Phục Hồi & Theo Dõi",
+        "description": "Chăm sóc cá nhân và theo dõi để lành bệnh tối ưu"
+      }
+    }
+  },
+  "cta": {
+    "title": "Sẵn Sàng Biến Đổi Thị Lực Của Bạn?",
+    "subtitle": "Đặt lịch tư vấn miễn phí với Bác sĩ Flowers và khám phá thủ thuật cách mạng nào hoàn hảo cho lối sống và nhu cầu thị lực của bạn.",
+    "schedule": "Đặt Lịch Tư Vấn Miễn Phí",
+    "testimonials": "Xem Lời Chứng Thực"
+  }
+}

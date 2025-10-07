@@ -1,0 +1,67 @@
+{
+  "procedures": {
+    "lasik": "LASIK",
+    "prk": "PRK",
+    "icl": "ICL",
+    "cataract": "جراحة الساد",
+    "cornealTransplant": "زراعة القرنية"
+  },
+  "vision": {
+    "nearsighted": "قصر النظر",
+    "farsighted": "طول النظر",
+    "astigmatism": "الاستجماتيزم",
+    "presbyopia": "قصو البصر الشيخوخي",
+    "perfect": "رؤية 20/20",
+    "before": "قبل",
+    "after": "بعد",
+    "improvement": "تحسن",
+    "correction": "تصحيح"
+  },
+  "terms": {
+    "cornea": "القرنية",
+    "retina": "الشبكية",
+    "pupil": "البؤبؤ",
+    "iris": "القزحية",
+    "lens": "العدسة",
+    "opticNerve": "العصب البصري",
+    "diopter": "الديوبتر",
+    "refraction": "الانكسار",
+    "aberration": "الانحراف",
+    "topography": "الطبوغرافيا",
+    "epithelium": "الظهارة",
+    "stroma": "السدى",
+    "endothelium": "البطانة"
+  },
+  "safety": {
+    "fdaApproved": "معتمد من FDA",
+    "clinicallyProven": "مثبت سريرياً",
+    "safeAndEffective": "آمن وفعال",
+    "minimallyInvasive": "طفيف التوغل",
+    "outpatientProcedure": "إجراء خارجي",
+    "noHospitalStay": "لا يتطلب إقامة في المستشفى"
+  },
+  "recovery": {
+    "immediate": "فوري",
+    "sameDay": "نفس اليوم",
+    "nextDay": "اليوم التالي",
+    "oneWeek": "أسبوع واحد",
+    "oneMonth": "شهر واحد",
+    "fullHealing": "الشفاء الكامل",
+    "followUp": "زيارة متابعة"
+  },
+  "benefits": {
+    "noGlasses": "بدون نظارات",
+    "noContacts": "بدون عدسات لاصقة",
+    "clearVision": "رؤية واضحة",
+    "activeLifestyle": "نمط حياة نشط",
+    "careerAdvancement": "تقدم مهني",
+    "confidence": "زيادة الثقة"
+  },
+  "disclaimers": {
+    "resultsVary": "النتائج الفردية قد تختلف",
+    "consultationRequired": "الاستشارة مطلوبة لتحديد الأهلية",
+    "risksBenefits": "ناقش المخاطر والفوائد مع طبيبك",
+    "followInstructions": "اتبع جميع التعليمات بعد العملية",
+    "medicalAdvice": "هذه المعلومات لا تحل محل المشورة الطبية المهنية"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "procedures": {
+    "lasik": "LASIK",
+    "prk": "PRK",
+    "icl": "ICL",
+    "cataract": "백내장 수술",
+    "cornealTransplant": "각막 이식"
+  },
+  "vision": {
+    "nearsighted": "근시",
+    "farsighted": "원시",
+    "astigmatism": "난시",
+    "presbyopia": "노안",
+    "perfect": "20/20 시력",
+    "before": "이전",
+    "after": "이후",
+    "improvement": "개선",
+    "correction": "교정"
+  },
+  "terms": {
+    "cornea": "각막",
+    "retina": "망막",
+    "pupil": "동공",
+    "iris": "홍채",
+    "lens": "수정체",
+    "opticNerve": "시신경",
+    "diopter": "디옵터",
+    "refraction": "굴절",
+    "aberration": "수차",
+    "topography": "지형도",
+    "epithelium": "상피",
+    "stroma": "기질",
+    "endothelium": "내피"
+  },
+  "safety": {
+    "fdaApproved": "FDA 승인",
+    "clinicallyProven": "임상적으로 입증됨",
+    "safeAndEffective": "안전하고 효과적",
+    "minimallyInvasive": "최소 침습적",
+    "outpatientProcedure": "외래 시술",
+    "noHospitalStay": "입원 불필요"
+  },
+  "recovery": {
+    "immediate": "즉시",
+    "sameDay": "당일",
+    "nextDay": "다음날",
+    "oneWeek": "1주일",
+    "oneMonth": "1개월",
+    "fullHealing": "완전 회복",
+    "followUp": "추후 방문"
+  },
+  "benefits": {
+    "noGlasses": "안경 불필요",
+    "noContacts": "콘택트렌즈 불필요",
+    "clearVision": "선명한 시력",
+    "activeLifestyle": "활동적인 생활",
+    "careerAdvancement": "경력 발전",
+    "confidence": "자신감 증가"
+  },
+  "disclaimers": {
+    "resultsVary": "개인별 결과는 다를 수 있습니다",
+    "consultationRequired": "후보자 결정을 위해 상담이 필요합니다",
+    "risksBenefits": "의사와 위험성과 이점을 상의하세요",
+    "followInstructions": "모든 수술 후 지시사항을 따르세요",
+    "medicalAdvice": "이 정보는 전문 의료 조언을 대체하지 않습니다"
+  }
+}

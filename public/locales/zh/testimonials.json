@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "badge": "革命性结果 - 真实患者",
+    "title": "改变生活的",
+    "titleAccent": "患者见证",
+    "description": "了解我们的患者通过Flowers医生的革命性视力矫正技术所经历的变革性结果。从太平洋岛屿到洛杉矶，生活正在一次手术一次地被改变。",
+    "cta": "开始您的转变"
+  },
+  "results": {
+    "title": "经过验证的革命性结果",
+    "description": "数字说明一切 - 所有手术的卓越结果",
+    "stats": {
+      "vision": {
+        "label": "达到20/20视力",
+        "description": "或在24-48小时内更好"
+      },
+      "satisfaction": {
+        "label": "患者满意度",
+        "description": "会推荐Flowers医生"
+      },
+      "rating": {
+        "label": "平均评分",
+        "description": "在所有评价平台上"
+      },
+      "stories": {
+        "label": "成功故事",
+        "description": "被视力改变的生活"
+      }
+    }
+  },
+  "featured": {
+    "title": "精选成功故事",
+    "description": "真实患者分享他们的革命性视力转变之旅"
+  },
+  "pacific": {
+    "title": "太平洋地区转变",
+    "description": "来自Flowers医生在太平洋开创性使命的革命性结果"
+  },
+  "badges": {
+    "pacific": "太平洋患者",
+    "military": "军人",
+    "success": "成功"
+  },
+  "cta": {
+    "title": "准备加入我们的成功故事？",
+    "description": "体验已经改变了超过30,000个生命的革命性视力护理。您的成功故事从免费咨询开始。",
+    "schedule": "预约您的免费咨询",
+    "procedures": "选择您的手术"
+  },
+  "gallery": {
+    "title": "视力转变画廊",
+    "description": "查看所有手术中视力质量的显著改善",
+    "before": "治疗前",
+    "after": "治疗后",
+    "satisfaction": "患者满意度"
+  },
+  "reviews": {
+    "title": "患者评价",
+    "description": "体验过革命性护理的真实患者的真实评价"
+  }
+}

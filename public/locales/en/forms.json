@@ -1,0 +1,80 @@
+{
+  "labels": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "message": "Message",
+    "procedure": "Interested Procedure",
+    "preferredContact": "Preferred Contact Method",
+    "comments": "Questions or Comments",
+    "age": "Age",
+    "occupation": "Occupation",
+    "location": "Location",
+    "visionBefore": "Vision Before",
+    "visionAfter": "Vision After",
+    "rating": "Rating",
+    "testimonialText": "Your Experience"
+  },
+  "placeholders": {
+    "firstName": "Your first name",
+    "lastName": "Your last name",
+    "email": "your.email@example.com",
+    "phone": "(555) 123-4567",
+    "message": "Tell us about your vision goals...",
+    "comments": "Any questions or special requests...",
+    "age": "Your age",
+    "occupation": "Your profession",
+    "location": "City, State",
+    "testimonialText": "Share your experience with Dr. Flowers..."
+  },
+  "options": {
+    "procedures": {
+      "lasik": "LASIK",
+      "prk": "PRK", 
+      "icl": "ICL",
+      "consultation": "General Consultation"
+    },
+    "contactMethods": {
+      "phone": "Phone",
+      "email": "Email",
+      "text": "Text Message"
+    },
+    "ratings": {
+      "1": "Poor",
+      "2": "Fair",
+      "3": "Good",
+      "4": "Very Good",
+      "5": "Excellent"
+    }
+  },
+  "buttons": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "reset": "Reset",
+    "save": "Save",
+    "scheduleConsultation": "Schedule Consultation",
+    "requestCallback": "Request Callback",
+    "downloadInfo": "Download Information",
+    "shareTestimonial": "Share Your Story"
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidPhone": "Please enter a valid phone number",
+    "tooShort": "This field is too short",
+    "tooLong": "This field is too long",
+    "invalidRating": "Please select a rating"
+  },
+  "success": {
+    "submitted": "Thank you! Your form has been submitted successfully.",
+    "scheduled": "Your consultation has been scheduled.",
+    "contacted": "We will contact you within 24 hours.",
+    "testimonialSubmitted": "Thank you for sharing your experience!"
+  },
+  "privacy": {
+    "notice": "By submitting this form, you consent to be contacted about our services.",
+    "security": "Your information is secure and will never be shared.",
+    "hipaa": "All communications are HIPAA compliant."
+  }
+}

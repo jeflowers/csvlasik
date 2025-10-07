@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "badge": "혁신적인 시력 교정",
+    "title": "ClearSight 시력 교정 옵션",
+    "subtitle": "Dr. Flowers는 특정 요구사항과 라이프스타일에 맞춘 고급 시력 교정 시술을 제공합니다. 옵션을 비교하고 혁신적인 시력 변화를 위한 완벽한 솔루션을 찾으세요."
+  },
+  "procedures": {
+    "keyFeatures": "주요 특징",
+    "lasik": {
+      "tagline": "가장 인기 있는 선택",
+      "description": "빠른 회복과 우수한 결과를 가진 고급 레이저 시력 교정",
+      "recoveryTime": "1-2일",
+      "successRate": "98%",
+      "ideal": "근시, 원시, 난시",
+      "features": {
+        "quick": "빠른 15분 시술",
+        "comfort": "최소한의 불편함",
+        "recovery": "빠른 시력 회복",
+        "lasting": "지속적인 결과"
+      }
+    },
+    "prk": {
+      "tagline": "표면 치료",
+      "description": "LASIK에 적합하지 않은 환자를 위한 대안 레이저 교정",
+      "recoveryTime": "3-5일",
+      "successRate": "96%",
+      "ideal": "얇은 각막, 활동적인 라이프스타일",
+      "features": {
+        "noFlap": "각막 절편 없음",
+        "thinCorneas": "얇은 각막에 적합",
+        "stability": "우수한 장기 안정성",
+        "athletes": "운동선수에게 이상적"
+      }
+    },
+    "icl": {
+      "tagline": "이식 가능한 솔루션",
+      "description": "고도근시를 위한 영구 이식형 콘택트렌즈",
+      "recoveryTime": "1-3일",
+      "successRate": "99%",
+      "ideal": "고도근시, 얇은 각막",
+      "features": {
+        "reversible": "가역적 시술",
+        "nightVision": "우수한 야간 시력",
+        "uvProtection": "자외선 차단",
+        "maintenance": "유지보수 불필요"
+      }
+    }
+  },
+  "comparison": {
+    "title": "나란히 비교",
+    "subtitle": "각 시술의 주요 특징을 비교하여 정보에 입각한 결정을 내리는 데 도움을 드립니다",
+    "featureHeader": "특징",
+    "recommendation": "어떤 시술이 적합한지 확실하지 않으신가요?",
+    "cta": "개인 맞춤 추천 받기",
+    "features": {
+      "recoveryTime": "회복 시간",
+      "procedureTime": "시술 시간",
+      "painLevel": "통증 수준",
+      "highRx": "고도근시 적합성",
+      "nightVision": "야간 시력",
+      "reversibility": "가역성",
+      "successRate": "성공률",
+      "idealFor": "이상적 대상"
+    },
+    "values": {
+      "lasik": {
+        "recoveryTime": "1-2일",
+        "procedureTime": "15분",
+        "painLevel": "최소",
+        "highRx": "제한적",
+        "nightVision": "우수",
+        "reversibility": "아니오"
+      },
+      "prk": {
+        "recoveryTime": "3-5일",
+        "procedureTime": "15분",
+        "painLevel": "경미-보통",
+        "highRx": "제한적",
+        "nightVision": "우수",
+        "reversibility": "아니오"
+      },
+      "icl": {
+        "recoveryTime": "1-3일",
+        "procedureTime": "30분",
+        "painLevel": "최소",
+        "highRx": "우수",
+        "nightVision": "뛰어남",
+        "reversibility": "예"
+      }
+    }
+  },
+  "process": {
+    "title": "당신의 혁신적인 여정",
+    "subtitle": "모든 시술은 최적의 결과를 위한 Dr. Flowers의 검증된 과정을 따릅니다",
+    "steps": {
+      "consultation": {
+        "title": "무료 상담",
+        "description": "종합적인 눈 검사 및 시술 추천"
+      },
+      "preparation": {
+        "title": "수술 전 준비",
+        "description": "상세한 측정 및 수술 계획"
+      },
+      "procedure": {
+        "title": "혁신적인 시술",
+        "description": "첨단 기술을 사용한 빠르고 편안한 수술"
+      },
+      "recovery": {
+        "title": "회복 및 추후 관리",
+        "description": "최적의 치유를 위한 개인 맞춤 관리 및 모니터링"
+      }
+    }
+  },
+  "cta": {
+    "title": "시력을 변화시킬 준비가 되셨나요?",
+    "subtitle": "Dr. Flowers와 무료 상담을 예약하고 어떤 혁신적인 시술이 당신의 라이프스타일과 시력 요구에 완벽한지 알아보세요.",
+    "schedule": "무료 상담 예약",
+    "testimonials": "환자 후기 보기"
+  }
+}

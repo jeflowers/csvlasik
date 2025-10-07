@@ -1,0 +1,18 @@
+{
+  "hero": {
+    "badge": "Tecnologia e Inovação Revolucionárias",
+    "title": "Tecnologia Avançada",
+    "description": "A ClearSight combina tecnologia de ponta com técnicas inovadoras desenvolvidas através de anos de missões desafiadoras no Pacífico, oferecendo precisão e segurança incomparáveis na correção da visão.",
+    "cta": "Experimente Tecnologia Revolucionária"
+  },
+  "innovation": {
+    "title": "Inovação Nascida da Necessidade",
+    "description": "A abordagem revolucionária do Dr. Flowers à tecnologia não foi desenvolvida em laboratório—foi forjada nas condições desafiadoras das missões das ilhas do Pacífico onde confiabilidade, portabilidade e precisão eram questões de segurança do paciente."
+  },
+  "cta": {
+    "title": "Experimente Tecnologia Revolucionária",
+    "subtitle": "Beneficie-se da tecnologia de ponta aprimorada por anos de inovação e testes de campo. Agende sua consulta para experimentar a diferença que a tecnologia revolucionária faz.",
+    "schedule": "Agendar Consulta de Tecnologia",
+    "procedures": "Ver Procedimentos"
+  }
+}

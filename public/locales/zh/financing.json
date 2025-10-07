@@ -1,0 +1,144 @@
+{
+  "hero": {
+    "badge": "革命性视力护理投资",
+    "title": "投资选择",
+    "subtitle": "为您的视力之旅",
+    "description": "您的视力是无价的。我们提供精致的投资解决方案，通过灵活、有尊严的安排使Flowers医生的革命性护理变得可及，这些安排专为您的生活方式量身定制。",
+    "cta": "讨论投资选择"
+  },
+  "investment": {
+    "title": "对您未来的投资",
+    "description": "革命性视力护理代表您可以做出的最有价值的投资之一。摆脱眼镜和隐形眼镜的自由、提高的生活质量以及数十年的清晰视力创造了每天复合增长的无法估量的回报。",
+    "benefits": {
+      "lifetime": {
+        "title": "终身价值",
+        "description": "数十年摆脱眼镜和隐形眼镜的自由"
+      },
+      "lifestyle": {
+        "title": "增强的生活方式",
+        "description": "不受限制的活动和职业机会"
+      },
+      "expertise": {
+        "title": "革命性专业知识",
+        "description": "太平洋验证的技术和无与伦比的经验"
+      }
+    }
+  },
+  "solutions": {
+    "title": "精致的投资解决方案",
+    "subtitle": "我们提供有尊严、灵活的安排，尊重您投资的价值",
+    "immediate": {
+      "title": "即时投资",
+      "subtitle": "完整护理套餐",
+      "description": "对您的革命性视力之旅的全面投资，包含综合护理",
+      "highlight": "最全面",
+      "features": {
+        "coverage": "完整的手术覆盖",
+        "followup": "所有随访预约",
+        "guarantee": "终身增强保证",
+        "priority": "优先安排",
+        "concierge": "礼宾护理体验"
+      }
+    },
+    "structured": {
+      "title": "结构化投资",
+      "subtitle": "灵活安排",
+      "description": "有尊严的月度安排，完美融入您的生活方式",
+      "highlight": "最受欢迎",
+      "features": {
+        "noInitial": "无需初始投资",
+        "flexible": "灵活的月度安排",
+        "competitive": "提供竞争性条款",
+        "approval": "快速审批流程",
+        "care": "同样的革命性护理"
+      }
+    },
+    "healthcare": {
+      "title": "医疗投资",
+      "subtitle": "HSA/FSA合格",
+      "description": "最大化您的医疗投资账户以获得税收优惠护理",
+      "highlight": "税收优惠",
+      "features": {
+        "eligible": "HSA/FSA合格手术",
+        "tax": "税收优惠投资",
+        "documentation": "提供文档",
+        "optimization": "灵活支出优化",
+        "guidance": "专业指导"
+      }
+    },
+    "exploreOption": "探索此选择"
+  },
+  "value": {
+    "title": "革命性视力的真正价值",
+    "subtitle": "考虑您在革命性视力护理投资的终身价值",
+    "benefits": {
+      "freedom": {
+        "title": "自由",
+        "value": "无价",
+        "description": "不再有眼镜或隐形眼镜限制您的活动"
+      },
+      "convenience": {
+        "title": "便利",
+        "value": "每日",
+        "description": "每天早晨醒来立即拥有清晰视力"
+      },
+      "confidence": {
+        "title": "信心",
+        "value": "终身",
+        "description": "增强的自我形象和职业形象"
+      },
+      "experience": {
+        "title": "经验",
+        "value": "15+年",
+        "description": "Flowers医生革命性的太平洋验证专业知识"
+      }
+    }
+  },
+  "journey": {
+    "title": "您的投资之旅",
+    "subtitle": "为您的便利设计的无缝、有尊严的流程",
+    "steps": {
+      "consultation": {
+        "title": "咨询",
+        "description": "全面评估和个性化治疗规划"
+      },
+      "discussion": {
+        "title": "投资讨论",
+        "description": "关于投资选择和安排的私人咨询"
+      },
+      "finalization": {
+        "title": "安排最终确定",
+        "description": "无缝处理和安排您的手术"
+      },
+      "care": {
+        "title": "革命性护理",
+        "description": "您的视力转变与全面随访"
+      }
+    }
+  },
+  "concierge": {
+    "title": "礼宾金融服务",
+    "description": "我们专门的金融礼宾团队提供个性化指导，帮助您选择最适合您生活方式和偏好的投资安排。每次对话都是私密、专业且无压力的。",
+    "services": {
+      "confidential": {
+        "title": "保密咨询",
+        "description": "关于您选择的私密、有尊严的讨论"
+      },
+      "personalized": {
+        "title": "个性化解决方案",
+        "description": "根据您独特情况量身定制的安排"
+      },
+      "whiteGlove": {
+        "title": "白手套服务",
+        "description": "无缝处理和持续支持"
+      }
+    },
+    "cta": "安排私人咨询"
+  },
+  "cta": {
+    "title": "您的视力投资等待着您",
+    "description": "不要让投资担忧延迟您的革命性视力之旅。我们的礼宾团队将与您合作，创建一个使Flowers医生的专业知识对您的生活方式来说既可及又舒适的安排。",
+    "schedule": "安排投资咨询",
+    "explore": "探索手术"
+  }
+}

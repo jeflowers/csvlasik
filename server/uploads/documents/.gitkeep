@@ -1,0 +1,16 @@
+# Document uploads directory
+# Stores document files for:
+# - Patient information PDFs
+# - Educational brochures
+# - Medical forms and consent documents
+# - Research papers and publications
+
+# Supported formats:
+# - PDF (primary)
+# - DOC/DOCX (Microsoft Word)
+# - Medical documentation
+
+# Security:
+# - Virus scanning recommended for production
+# - File type validation enforced
+# - Access logging for sensitive documents

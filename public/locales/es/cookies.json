@@ -1,0 +1,43 @@
+{
+  "banner": {
+    "title": "Valoramos su privacidad",
+    "description": "Utilizamos cookies para mejorar su experiencia, analizar el uso del sitio y ayudar en nuestros esfuerzos de marketing. Al hacer clic en \"Aceptar Todo\", usted consiente nuestro uso de cookies.",
+    "learnMore": "Aprender más",
+    "preferences": "Preferencias",
+    "necessaryOnly": "Solo Necesarias",
+    "acceptAll": "Aceptar Todo"
+  },
+  "preferences": {
+    "title": "Preferencias de Cookies",
+    "description": "Puede elegir qué tipos de cookies permitir. Tenga en cuenta que bloquear algunos tipos de cookies puede afectar su experiencia en nuestro sitio.",
+    "categories": {
+      "necessary": {
+        "title": "Cookies Necesarias",
+        "description": "Estas cookies son esenciales para que el sitio web funcione correctamente. No se pueden desactivar."
+      },
+      "analytics": {
+        "title": "Cookies de Análisis",
+        "description": "Nos ayudan a entender cómo los visitantes interactúan con nuestro sitio web recopilando y reportando información de forma anónima."
+      },
+      "marketing": {
+        "title": "Cookies de Marketing",
+        "description": "Se utilizan para rastrear visitantes en sitios web para mostrar anuncios relevantes y atractivos."
+      },
+      "personalization": {
+        "title": "Cookies de Personalización",
+        "description": "Nos permiten recordar sus preferencias y proporcionar características mejoradas y personalizadas."
+      }
+    },
+    "rights": {
+      "title": "Sus Derechos",
+      "change": "Puede cambiar sus preferencias en cualquier momento",
+      "access": "Puede solicitar acceso a sus datos personales",
+      "deletion": "Puede solicitar la eliminación de sus datos personales",
+      "withdraw": "Puede retirar el consentimiento en cualquier momento"
+    },
+    "buttons": {
+      "cancel": "Cancelar",
+      "save": "Guardar Preferencias"
+    }
+  }
+}

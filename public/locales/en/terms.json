@@ -1,0 +1,74 @@
+{
+  "title": "Terms of Service",
+  "subtitle": "ClearSight Vision Institute - Dr. Charles Flowers",
+  "lastUpdated": "Last updated",
+  "sections": {
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "description": "By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement."
+    },
+    "services": {
+      "title": "Medical Services",
+      "medicalNotice": {
+        "title": "Medical Practice Notice",
+        "description": "ClearSight Vision Institute is a medical practice providing professional eye care services under the supervision of Dr. Charles Flowers, MD."
+      },
+      "vision": {
+        "title": "Vision Correction Services",
+        "items": {
+          "lasik": "LASIK laser vision correction surgery",
+          "prk": "PRK photorefractive keratectomy",
+          "icl": "ICL implantable contact lens surgery",
+          "consultations": "Comprehensive eye examinations and consultations"
+        }
+      },
+      "website": {
+        "title": "Website Services",
+        "items": {
+          "information": "Educational information about vision correction",
+          "scheduling": "Online appointment scheduling",
+          "resources": "Patient resources and materials",
+          "communication": "Secure patient communication portal"
+        }
+      }
+    },
+    "responsibilities": {
+      "title": "User Responsibilities",
+      "user": {
+        "title": "Patient Responsibilities",
+        "items": {
+          "accurate": "Provide accurate and complete medical information",
+          "lawful": "Use our services only for lawful purposes",
+          "confidential": "Maintain confidentiality of login credentials",
+          "instructions": "Follow all pre and post-operative instructions"
+        }
+      },
+      "medical": {
+        "title": "Medical Care Responsibilities",
+        "items": {
+          "consultation": "Attend all scheduled consultations and appointments",
+          "disclosure": "Disclose all relevant medical history and medications",
+          "followup": "Complete all required follow-up examinations",
+          "emergency": "Contact us immediately for any post-operative concerns"
+        }
+      }
+    },
+    "limitations": {
+      "title": "Limitations of Liability",
+      "disclaimer": {
+        "title": "Medical Disclaimer",
+        "description": "Individual results may vary. This website provides general information and is not a substitute for professional medical advice."
+      },
+      "description": "ClearSight Vision Institute's liability is limited to the extent permitted by law. We are not liable for indirect, incidental, or consequential damages."
+    },
+    "contact": {
+      "title": "Contact Information",
+      "legal": {
+        "title": "Legal Department",
+        "organization": "ClearSight Vision Institute",
+        "address1": "5750 Downey Ave., Suite 101",
+        "address2": "Lakewood, CA 90712"
+      }
+    }
+  }
+}

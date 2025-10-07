@@ -1,0 +1,73 @@
+{
+  "title": "Política de Cookies",
+  "lastUpdated": "Última actualización: {date}",
+  "introduction": "ClearSight utiliza cookies para mejorar su experiencia revolucionaria de atención oftalmológica.",
+  "sections": {
+    "whatAreCookies": {
+      "title": "¿Qué son las Cookies?",
+      "description": "Las cookies son pequeños archivos de texto que ayudan a personalizar su experiencia en nuestro sitio web de cirugía LASIK revolucionaria."
+    },
+    "howWeUseCookies": {
+      "title": "Cómo Utilizamos las Cookies",
+      "purposes": {
+        "essential": "Cookies Esenciales: Necesarias para el funcionamiento del sitio",
+        "analytics": "Cookies Analíticas: Nos ayudan a mejorar nuestros servicios",
+        "preferences": "Cookies de Preferencias: Recuerdan sus selecciones",
+        "marketing": "Cookies de Marketing: Proporcionan contenido relevante"
+      }
+    },
+    "typesOfCookies": {
+      "title": "Tipos de Cookies que Utilizamos",
+      "session": {
+        "name": "Cookies de Sesión",
+        "description": "Se eliminan cuando cierra su navegador"
+      },
+      "persistent": {
+        "name": "Cookies Persistentes",
+        "description": "Permanecen en su dispositivo hasta su fecha de expiración"
+      },
+      "firstParty": {
+        "name": "Cookies de Primera Parte",
+        "description": "Establecidas por nuestro sitio web ClearSight"
+      },
+      "thirdParty": {
+        "name": "Cookies de Terceros",
+        "description": "Establecidas por servicios externos de confianza"
+      }
+    },
+    "specificCookies": {
+      "title": "Cookies Específicas que Utilizamos",
+      "appointment": "Cookie de Programación de Citas: Recuerda su progreso en el formulario",
+      "language": "Cookie de Idioma: Mantiene su preferencia de idioma",
+      "consent": "Cookie de Consentimiento: Registra sus preferencias de cookies"
+    },
+    "managingCookies": {
+      "title": "Gestión de Cookies",
+      "description": "Puede controlar y eliminar cookies a través de la configuración de su navegador.",
+      "note": "Nota: Deshabilitar cookies puede afectar la funcionalidad del sitio."
+    },
+    "updates": {
+      "title": "Actualizaciones de la Política",
+      "description": "Esta política puede actualizarse para reflejar cambios en nuestras prácticas o requisitos legales."
+    },
+    "contact": {
+      "title": "Contáctenos",
+      "description": "Para preguntas sobre nuestra política de cookies, contáctenos en privacy@clearsight-la.com"
+    }
+  },
+  "consent": {
+    "banner": {
+      "title": "Este sitio utiliza cookies",
+      "description": "Utilizamos cookies para mejorar su experiencia y analizar el tráfico del sitio.",
+      "accept": "Aceptar Todas",
+      "decline": "Solo Esenciales",
+      "customize": "Personalizar"
+    },
+    "modal": {
+      "title": "Preferencias de Cookies",
+      "save": "Guardar Preferencias",
+      "acceptAll": "Aceptar Todas",
+      "rejectAll": "Rechazar Todas"
+    }
+  }
+}

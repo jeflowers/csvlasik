@@ -1,0 +1,192 @@
+{
+  "hero": {
+    "badge": "Nhà Cách Mạng Y Tế và Tiên Phong trong Chăm Sóc Thị Lực",
+    "title": "Bác sĩ Charles W. Flowers Jr., MD",
+    "subtitle": "Tầm Nhìn Cách Mạng. Sự Xuất Sắc Có Thể Tiếp Cận.",
+    "description": "Một nhân vật biến đổi trong nhãn khoa hiện đại, được phân biệt không chỉ bởi sự xuất sắc trong phẫu thuật mà còn bởi cách tiếp cận cách mạng đối với khả năng tiếp cận chăm sóc sức khỏe. Với hơn 30.000 thủ thuật chỉnh sửa thị lực bằng laser và công việc tiên phong trên khắp khu vực Thái Bình Dương.",
+    "cta": {
+      "schedule": "Đặt Lịch Tư Vấn",
+      "pacific": "Cuộc Cách Mạng Thái Bình Dương"
+    }
+  },
+  "excellence": {
+    "title": "Lãnh Đạo Y Tế Cách Mạng",
+    "clinical": {
+      "title": "Sự Xuất Sắc Lâm Sàng",
+      "description": "Hơn 30.000 thủ thuật chỉnh sửa thị lực bằng laser với tỷ lệ hài lòng của bệnh nhân 98%"
+    },
+    "academic": {
+      "title": "Lãnh Đạo Học Thuật",
+      "description": "Giám đốc Chương trình Đào tạo Nội trú Nhãn khoa USC"
+    },
+    "global": {
+      "title": "Tác Động Toàn Cầu",
+      "description": "Bác sĩ phẫu thuật đầu tiên thực hiện LASIK tại Guam, phục vụ hơn 200.000 cư dân Thái Bình Dương"
+    },
+    "quote": "Trước khi tôi bắt đầu cung cấp các thủ thuật chỉnh sửa thị lực bằng laser tại Guam, bất kỳ ai muốn chỉnh sửa thị lực bằng laser đều phải đi đến Philippines hoặc Hoa Kỳ—một chuyến bay mười ba giờ. Bạn không thể nhận được chăm sóc nếu không có phương tiện để rời khỏi đảo. Bây giờ, chăm sóc mắt đẳng cấp thế giới có sẵn ngay tại đây, ngay tại nhà.",
+    "attribution": "— Bác sĩ Charles W. Flowers Jr., MD"
+  },
+  "education": {
+    "title": "Sự Xuất Sắc Về Giáo Dục",
+    "subtitle": "Nền tảng thành tích học thuật từ các tổ chức uy tín nhất của quốc gia",
+    "institutions": {
+      "stanford": {
+        "name": "Đại học Stanford",
+        "years": "1981-1985",
+        "degree": "Cử nhân Khoa học, Hóa học"
+      },
+      "cornell": {
+        "name": "Trường Y Đại học Cornell",
+        "years": "1985-1989",
+        "degree": "Tiến sĩ Y khoa",
+        "honors": ["Học giả Y học Quốc gia"]
+      },
+      "drew": {
+        "name": "Trường Y Đại học Charles R. Drew",
+        "years": "1989-1993",
+        "degree": "Thực tập, Phẫu thuật Tổng quát và Nội trú, Nhãn khoa",
+        "honors": ["Nội trú Trưởng (1992-1993)", "Thực tập sinh của Năm", "Người nhận Học bổng Viện Mắt Quốc gia"]
+      },
+      "usc": {
+        "name": "Viện Mắt USC/Doheny",
+        "years": "1993-1995",
+        "degree": "Học bổng, Phẫu thuật Giác mạc và Khúc xạ & Bệnh Ngoài",
+        "honors": ["Giải thưởng Công trạng Quỹ Gia đình Henry J. Kaiser", "Giải thưởng Xuất sắc trong Đào tạo Nội trú"]
+      }
+    }
+  },
+  "mission": {
+    "title": "Sứ Mệnh Thái Bình Dương: Biến Đổi Cả Một Khu Vực",
+    "subtitle": "Từ 2010 đến nay, cách mạng hóa khả năng tiếp cận y tế cho hơn 200.000 cư dân Thái Bình Dương",
+    "innovation": {
+      "title": "Đổi Mới Y Tế Cách Mạng",
+      "description1": "Năm 2010, Bác sĩ Flowers bắt đầu cái sẽ trở thành sáng kiến y tế có tác động nhất của ông. Đáp lại yêu cầu từ cựu nội trú Bác sĩ Anthony Smith, ông đã đến Guam để đánh giá tính khả thi của việc thành lập trung tâm LASIK đầu tiên trong khu vực. Điều ông phát hiện là một cuộc khủng hoảng y tế ảnh hưởng đến hơn 200.000 cư dân Thái Bình Dương không có quyền tiếp cận phẫu thuật chỉnh sửa thị lực mà không cần đi 13 giờ đến Hawaii hoặc Philippines.",
+      "description2": "Từ 2010 đến 2013, Bác sĩ Flowers đã cống hiến mình để thiết kế và thành lập một trung tâm LASIK tại Viện Mắt Island. Những nỗ lực của ông đạt đến đỉnh điểm vào năm 2013 khi ông thực hiện thủ thuật LASIK đầu tiên trong khu vực Thái Bình Dương, ngay lập tức biến đổi khả năng tiếp cận y tế cho toàn bộ dân số."
+    },
+    "stats": {
+      "procedures": {
+        "number": "600+",
+        "label": "Thủ thuật LASIK tại Guam",
+        "description": "Các ca phẫu thuật thành công được thực hiện"
+      },
+      "residents": {
+        "number": "200,000+",
+        "label": "Cư dân được phục vụ",
+        "description": "Được tiếp cận chăm sóc mắt tiên tiến"
+      },
+      "savings": {
+        "number": "$3,000+",
+        "label": "Chi phí đi lại tiết kiệm",
+        "description": "Tiết kiệm trung bình mỗi bệnh nhân"
+      },
+      "time": {
+        "number": "13 Giờ",
+        "label": "Thời gian bay được loại bỏ",
+        "description": "Cho mỗi thủ thuật của bệnh nhân"
+      }
+    }
+  },
+  "telemedicine": {
+    "title": "Tiên Phong Về Y Tế Từ Xa",
+    "description": "Sự đổi mới của Bác sĩ Flowers vượt xa sự xuất sắc trong phẫu thuật. Nhận thức được tỷ lệ tiểu đường cao và khuynh hướng di truyền ở Guam, ông đã đảm bảo tài trợ cho một sáng kiến y tế từ xa đột phá. Dự án thí điểm bệnh võng mạc từ xa này bao gồm:",
+    "features": [
+      "Triển khai camera chụp ảnh võng mạc hiện đại tại các phòng khám chăm sóc ban đầu trên khắp Guam",
+      "Triển khai cơ sở hạ tầng đám mây lai an toàn để lưu trữ hình ảnh tuân thủ HIPAA và phân tích thời gian thực",
+      "Tận dụng trí tuệ nhân tạo và thuật toán học máy để phát hiện và phân loại tự động bệnh võng mạc tiểu đường",
+      "Thiết lập các con đường tư vấn từ xa liền mạch kết nối các phòng khám Guam với các chuyên gia võng mạc USC",
+      "Cho phép phát hiện sớm và can thiệp bệnh võng mạc tiểu đường đe dọa thị lực trước khi mất thị lực xảy ra",
+      "Phát triển các chương trình đào tạo toàn diện để chứng nhận các bác sĩ địa phương về hình ảnh võng mạc tiên tiến và giao thức chẩn đoán"
+    ]
+  },
+  "expertise": {
+    "title": "Sự Xuất Sắc & Chuyên Môn Lâm Sàng",
+    "surgical": {
+      "title": "Chuyên Khoa Phẫu Thuật",
+      "procedures": [
+        "Phẫu thuật Keratomileusis tại chỗ có hỗ trợ Laser (LASIK)",
+        "Phẫu thuật Đục thủy tinh thể Tiên tiến",
+        "Ghép Giác mạc (bao gồm DSAEK)",
+        "Thấu kính Collamer Cấy ghép Visian (ICL)",
+        "Cắt bỏ Giác mạc Quang khúc xạ (PRK)",
+        "Cấy ghép Intacs cho Keratoconus",
+        "Phẫu thuật Màng mắt",
+        "Liên kết chéo Collagen"
+      ]
+    },
+    "research": {
+      "title": "Ưu Tiên Nghiên Cứu",
+      "areas": [
+        "Tối ưu hóa kết quả thị giác trong LASIK và phẫu thuật đục thủy tinh thể",
+        "Huấn luyện thị lực thể thao và nâng cao hiệu suất vận động",
+        "Ứng dụng y tế từ xa trong nhãn khoa",
+        "Nghiên cứu bệnh võng mạc tiểu đường dựa trên dân số"
+      ],
+      "funding": "Tài trợ Nghiên cứu: Hơn 1 triệu đô la được đảm bảo trong tài trợ nghiên cứu"
+    }
+  },
+  "awards": {
+    "title": "Sự Công Nhận & Giải Thưởng",
+    "subtitle": "Sự công nhận quốc gia về đổi mới, xuất sắc và tác động nhân đạo",
+    "list": [
+      "Bác sĩ Nhãn khoa Hàng đầu của Mỹ - Hội đồng Nghiên cứu Người tiêu dùng Mỹ (2000)",
+      "Người đoạt giải Computer World Smithsonian - Gương mặt của Đổi mới (1998)",
+      "Học giả Y học Quốc gia - Trường Y Đại học Cornell",
+      "Giải thưởng Công trạng Quỹ Gia đình Henry J. Kaiser",
+      "Giải thưởng Xuất sắc - RCMI/Đại học Charles R. Drew (2000)",
+      "Giải thưởng Tưởng niệm Sara Stivelman - Ủy ban Chất lượng & Năng suất Quận LA (1999)",
+      "Người được vinh danh Masters In Medicine - Recycling Black Dollars Communications (1999)",
+      "Giải thưởng Nhà đổi mới - Sở Y tế Quận Los Angeles (1998)",
+      "Bác sĩ Phẫu thuật LASIK Hàng đầu - Tạp chí San Diego"
+    ]
+  },
+  "dualMission": {
+    "title": "Mô Hình Sứ Mệnh Kép",
+    "subtitle": "Một mô hình thực hành độc đáo phục vụ như một kế hoạch chi tiết để giải quyết sự chênh lệch về y tế",
+    "la": {
+      "title": "Phòng Khám Los Angeles",
+      "features": [
+        "Cơ sở hiện đại",
+        "Dịch vụ chỉnh sửa thị lực toàn diện",
+        "Trải nghiệm bệnh nhân cách mạng",
+        "Tích hợp công nghệ tiên tiến",
+        "Lãnh đạo chương trình nội trú",
+        "Trung tâm nghiên cứu và đổi mới"
+      ]
+    },
+    "pacific": {
+      "title": "Sứ Mệnh Thái Bình Dương",
+      "features": [
+        "Các sứ mệnh phẫu thuật hàng quý đến Guam",
+        "Khả năng phẫu thuật di động",
+        "Đào tạo và cố vấn bác sĩ địa phương",
+        "Phát triển cơ sở hạ tầng y tế từ xa",
+        "Xây dựng hệ thống y tế bền vững"
+      ]
+    },
+    "cta": "Tìm Hiểu Thêm Về Sứ Mệnh Thái Bình Dương"
+  },
+  "impact": {
+    "title": "Tác Động Qua Các Con Số",
+    "stats": [
+      { "number": "30,000+", "label": "Tổng Số Thủ Thuật" },
+      { "number": "600+", "label": "Thủ Thuật Guam" },
+      { "number": "200,000+", "label": "Cư Dân Thái Bình Dương Được Phục Vụ" },
+      { "number": "98%", "label": "Sự Hài Lòng Của Bệnh Nhân" },
+      { "number": "20+", "label": "Năm Kinh Nghiệm" },
+      { "number": "15+", "label": "Năm Phục Vụ Thái Bình Dương" },
+      { "number": "12", "label": "Đảo Thái Bình Dương" },
+      { "number": "$1M+", "label": "Tài Trợ Nghiên Cứu" },
+      { "number": "4", "label": "Sứ Mệnh Guam Hàng Năm" }
+    ]
+  },
+  "philosophy": {
+    "title": "Triết Lý Chăm Sóc Bệnh Nhân",
+    "quote": "Tôi điều trị mỗi bệnh nhân như thể tôi đang chăm sóc một thành viên trong gia đình. Thiết lập mối quan hệ cá nhân là ưu tiên, để giao tiếp cởi mở, trung thực và minh bạch có thể diễn ra về mọi khía cạnh của tình trạng thị giác và can thiệp chăm sóc của họ.",
+    "description": "Triết lý này mở rộng vượt ra ngoài chăm sóc bệnh nhân cá nhân để bao gồm toàn bộ cộng đồng. Bác sĩ Flowers tin rằng chăm sóc sức khỏe nên đến mọi ngóc ngách của thế giới, và đổi mới không chỉ là về công nghệ—đó là về việc tìm cách mang lại phương pháp điều trị thay đổi cuộc sống cho những người cần nhất, bất kể vị trí hay hoàn cảnh."
+  },
+  "cta": {
+    "title": "Trải Nghiệm Chăm Sóc Thị Lực Cách Mạng",
+    "subtitle": "Tham gia cùng hàng nghìn bệnh nhân đã tin tưởng Bác sĩ Flowers với thị lực của họ. Đặt lịch tư vấn ngày hôm nay và khám phá sự khác biệt mà chăm sóc cách mạng mang lại.",
+    "schedule": "Đặt Lịch Tư Vấn Của Bạn"
+  }
+}

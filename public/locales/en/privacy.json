@@ -1,0 +1,120 @@
+{
+  "title": "Privacy Policy",
+  "subtitle": "ClearSight Vision Institute - Dr. Charles Flowers",
+  "lastUpdated": "Last updated",
+  "sections": {
+    "collection": {
+      "title": "Information We Collect",
+      "medicalNotice": {
+        "title": "Medical Practice Notice",
+        "description": "As a medical practice, we collect and maintain health information in accordance with HIPAA regulations and state medical privacy laws."
+      },
+      "personal": {
+        "title": "Personal Information",
+        "items": {
+          "contact": "Contact information (name, email, phone number, address)",
+          "medical": "Medical history and vision-related information",
+          "insurance": "Insurance information and payment details",
+          "appointments": "Appointment and consultation records",
+          "outcomes": "Treatment outcomes and follow-up information"
+        }
+      },
+      "technical": {
+        "title": "Technical Information",
+        "items": {
+          "ip": "IP address and browser information",
+          "usage": "Website usage patterns and preferences",
+          "language": "Language and accessibility preferences",
+          "device": "Device and operating system information"
+        }
+      }
+    },
+    "usage": {
+      "title": "How We Use Your Information",
+      "medical": {
+        "title": "Medical Care",
+        "items": {
+          "consultations": "Providing vision correction consultations and treatments",
+          "scheduling": "Scheduling appointments and follow-up care",
+          "communication": "Communicating about your treatment and recovery",
+          "records": "Maintaining medical records as required by law"
+        }
+      },
+      "website": {
+        "title": "Website Functionality",
+        "items": {
+          "personalization": "Personalizing your website experience",
+          "language": "Providing content in your preferred language",
+          "improvement": "Improving our website and services",
+          "inquiries": "Responding to your inquiries and requests"
+        }
+      }
+    },
+    "gdpr": {
+      "title": "Your Rights Under GDPR",
+      "euNotice": {
+        "title": "EU Residents",
+        "description": "If you are located in the European Union, you have additional rights under GDPR."
+      },
+      "rights": {
+        "title": "Your Rights Include",
+        "access": {
+          "title": "Right to Access",
+          "description": "Request a copy of your personal data"
+        },
+        "rectification": {
+          "title": "Right to Rectification",
+          "description": "Correct inaccurate information"
+        },
+        "erasure": {
+          "title": "Right to Erasure",
+          "description": "Request deletion of your data"
+        },
+        "portability": {
+          "title": "Right to Portability",
+          "description": "Receive your data in a portable format"
+        },
+        "object": {
+          "title": "Right to Object",
+          "description": "Object to certain data processing"
+        },
+        "restriction": {
+          "title": "Right to Restriction",
+          "description": "Limit how we process your data"
+        }
+      },
+      "exercise": {
+        "title": "How to Exercise Your Rights",
+        "email": "Email",
+        "phone": "Phone",
+        "response": "We will respond to your request within 30 days as required by GDPR."
+      }
+    },
+    "security": {
+      "title": "Data Security",
+      "description": "We implement appropriate technical and organizational measures to protect your personal information",
+      "measures": {
+        "encryption": "Encryption of data in transit and at rest",
+        "assessments": "Regular security assessments and updates",
+        "access": "Access controls and authentication systems",
+        "training": "Employee training on data protection",
+        "incident": "Incident response and breach notification procedures"
+      }
+    },
+    "contact": {
+      "title": "Contact Information",
+      "dpo": {
+        "title": "Data Protection Officer",
+        "organization": "ClearSight Vision Institute",
+        "address1": "5750 Downey Ave., Suite 101",
+        "address2": "Lakewood, CA 90712"
+      },
+      "legal": {
+        "title": "Legal Department",
+        "organization": "ClearSight Vision Institute",
+        "address1": "5750 Downey Ave., Suite 101",
+        "address2": "Lakewood, CA 90712"
+      }
+    }
+  }
+}

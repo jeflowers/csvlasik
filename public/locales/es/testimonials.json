@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "badge": "Resultados Revolucionarios - Pacientes Reales",
+    "title": "Testimonios que",
+    "titleAccent": "Cambian Vidas",
+    "description": "Descubra los resultados transformadores que nuestros pacientes han experimentado con las técnicas revolucionarias de corrección de visión del Dr. Flowers. Desde las islas del Pacífico hasta Los Ángeles, las vidas están siendo cambiadas un procedimiento a la vez.",
+    "cta": "Comience Su Transformación"
+  },
+  "results": {
+    "title": "Resultados Revolucionarios Comprobados",
+    "description": "Los números hablan por sí mismos - resultados excepcionales en todos los procedimientos",
+    "stats": {
+      "vision": {
+        "label": "Logran Visión 20/20",
+        "description": "O mejor dentro de 24-48 horas"
+      },
+      "satisfaction": {
+        "label": "Satisfacción del Paciente",
+        "description": "Recomendarían al Dr. Flowers"
+      },
+      "rating": {
+        "label": "Calificación Promedio",
+        "description": "En todas las plataformas de reseñas"
+      },
+      "stories": {
+        "label": "Historias de Éxito",
+        "description": "Vidas transformadas por la visión"
+      }
+    }
+  },
+  "featured": {
+    "title": "Historias de Éxito Destacadas",
+    "description": "Pacientes reales compartiendo sus viajes de transformación de visión revolucionaria"
+  },
+  "pacific": {
+    "title": "Transformaciones de la Región del Pacífico",
+    "description": "Resultados revolucionarios de las misiones pioneras del Dr. Flowers en el Pacífico"
+  },
+  "badges": {
+    "pacific": "Paciente del Pacífico",
+    "military": "Militar",
+    "success": "Éxito"
+  },
+  "cta": {
+    "title": "¿Listo para Unirse a Nuestras Historias de Éxito?",
+    "description": "Experimente el cuidado de visión revolucionario que ha transformado más de 30,000 vidas. Su historia de éxito comienza con una consulta gratuita.",
+    "schedule": "Programe Su Consulta Gratuita",
+    "procedures": "Elija Su Procedimiento"
+  },
+  "gallery": {
+    "title": "Galería de Transformación de Visión",
+    "description": "Vea las mejoras dramáticas en la calidad de visión en todos los procedimientos",
+    "before": "Antes del Tratamiento",
+    "after": "Después del Tratamiento",
+    "satisfaction": "Satisfacción del Paciente"
+  },
+  "reviews": {
+    "title": "Lo Que Dicen Nuestros Pacientes",
+    "description": "Reseñas auténticas de pacientes reales que experimentaron cuidado revolucionario"
+  }
+}

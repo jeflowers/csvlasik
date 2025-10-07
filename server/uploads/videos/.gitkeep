@@ -1,0 +1,15 @@
+# Video uploads directory
+# Stores video content for:
+# - Patient testimonial videos
+# - Procedure explanation videos
+# - Educational content
+# - Dr. Flowers' Pacific mission documentation
+
+# Supported formats:
+# - MP4 (primary)
+# - MOV (QuickTime)
+# - MPEG
+
+# Size limits:
+# - Maximum 50MB per file
+# - Automatic compression for web delivery

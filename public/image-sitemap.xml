@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- LASIK Procedure Page -->
+  <url>
+    <loc>https://clearsightlasik.com/procedures/lasik</loc>
+    <image:image>
+      <image:loc>https://clearsightlasik.com/assets/images/procedures/lasik/hero-lasik-surgery-1920x1080.jpg</image:loc>
+      <image:caption>LASIK eye surgery procedure - Advanced laser vision correction</image:caption>
+      <image:title>Revolutionary LASIK Surgery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://clearsightlasik.com/assets/images/procedures/lasik/process/step-01-examination.png</image:loc>
+      <image:caption>LASIK Step 1: Comprehensive eye examination and corneal mapping</image:caption>
+      <image:title>LASIK Pre-operative Examination</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://clearsightlasik.com/assets/images/procedures/lasik/process/step-02-flap-creation.png</image:loc>
+      <image:caption>LASIK Step 2: Precise corneal flap creation using femtosecond laser</image:caption>
+      <image:title>LASIK Flap Creation Process</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://clearsightlasik.com/assets/images/procedures/lasik/process/step-03-laser-reshaping.png</image:loc>
+      <image:caption>LASIK Step 3: Excimer laser corneal reshaping for vision correction</image:caption>
+      <image:title>LASIK Laser Reshaping</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://clearsightlasik.com/assets/images/procedures/lasik/process/step-04-recovery.png</image:loc>
+      <image:caption>LASIK Step 4: Flap repositioning and immediate recovery process</image:caption>
+      <image:title>LASIK Recovery Process</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Dr. Flowers Page -->
+  <url>
+    <loc>https://clearsightlasik.com/about</loc>
+    <image:image>
+      <image:loc>https://clearsightlasik.com/assets/images/team/dr-flowers-headshot.jpg</image:loc>
+      <image:caption>Dr. Charles Flowers - Revolutionary LASIK surgeon and Pacific healthcare pioneer</image:caption>
+      <image:title>Dr. Charles Flowers MD</image:title>
+    </image:image>
+  </url>
+
+  <!-- Technology Page -->
+  <url>
+    <loc>https://clearsightlasik.com/technology</loc>
+    <image:image>
+      <image:loc>https://clearsightlasik.com/assets/images/diagrams/educational/advanced-technology-overview.png</image:loc>
+      <image:caption>Advanced LASIK technology and equipment overview</image:caption>
+      <image:title>Revolutionary LASIK Technology</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://clearsightlasik.com/assets/images/diagrams/educational/icare-drs-plus-device.png</image:loc>
+      <image:caption>iCare DRS plus retinal screening device for diabetic retinopathy detection</image:caption>
+      <image:title>Advanced Retinal Screening Technology</image:title>
+    </image:image>
+  </url>
+
+  <!-- PRK Procedure Page -->
+  <url>
+    <loc>https://clearsightlasik.com/procedures/prk</loc>
+    <image:image>
+      <image:loc>https://clearsightlasik.com/assets/images/procedures/prk/hero-prk-surgery-1920x1080.jpg</image:loc>
+      <image:caption>PRK photorefractive keratectomy - Surface laser vision correction</image:caption>
+      <image:title>PRK Surface Treatment</image:title>
+    </image:image>
+  </url>
+
+  <!-- ICL Procedure Page -->
+  <url>
+    <loc>https://clearsightlasik.com/procedures/icl</loc>
+    <image:image>
+      <image:loc>https://clearsightlasik.com/assets/images/procedures/icl/hero-icl-surgery-1920x1080.jpg</image:loc>
+      <image:caption>ICL implantable contact lens surgery - Reversible vision correction</image:caption>
+      <image:title>ICL Implantable Lens Surgery</image:title>
+    </image:image>
+  </url>
+
+</urlset>

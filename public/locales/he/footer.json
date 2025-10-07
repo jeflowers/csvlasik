@@ -1,0 +1,51 @@
+{
+  "company": {
+    "name": "ClearSight",
+    "tagline": "מכון הראייה",
+    "description": "חלוצי ניתוחי LASIK באזור האוקיינוס השקט והבאת טיפול ראייה מהפכני ללוס אנג'לס."
+  },
+  "quickLinks": {
+    "title": "קישורים מהירים",
+    "about": "אודות ד\"ר פלאוורס",
+    "allProcedures": "כל ההליכים",
+    "pacificStory": "סיפור האוקיינוס השקט",
+    "testimonials": "המלצות",
+    "technology": "טכנולוגיה"
+  },
+  "procedures": {
+    "title": "הליכים",
+    "lasik": "ניתוח LASIK",
+    "prk": "ניתוח PRK",
+    "icl": "ICL",
+    "blog": "בלוג ומשאבים",
+    "consultation": "קביעת ייעוץ"
+  },
+  "contact": {
+    "title": "פרטי התקשרות",
+    "office": "משרד לייקווד",
+    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712",
+    "phone": "(844) 211-5462",
+    "email": "info@clearsightlasik.com"
+  },
+  "newsletter": {
+    "title": "הישאר מעודכן",
+    "description": "קבל את העדכונים האחרונים ממשימת האוקיינוס השקט שלנו וחידושי טיפול הראייה",
+    "placeholder": "האימייל שלך",
+    "subscribe": "הירשם"
+  },
+  "social": {
+    "facebook": "פייסבוק",
+    "instagram": "אינסטגרם",
+    "youtube": "יוטיוב",
+    "twitter": "טוויטר",
+    "tiktok": "טיקטוק"
+  },
+  "legal": {
+    "copyright": "© 2025 ClearSight - Dr. Charles Flowers, MD. כל הזכויות שמורות.",
+    "privacy": "מדיניות פרטיות",
+    "terms": "תנאי שירות"
+  },
+  "badge": {
+    "pacificMission": "🌊 תומך משימת האוקיינוס השקט"
+  }
+}

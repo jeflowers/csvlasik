@@ -1,0 +1,80 @@
+{
+  "labels": {
+    "firstName": "שם פרטי",
+    "lastName": "שם משפחה",
+    "email": "כתובת אימייל",
+    "phone": "מספר טלפון",
+    "message": "הודעה",
+    "procedure": "הליך מעניין",
+    "preferredContact": "שיטת קשר מועדפת",
+    "comments": "שאלות או הערות",
+    "age": "גיל",
+    "occupation": "מקצוע",
+    "location": "מיקום",
+    "visionBefore": "ראייה לפני",
+    "visionAfter": "ראייה אחרי",
+    "rating": "דירוג",
+    "testimonialText": "החוויה שלך"
+  },
+  "placeholders": {
+    "firstName": "השם הפרטי שלך",
+    "lastName": "שם המשפחה שלך",
+    "email": "your.email@example.com",
+    "phone": "05X-XXX-XXXX",
+    "message": "ספר לנו על מטרות הראייה שלך...",
+    "comments": "יש שאלות או בקשות מיוחדות?...",
+    "age": "הגיל שלך",
+    "occupation": "המקצוע שלך",
+    "location": "עיר, מחוז",
+    "testimonialText": "שתף את החוויה שלך עם ד\"ר פלאוורס..."
+  },
+  "options": {
+    "procedures": {
+      "lasik": "LASIK",
+      "prk": "PRK", 
+      "icl": "ICL",
+      "consultation": "ייעוץ כללי"
+    },
+    "contactMethods": {
+      "phone": "טלפון",
+      "email": "אימייל",
+      "text": "הודעת טקסט"
+    },
+    "ratings": {
+      "1": "גרוע",
+      "2": "בסדר",
+      "3": "טוב",
+      "4": "טוב מאוד",
+      "5": "מעולה"
+    }
+  },
+  "buttons": {
+    "submit": "שליחה",
+    "cancel": "ביטול",
+    "reset": "איפוס",
+    "save": "שמירה",
+    "scheduleConsultation": "קביעת ייעוץ",
+    "requestCallback": "בקשת חזרה",
+    "downloadInfo": "הורדת מידע",
+    "shareTestimonial": "שתף את הסיפור שלך"
+  },
+  "validation": {
+    "required": "שדה זה נדרש",
+    "invalidEmail": "אנא הכנס כתובת אימייל תקינה",
+    "invalidPhone": "אנא הכנס מספר טלפון תקין",
+    "tooShort": "שדה זה קצר מדי",
+    "tooLong": "שדה זה ארוך מדי",
+    "invalidRating": "אנא בחר דירוג"
+  },
+  "success": {
+    "submitted": "תודה! הטופס שלך נשלח בהצלחה.",
+    "scheduled": "הייעוץ שלך נקבע.",
+    "contacted": "ניצור קשר איתך תוך 24 שעות.",
+    "testimonialSubmitted": "תודה על שיתוף החוויה שלך!"
+  },
+  "privacy": {
+    "notice": "על ידי שליחת טופס זה, אתה מסכים להיות מוזמן לגבי השירותים שלנו.",
+    "security": "המידע שלך מאובטח ולעולם לא יישותף.",
+    "hipaa": "כל התקשורת תואמת HIPAA."
+  }
+}

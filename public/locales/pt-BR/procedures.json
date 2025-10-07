@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "badge": "Correção de Visão Revolucionária",
+    "title": "Opções de Correção de Visão ClearSight",
+    "subtitle": "O Dr. Flowers oferece procedimentos avançados de correção de visão, cada um adaptado a necessidades e estilos de vida específicos. Compare opções e encontre a solução perfeita para sua transformação de visão revolucionária."
+  },
+  "procedures": {
+    "keyFeatures": "Características Principais",
+    "lasik": {
+      "tagline": "Escolha Mais Popular",
+      "description": "Correção de visão a laser avançada com recuperação rápida e excelentes resultados",
+      "recoveryTime": "1-2 dias",
+      "successRate": "98%",
+      "ideal": "Miopia, hipermetropia, astigmatismo",
+      "features": {
+        "quick": "Procedimento rápido de 15 minutos",
+        "comfort": "Desconforto mínimo",
+        "recovery": "Recuperação visual rápida",
+        "lasting": "Resultados duradouros"
+      }
+    },
+    "prk": {
+      "tagline": "Tratamento de Superfície",
+      "description": "Correção a laser alternativa para pacientes não adequados para LASIK",
+      "recoveryTime": "3-5 dias",
+      "successRate": "96%",
+      "ideal": "Córneas finas, estilos de vida ativos",
+      "features": {
+        "noFlap": "Sem retalho corneano",
+        "thinCorneas": "Adequado para córneas finas",
+        "stability": "Excelente estabilidade a longo prazo",
+        "athletes": "Ideal para atletas"
+      }
+    },
+    "icl": {
+      "tagline": "Solução Implantável",
+      "description": "Lentes de contato implantáveis permanentes para prescrições altas",
+      "recoveryTime": "1-3 dias",
+      "successRate": "99%",
+      "ideal": "Prescrições altas, córneas finas",
+      "features": {
+        "reversible": "Procedimento reversível",
+        "nightVision": "Excelente visão noturna",
+        "uvProtection": "Proteção UV",
+        "maintenance": "Não requer manutenção"
+      }
+    }
+  },
+  "comparison": {
+    "title": "Comparação Lado a Lado",
+    "subtitle": "Compare as características principais de cada procedimento para ajudá-lo a tomar uma decisão informada",
+    "featureHeader": "Característica",
+    "recommendation": "Não tem certeza de qual procedimento é certo para você?",
+    "cta": "Obter Recomendação Personalizada",
+    "features": {
+      "recoveryTime": "Tempo de Recuperação",
+      "procedureTime": "Tempo do Procedimento",
+      "painLevel": "Nível de Dor",
+      "highRx": "Adequado para Rx Alto",
+      "nightVision": "Visão Noturna",
+      "reversibility": "Reversibilidade",
+      "successRate": "Taxa de Sucesso",
+      "idealFor": "Ideal Para"
+    },
+    "values": {
+      "lasik": {
+        "recoveryTime": "1-2 dias",
+        "procedureTime": "15 minutos",
+        "painLevel": "Mínimo",
+        "highRx": "Limitado",
+        "nightVision": "Excelente",
+        "reversibility": "Não"
+      },
+      "prk": {
+        "recoveryTime": "3-5 dias",
+        "procedureTime": "15 minutos",
+        "painLevel": "Leve-Moderado",
+        "highRx": "Limitado",
+        "nightVision": "Excelente",
+        "reversibility": "Não"
+      },
+      "icl": {
+        "recoveryTime": "1-3 dias",
+        "procedureTime": "30 minutos",
+        "painLevel": "Mínimo",
+        "highRx": "Excelente",
+        "nightVision": "Superior",
+        "reversibility": "Sim"
+      }
+    }
+  },
+  "process": {
+    "title": "Sua Jornada Revolucionária",
+    "subtitle": "Cada procedimento segue o processo comprovado do Dr. Flowers para resultados ótimos",
+    "steps": {
+      "consultation": {
+        "title": "Consulta Gratuita",
+        "description": "Exame ocular abrangente e recomendação de procedimento"
+      },
+      "preparation": {
+        "title": "Preparação Pré-Operatória",
+        "description": "Medições detalhadas e planejamento cirúrgico"
+      },
+      "procedure": {
+        "title": "Procedimento Revolucionário",
+        "description": "Cirurgia rápida e confortável com tecnologia avançada"
+      },
+      "recovery": {
+        "title": "Recuperação e Acompanhamento",
+        "description": "Cuidado personalizado e monitoramento para cura ideal"
+      }
+    }
+  },
+  "cta": {
+    "title": "Pronto para Transformar Sua Visão?",
+    "subtitle": "Agende sua consulta gratuita com o Dr. Flowers e descubra qual procedimento revolucionário é perfeito para seu estilo de vida e necessidades de visão.",
+    "schedule": "Agendar Consulta Gratuita",
+    "testimonials": "Ver Depoimentos"
+  }
+}

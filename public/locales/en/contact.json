@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "badge": "Schedule Your Revolutionary Consultation",
+    "title": "Start Your",
+    "titleAccent": "Vision Journey",
+    "subtitle": "Take the first step toward revolutionary vision care. Schedule your free consultation with Dr. Flowers and discover how his pioneering techniques can transform your sight and your life."
+  },
+  "form": {
+    "title": "Schedule Your Free Consultation",
+    "selectProcedure": "Select a procedure"
+  },
+  "info": {
+    "title": "Get in Touch",
+    "subtitle": "Ready to experience revolutionary vision care? Contact us today to schedule your free consultation and take the first step toward perfect vision."
+  },
+  "office": {
+    "name": "Lakewood Office",
+    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712"
+  },
+  "phone": {
+    "title": "Phone",
+    "number": "(844) 211-5462",
+    "note": "Click to call directly"
+  },
+  "email": {
+    "title": "Email",
+    "address": "info@clearsightlasik.com",
+    "note": "We respond within 24 hours"
+  },
+  "hours": {
+    "title": "Office Hours",
+    "weekdays": "Monday - Friday: 8:00 AM - 6:00 PM",
+    "saturday": "Saturday: 9:00 AM - 3:00 PM",
+    "sunday": "Sunday: Closed",
+    "emergency": "Emergency consultations available"
+  },
+  "quickActions": {
+    "title": "Quick Actions",
+    "callNow": "Call Now for Immediate Scheduling",
+    "learnProcedures": "Learn About Procedures",
+    "financing": "Financing Options"
+  },
+  "consultation": {
+    "title": "What to Expect at Your Consultation",
+    "subtitle": "Your free consultation is comprehensive, educational, and completely pressure-free",
+    "steps": {
+      "exam": {
+        "title": "Comprehensive Eye Exam",
+        "description": "Advanced diagnostic testing including corneal mapping, pupil measurement, and vision assessment",
+        "duration": "45-60 minutes"
+      },
+      "personal": {
+        "title": "Personal Consultation",
+        "description": "One-on-one discussion with Dr. Flowers about your vision goals, lifestyle, and procedure options",
+        "duration": "30-45 minutes"
+      },
+      "plan": {
+        "title": "Customized Treatment Plan",
+        "description": "Receive your personalized recommendation with detailed explanation of benefits and expectations",
+        "duration": "15-30 minutes"
+      }
+    },
+    "bring": {
+      "title": "What to Bring",
+      "glasses": "Current glasses or contacts",
+      "insurance": "Insurance cards",
+      "medications": "List of current medications",
+      "id": "Driver's license or ID",
+      "questions": "List of questions",
+      "driver": "Someone to drive you home"
+    }
+  },
+  "emergency": {
+    "title": "Post-Operative Emergency Contact",
+    "description": "If you are a current patient experiencing a post-operative emergency outside of normal business hours:",
+    "phone": "Emergency Line: (844) 211-5462",
+    "note": "For non-emergency questions, please use our regular contact methods above."
+  },
+  "cta": {
+    "title": "Ready to Transform Your Vision?",
+    "subtitle": "Join the hundreds of patients who have trusted Dr. Flowers with their vision. Your revolutionary journey to perfect sight starts with a simple phone call.",
+    "call": "Call (844) 211-5462",
+    "testimonials": "See Testimonials"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "labels": {
+    "firstName": "이름",
+    "lastName": "성",
+    "email": "이메일 주소",
+    "phone": "전화번호",
+    "message": "메시지",
+    "procedure": "관심 있는 시술",
+    "preferredContact": "선호하는 연락 방법",
+    "comments": "질문 또는 의견",
+    "age": "나이",
+    "occupation": "직업",
+    "location": "위치",
+    "visionBefore": "시술 전 시력",
+    "visionAfter": "시술 후 시력",
+    "rating": "평점",
+    "testimonialText": "귀하의 경험"
+  },
+  "placeholders": {
+    "firstName": "귀하의 이름",
+    "lastName": "귀하의 성",
+    "email": "your.email@example.com",
+    "phone": "010-1234-5678",
+    "message": "시력 목표에 대해 알려주세요...",
+    "comments": "질문이나 특별한 요청사항이 있으신가요?...",
+    "age": "귀하의 나이",
+    "occupation": "귀하의 직업",
+    "location": "도시, 주",
+    "testimonialText": "Dr. Flowers와의 경험을 공유해주세요..."
+  },
+  "options": {
+    "procedures": {
+      "lasik": "LASIK",
+      "prk": "PRK", 
+      "icl": "ICL",
+      "consultation": "일반 상담"
+    },
+    "contactMethods": {
+      "phone": "전화",
+      "email": "이메일",
+      "text": "문자 메시지"
+    },
+    "ratings": {
+      "1": "나쁨",
+      "2": "보통",
+      "3": "좋음",
+      "4": "매우 좋음",
+      "5": "훌륭함"
+    }
+  },
+  "buttons": {
+    "submit": "제출",
+    "cancel": "취소",
+    "reset": "재설정",
+    "save": "저장",
+    "scheduleConsultation": "상담 예약",
+    "requestCallback": "콜백 요청",
+    "downloadInfo": "정보 다운로드",
+    "shareTestimonial": "경험 공유하기"
+  },
+  "validation": {
+    "required": "이 필드는 필수입니다",
+    "invalidEmail": "유효한 이메일 주소를 입력해주세요",
+    "invalidPhone": "유효한 전화번호를 입력해주세요",
+    "tooShort": "이 필드가 너무 짧습니다",
+    "tooLong": "이 필드가 너무 깁니다",
+    "invalidRating": "평점을 선택해주세요"
+  },
+  "success": {
+    "submitted": "감사합니다! 양식이 성공적으로 제출되었습니다.",
+    "scheduled": "상담이 예약되었습니다.",
+    "contacted": "24시간 내에 연락드리겠습니다.",
+    "testimonialSubmitted": "경험을 공유해주셔서 감사합니다!"
+  },
+  "privacy": {
+    "notice": "이 양식을 제출함으로써 서비스에 대한 연락에 동의합니다.",
+    "security": "귀하의 정보는 안전하며 절대 공유되지 않습니다.",
+    "hipaa": "모든 통신은 HIPAA를 준수합니다."
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "procedures": {
+    "lasik": "LASIK",
+    "prk": "PRK",
+    "icl": "ICL",
+    "cataract": "Cataract Surgery",
+    "cornealTransplant": "Corneal Transplant"
+  },
+  "vision": {
+    "nearsighted": "Malabo ang Malayo",
+    "farsighted": "Malabo ang Malapit",
+    "astigmatism": "Astigmatismo",
+    "presbyopia": "Presbyopia",
+    "perfect": "20/20 na Paningin",
+    "before": "Dati",
+    "after": "Pagkatapos",
+    "improvement": "Pagbabago",
+    "correction": "Pagwawasto"
+  },
+  "terms": {
+    "cornea": "Kornea",
+    "retina": "Retina",
+    "pupil": "Pupil",
+    "iris": "Iris",
+    "lens": "Lens",
+    "opticNerve": "Optic Nerve",
+    "diopter": "Diopter",
+    "refraction": "Refraction",
+    "aberration": "Aberration",
+    "topography": "Topography",
+    "epithelium": "Epithelium",
+    "stroma": "Stroma",
+    "endothelium": "Endothelium"
+  },
+  "safety": {
+    "fdaApproved": "FDA Approved",
+    "clinicallyProven": "Clinically Proven",
+    "safeAndEffective": "Ligtas at Epektibo",
+    "minimallyInvasive": "Minimally Invasive",
+    "outpatientProcedure": "Outpatient na Pamamaraan",
+    "noHospitalStay": "Hindi Kailangan ng Hospital Stay"
+  },
+  "recovery": {
+    "immediate": "Agad-agad",
+    "sameDay": "Same Day",
+    "nextDay": "Kinabukasan",
+    "oneWeek": "Isang Linggo",
+    "oneMonth": "Isang Buwan",
+    "fullHealing": "Kumpletong Paggaling",
+    "followUp": "Follow-up na Bisita"
+  },
+  "benefits": {
+    "noGlasses": "Walang Salamin",
+    "noContacts": "Walang Contact Lens",
+    "clearVision": "Malinaw na Paningin",
+    "activeLifestyle": "Aktibong Pamumuhay",
+    "careerAdvancement": "Career Advancement",
+    "confidence": "Mas Mataas na Kumpiyansa"
+  },
+  "disclaimers": {
+    "resultsVary": "Ang mga resulta ay maaaring mag-vary",
+    "consultationRequired": "Kailangan ng konsultasyon para matukoy ang candidacy",
+    "risksBenefits": "Pag-usapan ang mga risks at benefits sa inyong doktor",
+    "followInstructions": "Sundin lahat ng post-operative na instructions",
+    "medicalAdvice": "Ang impormasyon na ito ay hindi kapalit ng propesyonal na medical advice"
+  }
+}

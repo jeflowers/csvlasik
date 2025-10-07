@@ -1,0 +1,67 @@
+{
+  "procedures": {
+    "lasik": "LASIK",
+    "prk": "PRK",
+    "icl": "ICL",
+    "cataract": "Cirugía de Cataratas",
+    "cornealTransplant": "Trasplante de Córnea"
+  },
+  "vision": {
+    "nearsighted": "Miopía",
+    "farsighted": "Hipermetropía",
+    "astigmatism": "Astigmatismo",
+    "presbyopia": "Presbicia",
+    "perfect": "Visión 20/20",
+    "before": "Antes",
+    "after": "Después",
+    "improvement": "Mejora",
+    "correction": "Corrección"
+  },
+  "terms": {
+    "cornea": "Córnea",
+    "retina": "Retina",
+    "pupil": "Pupila",
+    "iris": "Iris",
+    "lens": "Cristalino",
+    "opticNerve": "Nervio Óptico",
+    "diopter": "Dioptría",
+    "refraction": "Refracción",
+    "aberration": "Aberración",
+    "topography": "Topografía",
+    "epithelium": "Epitelio",
+    "stroma": "Estroma",
+    "endothelium": "Endotelio"
+  },
+  "safety": {
+    "fdaApproved": "Aprobado por la FDA",
+    "clinicallyProven": "Clínicamente Comprobado",
+    "safeAndEffective": "Seguro y Efectivo",
+    "minimallyInvasive": "Mínimamente Invasivo",
+    "outpatientProcedure": "Procedimiento Ambulatorio",
+    "noHospitalStay": "No Requiere Hospitalización"
+  },
+  "recovery": {
+    "immediate": "Inmediato",
+    "sameDay": "El Mismo Día",
+    "nextDay": "Al Día Siguiente",
+    "oneWeek": "Una Semana",
+    "oneMonth": "Un Mes",
+    "fullHealing": "Curación Completa",
+    "followUp": "Visita de Seguimiento"
+  },
+  "benefits": {
+    "noGlasses": "Sin Anteojos",
+    "noContacts": "Sin Lentes de Contacto",
+    "clearVision": "Visión Cristalina",
+    "activeLifestyle": "Estilo de Vida Activo",
+    "careerAdvancement": "Avance Profesional",
+    "confidence": "Mayor Confianza"
+  },
+  "disclaimers": {
+    "resultsVary": "Los resultados individuales pueden variar",
+    "consultationRequired": "Se requiere consulta para determinar candidatura",
+    "risksBenefits": "Discuta riesgos y beneficios con su médico",
+    "followInstructions": "Siga todas las instrucciones postoperatorias",
+    "medicalAdvice": "Esta información no sustituye el consejo médico profesional"
+  }
+}

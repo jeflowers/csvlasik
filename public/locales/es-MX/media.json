@@ -1,0 +1,117 @@
+{
+  "pageTitle": "Sala de Prensa",
+  "hero": {
+    "title": "ClearSight en las Noticias",
+    "subtitle": "Cobertura mediática de nuestra atención oftalmológica revolucionaria"
+  },
+  "sections": {
+    "pressReleases": {
+      "title": "Comunicados de Prensa",
+      "latestRelease": "Último Comunicado",
+      "viewAll": "Ver Todos los Comunicados"
+    },
+    "mediaKit": {
+      "title": "Kit de Medios",
+      "description": "Recursos para periodistas y medios de comunicación",
+      "downloads": {
+        "logos": "Logotipos de Alta Resolución",
+        "photos": "Fotografías Profesionales",
+        "factSheet": "Hoja de Datos",
+        "executiveBios": "Biografía del Dr. Flowers"
+      },
+      "downloadBtn": "Descargar Kit de Medios"
+    },
+    "coverage": {
+      "title": "Cobertura Mediática",
+      "featured": "Destacados",
+      "categories": {
+        "television": "Televisión",
+        "print": "Prensa Escrita",
+        "online": "Medios Digitales",
+        "podcast": "Podcasts",
+        "radio": "Radio"
+      }
+    },
+    "stories": {
+      "pacific": {
+        "title": "Pionero del Pacífico: La Historia del Dr. Flowers",
+        "outlet": "Pacific Daily News",
+        "date": "2013",
+        "description": "Cómo un cirujano transformó la atención médica para 200,000+ residentes del Pacífico"
+      },
+      "innovation": {
+        "title": "Innovación en Cirugía Oftalmológica",
+        "outlet": "Medical Innovation Today",
+        "description": "El enfoque revolucionario del Dr. Flowers para la corrección de la visión"
+      },
+      "community": {
+        "title": "Eliminando Vuelos Médicos de 13 Horas",
+        "outlet": "Healthcare Transformation Weekly",
+        "description": "El impacto de llevar LASIK a territorios desatendidos"
+      },
+      "technology": {
+        "title": "Tecnología de Vanguardia en Los Ángeles",
+        "outlet": "LA Health & Wellness",
+        "description": "ClearSight trae tecnología revolucionaria a Lakewood"
+      }
+    },
+    "awards": {
+      "title": "Premios y Reconocimientos",
+      "items": {
+        "pioneer": "Premio Pionero de Salud del Pacífico 2014",
+        "innovation": "Innovador Médico del Año 2015",
+        "community": "Premio al Servicio Comunitario 2016",
+        "excellence": "Excelencia en Oftalmología 2018"
+      }
+    },
+    "inquiries": {
+      "title": "Consultas de Medios",
+      "description": "Para entrevistas, solicitudes de medios o información adicional",
+      "contact": {
+        "name": "Relaciones con Medios",
+        "email": "media@clearsight-la.com",
+        "phone": "(562) 555-EYES",
+        "availability": "Disponible para entrevistas en inglés y español"
+      },
+      "topics": {
+        "title": "Temas de Experiencia",
+        "items": [
+          "Cirugía LASIK y corrección de visión",
+          "Innovación en atención médica",
+          "Acceso médico en comunidades desatendidas",
+          "Tecnología oftalmológica avanzada",
+          "Cuidado ocular preventivo"
+        ]
+      }
+    },
+    "videoGallery": {
+      "title": "Galería de Videos",
+      "categories": {
+        "procedures": "Explicaciones de Procedimientos",
+        "testimonials": "Testimonios de Pacientes",
+        "interviews": "Entrevistas con el Dr. Flowers",
+        "educational": "Videos Educativos"
+      }
+    },
+    "socialMedia": {
+      "title": "Síguenos",
+      "handles": {
+        "facebook": "@ClearSightLA",
+        "instagram": "@ClearSightVision",
+        "twitter": "@DrFlowersLASIK",
+        "youtube": "ClearSight Vision Center"
+      }
+    }
+  },
+  "testimonialHighlight": {
+    "title": "Impacto en la Comunidad",
+    "quote": "El Dr. Flowers no solo trajo LASIK a nuestra isla, eliminó la necesidad de viajar 13 horas para recibir atención ocular. Es un verdadero revolucionario de la salud.",
+    "author": "María Gutiérrez, Primera paciente LASIK en Guam"
+  },
+  "stats": {
+    "mediaAppearances": "50+ Apariciones en Medios",
+    "pressArticles": "100+ Artículos de Prensa",
+    "documentary": "1 Documental",
+    "awards": "15+ Premios"
+  }
+}

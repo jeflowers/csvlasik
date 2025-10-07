@@ -1,0 +1,167 @@
+{
+  "hero": {
+    "badge": "Healthcare Revolutionary - Pacific Pioneer",
+    "title": "From Pacific Islands to",
+    "description": "The extraordinary journey of Dr. Charles Flowers, who revolutionized healthcare across remote Pacific islands by bringing LASIK surgery to underserved communities, then brought that same pioneering spirit to Southern California with ClearSight.",
+    "cta": "Schedule Consultation with the Revolutionary"
+  },
+  "video": {
+    "title": "The Pacific Healthcare Revolution in Action",
+    "subtitle": "Watch Dr. Flowers' groundbreaking work bringing modern eye care to remote Pacific communities",
+    "caption": "\"Bringing revolutionary healthcare to those who need it most\" - Featured on KUAM News",
+    "troubleshoot": "If video doesn't load, check browser console (F12) for error details"
+  },
+  "timeline": {
+    "title": "The Revolutionary Journey",
+    "subtitle": "A timeline of innovation, dedication, and life-changing impact",
+    "milestones": {
+      "2010": {
+        "title": "The Call to Service",
+        "description": "Fresh from completing his ophthalmology residency, Dr. Flowers received an assignment to serve in the Pacific region. What he discovered shocked him: thousands of people living with preventable blindness and vision problems, with no access to modern eye care.",
+        "stats": { "patients": "2,000+", "islands": "3", "procedures": "150" }
+      },
+      "2012": {
+        "title": "The Revolutionary Decision",
+        "description": "After two years of providing basic eye care, Dr. Flowers made a groundbreaking decision: he would bring LASIK technology to the Pacific. Against all conventional wisdom, he began planning the first mobile LASIK center for remote islands.",
+        "stats": { "investment": "$2M+", "preparation": "18 months", "training": "50 staff" },
+        "highlight": true
+      },
+      "2013": {
+        "title": "First LASIK in the Pacific",
+        "description": "On March 15, 2013, Dr. Flowers performed the first LASIK surgery in Pacific island history. The patient, a 34-year-old teacher, went from 20/400 vision to 20/20 in minutes. Word spread like wildfire across the islands.",
+        "stats": { "firstPatient": "Maria S.", "improvement": "20/400→20/20", "impact": "Life-changing" }
+      },
+      "2015": {
+        "title": "Expanding the Revolution",
+        "description": "The success led to unprecedented demand. Dr. Flowers established permanent LASIK centers on five major islands, trained local medical staff, and developed telemedicine protocols for remote consultations.",
+        "stats": { "centers": "5 islands", "staff": "120 trained", "consultations": "10,000+" }
+      },
+      "2018": {
+        "title": "Innovation Under Pressure",
+        "description": "Faced with challenging logistics and limited resources, Dr. Flowers pioneered new techniques in mobile surgery, developed protocols for equipment maintenance in humid climates, and created sustainable training programs.",
+        "stats": { "innovations": "12 protocols", "efficiency": "300%", "reliability": "99.2%" }
+      },
+      "2020": {
+        "title": "Bringing Revolution to Los Angeles",
+        "description": "With over 500 successful Pacific procedures and a revolutionary approach to patient care, Dr. Flowers established his Los Angeles practice, bringing the same pioneering spirit and innovation to Southern California.",
+        "stats": { "patients": "500+", "satisfaction": "98%", "referrals": "95%" }
+      },
+      "2024": {
+        "title": "The Dual Mission Continues",
+        "description": "Today, Dr. Flowers maintains his revolutionary dual mission: providing cutting-edge vision care in Los Angeles while continuing quarterly missions to the Pacific, training new surgeons, and expanding access to revolutionary eye care.",
+        "stats": { "total": "650+ procedures", "missions": "Quarterly", "impact": "Ongoing" },
+        "current": true
+      }
+    }
+  },
+  "impact": {
+    "title": "Revolutionary Impact",
+    "subtitle": "The numbers tell the story of a healthcare revolution",
+    "metrics": {
+      "lives": {
+        "number": "650+",
+        "label": "Lives Transformed",
+        "description": "Patients who received revolutionary vision care"
+      },
+      "islands": {
+        "number": "12",
+        "label": "Islands Served",
+        "description": "Remote Pacific locations reached"
+      },
+      "success": {
+        "number": "98%",
+        "label": "Success Rate",
+        "description": "Patients achieving 20/20 vision or better"
+      },
+      "service": {
+        "number": "15+",
+        "label": "Years of Service",
+        "description": "Dedicated to healthcare revolution"
+      }
+    }
+  },
+  "photos": {
+    "title": "Mission in Action",
+    "subtitle": "Witness the revolutionary impact across the Pacific region",
+    "gallery": {
+      "mobile": {
+        "title": "Mobile Surgery Unit",
+        "description": "State-of-the-art LASIK equipment transported to remote islands"
+      },
+      "training": {
+        "title": "Training Local Staff",
+        "description": "Building sustainable healthcare infrastructure through education"
+      },
+      "communities": {
+        "title": "Island Communities",
+        "description": "Reaching the most remote Pacific communities"
+      },
+      "results": {
+        "title": "Revolutionary Results",
+        "description": "Life-changing procedures changing communities forever"
+      },
+      "technology": {
+        "title": "Technology Innovation",
+        "description": "Adapting cutting-edge technology for challenging environments"
+      },
+      "continuing": {
+        "title": "Continuing Mission",
+        "description": "Quarterly return trips to maintain and expand services"
+      }
+    }
+  },
+  "philosophy": {
+    "title": "The Revolutionary Philosophy",
+    "quote": "Healthcare shouldn't be limited by geography. Every person, regardless of where they live, deserves access to life-changing medical technology. Sometimes being revolutionary means going where others won't go.",
+    "description": "This philosophy drives everything Dr. Flowers does, from his Pacific missions to his Los Angeles practice. It's about bringing innovation to those who need it most, challenging conventional boundaries, and never accepting \"impossible\" as an answer.",
+    "principles": {
+      "global": {
+        "title": "Global Impact Mindset",
+        "description": "Thinking beyond local practice to worldwide healthcare needs"
+      },
+      "patient": {
+        "title": "Patient-Centered Innovation",
+        "description": "Developing solutions based on real patient needs and challenges"
+      },
+      "sustainable": {
+        "title": "Sustainable Healthcare",
+        "description": "Building lasting systems that continue beyond individual missions"
+      }
+    }
+  },
+  "current": {
+    "title": "The Mission Continues",
+    "subtitle": "Today's dual mission: Revolutionary care in Los Angeles and ongoing Pacific impact",
+    "la": {
+      "title": "Los Angeles Practice",
+      "features": [
+        "Revolutionary patient experience with Pacific-proven techniques",
+        "State-of-the-art Lakewood facility with mobile-surgery efficiency",
+        "Innovative approach to complex cases",
+        "Same pioneering spirit, premium setting",
+        "Training ground for future Pacific missionaries"
+      ]
+    },
+    "pacific": {
+      "title": "Ongoing Pacific Mission",
+      "features": [
+        "Quarterly return missions to maintain and expand services",
+        "Training new generation of Pacific eye surgeons",
+        "Telemedicine consultations for remote follow-ups",
+        "Equipment maintenance and technology updates",
+        "Research into tropical climate surgical protocols"
+      ]
+    },
+    "next": {
+      "title": "Next Pacific Mission",
+      "date": "March 2025 - Expanding to Two New Islands",
+      "support": "Support Dr. Flowers' revolutionary mission by becoming a patient. Part of every Los Angeles procedure helps fund Pacific healthcare expansion and training programs."
+    }
+  },
+  "cta": {
+    "title": "Experience Revolutionary Healthcare",
+    "subtitle": "When you choose Dr. Flowers, you're not just getting revolutionary vision care—you're supporting a mission that continues to transform lives across the Pacific. Experience the same pioneering approach that brought modern medicine to remote islands.",
+    "join": "Join the Revolutionary Mission",
+    "learn": "Learn More About Dr. Flowers"
+  }
+}

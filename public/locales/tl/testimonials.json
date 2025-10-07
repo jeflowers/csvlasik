@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "badge": "Mga Rebolusyonaryong Resulta - Tunay na Pasyente",
+    "title": "Nakabagong",
+    "titleAccent": "Patunay",
+    "description": "Tuklasin ang mga nakabagong resulta na naranasan ng aming mga pasyente sa rebolusyonaryong teknik ng pagwawasto ng paningin ni Dr. Flowers. Mula sa Pacific islands hanggang Los Angeles, binabago ang mga buhay isa-isa sa bawat operasyon.",
+    "cta": "Simulan ang Iyong Pagbabago"
+  },
+  "results": {
+    "title": "Napatunayang Rebolusyonaryong Resulta",
+    "description": "Ang mga numero ay nagsasalita para sa kanilang sarili - pambihirang resulta sa lahat ng pamamaraan",
+    "stats": {
+      "vision": {
+        "label": "Nakamit ang 20/20 na Paningin",
+        "description": "O mas mahusay sa loob ng 24-48 oras"
+      },
+      "satisfaction": {
+        "label": "Kasiyahan ng Pasyente",
+        "description": "Irerekomenda si Dr. Flowers"
+      },
+      "rating": {
+        "label": "Karaniwang Rating",
+        "description": "Sa lahat ng platform ng pagsusuri"
+      },
+      "stories": {
+        "label": "Mga Kuwento ng Tagumpay",
+        "description": "Mga buhay na nabago ng paningin"
+      }
+    }
+  },
+  "featured": {
+    "title": "Mga Tampok na Kuwento ng Tagumpay",
+    "description": "Tunay na pasyente na nagbabahagi ng kanilang rebolusyonaryong paglalakbay sa pagbabago ng paningin"
+  },
+  "pacific": {
+    "title": "Mga Pagbabago sa Rehiyon ng Pacific",
+    "description": "Mga rebolusyonaryong resulta mula sa mga pioneering mission ni Dr. Flowers sa Pacific"
+  },
+  "badges": {
+    "pacific": "Pasyente mula sa Pacific",
+    "military": "Militar",
+    "success": "Tagumpay"
+  },
+  "cta": {
+    "title": "Handa Ka Bang Sumali sa Aming Mga Kuwento ng Tagumpay?",
+    "description": "Maranasan ang rebolusyonaryong pangangalaga ng paningin na nagbago ng mahigit 30,000 buhay. Ang iyong kuwento ng tagumpay ay nagsisimula sa libreng konsultasyon.",
+    "schedule": "Mag-iskedyul ng Iyong Libreng Konsultasyon",
+    "procedures": "Pumili ng Iyong Pamamaraan"
+  },
+  "gallery": {
+    "title": "Galerya ng Pagbabago ng Paningin",
+    "description": "Tingnan ang mga kahanga-hangang pagpapabuti sa kalidad ng paningin sa lahat ng pamamaraan",
+    "before": "Bago ang Paggamot",
+    "after": "Pagkatapos ng Paggamot",
+    "satisfaction": "Kasiyahan ng Pasyente"
+  },
+  "reviews": {
+    "title": "Ang Sinasabi ng Aming mga Pasyente",
+    "description": "Mga tunay na pagsusuri mula sa mga tunay na pasyente na nakaranas ng rebolusyonaryong pangangalaga"
+  }
+}

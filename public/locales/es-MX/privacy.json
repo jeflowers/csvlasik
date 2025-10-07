@@ -1,0 +1,172 @@
+{
+  "pageTitle": "Política de Privacidad",
+  "hero": {
+    "title": "Su Privacidad es Nuestra Prioridad",
+    "subtitle": "Comprometidos a proteger su información personal y médica"
+  },
+  "lastUpdated": "Última actualización: {date}",
+  "sections": {
+    "introduction": {
+      "title": "Introducción",
+      "content": "En ClearSight, valoramos su privacidad y nos comprometemos a proteger su información personal y médica. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos su información cuando visita nuestro sitio web o utiliza nuestros servicios de corrección de visión revolucionaria."
+    },
+    "informationWeCollect": {
+      "title": "Información que Recopilamos",
+      "categories": {
+        "personal": {
+          "title": "Información Personal",
+          "items": [
+            "Nombre completo",
+            "Dirección de correo electrónico",
+            "Número de teléfono",
+            "Dirección postal",
+            "Fecha de nacimiento",
+            "Información del seguro médico"
+          ]
+        },
+        "medical": {
+          "title": "Información Médica",
+          "items": [
+            "Historial médico",
+            "Prescripción actual de visión",
+            "Condiciones oculares",
+            "Medicamentos",
+            "Alergias",
+            "Registros de procedimientos anteriores"
+          ]
+        },
+        "technical": {
+          "title": "Información Técnica",
+          "items": [
+            "Dirección IP",
+            "Tipo de navegador",
+            "Páginas visitadas",
+            "Tiempo pasado en el sitio",
+            "Información del dispositivo",
+            "Datos de cookies"
+          ]
+        }
+      }
+    },
+    "howWeUseInformation": {
+      "title": "Cómo Utilizamos Su Información",
+      "purposes": [
+        "Proporcionar y mantener nuestros servicios médicos",
+        "Programar y confirmar citas",
+        "Procesar pagos y reclamaciones de seguros",
+        "Comunicarnos con usted sobre su atención",
+        "Enviar recordatorios de citas y seguimiento",
+        "Mejorar nuestros servicios y experiencia del paciente",
+        "Cumplir con obligaciones legales y regulatorias",
+        "Proteger contra fraude y actividades no autorizadas"
+      ]
+    },
+    "hipaaCompliance": {
+      "title": "Cumplimiento con HIPAA",
+      "content": "ClearSight cumple totalmente con la Ley de Portabilidad y Responsabilidad del Seguro Médico (HIPAA). Mantenemos salvaguardas físicas, técnicas y administrativas apropiadas para proteger su información de salud protegida (PHI).",
+      "rights": {
+        "title": "Sus Derechos bajo HIPAA",
+        "items": [
+          "Derecho a acceder a sus registros médicos",
+          "Derecho a solicitar correcciones",
+          "Derecho a solicitar restricciones",
+          "Derecho a comunicaciones confidenciales",
+          "Derecho a un informe de divulgaciones",
+          "Derecho a presentar una queja"
+        ]
+      }
+    },
+    "informationSharing": {
+      "title": "Compartir Información",
+      "content": "No vendemos, intercambiamos ni transferimos su información personal a terceros sin su consentimiento, excepto:",
+      "exceptions": [
+        "Proveedores de atención médica involucrados en su tratamiento",
+        "Compañías de seguros para procesamiento de reclamaciones",
+        "Proveedores de servicios que nos ayudan a operar nuestro negocio",
+        "Cuando lo requiera la ley o proceso legal",
+        "Para proteger nuestros derechos, propiedad o seguridad"
+      ]
+    },
+    "dataSecurity": {
+      "title": "Seguridad de Datos",
+      "content": "Implementamos múltiples capas de seguridad para proteger su información:",
+      "measures": [
+        "Encriptación SSL/TLS para todas las transmisiones de datos",
+        "Servidores seguros y encriptados",
+        "Controles de acceso y autenticación",
+        "Auditorías de seguridad regulares",
+        "Capacitación del personal en privacidad y seguridad",
+        "Acceso limitado a información personal"
+      ]
+    },
+    "dataRetention": {
+      "title": "Retención de Datos",
+      "content": "Retenemos su información personal y médica según lo requieran las leyes aplicables:",
+      "periods": {
+        "medical": "Registros médicos: Mínimo 7 años según la ley de California",
+        "financial": "Registros financieros: 7 años",
+        "communications": "Comunicaciones: 2 años",
+        "website": "Datos del sitio web: Hasta que solicite su eliminación"
+      }
+    },
+    "yourRights": {
+      "title": "Sus Derechos de Privacidad",
+      "content": "Bajo la ley de California y otras regulaciones aplicables, usted tiene derecho a:",
+      "rights": [
+        "Saber qué información personal recopilamos",
+        "Solicitar eliminación de su información personal",
+        "Optar por no participar en la venta de información personal",
+        "No ser discriminado por ejercer sus derechos de privacidad",
+        "Designar un agente autorizado para hacer solicitudes",
+        "Recibir información en un formato accesible"
+      ]
+    },
+    "cookies": {
+      "title": "Cookies y Tecnologías de Seguimiento",
+      "content": "Utilizamos cookies y tecnologías similares para mejorar su experiencia. Puede controlar las cookies a través de la configuración de su navegador. Para más detalles, consulte nuestra Política de Cookies."
+    },
+    "thirdPartyLinks": {
+      "title": "Enlaces a Terceros",
+      "content": "Nuestro sitio web puede contener enlaces a otros sitios. No somos responsables de las prácticas de privacidad de estos sitios externos."
+    },
+    "childrenPrivacy": {
+      "title": "Privacidad de Menores",
+      "content": "Nuestros servicios están destinados a adultos de 18 años o más. No recopilamos conscientemente información de menores de 18 años sin el consentimiento de los padres."
+    },
+    "internationalUsers": {
+      "title": "Usuarios Internacionales",
+      "content": "Si accede a nuestros servicios desde fuera de Estados Unidos, tenga en cuenta que su información puede ser transferida y procesada en Estados Unidos."
+    },
+    "changes": {
+      "title": "Cambios a Esta Política",
+      "content": "Podemos actualizar esta Política de Privacidad periódicamente. Le notificaremos sobre cambios significativos publicando la nueva política en nuestro sitio web."
+    },
+    "contact": {
+      "title": "Contáctenos",
+      "content": "Si tiene preguntas sobre esta Política de Privacidad o nuestras prácticas de privacidad:",
+      "details": {
+        "privacyOfficer": "Oficial de Privacidad",
+        "email": "privacy@clearsight-la.com",
+        "phone": "(562) 555-EYES",
+        "address": "3650 Martin Luther King Jr Blvd, Lakewood, CA 90712"
+      }
+    },
+    "complaints": {
+      "title": "Quejas",
+      "content": "Si cree que sus derechos de privacidad han sido violados, puede presentar una queja con:",
+      "options": [
+        "Nuestro Oficial de Privacidad",
+        "El Departamento de Salud y Servicios Humanos de EE.UU.",
+        "El Fiscal General de California"
+      ]
+    }
+  },
+  "consent": {
+    "title": "Su Consentimiento",
+    "content": "Al usar nuestro sitio web y servicios, usted consiente a nuestra Política de Privacidad y acepta sus términos."
+  },
+  "accessibility": {
+    "title": "Accesibilidad",
+    "content": "Esta política está disponible en formatos alternativos bajo solicitud. Contáctenos para asistencia."
+  }
+}

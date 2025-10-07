@@ -1,0 +1,87 @@
+# ClearSight LASIK Website Configuration
+
+# CORS Headers
+<IfModule mod_headers.c>
+    # Allow cross-origin requests from specified domains
+    SetEnvIf Origin "^https?://(www\.)?(csvlasik\.com|localhost:[0-9]+)$" ORIGIN_MATCH=$0
+    Header set Access-Control-Allow-Origin "%{ORIGIN_MATCH}e" env=ORIGIN_MATCH
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS, PATCH"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With, Accept"
+    Header set Access-Control-Allow-Credentials "true"
+    Header set Access-Control-Max-Age "86400"
+
+    # Handle preflight requests
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^(.*)$ $1 [R=200,L]
+</IfModule>
+
+# Image optimization and caching rules
+
+# Enable compression for images
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Set cache headers for images
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Images - cache for 1 year
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/ico "access plus 1 year"
+    ExpiresByType image/icon "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Documents
+    ExpiresByType application/pdf "access plus 1 month"
+</IfModule>
+
+# Add Vary header for images
+<IfModule mod_headers.c>
+    <FilesMatch "\.(jpg|jpeg|png|webp|avif|svg)$">
+        Header set Vary "Accept"
+        Header set Cache-Control "public, immutable"
+    </FilesMatch>
+    
+    # Security headers for medical images
+    <FilesMatch "^(procedures|diagrams|team)/.*\.(jpg|jpeg|png|webp|avif)$">
+        Header set X-Content-Type-Options "nosniff"
+        Header set X-Frame-Options "SAMEORIGIN"
+    </FilesMatch>
+</IfModule>
+
+# Redirect old image paths to new structure
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirect old LASIK process images
+    RewriteRule ^LASIK_process/step_([0-9]+)\.png$ /assets/images/procedures/lasik/process/step-0$1-*.png [R=301,L]
+    
+    # Redirect old doctor images
+    RewriteRule ^Flowers_cd1\.jpg$ /assets/images/team/dr-flowers-portrait-primary.jpg [R=301,L]
+    RewriteRule ^Flowers_cd2\.jpg$ /assets/images/team/dr-flowers-portrait-secondary.jpg [R=301,L]
+    
+    # Redirect old technology images
+    RewriteRule ^technology\.png$ /assets/images/diagrams/educational/advanced-technology-overview.png [R=301,L]
+    RewriteRule ^iCare-DRSplus-with-screen\.png$ /assets/images/diagrams/educational/icare-drs-plus-device.png [R=301,L]
+</IfModule>
+
+# Content Security Policy for images
+<IfModule mod_headers.c>
+    Header set Content-Security-Policy "img-src 'self' data: https://images.pexels.com https://cdn.clearsightlasik.com;"
+</IfModule>
+
+# Prevent hotlinking of medical images
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_REFERER} !^$
+    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?clearsightlasik\.com [NC]
+    RewriteCond %{REQUEST_URI} ^/assets/images/(procedures|diagrams|team)/ [NC]
+    RewriteRule \.(jpg|jpeg|png|webp|avif)$ /assets/images/brand/watermark.png [R=302,L]
+</IfModule>

@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "badge": "Resultados Revolucionários - Pacientes Reais",
+    "title": "Depoimentos que",
+    "titleAccent": "Mudam Vidas",
+    "description": "Descubra os resultados transformadores que nossos pacientes experimentaram com as técnicas revolucionárias de correção de visão do Dr. Flowers. Das ilhas do Pacífico a Los Angeles, vidas estão sendo mudadas um procedimento de cada vez.",
+    "cta": "Comece Sua Transformação"
+  },
+  "results": {
+    "title": "Resultados Revolucionários Comprovados",
+    "description": "Os números falam por si - resultados excepcionais em todos os procedimentos",
+    "stats": {
+      "vision": {
+        "label": "Alcançam Visão 20/20",
+        "description": "Ou melhor dentro de 24-48 horas"
+      },
+      "satisfaction": {
+        "label": "Satisfação do Paciente",
+        "description": "Recomendariam o Dr. Flowers"
+      },
+      "rating": {
+        "label": "Avaliação Média",
+        "description": "Em todas as plataformas de avaliação"
+      },
+      "stories": {
+        "label": "Histórias de Sucesso",
+        "description": "Vidas transformadas pela visão"
+      }
+    }
+  },
+  "featured": {
+    "title": "Histórias de Sucesso em Destaque",
+    "description": "Pacientes reais compartilhando suas jornadas de transformação de visão revolucionária"
+  },
+  "pacific": {
+    "title": "Transformações da Região do Pacífico",
+    "description": "Resultados revolucionários das missões pioneiras do Dr. Flowers no Pacífico"
+  },
+  "badges": {
+    "pacific": "Paciente do Pacífico",
+    "military": "Militar",
+    "success": "Sucesso"
+  },
+  "gallery": {
+    "title": "Galeria de Transformação de Visão",
+    "description": "Veja as melhorias dramáticas na qualidade da visão em todos os procedimentos",
+    "before": "Antes do Tratamento",
+    "after": "Após o Tratamento",
+    "satisfaction": "Satisfação do Paciente"
+  },
+  "reviews": {
+    "title": "O Que Nossos Pacientes Dizem",
+    "description": "Avaliações autênticas de pacientes reais que experimentaram cuidado revolucionário"
+  },
+  "cta": {
+    "title": "Pronto para Se Juntar às Nossas Histórias de Sucesso?",
+    "description": "Experimente o cuidado de visão revolucionário que transformou mais de 30.000 vidas. Sua história de sucesso começa com uma consulta gratuita.",
+    "schedule": "Agende Sua Consulta Gratuita",
+    "procedures": "Escolha Seu Procedimento"
+  }
+}

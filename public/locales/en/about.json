@@ -1,0 +1,192 @@
+{
+  "hero": {
+    "badge": "Healthcare Revolutionary & Pioneer in Vision Care",
+    "title": "Dr. Charles W. Flowers Jr., MD",
+    "subtitle": "Revolutionary Vision. Accessible Excellence.",
+    "description": "A transformative figure in modern ophthalmology, distinguished not only by surgical excellence but by his revolutionary approach to healthcare accessibility. With over 30,000 laser vision correction procedures and pioneering work across the Pacific region.",
+    "cta": {
+      "schedule": "Schedule Consultation",
+      "pacific": "The Pacific Revolution"
+    }
+  },
+  "excellence": {
+    "title": "Revolutionary Healthcare Leadership",
+    "clinical": {
+      "title": "Clinical Excellence",
+      "description": "Over 30,000 laser vision correction procedures with 98% patient satisfaction rate"
+    },
+    "academic": {
+      "title": "Academic Leadership",
+      "description": "Program Director of USC Ophthalmology Residency Training Program"
+    },
+    "global": {
+      "title": "Global Impact",
+      "description": "First surgeon to perform LASIK in Guam, serving 200,000+ Pacific residents"
+    },
+    "quote": "Before I began to offer laser vision correction procedures in Guam, anyone who wanted laser vision correction either had to travel to the Philippines or the United States—a thirteen-hour flight. You couldn't get care if you didn't have the means to get off the island. Now, world-class eye care is available right here, right at home.",
+    "attribution": "— Dr. Charles W. Flowers Jr., MD"
+  },
+  "education": {
+    "title": "Educational Excellence",
+    "subtitle": "A foundation of academic achievement from the nation's most prestigious institutions",
+    "institutions": {
+      "stanford": {
+        "name": "Stanford University",
+        "years": "1981-1985",
+        "degree": "Bachelor of Science, Chemistry"
+      },
+      "cornell": {
+        "name": "Cornell University Medical College",
+        "years": "1985-1989",
+        "degree": "Doctor of Medicine",
+        "honors": ["National Medical Fellowship Scholar"]
+      },
+      "drew": {
+        "name": "Charles R. Drew University School of Medicine",
+        "years": "1989-1993",
+        "degree": "Internship, General Surgery & Residency, Ophthalmology",
+        "honors": ["Chief Resident (1992-1993)", "Intern of the Year", "National Eye Institute Fellowship Recipient"]
+      },
+      "usc": {
+        "name": "USC/Doheny Eye Institute",
+        "years": "1993-1995",
+        "degree": "Fellowship, Corneal and Refractive Surgery & External Disease",
+        "honors": ["Henry J. Kaiser Family Foundation Merit Award", "Award of Excellence in Resident Training"]
+      }
+    }
+  },
+  "mission": {
+    "title": "The Pacific Mission: Transforming an Entire Region",
+    "subtitle": "From 2010 to present, revolutionizing healthcare accessibility for over 200,000 Pacific residents",
+    "innovation": {
+      "title": "Revolutionary Healthcare Innovation",
+      "description1": "In 2010, Dr. Flowers embarked on what would become his most impactful healthcare initiative. Responding to a request from former resident Dr. Anthony Smith, he traveled to Guam to assess the feasibility of establishing the region's first LASIK center. What he discovered was a healthcare crisis affecting over 200,000 Pacific residents who had zero access to vision correction surgery without traveling 13 hours to Hawaii or the Philippines.",
+      "description2": "From 2010 to 2013, Dr. Flowers dedicated himself to designing and establishing a LASIK center at Island Eye Institute. His efforts culminated in 2013 when he performed the first-ever LASIK procedure in the Pacific region, instantly transforming healthcare accessibility for an entire population."
+    },
+    "stats": {
+      "procedures": {
+        "number": "600+",
+        "label": "LASIK Procedures in Guam",
+        "description": "Successful surgeries performed"
+      },
+      "residents": {
+        "number": "200,000+",
+        "label": "Residents Served",
+        "description": "Given access to advanced eye care"
+      },
+      "savings": {
+        "number": "$3,000+",
+        "label": "Travel Costs Saved",
+        "description": "Average savings per patient"
+      },
+      "time": {
+        "number": "13 Hours",
+        "label": "Flight Time Eliminated",
+        "description": "For each patient procedure"
+      }
+    }
+  },
+  "telemedicine": {
+    "title": "Telemedicine Pioneer",
+    "description": "Dr. Flowers' innovation extends beyond surgical excellence. Recognizing Guam's high diabetes prevalence and genetic predisposition, he secured funding for a groundbreaking telemedicine initiative. This teleretinopathy pilot project involved:",
+    "features": [
+      "Deploying state-of-the-art retinal imaging cameras in primary care clinics throughout Guam",
+      "Implementing secure hybrid-cloud infrastructure for HIPAA-compliant image storage and real-time analysis",
+      "Leveraging artificial intelligence and machine learning algorithms for automated detection and grading of diabetic retinopathy",
+      "Establishing seamless teleconsultation pathways connecting Guam clinics with USC retinal specialists",
+      "Enabling early detection and intervention for sight-threatening diabetic retinopathy before vision loss occurs",
+      "Developing comprehensive training programs to certify local physicians in advanced retinal imaging and diagnostic protocols"
+    ]
+  },
+  "expertise": {
+    "title": "Clinical Excellence & Expertise",
+    "surgical": {
+      "title": "Surgical Specializations",
+      "procedures": [
+        "Laser-Assisted In Situ Keratomileusis (LASIK)",
+        "Advanced Cataract Surgery",
+        "Corneal Transplantation (including DSAEK)",
+        "Visian Implantable Collamer Lens (ICL)",
+        "Photorefractive Keratectomy (PRK)",
+        "Intacs Implantation for Keratoconus",
+        "Pterygium Surgery",
+        "Collagen Cross-Linking"
+      ]
+    },
+    "research": {
+      "title": "Research Priorities",
+      "areas": [
+        "Visual outcomes optimization in LASIK and cataract surgery",
+        "Sports vision training and athletic performance enhancement",
+        "Telemedicine applications in ophthalmology",
+        "Population-based diabetic retinopathy studies"
+      ],
+      "funding": "Grant Funding: Over $1 million secured in research funding"
+    }
+  },
+  "awards": {
+    "title": "Recognition & Awards",
+    "subtitle": "National recognition for innovation, excellence, and humanitarian impact",
+    "list": [
+      "America's Top Ophthalmologists - Consumers' Research Council of America (2000)",
+      "Computer World Smithsonian Laureate - The Face of Innovation (1998)",
+      "National Medical Fellowship Scholar - Cornell University Medical College",
+      "Henry J. Kaiser Family Foundation Merit Award",
+      "Award of Excellence - RCMI/Charles R. Drew University (2000)",
+      "Sara Stivelman Memorial Award - LA County Quality & Productivity Commission (1999)",
+      "Masters In Medicine Honoree - Recycling Black Dollars Communications (1999)",
+      "Innovator's Award - Los Angeles County Department of Health Services (1998)",
+      "Top LASIK Surgeon - San Diego Magazine"
+    ]
+  },
+  "dualMission": {
+    "title": "The Dual Mission Model",
+    "subtitle": "A unique practice model serving as a blueprint for addressing healthcare disparities",
+    "la": {
+      "title": "Los Angeles Practice",
+      "features": [
+        "State-of-the-art facility",
+        "Comprehensive vision correction services",
+        "Revolutionary patient experience",
+        "Advanced technology integration",
+        "Residency program leadership",
+        "Research and innovation center"
+      ]
+    },
+    "pacific": {
+      "title": "Pacific Mission",
+      "features": [
+        "Quarterly surgical missions to Guam",
+        "Mobile surgical capabilities",
+        "Local physician training and mentorship",
+        "Telemedicine infrastructure development",
+        "Sustainable healthcare system building"
+      ]
+    },
+    "cta": "Learn More About the Pacific Mission"
+  },
+  "impact": {
+    "title": "Impact by the Numbers",
+    "stats": [
+      { "number": "30,000+", "label": "Total Procedures" },
+      { "number": "600+", "label": "Guam Procedures" },
+      { "number": "200,000+", "label": "Pacific Residents Served" },
+      { "number": "98%", "label": "Patient Satisfaction" },
+      { "number": "20+", "label": "Years Experience" },
+      { "number": "15+", "label": "Years Pacific Service" },
+      { "number": "12", "label": "Pacific Islands" },
+      { "number": "$1M+", "label": "Research Funding" },
+      { "number": "4", "label": "Annual Guam Missions" }
+    ]
+  },
+  "philosophy": {
+    "title": "Patient Care Philosophy",
+    "quote": "I treat every patient as though I am caring for a family member. Establishing a personal rapport is a priority, so open, honest and transparent communication can take place about every aspect of their visual condition and the care interventions.",
+    "description": "This philosophy extends beyond individual patient care to encompass entire communities. Dr. Flowers believes that healthcare should reach every corner of the world, and that innovation isn't just about technology—it's about finding ways to bring life-changing treatments to those who need them most, regardless of location or circumstances."
+  },
+  "cta": {
+    "title": "Experience Revolutionary Vision Care",
+    "subtitle": "Join the thousands of patients who have trusted Dr. Flowers with their vision. Schedule your consultation today and discover the difference revolutionary care makes.",
+    "schedule": "Schedule Your Consultation"
+  }
+}

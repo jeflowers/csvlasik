@@ -1,0 +1,80 @@
+{
+  "labels": {
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "email": "عنوان البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "message": "الرسالة",
+    "procedure": "الإجراء المهتم به",
+    "preferredContact": "طريقة الاتصال المفضلة",
+    "comments": "الأسئلة أو التعليقات",
+    "age": "العمر",
+    "occupation": "المهنة",
+    "location": "الموقع",
+    "visionBefore": "البصر قبل",
+    "visionAfter": "البصر بعد",
+    "rating": "التقييم",
+    "testimonialText": "تجربتك"
+  },
+  "placeholders": {
+    "firstName": "اسمك الأول",
+    "lastName": "اسم عائلتك",
+    "email": "your.email@example.com",
+    "phone": "05X XXX XXXX",
+    "message": "أخبرنا عن أهدافك البصرية...",
+    "comments": "أي أسئلة أو طلبات خاصة؟...",
+    "age": "عمرك",
+    "occupation": "مهنتك",
+    "location": "المدينة، المنطقة",
+    "testimonialText": "شارك تجربتك مع الدكتور فلاورز..."
+  },
+  "options": {
+    "procedures": {
+      "lasik": "LASIK",
+      "prk": "PRK", 
+      "icl": "ICL",
+      "consultation": "استشارة عامة"
+    },
+    "contactMethods": {
+      "phone": "الهاتف",
+      "email": "البريد الإلكتروني",
+      "text": "رسالة نصية"
+    },
+    "ratings": {
+      "1": "سيء",
+      "2": "عادي",
+      "3": "جيد",
+      "4": "جيد جداً",
+      "5": "ممتاز"
+    }
+  },
+  "buttons": {
+    "submit": "إرسال",
+    "cancel": "إلغاء",
+    "reset": "إعادة تعيين",
+    "save": "حفظ",
+    "scheduleConsultation": "جدولة استشارة",
+    "requestCallback": "طلب معاودة اتصال",
+    "downloadInfo": "تحميل المعلومات",
+    "shareTestimonial": "شارك قصتك"
+  },
+  "validation": {
+    "required": "هذا الحقل مطلوب",
+    "invalidEmail": "يرجى إدخال عنوان بريد إلكتروني صحيح",
+    "invalidPhone": "يرجى إدخال رقم هاتف صحيح",
+    "tooShort": "هذا الحقل قصير جداً",
+    "tooLong": "هذا الحقل طويل جداً",
+    "invalidRating": "يرجى اختيار تقييم"
+  },
+  "success": {
+    "submitted": "شكراً! تم إرسال النموذج بنجاح.",
+    "scheduled": "تم جدولة استشارتك.",
+    "contacted": "سنتواصل معك خلال 24 ساعة.",
+    "testimonialSubmitted": "شكراً لمشاركة تجربتك!"
+  },
+  "privacy": {
+    "notice": "بإرسال هذا النموذج، توافق على الاتصال بك حول خدماتنا.",
+    "security": "معلوماتك آمنة ولن تتم مشاركتها أبداً.",
+    "hipaa": "جميع الاتصالات متوافقة مع HIPAA."
+  }
+}

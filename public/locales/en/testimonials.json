@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "badge": "Revolutionary Results - Real Patients",
+    "title": "Life-Changing",
+    "titleAccent": "Testimonials",
+    "description": "Discover the transformative outcomes our patients have experienced with Dr. Flowers' revolutionary vision correction techniques. From Pacific islands to Los Angeles, lives are being changed one procedure at a time.",
+    "cta": "Start Your Transformation"
+  },
+  "results": {
+    "title": "Proven Revolutionary Results",
+    "description": "The numbers speak for themselves - exceptional outcomes across all procedures",
+    "stats": {
+      "vision": {
+        "label": "Achieve 20/20 Vision",
+        "description": "Or better within 24-48 hours"
+      },
+      "satisfaction": {
+        "label": "Patient Satisfaction",
+        "description": "Would recommend Dr. Flowers"
+      },
+      "rating": {
+        "label": "Average Rating",
+        "description": "Across all review platforms"
+      },
+      "stories": {
+        "label": "Success Stories",
+        "description": "Lives transformed by vision"
+      }
+    }
+  },
+  "featured": {
+    "title": "Featured Success Stories",
+    "description": "Real patients sharing their revolutionary vision transformation journeys"
+  },
+  "pacific": {
+    "title": "Pacific Region Transformations",
+    "description": "Revolutionary results from Dr. Flowers' pioneering Pacific missions"
+  },
+  "badges": {
+    "pacific": "Pacific Patient",
+    "military": "Military",
+    "success": "Success"
+  },
+  "cta": {
+    "title": "Ready to Join Our Success Stories?",
+    "description": "Experience the revolutionary vision care that has transformed over 30,000 lives. Your success story starts with a free consultation.",
+    "schedule": "Schedule Your Free Consultation",
+    "procedures": "Choose Your Procedure"
+  },
+  "gallery": {
+    "title": "Vision Transformation Gallery",
+    "description": "See the dramatic improvements in vision quality across all procedures",
+    "before": "Before Treatment",
+    "after": "After Treatment",
+    "satisfaction": "Patient Satisfaction"
+  },
+  "reviews": {
+    "title": "What Our Patients Say",
+    "description": "Authentic reviews from real patients who experienced revolutionary care"
+  }
+}

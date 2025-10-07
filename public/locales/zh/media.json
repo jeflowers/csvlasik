@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "badge": "革命性见解与教育",
+    "title": "媒体与资源",
+    "description": "通过Flowers医生革命性实践的最新见解保持信息更新。从尖端手术到太平洋使命更新，通过专家观点和患者故事发现视力护理的未来。"
+  },
+  "featured": {
+    "sectionTitle": "精选文章",
+    "title": "革命性旅程：太平洋使命如何塑造现代LASIK",
+    "excerpt": "了解偏远太平洋岛屿的挑战性条件如何导致激光视力矫正的突破性创新，这些创新现在正在使全世界的患者受益。",
+    "readMore": "阅读文章"
+  },
+  "sidebar": {
+    "categories": "分类",
+    "newsletter": {
+      "title": "保持更新",
+      "description": "获取最新见解和太平洋使命更新",
+      "placeholder": "您的邮箱",
+      "subscribe": "订阅"
+    }
+  },
+  "posts": {
+    "readMore": "阅读更多",
+    "loadMore": "加载更多文章"
+  },
+  "categories": {
+    "all": "所有文章",
+    "innovation": "创新",
+    "procedures": "手术",
+    "technology": "技术",
+    "patientCare": "患者护理",
+    "mission": "使命"
+  },
+  "resources": {
+    "title": "教育资源",
+    "description": "帮助您了解视力矫正的综合指南和资源",
+    "learnMore": "了解更多"
+  },
+  "cta": {
+    "title": "准备开始您的视力之旅？",
+    "description": "对视力矫正有疑问？想了解更多关于Flowers医生的革命性技术？今天就预约您的免费咨询。",
+    "schedule": "预约免费咨询",
+    "explore": "探索手术"
+  }
+}
