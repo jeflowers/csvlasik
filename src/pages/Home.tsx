@@ -27,23 +27,23 @@ const Home = () => {
   // Array of hero images with actual filenames
   const heroImages = [
     {
-      src: '/assets/images/eyes/eric-ward-ES60LMf18KU-unsplash.jpg',
+      src: 'https://images.pexels.com/photos/5752242/pexels-photo-5752242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       alt: 'Dr. Charles Flowers performing revolutionary LASIK surgery',
     },
     {
-      src: '/assets/images/eyes/lana-graves-h0ZHYdy1qTI-unsplash.jpg',
+      src: 'https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       alt: 'Advanced vision technology',
     },
     {
-      src: '/assets/images/eyes/luca-iaconelli-GmoHIZ61eMo-unsplash.jpg',
+      src: 'https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       alt: 'Crystal clear vision results',
     },
     {
-      src: '/assets/images/eyes/polina-kuzovkova-6VXBBFt_k9Q-unsplash.jpg',
+      src: 'https://images.pexels.com/photos/2836486/pexels-photo-2836486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       alt: 'Precision eye care',
     },
     {
-      src: '/assets/images/eyes/simone-stallo-xpZ5AVjw67U-unsplash.jpg',
+      src: 'https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       alt: 'Revolutionary vision correction',
     },
   ];
@@ -127,7 +127,7 @@ const Home = () => {
                 <img
                   src={heroImages[currentImageIndex].src}
                   alt={heroImages[currentImageIndex].alt}
-                  className="w-full h-96 lg:h-[500px] object-contain bg-gray-50 transition-opacity duration-500"
+                  className="w-full h-96 lg:h-[500px] object-cover transition-opacity duration-500"
                   style={{ opacity: isImageLoading ? 0 : 1 }}
                   onLoad={() => setIsImageLoading(false)}
                   onLoadStart={() => setIsImageLoading(true)}
