@@ -27,10 +27,6 @@ const Home = () => {
   // Array of hero images with actual filenames
   const heroImages = [
     {
-      src: '/assets/images/misc/337921148_1341425279747015_628225586168456236_n.jpeg',
-      alt: 'Dr. Charles Flowers performing revolutionary LASIK surgery',
-    },
-    {
       src: '/assets/images/eyes/eric-ward-ES60LMf18KU-unsplash.jpg',
       alt: 'Advanced vision technology',
     },
