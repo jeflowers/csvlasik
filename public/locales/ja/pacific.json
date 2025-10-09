@@ -1,9 +1,8 @@
 {
   "hero": {
-    "badge": "Healthcare Revolutionary - Pacific Pioneer",
-    "title": "From Pacific Islands to",
-    "description": "The extraordinary journey of Dr. Charles Flowers, who revolutionized healthcare across remote Pacific islands by bringing LASIK surgery to underserved communities, then brought that same pioneering spirit to Southern California with ClearSight.",
-    "cta": "Schedule Consultation with the Revolutionary"
+    "badge": "ヘルスケア革命 - 太平洋のパイオニア",
+    "title": "太平洋ミッション",
+    "description": "太平洋諸島の困難な条件での数十年にわたる人道的医療活動が、現在世界中の患者に恩恵をもたらしている革新的な技術にどのようにつながったかを発見してください。"
   },
   "video": {
     "title": "The Pacific Healthcare Revolution in Action",
@@ -18,38 +17,66 @@
       "2010": {
         "title": "The Call to Service",
         "description": "Fresh from completing his ophthalmology residency, Dr. Flowers received an assignment to serve in the Pacific region. What he discovered shocked him: thousands of people living with preventable blindness and vision problems, with no access to modern eye care.",
-        "stats": { "patients": "2,000+", "islands": "3", "procedures": "150" }
+        "stats": {
+          "patients": "2,000+",
+          "islands": "3",
+          "procedures": "150"
+        }
       },
       "2012": {
         "title": "The Revolutionary Decision",
         "description": "After two years of providing basic eye care, Dr. Flowers made a groundbreaking decision: he would bring LASIK technology to the Pacific. Against all conventional wisdom, he began planning the first mobile LASIK center for remote islands.",
-        "stats": { "investment": "$2M+", "preparation": "18 months", "training": "50 staff" },
+        "stats": {
+          "investment": "$2M+",
+          "preparation": "18 months",
+          "training": "50 staff"
+        },
         "highlight": true
       },
       "2013": {
         "title": "First LASIK in the Pacific",
         "description": "On March 15, 2013, Dr. Flowers performed the first LASIK surgery in Pacific island history. The patient, a 34-year-old teacher, went from 20/400 vision to 20/20 in minutes. Word spread like wildfire across the islands.",
-        "stats": { "firstPatient": "Maria S.", "improvement": "20/400→20/20", "impact": "Life-changing" }
+        "stats": {
+          "firstPatient": "Maria S.",
+          "improvement": "20/400→20/20",
+          "impact": "Life-changing"
+        }
       },
       "2015": {
         "title": "Expanding the Revolution",
         "description": "The success led to unprecedented demand. Dr. Flowers established permanent LASIK centers on five major islands, trained local medical staff, and developed telemedicine protocols for remote consultations.",
-        "stats": { "centers": "5 islands", "staff": "120 trained", "consultations": "10,000+" }
+        "stats": {
+          "centers": "5 islands",
+          "staff": "120 trained",
+          "consultations": "10,000+"
+        }
       },
       "2018": {
         "title": "Innovation Under Pressure",
         "description": "Faced with challenging logistics and limited resources, Dr. Flowers pioneered new techniques in mobile surgery, developed protocols for equipment maintenance in humid climates, and created sustainable training programs.",
-        "stats": { "innovations": "12 protocols", "efficiency": "300%", "reliability": "99.2%" }
+        "stats": {
+          "innovations": "12 protocols",
+          "efficiency": "300%",
+          "reliability": "99.2%"
+        }
       },
       "2020": {
         "title": "Bringing Revolution to Los Angeles",
         "description": "With over 500 successful Pacific procedures and a revolutionary approach to patient care, Dr. Flowers established his Los Angeles practice, bringing the same pioneering spirit and innovation to Southern California.",
-        "stats": { "patients": "500+", "satisfaction": "98%", "referrals": "95%" }
+        "stats": {
+          "patients": "500+",
+          "satisfaction": "98%",
+          "referrals": "95%"
+        }
       },
       "2024": {
         "title": "The Dual Mission Continues",
         "description": "Today, Dr. Flowers maintains his revolutionary dual mission: providing cutting-edge vision care in Los Angeles while continuing quarterly missions to the Pacific, training new surgeons, and expanding access to revolutionary eye care.",
-        "stats": { "total": "650+ procedures", "missions": "Quarterly", "impact": "Ongoing" },
+        "stats": {
+          "total": "650+ procedures",
+          "missions": "Quarterly",
+          "impact": "Ongoing"
+        },
         "current": true
       }
     }

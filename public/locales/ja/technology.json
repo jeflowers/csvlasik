@@ -1,9 +1,8 @@
 {
   "hero": {
-    "badge": "Revolutionary Technology & Innovation",
-    "title": "Advanced Technology",
-    "description": "ClearSight combines cutting-edge technology with innovative techniques developed through years of challenging Pacific missions, delivering unmatched precision and safety in vision correction.",
-    "cta": "Experience Revolutionary Technology"
+    "badge": "革新的な技術とイノベーション",
+    "title": "最先端技術",
+    "description": "フラワーズ博士は、太平洋地域の困難な条件で培った革新的な視力矯正技術の最前線にいます。発見がイノベーションを刺激する場所で、すべての患者が最も高度なケアから恩恵を受けています。"
   },
   "innovation": {
     "title": "Innovation Born from Necessity",
@@ -30,19 +29,31 @@
       "name": "Femtosecond Laser System",
       "technology": "Ultra-precise corneal flap creation",
       "innovation": "Dr. Flowers' humidity-resistant protocols",
-      "benefits": ["Blade-free surgery", "15-micron precision", "Tropical climate optimized"]
+      "benefits": [
+        "Blade-free surgery",
+        "15-micron precision",
+        "Tropical climate optimized"
+      ]
     },
     "excimer": {
       "name": "Excimer Laser Platform",
       "technology": "Advanced wavefront-guided correction",
       "innovation": "Custom Pacific-tested profiles",
-      "benefits": ["Personalized treatment", "Aberration reduction", "Enhanced night vision"]
+      "benefits": [
+        "Personalized treatment",
+        "Aberration reduction",
+        "Enhanced night vision"
+      ]
     },
     "topographer": {
       "name": "Corneal Topographer",
       "technology": "Ultra-high resolution mapping",
       "innovation": "Mobile-adapted diagnostics",
-      "benefits": ["22,000 data points", "Instant analysis", "Portable precision"]
+      "benefits": [
+        "22,000 data points",
+        "Instant analysis",
+        "Portable precision"
+      ]
     }
   },
   "safety": {
@@ -52,17 +63,29 @@
       "redundancy": {
         "title": "Triple Redundancy Systems",
         "description": "Every critical system has multiple backups to ensure uninterrupted precision.",
-        "stats": ["3 backup systems", "99.99% uptime", "0 system failures"]
+        "stats": [
+          "3 backup systems",
+          "99.99% uptime",
+          "0 system failures"
+        ]
       },
       "monitoring": {
         "title": "Real-Time Monitoring",
         "description": "Advanced sensors monitor every aspect of the procedure in real-time.",
-        "stats": ["1000+ data points/sec", "Instant feedback", "24/7 monitoring"]
+        "stats": [
+          "1000+ data points/sec",
+          "Instant feedback",
+          "24/7 monitoring"
+        ]
       },
       "quality": {
         "title": "Quality Assurance",
         "description": "Rigorous testing and calibration protocols ensure consistent excellence.",
-        "stats": ["Daily calibrations", "Weekly deep testing", "Monthly certifications"]
+        "stats": [
+          "Daily calibrations",
+          "Weekly deep testing",
+          "Monthly certifications"
+        ]
       }
     }
   },

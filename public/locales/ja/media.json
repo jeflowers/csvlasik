@@ -1,75 +1,75 @@
 {
   "hero": {
-    "badge": "Revolutionary Insights & Education",
-    "title": "Media & Resources",
-    "description": "Stay informed with the latest insights from Dr. Flowers' revolutionary practice. From cutting-edge procedures to Pacific mission updates, discover the future of vision care through expert perspectives and patient stories."
+    "badge": "革新的な洞察と教育",
+    "title": "メディア＆リソース",
+    "description": "フラワーズ博士の革新的な診療からの最新の洞察を入手してください。最先端の手術から太平洋ミッションの更新まで、専門家の視点と患者のストーリーを通じて視力ケアの未来を発見してください。"
   },
   "featured": {
-    "sectionTitle": "Featured Article",
-    "title": "The Revolutionary Journey: How Pacific Missions Shaped Modern LASIK",
-    "excerpt": "Discover how challenging conditions in remote Pacific islands led to breakthrough innovations in laser vision correction that are now benefiting patients worldwide.",
-    "readMore": "Read Article"
+    "sectionTitle": "注目記事",
+    "title": "革新的な旅：太平洋ミッションが現代LASIKを形作った方法",
+    "excerpt": "遠隔地の太平洋諸島での困難な条件が、現在世界中の患者に恩恵をもたらしているレーザー視力矯正の画期的なイノベーションにどのようにつながったかを発見してください。",
+    "readMore": "記事を読む"
   },
   "sidebar": {
-    "categories": "Categories",
+    "categories": "カテゴリー",
     "newsletter": {
-      "title": "Stay Updated",
-      "description": "Get the latest insights and Pacific mission updates",
-      "placeholder": "Your email",
-      "subscribe": "Subscribe"
+      "title": "最新情報を入手",
+      "description": "最新の洞察と太平洋ミッションの更新を入手",
+      "placeholder": "メールアドレス",
+      "subscribe": "購読"
     }
   },
   "posts": {
     "telemedicine": {
-      "title": "Telemedicine in Eye Care: Connecting Pacific Islands to Advanced Treatment",
-      "excerpt": "How innovative telemedicine solutions are bridging the gap between remote locations and world-class eye care."
+      "title": "眼科ケアにおける遠隔医療：太平洋諸島を高度治療に接続",
+      "excerpt": "革新的な遠隔医療ソリューションが、遠隔地と世界クラスの眼科ケアとの間のギャップをどのように埋めているか。"
     },
     "recovery": {
-      "title": "Recovery Timeline: What to Expect After Your LASIK Surgery",
-      "excerpt": "A detailed guide to the LASIK recovery process, from the first 24 hours to long-term results, based on real patient experiences."
+      "title": "回復タイムライン：LASIK手術後に期待すること",
+      "excerpt": "実際の患者の経験に基づいた、最初の24時間から長期結果までのLASIK回復プロセスの詳細ガイド。"
     },
     "icl": {
-      "title": "ICL Surgery: The Revolutionary Solution for High Prescriptions",
-      "excerpt": "Understanding Implantable Contact Lenses and why they're often the best choice for patients with severe myopia."
+      "title": "ICL手術：高度処方に対する革新的なソリューション",
+      "excerpt": "眼内コンタクトレンズを理解し、なぜそれらがしばしば重度の近視患者にとって最良の選択であるかを理解する。"
     },
     "infrastructure": {
-      "title": "Building Healthcare Infrastructure in Remote Pacific Islands",
-      "excerpt": "The challenges and triumphs of establishing sustainable eye care programs in underserved communities."
+      "title": "遠隔太平洋諸島での医療インフラの構築",
+      "excerpt": "十分なサービスを受けていないコミュニティで持続可能な眼科ケアプログラムを確立することの課題と勝利。"
     },
-    "readMore": "Read More",
-    "loadMore": "Load More Articles"
+    "readMore": "続きを読む",
+    "loadMore": "さらに記事を読み込む"
   },
   "categories": {
-    "all": "All Posts",
-    "innovation": "Innovation",
-    "procedures": "Procedures",
-    "technology": "Technology",
-    "patientCare": "Patient Care",
-    "mission": "Mission"
+    "all": "すべての投稿",
+    "innovation": "イノベーション",
+    "procedures": "手術",
+    "technology": "技術",
+    "patientCare": "患者ケア",
+    "mission": "ミッション"
   },
   "resources": {
-    "title": "Educational Resources",
-    "description": "Comprehensive guides and resources to help you understand vision correction",
+    "title": "教育リソース",
+    "description": "視力矯正を理解するのに役立つ包括的なガイドとリソース",
     "items": {
       "lasik": {
-        "title": "LASIK Guide",
-        "description": "Complete guide to LASIK surgery, from candidacy to recovery"
+        "title": "LASIKガイド",
+        "description": "候補者資格から回復までのLASIK手術の完全ガイド"
       },
       "comparison": {
-        "title": "Procedure Comparison",
-        "description": "Side-by-side comparison of all vision correction procedures"
+        "title": "手術の比較",
+        "description": "すべての視力矯正手術の並列比較"
       },
       "pacific": {
-        "title": "Pacific Mission Updates",
-        "description": "Latest news from Dr. Flowers' revolutionary Pacific healthcare missions"
+        "title": "太平洋ミッションの更新",
+        "description": "フラワーズ博士の革新的な太平洋医療ミッションからの最新ニュース"
       }
     },
-    "learnMore": "Learn More"
+    "learnMore": "詳細を見る"
   },
   "cta": {
-    "title": "Ready to Start Your Vision Journey?",
-    "description": "Have questions about vision correction? Want to learn more about Dr. Flowers' revolutionary techniques? Schedule your free consultation today.",
-    "schedule": "Schedule Free Consultation",
-    "explore": "Explore Procedures"
+    "title": "視力の旅を始める準備はできていますか？",
+    "description": "視力矯正について質問がありますか？フラワーズ博士の革新的な技術についてもっと知りたいですか？今日無料診察を予約してください。",
+    "schedule": "無料診察を予約",
+    "explore": "手術を探す"
   }
 }

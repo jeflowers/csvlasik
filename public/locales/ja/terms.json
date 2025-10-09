@@ -1,70 +1,70 @@
 {
-  "title": "Terms of Service",
-  "subtitle": "ClearSight Vision Institute - Dr. Charles Flowers",
-  "lastUpdated": "Last updated",
+  "title": "利用規約",
+  "subtitle": "ClearSight Vision Institute - チャールズ・フラワーズ医学博士",
+  "lastUpdated": "最終更新",
   "sections": {
     "acceptance": {
-      "title": "Acceptance of Terms",
-      "description": "By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement."
+      "title": "規約の承認",
+      "description": "このウェブサイトにアクセスして使用することにより、お客様はこの契約の条件および規定に拘束されることを受け入れ、同意したものとみなされます。"
     },
     "services": {
-      "title": "Medical Services",
+      "title": "医療サービス",
       "medicalNotice": {
-        "title": "Medical Practice Notice",
-        "description": "ClearSight Vision Institute is a medical practice providing professional eye care services under the supervision of Dr. Charles Flowers, MD."
+        "title": "医療行為に関する通知",
+        "description": "ClearSight Vision Instituteは、チャールズ・フラワーズ医学博士の監督の下で専門的な眼科ケアサービスを提供する医療機関です。"
       },
       "vision": {
-        "title": "Vision Correction Services",
+        "title": "視力矯正サービス",
         "items": {
-          "lasik": "LASIK laser vision correction surgery",
-          "prk": "PRK photorefractive keratectomy",
-          "icl": "ICL implantable contact lens surgery",
-          "consultations": "Comprehensive eye examinations and consultations"
+          "lasik": "LASIKレーザー視力矯正手術",
+          "prk": "PRK角膜屈折矯正手術",
+          "icl": "ICL眼内コンタクトレンズ手術",
+          "consultations": "総合眼科検査および診察"
         }
       },
       "website": {
-        "title": "Website Services",
+        "title": "ウェブサイトサービス",
         "items": {
-          "information": "Educational information about vision correction",
-          "scheduling": "Online appointment scheduling",
-          "resources": "Patient resources and materials",
-          "communication": "Secure patient communication portal"
+          "information": "視力矯正に関する教育情報",
+          "scheduling": "オンライン予約",
+          "resources": "患者向けリソースと資料",
+          "communication": "安全な患者コミュニケーションポータル"
         }
       }
     },
     "responsibilities": {
-      "title": "User Responsibilities",
+      "title": "ユーザーの責任",
       "user": {
-        "title": "Patient Responsibilities",
+        "title": "患者の責任",
         "items": {
-          "accurate": "Provide accurate and complete medical information",
-          "lawful": "Use our services only for lawful purposes",
-          "confidential": "Maintain confidentiality of login credentials",
-          "instructions": "Follow all pre and post-operative instructions"
+          "accurate": "正確かつ完全な医療情報を提供する",
+          "lawful": "当社のサービスを合法的な目的のみに使用する",
+          "confidential": "ログイン資格情報の機密性を維持する",
+          "instructions": "すべての術前および術後の指示に従う"
         }
       },
       "medical": {
-        "title": "Medical Care Responsibilities",
+        "title": "医療ケアの責任",
         "items": {
-          "consultation": "Attend all scheduled consultations and appointments",
-          "disclosure": "Disclose all relevant medical history and medications",
-          "followup": "Complete all required follow-up examinations",
-          "emergency": "Contact us immediately for any post-operative concerns"
+          "consultation": "予定されているすべての診察と予約に出席する",
+          "disclosure": "関連するすべての病歴と薬を開示する",
+          "followup": "必要なすべてのフォローアップ検査を完了する",
+          "emergency": "術後の懸念事項については直ちに連絡する"
         }
       }
     },
     "limitations": {
-      "title": "Limitations of Liability",
+      "title": "責任の制限",
       "disclaimer": {
-        "title": "Medical Disclaimer",
-        "description": "Individual results may vary. This website provides general information and is not a substitute for professional medical advice."
+        "title": "医療免責事項",
+        "description": "個人差があります。このウェブサイトは一般的な情報を提供しており、専門的な医学的助言の代わりにはなりません。"
       },
-      "description": "ClearSight Vision Institute's liability is limited to the extent permitted by law. We are not liable for indirect, incidental, or consequential damages."
+      "description": "ClearSight Vision Instituteの責任は、法律で許可される範囲に限定されます。当社は、間接的、付随的、または結果的損害について責任を負いません。"
     },
     "contact": {
-      "title": "Contact Information",
+      "title": "お問い合わせ",
       "legal": {
-        "title": "Legal Department",
+        "title": "法務部",
         "organization": "ClearSight Vision Institute",
         "address1": "5750 Downey Ave., Suite 101",
         "address2": "Lakewood, CA 90712"

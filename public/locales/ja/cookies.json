@@ -1,43 +1,43 @@
 {
   "banner": {
-    "title": "We value your privacy",
-    "description": "We use cookies to enhance your experience, analyze site usage, and assist in our marketing efforts. By clicking \"Accept All\", you consent to our use of cookies.",
-    "learnMore": "Learn more",
-    "preferences": "Preferences",
-    "necessaryOnly": "Necessary Only",
-    "acceptAll": "Accept All"
+    "title": "お客様のプライバシーを大切にします",
+    "description": "当社は、お客様の体験を向上させ、サイトの使用状況を分析し、マーケティング活動を支援するためにCookieを使用しています。「すべて承認」をクリックすることで、当社のCookieの使用に同意したものとみなされます。",
+    "learnMore": "詳細を見る",
+    "preferences": "設定",
+    "necessaryOnly": "必要なもののみ",
+    "acceptAll": "すべて承認"
   },
   "preferences": {
-    "title": "Cookie Preferences",
-    "description": "You can choose which types of cookies to allow. Note that blocking some types of cookies may impact your experience on our site.",
+    "title": "Cookie設定",
+    "description": "許可するCookieの種類を選択できます。一部のCookieをブロックすると、サイトでの体験に影響を与える可能性があることにご注意ください。",
     "categories": {
       "necessary": {
-        "title": "Necessary Cookies",
-        "description": "These cookies are essential for the website to function properly. They cannot be disabled."
+        "title": "必須Cookie",
+        "description": "これらのCookieは、ウェブサイトが適切に機能するために不可欠です。無効にすることはできません。"
       },
       "analytics": {
-        "title": "Analytics Cookies",
-        "description": "Help us understand how visitors interact with our website by collecting and reporting information anonymously."
+        "title": "分析Cookie",
+        "description": "情報を匿名で収集および報告することにより、訪問者がウェブサイトとどのようにやり取りするかを理解するのに役立ちます。"
       },
       "marketing": {
-        "title": "Marketing Cookies",
-        "description": "Used to track visitors across websites to display relevant and engaging advertisements."
+        "title": "マーケティングCookie",
+        "description": "関連性のある魅力的な広告を表示するために、ウェブサイト間で訪問者を追跡するために使用されます。"
       },
       "personalization": {
-        "title": "Personalization Cookies",
-        "description": "Allow us to remember your preferences and provide enhanced, personalized features."
+        "title": "パーソナライゼーションCookie",
+        "description": "お客様の設定を記憶し、強化されたパーソナライズされた機能を提供できるようにします。"
       }
     },
     "rights": {
-      "title": "Your Rights",
-      "change": "You can change your preferences at any time",
-      "access": "You can request access to your personal data",
-      "deletion": "You can request deletion of your personal data",
-      "withdraw": "You can withdraw consent at any time"
+      "title": "お客様の権利",
+      "change": "いつでも設定を変更できます",
+      "access": "個人データへのアクセスを要求できます",
+      "deletion": "個人データの削除を要求できます",
+      "withdraw": "いつでも同意を撤回できます"
     },
     "buttons": {
-      "cancel": "Cancel",
-      "save": "Save Preferences"
+      "cancel": "キャンセル",
+      "save": "設定を保存"
     }
   }
 }

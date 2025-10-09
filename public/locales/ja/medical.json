@@ -3,65 +3,65 @@
     "lasik": "LASIK",
     "prk": "PRK",
     "icl": "ICL",
-    "cataract": "Cataract Surgery",
-    "cornealTransplant": "Corneal Transplant"
+    "cataract": "白内障手術",
+    "cornealTransplant": "角膜移植"
   },
   "vision": {
-    "nearsighted": "Nearsighted",
-    "farsighted": "Farsighted",
-    "astigmatism": "Astigmatism",
-    "presbyopia": "Presbyopia",
-    "perfect": "20/20 Vision",
-    "before": "Before",
-    "after": "After",
-    "improvement": "Improvement",
-    "correction": "Correction"
+    "nearsighted": "近視",
+    "farsighted": "遠視",
+    "astigmatism": "乱視",
+    "presbyopia": "老眼",
+    "perfect": "20/20視力",
+    "before": "前",
+    "after": "後",
+    "improvement": "改善",
+    "correction": "矯正"
   },
   "terms": {
-    "cornea": "Cornea",
-    "retina": "Retina",
-    "pupil": "Pupil",
-    "iris": "Iris",
-    "lens": "Lens",
-    "opticNerve": "Optic Nerve",
-    "diopter": "Diopter",
-    "refraction": "Refraction",
-    "aberration": "Aberration",
-    "topography": "Topography",
-    "epithelium": "Epithelium",
-    "stroma": "Stroma",
-    "endothelium": "Endothelium"
+    "cornea": "角膜",
+    "retina": "網膜",
+    "pupil": "瞳孔",
+    "iris": "虹彩",
+    "lens": "水晶体",
+    "opticNerve": "視神経",
+    "diopter": "ジオプター",
+    "refraction": "屈折",
+    "aberration": "収差",
+    "topography": "トポグラフィー",
+    "epithelium": "上皮",
+    "stroma": "実質",
+    "endothelium": "内皮"
   },
   "safety": {
-    "fdaApproved": "FDA Approved",
-    "clinicallyProven": "Clinically Proven",
-    "safeAndEffective": "Safe and Effective",
-    "minimallyInvasive": "Minimally Invasive",
-    "outpatientProcedure": "Outpatient Procedure",
-    "noHospitalStay": "No Hospital Stay Required"
+    "fdaApproved": "FDA承認",
+    "clinicallyProven": "臨床的に証明済み",
+    "safeAndEffective": "安全かつ効果的",
+    "minimallyInvasive": "低侵襲",
+    "outpatientProcedure": "外来手術",
+    "noHospitalStay": "入院不要"
   },
   "recovery": {
-    "immediate": "Immediate",
-    "sameDay": "Same Day",
-    "nextDay": "Next Day",
-    "oneWeek": "One Week",
-    "oneMonth": "One Month",
-    "fullHealing": "Full Healing",
-    "followUp": "Follow-up Visit"
+    "immediate": "即時",
+    "sameDay": "当日",
+    "nextDay": "翌日",
+    "oneWeek": "1週間",
+    "oneMonth": "1ヶ月",
+    "fullHealing": "完全治癒",
+    "followUp": "フォローアップ診察"
   },
   "benefits": {
-    "noGlasses": "No More Glasses",
-    "noContacts": "No More Contacts",
-    "clearVision": "Crystal Clear Vision",
-    "activeLifestyle": "Active Lifestyle",
-    "careerAdvancement": "Career Advancement",
-    "confidence": "Increased Confidence"
+    "noGlasses": "眼鏡不要",
+    "noContacts": "コンタクトレンズ不要",
+    "clearVision": "クリアな視力",
+    "activeLifestyle": "アクティブなライフスタイル",
+    "careerAdvancement": "キャリアアップ",
+    "confidence": "自信の向上"
   },
   "disclaimers": {
-    "resultsVary": "Individual results may vary",
-    "consultationRequired": "Consultation required to determine candidacy",
-    "risksBenefits": "Discuss risks and benefits with your doctor",
-    "followInstructions": "Follow all post-operative instructions",
-    "medicalAdvice": "This information is not a substitute for professional medical advice"
+    "resultsVary": "個人差があります",
+    "consultationRequired": "候補者資格を判断するために診察が必要です",
+    "risksBenefits": "医師とリスクとベネフィットについて話し合ってください",
+    "followInstructions": "すべての術後指示に従ってください",
+    "medicalAdvice": "この情報は専門的な医学的助言の代わりにはなりません"
   }
 }

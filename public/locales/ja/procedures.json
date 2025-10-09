@@ -1,8 +1,8 @@
 {
   "hero": {
-    "badge": "Revolutionary Vision Correction",
-    "title": "ClearSight Vision Correction Options",
-    "subtitle": "Dr. Flowers offers advanced vision correction procedures, each tailored to specific needs and lifestyles. Compare options and find the perfect solution for your revolutionary vision transformation."
+    "badge": "革新的な視力矯正",
+    "title": "視力矯正手術",
+    "description": "太平洋の困難な条件で完成されたフラワーズ博士の革新的な技術で、完璧な視力を体験してください。LASIK、PRK、またはICLのいずれであっても、最高水準のケアを受けることができます。"
   },
   "procedures": {
     "keyFeatures": "Key Features",
@@ -231,20 +231,50 @@
         "initial": {
           "period": "Days 1-3",
           "title": "Initial Healing",
-          "symptoms": ["Mild discomfort", "Light sensitivity", "Tearing", "Blurry vision"],
-          "care": ["Use prescribed drops", "Wear sunglasses", "Rest eyes frequently", "Avoid screens"]
+          "symptoms": [
+            "Mild discomfort",
+            "Light sensitivity",
+            "Tearing",
+            "Blurry vision"
+          ],
+          "care": [
+            "Use prescribed drops",
+            "Wear sunglasses",
+            "Rest eyes frequently",
+            "Avoid screens"
+          ]
         },
         "clearing": {
           "period": "Days 4-7",
           "title": "Vision Clearing",
-          "symptoms": ["Improving comfort", "Clearer vision", "Less sensitivity", "Contact lens removal"],
-          "care": ["Continue medications", "Follow-up appointment", "Gradual activity return", "Protect eyes"]
+          "symptoms": [
+            "Improving comfort",
+            "Clearer vision",
+            "Less sensitivity",
+            "Contact lens removal"
+          ],
+          "care": [
+            "Continue medications",
+            "Follow-up appointment",
+            "Gradual activity return",
+            "Protect eyes"
+          ]
         },
         "stabilization": {
           "period": "Weeks 2-4",
           "title": "Stabilization",
-          "symptoms": ["Stable vision", "Minimal symptoms", "Normal activities", "Clear sight"],
-          "care": ["Regular check-ups", "UV protection", "Normal routine", "Final healing"]
+          "symptoms": [
+            "Stable vision",
+            "Minimal symptoms",
+            "Normal activities",
+            "Clear sight"
+          ],
+          "care": [
+            "Regular check-ups",
+            "UV protection",
+            "Normal routine",
+            "Final healing"
+          ]
         }
       }
     },
@@ -254,17 +284,29 @@
       "active": {
         "title": "Active Professionals",
         "description": "Military personnel, law enforcement, firefighters, and athletes who face potential eye trauma",
-        "benefits": ["No flap displacement risk", "Contact sport safe", "High-impact activities"]
+        "benefits": [
+          "No flap displacement risk",
+          "Contact sport safe",
+          "High-impact activities"
+        ]
       },
       "thin": {
         "title": "Thin Corneas",
         "description": "Patients whose corneas are too thin for LASIK or who have irregular corneal shapes",
-        "benefits": ["Preserves corneal tissue", "Treats irregular astigmatism", "Safe for thin corneas"]
+        "benefits": [
+          "Preserves corneal tissue",
+          "Treats irregular astigmatism",
+          "Safe for thin corneas"
+        ]
       },
       "high": {
         "title": "High Prescriptions",
         "description": "Patients with higher degrees of nearsightedness, farsightedness, or astigmatism",
-        "benefits": ["Treats severe myopia", "Corrects high astigmatism", "Long-term stability"]
+        "benefits": [
+          "Treats severe myopia",
+          "Corrects high astigmatism",
+          "Long-term stability"
+        ]
       }
     },
     "cta": {
@@ -367,17 +409,29 @@
       "high": {
         "title": "High Prescriptions",
         "description": "Patients with severe myopia (-3.00 to -20.00 D) or hyperopia (+0.50 to +10.00 D)",
-        "benefits": ["Beyond laser limits", "Exceptional correction", "Stable results"]
+        "benefits": [
+          "Beyond laser limits",
+          "Exceptional correction",
+          "Stable results"
+        ]
       },
       "thin": {
         "title": "Thin Corneas",
         "description": "When corneal thickness is insufficient for laser procedures",
-        "benefits": ["No corneal tissue removal", "Preserves eye structure", "Safe alternative"]
+        "benefits": [
+          "No corneal tissue removal",
+          "Preserves eye structure",
+          "Safe alternative"
+        ]
       },
       "quality": {
         "title": "Quality Seekers",
         "description": "Patients who prioritize superior vision quality and reversibility",
-        "benefits": ["Premium vision quality", "Reversible option", "UV protection"]
+        "benefits": [
+          "Premium vision quality",
+          "Reversible option",
+          "UV protection"
+        ]
       },
       "requirements": {
         "title": "Pre-Procedure Requirements",
@@ -451,9 +505,7 @@
         "nightVision": "Superior",
         "reversibility": "Yes"
       }
-    },
-    "recommendation": "Not sure which procedure is right for you?",
-    "cta": "Get Personalized Recommendation"
+    }
   },
   "process": {
     "title": "Your Revolutionary Journey",
