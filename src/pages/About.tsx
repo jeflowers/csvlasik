@@ -345,16 +345,24 @@ const About = () => {
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20">
               <div className="flex items-center mb-4">
                 <MapPin className="h-6 w-6 mr-3" />
-                <h3 className="text-2xl font-serif">{t('dualMission.losAngeles.title')}</h3>
+                <h3 className="text-2xl font-serif">{t('dualMission.la.title')}</h3>
               </div>
-              <p className="text-white/70 font-light">{t('dualMission.losAngeles.description')}</p>
+              <ul className="space-y-3 text-white/70 font-light">
+                {(t('dualMission.la.features', { returnObjects: true }) as string[]).map((feature, index) => (
+                  <li key={index}>• {feature}</li>
+                ))}
+              </ul>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20">
               <div className="flex items-center mb-4">
                 <Users className="h-6 w-6 mr-3" />
-                <h3 className="text-2xl font-serif">{t('dualMission.guam.title')}</h3>
+                <h3 className="text-2xl font-serif">{t('dualMission.pacific.title')}</h3>
               </div>
-              <p className="text-white/70 font-light">{t('dualMission.guam.description')}</p>
+              <ul className="space-y-3 text-white/70 font-light">
+                {(t('dualMission.pacific.features', { returnObjects: true }) as string[]).map((feature, index) => (
+                  <li key={index}>• {feature}</li>
+                ))}
+              </ul>
             </div>
           </div>
 
@@ -363,7 +371,7 @@ const About = () => {
               to="/pacific-story"
               className="inline-flex items-center bg-white chopard-text-primary px-8 py-3 rounded-lg font-light hover:chopard-hero transition-all duration-300"
             >
-              Learn More About the Pacific Mission
+              {t('dualMission.cta')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
@@ -380,11 +388,10 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {(t('impact.stats', { returnObjects: true }) as Array<{number: string, label: string, description: string}>).map((stat, index) => (
+            {(t('impact.stats', { returnObjects: true }) as Array<{number: string, label: string}>).map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl font-serif chopard-text-accent mb-2">{stat.number}</div>
                 <p className="chopard-text-secondary font-light text-sm">{stat.label}</p>
-                {stat.description && <p className="chopard-text-secondary font-light text-xs mt-1">{stat.description}</p>}
               </div>
             ))}
           </div>
@@ -402,14 +409,9 @@ const About = () => {
               <blockquote className="text-2xl italic chopard-text-secondary text-center leading-relaxed font-light mb-6">
                 "{t('philosophy.quote')}"
               </blockquote>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                {(t('philosophy.principles', { returnObjects: true }) as Array<{title: string, description: string}>).map((principle, index) => (
-                  <div key={index} className="text-left">
-                    <h4 className="font-serif chopard-text-primary mb-2">{principle.title}</h4>
-                    <p className="chopard-text-secondary text-sm font-light">{principle.description}</p>
-                  </div>
-                ))}
-              </div>
+              <p className="chopard-text-secondary font-light text-center leading-relaxed mt-6">
+                {t('philosophy.description')}
+              </p>
             </div>
           </div>
         </div>
