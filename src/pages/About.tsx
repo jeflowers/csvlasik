@@ -269,7 +269,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img
-                src="./assets/images/team/drflowers/DrFlowers_eye_exam_01.png"
+                src="/assets/images/team/drflowers/DrFlowers_eye_exam_01.png"
                 alt="Revolutionary telemedicine technology connecting Pacific islands to advanced eye care"
                 className="rounded-2xl shadow-xl w-full h-64 object-cover"
               />
