@@ -43,7 +43,7 @@ const Media = () => {
       author: 'Dr. Charles Flowers',
       date: 'February 28, 2024',
       readTime: '7 min read',
-      image: '/assets/images/misc/technology.png',
+      image: '/assets/images/misc/iCare-DRSplus-with-screen.png',
       category: 'Procedures'
     },
     {
