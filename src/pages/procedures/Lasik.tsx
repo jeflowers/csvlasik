@@ -210,7 +210,7 @@ const Lasik = () => {
             </div>
             <div>
               <img
-                src="/assets/images/diagrams/educational/advanced-technology-overview.png"
+                src="/assets/images/procedures/lasik/advanced-technology-overview.png"
                 alt="Comprehensive eye examination diagnostic report showing day and night vision measurements for LASIK candidacy assessment"
                 className="rounded-2xl shadow-xl w-full h-auto object-contain bg-gray-50"
               />
