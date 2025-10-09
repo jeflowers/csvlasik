@@ -28,24 +28,32 @@
   },
   "education": {
     "title": "教育卓越",
-    "description": "在美国最负盛名的机构接受培训",
-    "institutions": [
-      {
+    "subtitle": "来自全国最负盛名机构的学术成就基础",
+    "institutions": {
+      "stanford": {
+        "name": "斯坦福大学",
+        "years": "1981-1985",
+        "degree": "理学学士，化学"
+      },
+      "cornell": {
+        "name": "康奈尔大学医学院",
+        "years": "1985-1989",
         "degree": "医学博士",
-        "school": "UCLA大卫·格芬医学院",
-        "location": "加利福尼亚州洛杉矶"
+        "honors": ["国家医学奖学金学者"]
       },
-      {
-        "degree": "眼科住院医师",
-        "school": "USC/LAC医疗中心 - Doheny眼科研究所",
-        "location": "加利福尼亚州洛杉矶"
+      "drew": {
+        "name": "查尔斯·德鲁大学医学院",
+        "years": "1989-1993",
+        "degree": "实习，普通外科 & 住院医师，眼科",
+        "honors": ["总住院医师（1992-1993）", "年度实习生", "国家眼科研究所奖学金获得者"]
       },
-      {
-        "degree": "理学学士",
-        "school": "加州大学尔湾分校",
-        "location": "优等生毕业"
+      "usc": {
+        "name": "南加州大学/多尼眼科研究所",
+        "years": "1993-1995",
+        "degree": "研究员，角膜和屈光手术 & 外部疾病",
+        "honors": ["亨利·凯泽家庭基金会优异奖", "住院医师培训卓越奖"]
       }
-    ]
+    }
   },
   "mission": {
     "title": "太平洋任务：消除不可能",
