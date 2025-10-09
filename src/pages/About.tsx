@@ -210,13 +210,13 @@ const About = () => {
                   src="/assets/videos/Guam-Lasik-Eye-Treatment.mp4"
                   className="w-full h-96 lg:h-[500px] object-contain"
                   controls
-                  poster="/assets/images/team/drflowers/DrFlowers_guam_innovation_01.png"
+                  poster="/assets/images/team/drflowers/DrFlowers_guam_01.png"
                   preload="metadata"
                 >
                   <source src="/assets/videos/Guam-Lasik-Eye-Treatment.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                   <img
-                    src="/assets/images/team/drflowers/DrFlowers_guam_innovation_01.png"
+                    src="/assets/images/team/drflowers/DrFlowers_guam_01.png"
                     alt="Dr. Flowers' Pacific healthcare mission transforming island communities"
                     className="w-full h-96 lg:h-[500px] object-contain"
                   />
