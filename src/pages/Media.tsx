@@ -25,7 +25,7 @@ const Media = () => {
       author: 'Dr. Charles Flowers',
       date: 'March 10, 2024',
       readTime: '6 min read',
-      image: './assets/images/blogs/illustrated-vintage-map.png',
+      image: '/assets/images/blogs/jsb-co-VFkksKfrsvM-unsplash.jpg',
       category: 'Technology'
     },
     {
