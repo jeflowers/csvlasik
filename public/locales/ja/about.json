@@ -1,192 +1,192 @@
 {
   "hero": {
-    "badge": "Revolucionario de la Salud y Pionero en Cuidado de la Visión",
-    "title": "Dr. Charles W. Flowers Jr., MD",
-    "subtitle": "Visión Revolucionaria. Excelencia Accesible.",
-    "description": "Una figura transformadora en la oftalmología moderna, distinguido no solo por la excelencia quirúrgica sino por su enfoque revolucionario hacia la accesibilidad de la atención médica. Con más de 30,000 procedimientos de corrección de visión láser y trabajo pionero en toda la región del Pacífico.",
+    "badge": "医療革命家および視力ケアのパイオニア",
+    "title": "チャールズ・W・フラワーズ・Jr 医学博士",
+    "subtitle": "革新的なビジョン。アクセス可能な卓越性。",
+    "description": "現代眼科医学における変革的な人物であり、外科的卓越性だけでなく、医療へのアクセスに対する革新的なアプローチで知られています。30,000件以上のレーザー視力矯正手術と太平洋地域全体での先駆的な活動を行っています。",
     "cta": {
-      "schedule": "Programar Consulta",
-      "pacific": "La Revolución del Pacífico"
+      "schedule": "診察予約",
+      "pacific": "太平洋での革命"
     }
   },
   "excellence": {
-    "title": "Liderazgo Revolucionario en Atención Médica",
+    "title": "医療における革新的リーダーシップ",
     "clinical": {
-      "title": "Excelencia Clínica",
-      "description": "Más de 30,000 procedimientos de corrección de visión láser con 98% de satisfacción del paciente"
+      "title": "臨床的卓越性",
+      "description": "30,000件以上のレーザー視力矯正手術で98%の患者満足度を達成"
     },
     "academic": {
-      "title": "Liderazgo Académico",
-      "description": "Director del Programa de Residencia en Oftalmología de USC"
+      "title": "学術的リーダーシップ",
+      "description": "USC眼科レジデンシープログラムディレクター"
     },
     "global": {
-      "title": "Impacto Global",
-      "description": "Primer cirujano en realizar LASIK en Guam, sirviendo a más de 200,000 residentes del Pacífico"
+      "title": "グローバルな影響",
+      "description": "グアムで初めてLASIKを実施した外科医、200,000人以上の太平洋住民にサービスを提供"
     },
-    "quote": "Antes de comenzar a ofrecer procedimientos de corrección de visión láser en Guam, cualquiera que quisiera corrección de visión láser tenía que viajar a Filipinas o Estados Unidos—un vuelo de trece horas. No podías recibir atención si no tenías los medios para salir de la isla. Ahora, la atención ocular de clase mundial está disponible aquí mismo, en casa.",
-    "attribution": "— Dr. Charles W. Flowers Jr., MD"
+    "quote": "グアムでレーザー視力矯正手術の提供を開始する前は、レーザー視力矯正を希望する人は、フィリピンまたはアメリカへ13時間のフライトで移動する必要がありました。島を離れる手段がなければ治療を受けることができませんでした。今では、世界クラスの眼科治療がここ、自宅で利用できます。",
+    "attribution": "— チャールズ・W・フラワーズ・Jr 医学博士"
   },
   "education": {
-    "title": "Excelencia Educativa",
-    "subtitle": "Una base de logros académicos de las instituciones más prestigiosas de la nación",
+    "title": "教育的卓越性",
+    "subtitle": "全米で最も権威ある機関からの学術的成果の基盤",
     "institutions": {
       "stanford": {
-        "name": "Universidad de Stanford",
+        "name": "スタンフォード大学",
         "years": "1981-1985",
-        "degree": "Licenciatura en Ciencias, Química"
+        "degree": "理学士、化学"
       },
       "cornell": {
-        "name": "Escuela de Medicina de la Universidad de Cornell",
+        "name": "コーネル大学医学部",
         "years": "1985-1989",
-        "degree": "Doctor en Medicina",
-        "honors": ["Becario Nacional de Medicina"]
+        "degree": "医学博士",
+        "honors": ["全国医学フェロー"]
       },
       "drew": {
-        "name": "Escuela de Medicina de la Universidad Charles R. Drew",
+        "name": "チャールズ・R・ドリュー医科大学",
         "years": "1989-1993",
-        "degree": "Internado, Cirugía General y Residencia, Oftalmología",
-        "honors": ["Residente Jefe (1992-1993)", "Interno del Año", "Beneficiario de la Beca del Instituto Nacional del Ojo"]
+        "degree": "インターンシップ、一般外科およびレジデンシー、眼科",
+        "honors": ["チーフレジデント（1992-1993）", "インターン・オブ・ザ・イヤー", "国立眼科研究所フェローシップ受賞者"]
       },
       "usc": {
-        "name": "USC/Instituto Doheny del Ojo",
+        "name": "USC/ドヘニー眼研究所",
         "years": "1993-1995",
-        "degree": "Beca, Cirugía Corneal y Refractiva y Enfermedad Externa",
-        "honors": ["Premio al Mérito de la Fundación Familia Henry J. Kaiser", "Premio de Excelencia en Entrenamiento de Residentes"]
+        "degree": "フェローシップ、角膜および屈折矯正手術と外眼部疾患",
+        "honors": ["ヘンリー・J・カイザー家族財団功労賞", "レジデント研修優秀賞"]
       }
     }
   },
   "mission": {
-    "title": "La Misión del Pacífico: Transformando una Región Entera",
-    "subtitle": "Desde 2010 hasta el presente, revolucionando la accesibilidad de la atención médica para más de 200,000 residentes del Pacífico",
+    "title": "太平洋ミッション：地域全体の変革",
+    "subtitle": "2010年から現在まで、200,000人以上の太平洋住民の医療アクセスを革新",
     "innovation": {
-      "title": "Innovación Revolucionaria en Salud",
-      "description1": "En 2010, el Dr. Flowers emprendió lo que se convertiría en su iniciativa de salud más impactante. Respondiendo a una solicitud del ex residente Dr. Anthony Smith, viajó a Guam para evaluar la viabilidad de establecer el primer centro LASIK de la región. Lo que descubrió fue una crisis de salud que afectaba a más de 200,000 residentes del Pacífico que no tenían acceso a cirugía de corrección de visión sin viajar 13 horas a Hawái o Filipinas.",
-      "description2": "De 2010 a 2013, el Dr. Flowers se dedicó a diseñar y establecer un centro LASIK en Island Eye Institute. Sus esfuerzos culminaron en 2013 cuando realizó el primer procedimiento LASIK en la región del Pacífico, transformando instantáneamente la accesibilidad de la atención médica para toda una población."
+      "title": "革新的な医療イノベーション",
+      "description1": "2010年、フラワーズ博士は最も影響力のある医療イニシアチブとなるものに着手しました。元レジデントのアンソニー・スミス博士の要請に応じて、グアムを訪れ、同地域初のLASIKセンター設立の実現可能性を評価しました。そこで発見したのは、ハワイやフィリピンへ13時間の移動なしに視力矯正手術へのアクセスがない200,000人以上の太平洋住民に影響を与える医療危機でした。",
+      "description2": "2010年から2013年まで、フラワーズ博士はアイランド・アイ・インスティテュートにLASIKセンターを設計・設立することに専念しました。彼の努力は、2013年に太平洋地域で初めてのLASIK手術を実施したときに頂点に達し、人口全体の医療アクセスを一瞬にして変革しました。"
     },
     "stats": {
       "procedures": {
         "number": "600+",
-        "label": "Procedimientos LASIK en Guam",
-        "description": "Cirugías exitosas realizadas"
+        "label": "グアムでのLASIK手術",
+        "description": "成功した手術の実施"
       },
       "residents": {
         "number": "200,000+",
-        "label": "Residentes Atendidos",
-        "description": "Con acceso a cuidado ocular avanzado"
+        "label": "サービスを受けた住民",
+        "description": "高度な眼科治療へのアクセス"
       },
       "savings": {
         "number": "$3,000+",
-        "label": "Costos de Viaje Ahorrados",
-        "description": "Ahorro promedio por paciente"
+        "label": "節約された旅費",
+        "description": "患者1人あたりの平均節約額"
       },
       "time": {
-        "number": "13 Horas",
-        "label": "Tiempo de Vuelo Eliminado",
-        "description": "Para cada procedimiento del paciente"
+        "number": "13時間",
+        "label": "削減されたフライト時間",
+        "description": "各患者の処置あたり"
       }
     }
   },
   "telemedicine": {
-    "title": "Pionero en Telemedicina",
-    "description": "La innovación del Dr. Flowers va más allá de la excelencia quirúrgica. Reconociendo la alta prevalencia de diabetes y la predisposición genética en Guam, aseguró financiamiento para una iniciativa innovadora de telemedicina. Este proyecto piloto de teleretinopatía involucró:",
+    "title": "遠隔医療のパイオニア",
+    "description": "フラワーズ博士のイノベーションは外科的卓越性を超えています。グアムにおける糖尿病の高い有病率と遺伝的素因を認識し、画期的な遠隔医療イニシアチブの資金を確保しました。この遠隔網膜症パイロットプロジェクトには以下が含まれました：",
     "features": [
-      "Despliegue de cámaras de imagen retiniana de última generación en clínicas de atención primaria en todo Guam",
-      "Implementación de infraestructura híbrida en la nube segura para almacenamiento de imágenes compatible con HIPAA y análisis en tiempo real",
-      "Aprovechamiento de inteligencia artificial y algoritmos de aprendizaje automático para detección y clasificación automatizada de retinopatía diabética",
-      "Establecimiento de vías de teleconsulta fluidas conectando clínicas de Guam con especialistas en retina de USC",
-      "Permitir detección e intervención temprana de retinopatía diabética amenazante para la vista antes de que ocurra pérdida de visión",
-      "Desarrollo de programas de capacitación integrales para certificar a médicos locales en imágenes retinianas avanzadas y protocolos de diagnóstico"
+      "グアム全域のプライマリケアクリニックへの最先端網膜イメージングカメラの展開",
+      "HIPAA準拠の画像保存とリアルタイム分析のための安全なハイブリッドクラウドインフラストラクチャの実装",
+      "糖尿病性網膜症の自動検出と分類のための人工知能と機械学習アルゴリズムの活用",
+      "グアムのクリニックとUSCの網膜専門医をつなぐシームレスな遠隔診療経路の確立",
+      "視力喪失が発生する前の視力を脅かす糖尿病性網膜症の早期発見と介入の実現",
+      "高度な網膜イメージングと診断プロトコルで地元の医師を認定するための包括的なトレーニングプログラムの開発"
     ]
   },
   "expertise": {
-    "title": "Excelencia y Experiencia Clínica",
+    "title": "臨床的卓越性と専門知識",
     "surgical": {
-      "title": "Especializaciones Quirúrgicas",
+      "title": "外科専門分野",
       "procedures": [
-        "Queratomileusis In Situ Asistida por Láser (LASIK)",
-        "Cirugía Avanzada de Cataratas",
-        "Trasplante de Córnea (incluyendo DSAEK)",
-        "Lente Colámera Implantable Visian (ICL)",
-        "Queratectomía Fotorrefractiva (PRK)",
-        "Implantación de Intacs para Queratocono",
-        "Cirugía de Pterigión",
-        "Entrecruzamiento de Colágeno"
+        "レーザー角膜屈折矯正手術（LASIK）",
+        "高度白内障手術",
+        "角膜移植（DSAEKを含む）",
+        "Visian眼内コンタクトレンズ（ICL）",
+        "光屈折角膜切除術（PRK）",
+        "円錐角膜のためのIntacs挿入",
+        "翼状片手術",
+        "コラーゲンクロスリンキング"
       ]
     },
     "research": {
-      "title": "Prioridades de Investigación",
+      "title": "研究の優先事項",
       "areas": [
-        "Optimización de resultados visuales en LASIK y cirugía de cataratas",
-        "Entrenamiento de visión deportiva y mejora del rendimiento atlético",
-        "Aplicaciones de telemedicina en oftalmología",
-        "Estudios poblacionales de retinopatía diabética"
+        "LASIKと白内障手術における視覚結果の最適化",
+        "スポーツビジョントレーニングとアスリートパフォーマンスの向上",
+        "眼科における遠隔医療の応用",
+        "糖尿病性網膜症の集団研究"
       ],
-      "funding": "Financiamiento de Subvenciones: Más de $1 millón asegurado en fondos de investigación"
+      "funding": "助成金資金：100万ドル以上の研究資金を確保"
     }
   },
   "awards": {
-    "title": "Reconocimiento y Premios",
-    "subtitle": "Reconocimiento nacional por innovación, excelencia e impacto humanitario",
+    "title": "表彰と賞",
+    "subtitle": "イノベーション、卓越性、人道的影響に対する全国的な表彰",
     "list": [
-      "Los Mejores Oftalmólogos de América - Consejo de Investigación de Consumidores de América (2000)",
-      "Laureado Computer World Smithsonian - La Cara de la Innovación (1998)",
-      "Becario Nacional de Medicina - Escuela de Medicina de la Universidad de Cornell",
-      "Premio al Mérito de la Fundación Familia Henry J. Kaiser",
-      "Premio de Excelencia - RCMI/Universidad Charles R. Drew (2000)",
-      "Premio Memorial Sara Stivelman - Comisión de Calidad y Productividad del Condado de LA (1999)",
-      "Homenajeado Masters In Medicine - Recycling Black Dollars Communications (1999)",
-      "Premio del Innovador - Departamento de Servicios de Salud del Condado de Los Ángeles (1998)",
-      "Mejor Cirujano LASIK - Revista San Diego"
+      "アメリカのベスト眼科医 - アメリカ消費者研究評議会（2000年）",
+      "コンピュータワールド・スミソニアン受賞者 - イノベーションの顔（1998年）",
+      "全国医学フェロー - コーネル大学医学部",
+      "ヘンリー・J・カイザー家族財団功労賞",
+      "優秀賞 - RCMI/チャールズ・R・ドリュー大学（2000年）",
+      "サラ・スティーベルマン記念賞 - LA郡品質・生産性委員会（1999年）",
+      "Masters In Medicine表彰 - Recycling Black Dollars Communications（1999年）",
+      "イノベーター賞 - ロサンゼルス郡保健サービス局（1998年）",
+      "ベストLASIK外科医 - サンディエゴ・マガジン"
     ]
   },
   "dualMission": {
-    "title": "El Modelo de Misión Dual",
-    "subtitle": "Un modelo de práctica único que sirve como plan para abordar las disparidades en salud",
+    "title": "デュアルミッションモデル",
+    "subtitle": "医療格差に対処するための青写真となるユニークな診療モデル",
     "la": {
-      "title": "Práctica de Los Ángeles",
+      "title": "ロサンゼルス診療所",
       "features": [
-        "Instalación de última generación",
-        "Servicios integrales de corrección de visión",
-        "Experiencia revolucionaria del paciente",
-        "Integración de tecnología avanzada",
-        "Liderazgo del programa de residencia",
-        "Centro de investigación e innovación"
+        "最先端施設",
+        "包括的な視力矯正サービス",
+        "革新的な患者体験",
+        "高度な技術統合",
+        "レジデンシープログラムのリーダーシップ",
+        "研究とイノベーションセンター"
       ]
     },
     "pacific": {
-      "title": "Misión del Pacífico",
+      "title": "太平洋ミッション",
       "features": [
-        "Misiones quirúrgicas trimestrales a Guam",
-        "Capacidades quirúrgicas móviles",
-        "Capacitación y mentoría de médicos locales",
-        "Desarrollo de infraestructura de telemedicina",
-        "Construcción de sistemas de salud sostenibles"
+        "グアムへの四半期ごとの外科ミッション",
+        "モバイル外科能力",
+        "地元医師のトレーニングとメンタリング",
+        "遠隔医療インフラストラクチャの開発",
+        "持続可能な医療システムの構築"
       ]
     },
-    "cta": "Aprenda Más Sobre la Misión del Pacífico"
+    "cta": "太平洋ミッションについて詳しく見る"
   },
   "impact": {
-    "title": "Impacto en Números",
+    "title": "数字で見る影響",
     "stats": [
-      { "number": "30,000+", "label": "Procedimientos Totales" },
-      { "number": "600+", "label": "Procedimientos en Guam" },
-      { "number": "200,000+", "label": "Residentes del Pacífico Atendidos" },
-      { "number": "98%", "label": "Satisfacción del Paciente" },
-      { "number": "20+", "label": "Años de Experiencia" },
-      { "number": "15+", "label": "Años de Servicio en el Pacífico" },
-      { "number": "12", "label": "Islas del Pacífico" },
-      { "number": "$1M+", "label": "Fondos de Investigación" },
-      { "number": "4", "label": "Misiones Anuales a Guam" }
+      { "number": "30,000+", "label": "総手術数" },
+      { "number": "600+", "label": "グアムでの手術" },
+      { "number": "200,000+", "label": "サービスを受けた太平洋住民" },
+      { "number": "98%", "label": "患者満足度" },
+      { "number": "20+", "label": "経験年数" },
+      { "number": "15+", "label": "太平洋でのサービス年数" },
+      { "number": "12", "label": "太平洋諸島" },
+      { "number": "$1M+", "label": "研究資金" },
+      { "number": "4", "label": "年間グアムミッション" }
     ]
   },
   "philosophy": {
-    "title": "Filosofía de Cuidado del Paciente",
-    "quote": "Trato a cada paciente como si estuviera cuidando a un miembro de la familia. Establecer una relación personal es una prioridad, para que pueda tener lugar una comunicación abierta, honesta y transparente sobre cada aspecto de su condición visual y las intervenciones de cuidado.",
-    "description": "Esta filosofía se extiende más allá del cuidado individual del paciente para abarcar comunidades enteras. El Dr. Flowers cree que la atención médica debe llegar a todos los rincones del mundo, y que la innovación no se trata solo de tecnología, se trata de encontrar formas de llevar tratamientos que cambian la vida a quienes más los necesitan, independientemente de la ubicación o las circunstancias."
+    "title": "患者ケアの哲学",
+    "quote": "私は各患者を家族の一員をケアするように治療します。個人的な関係を確立することが優先事項であり、視覚状態とケア介入のあらゆる側面について、オープンで正直かつ透明なコミュニケーションが行えるようにします。",
+    "description": "この哲学は個々の患者ケアを超えて、コミュニティ全体を包含しています。フラワーズ博士は、医療は世界のすべての隅々に届くべきであり、イノベーションは技術だけのものではなく、場所や状況に関係なく、最も必要としている人々に人生を変える治療をもたらす方法を見つけることだと信じています。"
   },
   "cta": {
-    "title": "Experimente el Cuidado Revolucionario de la Visión",
-    "subtitle": "Únase a los miles de pacientes que han confiado en el Dr. Flowers con su visión. Programe su consulta hoy y descubra la diferencia que hace el cuidado revolucionario.",
-    "schedule": "Programe Su Consulta"
+    "title": "革新的な視力ケアを体験してください",
+    "subtitle": "フラワーズ博士に視力を託した何千人もの患者に加わってください。今日診察を予約して、革新的なケアがもたらす違いを発見してください。",
+    "schedule": "診察を予約する"
   }
 }

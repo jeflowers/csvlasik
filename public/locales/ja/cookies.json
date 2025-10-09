@@ -1,43 +1,43 @@
 {
   "banner": {
-    "title": "Valoramos su privacidad",
-    "description": "Utilizamos cookies para mejorar su experiencia, analizar el uso del sitio y ayudar en nuestros esfuerzos de marketing. Al hacer clic en \"Aceptar Todo\", usted consiente nuestro uso de cookies.",
-    "learnMore": "Aprender más",
-    "preferences": "Preferencias",
-    "necessaryOnly": "Solo Necesarias",
-    "acceptAll": "Aceptar Todo"
+    "title": "We value your privacy",
+    "description": "We use cookies to enhance your experience, analyze site usage, and assist in our marketing efforts. By clicking \"Accept All\", you consent to our use of cookies.",
+    "learnMore": "Learn more",
+    "preferences": "Preferences",
+    "necessaryOnly": "Necessary Only",
+    "acceptAll": "Accept All"
   },
   "preferences": {
-    "title": "Preferencias de Cookies",
-    "description": "Puede elegir qué tipos de cookies permitir. Tenga en cuenta que bloquear algunos tipos de cookies puede afectar su experiencia en nuestro sitio.",
+    "title": "Cookie Preferences",
+    "description": "You can choose which types of cookies to allow. Note that blocking some types of cookies may impact your experience on our site.",
     "categories": {
       "necessary": {
-        "title": "Cookies Necesarias",
-        "description": "Estas cookies son esenciales para que el sitio web funcione correctamente. No se pueden desactivar."
+        "title": "Necessary Cookies",
+        "description": "These cookies are essential for the website to function properly. They cannot be disabled."
       },
       "analytics": {
-        "title": "Cookies de Análisis",
-        "description": "Nos ayudan a entender cómo los visitantes interactúan con nuestro sitio web recopilando y reportando información de forma anónima."
+        "title": "Analytics Cookies",
+        "description": "Help us understand how visitors interact with our website by collecting and reporting information anonymously."
       },
       "marketing": {
-        "title": "Cookies de Marketing",
-        "description": "Se utilizan para rastrear visitantes en sitios web para mostrar anuncios relevantes y atractivos."
+        "title": "Marketing Cookies",
+        "description": "Used to track visitors across websites to display relevant and engaging advertisements."
       },
       "personalization": {
-        "title": "Cookies de Personalización",
-        "description": "Nos permiten recordar sus preferencias y proporcionar características mejoradas y personalizadas."
+        "title": "Personalization Cookies",
+        "description": "Allow us to remember your preferences and provide enhanced, personalized features."
       }
     },
     "rights": {
-      "title": "Sus Derechos",
-      "change": "Puede cambiar sus preferencias en cualquier momento",
-      "access": "Puede solicitar acceso a sus datos personales",
-      "deletion": "Puede solicitar la eliminación de sus datos personales",
-      "withdraw": "Puede retirar el consentimiento en cualquier momento"
+      "title": "Your Rights",
+      "change": "You can change your preferences at any time",
+      "access": "You can request access to your personal data",
+      "deletion": "You can request deletion of your personal data",
+      "withdraw": "You can withdraw consent at any time"
     },
     "buttons": {
-      "cancel": "Cancelar",
-      "save": "Guardar Preferencias"
+      "cancel": "Cancel",
+      "save": "Save Preferences"
     }
   }
 }

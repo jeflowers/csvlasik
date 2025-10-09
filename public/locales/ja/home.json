@@ -1,36 +1,36 @@
 {
   "hero": {
-    "badge": "Primer Pionero LASIK en la Región del Pacífico",
-    "title": "Revolucionario",
-    "titleAccent": "Cuidado de la Visión",
-    "subtitle": "Desde ser pionero en cirugía LASIK a través de las islas del Pacífico hasta revolucionar el cuidado de la visión en Los Ángeles, el Dr. Flowers aporta décadas de experiencia a cada procedimiento.",
+    "badge": "太平洋地域初のLASIKパイオニア",
+    "title": "革新的な",
+    "titleAccent": "視力ケア",
+    "subtitle": "太平洋諸島でのLASIK手術の先駆けから、ロサンゼルスでの視力ケアの革新まで、フラワーズ博士はすべての手術に数十年の専門知識をもたらします。",
     "cta": {
-      "schedule": "PROGRAMAR CONSULTA",
+      "schedule": "診察予約",
       "phone": "(844) 211-5462"
     }
   },
   "stats": {
     "livesTransformed": {
-      "label": "Vidas Transformadas",
-      "description": "Procedimientos exitosos completados"
+      "label": "変革された人生",
+      "description": "成功した手術の完了"
     },
     "pacificIslands": {
-      "label": "Islas del Pacífico",
-      "description": "Ubicaciones remotas atendidas"
+      "label": "太平洋諸島",
+      "description": "サービスを提供した遠隔地"
     },
     "successRate": {
-      "label": "Tasa de Éxito",
-      "description": "Pacientes logrando visión 20/20"
+      "label": "成功率",
+      "description": "20/20の視力を達成した患者"
     },
     "yearsExperience": {
-      "label": "Años de Experiencia",
-      "description": "Entrega revolucionaria de atención médica"
+      "label": "経験年数",
+      "description": "革新的な医療提供"
     }
   },
   "cta": {
-    "title": "Experimente el Cuidado Revolucionario de la Visión",
-    "subtitle": "Únase a los cientos de pacientes que han confiado en el Dr. Flowers con su visión. Desde las islas del Pacífico hasta Los Ángeles, experimente la diferencia que hace el cuidado revolucionario.",
-    "schedule": "PROGRAMAR CONSULTA",
-    "pacificStory": "LA HISTORIA DEL PACÍFICO"
+    "title": "革新的な視力ケアを体験してください",
+    "subtitle": "フラワーズ博士に視力を託した何百人もの患者に加わってください。太平洋諸島からロサンゼルスまで、革新的なケアがもたらす違いを体験してください。",
+    "schedule": "診察予約",
+    "pacificStory": "太平洋のストーリー"
   }
 }

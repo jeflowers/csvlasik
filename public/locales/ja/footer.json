@@ -1,37 +1,37 @@
 {
   "company": {
     "name": "ClearSight",
-    "tagline": "Instituto de Visión",
-    "description": "Pioneros en cirugía LASIK en la región del Pacífico y llevando cuidado revolucionario de la visión a Los Ángeles."
+    "tagline": "Vision Institute",
+    "description": "Pioneering LASIK surgery in the Pacific region and bringing revolutionary vision care to Los Angeles."
   },
   "quickLinks": {
-    "title": "Enlaces Rápidos",
-    "about": "Acerca del Dr. Flowers",
-    "allProcedures": "Todos los Procedimientos",
-    "pacificStory": "La Historia del Pacífico",
-    "testimonials": "Testimonios",
-    "technology": "Tecnología"
+    "title": "Quick Links",
+    "about": "About Dr. Flowers",
+    "allProcedures": "All Procedures",
+    "pacificStory": "The Pacific Story",
+    "testimonials": "Testimonials",
+    "technology": "Technology"
   },
   "procedures": {
-    "title": "Procedimientos",
-    "lasik": "Cirugía LASIK",
-    "prk": "Cirugía PRK",
+    "title": "Procedures",
+    "lasik": "LASIK Surgery",
+    "prk": "PRK Surgery",
     "icl": "ICL",
-    "blog": "Blog y Recursos",
-    "consultation": "Programar Consulta"
+    "blog": "Blog & Resources",
+    "consultation": "Schedule Consultation"
   },
   "contact": {
-    "title": "Información de Contacto",
-    "office": "Oficina de Lakewood",
+    "title": "Contact Information",
+    "office": "Lakewood Office",
     "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712",
     "phone": "(844) 211-5462",
     "email": "info@clearsightlasik.com"
   },
   "newsletter": {
-    "title": "Manténgase Actualizado",
-    "description": "Reciba las últimas noticias de nuestra misión del Pacífico e innovaciones en cuidado de la visión",
-    "placeholder": "Su correo electrónico",
-    "subscribe": "Suscribirse"
+    "title": "Stay Updated",
+    "description": "Get the latest from our Pacific mission and vision care innovations",
+    "placeholder": "Your email",
+    "subscribe": "Subscribe"
   },
   "social": {
     "facebook": "Facebook",
@@ -41,11 +41,11 @@
     "tiktok": "TikTok"
   },
   "legal": {
-    "copyright": "© 2025 ClearSight - Dr. Charles Flowers, MD. Todos los derechos reservados.",
-    "privacy": "Política de Privacidad",
-    "terms": "Términos de Servicio"
+    "copyright": "© 2025 ClearSight - Dr. Charles Flowers, MD. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
   },
   "badge": {
-    "pacificMission": "🌊 Partidario de la Misión del Pacífico"
+    "pacificMission": "🌊 Pacific Mission Supporter"
   }
 }

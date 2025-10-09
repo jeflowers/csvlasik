@@ -1,61 +1,61 @@
 {
   "hero": {
-    "badge": "Resultados Revolucionarios - Pacientes Reales",
-    "title": "Testimonios que",
-    "titleAccent": "Cambian Vidas",
-    "description": "Descubra los resultados transformadores que nuestros pacientes han experimentado con las técnicas revolucionarias de corrección de visión del Dr. Flowers. Desde las islas del Pacífico hasta Los Ángeles, las vidas están siendo cambiadas un procedimiento a la vez.",
-    "cta": "Comience Su Transformación"
+    "badge": "Revolutionary Results - Real Patients",
+    "title": "Life-Changing",
+    "titleAccent": "Testimonials",
+    "description": "Discover the transformative outcomes our patients have experienced with Dr. Flowers' revolutionary vision correction techniques. From Pacific islands to Los Angeles, lives are being changed one procedure at a time.",
+    "cta": "Start Your Transformation"
   },
   "results": {
-    "title": "Resultados Revolucionarios Comprobados",
-    "description": "Los números hablan por sí mismos - resultados excepcionales en todos los procedimientos",
+    "title": "Proven Revolutionary Results",
+    "description": "The numbers speak for themselves - exceptional outcomes across all procedures",
     "stats": {
       "vision": {
-        "label": "Logran Visión 20/20",
-        "description": "O mejor dentro de 24-48 horas"
+        "label": "Achieve 20/20 Vision",
+        "description": "Or better within 24-48 hours"
       },
       "satisfaction": {
-        "label": "Satisfacción del Paciente",
-        "description": "Recomendarían al Dr. Flowers"
+        "label": "Patient Satisfaction",
+        "description": "Would recommend Dr. Flowers"
       },
       "rating": {
-        "label": "Calificación Promedio",
-        "description": "En todas las plataformas de reseñas"
+        "label": "Average Rating",
+        "description": "Across all review platforms"
       },
       "stories": {
-        "label": "Historias de Éxito",
-        "description": "Vidas transformadas por la visión"
+        "label": "Success Stories",
+        "description": "Lives transformed by vision"
       }
     }
   },
   "featured": {
-    "title": "Historias de Éxito Destacadas",
-    "description": "Pacientes reales compartiendo sus viajes de transformación de visión revolucionaria"
+    "title": "Featured Success Stories",
+    "description": "Real patients sharing their revolutionary vision transformation journeys"
   },
   "pacific": {
-    "title": "Transformaciones de la Región del Pacífico",
-    "description": "Resultados revolucionarios de las misiones pioneras del Dr. Flowers en el Pacífico"
+    "title": "Pacific Region Transformations",
+    "description": "Revolutionary results from Dr. Flowers' pioneering Pacific missions"
   },
   "badges": {
-    "pacific": "Paciente del Pacífico",
-    "military": "Militar",
-    "success": "Éxito"
+    "pacific": "Pacific Patient",
+    "military": "Military",
+    "success": "Success"
   },
   "cta": {
-    "title": "¿Listo para Unirse a Nuestras Historias de Éxito?",
-    "description": "Experimente el cuidado de visión revolucionario que ha transformado más de 30,000 vidas. Su historia de éxito comienza con una consulta gratuita.",
-    "schedule": "Programe Su Consulta Gratuita",
-    "procedures": "Elija Su Procedimiento"
+    "title": "Ready to Join Our Success Stories?",
+    "description": "Experience the revolutionary vision care that has transformed over 30,000 lives. Your success story starts with a free consultation.",
+    "schedule": "Schedule Your Free Consultation",
+    "procedures": "Choose Your Procedure"
   },
   "gallery": {
-    "title": "Galería de Transformación de Visión",
-    "description": "Vea las mejoras dramáticas en la calidad de visión en todos los procedimientos",
-    "before": "Antes del Tratamiento",
-    "after": "Después del Tratamiento",
-    "satisfaction": "Satisfacción del Paciente"
+    "title": "Vision Transformation Gallery",
+    "description": "See the dramatic improvements in vision quality across all procedures",
+    "before": "Before Treatment",
+    "after": "After Treatment",
+    "satisfaction": "Patient Satisfaction"
   },
   "reviews": {
-    "title": "Lo Que Dicen Nuestros Pacientes",
-    "description": "Reseñas auténticas de pacientes reales que experimentaron cuidado revolucionario"
+    "title": "What Our Patients Say",
+    "description": "Authentic reviews from real patients who experienced revolutionary care"
   }
 }

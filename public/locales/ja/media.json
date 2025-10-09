@@ -1,45 +1,75 @@
 {
   "hero": {
-    "badge": "Perspectivas y Educación Revolucionarias",
-    "title": "Medios y Recursos",
-    "description": "Manténgase informado con las últimas perspectivas de la práctica revolucionaria del Dr. Flowers. Desde procedimientos de vanguardia hasta actualizaciones de la misión del Pacífico, descubra el futuro del cuidado de la visión a través de perspectivas expertas e historias de pacientes."
+    "badge": "Revolutionary Insights & Education",
+    "title": "Media & Resources",
+    "description": "Stay informed with the latest insights from Dr. Flowers' revolutionary practice. From cutting-edge procedures to Pacific mission updates, discover the future of vision care through expert perspectives and patient stories."
   },
   "featured": {
-    "sectionTitle": "Artículo Destacado",
-    "title": "El Viaje Revolucionario: Cómo las Misiones del Pacífico Moldearon el LASIK Moderno",
-    "excerpt": "Descubra cómo las condiciones desafiantes en las remotas islas del Pacífico llevaron a innovaciones revolucionarias en la corrección de visión láser que ahora benefician a pacientes en todo el mundo.",
-    "readMore": "Leer Artículo"
+    "sectionTitle": "Featured Article",
+    "title": "The Revolutionary Journey: How Pacific Missions Shaped Modern LASIK",
+    "excerpt": "Discover how challenging conditions in remote Pacific islands led to breakthrough innovations in laser vision correction that are now benefiting patients worldwide.",
+    "readMore": "Read Article"
   },
   "sidebar": {
-    "categories": "Categorías",
+    "categories": "Categories",
     "newsletter": {
-      "title": "Manténgase Actualizado",
-      "description": "Obtenga las últimas perspectivas y actualizaciones de la misión del Pacífico",
-      "placeholder": "Su correo electrónico",
-      "subscribe": "Suscribirse"
+      "title": "Stay Updated",
+      "description": "Get the latest insights and Pacific mission updates",
+      "placeholder": "Your email",
+      "subscribe": "Subscribe"
     }
   },
   "posts": {
-    "readMore": "Leer Más",
-    "loadMore": "Cargar Más Artículos"
+    "telemedicine": {
+      "title": "Telemedicine in Eye Care: Connecting Pacific Islands to Advanced Treatment",
+      "excerpt": "How innovative telemedicine solutions are bridging the gap between remote locations and world-class eye care."
+    },
+    "recovery": {
+      "title": "Recovery Timeline: What to Expect After Your LASIK Surgery",
+      "excerpt": "A detailed guide to the LASIK recovery process, from the first 24 hours to long-term results, based on real patient experiences."
+    },
+    "icl": {
+      "title": "ICL Surgery: The Revolutionary Solution for High Prescriptions",
+      "excerpt": "Understanding Implantable Contact Lenses and why they're often the best choice for patients with severe myopia."
+    },
+    "infrastructure": {
+      "title": "Building Healthcare Infrastructure in Remote Pacific Islands",
+      "excerpt": "The challenges and triumphs of establishing sustainable eye care programs in underserved communities."
+    },
+    "readMore": "Read More",
+    "loadMore": "Load More Articles"
   },
   "categories": {
-    "all": "Todas las Publicaciones",
-    "innovation": "Innovación",
-    "procedures": "Procedimientos",
-    "technology": "Tecnología",
-    "patientCare": "Cuidado del Paciente",
-    "mission": "Misión"
+    "all": "All Posts",
+    "innovation": "Innovation",
+    "procedures": "Procedures",
+    "technology": "Technology",
+    "patientCare": "Patient Care",
+    "mission": "Mission"
   },
   "resources": {
-    "title": "Recursos Educativos",
-    "description": "Guías y recursos integrales para ayudarle a entender la corrección de visión",
-    "learnMore": "Aprender Más"
+    "title": "Educational Resources",
+    "description": "Comprehensive guides and resources to help you understand vision correction",
+    "items": {
+      "lasik": {
+        "title": "LASIK Guide",
+        "description": "Complete guide to LASIK surgery, from candidacy to recovery"
+      },
+      "comparison": {
+        "title": "Procedure Comparison",
+        "description": "Side-by-side comparison of all vision correction procedures"
+      },
+      "pacific": {
+        "title": "Pacific Mission Updates",
+        "description": "Latest news from Dr. Flowers' revolutionary Pacific healthcare missions"
+      }
+    },
+    "learnMore": "Learn More"
   },
   "cta": {
-    "title": "¿Listo para Comenzar Su Viaje de Visión?",
-    "description": "¿Tiene preguntas sobre la corrección de visión? ¿Quiere aprender más sobre las técnicas revolucionarias del Dr. Flowers? Programe su consulta gratuita hoy.",
-    "schedule": "Programar Consulta Gratuita",
-    "explore": "Explorar Procedimientos"
+    "title": "Ready to Start Your Vision Journey?",
+    "description": "Have questions about vision correction? Want to learn more about Dr. Flowers' revolutionary techniques? Schedule your free consultation today.",
+    "schedule": "Schedule Free Consultation",
+    "explore": "Explore Procedures"
   }
 }
