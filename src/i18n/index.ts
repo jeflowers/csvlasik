@@ -3,6 +3,13 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 
+// Demographic groups for language organization
+export const DEMOGRAPHIC_GROUPS = {
+  SOUTHERN_CALIFORNIA: 'Southern California Communities',
+  PACIFIC_ISLANDS: 'Pacific Islands Communities',
+  ADDITIONAL: 'Additional Languages'
+} as const;
+
 // Supported languages with their configurations
 export const SUPPORTED_LANGUAGES = {
   en: {
@@ -13,17 +20,9 @@ export const SUPPORTED_LANGUAGES = {
     country: 'United States',
     rtl: false,
     deeplSupported: true,
-    priority: 'source'
-  },
-  ja: {
-    code: 'ja',
-    name: 'Japanese',
-    nativeName: '日本語',
-    flag: '🇯🇵',
-    country: 'Japan',
-    rtl: false,
-    services: { deepl: true, google: true },
-    priority: 'standard'
+    priority: 'source',
+    demographic: null,
+    order: 0
   },
   'es-MX': {
     code: 'es-MX',
@@ -34,7 +33,81 @@ export const SUPPORTED_LANGUAGES = {
     rtl: false,
     services: { deepl: true, google: true },
     priority: 'high',
-    fallback: 'es'
+    fallback: 'en',
+    demographic: DEMOGRAPHIC_GROUPS.SOUTHERN_CALIFORNIA,
+    order: 1
+  },
+  ko: {
+    code: 'ko',
+    name: 'Korean',
+    nativeName: '한국어',
+    flag: '🇰🇷',
+    country: 'South Korea',
+    rtl: false,
+    services: { deepl: true, google: true },
+    priority: 'standard',
+    demographic: DEMOGRAPHIC_GROUPS.SOUTHERN_CALIFORNIA,
+    order: 2
+  },
+  zh: {
+    code: 'zh',
+    name: 'Chinese (Simplified)',
+    nativeName: '简体中文',
+    flag: '🇨🇳',
+    country: 'China',
+    rtl: false,
+    services: { deepl: true, google: true },
+    priority: 'standard',
+    demographic: DEMOGRAPHIC_GROUPS.SOUTHERN_CALIFORNIA,
+    order: 3
+  },
+  vi: {
+    code: 'vi',
+    name: 'Vietnamese',
+    nativeName: 'Tiếng Việt',
+    flag: '🇻🇳',
+    country: 'Vietnam',
+    rtl: false,
+    services: { deepl: false, google: true },
+    priority: 'standard',
+    demographic: DEMOGRAPHIC_GROUPS.SOUTHERN_CALIFORNIA,
+    order: 4
+  },
+  hy: {
+    code: 'hy',
+    name: 'Armenian',
+    nativeName: 'Հայերեն',
+    flag: '🇦🇲',
+    country: 'Armenia',
+    rtl: false,
+    services: { deepl: false, google: true },
+    priority: 'standard',
+    demographic: DEMOGRAPHIC_GROUPS.SOUTHERN_CALIFORNIA,
+    order: 5
+  },
+  tl: {
+    code: 'tl',
+    name: 'Tagalog',
+    nativeName: 'Tagalog',
+    flag: '🇵🇭',
+    country: 'Philippines',
+    rtl: false,
+    services: { deepl: false, google: true },
+    priority: 'standard',
+    demographic: DEMOGRAPHIC_GROUPS.PACIFIC_ISLANDS,
+    order: 6
+  },
+  ja: {
+    code: 'ja',
+    name: 'Japanese',
+    nativeName: '日本語',
+    flag: '🇯🇵',
+    country: 'Japan',
+    rtl: false,
+    services: { deepl: true, google: true },
+    priority: 'standard',
+    demographic: DEMOGRAPHIC_GROUPS.PACIFIC_ISLANDS,
+    order: 7
   },
   'pt-BR': {
     code: 'pt-BR',
@@ -45,47 +118,9 @@ export const SUPPORTED_LANGUAGES = {
     rtl: false,
     services: { deepl: true, google: true },
     priority: 'high',
-    fallback: 'pt'
-  },
-  tl: {
-    code: 'tl',
-    name: 'Tagalog',
-    nativeName: 'Tagalog',
-    flag: '🇵🇭',
-    country: 'Philippines',
-    rtl: false,
-    services: { deepl: false, google: true },
-    priority: 'standard'
-  },
-  ko: {
-    code: 'ko',
-    name: 'Korean',
-    nativeName: '한국어',
-    flag: '🇰🇷',
-    country: 'South Korea',
-    rtl: false,
-    services: { deepl: true, google: true },
-    priority: 'standard'
-  },
-  vi: {
-    code: 'vi',
-    name: 'Vietnamese',
-    nativeName: 'Tiếng Việt',
-    flag: '🇻🇳',
-    country: 'Vietnam',
-    rtl: false,
-    services: { deepl: false, google: true },
-    priority: 'standard'
-  },
-  zh: {
-    code: 'zh',
-    name: 'Chinese (Simplified)',
-    nativeName: '简体中文',
-    flag: '🇨🇳',
-    country: 'China',
-    rtl: false,
-    services: { deepl: true, google: true },
-    priority: 'standard'
+    fallback: 'pt',
+    demographic: DEMOGRAPHIC_GROUPS.ADDITIONAL,
+    order: 8
   },
   ar: {
     code: 'ar',
@@ -95,17 +130,9 @@ export const SUPPORTED_LANGUAGES = {
     country: 'Saudi Arabia',
     rtl: true,
     services: { deepl: true, google: true },
-    priority: 'standard'
-  },
-  hy: {
-    code: 'hy',
-    name: 'Armenian',
-    nativeName: 'Հայերեն',
-    flag: '🇦🇲',
-    country: 'Armenia',
-    rtl: false,
-    services: { deepl: false, google: true },
-    priority: 'standard'
+    priority: 'standard',
+    demographic: DEMOGRAPHIC_GROUPS.ADDITIONAL,
+    order: 9
   },
   he: {
     code: 'he',
@@ -115,7 +142,9 @@ export const SUPPORTED_LANGUAGES = {
     country: 'Israel',
     rtl: true,
     services: { deepl: true, google: true },
-    priority: 'standard'
+    priority: 'standard',
+    demographic: DEMOGRAPHIC_GROUPS.ADDITIONAL,
+    order: 10
   }
 };
 
