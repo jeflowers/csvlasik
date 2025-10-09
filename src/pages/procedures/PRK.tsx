@@ -118,7 +118,7 @@ const PRK = () => {
                   <source src="/assets/videos/PRK-Treatment-Animation.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                   <img
-                    src="/assets/images/procedures/lasik/image.png"
+                    src="public/assets/images/procedures/prk/PRK.png"
                     alt="PRK procedure animation"
                     className="w-full h-96 lg:h-[500px] object-contain"
                   />
