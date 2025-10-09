@@ -34,7 +34,7 @@ const Media = () => {
       author: 'Dr. Charles Flowers',
       date: 'March 5, 2024',
       readTime: '5 min read',
-      image: './assets/images/misc/wesley-tingey-0are122T4ho-unsplash.jpg',
+      image: '/assets/images/misc/wesley-tingey-0are122T4ho-unsplash.jpg',
       category: 'Patient Care'
     },
     {
@@ -43,7 +43,7 @@ const Media = () => {
       author: 'Dr. Charles Flowers',
       date: 'February 28, 2024',
       readTime: '7 min read',
-      image: './assets/images/misc/technology.png',
+      image: '/assets/images/misc/technology.png',
       category: 'Procedures'
     },
     {
@@ -52,7 +52,7 @@ const Media = () => {
       author: 'Dr. Charles Flowers',
       date: 'February 20, 2024',
       readTime: '9 min read',
-      image: './assets/images/ads/black_biri_illustrationImage.png',
+      image: '/assets/images/ads/black_biri_illustrationImage.png',
       category: 'Mission'
     }
   ];
