@@ -34,7 +34,7 @@ const Media = () => {
       author: 'Dr. Charles Flowers',
       date: 'March 5, 2024',
       readTime: '5 min read',
-      image: '/assets/images/misc/wesley-tingey-0are122T4ho-unsplash.jpg',
+      image: '/assets/images/misc/mainimage-lasik.jpg',
       category: 'Patient Care'
     },
     {
