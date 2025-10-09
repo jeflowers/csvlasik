@@ -1,61 +1,61 @@
 {
   "hero": {
-    "badge": "Revolutionary Results - Real Patients",
-    "title": "Life-Changing",
-    "titleAccent": "Testimonials",
-    "description": "Discover the transformative outcomes our patients have experienced with Dr. Flowers' revolutionary vision correction techniques. From Pacific islands to Los Angeles, lives are being changed one procedure at a time.",
-    "cta": "Start Your Transformation"
+    "badge": "革新的な結果 - 実際の患者様",
+    "title": "人生を変える",
+    "titleAccent": "お客様の声",
+    "description": "フラワーズ博士の革新的な視力矯正技術で患者様が経験した変革的な結果を発見してください。太平洋諸島からロサンゼルスまで、一度に1つの手術で人生が変わっています。",
+    "cta": "あなたの変革を始める"
   },
   "results": {
-    "title": "Proven Revolutionary Results",
-    "description": "The numbers speak for themselves - exceptional outcomes across all procedures",
+    "title": "証明された革新的な結果",
+    "description": "数字が物語る - すべての手術での卓越した成果",
     "stats": {
       "vision": {
-        "label": "Achieve 20/20 Vision",
-        "description": "Or better within 24-48 hours"
+        "label": "20/20視力を達成",
+        "description": "24〜48時間以内にそれ以上"
       },
       "satisfaction": {
-        "label": "Patient Satisfaction",
-        "description": "Would recommend Dr. Flowers"
+        "label": "患者満足度",
+        "description": "フラワーズ博士を推薦"
       },
       "rating": {
-        "label": "Average Rating",
-        "description": "Across all review platforms"
+        "label": "平均評価",
+        "description": "すべてのレビュープラットフォーム"
       },
       "stories": {
-        "label": "Success Stories",
-        "description": "Lives transformed by vision"
+        "label": "成功事例",
+        "description": "視力によって変革された人生"
       }
     }
   },
   "featured": {
-    "title": "Featured Success Stories",
-    "description": "Real patients sharing their revolutionary vision transformation journeys"
+    "title": "注目の成功事例",
+    "description": "革新的な視力変革の旅を共有する実際の患者様"
   },
   "pacific": {
-    "title": "Pacific Region Transformations",
-    "description": "Revolutionary results from Dr. Flowers' pioneering Pacific missions"
+    "title": "太平洋地域の変革",
+    "description": "フラワーズ博士の先駆的な太平洋ミッションからの革新的な結果"
   },
   "badges": {
-    "pacific": "Pacific Patient",
-    "military": "Military",
-    "success": "Success"
+    "pacific": "太平洋の患者",
+    "military": "軍人",
+    "success": "成功"
   },
   "cta": {
-    "title": "Ready to Join Our Success Stories?",
-    "description": "Experience the revolutionary vision care that has transformed over 30,000 lives. Your success story starts with a free consultation.",
-    "schedule": "Schedule Your Free Consultation",
-    "procedures": "Choose Your Procedure"
+    "title": "成功事例に参加する準備はできていますか？",
+    "description": "30,000人以上の人生を変革した革新的な視力ケアを体験してください。あなたの成功ストーリーは無料診察から始まります。",
+    "schedule": "無料診察を予約",
+    "procedures": "手術を選択"
   },
   "gallery": {
-    "title": "Vision Transformation Gallery",
-    "description": "See the dramatic improvements in vision quality across all procedures",
-    "before": "Before Treatment",
-    "after": "After Treatment",
-    "satisfaction": "Patient Satisfaction"
+    "title": "視力変革ギャラリー",
+    "description": "すべての手術での視力の質の劇的な改善を見る",
+    "before": "治療前",
+    "after": "治療後",
+    "satisfaction": "患者満足度"
   },
   "reviews": {
-    "title": "What Our Patients Say",
-    "description": "Authentic reviews from real patients who experienced revolutionary care"
+    "title": "患者様の声",
+    "description": "革新的なケアを体験した実際の患者様からの本物のレビュー"
   }
 }

@@ -1,80 +1,80 @@
 {
   "labels": {
-    "firstName": "First Name",
-    "lastName": "Last Name",
-    "email": "Email Address",
-    "phone": "Phone Number",
-    "message": "Message",
-    "procedure": "Interested Procedure",
-    "preferredContact": "Preferred Contact Method",
-    "comments": "Questions or Comments",
-    "age": "Age",
-    "occupation": "Occupation",
-    "location": "Location",
-    "visionBefore": "Vision Before",
-    "visionAfter": "Vision After",
-    "rating": "Rating",
-    "testimonialText": "Your Experience"
+    "firstName": "名",
+    "lastName": "姓",
+    "email": "メールアドレス",
+    "phone": "電話番号",
+    "message": "メッセージ",
+    "procedure": "興味のある手術",
+    "preferredContact": "希望連絡方法",
+    "comments": "質問またはコメント",
+    "age": "年齢",
+    "occupation": "職業",
+    "location": "場所",
+    "visionBefore": "手術前の視力",
+    "visionAfter": "手術後の視力",
+    "rating": "評価",
+    "testimonialText": "あなたの体験"
   },
   "placeholders": {
-    "firstName": "Your first name",
-    "lastName": "Your last name",
+    "firstName": "名を入力",
+    "lastName": "姓を入力",
     "email": "your.email@example.com",
     "phone": "(555) 123-4567",
-    "message": "Tell us about your vision goals...",
-    "comments": "Any questions or special requests...",
-    "age": "Your age",
-    "occupation": "Your profession",
-    "location": "City, State",
-    "testimonialText": "Share your experience with Dr. Flowers..."
+    "message": "視力目標についてお聞かせください...",
+    "comments": "質問や特別なリクエストがあれば...",
+    "age": "年齢",
+    "occupation": "職業",
+    "location": "市、都道府県",
+    "testimonialText": "フラワーズ博士との体験を共有してください..."
   },
   "options": {
     "procedures": {
       "lasik": "LASIK",
-      "prk": "PRK", 
+      "prk": "PRK",
       "icl": "ICL",
-      "consultation": "General Consultation"
+      "consultation": "一般診察"
     },
     "contactMethods": {
-      "phone": "Phone",
-      "email": "Email",
-      "text": "Text Message"
+      "phone": "電話",
+      "email": "メール",
+      "text": "テキストメッセージ"
     },
     "ratings": {
-      "1": "Poor",
-      "2": "Fair",
-      "3": "Good",
-      "4": "Very Good",
-      "5": "Excellent"
+      "1": "悪い",
+      "2": "普通",
+      "3": "良い",
+      "4": "とても良い",
+      "5": "優秀"
     }
   },
   "buttons": {
-    "submit": "Submit",
-    "cancel": "Cancel",
-    "reset": "Reset",
-    "save": "Save",
-    "scheduleConsultation": "Schedule Consultation",
-    "requestCallback": "Request Callback",
-    "downloadInfo": "Download Information",
-    "shareTestimonial": "Share Your Story"
+    "submit": "送信",
+    "cancel": "キャンセル",
+    "reset": "リセット",
+    "save": "保存",
+    "scheduleConsultation": "診察予約",
+    "requestCallback": "折り返し電話を依頼",
+    "downloadInfo": "情報をダウンロード",
+    "shareTestimonial": "あなたのストーリーを共有"
   },
   "validation": {
-    "required": "This field is required",
-    "invalidEmail": "Please enter a valid email address",
-    "invalidPhone": "Please enter a valid phone number",
-    "tooShort": "This field is too short",
-    "tooLong": "This field is too long",
-    "invalidRating": "Please select a rating"
+    "required": "この項目は必須です",
+    "invalidEmail": "有効なメールアドレスを入力してください",
+    "invalidPhone": "有効な電話番号を入力してください",
+    "tooShort": "この項目が短すぎます",
+    "tooLong": "この項目が長すぎます",
+    "invalidRating": "評価を選択してください"
   },
   "success": {
-    "submitted": "Thank you! Your form has been submitted successfully.",
-    "scheduled": "Your consultation has been scheduled.",
-    "contacted": "We will contact you within 24 hours.",
-    "testimonialSubmitted": "Thank you for sharing your experience!"
+    "submitted": "ありがとうございます！フォームが正常に送信されました。",
+    "scheduled": "診察が予約されました。",
+    "contacted": "24時間以内にご連絡いたします。",
+    "testimonialSubmitted": "体験を共有していただきありがとうございます！"
   },
   "privacy": {
-    "notice": "By submitting this form, you consent to be contacted about our services.",
-    "security": "Your information is secure and will never be shared.",
-    "hipaa": "All communications are HIPAA compliant."
+    "notice": "このフォームを送信することで、当社のサービスについて連絡を受けることに同意したものとみなされます。",
+    "security": "お客様の情報は安全であり、共有されることはありません。",
+    "hipaa": "すべての通信はHIPAAに準拠しています。"
   }
 }

@@ -1,85 +1,85 @@
 {
   "hero": {
-    "badge": "Schedule Your Revolutionary Consultation",
-    "title": "Start Your",
-    "titleAccent": "Vision Journey",
-    "subtitle": "Take the first step toward revolutionary vision care. Schedule your free consultation with Dr. Flowers and discover how his pioneering techniques can transform your sight and your life."
+    "badge": "革新的な診察を予約",
+    "title": "あなたの",
+    "titleAccent": "視力の旅を始めよう",
+    "subtitle": "革新的な視力ケアへの第一歩を踏み出しましょう。フラワーズ博士との無料診察を予約し、先駆的な技術がどのようにあなたの視力と人生を変えることができるかを発見してください。"
   },
   "form": {
-    "title": "Schedule Your Free Consultation",
-    "selectProcedure": "Select a procedure"
+    "title": "無料診察を予約",
+    "selectProcedure": "手術を選択"
   },
   "info": {
-    "title": "Get in Touch",
-    "subtitle": "Ready to experience revolutionary vision care? Contact us today to schedule your free consultation and take the first step toward perfect vision."
+    "title": "お問い合わせ",
+    "subtitle": "革新的な視力ケアを体験する準備はできていますか？今日お問い合わせいただき、無料診察を予約して、完璧な視力への第一歩を踏み出しましょう。"
   },
   "office": {
-    "name": "Lakewood Office",
-    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712"
+    "name": "レイクウッドオフィス",
+    "address": "5750 Downey Ave., Suite 101\\nLakewood, CA 90712"
   },
   "phone": {
-    "title": "Phone",
+    "title": "電話",
     "number": "(844) 211-5462",
-    "note": "Click to call directly"
+    "note": "クリックして直接電話"
   },
   "email": {
-    "title": "Email",
+    "title": "メール",
     "address": "info@clearsightlasik.com",
-    "note": "We respond within 24 hours"
+    "note": "24時間以内に返信します"
   },
   "hours": {
-    "title": "Office Hours",
-    "weekdays": "Monday - Friday: 8:00 AM - 6:00 PM",
-    "saturday": "Saturday: 9:00 AM - 3:00 PM",
-    "sunday": "Sunday: Closed",
-    "emergency": "Emergency consultations available"
+    "title": "営業時間",
+    "weekdays": "月曜日〜金曜日：午前8時〜午後6時",
+    "saturday": "土曜日：午前9時〜午後3時",
+    "sunday": "日曜日：休診",
+    "emergency": "緊急診察可能"
   },
   "quickActions": {
-    "title": "Quick Actions",
-    "callNow": "Call Now for Immediate Scheduling",
-    "learnProcedures": "Learn About Procedures",
-    "financing": "Financing Options"
+    "title": "クイックアクション",
+    "callNow": "今すぐ電話で予約",
+    "learnProcedures": "手術について学ぶ",
+    "financing": "資金調達オプション"
   },
   "consultation": {
-    "title": "What to Expect at Your Consultation",
-    "subtitle": "Your free consultation is comprehensive, educational, and completely pressure-free",
+    "title": "診察で期待できること",
+    "subtitle": "無料診察は包括的で教育的、完全にプレッシャーフリーです",
     "steps": {
       "exam": {
-        "title": "Comprehensive Eye Exam",
-        "description": "Advanced diagnostic testing including corneal mapping, pupil measurement, and vision assessment",
-        "duration": "45-60 minutes"
+        "title": "総合的な眼科検査",
+        "description": "角膜マッピング、瞳孔測定、視力評価を含む高度な診断テスト",
+        "duration": "45〜60分"
       },
       "personal": {
-        "title": "Personal Consultation",
-        "description": "One-on-one discussion with Dr. Flowers about your vision goals, lifestyle, and procedure options",
-        "duration": "30-45 minutes"
+        "title": "個別診察",
+        "description": "フラワーズ博士とあなたの視力目標、ライフスタイル、手術オプションについての1対1の相談",
+        "duration": "30〜45分"
       },
       "plan": {
-        "title": "Customized Treatment Plan",
-        "description": "Receive your personalized recommendation with detailed explanation of benefits and expectations",
-        "duration": "15-30 minutes"
+        "title": "カスタマイズされた治療計画",
+        "description": "利点と期待についての詳細な説明を含む個別の推奨事項を受け取ります",
+        "duration": "15〜30分"
       }
     },
     "bring": {
-      "title": "What to Bring",
-      "glasses": "Current glasses or contacts",
-      "insurance": "Insurance cards",
-      "medications": "List of current medications",
-      "id": "Driver's license or ID",
-      "questions": "List of questions",
-      "driver": "Someone to drive you home"
+      "title": "持参するもの",
+      "glasses": "現在の眼鏡またはコンタクトレンズ",
+      "insurance": "保険証",
+      "medications": "現在服用中の薬のリスト",
+      "id": "運転免許証またはは身分証明書",
+      "questions": "質問のリスト",
+      "driver": "帰宅時の運転手"
     }
   },
   "emergency": {
-    "title": "Post-Operative Emergency Contact",
-    "description": "If you are a current patient experiencing a post-operative emergency outside of normal business hours:",
-    "phone": "Emergency Line: (844) 211-5462",
-    "note": "For non-emergency questions, please use our regular contact methods above."
+    "title": "術後緊急連絡先",
+    "description": "現在の患者で、通常の営業時間外に術後の緊急事態が発生した場合：",
+    "phone": "緊急ライン：(844) 211-5462",
+    "note": "緊急でない質問については、上記の通常の連絡方法をご利用ください。"
   },
   "cta": {
-    "title": "Ready to Transform Your Vision?",
-    "subtitle": "Join the hundreds of patients who have trusted Dr. Flowers with their vision. Your revolutionary journey to perfect sight starts with a simple phone call.",
-    "call": "Call (844) 211-5462",
-    "testimonials": "See Testimonials"
+    "title": "視力を変革する準備はできていますか？",
+    "subtitle": "フラワーズ博士に視力を託した何百人もの患者に加わってください。完璧な視力への革新的な旅は、簡単な電話から始まります。",
+    "call": "(844) 211-5462に電話",
+    "testimonials": "お客様の声を見る"
   }
 }

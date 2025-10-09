@@ -1,37 +1,37 @@
 {
   "company": {
     "name": "ClearSight",
-    "tagline": "Vision Institute",
-    "description": "Pioneering LASIK surgery in the Pacific region and bringing revolutionary vision care to Los Angeles."
+    "tagline": "ビジョンインスティテュート",
+    "description": "太平洋地域でのLASIK手術のパイオニアであり、ロサンゼルスに革新的な視力ケアをもたらしています。"
   },
   "quickLinks": {
-    "title": "Quick Links",
-    "about": "About Dr. Flowers",
-    "allProcedures": "All Procedures",
-    "pacificStory": "The Pacific Story",
-    "testimonials": "Testimonials",
-    "technology": "Technology"
+    "title": "クイックリンク",
+    "about": "フラワーズ博士について",
+    "allProcedures": "すべての手術",
+    "pacificStory": "太平洋のストーリー",
+    "testimonials": "お客様の声",
+    "technology": "技術"
   },
   "procedures": {
-    "title": "Procedures",
-    "lasik": "LASIK Surgery",
-    "prk": "PRK Surgery",
+    "title": "手術",
+    "lasik": "LASIK手術",
+    "prk": "PRK手術",
     "icl": "ICL",
-    "blog": "Blog & Resources",
-    "consultation": "Schedule Consultation"
+    "blog": "ブログ＆リソース",
+    "consultation": "診察予約"
   },
   "contact": {
-    "title": "Contact Information",
-    "office": "Lakewood Office",
-    "address": "5750 Downey Ave., Suite 101\nLakewood, CA 90712",
+    "title": "お問い合わせ",
+    "office": "レイクウッドオフィス",
+    "address": "5750 Downey Ave., Suite 101\\nLakewood, CA 90712",
     "phone": "(844) 211-5462",
     "email": "info@clearsightlasik.com"
   },
   "newsletter": {
-    "title": "Stay Updated",
-    "description": "Get the latest from our Pacific mission and vision care innovations",
-    "placeholder": "Your email",
-    "subscribe": "Subscribe"
+    "title": "最新情報を入手",
+    "description": "太平洋ミッションと視力ケアのイノベーションの最新情報を入手",
+    "placeholder": "メールアドレス",
+    "subscribe": "購読"
   },
   "social": {
     "facebook": "Facebook",
@@ -41,11 +41,11 @@
     "tiktok": "TikTok"
   },
   "legal": {
-    "copyright": "© 2025 ClearSight - Dr. Charles Flowers, MD. All rights reserved.",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "copyright": "© 2025 ClearSight - チャールズ・フラワーズ医学博士。全著作権所有。",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
   },
   "badge": {
-    "pacificMission": "🌊 Pacific Mission Supporter"
+    "pacificMission": "🌊 太平洋ミッションサポーター"
   }
 }
