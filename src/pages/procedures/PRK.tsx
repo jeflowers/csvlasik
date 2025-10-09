@@ -170,7 +170,7 @@ const PRK = () => {
             </div>
             <div>
               <img
-                src="/assets/images/procedures/prk/PRK.png"
+                src="public/assets/images/procedures/prk/prk_treatment.png"
                 alt="PRK technology"
                 className="rounded-2xl shadow-xl"
               />
