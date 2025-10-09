@@ -15,15 +15,15 @@ export const SUPPORTED_LANGUAGES = {
     deeplSupported: true,
     priority: 'source'
   },
-  es: {
-    code: 'es',
-    name: 'Spanish',
-    nativeName: 'Español',
-    flag: '🇪🇸',
-    country: 'Spain',
+  ja: {
+    code: 'ja',
+    name: 'Japanese',
+    nativeName: '日本語',
+    flag: '🇯🇵',
+    country: 'Japan',
     rtl: false,
     services: { deepl: true, google: true },
-    priority: 'high'
+    priority: 'standard'
   },
   'es-MX': {
     code: 'es-MX',
@@ -156,7 +156,7 @@ i18n
     },
     fallbackLng: {
       'pt-BR': ['pt', 'en'],
-      'es-MX': ['es', 'en'],
+      'es-MX': ['en'],
       'default': ['en']
     },
     debug: false,

@@ -22,13 +22,13 @@ class TranslationService {
       enabled: false,
       apiKey: '',
       baseUrl: 'https://api-free.deepl.com/v2',
-      supportedLanguages: ['es', 'es-MX', 'pt-BR', 'ko', 'zh', 'ar', 'he']
+      supportedLanguages: ['ja', 'es-MX', 'pt-BR', 'ko', 'zh', 'ar', 'he']
     },
     google: {
       enabled: false,
       apiKey: '',
       baseUrl: 'https://translation.googleapis.com/language/translate/v2',
-      supportedLanguages: ['es', 'es-MX', 'pt-BR', 'tl', 'ko', 'vi', 'zh', 'ar', 'hy', 'he']
+      supportedLanguages: ['ja', 'es-MX', 'pt-BR', 'tl', 'ko', 'vi', 'zh', 'ar', 'hy', 'he']
     }
   };
 
@@ -119,7 +119,7 @@ class TranslationService {
     }
 
     const langMap: { [key: string]: string } = {
-      'es': 'ES',
+      'ja': 'JA',
       'es-MX': 'ES',
       'pt-BR': 'PT-BR',
       'ko': 'KO',
@@ -167,7 +167,7 @@ class TranslationService {
     }
 
     const langMap: { [key: string]: string } = {
-      'es': 'es',
+      'ja': 'ja',
       'es-MX': 'es',
       'pt-BR': 'pt',
       'pt': 'pt',
