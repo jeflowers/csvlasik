@@ -111,55 +111,31 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
-              Educational Excellence
+              {t('education.title')}
             </h2>
             <p className="text-xl chopard-text-secondary max-w-3xl mx-auto font-light">
-              A foundation of academic achievement from the nation's most prestigious institutions
+              {t('education.subtitle')}
             </p>
           </div>
 
           <div className="space-y-8">
-            {[
-              {
-                institution: 'Stanford University',
-                years: '1981-1985',
-                degree: 'Bachelor of Science, Chemistry',
-                honors: []
-              },
-              {
-                institution: 'Cornell University Medical College',
-                years: '1985-1989',
-                degree: 'Doctor of Medicine',
-                honors: ['National Medical Fellowship Scholar']
-              },
-              {
-                institution: 'Charles R. Drew University School of Medicine',
-                years: '1989-1993',
-                degree: 'Internship, General Surgery & Residency, Ophthalmology',
-                honors: ['Chief Resident (1992-1993)', 'Intern of the Year', 'National Eye Institute Fellowship Recipient']
-              },
-              {
-                institution: 'USC/Doheny Eye Institute',
-                years: '1993-1995',
-                degree: 'Fellowship, Corneal and Refractive Surgery & External Disease',
-                honors: ['Henry J. Kaiser Family Foundation Merit Award', 'Award of Excellence in Resident Training']
-              }
-            ].map((education, index) => (
-              <div key={index} className="chopard-card p-8 rounded-xl">
+            {['stanford', 'cornell', 'drew', 'usc'].map((key) => (
+              <div key={key} className="chopard-card p-8 rounded-xl">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
                   <div>
-                    <h3 className="text-xl font-serif chopard-text-primary mb-2">{education.institution}</h3>
-                    <p className="chopard-text-accent font-light">{education.years}</p>
+                    <h3 className="text-xl font-serif chopard-text-primary mb-2">{t(`education.institutions.${key}.name`)}</h3>
+                    <p className="chopard-text-accent font-light">{t(`education.institutions.${key}.years`)}</p>
                   </div>
                   <div>
-                    <p className="chopard-text-secondary font-light">{education.degree}</p>
+                    <p className="chopard-text-secondary font-light">{t(`education.institutions.${key}.degree`)}</p>
                   </div>
                   <div>
-                    {education.honors.length > 0 && (
+                    {t(`education.institutions.${key}.honors`, { returnObjects: true, defaultValue: [] }) &&
+                     (t(`education.institutions.${key}.honors`, { returnObjects: true, defaultValue: [] }) as string[]).length > 0 && (
                       <div>
                         <h4 className="font-light chopard-text-primary mb-2">Honors & Awards:</h4>
                         <ul className="space-y-1">
-                          {education.honors.map((honor, honorIndex) => (
+                          {(t(`education.institutions.${key}.honors`, { returnObjects: true }) as string[]).map((honor, honorIndex) => (
                             <li key={honorIndex} className="text-sm chopard-text-secondary font-light flex items-start">
                               <Star className="h-3 w-3 chopard-text-accent mr-2 mt-1 flex-shrink-0" />
                               {honor}
@@ -181,27 +157,21 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
-              The Pacific Mission: Transforming an Entire Region
+              {t('mission.title')}
             </h2>
             <p className="text-xl chopard-text-secondary max-w-3xl mx-auto font-light">
-              From 2010 to present, revolutionizing healthcare accessibility for over 200,000 Pacific residents
+              {t('mission.subtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h3 className="text-2xl font-serif chopard-text-primary mb-6">Revolutionary Healthcare Innovation</h3>
+              <h3 className="text-2xl font-serif chopard-text-primary mb-6">{t('mission.innovation.title')}</h3>
               <p className="text-lg chopard-text-secondary mb-6 font-light leading-relaxed">
-                In 2010, Dr. Flowers embarked on what would become his most impactful healthcare initiative. 
-                Responding to a request from former resident Dr. Anthony Smith, he traveled to Guam to assess 
-                the feasibility of establishing the region's first LASIK center. What he discovered was a 
-                healthcare crisis affecting over 200,000 Pacific residents who had zero access to vision 
-                correction surgery without traveling 13 hours to Hawaii or the Philippines.
+                {t('mission.innovation.description1')}
               </p>
               <p className="text-lg chopard-text-secondary mb-6 font-light leading-relaxed">
-                From 2010 to 2013, Dr. Flowers dedicated himself to designing and establishing a LASIK center 
-                at Island Eye Institute. His efforts culminated in 2013 when he performed the first-ever LASIK 
-                procedure in the Pacific region, instantly transforming healthcare accessibility for an entire population.
+                {t('mission.innovation.description2')}
               </p>
             </div>
             <div className="relative">
@@ -233,24 +203,24 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                number: '600+',
-                label: 'LASIK Procedures in Guam',
-                description: 'Successful surgeries performed'
+                number: t('mission.stats.procedures.number'),
+                label: t('mission.stats.procedures.label'),
+                description: t('mission.stats.procedures.description')
               },
               {
-                number: '200,000+',
-                label: 'Residents Served',
-                description: 'Given access to advanced eye care'
+                number: t('mission.stats.residents.number'),
+                label: t('mission.stats.residents.label'),
+                description: t('mission.stats.residents.description')
               },
               {
-                number: '$3,000+',
-                label: 'Travel Costs Saved',
-                description: 'Average savings per patient'
+                number: t('mission.stats.savings.number'),
+                label: t('mission.stats.savings.label'),
+                description: t('mission.stats.savings.description')
               },
               {
-                number: '13 Hours',
-                label: 'Flight Time Eliminated',
-                description: 'For each patient procedure'
+                number: t('mission.stats.time.number'),
+                label: t('mission.stats.time.label'),
+                description: t('mission.stats.time.description')
               }
             ].map((stat, index) => (
               <div key={index} className="text-center chopard-card p-6 rounded-xl">
@@ -276,22 +246,13 @@ const About = () => {
             </div>
             <div>
               <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-6">
-                Telemedicine Pioneer
+                {t('telemedicine.title')}
               </h2>
               <p className="text-lg chopard-text-secondary mb-6 font-light leading-relaxed">
-                Dr. Flowers' innovation extends beyond surgical excellence. Recognizing Guam's high diabetes 
-                prevalence and genetic predisposition, he secured funding for a groundbreaking telemedicine 
-                initiative. This teleretinopathy pilot project involved:
+                {t('telemedicine.description')}
               </p>
               <div className="space-y-4">
-                {[
-                  'Deploying state-of-the-art retinal imaging cameras in primary care clinics throughout Guam',
-                  'Implementing secure hybrid-cloud infrastructure for HIPAA-compliant image storage and real-time analysis',
-                  'Leveraging artificial intelligence and machine learning algorithms for automated detection and grading of diabetic retinopathy',
-                  'Establishing seamless teleconsultation pathways connecting Guam clinics with USC retinal specialists',
-                  'Enabling early detection and intervention for sight-threatening diabetic retinopathy before vision loss occurs',
-                  'Developing comprehensive training programs to certify local physicians in advanced retinal imaging and diagnostic protocols'
-                ].map((item, index) => (
+                {(t('telemedicine.features', { returnObjects: true }) as string[]).map((item, index) => (
                   <div key={index} className="flex items-start">
                     <Eye className="h-5 w-5 chopard-text-accent mr-3 mt-0.5 flex-shrink-0" />
                     <span className="chopard-text-secondary font-light">{item}</span>
@@ -308,24 +269,18 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
-              Clinical Excellence & Expertise
+              {t('expertise.title')}
             </h2>
+            <p className="text-xl chopard-text-secondary max-w-3xl mx-auto font-light">
+              {t('expertise.subtitle')}
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="chopard-card p-8 rounded-xl">
-              <h3 className="text-2xl font-serif chopard-text-accent mb-6">Surgical Specializations</h3>
+              <h3 className="text-2xl font-serif chopard-text-accent mb-6">{t('expertise.surgical.title')}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {[
-                  'Laser-Assisted In Situ Keratomileusis (LASIK)',
-                  'Advanced Cataract Surgery',
-                  'Corneal Transplantation (including DSAEK)',
-                  'Visian Implantable Collamer Lens (ICL)',
-                  'Photorefractive Keratectomy (PRK)',
-                  'Intacs Implantation for Keratoconus',
-                  'Pterygium Surgery',
-                  'Collagen Cross-Linking'
-                ].map((procedure, index) => (
+                {(t('expertise.surgical.procedures', { returnObjects: true }) as string[]).map((procedure, index) => (
                   <div key={index} className="flex items-start">
                     <div className="w-2 h-2 chopard-accent rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span className="text-sm chopard-text-secondary font-light">{procedure}</span>
@@ -335,14 +290,9 @@ const About = () => {
             </div>
 
             <div className="chopard-card p-8 rounded-xl">
-              <h3 className="text-2xl font-serif chopard-text-accent mb-6">Research Priorities</h3>
+              <h3 className="text-2xl font-serif chopard-text-accent mb-6">{t('expertise.research.title')}</h3>
               <div className="space-y-4">
-                {[
-                  'Visual outcomes optimization in LASIK and cataract surgery',
-                  'Sports vision training and athletic performance enhancement',
-                  'Telemedicine applications in ophthalmology',
-                  'Population-based diabetic retinopathy studies'
-                ].map((research, index) => (
+                {(t('expertise.research.areas', { returnObjects: true }) as string[]).map((research, index) => (
                   <div key={index} className="flex items-start">
                     <BookOpen className="h-5 w-5 chopard-text-accent mr-3 mt-0.5 flex-shrink-0" />
                     <span className="chopard-text-secondary font-light">{research}</span>
@@ -364,25 +314,12 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
-              Recognition & Awards
+              {t('awards.title')}
             </h2>
-            <p className="text-xl chopard-text-secondary max-w-3xl mx-auto font-light">
-              National recognition for innovation, excellence, and humanitarian impact
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              'America\'s Top Ophthalmologists - Consumers\' Research Council of America (2000)',
-              'Computer World Smithsonian Laureate - The Face of Innovation (1998)',
-              'National Medical Fellowship Scholar - Cornell University Medical College',
-              'Henry J. Kaiser Family Foundation Merit Award',
-              'Award of Excellence - RCMI/Charles R. Drew University (2000)',
-              'Sara Stivelman Memorial Award - LA County Quality & Productivity Commission (1999)',
-              'Masters In Medicine Honoree - Recycling Black Dollars Communications (1999)',
-              'Innovator\'s Award - Los Angeles County Department of Health Services (1998)',
-              'Top LASIK Surgeon - San Diego Magazine'
-            ].map((award, index) => (
+            {(t('awards.list', { returnObjects: true }) as string[]).map((award, index) => (
               <div key={index} className="chopard-card p-6 rounded-xl">
                 <div className="flex items-start">
                   <Award className="h-5 w-5 chopard-text-accent mr-3 mt-1 flex-shrink-0" />
@@ -398,9 +335,9 @@ const About = () => {
       <section className="py-16 chopard-gradient text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-serif mb-4">The Dual Mission Model</h2>
+            <h2 className="text-3xl lg:text-4xl font-serif mb-4">{t('dualMission.title')}</h2>
             <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
-              A unique practice model serving as a blueprint for addressing healthcare disparities
+              {t('dualMission.subtitle')}
             </p>
           </div>
 
@@ -408,29 +345,16 @@ const About = () => {
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20">
               <div className="flex items-center mb-4">
                 <MapPin className="h-6 w-6 mr-3" />
-                <h3 className="text-2xl font-serif">Los Angeles Practice</h3>
+                <h3 className="text-2xl font-serif">{t('dualMission.losAngeles.title')}</h3>
               </div>
-              <ul className="space-y-3 text-white/70 font-light">
-                <li>• State-of-the-art facility</li>
-                <li>• Comprehensive vision correction services</li>
-                <li>• Revolutionary patient experience</li>
-                <li>• Advanced technology integration</li>
-                <li>• Residency program leadership</li>
-                <li>• Research and innovation center</li>
-              </ul>
+              <p className="text-white/70 font-light">{t('dualMission.losAngeles.description')}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20">
               <div className="flex items-center mb-4">
                 <Users className="h-6 w-6 mr-3" />
-                <h3 className="text-2xl font-serif">Pacific Mission</h3>
+                <h3 className="text-2xl font-serif">{t('dualMission.guam.title')}</h3>
               </div>
-              <ul className="space-y-3 text-white/70 font-light">
-                <li>• Quarterly surgical missions to Guam</li>
-                <li>• Mobile surgical capabilities</li>
-                <li>• Local physician training and mentorship</li>
-                <li>• Telemedicine infrastructure development</li>
-                <li>• Sustainable healthcare system building</li>
-              </ul>
+              <p className="text-white/70 font-light">{t('dualMission.guam.description')}</p>
             </div>
           </div>
 
@@ -451,25 +375,16 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
-              Impact by the Numbers
+              {t('impact.title')}
             </h2>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {[
-              { number: '30,000+', label: 'Total Procedures' },
-              { number: '600+', label: 'Guam Procedures' },
-              { number: '200,000+', label: 'Pacific Residents Served' },
-              { number: '98%', label: 'Patient Satisfaction' },
-              { number: '20+', label: 'Years Experience' },
-              { number: '15+', label: 'Years Pacific Service' },
-              { number: '12', label: 'Pacific Islands' },
-              { number: '$1M+', label: 'Research Funding' },
-              { number: '4', label: 'Annual Guam Missions' }
-            ].map((stat, index) => (
+            {(t('impact.stats', { returnObjects: true }) as Array<{number: string, label: string, description: string}>).map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl font-serif chopard-text-accent mb-2">{stat.number}</div>
                 <p className="chopard-text-secondary font-light text-sm">{stat.label}</p>
+                {stat.description && <p className="chopard-text-secondary font-light text-xs mt-1">{stat.description}</p>}
               </div>
             ))}
           </div>
@@ -481,18 +396,20 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-8">
-              Patient Care Philosophy
+              {t('philosophy.title')}
             </h2>
             <div className="chopard-card p-12 rounded-xl max-w-4xl mx-auto">
               <blockquote className="text-2xl italic chopard-text-secondary text-center leading-relaxed font-light mb-6">
-                "I treat every patient as though I am caring for a family member. Establishing a personal rapport is a priority, so open, honest and transparent communication can take place about every aspect of their visual condition and the care interventions."
+                "{t('philosophy.quote')}"
               </blockquote>
-              <p className="chopard-text-secondary font-light text-center leading-relaxed">
-                This philosophy extends beyond individual patient care to encompass entire communities. 
-                Dr. Flowers believes that healthcare should reach every corner of the world, and that 
-                innovation isn't just about technology—it's about finding ways to bring life-changing 
-                treatments to those who need them most, regardless of location or circumstances.
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                {(t('philosophy.principles', { returnObjects: true }) as Array<{title: string, description: string}>).map((principle, index) => (
+                  <div key={index} className="text-left">
+                    <h4 className="font-serif chopard-text-primary mb-2">{principle.title}</h4>
+                    <p className="chopard-text-secondary text-sm font-light">{principle.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
