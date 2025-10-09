@@ -116,5 +116,423 @@
     "subtitle": "احجز استشارتك المجانية مع الدكتور فلاورز واكتشف أي إجراء ثوري مثالي لأسلوب حياتك واحتياجات رؤيتك.",
     "schedule": "احجز استشارة مجانية",
     "testimonials": "شاهد الشهادات"
+  },
+  "lasik": {
+    "hero": {
+      "badge": "Opción Más Popular - Resultados Revolucionarios",
+      "title": "Cirugía LASIK ClearSight",
+      "subtitle": "Experimente la técnica LASIK revolucionaria que el Dr. Flowers desarrolló en la región del Pacífico, ahora disponible en ClearSight en Los Ángeles. Recuperación rápida, excelentes resultados y claridad que cambia vidas le esperan.",
+      "stats": {
+        "procedureTime": "15 min",
+        "recoveryTime": "1-2 días",
+        "successRate": "98%"
+      }
+    },
+    "technology": {
+      "title": "Tecnología LASIK Revolucionaria",
+      "description": "LASIK (Queratomileusis In Situ Asistida por Láser) es el procedimiento de corrección de visión más avanzado y popular del mundo. El Dr. Flowers utiliza tecnología láser de femtosegundo de última generación para crear un colgajo corneal preciso, luego remodela la córnea subyacente con un láser excimer para corregir errores refractivos.",
+      "features": {
+        "bladeFree": {
+          "title": "Tecnología Sin Cuchilla",
+          "description": "El láser de femtosegundo avanzado crea colgajos precisos"
+        },
+        "wavefront": {
+          "title": "Tratamiento Guiado por Frente de Onda",
+          "description": "Corrección personalizada para su visión única"
+        },
+        "recovery": {
+          "title": "Recuperación Visual Rápida",
+          "description": "La mayoría de los pacientes ven claramente en 24 horas"
+        }
+      }
+    },
+    "benefits": {
+      "title": "Beneficios que Cambian la Vida",
+      "subtitle": "Descubra por qué LASIK es la opción preferida para la corrección de visión",
+      "items": {
+        "clarity": {
+          "title": "Claridad Instantánea",
+          "description": "Vea claramente sin lentes o contactos inmediatamente después de la cirugía"
+        },
+        "quick": {
+          "title": "Procedimiento Rápido",
+          "description": "Solo 15 minutos en total, con tiempo láser real bajo 60 segundos por ojo"
+        },
+        "safety": {
+          "title": "Seguridad Comprobada",
+          "description": "Aprobado por la FDA con más de 20 años de datos de seguridad y millones de procedimientos"
+        },
+        "satisfaction": {
+          "title": "Satisfacción del Paciente",
+          "description": "Más del 98% de los pacientes del Dr. Flowers recomendarían LASIK a amigos"
+        },
+        "lasting": {
+          "title": "Resultados Duraderos",
+          "description": "Corrección de visión permanente que dura décadas"
+        },
+        "lifestyle": {
+          "title": "Estilo de Vida Activo",
+          "description": "Libertad para nadar, hacer ejercicio y vivir sin restricciones visuales"
+        }
+      }
+    },
+    "process": {
+      "title": "El Proceso LASIK",
+      "subtitle": "El enfoque revolucionario del Dr. Flowers garantiza comodidad y precisión en cada paso",
+      "steps": {
+        "examination": {
+          "title": "Examen Ocular Completo",
+          "description": "Pruebas diagnósticas avanzadas que incluyen mapeo corneal, análisis de frente de onda y medición de pupila para crear su plan de tratamiento personalizado."
+        },
+        "flap": {
+          "title": "Creación del Colgajo Corneal",
+          "description": "Usando el láser de femtosegundo revolucionario, el Dr. Flowers crea un colgajo fino y preciso en la córnea. Este enfoque sin cuchilla garantiza máxima seguridad y precisión."
+        },
+        "correction": {
+          "title": "Corrección de Visión con Láser",
+          "description": "El láser excimer remodela la córnea según su prescripción única. El seguimiento ocular avanzado garantiza un tratamiento preciso incluso con pequeños movimientos oculares."
+        },
+        "recovery": {
+          "title": "Recuperación y Seguimiento",
+          "description": "El colgajo corneal se reposiciona naturalmente sin suturas. La mayoría de los pacientes experimentan mejora visual inmediata con curación completa en días."
+        }
+      }
+    },
+    "candidacy": {
+      "title": "¿Soy Candidato para LASIK?",
+      "subtitle": "LASIK puede corregir una amplia gama de problemas de visión para candidatos calificados",
+      "ideal": {
+        "title": "Candidatos Ideales",
+        "items": [
+          "18 años o más con prescripción estable",
+          "Miopía hasta -12.00 dioptrías",
+          "Hipermetropía hasta +6.00 dioptrías",
+          "Astigmatismo hasta 6.00 dioptrías",
+          "Córneas saludables con grosor adecuado",
+          "Sin síndrome de ojo seco severo",
+          "Expectativas realistas sobre los resultados"
+        ]
+      },
+      "notSuitable": {
+        "title": "Puede No Ser Adecuado",
+        "items": [
+          "Embarazo o madres lactantes",
+          "Prescripción de visión inestable",
+          "Condiciones autoinmunes severas",
+          "Córneas muy delgadas",
+          "Ciertas enfermedades o condiciones oculares",
+          "Expectativas poco realistas",
+          "Infecciones oculares activas o inflamación"
+        ]
+      },
+      "evaluation": "La única manera de estar seguro es a través de una evaluación completa con el Dr. Flowers."
+    },
+    "testimonials": {
+      "title": "Historias de Éxito LASIK",
+      "subtitle": "Pacientes reales, resultados reales con el LASIK revolucionario del Dr. Flowers"
+    },
+    "cta": {
+      "title": "¿Listo para una Visión Revolucionaria?",
+      "subtitle": "Únase a los miles que han confiado al Dr. Flowers con su cirugía LASIK. Experimente la libertad de visión perfecta con técnicas revolucionarias comprobadas.",
+      "schedule": "Agendar Consulta LASIK Gratuita",
+      "results": "Ver Más Resultados"
+    }
+  },
+  "prk": {
+    "hero": {
+      "badge": "Alternativa de Tratamiento Superficial - Resultados Comprobados",
+      "title": "Cirugía PRK ClearSight",
+      "subtitle": "Experimente PRK (Queratectomía Fotorrefractiva), el procedimiento original de corrección de visión con láser. Perfecto para pacientes con córneas delgadas o estilos de vida activos, ofreciendo excelente estabilidad a largo plazo.",
+      "stats": {
+        "procedureTime": "15 min",
+        "recoveryTime": "3-5 días",
+        "successRate": "96%"
+      }
+    },
+    "technology": {
+      "title": "La Corrección de Visión con Láser Original",
+      "description": "PRK (Queratectomía Fotorrefractiva) fue el primer procedimiento de corrección de visión con láser y sigue siendo el estándar de oro para ciertos pacientes. A diferencia de LASIK, PRK trata directamente la superficie de la córnea, lo que lo hace ideal para pacientes con córneas delgadas o aquellos en profesiones de alto impacto.",
+      "features": {
+        "noFlap": {
+          "title": "Sin Colgajo Corneal",
+          "description": "El tratamiento de superficie elimina complicaciones relacionadas con colgajos"
+        },
+        "thinCorneas": {
+          "title": "Adecuado para Córneas Delgadas",
+          "description": "Opción perfecta cuando no se recomienda LASIK"
+        },
+        "stability": {
+          "title": "Excelente Estabilidad a Largo Plazo",
+          "description": "Trayectoria comprobada con décadas de datos"
+        }
+      }
+    },
+    "advantages": {
+      "title": "¿Por Qué Elegir PRK?",
+      "subtitle": "Entendiendo las ventajas únicas de PRK sobre otros procedimientos",
+      "prk": {
+        "title": "Ventajas de PRK",
+        "items": [
+          "Sin riesgo de complicaciones del colgajo",
+          "Adecuado para córneas delgadas",
+          "Ideal para deportes de contacto y militares",
+          "Excelente estabilidad a largo plazo",
+          "Preserva más tejido corneal",
+          "Puede corregir prescripciones más altas",
+          "Sin riesgo de ojos secos por colgajo"
+        ]
+      },
+      "lasik": {
+        "title": "Comparación LASIK",
+        "items": [
+          "Requiere creación de colgajo corneal",
+          "Necesita grosor corneal adecuado",
+          "Recuperación inicial más rápida",
+          "Mejora de visión inmediata",
+          "Menos molestias post-operatorias",
+          "Procedimiento más popular",
+          "Retorno rápido a actividades"
+        ]
+      }
+    },
+    "recovery": {
+      "title": "Cronograma de Recuperación PRK",
+      "subtitle": "Qué esperar durante su viaje de curación",
+      "phases": {
+        "initial": {
+          "period": "Días 1-3",
+          "title": "Curación Inicial",
+          "symptoms": [
+            "Molestias leves",
+            "Sensibilidad a la luz",
+            "Lagrimeo",
+            "Visión borrosa"
+          ],
+          "care": [
+            "Use gotas recetadas",
+            "Use gafas de sol",
+            "Descanse ojos frecuentemente",
+            "Evite pantallas"
+          ]
+        },
+        "clearing": {
+          "period": "Días 4-7",
+          "title": "Aclaración de Visión",
+          "symptoms": [
+            "Mejorando comodidad",
+            "Visión más clara",
+            "Menos sensibilidad",
+            "Retiro de lente de contacto"
+          ],
+          "care": [
+            "Continúe medicamentos",
+            "Cita de seguimiento",
+            "Retorno gradual a actividades",
+            "Proteja ojos"
+          ]
+        },
+        "stabilization": {
+          "period": "Semanas 2-4",
+          "title": "Estabilización",
+          "symptoms": [
+            "Visión estable",
+            "Síntomas mínimos",
+            "Actividades normales",
+            "Vista clara"
+          ],
+          "care": [
+            "Chequeos regulares",
+            "Protección UV",
+            "Rutina normal",
+            "Curación final"
+          ]
+        }
+      }
+    },
+    "candidates": {
+      "title": "¿Quién se Beneficia Más de PRK?",
+      "subtitle": "PRK suele ser la opción preferida para perfiles específicos de pacientes",
+      "active": {
+        "title": "Profesionales Activos",
+        "description": "Personal militar, policía, bomberos y atletas que enfrentan posible trauma ocular",
+        "benefits": [
+          "Sin riesgo de desplazamiento de colgajo",
+          "Seguro para deportes de contacto",
+          "Actividades de alto impacto"
+        ]
+      },
+      "thin": {
+        "title": "Córneas Delgadas",
+        "description": "Pacientes cuyas córneas son muy delgadas para LASIK o que tienen formas corneales irregulares",
+        "benefits": [
+          "Preserva tejido corneal",
+          "Trata astigmatismo irregular",
+          "Seguro para córneas delgadas"
+        ]
+      },
+      "high": {
+        "title": "Prescripciones Altas",
+        "description": "Pacientes con grados más altos de miopía, hipermetropía o astigmatismo",
+        "benefits": [
+          "Trata miopía severa",
+          "Corrige astigmatismo alto",
+          "Estabilidad a largo plazo"
+        ]
+      }
+    },
+    "cta": {
+      "title": "¿Es PRK Adecuado para Usted?",
+      "subtitle": "Descubra si PRK es la solución perfecta para sus necesidades de visión y estilo de vida. El Dr. Flowers proporcionará orientación experta y recomendaciones personalizadas.",
+      "schedule": "Agendar Consulta PRK",
+      "compare": "Comparar Todos los Procedimientos"
+    }
+  },
+  "icl": {
+    "hero": {
+      "badge": "Solución Implantable - Resultados Reversibles",
+      "title": "Cirugía ICL ClearSight",
+      "subtitle": "Experimente ICL (Lente de Contacto Implantable), la solución permanente revolucionaria para prescripciones altas. Reversible, protectora y ofreciendo calidad de visión superior para pacientes más allá de los límites láser tradicionales.",
+      "stats": {
+        "procedureTime": "30 min",
+        "recoveryTime": "1-3 días",
+        "successRate": "99%"
+      }
+    },
+    "technology": {
+      "title": "Tecnología Implantable Revolucionaria",
+      "description": "ICL (Lente de Contacto Implantable) es una cirugía refractiva revolucionaria que coloca un lente suave y biocompatible dentro de su ojo, entre el iris y el lente natural. Esta solución permanente corrige la visión sin eliminar ningún tejido corneal.",
+      "features": {
+        "reversible": {
+          "title": "Procedimiento Reversible",
+          "description": "ICL puede ser removido o reemplazado si es necesario"
+        },
+        "noAlteration": {
+          "title": "Sin Alteración Corneal",
+          "description": "Preserva completamente la estructura corneal natural"
+        },
+        "nightVision": {
+          "title": "Visión Nocturna Superior",
+          "description": "Calidad de visión excepcional en toda iluminación"
+        }
+      }
+    },
+    "advantages": {
+      "title": "Ventajas Únicas de ICL",
+      "subtitle": "Descubra por qué ICL es la opción preferida para prescripciones altas y pacientes exigentes",
+      "items": {
+        "reversible": {
+          "title": "Reversible",
+          "description": "A diferencia de procedimientos láser, ICL puede ser removido o reemplazado si su visión cambia"
+        },
+        "quality": {
+          "title": "Calidad de Visión Superior",
+          "description": "Claridad y contraste excepcionales, especialmente en condiciones de poca luz"
+        },
+        "protection": {
+          "title": "Protección UV",
+          "description": "Filtro UV incorporado protege su retina de rayos ultravioleta dañinos"
+        },
+        "preservation": {
+          "title": "Sin Cambios Corneales",
+          "description": "Preserva la estructura corneal natural y propiedades biomecánicas"
+        },
+        "recovery": {
+          "title": "Recuperación Rápida",
+          "description": "La mayoría de los pacientes regresan a actividades normales en 24-48 horas"
+        },
+        "prescriptions": {
+          "title": "Prescripciones Altas",
+          "description": "Corrige miopía severa más allá de los límites de cirugía láser"
+        }
+      }
+    },
+    "comparison": {
+      "title": "ICL vs Cirugía Láser",
+      "subtitle": "Entendiendo cuándo ICL es la opción superior",
+      "icl": {
+        "title": "Ventajas de ICL",
+        "items": [
+          "Corrige prescripciones hasta -20.00 D",
+          "Procedimiento completamente reversible",
+          "Sin complicaciones de ojo seco",
+          "Calidad de visión nocturna superior",
+          "Preserva estructura corneal natural",
+          "Protección UV incorporada",
+          "No requiere curación corneal"
+        ]
+      },
+      "laser": {
+        "title": "Limitaciones Láser",
+        "items": [
+          "Rango de prescripción limitado",
+          "Cambios corneales permanentes",
+          "Potencial de ojos secos",
+          "Puede afectar visión nocturna",
+          "Requiere grosor corneal adecuado",
+          "No puede corregir miopía extrema",
+          "Eliminación de tejido irreversible"
+        ]
+      }
+    },
+    "candidates": {
+      "title": "¿Quién se Beneficia Más de ICL?",
+      "subtitle": "ICL es la solución ideal para necesidades específicas de pacientes y rangos de prescripción",
+      "high": {
+        "title": "Prescripciones Altas",
+        "description": "Pacientes con miopía severa (-3.00 a -20.00 D) o hipermetropía (+0.50 a +10.00 D)",
+        "benefits": [
+          "Más allá de límites láser",
+          "Corrección excepcional",
+          "Resultados estables"
+        ]
+      },
+      "thin": {
+        "title": "Córneas Delgadas",
+        "description": "Cuando el grosor corneal es insuficiente para procedimientos láser",
+        "benefits": [
+          "Sin eliminación de tejido corneal",
+          "Preserva estructura ocular",
+          "Alternativa segura"
+        ]
+      },
+      "quality": {
+        "title": "Buscadores de Calidad",
+        "description": "Pacientes que priorizan calidad de visión superior y reversibilidad",
+        "benefits": [
+          "Calidad de visión premium",
+          "Opción reversible",
+          "Protección UV"
+        ]
+      },
+      "requirements": {
+        "title": "Requisitos Pre-Procedimiento",
+        "qualifying": {
+          "title": "Factores Calificantes:",
+          "items": [
+            "Edad 21-45 para resultados óptimos",
+            "Prescripción estable por 1+ años",
+            "Profundidad de cámara anterior adecuada",
+            "Endotelio corneal saludable",
+            "Sin enfermedad ocular activa"
+          ]
+        },
+        "disqualifying": {
+          "title": "Condiciones Descalificantes:",
+          "items": [
+            "Glaucoma o presión ocular alta",
+            "Cirugías oculares previas",
+            "Cámara anterior poco profunda",
+            "Inflamación ocular activa",
+            "Expectativas poco realistas"
+          ]
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Es ICL Adecuado para Su Alta Prescripción?",
+      "subtitle": "Descubra si ICL es la solución reversible perfecta para sus necesidades de visión. Programe una evaluación completa con el Dr. Flowers para explorar esta opción revolucionaria.",
+      "schedule": "Agendar Consulta ICL",
+      "compare": "Comparar Todos los Procedimientos"
+    }
   }
 }
