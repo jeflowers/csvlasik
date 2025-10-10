@@ -33,45 +33,12 @@ import Technology from './pages/Technology';
 import Financing from './pages/Financing';
 import Contact from './pages/Contact';
 import Media from './pages/Media';
+import { useAdmin } from './hooks/useAdmin';
 
-// Admin authentication hook
-function useAuth() {
-  const [user, setUser] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
 
-  React.useEffect(() => {
-    const token = localStorage.getItem('cms_token');
-    if (token) {
-      try {
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        if (payload.exp > Date.now() / 1000) {
-          setUser(payload);
-        } else {
-          localStorage.removeItem('cms_token');
-        }
-      } catch (error) {
-        localStorage.removeItem('cms_token');
-      }
-    }
-    setLoading(false);
-  }, []);
-
-  const login = (userData: any) => {
-    setUser(userData);
-  };
-
-  const logout = () => {
-    setUser(null);
-    localStorage.removeItem('cms_token');
-  };
-
-  return { user, login, logout, loading };
-}
-
-// Protected route component
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const { user, loading } = useAuth();
-  
+  const { user, loading } = useAdmin();
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -79,12 +46,12 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
       </div>
     );
   }
-  
+
   return user ? <>{children}</> : <Navigate to="/admin/login" />;
 }
 
 function App() {
-  const { user, login, logout, loading } = useAuth();
+  const { user, loading } = useAdmin();
 
   if (loading) {
     return (
@@ -98,11 +65,11 @@ function App() {
     <Routes>
       {/* Admin Routes */}
       <Route path="/admin/login" element={
-        user ? <Navigate to="/admin" /> : <LoginForm onLogin={login} />
+        user ? <Navigate to="/admin" /> : <LoginForm />
       } />
       <Route path="/admin" element={
         <ProtectedRoute>
-          <AdminLayout user={user} onLogout={logout} />
+          <AdminLayout />
         </ProtectedRoute>
       }>
         <Route index element={<Dashboard />} />

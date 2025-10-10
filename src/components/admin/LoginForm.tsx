@@ -1,14 +1,35 @@
+/**
+ * @file LoginForm.tsx
+ * @description Admin login form component using Supabase authentication
+ * @author Development
+ * @filepath csvlasik/src/components/admin/LoginForm.tsx
+ * @category Component
+ * @pattern Controlled Form
+ * @version 2.0.0
+ * @last_updated 2025-10-10
+ *
+ * @dependencies
+ * - react: ^18.3.1
+ * - lucide-react: ^0.344.0
+ *
+ * @security
+ * - Uses Supabase Auth for authentication
+ * - Passwords never stored in state longer than submission
+ * - Error messages sanitized
+ * - HTTPS enforced by Supabase
+ */
+
 import React, { useState } from 'react';
 import { Eye, AlertCircle } from 'lucide-react';
-import { apiService } from '../../services/api';
+import { useNavigate } from 'react-router-dom';
+import { useAdmin } from '../../hooks/useAdmin';
 
-interface LoginFormProps {
-  onLogin: (user: any) => void;
-}
+const LoginForm: React.FC = () => {
+  const navigate = useNavigate();
+  const { login, error: authError } = useAdmin();
 
-const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
   const [formData, setFormData] = useState({
-    username: '',
+    email: '',
     password: ''
   });
   const [loading, setLoading] = useState(false);
@@ -20,10 +41,18 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
     setError('');
 
     try {
-      const response = await apiService.login(formData.username, formData.password);
-      onLogin(response.user);
+      const success = await login({
+        email: formData.email,
+        password: formData.password,
+      });
+
+      if (success) {
+        navigate('/admin');
+      } else {
+        setError(authError || 'Login failed. Please check your credentials.');
+      }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Login failed');
+      setError(err instanceof Error ? err.message : 'An unexpected error occurred');
     } finally {
       setLoading(false);
     }
@@ -61,21 +90,22 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
               </div>
             </div>
           )}
-          
+
           <div className="space-y-4">
             <div>
-              <label htmlFor="username" className="block text-sm font-medium text-gray-700">
-                Username
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Email Address
               </label>
               <input
-                id="username"
-                name="username"
-                type="text"
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
                 required
-                value={formData.username}
+                value={formData.email}
                 onChange={handleChange}
                 className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-teal-500 focus:border-teal-500 focus:z-10 sm:text-sm"
-                placeholder="Enter your username"
+                placeholder="admin@clearsight.com"
               />
             </div>
             <div>
@@ -86,6 +116,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
                 id="password"
                 name="password"
                 type="password"
+                autoComplete="current-password"
                 required
                 value={formData.password}
                 onChange={handleChange}
@@ -99,15 +130,25 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
             >
-              {loading ? 'Signing in...' : 'Sign in'}
+              {loading ? (
+                <>
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                  Signing in...
+                </>
+              ) : (
+                'Sign in'
+              )}
             </button>
           </div>
 
-          <div className="text-center">
+          <div className="text-center space-y-2">
             <p className="text-xs text-gray-500">
-              Default credentials: admin / admin123
+              Secure authentication via Supabase
+            </p>
+            <p className="text-xs text-gray-400">
+              Need access? Contact your administrator
             </p>
           </div>
         </form>

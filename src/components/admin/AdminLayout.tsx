@@ -1,26 +1,24 @@
 import React, { useState } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { 
-  LayoutDashboard, 
-  MessageSquare, 
-  FileText, 
-  Image, 
-  BarChart3, 
-  Users, 
+import {
+  LayoutDashboard,
+  MessageSquare,
+  FileText,
+  Image,
+  BarChart3,
+  Users,
   Settings,
   LogOut,
   Menu,
   X,
   Eye,
-  Globe
+  Globe,
+  Shield
 } from 'lucide-react';
+import { useAdmin } from '../../hooks/useAdmin';
 
-interface AdminLayoutProps {
-  user: any;
-  onLogout: () => void;
-}
-
-const AdminLayout: React.FC<AdminLayoutProps> = ({ user, onLogout }) => {
+const AdminLayout: React.FC = () => {
+  const { user, logout } = useAdmin();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -37,8 +35,8 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ user, onLogout }) => {
     { name: 'Settings', href: '/admin/settings', icon: Settings },
   ];
 
-  const handleLogout = () => {
-    onLogout();
+  const handleLogout = async () => {
+    await logout();
     navigate('/admin/login');
   };
 
@@ -113,12 +111,12 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ user, onLogout }) => {
               <div className="flex-shrink-0">
                 <div className="h-8 w-8 rounded-full bg-teal-600 flex items-center justify-center">
                   <span className="text-sm font-medium text-white">
-                    {user?.username?.charAt(0).toUpperCase()}
+                    {user?.name?.charAt(0).toUpperCase()}
                   </span>
                 </div>
               </div>
               <div className="ml-3">
-                <p className="text-sm font-medium text-gray-700">{user?.username}</p>
+                <p className="text-sm font-medium text-gray-700">{user?.name}</p>
                 <p className="text-xs text-gray-500 capitalize">{user?.role}</p>
               </div>
               <button
