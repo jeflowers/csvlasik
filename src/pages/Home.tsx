@@ -84,11 +84,6 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-10">
               <div className="space-y-6">
-                <div className="inline-flex items-center chopard-glass px-6 py-3 rounded-full text-sm font-light chopard-text-accent border chopard-border">
-                  <Award className="h-4 w-4 mr-3 chopard-text-accent" />
-                  {t('hero.badge')}
-                </div>
-
                 <h1 className="text-5xl lg:text-6xl font-serif chopard-text-primary leading-tight">
                   {t('hero.title')}
                   <br />
@@ -100,6 +95,11 @@ const Home = () => {
                 <p className="text-xl chopard-text-secondary leading-relaxed font-light">
                   {t('hero.subtitle')}
                 </p>
+
+                <div className="inline-flex items-center chopard-glass px-6 py-3 rounded-full text-base font-medium chopard-text-accent border-2 chopard-border">
+                  <Award className="h-5 w-5 mr-3 chopard-text-accent" />
+                  {t('hero.badge')}
+                </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6 mt-10">

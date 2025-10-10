@@ -16,17 +16,17 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center chopard-glass px-6 py-3 rounded-full text-sm font-light chopard-text-accent border chopard-border mb-6">
-                <Award className="h-4 w-4 mr-3 chopard-text-accent" />
-                {t('hero.badge')}
-              </div>
               <h1 className="text-4xl lg:text-5xl font-serif chopard-text-primary mb-6 leading-tight">
                 {t('hero.title')}<br />
                 <span className="text-3xl chopard-text-accent">{t('hero.subtitle')}</span>
               </h1>
-              <p className="text-xl chopard-text-secondary mb-8 leading-relaxed font-light">
+              <p className="text-xl chopard-text-secondary mb-6 leading-relaxed font-light">
                 {t('hero.description')}
               </p>
+              <div className="inline-flex items-center chopard-glass px-6 py-3 rounded-full text-base font-medium chopard-text-accent border-2 chopard-border mb-8">
+                <Award className="h-5 w-5 mr-3 chopard-text-accent" />
+                {t('hero.badge')}
+              </div>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link
                   to="/contact"

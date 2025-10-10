@@ -102,23 +102,25 @@ const Procedures = () => {
       {/* Hero Section */}
       <section className="py-16 chopard-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center chopard-glass px-6 py-3 rounded-full text-sm font-light chopard-text-accent border chopard-border mb-6">
-            <Eye className="h-4 w-4 mr-3 chopard-text-accent" />
-            {t('hero.badge')}
-          </div>
           <h1 className="text-4xl lg:text-5xl font-serif chopard-text-primary mb-6 leading-tight">
             {t('hero.title')}
           </h1>
           <p className="text-xl chopard-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed font-light">
             {t('hero.subtitle')}
           </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center chopard-button px-8 py-3 rounded-lg transition-all duration-300"
-          >
-            {t('scheduleConsultation', { ns: 'common' })}
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
+          <div className="inline-flex items-center chopard-glass px-6 py-3 rounded-full text-base font-medium chopard-text-accent border-2 chopard-border mb-8">
+            <Eye className="h-5 w-5 mr-3 chopard-text-accent" />
+            {t('hero.badge')}
+          </div>
+          <div>
+            <Link
+              to="/contact"
+              className="inline-flex items-center chopard-button px-8 py-3 rounded-lg transition-all duration-300"
+            >
+              {t('scheduleConsultation', { ns: 'common' })}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
         </div>
       </section>
 

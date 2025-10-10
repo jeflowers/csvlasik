@@ -75,16 +75,16 @@ const Media = () => {
       <section className="chopard-hero py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center chopard-glass px-6 py-3 rounded-full text-sm font-light chopard-text-accent border chopard-border mb-6">
-              <BookOpen className="h-4 w-4 mr-3 chopard-text-accent" />
-              {t('hero.badge')}
-            </div>
             <h1 className="text-4xl lg:text-5xl font-serif chopard-text-primary mb-6 leading-tight">
               <span className="chopard-text-accent">ClearSight</span> {t('hero.title')}
             </h1>
-            <p className="text-xl chopard-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed font-light">
+            <p className="text-xl chopard-text-secondary max-w-3xl mx-auto mb-6 leading-relaxed font-light">
               {t('hero.description')}
             </p>
+            <div className="inline-flex items-center chopard-glass px-6 py-3 rounded-full text-base font-medium chopard-text-accent border-2 chopard-border">
+              <BookOpen className="h-5 w-5 mr-3 chopard-text-accent" />
+              {t('hero.badge')}
+            </div>
           </div>
         </div>
       </section>

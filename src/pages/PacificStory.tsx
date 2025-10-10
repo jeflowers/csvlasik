@@ -12,23 +12,25 @@ const PacificStory = () => {
       <section className="py-16 bg-gradient-to-br from-teal-50 to-blue-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center bg-teal-100 text-teal-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Globe className="h-4 w-4 mr-2" />
-              {t('hero.badge')}
-            </div>
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               {t('hero.title')} <span className="text-teal-600">ClearSight</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-6 leading-relaxed">
               {t('hero.description')}
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
-            >
-              {t('hero.cta')}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            <div className="inline-flex items-center bg-teal-100 text-teal-800 px-6 py-3 rounded-full text-base font-semibold mb-8">
+              <Globe className="h-5 w-5 mr-3" />
+              {t('hero.badge')}
+            </div>
+            <div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+              >
+                {t('hero.cta')}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
