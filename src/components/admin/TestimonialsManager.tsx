@@ -1,40 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  MessageSquare, 
-  Search, 
-  Filter, 
-  Check, 
-  X, 
-  Eye, 
-  Edit, 
-  Trash2,
+import {
+  MessageSquare,
+  Search,
+  Check,
+  X,
+  Edit,
   Star,
-  User,
-  MapPin,
-  Calendar,
-  Award,
-  Shield
+  Calendar
 } from 'lucide-react';
 import { apiService } from '../../services/api';
 
 interface Testimonial {
   id: number;
-  patient_name: string;
-  patient_initials: string;
-  age: number;
-  occupation: string;
-  location: string;
-  procedure_type: string;
-  vision_before: string;
-  vision_after: string;
-  testimonial_text: string;
-  rating: number;
-  status: 'pending' | 'approved' | 'rejected';
-  is_featured: boolean;
-  is_pacific_patient: boolean;
-  is_military: boolean;
-  special_badge: string;
-  privacy_level: 'full_name' | 'initials' | 'anonymous';
+  name: string;
+  email?: string;
+  content: string;
+  rating?: number;
+  procedure_type?: string;
+  procedure_date?: string;
+  approved: boolean;
   created_at: string;
 }
 
@@ -47,26 +31,28 @@ const TestimonialsManager: React.FC = () => {
   const [selectedTestimonials, setSelectedTestimonials] = useState<number[]>([]);
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [editingTestimonial, setEditingTestimonial] = useState<Testimonial | null>(null);
-  const [pagination, setPagination] = useState({ page: 1, limit: 20, total: 0 });
 
   useEffect(() => {
     fetchTestimonials();
-  }, [pagination.page, statusFilter, procedureFilter, searchTerm]);
+  }, [statusFilter, procedureFilter, searchTerm]);
 
   const fetchTestimonials = async () => {
     try {
       setLoading(true);
-      const params = {
-        page: pagination.page,
-        limit: pagination.limit,
-        status: statusFilter !== 'all' ? statusFilter : undefined,
-        procedure: procedureFilter !== 'all' ? procedureFilter : undefined,
-        search: searchTerm || undefined
-      };
-      
+      const params: any = {};
+
+      if (statusFilter !== 'all') {
+        params.status = statusFilter;
+      }
+      if (procedureFilter !== 'all') {
+        params.procedure = procedureFilter;
+      }
+      if (searchTerm) {
+        params.search = searchTerm;
+      }
+
       const data = await apiService.getTestimonials(params);
-      setTestimonials(data.testimonials);
-      setPagination(prev => ({ ...prev, total: data.pagination.total }));
+      setTestimonials(data.testimonials || []);
     } catch (error) {
       console.error('Failed to fetch testimonials:', error);
     } finally {
@@ -74,19 +60,19 @@ const TestimonialsManager: React.FC = () => {
     }
   };
 
-  const handleStatusUpdate = async (id: number, status: string) => {
+  const handleStatusUpdate = async (id: number, approved: boolean) => {
     try {
-      await apiService.updateTestimonialStatus(id, status);
+      await apiService.updateTestimonial(id, { approved });
       fetchTestimonials();
     } catch (error) {
       console.error('Failed to update status:', error);
     }
   };
 
-  const handleBulkStatusUpdate = async (status: string) => {
+  const handleBulkApprove = async () => {
     try {
       await Promise.all(
-        selectedTestimonials.map(id => apiService.updateTestimonialStatus(id, status))
+        selectedTestimonials.map(id => apiService.updateTestimonial(id, { approved: true }))
       );
       setSelectedTestimonials([]);
       fetchTestimonials();
@@ -95,33 +81,25 @@ const TestimonialsManager: React.FC = () => {
     }
   };
 
-  const getStatusBadge = (status: string) => {
-    const styles = {
-      pending: 'bg-yellow-100 text-yellow-800',
-      approved: 'bg-green-100 text-green-800',
-      rejected: 'bg-red-100 text-red-800'
-    };
-    
-    return (
-      <span className={`px-2 py-1 text-xs rounded-full ${styles[status as keyof typeof styles]}`}>
-        {status.charAt(0).toUpperCase() + status.slice(1)}
-      </span>
-    );
-  };
-
   const getRatingStars = (rating: number) => {
     return [...Array(5)].map((_, i) => (
-      <Star 
-        key={i} 
-        className={`h-4 w-4 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+      <Star
+        key={i}
+        className={`h-4 w-4 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
       />
     ));
   };
 
   const filteredTestimonials = testimonials.filter(testimonial => {
-    const matchesSearch = testimonial.patient_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         testimonial.testimonial_text.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesSearch;
+    if (statusFilter === 'pending' && testimonial.approved) return false;
+    if (statusFilter === 'approved' && !testimonial.approved) return false;
+
+    if (searchTerm) {
+      const searchLower = searchTerm.toLowerCase();
+      return testimonial.name.toLowerCase().includes(searchLower) ||
+             testimonial.content.toLowerCase().includes(searchLower);
+    }
+    return true;
   });
 
   return (
@@ -157,7 +135,7 @@ const TestimonialsManager: React.FC = () => {
               />
             </div>
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
             <select
@@ -168,10 +146,9 @@ const TestimonialsManager: React.FC = () => {
               <option value="all">All Statuses</option>
               <option value="pending">Pending</option>
               <option value="approved">Approved</option>
-              <option value="rejected">Rejected</option>
             </select>
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Procedure</label>
             <select
@@ -185,7 +162,7 @@ const TestimonialsManager: React.FC = () => {
               <option value="ICL">ICL</option>
             </select>
           </div>
-          
+
           <div className="flex items-end">
             <button
               onClick={() => {
@@ -210,18 +187,11 @@ const TestimonialsManager: React.FC = () => {
             </span>
             <div className="flex space-x-2">
               <button
-                onClick={() => handleBulkStatusUpdate('approved')}
+                onClick={handleBulkApprove}
                 className="px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700"
               >
                 <Check className="h-3 w-3 mr-1 inline" />
-                Approve
-              </button>
-              <button
-                onClick={() => handleBulkStatusUpdate('rejected')}
-                className="px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-700"
-              >
-                <X className="h-3 w-3 mr-1 inline" />
-                Reject
+                Approve Selected
               </button>
               <button
                 onClick={() => setSelectedTestimonials([])}
@@ -258,10 +228,10 @@ const TestimonialsManager: React.FC = () => {
                   Patient
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Procedure
+                  Testimonial
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Vision
+                  Procedure
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Rating
@@ -308,62 +278,41 @@ const TestimonialsManager: React.FC = () => {
                       />
                     </td>
                     <td className="px-6 py-4">
-                      <div className="flex items-center">
-                        <div>
-                          <div className="text-sm font-medium text-gray-900">
-                            {testimonial.privacy_level === 'full_name' ? testimonial.patient_name : 
-                             testimonial.privacy_level === 'initials' ? testimonial.patient_initials : 
-                             'Anonymous Patient'}
-                          </div>
-                          <div className="text-sm text-gray-500">
-                            {testimonial.age && `${testimonial.age} years old`}
-                            {testimonial.occupation && ` • ${testimonial.occupation}`}
-                          </div>
-                          <div className="text-xs text-gray-400 flex items-center mt-1">
-                            <MapPin className="h-3 w-3 mr-1" />
-                            {testimonial.location}
-                          </div>
-                          <div className="flex items-center mt-1 space-x-1">
-                            {testimonial.is_pacific_patient && (
-                              <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Pacific</span>
-                            )}
-                            {testimonial.is_military && (
-                              <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Military</span>
-                            )}
-                            {testimonial.special_badge && (
-                              <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded">
-                                {testimonial.special_badge}
-                              </span>
-                            )}
-                          </div>
-                        </div>
+                      <div className="text-sm font-medium text-gray-900">{testimonial.name}</div>
+                      {testimonial.email && (
+                        <div className="text-xs text-gray-500">{testimonial.email}</div>
+                      )}
+                    </td>
+                    <td className="px-6 py-4">
+                      <div className="text-sm text-gray-900 line-clamp-2 max-w-md">
+                        {testimonial.content}
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <span className="px-2 py-1 bg-teal-100 text-teal-800 text-sm rounded">
-                        {testimonial.procedure_type}
+                      <span className="px-2 py-1 bg-teal-100 text-teal-800 text-xs rounded">
+                        {testimonial.procedure_type || 'N/A'}
                       </span>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="text-sm">
-                        <div className="flex items-center space-x-2">
-                          <span className="text-red-600 font-medium">{testimonial.vision_before}</span>
-                          <span className="text-gray-400">→</span>
-                          <span className="text-green-600 font-medium">{testimonial.vision_after}</span>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
                       <div className="flex items-center">
-                        {getRatingStars(testimonial.rating)}
-                        <span className="ml-2 text-sm text-gray-600">{testimonial.rating}/5</span>
+                        {getRatingStars(testimonial.rating || 5)}
+                        <span className="ml-2 text-xs text-gray-600">{testimonial.rating || 5}/5</span>
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      {getStatusBadge(testimonial.status)}
+                      <span className={`px-2 py-1 text-xs rounded-full ${
+                        testimonial.approved
+                          ? 'bg-green-100 text-green-800'
+                          : 'bg-yellow-100 text-yellow-800'
+                      }`}>
+                        {testimonial.approved ? 'Approved' : 'Pending'}
+                      </span>
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500">
-                      {new Date(testimonial.created_at).toLocaleDateString()}
+                      <div className="flex items-center">
+                        <Calendar className="h-3 w-3 mr-1" />
+                        {new Date(testimonial.created_at).toLocaleDateString()}
+                      </div>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center space-x-2">
@@ -374,22 +323,24 @@ const TestimonialsManager: React.FC = () => {
                         >
                           <Edit className="h-4 w-4" />
                         </button>
-                        <button
-                          onClick={() => handleStatusUpdate(testimonial.id, 'approved')}
-                          className="text-green-600 hover:text-green-900"
-                          title="Approve"
-                          disabled={testimonial.status === 'approved'}
-                        >
-                          <Check className="h-4 w-4" />
-                        </button>
-                        <button
-                          onClick={() => handleStatusUpdate(testimonial.id, 'rejected')}
-                          className="text-red-600 hover:text-red-900"
-                          title="Reject"
-                          disabled={testimonial.status === 'rejected'}
-                        >
-                          <X className="h-4 w-4" />
-                        </button>
+                        {!testimonial.approved && (
+                          <button
+                            onClick={() => handleStatusUpdate(testimonial.id, true)}
+                            className="text-green-600 hover:text-green-900"
+                            title="Approve"
+                          >
+                            <Check className="h-4 w-4" />
+                          </button>
+                        )}
+                        {testimonial.approved && (
+                          <button
+                            onClick={() => handleStatusUpdate(testimonial.id, false)}
+                            className="text-red-600 hover:text-red-900"
+                            title="Unapprove"
+                          >
+                            <X className="h-4 w-4" />
+                          </button>
+                        )}
                       </div>
                     </td>
                   </tr>
@@ -397,34 +348,6 @@ const TestimonialsManager: React.FC = () => {
               )}
             </tbody>
           </table>
-        </div>
-      </div>
-
-      {/* Pagination */}
-      <div className="bg-white rounded-lg shadow p-4">
-        <div className="flex items-center justify-between">
-          <div className="text-sm text-gray-700">
-            Showing {((pagination.page - 1) * pagination.limit) + 1} to {Math.min(pagination.page * pagination.limit, pagination.total)} of {pagination.total} testimonials
-          </div>
-          <div className="flex space-x-2">
-            <button
-              onClick={() => setPagination(prev => ({ ...prev, page: prev.page - 1 }))}
-              disabled={pagination.page === 1}
-              className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50"
-            >
-              Previous
-            </button>
-            <span className="px-3 py-1 bg-teal-100 text-teal-800 rounded">
-              Page {pagination.page} of {Math.ceil(pagination.total / pagination.limit)}
-            </span>
-            <button
-              onClick={() => setPagination(prev => ({ ...prev, page: prev.page + 1 }))}
-              disabled={pagination.page >= Math.ceil(pagination.total / pagination.limit)}
-              className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50"
-            >
-              Next
-            </button>
-          </div>
         </div>
       </div>
 
@@ -447,47 +370,30 @@ const TestimonialsManager: React.FC = () => {
   );
 };
 
-// Testimonial Create/Edit Modal Component
 const TestimonialModal: React.FC<{
   testimonial?: Testimonial | null;
   onClose: () => void;
   onSave: () => void;
 }> = ({ testimonial, onClose, onSave }) => {
   const [formData, setFormData] = useState({
-    patient_name: '',
-    patient_initials: '',
-    age: '',
-    occupation: '',
-    location: '',
+    name: '',
+    email: '',
+    content: '',
     procedure_type: 'LASIK',
-    vision_before: '',
-    vision_after: '',
-    testimonial_text: '',
-    rating: 5,
-    privacy_level: 'initials',
-    is_pacific_patient: false,
-    is_military: false,
-    special_badge: ''
+    procedure_date: '',
+    rating: 5
   });
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     if (testimonial) {
       setFormData({
-        patient_name: testimonial.patient_name,
-        patient_initials: testimonial.patient_initials,
-        age: testimonial.age?.toString() || '',
-        occupation: testimonial.occupation || '',
-        location: testimonial.location,
-        procedure_type: testimonial.procedure_type,
-        vision_before: testimonial.vision_before,
-        vision_after: testimonial.vision_after,
-        testimonial_text: testimonial.testimonial_text,
-        rating: testimonial.rating,
-        privacy_level: testimonial.privacy_level,
-        is_pacific_patient: testimonial.is_pacific_patient,
-        is_military: testimonial.is_military,
-        special_badge: testimonial.special_badge || ''
+        name: testimonial.name,
+        email: testimonial.email || '',
+        content: testimonial.content,
+        procedure_type: testimonial.procedure_type || 'LASIK',
+        procedure_date: testimonial.procedure_date || '',
+        rating: testimonial.rating || 5
       });
     }
   }, [testimonial]);
@@ -497,22 +403,16 @@ const TestimonialModal: React.FC<{
     setSaving(true);
 
     try {
-      const submitData = {
-        ...formData,
-        age: formData.age ? parseInt(formData.age) : null
-      };
-
       if (testimonial) {
-        // Update existing testimonial
-        await apiService.updateTestimonial(testimonial.id, submitData);
+        await apiService.updateTestimonial(testimonial.id, formData);
       } else {
-        // Create new testimonial
-        await apiService.createTestimonial(submitData);
+        await apiService.createTestimonial({ ...formData, approved: false });
       }
-      
+
       onSave();
     } catch (error) {
       console.error('Failed to save testimonial:', error);
+      alert('Failed to save testimonial. Please try again.');
     } finally {
       setSaving(false);
     }
@@ -539,69 +439,32 @@ const TestimonialModal: React.FC<{
               <input
                 type="text"
                 required
-                value={formData.patient_name}
-                onChange={(e) => setFormData(prev => ({ ...prev, patient_name: e.target.value }))}
+                value={formData.name}
+                onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
               />
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Patient Initials
+                Email (optional)
               </label>
               <input
-                type="text"
-                value={formData.patient_initials}
-                onChange={(e) => setFormData(prev => ({ ...prev, patient_initials: e.target.value }))}
+                type="email"
+                value={formData.email}
+                onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-                placeholder="J.D."
+                placeholder="patient@email.com"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Age</label>
-              <input
-                type="number"
-                value={formData.age}
-                onChange={(e) => setFormData(prev => ({ ...prev, age: e.target.value }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Occupation</label>
-              <input
-                type="text"
-                value={formData.occupation}
-                onChange={(e) => setFormData(prev => ({ ...prev, occupation: e.target.value }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-              />
-            </div>
-            
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Location *
-              </label>
-              <input
-                type="text"
-                required
-                value={formData.location}
-                onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-                placeholder="Los Angeles, CA"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Procedure *
+                Procedure
               </label>
               <select
-                required
                 value={formData.procedure_type}
                 onChange={(e) => setFormData(prev => ({ ...prev, procedure_type: e.target.value }))}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
@@ -611,111 +474,47 @@ const TestimonialModal: React.FC<{
                 <option value="ICL">ICL</option>
               </select>
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Vision Before *
+                Procedure Date
               </label>
               <input
-                type="text"
-                required
-                value={formData.vision_before}
-                onChange={(e) => setFormData(prev => ({ ...prev, vision_before: e.target.value }))}
+                type="date"
+                value={formData.procedure_date}
+                onChange={(e) => setFormData(prev => ({ ...prev, procedure_date: e.target.value }))}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-                placeholder="20/400"
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Vision After *
-              </label>
-              <input
-                type="text"
-                required
-                value={formData.vision_after}
-                onChange={(e) => setFormData(prev => ({ ...prev, vision_after: e.target.value }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-                placeholder="20/20"
               />
             </div>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Testimonial Text *
+              Testimonial *
             </label>
             <textarea
               required
-              rows={4}
-              value={formData.testimonial_text}
-              onChange={(e) => setFormData(prev => ({ ...prev, testimonial_text: e.target.value }))}
+              rows={6}
+              value={formData.content}
+              onChange={(e) => setFormData(prev => ({ ...prev, content: e.target.value }))}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
               placeholder="Share the patient's experience..."
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Rating</label>
-              <select
-                value={formData.rating}
-                onChange={(e) => setFormData(prev => ({ ...prev, rating: parseInt(e.target.value) }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-              >
-                <option value={5}>5 Stars - Excellent</option>
-                <option value={4}>4 Stars - Very Good</option>
-                <option value={3}>3 Stars - Good</option>
-                <option value={2}>2 Stars - Fair</option>
-                <option value={1}>1 Star - Poor</option>
-              </select>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Privacy Level</label>
-              <select
-                value={formData.privacy_level}
-                onChange={(e) => setFormData(prev => ({ ...prev, privacy_level: e.target.value }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-              >
-                <option value="full_name">Full Name</option>
-                <option value="initials">Initials Only</option>
-                <option value="anonymous">Anonymous</option>
-              </select>
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={formData.is_pacific_patient}
-                onChange={(e) => setFormData(prev => ({ ...prev, is_pacific_patient: e.target.checked }))}
-                className="rounded border-gray-300 mr-2"
-              />
-              <span className="text-sm text-gray-700">Pacific Region Patient</span>
-            </label>
-            
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={formData.is_military}
-                onChange={(e) => setFormData(prev => ({ ...prev, is_military: e.target.checked }))}
-                className="rounded border-gray-300 mr-2"
-              />
-              <span className="text-sm text-gray-700">Military Service Member</span>
-            </label>
-          </div>
-
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Special Badge</label>
-            <input
-              type="text"
-              value={formData.special_badge}
-              onChange={(e) => setFormData(prev => ({ ...prev, special_badge: e.target.value }))}
+            <label className="block text-sm font-medium text-gray-700 mb-2">Rating</label>
+            <select
+              value={formData.rating}
+              onChange={(e) => setFormData(prev => ({ ...prev, rating: parseInt(e.target.value) }))}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-              placeholder="e.g., First Patient, Milestone Case"
-            />
+            >
+              <option value={5}>5 Stars - Excellent</option>
+              <option value={4}>4 Stars - Very Good</option>
+              <option value={3}>3 Stars - Good</option>
+              <option value={2}>2 Stars - Fair</option>
+              <option value={1}>1 Star - Poor</option>
+            </select>
           </div>
 
           <div className="flex justify-end space-x-3 pt-6 border-t border-gray-200">

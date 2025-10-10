@@ -1,36 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  FileText, 
-  Search, 
-  Filter, 
-  Plus, 
-  Edit, 
-  Trash2, 
+import {
+  FileText,
+  Search,
+  Filter,
+  Plus,
+  Edit,
+  Trash2,
   Eye,
   Calendar,
   Tag,
   Globe,
-  BarChart3
+  BarChart3,
+  X
 } from 'lucide-react';
 import { apiService } from '../../services/api';
 
 interface Article {
   id: number;
   title: string;
-  slug: string;
-  excerpt: string;
   content: string;
-  author_id: number;
-  author_name: string;
-  category: string;
-  featured_image: string;
-  status: 'draft' | 'published';
-  is_featured: boolean;
-  read_time: number;
-  seo_title: string;
-  seo_description: string;
-  tags: string;
-  published_at: string;
+  author_id?: string;
+  category?: string;
+  tags?: string[];
+  meta_description?: string;
+  status: 'draft' | 'published' | 'archived';
   created_at: string;
   updated_at: string;
 }
@@ -63,8 +56,8 @@ const ArticlesManager: React.FC = () => {
       };
       
       const data = await apiService.getArticles(params);
-      setArticles(data.articles);
-      setPagination(prev => ({ ...prev, total: data.pagination.total }));
+      setArticles(data.articles || []);
+      setPagination(prev => ({ ...prev, total: data.total || 0 }));
     } catch (error) {
       console.error('Failed to fetch articles:', error);
     } finally {
@@ -237,41 +230,19 @@ const ArticlesManager: React.FC = () => {
                 filteredArticles.map((article) => (
                   <tr key={article.id} className="hover:bg-gray-50">
                     <td className="px-6 py-4">
-                      <div className="flex items-start">
-                        {article.featured_image && (
-                          <img
-                            src={article.featured_image}
-                            alt={article.title}
-                            className="w-16 h-12 object-cover rounded mr-4"
-                          />
-                        )}
-                        <div className="flex-1">
-                          <div className="text-sm font-medium text-gray-900 mb-1">
-                            {article.title}
-                            {article.is_featured && (
-                              <span className="ml-2 px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">
-                                Featured
-                              </span>
-                            )}
-                          </div>
-                          <div className="text-sm text-gray-500 line-clamp-2">
-                            {article.excerpt}
-                          </div>
-                          <div className="flex items-center mt-2 space-x-4 text-xs text-gray-400">
-                            {article.read_time && (
-                              <span className="flex items-center">
-                                <BarChart3 className="h-3 w-3 mr-1" />
-                                {article.read_time} min read
-                              </span>
-                            )}
-                            {article.tags && (
-                              <span className="flex items-center">
-                                <Tag className="h-3 w-3 mr-1" />
-                                {article.tags.split(',').slice(0, 2).join(', ')}
-                              </span>
-                            )}
-                          </div>
+                      <div className="flex-1">
+                        <div className="text-sm font-medium text-gray-900 mb-1">
+                          {article.title}
                         </div>
+                        <div className="text-sm text-gray-500 line-clamp-2">
+                          {article.meta_description || article.content.substring(0, 150) + '...'}
+                        </div>
+                        {article.tags && article.tags.length > 0 && (
+                          <div className="flex items-center mt-2 text-xs text-gray-400">
+                            <Tag className="h-3 w-3 mr-1" />
+                            {article.tags.slice(0, 3).join(', ')}
+                          </div>
+                        )}
                       </div>
                     </td>
                     <td className="px-6 py-4">
@@ -281,10 +252,10 @@ const ArticlesManager: React.FC = () => {
                       {getStatusBadge(article.status)}
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500">
-                      {article.author_name}
+                      Admin
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500">
-                      {article.published_at ? new Date(article.published_at).toLocaleDateString() : '-'}
+                      {new Date(article.created_at).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center space-x-2">
@@ -294,13 +265,6 @@ const ArticlesManager: React.FC = () => {
                           title="Edit"
                         >
                           <Edit className="h-4 w-4" />
-                        </button>
-                        <button
-                          onClick={() => window.open(`/blog/${article.slug}`, '_blank')}
-                          className="text-green-600 hover:text-green-900"
-                          title="Preview"
-                        >
-                          <Eye className="h-4 w-4" />
                         </button>
                         <button
                           onClick={() => handleDelete(article.id)}
@@ -374,15 +338,10 @@ const ArticleModal: React.FC<{
 }> = ({ article, onClose, onSave }) => {
   const [formData, setFormData] = useState({
     title: '',
-    excerpt: '',
     content: '',
-    category: 'Innovation',
-    featured_image: '',
-    status: 'draft',
-    is_featured: false,
-    read_time: '',
-    seo_title: '',
-    seo_description: '',
+    category: 'Procedures',
+    meta_description: '',
+    status: 'draft' as 'draft' | 'published' | 'archived',
     tags: ''
   });
   const [saving, setSaving] = useState(false);
@@ -392,16 +351,11 @@ const ArticleModal: React.FC<{
     if (article) {
       setFormData({
         title: article.title,
-        excerpt: article.excerpt || '',
         content: article.content,
-        category: article.category,
-        featured_image: article.featured_image || '',
+        category: article.category || 'Procedures',
+        meta_description: article.meta_description || '',
         status: article.status,
-        is_featured: article.is_featured,
-        read_time: article.read_time?.toString() || '',
-        seo_title: article.seo_title || '',
-        seo_description: article.seo_description || '',
-        tags: article.tags || ''
+        tags: article.tags ? article.tags.join(', ') : ''
       });
     }
   }, [article]);
@@ -413,7 +367,7 @@ const ArticleModal: React.FC<{
     try {
       const submitData = {
         ...formData,
-        read_time: formData.read_time ? parseInt(formData.read_time) : null
+        tags: formData.tags ? formData.tags.split(',').map(t => t.trim()).filter(Boolean) : []
       };
 
       if (article) {
@@ -486,45 +440,19 @@ const ArticleModal: React.FC<{
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Excerpt
-                  </label>
-                  <textarea
-                    rows={3}
-                    value={formData.excerpt}
-                    onChange={(e) => setFormData(prev => ({ ...prev, excerpt: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-                    placeholder="Brief description for article previews..."
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
                     Content *
                   </label>
                   <textarea
                     required
-                    rows={12}
+                    rows={15}
                     value={formData.content}
                     onChange={(e) => setFormData(prev => ({ ...prev, content: e.target.value }))}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
                     placeholder="Write your article content here..."
                   />
                   <p className="text-xs text-gray-500 mt-1">
-                    Supports Markdown formatting. Medical terms like LASIK, PRK, ICL will be preserved in translations.
+                    Supports HTML formatting. Medical terms like LASIK, PRK, ICL will be preserved in translations.
                   </p>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Featured Image URL
-                  </label>
-                  <input
-                    type="url"
-                    value={formData.featured_image}
-                    onChange={(e) => setFormData(prev => ({ ...prev, featured_image: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-                    placeholder="https://images.pexels.com/..."
-                  />
                 </div>
               </div>
             )}
@@ -533,33 +461,17 @@ const ArticleModal: React.FC<{
               <div className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    SEO Title
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.seo_title}
-                    onChange={(e) => setFormData(prev => ({ ...prev, seo_title: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-                    placeholder="Optimized title for search engines..."
-                  />
-                  <p className="text-xs text-gray-500 mt-1">
-                    Recommended: 50-60 characters. Leave blank to use article title.
-                  </p>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    SEO Description
+                    Meta Description
                   </label>
                   <textarea
                     rows={3}
-                    value={formData.seo_description}
-                    onChange={(e) => setFormData(prev => ({ ...prev, seo_description: e.target.value }))}
+                    value={formData.meta_description}
+                    onChange={(e) => setFormData(prev => ({ ...prev, meta_description: e.target.value }))}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
                     placeholder="Meta description for search results..."
                   />
                   <p className="text-xs text-gray-500 mt-1">
-                    Recommended: 150-160 characters. Leave blank to use excerpt.
+                    Recommended: 150-160 characters.
                   </p>
                 </div>
 
@@ -586,15 +498,14 @@ const ArticleModal: React.FC<{
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Category *
+                      Category
                     </label>
                     <select
-                      required
                       value={formData.category}
                       onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value }))}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
                     >
-                      {['Innovation', 'Procedures', 'Technology', 'Patient Care', 'Mission'].map(category => (
+                      {['Procedures', 'Technology', 'Patient Care', 'News', 'Education'].map(category => (
                         <option key={category} value={category}>{category}</option>
                       ))}
                     </select>
@@ -606,41 +517,20 @@ const ArticleModal: React.FC<{
                     </label>
                     <select
                       value={formData.status}
-                      onChange={(e) => setFormData(prev => ({ ...prev, status: e.target.value }))}
+                      onChange={(e) => setFormData(prev => ({ ...prev, status: e.target.value as 'draft' | 'published' | 'archived' }))}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
                     >
                       <option value="draft">Draft</option>
                       <option value="published">Published</option>
+                      <option value="archived">Archived</option>
                     </select>
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Read Time (minutes)
-                  </label>
-                  <input
-                    type="number"
-                    min="1"
-                    max="60"
-                    value={formData.read_time}
-                    onChange={(e) => setFormData(prev => ({ ...prev, read_time: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-                    placeholder="Estimated reading time"
-                  />
-                </div>
-
-                <div className="space-y-3">
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      checked={formData.is_featured}
-                      onChange={(e) => setFormData(prev => ({ ...prev, is_featured: e.target.checked }))}
-                      className="rounded border-gray-300 mr-2"
-                    />
-                    <span className="text-sm text-gray-700">Featured Article</span>
-                    <span className="ml-2 text-xs text-gray-500">(appears prominently on blog page)</span>
-                  </label>
+                <div className="bg-gray-50 p-4 rounded-md">
+                  <p className="text-sm text-gray-600">
+                    Articles are managed in the /blog section of the site. Published articles will appear immediately.
+                  </p>
                 </div>
               </div>
             )}
