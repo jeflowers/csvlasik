@@ -27,15 +27,22 @@ async function createAdmin() {
   console.log('Creating admin user...');
 
   try {
-    const { createClient } = await import('@supabase/supabase-js');
+    // Get Supabase credentials - you'll need to enter these manually
+    console.log('You will need to enter your Supabase credentials from the .env file');
+    const supabaseUrl = prompt('Enter your VITE_SUPABASE_URL (from .env file):');
 
-    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-    const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-    if (!supabaseUrl || !supabaseKey) {
-      throw new Error('Supabase credentials not found in environment variables');
+    if (!supabaseUrl) {
+      throw new Error('Supabase URL is required. Check your .env file.');
     }
 
+    const supabaseKey = prompt('Enter your VITE_SUPABASE_ANON_KEY (from .env file):');
+
+    if (!supabaseKey) {
+      throw new Error('Supabase Anon Key is required. Check your .env file.');
+    }
+
+    console.log('Loading Supabase client...');
+    const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
     const supabase = createClient(supabaseUrl, supabaseKey);
 
     console.log('Step 1: Creating authentication user...');

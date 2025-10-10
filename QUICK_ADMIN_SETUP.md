@@ -6,6 +6,13 @@ The fastest way to create your first admin user.
 
 ## Method 1: Using the Script File (Recommended)
 
+### Before You Start
+Open your `.env` file and have these values ready:
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+
+You'll need to copy/paste these during the process.
+
 ### Step 1: Start Development Server
 ```bash
 npm run dev
@@ -16,26 +23,34 @@ npm run dev
 2. Press `F12` (or `Cmd+Option+J` on Mac)
 3. Click the **Console** tab
 
-### Step 3: Open the Script File
+### Step 3: Copy the Script
 In your code editor, open:
 ```
-CREATE_ADMIN_USER.js
+CREATE_ADMIN_SIMPLE.js
 ```
 
-### Step 4: Copy and Paste
-1. Select ALL the code in `CREATE_ADMIN_USER.js`
-2. Copy it (`Ctrl+C` or `Cmd+C`)
-3. Paste it into the browser console (`Ctrl+V` or `Cmd+V`)
-4. Press `Enter`
+Select ALL the code and copy it.
 
-### Step 5: Follow Prompts
-The script will ask for:
-1. **Email**: `admin@clearsight.com`
-2. **Password**: Your secure password (min 6 chars)
-3. **Full Name**: `Admin User`
+### Step 4: Run the Script
+1. Paste the code into the browser console
+2. Press `Enter`
+
+### Step 5: Follow ALL Prompts
+The script will ask for **5 things** in order:
+
+1. **Admin email**: e.g., `admin@clearsight.com`
+2. **Admin password**: Minimum 6 characters
+3. **Admin full name**: e.g., `Admin User`
+4. **Supabase URL**: Copy from `.env` file (`VITE_SUPABASE_URL`)
+5. **Supabase Key**: Copy from `.env` file (`VITE_SUPABASE_ANON_KEY`)
+
+**IMPORTANT**: Have your `.env` file open so you can copy/paste the Supabase values!
 
 ### Step 6: Log In
-Go to `http://localhost:5173/admin/login` and log in with your credentials.
+After success message:
+1. Go to `http://localhost:5173/admin/login`
+2. Enter your email and password
+3. You'll be redirected to the admin dashboard
 
 ✅ Done!
 
