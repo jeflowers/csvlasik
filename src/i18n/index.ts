@@ -181,8 +181,12 @@ i18n
       loadPath: '/locales/{{lng}}/{{ns}}.json',
       requestOptions: {
         cache: 'default'
-      }
+      },
+      crossDomain: false,
+      withCredentials: false
     },
+    partialBundledLanguages: true,
+    load: 'languageOnly',
     fallbackLng: {
       'pt-BR': ['pt', 'en'],
       'es-MX': ['en'],
@@ -202,7 +206,6 @@ i18n
     },
     ns: ['navigation', 'common', 'medical', 'forms', 'procedures', 'home', 'about', 'contact', 'financing', 'technology', 'testimonials', 'footer', 'privacy', 'terms', 'cookies', 'pacific', 'media'],
     defaultNS: 'navigation',
-    load: 'all',
     cleanCode: true,
     detection: {
       order: ['cookie', 'localStorage', 'navigator', 'htmlTag'],

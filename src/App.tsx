@@ -1,39 +1,47 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { TranslationProvider } from './components/TranslationProvider';
 import RTLProvider from './components/RTLProvider';
 import TranslationStatus from './components/TranslationStatus';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import AdminLayout from './components/admin/AdminLayout';
-import LoginForm from './components/admin/LoginForm';
-import Dashboard from './components/admin/Dashboard';
-import TestimonialsManager from './components/admin/TestimonialsManager';
-import ArticlesManager from './components/admin/ArticlesManager';
-import MediaLibrary from './components/admin/MediaLibrary';
-import StatisticsManager from './components/admin/StatisticsManager';
-import UserManager from './components/admin/UserManager';
-import SettingsPanel from './components/admin/SettingsPanel';
-import TranslationDashboard from './components/admin/TranslationDashboard';
-import ComplianceManager from './components/admin/ComplianceManager';
-import EncryptionManager from './components/admin/EncryptionManager';
-import GDPRManager from './components/admin/GDPRManager';
 import ConsentBanner from './components/ConsentBanner';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import TermsOfService from './components/TermsOfService';
-import Home from './pages/Home';
-import About from './pages/About';
-import Procedures from './pages/Procedures';
-import Lasik from './pages/procedures/Lasik';
-import PRK from './pages/procedures/PRK'
-import ICL from './pages/procedures/ICL';
-import PacificStory from './pages/PacificStory';
-import Testimonials from './pages/Testimonials';
-import Technology from './pages/Technology';
-import Financing from './pages/Financing';
-import Contact from './pages/Contact';
-import Media from './pages/Media';
 import { useAdmin } from './hooks/useAdmin';
+
+const AdminLayout = lazy(() => import('./components/admin/AdminLayout'));
+const LoginForm = lazy(() => import('./components/admin/LoginForm'));
+const Dashboard = lazy(() => import('./components/admin/Dashboard'));
+const TestimonialsManager = lazy(() => import('./components/admin/TestimonialsManager'));
+const ArticlesManager = lazy(() => import('./components/admin/ArticlesManager'));
+const MediaLibrary = lazy(() => import('./components/admin/MediaLibrary'));
+const StatisticsManager = lazy(() => import('./components/admin/StatisticsManager'));
+const UserManager = lazy(() => import('./components/admin/UserManager'));
+const SettingsPanel = lazy(() => import('./components/admin/SettingsPanel'));
+const TranslationDashboard = lazy(() => import('./components/admin/TranslationDashboard'));
+const ComplianceManager = lazy(() => import('./components/admin/ComplianceManager'));
+const EncryptionManager = lazy(() => import('./components/admin/EncryptionManager'));
+const GDPRManager = lazy(() => import('./components/admin/GDPRManager'));
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Procedures = lazy(() => import('./pages/Procedures'));
+const Lasik = lazy(() => import('./pages/procedures/Lasik'));
+const PRK = lazy(() => import('./pages/procedures/PRK'));
+const ICL = lazy(() => import('./pages/procedures/ICL'));
+const PacificStory = lazy(() => import('./pages/PacificStory'));
+const Testimonials = lazy(() => import('./pages/Testimonials'));
+const Technology = lazy(() => import('./pages/Technology'));
+const Financing = lazy(() => import('./pages/Financing'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Media = lazy(() => import('./pages/Media'));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./components/TermsOfService'));
+
+const LoadingFallback = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600"></div>
+  </div>
+);
 
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -62,62 +70,66 @@ function App() {
   }
 
   return (
-    <Routes>
-      {/* Admin Routes */}
-      <Route path="/admin/login" element={
-        user ? <Navigate to="/admin" /> : <LoginForm />
-      } />
-      <Route path="/admin" element={
-        <ProtectedRoute>
-          <AdminLayout />
-        </ProtectedRoute>
-      }>
-        <Route index element={<Dashboard />} />
-        <Route path="testimonials" element={<TestimonialsManager />} />
-        <Route path="articles" element={<ArticlesManager />} />
-        <Route path="media" element={<MediaLibrary />} />
-        <Route path="statistics" element={<StatisticsManager />} />
-        <Route path="compliance" element={<ComplianceManager />} />
-        <Route path="compliance/encryption" element={<EncryptionManager />} />
-        <Route path="compliance/gdpr" element={<GDPRManager />} />
-        <Route path="users" element={<UserManager />} />
-        <Route path="settings" element={<SettingsPanel />} />
-        <Route path="translations" element={<TranslationDashboard />} />
-      </Route>
+    <Suspense fallback={<LoadingFallback />}>
+      <Routes>
+        {/* Admin Routes */}
+        <Route path="/admin/login" element={
+          user ? <Navigate to="/admin" /> : <LoginForm />
+        } />
+        <Route path="/admin" element={
+          <ProtectedRoute>
+            <AdminLayout />
+          </ProtectedRoute>
+        }>
+          <Route index element={<Dashboard />} />
+          <Route path="testimonials" element={<TestimonialsManager />} />
+          <Route path="articles" element={<ArticlesManager />} />
+          <Route path="media" element={<MediaLibrary />} />
+          <Route path="statistics" element={<StatisticsManager />} />
+          <Route path="compliance" element={<ComplianceManager />} />
+          <Route path="compliance/encryption" element={<EncryptionManager />} />
+          <Route path="compliance/gdpr" element={<GDPRManager />} />
+          <Route path="users" element={<UserManager />} />
+          <Route path="settings" element={<SettingsPanel />} />
+          <Route path="translations" element={<TranslationDashboard />} />
+        </Route>
 
-      {/* Public Routes */}
-      <Route path="/*" element={
-        <TranslationProvider preferredService="auto">
-          <RTLProvider>
-            <div className="min-h-screen bg-white">
-              <TranslationStatus className="fixed top-4 right-4 z-50" />
-              <Header />
-              <main>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/procedures" element={<Procedures />} />
-                  <Route path="/procedures/lasik" element={<Lasik />} />
-                  <Route path="/procedures/prk" element={<PRK />} />
-                  <Route path="/procedures/icl" element={<ICL />} />
-                  <Route path="/pacific-story" element={<PacificStory />} />
-                  <Route path="/testimonials" element={<Testimonials />} />
-                  <Route path="/technology" element={<Technology />} />
-                  <Route path="/financing" element={<Financing />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/blog" element={<Media />} />
-                  <Route path="/media" element={<Media />} />
-                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                  <Route path="/terms-of-service" element={<TermsOfService />} />
-                </Routes>
-              </main>
-              <Footer />
-              <ConsentBanner />
-            </div>
-          </RTLProvider>
-        </TranslationProvider>
-      } />
-    </Routes>
+        {/* Public Routes */}
+        <Route path="/*" element={
+          <TranslationProvider preferredService="auto">
+            <RTLProvider>
+              <div className="min-h-screen bg-white">
+                <TranslationStatus className="fixed top-4 right-4 z-50" />
+                <Header />
+                <main>
+                  <Suspense fallback={<LoadingFallback />}>
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/about" element={<About />} />
+                      <Route path="/procedures" element={<Procedures />} />
+                      <Route path="/procedures/lasik" element={<Lasik />} />
+                      <Route path="/procedures/prk" element={<PRK />} />
+                      <Route path="/procedures/icl" element={<ICL />} />
+                      <Route path="/pacific-story" element={<PacificStory />} />
+                      <Route path="/testimonials" element={<Testimonials />} />
+                      <Route path="/technology" element={<Technology />} />
+                      <Route path="/financing" element={<Financing />} />
+                      <Route path="/contact" element={<Contact />} />
+                      <Route path="/blog" element={<Media />} />
+                      <Route path="/media" element={<Media />} />
+                      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                      <Route path="/terms-of-service" element={<TermsOfService />} />
+                    </Routes>
+                  </Suspense>
+                </main>
+                <Footer />
+                <ConsentBanner />
+              </div>
+            </RTLProvider>
+          </TranslationProvider>
+        } />
+      </Routes>
+    </Suspense>
   );
 }
 

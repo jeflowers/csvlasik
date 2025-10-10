@@ -35,15 +35,48 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          i18n: ['i18next', 'react-i18next'],
-          icons: ['lucide-react']
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'vendor';
+            }
+            if (id.includes('react-router')) {
+              return 'router';
+            }
+            if (id.includes('i18next') || id.includes('react-i18next')) {
+              return 'i18n';
+            }
+            if (id.includes('lucide-react')) {
+              return 'icons';
+            }
+            if (id.includes('@supabase')) {
+              return 'supabase';
+            }
+            return 'vendor-misc';
+          }
+
+          if (id.includes('src/components/admin')) {
+            return 'admin';
+          }
+
+          if (id.includes('src/pages/procedures')) {
+            return 'procedures';
+          }
+
+          if (id.includes('src/pages')) {
+            return 'pages';
+          }
         }
       }
     },
-    chunkSizeWarningLimit: 500
+    chunkSizeWarningLimit: 600,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    }
   },
   optimizeDeps: {
     // Force pre-bundling to avoid deadlocks
