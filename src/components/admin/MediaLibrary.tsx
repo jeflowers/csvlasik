@@ -72,21 +72,40 @@ const MediaLibrary: React.FC = () => {
   };
 
   const handleFileUpload = useCallback(async (files: FileList) => {
+    if (files.length === 0) return;
+
     setUploading(true);
-    
+    let successCount = 0;
+    let errorCount = 0;
+    const errors: string[] = [];
+
     try {
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
-        await apiService.uploadMedia(file, {
-          category: categoryFilter !== 'all' ? categoryFilter : 'Other',
-          alt_text: '',
-          caption: ''
-        });
+        try {
+          await apiService.uploadMedia(file, {
+            category: categoryFilter !== 'all' ? categoryFilter : 'Other',
+            alt_text: '',
+            caption: ''
+          });
+          successCount++;
+        } catch (error) {
+          errorCount++;
+          errors.push(`${file.name}: ${error instanceof Error ? error.message : 'Unknown error'}`);
+          console.error(`Failed to upload ${file.name}:`, error);
+        }
       }
-      
+
       fetchMediaFiles();
+
+      if (errorCount > 0) {
+        alert(`Upload completed:\n${successCount} succeeded, ${errorCount} failed\n\nErrors:\n${errors.join('\n')}`);
+      } else {
+        alert(`Successfully uploaded ${successCount} file(s)`);
+      }
     } catch (error) {
       console.error('Failed to upload files:', error);
+      alert(`Upload failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
     } finally {
       setUploading(false);
     }
@@ -108,9 +127,30 @@ const MediaLibrary: React.FC = () => {
     if (confirm('Are you sure you want to delete this file?')) {
       try {
         await apiService.deleteMedia(id);
+        alert('File deleted successfully');
         fetchMediaFiles();
       } catch (error) {
         console.error('Failed to delete file:', error);
+        alert(`Failed to delete file: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      }
+    }
+  };
+
+  const handleBulkDelete = async () => {
+    if (selectedFiles.length === 0) {
+      alert('Please select files to delete');
+      return;
+    }
+
+    if (confirm(`Are you sure you want to delete ${selectedFiles.length} file(s)?`)) {
+      try {
+        await apiService.bulkDeleteMedia(selectedFiles);
+        alert(`Successfully deleted ${selectedFiles.length} file(s)`);
+        setSelectedFiles([]);
+        fetchMediaFiles();
+      } catch (error) {
+        console.error('Failed to delete files:', error);
+        alert(`Failed to delete files: ${error instanceof Error ? error.message : 'Unknown error'}`);
       }
     }
   };
@@ -199,6 +239,32 @@ const MediaLibrary: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Bulk Actions */}
+      {selectedFiles.length > 0 && (
+        <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-medium text-teal-900">
+              {selectedFiles.length} file(s) selected
+            </span>
+            <div className="flex space-x-2">
+              <button
+                onClick={handleBulkDelete}
+                className="px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-700"
+              >
+                <Trash2 className="h-3 w-3 mr-1 inline" />
+                Delete Selected
+              </button>
+              <button
+                onClick={() => setSelectedFiles([])}
+                className="px-3 py-1 bg-gray-600 text-white text-sm rounded hover:bg-gray-700"
+              >
+                Clear Selection
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Filters and Search */}
       <div className="bg-white rounded-lg shadow p-6">

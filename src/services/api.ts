@@ -247,52 +247,104 @@ class ApiService {
     let query = supabase
       .from('media')
       .select('*', { count: 'exact' })
-      .order('uploaded_at', { ascending: false });
+      .order('created_at', { ascending: false });
 
-    if (params.limit) {
-      query = query.limit(parseInt(params.limit));
+    if (params.type) {
+      query = query.eq('media_type', params.type);
     }
-    if (params.offset) {
-      query = query.range(parseInt(params.offset), parseInt(params.offset) + parseInt(params.limit || 10) - 1);
+    if (params.category) {
+      query = query.eq('category', params.category);
+    }
+    if (params.search) {
+      query = query.or(`filename.ilike.%${params.search}%,original_name.ilike.%${params.search}%,alt_text.ilike.%${params.search}%`);
+    }
+
+    const offset = ((params.page || 1) - 1) * (params.limit || 24);
+    if (params.limit) {
+      query = query.range(offset, offset + parseInt(params.limit) - 1);
     }
 
     const { data, error, count } = await query;
     if (error) throw new Error(error.message);
 
     return {
-      media: data,
-      total: count || 0,
+      media: data || [],
+      pagination: {
+        page: params.page || 1,
+        limit: params.limit || 24,
+        total: count || 0,
+      },
     };
   }
 
   async uploadMedia(file: File, metadata: any = {}) {
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${Math.random().toString(36).substring(2)}.${fileExt}`;
-    const filePath = `${metadata.type || 'general'}/${fileName}`;
+    const MAX_FILE_SIZE = 50 * 1024 * 1024;
+    if (file.size > MAX_FILE_SIZE) {
+      throw new Error('File size exceeds 50MB limit');
+    }
+
+    const allowedTypes = [
+      'image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif',
+      'video/mp4', 'video/quicktime', 'video/x-msvideo',
+      'application/pdf', 'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ];
+
+    if (!allowedTypes.includes(file.type)) {
+      throw new Error('File type not allowed');
+    }
+
+    const fileExt = file.name.split('.').pop()?.toLowerCase();
+    const timestamp = Date.now();
+    const randomStr = Math.random().toString(36).substring(2, 9);
+    const fileName = `${timestamp}_${randomStr}.${fileExt}`;
+
+    let mediaType: 'image' | 'video' | 'document' = 'document';
+    if (file.type.startsWith('image/')) {
+      mediaType = 'image';
+    } else if (file.type.startsWith('video/')) {
+      mediaType = 'video';
+    }
+
+    const filePath = `${metadata.category || 'general'}/${fileName}`;
 
     const { data: uploadData, error: uploadError } = await supabase.storage
       .from('media')
-      .upload(filePath, file);
+      .upload(filePath, file, {
+        cacheControl: '3600',
+        upsert: false
+      });
 
     if (uploadError) throw new Error(uploadError.message);
+
+    const { data: { publicUrl } } = supabase.storage
+      .from('media')
+      .getPublicUrl(uploadData.path);
 
     const { data: { session } } = await supabase.auth.getSession();
 
     const { data, error } = await supabase
       .from('media')
       .insert([{
-        filename: file.name,
-        filepath: uploadData.path,
-        mimetype: file.type,
-        size: file.size,
-        title: metadata.title || file.name,
-        description: metadata.description || '',
+        filename: fileName,
+        original_name: file.name,
+        file_path: publicUrl,
+        file_size: file.size,
+        mime_type: file.type,
+        media_type: mediaType,
+        category: metadata.category || 'Other',
+        alt_text: metadata.alt_text || '',
+        caption: metadata.caption || '',
         uploaded_by: session?.user?.id,
       }])
       .select()
       .single();
 
-    if (error) throw new Error(error.message);
+    if (error) {
+      await supabase.storage.from('media').remove([uploadData.path]);
+      throw new Error(error.message);
+    }
+
     return data;
   }
 
@@ -311,17 +363,21 @@ class ApiService {
   async deleteMedia(id: number) {
     const { data: media, error: fetchError } = await supabase
       .from('media')
-      .select('filepath')
+      .select('file_path, filename, category')
       .eq('id', id)
       .single();
 
     if (fetchError) throw new Error(fetchError.message);
 
+    const storagePath = `${media.category || 'general'}/${media.filename}`;
+
     const { error: storageError } = await supabase.storage
       .from('media')
-      .remove([media.filepath]);
+      .remove([storagePath]);
 
-    if (storageError) throw new Error(storageError.message);
+    if (storageError) {
+      console.warn('Storage deletion warning:', storageError.message);
+    }
 
     const { error } = await supabase
       .from('media')
@@ -330,6 +386,37 @@ class ApiService {
 
     if (error) throw new Error(error.message);
     return { success: true };
+  }
+
+  async bulkDeleteMedia(ids: number[]) {
+    const { data: mediaFiles, error: fetchError } = await supabase
+      .from('media')
+      .select('id, filename, category')
+      .in('id', ids);
+
+    if (fetchError) throw new Error(fetchError.message);
+
+    const storagePaths = mediaFiles.map(file =>
+      `${file.category || 'general'}/${file.filename}`
+    );
+
+    if (storagePaths.length > 0) {
+      const { error: storageError } = await supabase.storage
+        .from('media')
+        .remove(storagePaths);
+
+      if (storageError) {
+        console.warn('Storage bulk deletion warning:', storageError.message);
+      }
+    }
+
+    const { error } = await supabase
+      .from('media')
+      .delete()
+      .in('id', ids);
+
+    if (error) throw new Error(error.message);
+    return { success: true, deleted: ids.length };
   }
 
   async getDashboardOverview() {
