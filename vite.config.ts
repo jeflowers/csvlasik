@@ -25,9 +25,15 @@ export default defineConfig({
     },
     // Optimizations for stability
     hmr: {
-      overlay: false,
+      overlay: true,
       protocol: 'ws',
-      host: 'localhost'
+      host: 'localhost',
+      timeout: 30000,
+      clientPort: 5173
+    },
+    watch: {
+      usePolling: false,
+      ignored: ['**/node_modules/**', '**/dist/**']
     }
   },
   build: {
@@ -79,19 +85,19 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    // Force pre-bundling to avoid deadlocks
-    force: true,
     include: [
       'react',
       'react-dom',
       'react-router-dom',
       'i18next',
       'react-i18next',
+      'i18next-browser-languagedetector',
+      'i18next-http-backend',
       'js-cookie',
-      'lucide-react'
+      'lucide-react',
+      '@supabase/supabase-js'
     ],
     exclude: ['fsevents'],
-    // Optimization for better stability
     esbuildOptions: {
       target: 'esnext',
       keepNames: true

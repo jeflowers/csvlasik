@@ -232,37 +232,33 @@ i18n.dir = (lng?: string) => {
   return getLanguageDirection(lng || i18n.language);
 };
 
-// Add error handling for translation loading
-i18n.on('failedLoading', (lng, ns, msg) => {
-  console.warn(`Failed to load translation: ${lng}/${ns}`, msg);
-  
-  // Try to reload with fallback
-  if (lng === 'pt-BR' && ns === 'navigation') {
-    console.log('Attempting to reload pt-BR navigation translations...');
-    setTimeout(() => {
-      i18n.reloadResources('pt-BR', 'navigation');
-    }, 1000);
-  }
-});
+// Add error handling for translation loading (only in development)
+if (import.meta.env.DEV) {
+  i18n.on('failedLoading', (lng, ns, msg) => {
+    console.warn(`Failed to load translation: ${lng}/${ns}`, msg);
 
-i18n.on('missingKey', (lng, ns, key, fallbackValue) => {
-  console.warn(`Missing translation key: ${lng}/${ns}/${key}`);
-  
-  // Log specific issues with pt-BR
-  if (lng === 'pt-BR') {
-    console.error(`pt-BR missing key: ${key} in namespace: ${ns}`);
-  }
-});
+    // Try to reload with fallback
+    if (lng === 'pt-BR' && ns === 'navigation') {
+      console.log('Attempting to reload pt-BR navigation translations...');
+      setTimeout(() => {
+        i18n.reloadResources('pt-BR', 'navigation');
+      }, 1000);
+    }
+  });
 
-// Add loaded event for debugging
-i18n.on('loaded', (loaded) => {
-  console.log('i18n loaded resources:', loaded);
-});
+  i18n.on('missingKey', (lng, ns, key) => {
+    if (lng === 'pt-BR') {
+      console.warn(`pt-BR missing key: ${key} in namespace: ${ns}`);
+    }
+  });
 
-// Add language changed event
-i18n.on('languageChanged', (lng) => {
-  console.log('Language changed to:', lng);
-  console.log('Available resources for', lng, ':', i18n.getResourceBundle(lng, 'navigation'));
-});
+  i18n.on('loaded', (loaded) => {
+    console.log('i18n loaded resources:', Object.keys(loaded));
+  });
+
+  i18n.on('languageChanged', (lng) => {
+    console.log('Language changed to:', lng);
+  });
+}
 
 export default i18n;
