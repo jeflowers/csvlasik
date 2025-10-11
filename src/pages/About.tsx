@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Award, MapPin, Users, Calendar, ArrowRight, Play, GraduationCap, Stethoscope, Globe, BookOpen, Star, Eye } from 'lucide-react';
+import { Award, MapPin, Users, Calendar, ArrowRight, GraduationCap, Stethoscope, Globe, BookOpen, Star, Eye } from 'lucide-react';
 import ResponsiveImage from '../components/ResponsiveImage';
 import { TEAM_IMAGES } from '../utils/imageUtils';
 
@@ -44,25 +44,17 @@ const About = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
-                <video
-                  src="/assets/videos/Charles-W-Flowers-Jr-MD.mp4"
-                  className="w-full h-96 lg:h-[500px] object-contain"
-                  controls
-                  poster="/assets/images/team/drflowers/DrFlowers_illustrationImage_01.png"
-                  preload="metadata"
-                >
-                  <source src="/assets/videos/Charles-W-Flowers-Jr-MD.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                  <img
-                    src="/assets/images/team/drflowers/DrFlowers_illustrationImage_01.png"
-                    alt="Dr. Charles Flowers - Revolutionary LASIK surgeon and Pacific healthcare pioneer"
-                    className="w-full h-96 lg:h-[500px] object-contain"
-                  />
-                </video>
-                <div className="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg">
-                  <p className="text-sm font-medium">Dr. Flowers Introduction</p>
-                  <p className="text-xs opacity-90">Vision Correction Excellence</p>
+              <div className="rounded-2xl shadow-2xl overflow-hidden">
+                <ResponsiveImage
+                  src={TEAM_IMAGES.drFlowers.primary.src}
+                  alt="Dr. Charles Flowers - Revolutionary LASIK surgeon and Pacific healthcare pioneer"
+                  className="w-full h-96 lg:h-[500px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end">
+                  <div className="p-6 text-white">
+                    <p className="text-lg font-medium mb-1">Dr. Charles W. Flowers Jr., M.D.</p>
+                    <p className="text-sm opacity-90">Vision Correction Excellence Since 1989</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -175,25 +167,17 @@ const About = () => {
               </p>
             </div>
             <div className="relative">
-              <div className="rounded-2xl shadow-xl overflow-hidden bg-black">
-                <video
-                  src="/assets/videos/Guam-Lasik-Eye-Treatment.mp4"
-                  className="w-full h-96 lg:h-[500px] object-contain"
-                  controls
-                  poster="/assets/images/team/drflowers/DrFlowers_guam_01.png"
-                  preload="metadata"
-                >
-                  <source src="/assets/videos/Guam-Lasik-Eye-Treatment.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                  <img
-                    src="/assets/images/team/drflowers/DrFlowers_guam_01.png"
-                    alt="Dr. Flowers' Pacific healthcare mission transforming island communities"
-                    className="w-full h-96 lg:h-[500px] object-contain"
-                  />
-                </video>
-                <div className="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg">
-                  <p className="text-sm font-medium">Guam LASIK Treatment</p>
-                  <p className="text-xs opacity-90">Transforming Pacific Healthcare</p>
+              <div className="rounded-2xl shadow-xl overflow-hidden">
+                <img
+                  src="/assets/images/team/drflowers/DrFlowers_guam_01.png"
+                  alt="Dr. Flowers' Pacific healthcare mission transforming island communities"
+                  className="w-full h-96 lg:h-[500px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end">
+                  <div className="p-6 text-white">
+                    <p className="text-base font-medium mb-1">Guam LASIK Treatment</p>
+                    <p className="text-sm opacity-90">Transforming Pacific Healthcare</p>
+                  </div>
                 </div>
               </div>
             </div>
