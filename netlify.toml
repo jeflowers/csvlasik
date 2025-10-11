@@ -1,0 +1,133 @@
+# Netlify Configuration for ClearSight LASIK
+# Documentation: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Build command to run
+  command = "npm run build"
+
+  # Directory with the production build files
+  publish = "dist"
+
+  # Node version to use
+  environment = { NODE_VERSION = "20" }
+
+[build.processing]
+  # Skip unnecessary processing
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+    # Content Security Policy
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.supabase.co https://cdn.jsdelivr.net;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https: blob:;
+      font-src 'self' data:;
+      connect-src 'self' https://*.supabase.co wss://*.supabase.co;
+      media-src 'self' https://*.supabase.co;
+      object-src 'none';
+      frame-ancestors 'none';
+      base-uri 'self';
+      form-action 'self';
+    """
+
+    # Cache control for assets
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Specific headers for HTML files
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Specific headers for service worker
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Specific headers for API routes (if any)
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# Redirects and rewrites for SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  conditions = {Role = [""], Country = [""]}
+
+# Redirect www to non-www
+[[redirects]]
+  from = "https://www.csvlasik.com/*"
+  to = "https://csvlasik.com/:splat"
+  status = 301
+  force = true
+
+# Redirect HTTP to HTTPS
+[[redirects]]
+  from = "http://csvlasik.com/*"
+  to = "https://csvlasik.com/:splat"
+  status = 301
+  force = true
+
+# Edge functions configuration (if needed in future)
+[[edge_functions]]
+  path = "/api/*"
+  function = "api-proxy"
+
+# Plugin configuration
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
+  [plugins.inputs]
+    buildDir = "dist"
+    exclude = [
+      '/admin/*',
+      '/404.html'
+    ]
+
+# Context-specific build settings
+[context.production]
+  command = "npm run build"
+  environment = { NODE_ENV = "production" }
+
+[context.deploy-preview]
+  command = "npm run build"
+  environment = { NODE_ENV = "staging" }
+
+[context.branch-deploy]
+  command = "npm run build"
+
+[context.dev]
+  command = "npm run dev"
+
+# Environment variables (set these in Netlify dashboard)
+# VITE_SUPABASE_URL
+# VITE_SUPABASE_ANON_KEY
