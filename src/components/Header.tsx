@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Eye, Phone, Menu, X, ChevronDown, Mail, Facebook, Twitter, Instagram, BookText as TikTok, Youtube } from 'lucide-react';
+import { Eye, Phone, Menu, X, ChevronDown, Mail, Facebook, Twitter, Instagram, Music, Youtube } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
@@ -68,7 +68,7 @@ const Header = () => {
                 <Twitter className="h-4 w-4" />
               </a>
               <a href="#" className="text-gray-300 hover:text-white transition-all duration-300" aria-label={t('socialMedia.tiktok', { defaultValue: 'TikTok' })}>
-                <TikTok className="h-4 w-4" />
+                <Music className="h-4 w-4" />
               </a>
             </div>
 
