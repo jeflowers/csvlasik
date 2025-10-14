@@ -74,10 +74,10 @@ const Header = () => {
 
             {/* Contact Info */}
             <div className={`flex items-center space-x-6 text-sm font-medium ${isRTL ? 'space-x-reverse' : ''}`}>
-              <div className="flex items-center">
+              <Link to="/contact" className="flex items-center hover:text-gray-200 transition-colors">
                 <Mail className={`h-4 w-4 text-white ${isRTL ? 'ml-2' : 'mr-2'}`} />
                 <span>{t('contactUs')}</span>
-              </div>
+              </Link>
               <LanguageSelector />
             </div>
           </div>
