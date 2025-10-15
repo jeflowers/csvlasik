@@ -55,7 +55,7 @@ const Footer = () => {
                 <Youtube className="h-5 w-5" />
               </a>
               <a
-                href="https://twitter.com/"
+                href="https://x.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/60 hover:text-white transition-all duration-300"

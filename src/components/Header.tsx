@@ -84,11 +84,11 @@ const Header = () => {
                 <Youtube className="h-4 w-4" />
               </a>
               <a
-                href="https://twitter.com/"
+                href="https://x.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-all duration-300"
-                aria-label={t('socialMedia.twitter', { defaultValue: 'Twitter' })}
+                aria-label={t('socialMedia.twitter', { defaultValue: 'X (Twitter)' })}
               >
                 <Twitter className="h-4 w-4" />
               </a>
