@@ -73,13 +73,19 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-serif font-light mb-6 text-white tracking-wide">{t('contact.title')}</h3>
             <div className="space-y-5">
-              <div className="flex items-start space-x-4">
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Clearsight+LASIK+Guam,+230+Archbishop+Flores+Street,+Suite+201,+Hagåtña,+Guam+96910"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start space-x-4 hover:opacity-80 transition-opacity duration-300"
+                aria-label="Get directions to our office"
+              >
                 <MapPin className="h-5 w-5 chopard-text-accent mt-1" />
                 <div>
                   <p className="text-white font-light text-sm">{t('contact.office')}</p>
                   <p className="text-white/70 text-sm leading-relaxed font-light">{t('contact.address')}</p>
                 </div>
-              </div>
+              </a>
               <a href="tel:+18442115462" className="flex items-center space-x-4 text-white/70 hover:text-white transition-all duration-300 font-light">
                 <span className="inline-flex items-center space-x-4" dir="ltr">
                   <Phone className="h-5 w-5 chopard-text-accent" />

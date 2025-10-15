@@ -212,15 +212,21 @@ const Contact = () => {
 
               {/* Contact Details */}
               <div className="space-y-6">
-                <div className="flex items-start">
-                  <MapPin className="h-6 w-6 chopard-text-accent mr-4 mt-1" />
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Clearsight+LASIK+Guam,+230+Archbishop+Flores+Street,+Suite+201,+Hagåtña,+Guam+96910"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start hover:opacity-80 transition-opacity duration-300 group"
+                  aria-label="Get directions to our office"
+                >
+                  <MapPin className="h-6 w-6 chopard-text-accent mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                   <div>
-                    <h3 className="font-light chopard-text-primary mb-1">{t('office.name')}</h3>
-                    <p className="chopard-text-secondary font-light">
+                    <h3 className="font-light chopard-text-primary mb-1 group-hover:chopard-text-accent transition-colors duration-300">{t('office.name')}</h3>
+                    <p className="chopard-text-secondary font-light group-hover:chopard-text-accent transition-colors duration-300">
                       {t('office.address')}
                     </p>
                   </div>
-                </div>
+                </a>
 
                 <div className="flex items-start">
                   <Phone className="h-6 w-6 chopard-text-accent mr-4 mt-1" />
