@@ -21,6 +21,8 @@ const TranslationDashboard = lazy(() => import('./components/admin/TranslationDa
 const ComplianceManager = lazy(() => import('./components/admin/ComplianceManager'));
 const EncryptionManager = lazy(() => import('./components/admin/EncryptionManager'));
 const GDPRManager = lazy(() => import('./components/admin/GDPRManager'));
+const RoleManager = lazy(() => import('./components/admin/RoleManager'));
+const SecurityDashboard = lazy(() => import('./components/admin/SecurityDashboard'));
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -90,6 +92,8 @@ function App() {
           <Route path="compliance/encryption" element={<EncryptionManager />} />
           <Route path="compliance/gdpr" element={<GDPRManager />} />
           <Route path="users" element={<UserManager />} />
+          <Route path="roles" element={<RoleManager />} />
+          <Route path="security" element={<SecurityDashboard />} />
           <Route path="settings" element={<SettingsPanel />} />
           <Route path="translations" element={<TranslationDashboard />} />
         </Route>

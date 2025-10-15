@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Users, 
-  Search, 
-  Plus, 
-  Edit, 
-  Trash2, 
-  Shield, 
+import {
+  Users,
+  Search,
+  Plus,
+  Edit,
+  Trash2,
+  Shield,
   Key,
   UserCheck,
   UserX,
   Calendar,
-  Activity
+  Activity,
+  X
 } from 'lucide-react';
 import { apiService } from '../../services/api';
 
@@ -466,11 +467,10 @@ const UserModal: React.FC<{
               onChange={(e) => setFormData(prev => ({ ...prev, role: e.target.value }))}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
             >
-              {roles.map(role => (
-                <option key={role.value} value={role.value}>
-                  {role.label} - {role.description}
-                </option>
-              ))}
+              <option value="admin">Administrator - Full system access</option>
+              <option value="editor">Editor - Content creation and approval</option>
+              <option value="contributor">Contributor - Content creation only</option>
+              <option value="viewer">Viewer - Read-only access</option>
             </select>
           </div>
 
