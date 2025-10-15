@@ -90,7 +90,13 @@ npm run dev
 │   ├── locales/           # Translation files (11 languages)
 │   └── assets/            # Images and videos
 ├── e2e/                   # End-to-end tests (Playwright)
-└── docs/                  # Documentation
+└── docs/                  # Documentation (organized by topic)
+    ├── setup/             # Setup and configuration guides
+    ├── deployment/        # Production deployment docs
+    ├── development/       # Development and troubleshooting
+    ├── administration/    # Security, compliance, and admin
+    ├── translations/      # Internationalization guides
+    └── project-history/   # Development milestones
 ```
 
 ## API Endpoints
@@ -204,39 +210,42 @@ cd server
 npm test
 ```
 
+## Documentation
+
+Comprehensive documentation is organized by topic in the `/docs` folder:
+
+### Quick Links
+- **📚 [Full Documentation Index](./docs/README.md)** - Complete documentation guide
+- **🚀 [Quick Admin Setup](./docs/setup/QUICK_ADMIN_SETUP.md)** - Get started in 5 minutes
+- **🔐 [Security Guide](./docs/administration/SECURITY.md)** - Security best practices
+- **🌐 [Deployment Guide](./docs/deployment/DEPLOYMENT.md)** - Production deployment
+- **🔧 [Troubleshooting](./docs/development/TROUBLESHOOTING.md)** - Common issues and fixes
+
+### Documentation Categories
+- **[Setup](./docs/setup/)** - Initial configuration and admin setup
+- **[Deployment](./docs/deployment/)** - Production deployment and operations
+- **[Development](./docs/development/)** - Development guides and troubleshooting
+- **[Administration](./docs/administration/)** - Security, compliance, and admin operations
+- **[Translations](./docs/translations/)** - Internationalization and translation guides
+- **[Project History](./docs/project-history/)** - Development milestones and status
+
 ## Deployment
 
-### Frontend (Vite Build)
+For detailed deployment instructions, see **[Deployment Guide](./docs/deployment/DEPLOYMENT.md)**.
+
+### Quick Deployment
 ```bash
 npm run build
 # Deploy dist/ folder to Netlify, Vercel, or any static hosting provider
 ```
 
 ### Supabase Setup
-1. Create a Supabase project at https://supabase.com
-2. Run migrations from `supabase/migrations/`
-3. Configure Row Level Security policies
-4. Set up authentication providers
-5. Update environment variables with Supabase credentials
+See **[Admin Setup Guide](./docs/setup/ADMIN_SETUP.md)** for complete instructions.
 
-### Environment Variables for Production
+### Environment Variables
 ```bash
 VITE_SUPABASE_URL=your-production-supabase-url
 VITE_SUPABASE_ANON_KEY=your-production-anon-key
-```
-
-### Legacy Backend Deployment (Optional)
-```bash
-cd server
-npm install --production
-npm start
-```
-
-Environment variables for legacy backend:
-```bash
-NODE_ENV=production
-JWT_SECRET=your-secure-secret-key
-PORT=3001
 ```
 
 ## Integration with Existing Site
