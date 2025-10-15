@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Star, ArrowRight, Eye, TrendingUp, Award, Play } from 'lucide-react';
 import { usePublicTestimonials, usePublicStatistics } from '../hooks/useApi';
+import ExternalReviews from '../components/ExternalReviews';
 
 const Testimonials = () => {
   const { t } = useTranslation(['testimonials', 'common']);
@@ -254,6 +255,13 @@ const Testimonials = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* External Reviews Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ExternalReviews />
         </div>
       </section>
 

@@ -26,6 +26,7 @@ const AdminLayout: React.FC = () => {
   const navigation = [
     { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
     { name: 'Testimonials', href: '/admin/testimonials', icon: MessageSquare },
+    { name: 'External Reviews', href: '/admin/external-reviews', icon: Shield },
     { name: 'Articles', href: '/admin/articles', icon: FileText },
     { name: 'Media Library', href: '/admin/media', icon: Image },
     { name: 'Statistics', href: '/admin/statistics', icon: BarChart3 },

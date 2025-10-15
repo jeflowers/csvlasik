@@ -25,6 +25,7 @@ const RoleManager = lazy(() => import('./components/admin/RoleManager'));
 const SecurityDashboard = lazy(() => import('./components/admin/SecurityDashboard'));
 const ForgotPassword = lazy(() => import('./components/admin/ForgotPassword'));
 const ResetPassword = lazy(() => import('./components/admin/ResetPassword'));
+const ExternalReviewsManager = lazy(() => import('./components/admin/ExternalReviewsManager'));
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -89,6 +90,7 @@ function App() {
         }>
           <Route index element={<Dashboard />} />
           <Route path="testimonials" element={<TestimonialsManager />} />
+          <Route path="external-reviews" element={<ExternalReviewsManager />} />
           <Route path="articles" element={<ArticlesManager />} />
           <Route path="media" element={<MediaLibrary />} />
           <Route path="statistics" element={<StatisticsManager />} />
