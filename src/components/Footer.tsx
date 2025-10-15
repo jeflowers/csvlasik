@@ -27,19 +27,49 @@ const Footer = () => {
               {t('company.description')}
             </p>
             <div className="flex space-x-5">
-              <a href="#" className="text-white/60 hover:text-white transition-all duration-300" aria-label={t('social.facebook')}>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-all duration-300"
+                aria-label={t('social.facebook')}
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-all duration-300" aria-label={t('social.instagram')}>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-all duration-300"
+                aria-label={t('social.instagram')}
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-all duration-300" aria-label={t('social.youtube')}>
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-all duration-300"
+                aria-label={t('social.youtube')}
+              >
                 <Youtube className="h-5 w-5" />
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-all duration-300" aria-label={t('social.twitter')}>
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-all duration-300"
+                aria-label={t('social.twitter')}
+              >
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-all duration-300" aria-label={t('social.tiktok')}>
+              <a
+                href="https://www.tiktok.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white transition-all duration-300"
+                aria-label={t('social.tiktok')}
+              >
                 <TikTok className="h-5 w-5" />
               </a>
             </div>

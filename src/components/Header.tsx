@@ -56,19 +56,49 @@ const Header = () => {
           <div className={`flex justify-between items-center py-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
             {/* Social Media Icons */}
             <div className={`flex items-center space-x-4 ${isRTL ? 'space-x-reverse' : ''}`}>
-              <a href="#" className="text-gray-300 hover:text-white transition-all duration-300" aria-label={t('socialMedia.instagram', { defaultValue: 'Instagram' })}>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-all duration-300"
+                aria-label={t('socialMedia.instagram', { defaultValue: 'Instagram' })}
+              >
                 <Instagram className="h-4 w-4" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-all duration-300" aria-label={t('socialMedia.facebook', { defaultValue: 'Facebook' })}>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-all duration-300"
+                aria-label={t('socialMedia.facebook', { defaultValue: 'Facebook' })}
+              >
                 <Facebook className="h-4 w-4" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-all duration-300" aria-label={t('socialMedia.youtube', { defaultValue: 'YouTube' })}>
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-all duration-300"
+                aria-label={t('socialMedia.youtube', { defaultValue: 'YouTube' })}
+              >
                 <Youtube className="h-4 w-4" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-all duration-300" aria-label={t('socialMedia.twitter', { defaultValue: 'Twitter' })}>
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-all duration-300"
+                aria-label={t('socialMedia.twitter', { defaultValue: 'Twitter' })}
+              >
                 <Twitter className="h-4 w-4" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-all duration-300" aria-label={t('socialMedia.tiktok', { defaultValue: 'TikTok' })}>
+              <a
+                href="https://www.tiktok.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-all duration-300"
+                aria-label={t('socialMedia.tiktok', { defaultValue: 'TikTok' })}
+              >
                 <TikTokIcon className="h-4 w-4" />
               </a>
             </div>
