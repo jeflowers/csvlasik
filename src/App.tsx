@@ -23,6 +23,8 @@ const EncryptionManager = lazy(() => import('./components/admin/EncryptionManage
 const GDPRManager = lazy(() => import('./components/admin/GDPRManager'));
 const RoleManager = lazy(() => import('./components/admin/RoleManager'));
 const SecurityDashboard = lazy(() => import('./components/admin/SecurityDashboard'));
+const ForgotPassword = lazy(() => import('./components/admin/ForgotPassword'));
+const ResetPassword = lazy(() => import('./components/admin/ResetPassword'));
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -78,6 +80,8 @@ function App() {
         <Route path="/admin/login" element={
           user ? <Navigate to="/admin" /> : <LoginForm />
         } />
+        <Route path="/admin/forgot-password" element={<ForgotPassword />} />
+        <Route path="/admin/reset-password" element={<ResetPassword />} />
         <Route path="/admin" element={
           <ProtectedRoute>
             <AdminLayout />

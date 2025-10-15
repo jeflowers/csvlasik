@@ -21,7 +21,7 @@
 
 import React, { useState } from 'react';
 import { Eye, AlertCircle } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAdmin } from '../../hooks/useAdmin';
 
 const LoginForm: React.FC = () => {
@@ -141,6 +141,15 @@ const LoginForm: React.FC = () => {
                 'Sign in'
               )}
             </button>
+          </div>
+
+          <div className="flex items-center justify-center">
+            <Link
+              to="/admin/forgot-password"
+              className="text-sm font-medium text-teal-600 hover:text-teal-500"
+            >
+              Forgot your password?
+            </Link>
           </div>
 
           <div className="text-center space-y-2">
