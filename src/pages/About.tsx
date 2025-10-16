@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Award, MapPin, Users, Calendar, ArrowRight, GraduationCap, Stethoscope, Globe, BookOpen, Star, Eye } from 'lucide-react';
@@ -6,7 +6,19 @@ import { TEAM_IMAGES } from '../utils/imageUtils';
 
 const About = () => {
   const { t } = useTranslation(['about', 'common']);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.play().catch((error) => {
+          console.log('Video autoplay prevented:', error);
+        });
+      }
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="relative">
@@ -43,13 +55,26 @@ const About = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="rounded-2xl shadow-2xl overflow-hidden">
-                <img
-                  src={TEAM_IMAGES.drFlowers.primary.src}
-                  alt="Dr. Charles Flowers - Revolutionary LASIK surgeon and Pacific healthcare pioneer"
+              <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
+                <video
+                  ref={videoRef}
+                  src="/assets/videos/Charles-W-Flowers-Jr-MD.mp4"
                   className="w-full h-96 lg:h-[500px] object-cover object-top"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end">
+                  poster={TEAM_IMAGES.drFlowers.primary.src}
+                  preload="metadata"
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src="/assets/videos/Charles-W-Flowers-Jr-MD.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                  <img
+                    src={TEAM_IMAGES.drFlowers.primary.src}
+                    alt="Dr. Charles Flowers - Revolutionary LASIK surgeon and Pacific healthcare pioneer"
+                    className="w-full h-96 lg:h-[500px] object-cover object-top"
+                  />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end pointer-events-none">
                   <div className="p-6 text-white">
                     <p className="text-lg font-medium mb-1">Dr. Charles W. Flowers Jr., M.D.</p>
                     <p className="text-sm opacity-90">Vision Correction Excellence Since 1989</p>
