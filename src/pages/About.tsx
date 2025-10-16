@@ -167,7 +167,7 @@ const About = () => {
                 <YouTubeEmbed
                   videoId="smzkYORJQQc"
                   title="Guam LASIK Treatment - Transforming Pacific Healthcare"
-                  thumbnail="/assets/images/misc/image copy.png"
+                  thumbnail="/assets/images/team/drflowers/DrFlowers_guam_01.png"
                   className="w-full h-96 lg:h-[500px]"
                 />
               </div>
