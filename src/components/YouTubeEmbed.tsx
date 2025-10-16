@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Play } from 'lucide-react';
-import { youtubeService } from '../services/youtubeService';
 
 interface YouTubeEmbedProps {
   videoId: string;
-  title?: string;
+  title: string;
   thumbnail?: string;
   start?: number;
   end?: number;
   className?: string;
-  useApiThumbnail?: boolean;
 }
 
 const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
@@ -18,29 +16,12 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   thumbnail,
   start,
   end,
-  className = "w-full h-96 lg:h-[500px]",
-  useApiThumbnail = false
+  className = "w-full h-96 lg:h-[500px]"
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [apiThumbnail, setApiThumbnail] = useState<string | null>(null);
-  const [videoTitle, setVideoTitle] = useState(title || '');
-
-  useEffect(() => {
-    if (useApiThumbnail && !thumbnail) {
-      youtubeService.getVideoData(videoId).then((data) => {
-        if (data) {
-          setApiThumbnail(youtubeService.getBestThumbnail(videoId, data.thumbnails));
-          if (!title) {
-            setVideoTitle(data.title);
-          }
-        }
-      });
-    }
-  }, [videoId, useApiThumbnail, thumbnail, title]);
 
   const getThumbnailUrl = () => {
     if (thumbnail) return thumbnail;
-    if (apiThumbnail) return apiThumbnail;
     return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   };
 
@@ -70,7 +51,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
       <iframe
         className={className}
         src={getEmbedUrl()}
-        title={videoTitle || 'YouTube video player'}
+        title={title}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
@@ -83,7 +64,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     <div className={`relative ${className} cursor-pointer group`} onClick={() => setIsPlaying(true)}>
       <img
         src={getThumbnailUrl()}
-        alt={videoTitle}
+        alt={title}
         className="w-full h-full object-cover"
         onError={(e) => {
           const target = e.target as HTMLImageElement;
