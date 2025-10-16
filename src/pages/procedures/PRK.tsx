@@ -108,25 +108,14 @@ const PRK = () => {
 
             <div className="relative">
               <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
-                <video
-                  src="/assets/videos/PRK-Treatment-Animation.mp4"
-                  className="w-full h-96 lg:h-[500px] object-contain"
-                  controls
-                  poster="/assets/images/procedures/prk/prk_treatment.png"
-                  preload="metadata"
-                >
-                  <source src="/assets/videos/PRK-Treatment-Animation.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                  <img
-                    src="/assets/images/procedures/prk/prk_treatment.png"
-                    alt="PRK procedure animation"
-                    className="w-full h-96 lg:h-[500px] object-contain"
-                  />
-                </video>
-                <div className="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg">
-                  <p className="text-sm font-medium">PRK Treatment Animation</p>
-                  <p className="text-xs opacity-90">Surface Laser Correction</p>
-                </div>
+                <iframe
+                  className="w-full h-96 lg:h-[500px]"
+                  src="https://www.youtube.com/embed/1Pjh4ja1lH0?start=53"
+                  title="PRK Surgery Procedure"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>

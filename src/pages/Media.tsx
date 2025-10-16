@@ -246,8 +246,66 @@ const Media = () => {
         </div>
       </section>
 
-      {/* Educational Resources */}
+      {/* Video Library */}
       <section className="py-16 chopard-hero">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
+              Video Library
+            </h2>
+            <p className="text-xl chopard-text-secondary max-w-3xl mx-auto font-light">
+              Watch educational videos about vision correction procedures and patient success stories
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div className="chopard-card rounded-xl overflow-hidden">
+              <div className="aspect-video">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/7O_DN1nM36w"
+                  title="Vision Correction Educational Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-serif chopard-text-primary mb-2">
+                  Understanding Vision Correction
+                </h3>
+                <p className="chopard-text-secondary font-light">
+                  Comprehensive guide to modern vision correction techniques and procedures
+                </p>
+              </div>
+            </div>
+
+            <div className="chopard-card rounded-xl overflow-hidden">
+              <div className="aspect-video">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/EqUQDcb6W90"
+                  title="Patient Success Stories"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-serif chopard-text-primary mb-2">
+                  Patient Success Stories
+                </h3>
+                <p className="chopard-text-secondary font-light">
+                  Real patient experiences and life-changing results from vision correction surgery
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Educational Resources */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
