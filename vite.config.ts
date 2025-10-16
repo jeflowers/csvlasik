@@ -36,9 +36,11 @@ export default defineConfig({
       ignored: ['**/node_modules/**', '**/dist/**']
     }
   },
+  publicDir: 'public',
   build: {
     target: 'esnext',
     sourcemap: true,
+    assetsInlineLimit: 0,
     rollupOptions: {
       output: {
         manualChunks: (id) => {
@@ -72,6 +74,16 @@ export default defineConfig({
           if (id.includes('src/pages')) {
             return 'pages';
           }
+        },
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `assets/images/[name]-[hash][extname]`;
+          } else if (/mp4|webm|ogg|mp3|wav|flac|aac/i.test(ext)) {
+            return `assets/videos/[name][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
         }
       }
     },
