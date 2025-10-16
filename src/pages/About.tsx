@@ -47,7 +47,7 @@ const About = () => {
                 <YouTubeEmbed
                   videoId="m3Wh80B0ygk"
                   title="Dr. Charles W. Flowers Jr., M.D."
-                  thumbnail={TEAM_IMAGES.drFlowers.primary.src}
+                  thumbnail="/assets/images/team/drflowers/dr-flowers-headshot.jpg"
                   start={8}
                   end={98}
                   className="w-full h-96 lg:h-[500px]"
