@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Clock, Shield, Eye, Users, ArrowRight, Check, Star, Play } from 'lucide-react';
+import YouTubeEmbed from '../../components/YouTubeEmbed';
 
 const Lasik = () => {
   const { t } = useTranslation('procedures');
@@ -148,14 +149,13 @@ const Lasik = () => {
 
             <div className="relative">
               <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
-                <iframe
-                  className="w-full h-96 lg:h-[500px]"
-                  src="https://www.youtube-nocookie.com/embed/a7q_r-y5x-k?end=133"
+                <YouTubeEmbed
+                  videoId="a7q_r-y5x-k"
                   title="LASIK Surgery Procedure"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                  thumbnail="/assets/images/procedures/lasik/brands-people-sWQrD5s0fWc-unsplash.jpg"
+                  end={133}
+                  className="w-full h-96 lg:h-[500px]"
+                />
               </div>
             </div>
           </div>

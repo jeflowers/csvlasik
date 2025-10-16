@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Award, MapPin, Users, Calendar, ArrowRight, GraduationCap, Stethoscope, Globe, BookOpen, Star, Eye } from 'lucide-react';
 import { TEAM_IMAGES } from '../utils/imageUtils';
+import YouTubeEmbed from '../components/YouTubeEmbed';
 
 const About = () => {
   const { t } = useTranslation(['about', 'common']);
@@ -43,14 +44,14 @@ const About = () => {
             </div>
             <div className="relative">
               <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
-                <iframe
-                  className="w-full h-96 lg:h-[500px]"
-                  src="https://www.youtube-nocookie.com/embed/m3Wh80B0ygk?start=8&end=98"
+                <YouTubeEmbed
+                  videoId="m3Wh80B0ygk"
                   title="Dr. Charles W. Flowers Jr., M.D."
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                  thumbnail={TEAM_IMAGES.drFlowers.primary.src}
+                  start={8}
+                  end={98}
+                  className="w-full h-96 lg:h-[500px]"
+                />
               </div>
             </div>
           </div>
@@ -163,14 +164,12 @@ const About = () => {
             </div>
             <div className="relative">
               <div className="rounded-2xl shadow-xl overflow-hidden bg-black">
-                <iframe
-                  className="w-full h-96 lg:h-[500px]"
-                  src="https://www.youtube-nocookie.com/embed/smzkYORJQQc"
+                <YouTubeEmbed
+                  videoId="smzkYORJQQc"
                   title="Guam LASIK Treatment - Transforming Pacific Healthcare"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                  thumbnail="/assets/images/misc/image copy.png"
+                  className="w-full h-96 lg:h-[500px]"
+                />
               </div>
             </div>
           </div>

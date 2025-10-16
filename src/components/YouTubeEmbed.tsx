@@ -1,0 +1,77 @@
+import React, { useState } from 'react';
+import { Play } from 'lucide-react';
+
+interface YouTubeEmbedProps {
+  videoId: string;
+  title: string;
+  thumbnail?: string;
+  start?: number;
+  end?: number;
+  className?: string;
+}
+
+const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
+  videoId,
+  title,
+  thumbnail,
+  start,
+  end,
+  className = "w-full h-96 lg:h-[500px]"
+}) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const getThumbnailUrl = () => {
+    if (thumbnail) return thumbnail;
+    return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  };
+
+  const getVideoUrl = () => {
+    let url = `https://www.youtube.com/watch?v=${videoId}`;
+    if (start) url += `&t=${start}s`;
+    return url;
+  };
+
+  const getEmbedUrl = () => {
+    let url = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    if (start) url += `&start=${start}`;
+    if (end) url += `&end=${end}`;
+    return url;
+  };
+
+  if (isPlaying) {
+    return (
+      <iframe
+        className={className}
+        src={getEmbedUrl()}
+        title={title}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    );
+  }
+
+  return (
+    <div className={`relative ${className} cursor-pointer group`} onClick={() => setIsPlaying(true)}>
+      <img
+        src={getThumbnailUrl()}
+        alt={title}
+        className="w-full h-full object-cover"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        }}
+      />
+      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+        <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center group-hover:bg-red-700 transition-all transform group-hover:scale-110">
+          <Play className="w-8 h-8 text-white ml-1 fill-white" />
+        </div>
+      </div>
+      <div className="absolute bottom-4 right-4 bg-black/80 text-white px-3 py-1 rounded text-sm">
+        Watch on YouTube
+      </div>
+    </div>
+  );
+};
+
+export default YouTubeEmbed;

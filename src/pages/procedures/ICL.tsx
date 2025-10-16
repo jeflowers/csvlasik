@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Layers, Clock, Eye, Shield, ArrowRight, Check, Star, RotateCcw } from 'lucide-react';
+import YouTubeEmbed from '../../components/YouTubeEmbed';
 
 const ICL = () => {
   const { t } = useTranslation('procedures');
@@ -165,14 +166,12 @@ const ICL = () => {
 
             <div className="relative">
               <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
-                <iframe
-                  className="w-full h-96 lg:h-[500px]"
-                  src="https://www.youtube-nocookie.com/embed/A35Rxqk83VA"
+                <YouTubeEmbed
+                  videoId="A35Rxqk83VA"
                   title="EVO Visian ICL Procedure Animation"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                  thumbnail="/assets/images/procedures/lasik/arteum-ro-7H41oiADqqg-unsplash.jpg"
+                  className="w-full h-96 lg:h-[500px]"
+                />
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Calendar, User, ArrowRight, Eye, Globe, Lightbulb, BookOpen } from 'lucide-react';
 import { usePublicArticles } from '../hooks/useApi';
+import YouTubeEmbed from '../components/YouTubeEmbed';
 
 const Media = () => {
   const { t } = useTranslation(['media', 'common']);
@@ -261,14 +262,11 @@ const Media = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <div className="chopard-card rounded-xl overflow-hidden">
               <div className="aspect-video">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube-nocookie.com/embed/7O_DN1nM36w"
+                <YouTubeEmbed
+                  videoId="7O_DN1nM36w"
                   title="Vision Correction Educational Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                  className="w-full h-full"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-serif chopard-text-primary mb-2">
@@ -282,14 +280,11 @@ const Media = () => {
 
             <div className="chopard-card rounded-xl overflow-hidden">
               <div className="aspect-video">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube-nocookie.com/embed/EqUQDcb6W90"
+                <YouTubeEmbed
+                  videoId="EqUQDcb6W90"
                   title="Patient Success Stories"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                  className="w-full h-full"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-serif chopard-text-primary mb-2">

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Shield, Clock, Eye, Users, ArrowRight, Check, Star } from 'lucide-react';
+import YouTubeEmbed from '../../components/YouTubeEmbed';
 
 const PRK = () => {
   const { t } = useTranslation('procedures');
@@ -108,14 +109,13 @@ const PRK = () => {
 
             <div className="relative">
               <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
-                <iframe
-                  className="w-full h-96 lg:h-[500px]"
-                  src="https://www.youtube-nocookie.com/embed/1Pjh4ja1lH0?start=53"
+                <YouTubeEmbed
+                  videoId="1Pjh4ja1lH0"
                   title="PRK Surgery Procedure"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                  thumbnail="/assets/images/procedures/prk/prk_treatment.png"
+                  start={53}
+                  className="w-full h-96 lg:h-[500px]"
+                />
               </div>
             </div>
           </div>
