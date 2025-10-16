@@ -62,6 +62,7 @@ const About = () => {
                   className="w-full h-96 lg:h-[500px] object-cover object-top"
                   poster={TEAM_IMAGES.drFlowers.primary.src}
                   preload="metadata"
+                  controls
                   muted
                   loop
                   playsInline
