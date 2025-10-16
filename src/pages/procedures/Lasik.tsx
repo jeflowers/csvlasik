@@ -150,7 +150,7 @@ const Lasik = () => {
               <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
                 <iframe
                   className="w-full h-96 lg:h-[500px]"
-                  src="https://www.youtube.com/embed/a7q_r-y5x-k?end=133"
+                  src="https://www.youtube-nocookie.com/embed/a7q_r-y5x-k?end=133"
                   title="LASIK Surgery Procedure"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

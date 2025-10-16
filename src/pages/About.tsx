@@ -45,7 +45,7 @@ const About = () => {
               <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
                 <iframe
                   className="w-full h-96 lg:h-[500px]"
-                  src="https://www.youtube.com/embed/m3Wh80B0ygk?start=8&end=98"
+                  src="https://www.youtube-nocookie.com/embed/m3Wh80B0ygk?start=8&end=98"
                   title="Dr. Charles W. Flowers Jr., M.D."
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -162,26 +162,15 @@ const About = () => {
               </p>
             </div>
             <div className="relative">
-              <div className="rounded-2xl shadow-xl overflow-hidden">
-                <div className="relative">
-                  <img
-                    src="/assets/images/misc/image copy.png"
-                    alt="Guam LASIK Treatment - Transforming Pacific Healthcare"
-                    className="w-full h-96 lg:h-[500px] object-cover cursor-pointer"
-                    onClick={() => window.open('https://www.youtube.com/watch?v=smzkYORJQQc', '_blank')}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors cursor-pointer" onClick={() => window.open('https://www.youtube.com/watch?v=smzkYORJQQc', '_blank')}>
-                    <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
-                    <p className="text-base font-medium mb-1 text-white">Guam LASIK Treatment</p>
-                    <p className="text-sm opacity-90 text-white">Transforming Pacific Healthcare</p>
-                  </div>
-                </div>
+              <div className="rounded-2xl shadow-xl overflow-hidden bg-black">
+                <iframe
+                  className="w-full h-96 lg:h-[500px]"
+                  src="https://www.youtube-nocookie.com/embed/smzkYORJQQc"
+                  title="Guam LASIK Treatment - Transforming Pacific Healthcare"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>

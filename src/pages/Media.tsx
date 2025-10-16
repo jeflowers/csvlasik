@@ -263,7 +263,7 @@ const Media = () => {
               <div className="aspect-video">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/7O_DN1nM36w"
+                  src="https://www.youtube-nocookie.com/embed/7O_DN1nM36w"
                   title="Vision Correction Educational Video"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -284,7 +284,7 @@ const Media = () => {
               <div className="aspect-video">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/EqUQDcb6W90"
+                  src="https://www.youtube-nocookie.com/embed/EqUQDcb6W90"
                   title="Patient Success Stories"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -110,7 +110,7 @@ const PRK = () => {
               <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
                 <iframe
                   className="w-full h-96 lg:h-[500px]"
-                  src="https://www.youtube.com/embed/1Pjh4ja1lH0?start=53"
+                  src="https://www.youtube-nocookie.com/embed/1Pjh4ja1lH0?start=53"
                   title="PRK Surgery Procedure"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

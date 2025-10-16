@@ -167,7 +167,7 @@ const ICL = () => {
               <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
                 <iframe
                   className="w-full h-96 lg:h-[500px]"
-                  src="https://www.youtube.com/embed/A35Rxqk83VA"
+                  src="https://www.youtube-nocookie.com/embed/A35Rxqk83VA"
                   title="EVO Visian ICL Procedure Animation"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
