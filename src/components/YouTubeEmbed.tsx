@@ -51,10 +51,18 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   };
 
   const getEmbedUrl = () => {
-    let url = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-    if (start) url += `&start=${start}`;
-    if (end) url += `&end=${end}`;
-    return url;
+    const params = new URLSearchParams({
+      autoplay: '1',
+      rel: '0',
+      modestbranding: '1',
+      enablejsapi: '1',
+      origin: window.location.origin
+    });
+
+    if (start) params.append('start', start.toString());
+    if (end) params.append('end', end.toString());
+
+    return `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
   };
 
   if (isPlaying) {
@@ -62,10 +70,11 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
       <iframe
         className={className}
         src={getEmbedUrl()}
-        title={title}
+        title={videoTitle || 'YouTube video player'}
         frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
+        referrerPolicy="strict-origin-when-cross-origin"
       ></iframe>
     );
   }
