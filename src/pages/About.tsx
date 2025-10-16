@@ -47,7 +47,7 @@ const About = () => {
                 <img
                   src={TEAM_IMAGES.drFlowers.primary.src}
                   alt="Dr. Charles Flowers - Revolutionary LASIK surgeon and Pacific healthcare pioneer"
-                  className="w-full h-96 lg:h-[500px] object-cover"
+                  className="w-full h-96 lg:h-[500px] object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end">
                   <div className="p-6 text-white">
