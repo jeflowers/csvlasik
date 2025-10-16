@@ -93,12 +93,12 @@ export const PROCEDURE_IMAGES = {
 export const TEAM_IMAGES = {
   drFlowers: {
     primary: {
-      src: `${IMAGE_PATHS.team}/dr-flowers-headshot.jpg`,
+      src: `${IMAGE_PATHS.team}/drflowers/DrFlowers_illustrationImage_01.png`,
       alt: 'Dr. Charles Flowers - Revolutionary LASIK surgeon and Pacific healthcare pioneer',
       priority: true
     },
     secondary: {
-      src: `${IMAGE_PATHS.team}/dr-flowers-headshot.jpg`,
+      src: `${IMAGE_PATHS.team}/drflowers/DrFlowers_illustrationImage_01.png`,
       alt: 'Dr. Charles Flowers performing advanced laser eye surgery',
     }
   }

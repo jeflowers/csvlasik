@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Award, MapPin, Users, Calendar, ArrowRight, GraduationCap, Stethoscope, Globe, BookOpen, Star, Eye } from 'lucide-react';
-import ResponsiveImage from '../components/ResponsiveImage';
 import { TEAM_IMAGES } from '../utils/imageUtils';
 
 const About = () => {
@@ -45,7 +44,7 @@ const About = () => {
             </div>
             <div className="relative">
               <div className="rounded-2xl shadow-2xl overflow-hidden">
-                <ResponsiveImage
+                <img
                   src={TEAM_IMAGES.drFlowers.primary.src}
                   alt="Dr. Charles Flowers - Revolutionary LASIK surgeon and Pacific healthcare pioneer"
                   className="w-full h-96 lg:h-[500px] object-cover"
