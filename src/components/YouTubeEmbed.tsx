@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Play } from 'lucide-react';
+import { Play, ExternalLink } from 'lucide-react';
 import { youtubeService } from '../services/youtubeService';
 
 interface YouTubeEmbedProps {
@@ -22,6 +22,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   useApiThumbnail = false
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [embedError, setEmbedError] = useState(false);
   const [apiThumbnail, setApiThumbnail] = useState<string | null>(null);
   const [videoTitle, setVideoTitle] = useState(title || '');
 
@@ -63,22 +64,46 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
   };
 
-  if (isPlaying) {
+  const handlePlay = () => {
+    if (embedError) {
+      window.open(getVideoUrl(), '_blank', 'noopener,noreferrer');
+    } else {
+      setIsPlaying(true);
+    }
+  };
+
+  if (isPlaying && !embedError) {
     return (
-      <iframe
-        className={className}
-        src={getEmbedUrl()}
-        title={videoTitle || 'YouTube video player'}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-        referrerPolicy="strict-origin-when-cross-origin"
-      ></iframe>
+      <div className={`relative ${className}`}>
+        <iframe
+          className="w-full h-full"
+          src={getEmbedUrl()}
+          title={videoTitle || 'YouTube video player'}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          referrerPolicy="strict-origin-when-cross-origin"
+          sandbox="allow-scripts allow-same-origin allow-presentation"
+          onError={() => setEmbedError(true)}
+        ></iframe>
+        {embedError && (
+          <div className="absolute inset-0 bg-gray-900 flex flex-col items-center justify-center text-white p-8">
+            <ExternalLink className="w-16 h-16 mb-4" />
+            <p className="text-xl mb-4">Unable to embed video</p>
+            <button
+              onClick={() => window.open(getVideoUrl(), '_blank', 'noopener,noreferrer')}
+              className="bg-[#B8860B] text-white px-6 py-3 rounded-lg hover:bg-[#9A7209] transition-colors"
+            >
+              Watch on YouTube
+            </button>
+          </div>
+        )}
+      </div>
     );
   }
 
   return (
-    <div className={`relative ${className} cursor-pointer group`} onClick={() => setIsPlaying(true)}>
+    <div className={`relative ${className} cursor-pointer group`} onClick={handlePlay}>
       <img
         src={getThumbnailUrl()}
         alt={videoTitle}
@@ -90,11 +115,15 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
       />
       <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-all shadow-2xl">
-          <Play className="w-10 h-10 text-[#B8860B] ml-1 fill-[#B8860B]" />
+          {embedError ? (
+            <ExternalLink className="w-10 h-10 text-[#B8860B]" />
+          ) : (
+            <Play className="w-10 h-10 text-[#B8860B] ml-1 fill-[#B8860B]" />
+          )}
         </div>
       </div>
       <div className="absolute bottom-4 right-4 bg-black/80 text-white px-3 py-1 rounded text-sm">
-        Watch on YouTube
+        {embedError ? 'Open on YouTube' : 'Watch on YouTube'}
       </div>
     </div>
   );
