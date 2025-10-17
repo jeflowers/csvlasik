@@ -1,3 +1,34 @@
+/**
+ * @file YouTubeEmbed.tsx
+ * @description YouTube video embed component with fallback to external link
+ * @author Development
+ * @filepath csvlasik/src/components/YouTubeEmbed.tsx
+ * @category Component
+ * @pattern Component Composition
+ * @version 1.0.1
+ * @last_updated 2025-10-17
+ * 
+ * @dependencies
+ * - react: Component framework
+ * - lucide-react: Icon library
+ * - ../services/youtubeService: YouTube API integration
+ * 
+ * @features
+ * - Click-to-play thumbnail preview
+ * - Automatic thumbnail fetching from YouTube API
+ * - Fallback to external YouTube link on embed failure
+ * - Start/end time support
+ * - Error handling with user-friendly messaging
+ * 
+ * @usage
+ * import YouTubeEmbed from '@/components/YouTubeEmbed'
+ * <YouTubeEmbed videoId="dQw4w9WgXcQ" title="Video Title" />
+ * 
+ * @bugfix
+ * - Removed restrictive sandbox attribute causing "refused to connect" error
+ * - YouTube embeds now work properly with browser's native security
+ */
+
 import React, { useState, useEffect } from 'react';
 import { Play, ExternalLink } from 'lucide-react';
 import { youtubeService } from '../services/youtubeService';
@@ -76,18 +107,17 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     return (
       <div className={`relative ${className}`}>
         <iframe
-          className="w-full h-full"
+          className="w-full h-full rounded-lg"
           src={getEmbedUrl()}
           title={videoTitle || 'YouTube video player'}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           referrerPolicy="strict-origin-when-cross-origin"
-          sandbox="allow-scripts allow-same-origin allow-presentation"
           onError={() => setEmbedError(true)}
-        ></iframe>
+        />
         {embedError && (
-          <div className="absolute inset-0 bg-gray-900 flex flex-col items-center justify-center text-white p-8">
+          <div className="absolute inset-0 bg-gray-900 flex flex-col items-center justify-center text-white p-8 rounded-lg">
             <ExternalLink className="w-16 h-16 mb-4" />
             <p className="text-xl mb-4">Unable to embed video</p>
             <button
@@ -107,13 +137,13 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
       <img
         src={getThumbnailUrl()}
         alt={videoTitle}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover rounded-lg"
         onError={(e) => {
           const target = e.target as HTMLImageElement;
           target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
         }}
       />
-      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center rounded-lg">
         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-all shadow-2xl">
           {embedError ? (
             <ExternalLink className="w-10 h-10 text-[#B8860B]" />
