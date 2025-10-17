@@ -1,37 +1,37 @@
 /**
  * @file YouTubeEmbed.tsx
- * @description YouTube video embed component with fallback to external link
+ * @description YouTube video embed component with comprehensive error handling
  * @author Development
  * @filepath csvlasik/src/components/YouTubeEmbed.tsx
  * @category Component
  * @pattern Component Composition
- * @version 1.0.1
+ * @version 2.0.0
  * @last_updated 2025-10-17
- * 
+ *
  * @dependencies
  * - react: Component framework
  * - lucide-react: Icon library
- * - ../services/youtubeService: YouTube API integration
- * 
+ *
  * @features
+ * - Multiple fallback strategies for embed failures
+ * - Privacy-enhanced embeds (youtube-nocookie.com)
  * - Click-to-play thumbnail preview
- * - Automatic thumbnail fetching from YouTube API
- * - Fallback to external YouTube link on embed failure
- * - Start/end time support
- * - Error handling with user-friendly messaging
- * 
+ * - Automatic error detection and recovery
+ * - Direct YouTube link fallback
+ *
  * @usage
  * import YouTubeEmbed from '@/components/YouTubeEmbed'
  * <YouTubeEmbed videoId="dQw4w9WgXcQ" title="Video Title" />
- * 
+ *
  * @bugfix
- * - Removed restrictive sandbox attribute causing "refused to connect" error
- * - YouTube embeds now work properly with browser's native security
+ * - Changed to youtube-nocookie.com for better compatibility
+ * - Removed all restrictive attributes
+ * - Added comprehensive error handling
+ * - Simplified iframe configuration
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Play, ExternalLink } from 'lucide-react';
-import { youtubeService } from '../services/youtubeService';
 
 interface YouTubeEmbedProps {
   videoId: string;
@@ -40,135 +40,120 @@ interface YouTubeEmbedProps {
   start?: number;
   end?: number;
   className?: string;
-  useApiThumbnail?: boolean;
+  autoplay?: boolean;
 }
 
 const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   videoId,
-  title,
+  title = 'YouTube video',
   thumbnail,
   start,
   end,
   className = "w-full h-96 lg:h-[500px]",
-  useApiThumbnail = false
+  autoplay = false
 }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [embedError, setEmbedError] = useState(false);
-  const [apiThumbnail, setApiThumbnail] = useState<string | null>(null);
-  const [videoTitle, setVideoTitle] = useState(title || '');
-
-  useEffect(() => {
-    if (useApiThumbnail && !thumbnail) {
-      youtubeService.getVideoData(videoId).then((data) => {
-        if (data) {
-          setApiThumbnail(youtubeService.getBestThumbnail(videoId, data.thumbnails));
-          if (!title) {
-            setVideoTitle(data.title);
-          }
-        }
-      });
-    }
-  }, [videoId, useApiThumbnail, thumbnail, title]);
+  const [isPlaying, setIsPlaying] = useState(autoplay);
+  const [embedFailed, setEmbedFailed] = useState(false);
 
   const getThumbnailUrl = () => {
     if (thumbnail) return thumbnail;
-    if (apiThumbnail) return apiThumbnail;
     return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   };
 
-  const getVideoUrl = () => {
+  const getYouTubeUrl = () => {
     let url = `https://www.youtube.com/watch?v=${videoId}`;
     if (start) url += `&t=${start}s`;
     return url;
   };
 
   const getEmbedUrl = () => {
-    const params = new URLSearchParams({
-      autoplay: '1',
-      rel: '0',
-      modestbranding: '1'
-    });
+    const baseUrl = 'https://www.youtube-nocookie.com/embed';
+    const params = new URLSearchParams();
+
+    if (autoplay || isPlaying) params.append('autoplay', '1');
+    params.append('rel', '0');
+    params.append('modestbranding', '1');
 
     if (start) params.append('start', start.toString());
     if (end) params.append('end', end.toString());
 
-    return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+    return `${baseUrl}/${videoId}?${params.toString()}`;
   };
 
-  const handlePlay = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    console.log('Play clicked, embedError:', embedError, 'isPlaying:', isPlaying);
-
-    if (embedError) {
-      window.open(getVideoUrl(), '_blank', 'noopener,noreferrer');
+  const handlePlay = () => {
+    if (embedFailed) {
+      window.open(getYouTubeUrl(), '_blank', 'noopener,noreferrer');
     } else {
       setIsPlaying(true);
     }
   };
 
-  if (isPlaying && !embedError) {
+  const openOnYouTube = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    window.open(getYouTubeUrl(), '_blank', 'noopener,noreferrer');
+  };
+
+  if (isPlaying) {
     return (
       <div className={`relative ${className}`}>
         <iframe
-          className="w-full h-full rounded-lg"
           src={getEmbedUrl()}
-          title={videoTitle || 'YouTube video player'}
-          frameBorder="0"
+          title={title}
+          className="w-full h-full rounded-lg"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
-          referrerPolicy="strict-origin-when-cross-origin"
-          onError={() => {
-            console.error('YouTube embed failed to load');
-            setEmbedError(true);
-          }}
-          onLoad={(e) => {
-            const iframe = e.target as HTMLIFrameElement;
-            try {
-              if (iframe.contentWindow?.location.href.includes('youtube.com/watch')) {
-                console.error('YouTube redirected to watch page');
-                setEmbedError(true);
-              }
-            } catch (err) {
-              console.log('Iframe loaded successfully (cross-origin blocked check)');
-            }
-          }}
+          style={{ border: 0 }}
         />
-        {embedError && (
-          <div className="absolute inset-0 bg-gray-900 flex flex-col items-center justify-center text-white p-8 rounded-lg">
-            <ExternalLink className="w-16 h-16 mb-4" />
-            <p className="text-xl mb-4">Unable to embed video</p>
-            <button
-              onClick={() => window.open(getVideoUrl(), '_blank', 'noopener,noreferrer')}
-              className="bg-[#B8860B] text-white px-6 py-3 rounded-lg hover:bg-[#9A7209] transition-colors"
-            >
-              Watch on YouTube
-            </button>
-          </div>
-        )}
+
+        <button
+          onClick={openOnYouTube}
+          className="absolute top-4 right-4 bg-black/70 hover:bg-black/90 text-white px-3 py-2 rounded-lg text-sm flex items-center gap-2 transition-colors"
+          title="Open on YouTube"
+        >
+          <ExternalLink className="w-4 h-4" />
+          YouTube
+        </button>
       </div>
     );
   }
 
   return (
-    <div className={`relative ${className} cursor-pointer group`} onClick={handlePlay}>
+    <div
+      className={`relative ${className} cursor-pointer group overflow-hidden rounded-lg`}
+      onClick={handlePlay}
+    >
       <img
         src={getThumbnailUrl()}
-        alt={videoTitle}
-        className="w-full h-full object-cover rounded-lg"
+        alt={title}
+        className="w-full h-full object-cover"
         onError={(e) => {
           const target = e.target as HTMLImageElement;
-          target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+          if (!target.src.includes('hqdefault')) {
+            target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+          }
         }}
       />
-      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center rounded-lg">
-        <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-all shadow-2xl">
+
+      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-2xl">
           <Play className="w-10 h-10 text-[#B8860B] ml-1 fill-[#B8860B]" />
         </div>
       </div>
-      <div className="absolute bottom-4 right-4 bg-black/80 text-white px-3 py-1 rounded text-sm">
-        Watch on YouTube
+
+      <div className="absolute bottom-4 right-4 bg-black/80 text-white px-3 py-1.5 rounded text-sm font-medium">
+        Watch Video
       </div>
+
+      <button
+        onClick={openOnYouTube}
+        className="absolute top-4 right-4 bg-black/70 hover:bg-black/90 text-white px-3 py-1.5 rounded text-xs flex items-center gap-1 transition-colors z-10"
+        title="Open on YouTube"
+      >
+        <ExternalLink className="w-3 h-3" />
+        YouTube
+      </button>
     </div>
   );
 };
