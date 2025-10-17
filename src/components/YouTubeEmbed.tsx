@@ -54,15 +54,13 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     const params = new URLSearchParams({
       autoplay: '1',
       rel: '0',
-      modestbranding: '1',
-      enablejsapi: '1',
-      origin: window.location.origin
+      modestbranding: '1'
     });
 
     if (start) params.append('start', start.toString());
     if (end) params.append('end', end.toString());
 
-    return `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
+    return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
   };
 
   if (isPlaying) {
