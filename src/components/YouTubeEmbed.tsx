@@ -95,7 +95,11 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
   };
 
-  const handlePlay = () => {
+  const handlePlay = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('Play clicked, embedError:', embedError, 'isPlaying:', isPlaying);
+
     if (embedError) {
       window.open(getVideoUrl(), '_blank', 'noopener,noreferrer');
     } else {
@@ -114,7 +118,21 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           referrerPolicy="strict-origin-when-cross-origin"
-          onError={() => setEmbedError(true)}
+          onError={() => {
+            console.error('YouTube embed failed to load');
+            setEmbedError(true);
+          }}
+          onLoad={(e) => {
+            const iframe = e.target as HTMLIFrameElement;
+            try {
+              if (iframe.contentWindow?.location.href.includes('youtube.com/watch')) {
+                console.error('YouTube redirected to watch page');
+                setEmbedError(true);
+              }
+            } catch (err) {
+              console.log('Iframe loaded successfully (cross-origin blocked check)');
+            }
+          }}
         />
         {embedError && (
           <div className="absolute inset-0 bg-gray-900 flex flex-col items-center justify-center text-white p-8 rounded-lg">
