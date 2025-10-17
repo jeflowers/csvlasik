@@ -133,12 +133,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   }
 
   return (
-    <a
-      href={getVideoUrl()}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`relative ${className} cursor-pointer group block`}
-    >
+    <div className={`relative ${className} cursor-pointer group`} onClick={handlePlay}>
       <img
         src={getThumbnailUrl()}
         alt={videoTitle}
@@ -156,7 +151,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
       <div className="absolute bottom-4 right-4 bg-black/80 text-white px-3 py-1 rounded text-sm">
         Watch on YouTube
       </div>
-    </a>
+    </div>
   );
 };
 
