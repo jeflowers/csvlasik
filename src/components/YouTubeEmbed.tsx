@@ -133,7 +133,12 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   }
 
   return (
-    <div className={`relative ${className} cursor-pointer group`} onClick={handlePlay}>
+    <a
+      href={getVideoUrl()}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`relative ${className} cursor-pointer group block`}
+    >
       <img
         src={getThumbnailUrl()}
         alt={videoTitle}
@@ -145,17 +150,13 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
       />
       <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center rounded-lg">
         <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-all shadow-2xl">
-          {embedError ? (
-            <ExternalLink className="w-10 h-10 text-[#B8860B]" />
-          ) : (
-            <Play className="w-10 h-10 text-[#B8860B] ml-1 fill-[#B8860B]" />
-          )}
+          <Play className="w-10 h-10 text-[#B8860B] ml-1 fill-[#B8860B]" />
         </div>
       </div>
       <div className="absolute bottom-4 right-4 bg-black/80 text-white px-3 py-1 rounded text-sm">
-        {embedError ? 'Open on YouTube' : 'Watch on YouTube'}
+        Watch on YouTube
       </div>
-    </div>
+    </a>
   );
 };
 
