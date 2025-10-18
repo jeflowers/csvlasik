@@ -199,12 +199,13 @@ i18n
     },
     react: {
       useSuspense: false,
-      bindI18n: 'languageChanged',
+      bindI18n: 'languageChanged loaded',
       bindI18nStore: '',
       transEmptyNodeValue: '',
       transSupportBasicHtmlNodes: true,
       transKeepBasicHtmlNodesFor: ['br', 'strong', 'i']
     },
+    initImmediate: false,
     ns: ['navigation', 'common', 'medical', 'forms', 'procedures', 'home', 'about', 'contact', 'financing', 'technology', 'testimonials', 'footer', 'privacy', 'terms', 'cookies', 'pacific', 'media'],
     defaultNS: 'navigation',
     cleanCode: true,
