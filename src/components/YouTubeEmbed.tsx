@@ -105,9 +105,9 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
           src={getEmbedUrl()}
           title={title}
           className="w-full h-full rounded-lg"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
-          sandbox="allow-scripts allow-same-origin allow-presentation allow-forms"
+          loading="lazy"
           referrerPolicy="strict-origin-when-cross-origin"
           style={{ border: 0 }}
           onError={() => setEmbedFailed(true)}
