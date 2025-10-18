@@ -52,27 +52,16 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   className = "w-full h-96 lg:h-[500px]",
   autoplay = false
 }) => {
-  console.log('='.repeat(80));
-  console.log(`[YouTubeEmbed INIT] videoId: ${videoId}`);
-  console.log(`[YouTubeEmbed INIT] title: ${title}`);
-  console.log(`[YouTubeEmbed INIT] autoplay: ${autoplay}`);
-
   const [isPlaying, setIsPlaying] = useState(autoplay);
   const [embedFailed, setEmbedFailed] = useState(false);
 
-  console.log(`[YouTubeEmbed STATE] isPlaying: ${isPlaying}`);
-  console.log(`[YouTubeEmbed STATE] embedFailed: ${embedFailed}`);
-
   const getThumbnailUrl = () => {
-    const url = thumbnail || `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-    console.log(`[YouTubeEmbed] getThumbnailUrl: ${url}`);
-    return url;
+    return thumbnail || `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   };
 
   const getYouTubeUrl = () => {
     let url = `https://www.youtube.com/watch?v=${videoId}`;
     if (start) url += `&t=${start}s`;
-    console.log(`[YouTubeEmbed] getYouTubeUrl: ${url}`);
     return url;
   };
 
@@ -83,44 +72,33 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     if (autoplay || isPlaying) params.append('autoplay', '1');
     params.append('rel', '0');
     params.append('modestbranding', '1');
+    params.append('origin', window.location.origin);
+    params.append('enablejsapi', '1');
 
     if (start) params.append('start', start.toString());
     if (end) params.append('end', end.toString());
 
-    const embedUrl = `${baseUrl}/${videoId}?${params.toString()}`;
-    console.log(`[YouTubeEmbed] getEmbedUrl: ${embedUrl}`);
-    return embedUrl;
+    return `${baseUrl}/${videoId}?${params.toString()}`;
   };
 
   const handlePlay = () => {
-    console.log(`[YouTubeEmbed] handlePlay CALLED`);
-    console.log(`[YouTubeEmbed] handlePlay - embedFailed: ${embedFailed}`);
-    console.log(`[YouTubeEmbed] handlePlay - current isPlaying: ${isPlaying}`);
-
     const isDevEnvironment = window.location.hostname.includes('webcontainer') ||
                             window.location.hostname.includes('bolt.new') ||
                             window.location.hostname.includes('stackblitz');
 
     if (embedFailed || isDevEnvironment) {
-      console.log(`[YouTubeEmbed] handlePlay - Opening YouTube in new tab (dev environment or embed failed)`);
       window.open(getYouTubeUrl(), '_blank', 'noopener,noreferrer');
     } else {
-      console.log(`[YouTubeEmbed] handlePlay - Setting isPlaying to TRUE`);
       setIsPlaying(true);
-      console.log(`[YouTubeEmbed] handlePlay - setIsPlaying(true) called`);
     }
   };
 
   const openOnYouTube = (e: React.MouseEvent) => {
-    console.log(`[YouTubeEmbed] openOnYouTube CALLED (YouTube button clicked)`);
     e.stopPropagation();
     window.open(getYouTubeUrl(), '_blank', 'noopener,noreferrer');
   };
 
   if (isPlaying) {
-    console.log(`[YouTubeEmbed] RENDERING IFRAME MODE`);
-    console.log(`[YouTubeEmbed] Iframe src will be: ${getEmbedUrl()}`);
-
     return (
       <div className={`relative ${className}`}>
         <iframe
@@ -129,16 +107,10 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
           className="w-full h-full rounded-lg"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          sandbox="allow-scripts allow-same-origin allow-presentation allow-forms"
+          referrerPolicy="strict-origin-when-cross-origin"
           style={{ border: 0 }}
-          onLoad={(e) => {
-            console.log(`[YouTubeEmbed] IFRAME LOADED SUCCESSFULLY`);
-            const iframe = e.target as HTMLIFrameElement;
-            console.log(`[YouTubeEmbed] Iframe element:`, iframe);
-          }}
-          onError={(e) => {
-            console.error(`[YouTubeEmbed] IFRAME ERROR:`, e);
-            setEmbedFailed(true);
-          }}
+          onError={() => setEmbedFailed(true)}
         />
 
         <button
@@ -153,8 +125,6 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     );
   }
 
-  console.log(`[YouTubeEmbed] RENDERING THUMBNAIL MODE`);
-
   const isDevEnvironment = window.location.hostname.includes('webcontainer') ||
                           window.location.hostname.includes('bolt.new') ||
                           window.location.hostname.includes('stackblitz');
@@ -168,14 +138,9 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
         src={getThumbnailUrl()}
         alt={title}
         className="w-full h-full object-cover"
-        onLoad={(e) => {
-          console.log(`[YouTubeEmbed] Thumbnail loaded successfully`);
-        }}
         onError={(e) => {
-          console.error(`[YouTubeEmbed] Thumbnail load error`);
           const target = e.target as HTMLImageElement;
           if (!target.src.includes('hqdefault')) {
-            console.log(`[YouTubeEmbed] Falling back to hqdefault thumbnail`);
             target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
           }
         }}
