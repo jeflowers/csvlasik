@@ -97,8 +97,12 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     console.log(`[YouTubeEmbed] handlePlay - embedFailed: ${embedFailed}`);
     console.log(`[YouTubeEmbed] handlePlay - current isPlaying: ${isPlaying}`);
 
-    if (embedFailed) {
-      console.log(`[YouTubeEmbed] handlePlay - Opening YouTube in new tab (embedFailed=true)`);
+    const isDevEnvironment = window.location.hostname.includes('webcontainer') ||
+                            window.location.hostname.includes('bolt.new') ||
+                            window.location.hostname.includes('stackblitz');
+
+    if (embedFailed || isDevEnvironment) {
+      console.log(`[YouTubeEmbed] handlePlay - Opening YouTube in new tab (dev environment or embed failed)`);
       window.open(getYouTubeUrl(), '_blank', 'noopener,noreferrer');
     } else {
       console.log(`[YouTubeEmbed] handlePlay - Setting isPlaying to TRUE`);
@@ -151,6 +155,10 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
 
   console.log(`[YouTubeEmbed] RENDERING THUMBNAIL MODE`);
 
+  const isDevEnvironment = window.location.hostname.includes('webcontainer') ||
+                          window.location.hostname.includes('bolt.new') ||
+                          window.location.hostname.includes('stackblitz');
+
   return (
     <div
       className={`relative ${className} cursor-pointer group overflow-hidden rounded-lg`}
@@ -182,7 +190,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
       </div>
 
       <div className="absolute bottom-4 right-4 bg-black/80 text-white px-3 py-1.5 rounded text-sm font-medium">
-        Watch Video
+        {isDevEnvironment ? 'Open on YouTube' : 'Watch Video'}
       </div>
 
       <button
