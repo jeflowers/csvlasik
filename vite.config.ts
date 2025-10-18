@@ -23,17 +23,14 @@ export default defineConfig({
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
       allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
     },
-    // Optimizations for stability
+    // Optimized for bolt.new environment
     hmr: {
       overlay: true,
-      protocol: 'ws',
-      host: 'localhost',
-      timeout: 30000,
-      clientPort: 5173
+      timeout: 10000
     },
     watch: {
       usePolling: false,
-      ignored: ['**/node_modules/**', '**/dist/**']
+      ignored: ['**/node_modules/**', '**/dist/**', '**/.env', '**/server/**']
     }
   },
   publicDir: 'public',
