@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   define: {
     global: 'globalThis',
+    'process.env': {},
   },
   server: {
     port: 5173,
@@ -109,7 +110,10 @@ export default defineConfig({
     exclude: ['fsevents'],
     esbuildOptions: {
       target: 'esnext',
-      keepNames: true
+      keepNames: true,
+      define: {
+        global: 'globalThis'
+      }
     }
   },
   resolve: {
