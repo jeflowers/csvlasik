@@ -63,7 +63,7 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
   return user ? <>{children}</> : <Navigate to="/admin/login" />;
 }
 
-function App() {
+function AdminRoutes() {
   const { user, loading } = useAdmin();
 
   if (loading) {
@@ -75,34 +75,42 @@ function App() {
   }
 
   return (
+    <Routes>
+      <Route path="/admin/login" element={
+        user ? <Navigate to="/admin" /> : <LoginForm />
+      } />
+      <Route path="/admin/forgot-password" element={<ForgotPassword />} />
+      <Route path="/admin/reset-password" element={<ResetPassword />} />
+      <Route path="/admin" element={
+        <ProtectedRoute>
+          <AdminLayout />
+        </ProtectedRoute>
+      }>
+        <Route index element={<Dashboard />} />
+        <Route path="testimonials" element={<TestimonialsManager />} />
+        <Route path="external-reviews" element={<ExternalReviewsManager />} />
+        <Route path="articles" element={<ArticlesManager />} />
+        <Route path="media" element={<MediaLibrary />} />
+        <Route path="statistics" element={<StatisticsManager />} />
+        <Route path="compliance" element={<ComplianceManager />} />
+        <Route path="compliance/encryption" element={<EncryptionManager />} />
+        <Route path="compliance/gdpr" element={<GDPRManager />} />
+        <Route path="users" element={<UserManager />} />
+        <Route path="roles" element={<RoleManager />} />
+        <Route path="security" element={<SecurityDashboard />} />
+        <Route path="settings" element={<SettingsPanel />} />
+        <Route path="translations" element={<TranslationDashboard />} />
+      </Route>
+    </Routes>
+  );
+}
+
+function App() {
+  return (
     <Suspense fallback={<LoadingFallback />}>
       <Routes>
         {/* Admin Routes */}
-        <Route path="/admin/login" element={
-          user ? <Navigate to="/admin" /> : <LoginForm />
-        } />
-        <Route path="/admin/forgot-password" element={<ForgotPassword />} />
-        <Route path="/admin/reset-password" element={<ResetPassword />} />
-        <Route path="/admin" element={
-          <ProtectedRoute>
-            <AdminLayout />
-          </ProtectedRoute>
-        }>
-          <Route index element={<Dashboard />} />
-          <Route path="testimonials" element={<TestimonialsManager />} />
-          <Route path="external-reviews" element={<ExternalReviewsManager />} />
-          <Route path="articles" element={<ArticlesManager />} />
-          <Route path="media" element={<MediaLibrary />} />
-          <Route path="statistics" element={<StatisticsManager />} />
-          <Route path="compliance" element={<ComplianceManager />} />
-          <Route path="compliance/encryption" element={<EncryptionManager />} />
-          <Route path="compliance/gdpr" element={<GDPRManager />} />
-          <Route path="users" element={<UserManager />} />
-          <Route path="roles" element={<RoleManager />} />
-          <Route path="security" element={<SecurityDashboard />} />
-          <Route path="settings" element={<SettingsPanel />} />
-          <Route path="translations" element={<TranslationDashboard />} />
-        </Route>
+        <Route path="/admin/*" element={<AdminRoutes />} />
 
         {/* Public Routes */}
         <Route path="/*" element={
@@ -142,5 +150,6 @@ function App() {
     </Suspense>
   );
 }
+
 
 export default App;
