@@ -186,7 +186,8 @@ i18n
       withCredentials: false
     },
     partialBundledLanguages: true,
-    load: 'languageOnly',
+    load: 'currentOnly',
+    supportedLngs: ['en', 'es-MX', 'ko', 'zh', 'vi', 'hy', 'tl', 'ja', 'pt-BR', 'ar', 'he'],
     fallbackLng: {
       'pt-BR': ['pt', 'en'],
       'es-MX': ['en'],
