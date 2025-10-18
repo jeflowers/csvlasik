@@ -14,7 +14,6 @@
   # Node version to use
   [build.environment]
     NODE_VERSION = "20"
-    NODE_ENV = "production"
 
 [build.processing]
   # Skip unnecessary processing
@@ -122,11 +121,9 @@
 # Context-specific build settings
 [context.production]
   command = "npm ci && npm run build"
-  environment = { NODE_ENV = "production" }
 
 [context.deploy-preview]
   command = "npm ci && npm run build"
-  environment = { NODE_ENV = "staging" }
 
 [context.branch-deploy]
   command = "npm ci && npm run build"
