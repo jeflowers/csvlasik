@@ -3,7 +3,7 @@
 
 [build]
   # Build command to run
-  command = "npm run build"
+  command = "npm ci && npm run build"
 
   # Directory with the production build files
   publish = "dist"
@@ -121,15 +121,15 @@
 
 # Context-specific build settings
 [context.production]
-  command = "npm run build"
+  command = "npm ci && npm run build"
   environment = { NODE_ENV = "production" }
 
 [context.deploy-preview]
-  command = "npm run build"
+  command = "npm ci && npm run build"
   environment = { NODE_ENV = "staging" }
 
 [context.branch-deploy]
-  command = "npm run build"
+  command = "npm ci && npm run build"
 
 [context.dev]
   command = "npm run dev"
