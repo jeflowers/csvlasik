@@ -47,6 +47,20 @@
     "patientCare": "Patient Care",
     "mission": "Mission"
   },
+  "videoLibrary": {
+    "title": "Video Library",
+    "description": "Watch educational videos about vision correction procedures and patient success stories",
+    "videos": {
+      "understanding": {
+        "title": "Understanding Vision Correction",
+        "description": "Comprehensive guide to modern vision correction techniques and procedures"
+      },
+      "success": {
+        "title": "Patient Success Stories",
+        "description": "Real patient experiences and life-changing results from vision correction surgery"
+      }
+    }
+  },
   "resources": {
     "title": "Educational Resources",
     "description": "Comprehensive guides and resources to help you understand vision correction",

@@ -1,0 +1,89 @@
+{
+  "hero": {
+    "badge": "Información y Educación Revolucionaria",
+    "title": "Medios y Recursos",
+    "description": "Manténgase informado con las últimas perspectivas de la práctica revolucionaria del Dr. Flowers. Desde procedimientos de vanguardia hasta actualizaciones de misiones en el Pacífico, descubra el futuro del cuidado de la visión a través de perspectivas expertas e historias de pacientes."
+  },
+  "featured": {
+    "sectionTitle": "Artículo Destacado",
+    "title": "El Viaje Revolucionario: Cómo las Misiones del Pacífico Moldearon el LASIK Moderno",
+    "excerpt": "Descubra cómo las condiciones desafiantes en las remotas islas del Pacífico llevaron a innovaciones revolucionarias en la corrección de la visión con láser que ahora benefician a pacientes en todo el mundo.",
+    "readMore": "Leer Artículo"
+  },
+  "sidebar": {
+    "categories": "Categorías",
+    "newsletter": {
+      "title": "Manténgase Actualizado",
+      "description": "Reciba las últimas perspectivas y actualizaciones de misiones del Pacífico",
+      "placeholder": "Su correo electrónico",
+      "subscribe": "Suscribirse"
+    }
+  },
+  "posts": {
+    "telemedicine": {
+      "title": "Telemedicina en el Cuidado Ocular: Conectando las Islas del Pacífico con Tratamiento Avanzado",
+      "excerpt": "Cómo las soluciones innovadoras de telemedicina están cerrando la brecha entre ubicaciones remotas y atención ocular de clase mundial."
+    },
+    "recovery": {
+      "title": "Cronología de Recuperación: Qué Esperar Después de su Cirugía LASIK",
+      "excerpt": "Una guía detallada del proceso de recuperación LASIK, desde las primeras 24 horas hasta los resultados a largo plazo, basada en experiencias reales de pacientes."
+    },
+    "icl": {
+      "title": "Cirugía ICL: La Solución Revolucionaria para Prescripciones Altas",
+      "excerpt": "Entendiendo las Lentes de Contacto Implantables y por qué suelen ser la mejor opción para pacientes con miopía severa."
+    },
+    "infrastructure": {
+      "title": "Construcción de Infraestructura de Salud en Islas Remotas del Pacífico",
+      "excerpt": "Los desafíos y triunfos de establecer programas sostenibles de cuidado ocular en comunidades desatendidas."
+    },
+    "readMore": "Leer Más",
+    "loadMore": "Cargar Más Artículos"
+  },
+  "categories": {
+    "all": "Todas las Publicaciones",
+    "innovation": "Innovación",
+    "procedures": "Procedimientos",
+    "technology": "Tecnología",
+    "patientCare": "Cuidado del Paciente",
+    "mission": "Misión"
+  },
+  "videoLibrary": {
+    "title": "Biblioteca de Videos",
+    "description": "Vea videos educativos sobre procedimientos de corrección de visión e historias de éxito de pacientes",
+    "videos": {
+      "understanding": {
+        "title": "Entendiendo la Corrección de Visión",
+        "description": "Guía completa sobre técnicas y procedimientos modernos de corrección de visión"
+      },
+      "success": {
+        "title": "Historias de Éxito de Pacientes",
+        "description": "Experiencias reales de pacientes y resultados que cambian vidas de la cirugía de corrección de visión"
+      }
+    }
+  },
+  "resources": {
+    "title": "Recursos Educativos",
+    "description": "Guías y recursos completos para ayudarle a entender la corrección de visión",
+    "items": {
+      "lasik": {
+        "title": "Guía LASIK",
+        "description": "Guía completa sobre la cirugía LASIK, desde la candidatura hasta la recuperación"
+      },
+      "comparison": {
+        "title": "Comparación de Procedimientos",
+        "description": "Comparación lado a lado de todos los procedimientos de corrección de visión"
+      },
+      "pacific": {
+        "title": "Actualizaciones de Misión del Pacífico",
+        "description": "Últimas noticias de las misiones revolucionarias de salud del Dr. Flowers en el Pacífico"
+      }
+    },
+    "learnMore": "Aprender Más"
+  },
+  "cta": {
+    "title": "¿Listo para Comenzar su Viaje de Visión?",
+    "description": "¿Tiene preguntas sobre la corrección de visión? ¿Quiere aprender más sobre las técnicas revolucionarias del Dr. Flowers? Programe su consulta gratuita hoy.",
+    "schedule": "Programar Consulta Gratuita",
+    "explore": "Explorar Procedimientos"
+  }
+}
