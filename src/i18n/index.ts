@@ -193,7 +193,7 @@ i18n
       'es-MX': ['en'],
       'default': ['en']
     },
-    debug: false,
+    debug: true,
     interpolation: {
       escapeValue: false,
     },
@@ -262,5 +262,10 @@ if (import.meta.env.DEV) {
     console.log('Language changed to:', lng);
   });
 }
+
+// Log initialization status
+console.log('i18n initialized with languages:', i18n.options.supportedLngs);
+console.log('i18n current language:', i18n.language);
+console.log('i18n backend loadPath:', i18n.options.backend?.loadPath);
 
 export default i18n;
