@@ -95,12 +95,32 @@ const LoadingFallback = () => (
 
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const { user, loading } = useAdmin();
+  const { user, loading, error } = useAdmin();
 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600"></div>
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading admin panel...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center p-8 max-w-md">
+          <h2 className="text-2xl font-bold text-red-600 mb-4">Authentication Error</h2>
+          <p className="text-gray-700 mb-6">{error}</p>
+          <a
+            href="/admin/login"
+            className="inline-block px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700"
+          >
+            Go to Login
+          </a>
+        </div>
       </div>
     );
   }
@@ -109,14 +129,22 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
 }
 
 function AdminRoutes() {
-  const { user, loading } = useAdmin();
+  const { user, loading, error } = useAdmin();
 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600"></div>
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading admin panel...</p>
+          <p className="text-gray-400 text-sm mt-2">Please wait...</p>
+        </div>
       </div>
     );
+  }
+
+  if (error) {
+    console.error('Admin auth error:', error);
   }
 
   return (

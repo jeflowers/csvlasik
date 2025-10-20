@@ -111,20 +111,32 @@ export async function signOutAdmin(): Promise<{ error: string | null }> {
  */
 export async function getCurrentAdmin(): Promise<AuthResponse> {
   try {
+    console.log('[authService] Getting current session...');
     const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+    console.log('[authService] Session result:', { session: !!session, error: sessionError });
 
     if (sessionError || !session) {
-      return { user: null, error: sessionError?.message || 'No active session' };
+      console.log('[authService] No active session');
+      return { user: null, error: null };
     }
 
+    console.log('[authService] Fetching user data for:', session.user.id);
     const { data: userData, error: userError } = await supabase
       .from('users')
       .select('*')
       .eq('id', session.user.id)
-      .single();
+      .maybeSingle();
 
-    if (userError || !userData) {
-      return { user: null, error: 'User not found in database' };
+    console.log('[authService] User data result:', { userData, userError });
+
+    if (userError) {
+      console.error('[authService] User fetch error:', userError);
+      return { user: null, error: userError.message };
+    }
+
+    if (!userData) {
+      console.log('[authService] User not found in database');
+      return { user: null, error: null };
     }
 
     return {
@@ -139,6 +151,7 @@ export async function getCurrentAdmin(): Promise<AuthResponse> {
       error: null,
     };
   } catch (error) {
+    console.error('[authService] Exception:', error);
     return {
       user: null,
       error: error instanceof Error ? error.message : 'Unknown error occurred',
