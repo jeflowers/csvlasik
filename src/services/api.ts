@@ -420,50 +420,83 @@ class ApiService {
   }
 
   async getDashboardOverview() {
-    const [articles, testimonials, media] = await Promise.all([
-      supabase.from('articles').select('*', { count: 'exact', head: true }),
-      supabase.from('testimonials').select('*', { count: 'exact', head: true }),
-      supabase.from('media').select('*', { count: 'exact', head: true }),
-    ]);
+    try {
+      const [articles, testimonials, media, auditLogs] = await Promise.all([
+        supabase.from('articles').select('status', { count: 'exact' }),
+        supabase.from('testimonials').select('approved', { count: 'exact' }),
+        supabase.from('media').select('*', { count: 'exact', head: true }),
+        supabase.from('audit_logs')
+          .select('id, action, entity_type, created_at, user_id, users(name)')
+          .order('created_at', { ascending: false })
+          .limit(10)
+          .then(result => result.error ? { data: [], error: null } : result),
+      ]);
 
-    return {
-      articles: articles.count || 0,
-      testimonials: testimonials.count || 0,
-      media: media.count || 0,
-    };
+      const publishedArticles = articles.data?.filter(a => a.status === 'published').length || 0;
+      const pendingTestimonials = testimonials.data?.filter(t => !t.approved).length || 0;
+
+      const recentActivity = (auditLogs.data || []).map((log: any) => ({
+        action: log.action || 'UNKNOWN',
+        resource_type: log.entity_type || 'unknown',
+        username: log.users?.name || 'Unknown',
+        created_at: log.created_at || new Date().toISOString(),
+      }));
+
+      return {
+        overview: {
+          total_testimonials: testimonials.count || 0,
+          pending_testimonials: pendingTestimonials,
+          published_articles: publishedArticles,
+          total_media: media.count || 0,
+        },
+        recentActivity,
+      };
+    } catch (error) {
+      console.error('Dashboard overview error:', error);
+      return {
+        overview: {
+          total_testimonials: 0,
+          pending_testimonials: 0,
+          published_articles: 0,
+          total_media: 0,
+        },
+        recentActivity: [],
+      };
+    }
   }
 
   async getDashboardStats() {
-    const [
-      articlesData,
-      testimonialsData,
-      recentArticles,
-      recentTestimonials,
-    ] = await Promise.all([
-      supabase.from('articles').select('status'),
-      supabase.from('testimonials').select('approved'),
-      supabase.from('articles').select('*').order('created_at', { ascending: false }).limit(5),
-      supabase.from('testimonials').select('*').order('created_at', { ascending: false }).limit(5),
-    ]);
+    try {
+      const testimonialsData = await supabase
+        .from('testimonials')
+        .select('procedure_type, rating');
 
-    const articleStats = {
-      total: articlesData.data?.length || 0,
-      published: articlesData.data?.filter(a => a.status === 'published').length || 0,
-      draft: articlesData.data?.filter(a => a.status === 'draft').length || 0,
-    };
+      const procedureStats: { [key: string]: { count: number; total_rating: number } } = {};
 
-    const testimonialStats = {
-      total: testimonialsData.data?.length || 0,
-      approved: testimonialsData.data?.filter(t => t.approved).length || 0,
-      pending: testimonialsData.data?.filter(t => !t.approved).length || 0,
-    };
+      (testimonialsData.data || []).forEach((t: any) => {
+        const type = t.procedure_type || 'Unknown';
+        if (!procedureStats[type]) {
+          procedureStats[type] = { count: 0, total_rating: 0 };
+        }
+        procedureStats[type].count++;
+        procedureStats[type].total_rating += t.rating || 0;
+      });
 
-    return {
-      articles: articleStats,
-      testimonials: testimonialStats,
-      recentArticles: recentArticles.data || [],
-      recentTestimonials: recentTestimonials.data || [],
-    };
+      const procedureStatsArray = Object.keys(procedureStats).map(type => ({
+        procedure_type: type,
+        count: procedureStats[type].count,
+        avg_rating: procedureStats[type].total_rating / procedureStats[type].count,
+      }));
+
+      return {
+        procedureStats: procedureStatsArray,
+      };
+    } catch (error) {
+      console.error('Dashboard stats error:', error);
+      return {
+        procedureStats: [],
+      };
+    }
   }
 
   async getUsers() {
