@@ -16,20 +16,44 @@ const ResetPassword: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    checkSession();
+    checkResetToken();
   }, []);
 
-  const checkSession = async () => {
+  const checkResetToken = async () => {
     try {
-      const { data: { session } } = await supabase.auth.getSession();
+      const hashParams = new URLSearchParams(window.location.hash.substring(1));
+      const accessToken = hashParams.get('access_token');
+      const refreshToken = hashParams.get('refresh_token');
+      const type = hashParams.get('type');
 
-      if (session) {
-        setTokenValid(true);
+      if (type === 'recovery' && accessToken) {
+        const { data, error } = await supabase.auth.setSession({
+          access_token: accessToken,
+          refresh_token: refreshToken || '',
+        });
+
+        if (error) {
+          console.error('Session error:', error);
+          setError('Invalid or expired reset link. Please request a new one.');
+          setTokenValid(false);
+        } else if (data.session) {
+          setTokenValid(true);
+        } else {
+          setError('Invalid or expired reset link. Please request a new one.');
+          setTokenValid(false);
+        }
       } else {
-        setError('Invalid or expired reset link. Please request a new one.');
-        setTokenValid(false);
+        const { data: { session } } = await supabase.auth.getSession();
+
+        if (session) {
+          setTokenValid(true);
+        } else {
+          setError('Invalid or expired reset link. Please request a new one.');
+          setTokenValid(false);
+        }
       }
     } catch (err) {
+      console.error('Token validation error:', err);
       setError('Failed to validate reset link.');
       setTokenValid(false);
     } finally {
