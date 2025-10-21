@@ -72,38 +72,36 @@ export function useAdmin(): UseAdminReturn {
     let timeoutId: NodeJS.Timeout;
 
     async function initAuth() {
-      console.log('[useAdmin] Initializing auth...');
-
       timeoutId = setTimeout(() => {
         if (mounted && loading) {
-          console.error('[useAdmin] Auth initialization timeout');
-          setError('Authentication timeout. Please refresh the page.');
-          setLoading(false);
+          console.error('[useAdmin] Auth initialization timeout after 5s');
+          if (mounted) {
+            setUser(null);
+            setError(null);
+            setLoading(false);
+          }
         }
-      }, 10000);
+      }, 5000);
 
       try {
         const { user: currentUser, error: authError } = await getCurrentAdmin();
-        console.log('[useAdmin] getCurrentAdmin result:', { user: currentUser, error: authError });
 
         if (mounted) {
           clearTimeout(timeoutId);
           if (authError) {
-            console.error('[useAdmin] Auth error:', authError);
             setError(authError);
             setUser(null);
           } else {
-            console.log('[useAdmin] Auth success:', currentUser);
             setUser(currentUser);
             setError(null);
           }
           setLoading(false);
         }
       } catch (err) {
-        console.error('[useAdmin] Auth exception:', err);
         if (mounted) {
           clearTimeout(timeoutId);
-          setError(err instanceof Error ? err.message : 'Failed to initialize auth');
+          setUser(null);
+          setError(null);
           setLoading(false);
         }
       }
@@ -112,7 +110,6 @@ export function useAdmin(): UseAdminReturn {
     initAuth();
 
     const unsubscribe = onAuthStateChange((newUser) => {
-      console.log('[useAdmin] Auth state changed:', newUser);
       if (mounted) {
         setUser(newUser);
         setError(null);
@@ -121,7 +118,7 @@ export function useAdmin(): UseAdminReturn {
 
     return () => {
       mounted = false;
-      clearTimeout(timeoutId);
+      if (timeoutId) clearTimeout(timeoutId);
       unsubscribe();
     };
   }, []);
