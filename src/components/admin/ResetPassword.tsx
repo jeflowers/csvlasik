@@ -107,9 +107,10 @@ const ResetPassword: React.FC = () => {
 
       setSuccess(true);
 
-      setTimeout(() => {
+      setTimeout(async () => {
+        await supabase.auth.signOut();
         navigate('/admin/login');
-      }, 3000);
+      }, 2000);
     } catch (err: any) {
       setError(err.message || 'Failed to reset password. Please try again.');
     } finally {
