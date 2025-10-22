@@ -56,6 +56,35 @@ export function usePublicArticles(params: any = {}) {
   return { articles, total, loading, error };
 }
 
+export function usePublicVideos(params: any = {}) {
+  const [videos, setVideos] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        setLoading(true);
+        const data = await apiService.getPublicVideos(params);
+        setVideos(data.videos || []);
+        setTotal(data.total || 0);
+        setError(null);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to fetch videos');
+        setVideos([]);
+        setTotal(0);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchVideos();
+  }, [JSON.stringify(params)]);
+
+  return { videos, total, loading, error };
+}
+
 export function usePublicStatistics() {
   const [statistics, setStatistics] = useState<any>({});
   const [loading, setLoading] = useState(true);

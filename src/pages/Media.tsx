@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Calendar, User, ArrowRight, Eye, Globe, Lightbulb, BookOpen } from 'lucide-react';
-import { usePublicArticles } from '../hooks/useApi';
+import { usePublicArticles, usePublicVideos } from '../hooks/useApi';
 import YouTubeEmbed from '../components/YouTubeEmbed';
 import { apiService } from '../services/api';
 
@@ -14,6 +14,7 @@ const Media = () => {
     limit: displayLimit,
     category: selectedCategory
   });
+  const { videos, loading: videosLoading } = usePublicVideos({ featured: true });
 
   const featuredPost = {
     title: t('featured.title'),
@@ -305,43 +306,53 @@ const Media = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="chopard-card rounded-xl overflow-hidden">
-              <div className="aspect-video">
-                <YouTubeEmbed
-                  videoId="7O_DN1nM36w"
-                  title="Vision Correction Educational Video"
-                  className="w-full h-full"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-serif chopard-text-primary mb-2">
-                  Understanding Vision Correction
-                </h3>
-                <p className="chopard-text-secondary font-light">
-                  Comprehensive guide to modern vision correction techniques and procedures
-                </p>
-              </div>
+          {videosLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {[...Array(2)].map((_, i) => (
+                <div key={i} className="chopard-card rounded-xl overflow-hidden animate-pulse">
+                  <div className="aspect-video bg-gray-200"></div>
+                  <div className="p-6">
+                    <div className="h-6 bg-gray-200 rounded mb-2"></div>
+                    <div className="h-4 bg-gray-200 rounded"></div>
+                  </div>
+                </div>
+              ))}
             </div>
-
-            <div className="chopard-card rounded-xl overflow-hidden">
-              <div className="aspect-video">
-                <YouTubeEmbed
-                  videoId="EqUQDcb6W90"
-                  title="Patient Success Stories"
-                  className="w-full h-full"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-serif chopard-text-primary mb-2">
-                  Patient Success Stories
-                </h3>
-                <p className="chopard-text-secondary font-light">
-                  Real patient experiences and life-changing results from vision correction surgery
-                </p>
-              </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {videos.map((video: any) => (
+                <div key={video.id} className="chopard-card rounded-xl overflow-hidden">
+                  <div className="aspect-video">
+                    {video.video_type === 'youtube' && (
+                      <YouTubeEmbed
+                        videoId={video.video_url}
+                        title={video.title}
+                        className="w-full h-full"
+                      />
+                    )}
+                    {video.video_type === 'vimeo' && (
+                      <iframe
+                        src={`https://player.vimeo.com/video/${video.video_url}`}
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowFullScreen
+                        title={video.title}
+                      />
+                    )}
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-serif chopard-text-primary mb-2">
+                      {video.title}
+                    </h3>
+                    <p className="chopard-text-secondary font-light">
+                      {video.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
+          )}
         </div>
       </section>
 

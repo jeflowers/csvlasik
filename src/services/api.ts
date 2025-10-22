@@ -88,6 +88,34 @@ class ApiService {
     };
   }
 
+  async getPublicVideos(params: any = {}) {
+    let query = supabase
+      .from('videos')
+      .select('*', { count: 'exact' })
+      .eq('status', 'published')
+      .order('published_at', { ascending: false });
+
+    if (params.category) {
+      query = query.eq('category', params.category);
+    }
+
+    if (params.featured !== undefined) {
+      query = query.eq('featured', params.featured);
+    }
+
+    if (params.limit) {
+      query = query.limit(parseInt(params.limit));
+    }
+
+    const { data, error, count } = await query;
+    if (error) throw new Error(error.message);
+
+    return {
+      videos: data || [],
+      total: count || 0,
+    };
+  }
+
   async getTestimonials(params: any = {}) {
     let query = supabase
       .from('testimonials')
