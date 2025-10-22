@@ -7,7 +7,8 @@ import YouTubeEmbed from '../components/YouTubeEmbed';
 
 const Media = () => {
   const { t } = useTranslation(['media', 'common']);
-  const { articles, loading: articlesLoading } = usePublicArticles({ limit: 6 });
+  const [displayLimit, setDisplayLimit] = React.useState(6);
+  const { articles, total, loading: articlesLoading } = usePublicArticles({ limit: displayLimit });
 
   const featuredPost = {
     title: t('featured.title'),
@@ -236,12 +237,21 @@ const Media = () => {
               )}
 
               {/* Load More */}
-              <div className="text-center mt-12">
-                <button className="inline-flex items-center chopard-button px-8 py-3 rounded-lg transition-all duration-300">
-                  {t('posts.loadMore')}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </button>
-              </div>
+              {articles.length < total && (
+                <div className="text-center mt-12">
+                  <button
+                    onClick={() => setDisplayLimit(prev => prev + 6)}
+                    disabled={articlesLoading}
+                    className="inline-flex items-center chopard-button px-8 py-3 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {articlesLoading ? t('common:loading') || 'Loading...' : t('posts.loadMore')}
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </button>
+                  <p className="text-sm chopard-text-secondary mt-3 font-light">
+                    {t('posts.showing') || 'Showing'} {articles.length} {t('common:of') || 'of'} {total} {t('posts.articles') || 'articles'}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>

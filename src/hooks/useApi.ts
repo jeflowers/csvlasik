@@ -29,6 +29,7 @@ export function usePublicTestimonials(params: any = {}) {
 
 export function usePublicArticles(params: any = {}) {
   const [articles, setArticles] = useState([]);
+  const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -38,10 +39,12 @@ export function usePublicArticles(params: any = {}) {
         setLoading(true);
         const data = await apiService.getPublicArticles(params);
         setArticles(data.articles || []);
+        setTotal(data.total || 0);
         setError(null);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to fetch articles');
         setArticles([]);
+        setTotal(0);
       } finally {
         setLoading(false);
       }
@@ -50,7 +53,7 @@ export function usePublicArticles(params: any = {}) {
     fetchArticles();
   }, [JSON.stringify(params)]);
 
-  return { articles, loading, error, refetch: () => fetchArticles() };
+  return { articles, total, loading, error };
 }
 
 export function usePublicStatistics() {

@@ -159,20 +159,20 @@ class ApiService {
   async getPublicArticles(params: any = {}) {
     let query = supabase
       .from('articles')
-      .select('*')
+      .select('*', { count: 'exact' })
       .eq('status', 'published')
-      .order('created_at', { ascending: false });
+      .order('published_at', { ascending: false });
 
     if (params.limit) {
       query = query.limit(parseInt(params.limit));
     }
 
-    const { data, error } = await query;
+    const { data, error, count } = await query;
     if (error) throw new Error(error.message);
 
     return {
-      articles: data,
-      total: data.length,
+      articles: data || [],
+      total: count || 0,
     };
   }
 
