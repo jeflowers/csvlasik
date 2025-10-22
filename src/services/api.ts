@@ -163,6 +163,10 @@ class ApiService {
       .eq('status', 'published')
       .order('published_at', { ascending: false });
 
+    if (params.category) {
+      query = query.eq('category', params.category);
+    }
+
     if (params.limit) {
       query = query.limit(parseInt(params.limit));
     }

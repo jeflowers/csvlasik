@@ -4,11 +4,16 @@ import { useTranslation } from 'react-i18next';
 import { Calendar, User, ArrowRight, Eye, Globe, Lightbulb, BookOpen } from 'lucide-react';
 import { usePublicArticles } from '../hooks/useApi';
 import YouTubeEmbed from '../components/YouTubeEmbed';
+import { apiService } from '../services/api';
 
 const Media = () => {
   const { t } = useTranslation(['media', 'common']);
   const [displayLimit, setDisplayLimit] = React.useState(6);
-  const { articles, total, loading: articlesLoading } = usePublicArticles({ limit: displayLimit });
+  const [selectedCategory, setSelectedCategory] = React.useState<string | null>(null);
+  const { articles, total, loading: articlesLoading } = usePublicArticles({
+    limit: displayLimit,
+    category: selectedCategory
+  });
 
   const featuredPost = {
     title: t('featured.title'),
@@ -62,14 +67,38 @@ const Media = () => {
   // Use dynamic articles if available, otherwise use default posts
   const displayPosts = articles.length > 0 ? articles : defaultPosts;
 
+  // Get unique categories from articles with counts
+  const [categoryCounts, setCategoryCounts] = React.useState<Record<string, number>>({});
+
+  React.useEffect(() => {
+    const fetchCategoryCounts = async () => {
+      const counts: Record<string, number> = {};
+      const allArticles = await apiService.getPublicArticles({});
+
+      allArticles.articles.forEach((article: any) => {
+        const cat = article.category || 'Uncategorized';
+        counts[cat] = (counts[cat] || 0) + 1;
+      });
+
+      setCategoryCounts(counts);
+    };
+
+    fetchCategoryCounts();
+  }, []);
+
   const categories = [
-    { name: t('categories.all'), count: 25, icon: <BookOpen className="h-5 w-5" /> },
-    { name: t('categories.innovation'), count: 8, icon: <Lightbulb className="h-5 w-5" /> },
-    { name: t('categories.procedures'), count: 10, icon: <Eye className="h-5 w-5" /> },
-    { name: t('categories.technology'), count: 5, icon: <Globe className="h-5 w-5" /> },
-    { name: t('categories.patientCare'), count: 7, icon: <User className="h-5 w-5" /> },
-    { name: t('categories.mission'), count: 4, icon: <Globe className="h-5 w-5" /> }
+    { name: t('categories.all'), value: null, count: total, icon: <BookOpen className="h-5 w-5" /> },
+    { name: t('categories.innovation'), value: 'Innovation', count: categoryCounts['Innovation'] || 0, icon: <Lightbulb className="h-5 w-5" /> },
+    { name: t('categories.procedures'), value: 'Procedures', count: categoryCounts['Procedures'] || 0, icon: <Eye className="h-5 w-5" /> },
+    { name: t('categories.technology'), value: 'Technology', count: categoryCounts['Technology'] || 0, icon: <Globe className="h-5 w-5" /> },
+    { name: t('categories.patientCare'), value: 'Patient Care', count: categoryCounts['Patient Care'] || 0, icon: <User className="h-5 w-5" /> },
+    { name: t('categories.mission'), value: 'Mission', count: categoryCounts['Mission'] || 0, icon: <Globe className="h-5 w-5" /> }
   ];
+
+  const handleCategoryClick = (categoryValue: string | null) => {
+    setSelectedCategory(categoryValue);
+    setDisplayLimit(6);
+  };
 
   return (
     <div className="min-h-screen">
@@ -148,7 +177,14 @@ const Media = () => {
                 <ul className="space-y-3">
                   {categories.map((category, index) => (
                     <li key={index}>
-                      <button className="flex items-center justify-between w-full text-left p-3 rounded-lg hover:chopard-glass transition-colors">
+                      <button
+                        onClick={() => handleCategoryClick(category.value)}
+                        className={`flex items-center justify-between w-full text-left p-3 rounded-lg transition-colors ${
+                          selectedCategory === category.value
+                            ? 'chopard-glass border-2 chopard-border'
+                            : 'hover:chopard-glass'
+                        }`}
+                      >
                         <div className="flex items-center">
                           {category.icon}
                           <span className="ml-3 font-light chopard-text-primary">{category.name}</span>
