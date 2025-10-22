@@ -11,10 +11,11 @@ export function usePublicTestimonials(params: any = {}) {
       try {
         setLoading(true);
         const data = await apiService.getPublicTestimonials(params);
-        setTestimonials(data);
+        setTestimonials(data.testimonials || []);
         setError(null);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to fetch testimonials');
+        setTestimonials([]);
       } finally {
         setLoading(false);
       }
@@ -36,10 +37,11 @@ export function usePublicArticles(params: any = {}) {
       try {
         setLoading(true);
         const data = await apiService.getPublicArticles(params);
-        setArticles(data);
+        setArticles(data.articles || []);
         setError(null);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to fetch articles');
+        setArticles([]);
       } finally {
         setLoading(false);
       }
@@ -61,10 +63,21 @@ export function usePublicStatistics() {
       try {
         setLoading(true);
         const data = await apiService.getPublicStatistics();
-        setStatistics(data);
+
+        const formattedStats: any = {};
+        if (Array.isArray(data)) {
+          data.forEach((stat: any) => {
+            formattedStats[stat.name] = {
+              value: stat.value,
+              format: stat.value
+            };
+          });
+        }
+        setStatistics(formattedStats);
         setError(null);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to fetch statistics');
+        setStatistics({});
       } finally {
         setLoading(false);
       }
