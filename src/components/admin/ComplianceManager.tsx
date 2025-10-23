@@ -56,16 +56,19 @@ const ComplianceManager: React.FC = () => {
     try {
       setLoading(true);
       const [logs, requests, status] = await Promise.all([
-        apiService.getAuditLogs(),
-        apiService.getDataSubjectRequests(),
-        apiService.getComplianceStatus()
+        apiService.getAuditLogs().catch(err => { console.error('Audit logs error:', err); return []; }),
+        apiService.getDataSubjectRequests().catch(err => { console.error('Data requests error:', err); return []; }),
+        apiService.getComplianceStatus().catch(err => { console.error('Status error:', err); return {}; })
       ]);
-      
-      setAuditLogs(logs);
-      setDataRequests(requests);
-      setComplianceStatus(status);
+
+      setAuditLogs(Array.isArray(logs) ? logs : []);
+      setDataRequests(Array.isArray(requests) ? requests : []);
+      setComplianceStatus(status || {});
     } catch (error) {
       console.error('Failed to fetch compliance data:', error);
+      setAuditLogs([]);
+      setDataRequests([]);
+      setComplianceStatus({});
     } finally {
       setLoading(false);
     }

@@ -40,16 +40,19 @@ const StatisticsManager: React.FC = () => {
     try {
       setLoading(true);
       const data = await apiService.getStatistics();
-      setStatistics(data);
-      
+      const stats = Array.isArray(data) ? data : [];
+      setStatistics(stats);
+
       // Initialize edit values
       const initialValues: { [key: string]: string } = {};
-      data.forEach((stat: Statistic) => {
+      stats.forEach((stat: Statistic) => {
         initialValues[stat.metric_name] = stat.metric_value;
       });
       setEditValues(initialValues);
     } catch (error) {
       console.error('Failed to fetch statistics:', error);
+      setStatistics([]);
+      setEditValues({});
     } finally {
       setLoading(false);
     }

@@ -604,8 +604,8 @@ class ApiService {
       .select('*')
       .order('display_order');
 
-    if (error) throw new Error(error.message);
-    return data;
+    if (error) throw new Error(error.message || 'Failed to fetch statistics');
+    return data || [];
   }
 
   async createStatistic(statistic: any) {
@@ -658,12 +658,9 @@ class ApiService {
     }
 
     const { data, error, count } = await query;
-    if (error) throw new Error(error.message);
+    if (error) throw new Error(error.message || 'Failed to fetch audit logs');
 
-    return {
-      logs: data,
-      total: count || 0,
-    };
+    return data || [];
   }
 
   async getDataSubjectRequests() {
@@ -672,8 +669,8 @@ class ApiService {
       .select('*')
       .order('created_at', { ascending: false });
 
-    if (error) throw new Error(error.message);
-    return data;
+    if (error) throw new Error(error.message || 'Failed to fetch data subject requests');
+    return data || [];
   }
 
   async createDataSubjectRequest(request: any) {
