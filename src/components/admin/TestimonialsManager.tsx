@@ -18,6 +18,10 @@ interface Testimonial {
   rating?: number;
   procedure_type?: string;
   procedure_date?: string;
+  image_url?: string;
+  video_url?: string;
+  video_type?: 'youtube' | 'vimeo' | 'uploaded';
+  video_thumbnail?: string;
   approved: boolean;
   created_at: string;
 }
@@ -381,7 +385,11 @@ const TestimonialModal: React.FC<{
     content: '',
     procedure_type: 'LASIK',
     procedure_date: '',
-    rating: 5
+    rating: 5,
+    image_url: '',
+    video_url: '',
+    video_type: 'youtube' as 'youtube' | 'vimeo' | 'uploaded',
+    video_thumbnail: ''
   });
   const [saving, setSaving] = useState(false);
 
@@ -393,7 +401,11 @@ const TestimonialModal: React.FC<{
         content: testimonial.content,
         procedure_type: testimonial.procedure_type || 'LASIK',
         procedure_date: testimonial.procedure_date || '',
-        rating: testimonial.rating || 5
+        rating: testimonial.rating || 5,
+        image_url: testimonial.image_url || '',
+        video_url: testimonial.video_url || '',
+        video_type: testimonial.video_type || 'youtube',
+        video_thumbnail: testimonial.video_thumbnail || ''
       });
     }
   }, [testimonial]);
@@ -515,6 +527,70 @@ const TestimonialModal: React.FC<{
               <option value={2}>2 Stars - Fair</option>
               <option value={1}>1 Star - Poor</option>
             </select>
+          </div>
+
+          <div className="border-t border-gray-200 pt-6">
+            <h4 className="text-sm font-medium text-gray-900 mb-4">Media (Optional)</h4>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Patient Photo / Image URL
+                </label>
+                <input
+                  type="url"
+                  value={formData.image_url}
+                  onChange={(e) => setFormData(prev => ({ ...prev, image_url: e.target.value }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                  placeholder="https://example.com/patient-photo.jpg"
+                />
+                <p className="mt-1 text-xs text-gray-500">Upload images in Media Library and paste URL here</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Video URL / ID
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.video_url}
+                    onChange={(e) => setFormData(prev => ({ ...prev, video_url: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    placeholder="YouTube ID or video URL"
+                  />
+                  <p className="mt-1 text-xs text-gray-500">YouTube ID: dQw4w9WgXcQ or full URL</p>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Video Type
+                  </label>
+                  <select
+                    value={formData.video_type}
+                    onChange={(e) => setFormData(prev => ({ ...prev, video_type: e.target.value as 'youtube' | 'vimeo' | 'uploaded' }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                  >
+                    <option value="youtube">YouTube</option>
+                    <option value="vimeo">Vimeo</option>
+                    <option value="uploaded">Uploaded File</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Video Thumbnail URL (Optional)
+                </label>
+                <input
+                  type="url"
+                  value={formData.video_thumbnail}
+                  onChange={(e) => setFormData(prev => ({ ...prev, video_thumbnail: e.target.value }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                  placeholder="https://example.com/video-thumbnail.jpg"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="flex justify-end space-x-3 pt-6 border-t border-gray-200">

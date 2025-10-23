@@ -23,6 +23,11 @@ interface Article {
   category?: string;
   tags?: string[];
   meta_description?: string;
+  featured_image?: string;
+  excerpt?: string;
+  video_url?: string;
+  video_type?: 'youtube' | 'vimeo' | 'uploaded';
+  gallery_images?: any[];
   status: 'draft' | 'published' | 'archived';
   created_at: string;
   updated_at: string;
@@ -341,6 +346,10 @@ const ArticleModal: React.FC<{
     content: '',
     category: 'Procedures',
     meta_description: '',
+    featured_image: '',
+    excerpt: '',
+    video_url: '',
+    video_type: 'youtube' as 'youtube' | 'vimeo' | 'uploaded',
     status: 'draft' as 'draft' | 'published' | 'archived',
     tags: ''
   });
@@ -354,6 +363,10 @@ const ArticleModal: React.FC<{
         content: article.content,
         category: article.category || 'Procedures',
         meta_description: article.meta_description || '',
+        featured_image: article.featured_image || '',
+        excerpt: article.excerpt || '',
+        video_url: article.video_url || '',
+        video_type: article.video_type || 'youtube',
         status: article.status,
         tags: article.tags ? article.tags.join(', ') : ''
       });
@@ -461,6 +474,22 @@ const ArticleModal: React.FC<{
               <div className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Excerpt
+                  </label>
+                  <textarea
+                    rows={3}
+                    value={formData.excerpt}
+                    onChange={(e) => setFormData(prev => ({ ...prev, excerpt: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    placeholder="Brief summary shown in article listings..."
+                  />
+                  <p className="text-xs text-gray-500 mt-1">
+                    Short description for article preview cards.
+                  </p>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
                     Meta Description
                   </label>
                   <textarea
@@ -473,6 +502,55 @@ const ArticleModal: React.FC<{
                   <p className="text-xs text-gray-500 mt-1">
                     Recommended: 150-160 characters.
                   </p>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Featured Image URL
+                  </label>
+                  <input
+                    type="url"
+                    value={formData.featured_image}
+                    onChange={(e) => setFormData(prev => ({ ...prev, featured_image: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    placeholder="https://example.com/featured-image.jpg"
+                  />
+                  <p className="text-xs text-gray-500 mt-1">
+                    Upload image in Media Library and paste URL here.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Video URL / ID (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.video_url}
+                      onChange={(e) => setFormData(prev => ({ ...prev, video_url: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                      placeholder="YouTube ID or video URL"
+                    />
+                    <p className="text-xs text-gray-500 mt-1">
+                      Embed video in article.
+                    </p>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Video Type
+                    </label>
+                    <select
+                      value={formData.video_type}
+                      onChange={(e) => setFormData(prev => ({ ...prev, video_type: e.target.value as 'youtube' | 'vimeo' | 'uploaded' }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    >
+                      <option value="youtube">YouTube</option>
+                      <option value="vimeo">Vimeo</option>
+                      <option value="uploaded">Uploaded File</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div>
