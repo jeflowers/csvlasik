@@ -5,6 +5,13 @@ import { MapPin, Phone, Mail, Clock, Calendar, ArrowRight, CheckCircle, User, Me
 
 const Contact = () => {
   const { t } = useTranslation(['contact', 'forms', 'common']);
+
+  const scrollToMap = () => {
+    const mapSection = document.getElementById('office-map');
+    if (mapSection) {
+      mapSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -212,15 +219,18 @@ const Contact = () => {
 
               {/* Contact Details */}
               <div className="space-y-6">
-                <div className="flex items-start">
-                  <MapPin className="h-6 w-6 chopard-text-accent mr-4 mt-1" />
+                <button
+                  onClick={scrollToMap}
+                  className="flex items-start hover:opacity-80 transition-opacity duration-300 group cursor-pointer text-left w-full"
+                >
+                  <MapPin className="h-6 w-6 chopard-text-accent mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                   <div>
-                    <h3 className="font-light chopard-text-primary mb-1">{t('office.name')}</h3>
-                    <p className="chopard-text-secondary font-light">
+                    <h3 className="font-light chopard-text-primary mb-1 group-hover:chopard-text-accent transition-colors duration-300">{t('office.name')}</h3>
+                    <p className="chopard-text-secondary font-light group-hover:chopard-text-accent transition-colors duration-300">
                       {t('office.address')}
                     </p>
                   </div>
-                </div>
+                </button>
 
                 <div className="flex items-start">
                   <Phone className="h-6 w-6 chopard-text-accent mr-4 mt-1" />
@@ -293,7 +303,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 chopard-hero">
+      <section id="office-map" className="py-16 chopard-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
