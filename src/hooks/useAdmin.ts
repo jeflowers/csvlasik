@@ -74,14 +74,14 @@ export function useAdmin(): UseAdminReturn {
     async function initAuth() {
       timeoutId = setTimeout(() => {
         if (mounted && loading) {
-          console.error('[useAdmin] Auth initialization timeout after 5s');
+          console.warn('[useAdmin] Auth initialization timeout after 3s');
           if (mounted) {
             setUser(null);
             setError(null);
             setLoading(false);
           }
         }
-      }, 5000);
+      }, 3000);
 
       try {
         const { user: currentUser, error: authError } = await getCurrentAdmin();

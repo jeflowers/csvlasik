@@ -7,12 +7,20 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     persistSession: true,
     autoRefreshToken: true,
-    detectSessionInUrl: true,
+    detectSessionInUrl: false,
     flowType: 'pkce',
+    storage: localStorage,
+    storageKey: 'clearsight-auth',
   },
   global: {
     headers: {
       'x-application-name': 'clearsight-lasik',
+    },
+    fetch: (url, options = {}) => {
+      return fetch(url, {
+        ...options,
+        keepalive: true,
+      });
     },
   },
   db: {

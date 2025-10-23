@@ -326,7 +326,7 @@ const Contact = () => {
               {/* Google Maps Embed as Background */}
               <div className="w-full h-full relative">
                 <iframe
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDummy&q=5750+Downey+Ave+suite+101,Lakewood,CA+90712&zoom=15"
+                  src="https://maps.google.com/maps?q=5750+Downey+Ave+suite+101,Lakewood,CA+90712&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="500"
                   style={{ border: 0, pointerEvents: 'none' }}
@@ -334,10 +334,6 @@ const Contact = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Clearsight LASIK Lakewood Office Location"
                   className="absolute inset-0"
-                  onError={(e) => {
-                    const iframe = e.currentTarget as HTMLIFrameElement;
-                    iframe.src = `https://maps.google.com/maps?q=5750+Downey+Ave+suite+101,Lakewood,CA+90712&t=&z=15&ie=UTF8&iwloc=&output=embed`;
-                  }}
                 />
 
                 {/* Invisible overlay to capture clicks */}

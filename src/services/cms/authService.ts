@@ -42,6 +42,9 @@ export interface AuthResponse {
 /**
  * Sign in admin user with email and password
  */
+let userCache: { user: AdminUser | null; timestamp: number } | null = null;
+const CACHE_DURATION = 60000;
+
 export async function signInAdmin(credentials: LoginCredentials): Promise<AuthResponse> {
   try {
     const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
@@ -59,9 +62,9 @@ export async function signInAdmin(credentials: LoginCredentials): Promise<AuthRe
 
     const { data: userData, error: userError } = await supabase
       .from('users')
-      .select('*')
+      .select('id,email,name,role,created_at,updated_at')
       .eq('id', authData.user.id)
-      .single();
+      .maybeSingle();
 
     if (userError || !userData) {
       await supabase.auth.signOut();
@@ -73,15 +76,19 @@ export async function signInAdmin(credentials: LoginCredentials): Promise<AuthRe
       return { user: null, error: 'Insufficient permissions' };
     }
 
+    const user = {
+      id: userData.id,
+      email: userData.email,
+      name: userData.name,
+      role: userData.role,
+      created_at: userData.created_at,
+      updated_at: userData.updated_at,
+    };
+
+    userCache = { user, timestamp: Date.now() };
+
     return {
-      user: {
-        id: userData.id,
-        email: userData.email,
-        name: userData.name,
-        role: userData.role,
-        created_at: userData.created_at,
-        updated_at: userData.updated_at,
-      },
+      user,
       error: null,
     };
   } catch (error) {
@@ -97,6 +104,7 @@ export async function signInAdmin(credentials: LoginCredentials): Promise<AuthRe
  */
 export async function signOutAdmin(): Promise<{ error: string | null }> {
   try {
+    userCache = null;
     const { error } = await supabase.auth.signOut();
     return { error: error?.message || null };
   } catch (error) {
@@ -111,47 +119,50 @@ export async function signOutAdmin(): Promise<{ error: string | null }> {
  */
 export async function getCurrentAdmin(): Promise<AuthResponse> {
   try {
-    console.log('[authService] Getting current session...');
+    if (userCache && Date.now() - userCache.timestamp < CACHE_DURATION) {
+      return { user: userCache.user, error: null };
+    }
+
     const { data: { session }, error: sessionError } = await supabase.auth.getSession();
-    console.log('[authService] Session result:', { session: !!session, error: sessionError });
 
     if (sessionError || !session) {
-      console.log('[authService] No active session');
+      userCache = null;
       return { user: null, error: null };
     }
 
-    console.log('[authService] Fetching user data for:', session.user.id);
     const { data: userData, error: userError } = await supabase
       .from('users')
-      .select('*')
+      .select('id,email,name,role,created_at,updated_at')
       .eq('id', session.user.id)
       .maybeSingle();
 
-    console.log('[authService] User data result:', { userData, userError });
-
     if (userError) {
-      console.error('[authService] User fetch error:', userError);
+      userCache = null;
       return { user: null, error: userError.message };
     }
 
     if (!userData) {
-      console.log('[authService] User not found in database');
+      userCache = null;
       return { user: null, error: null };
     }
 
+    const user = {
+      id: userData.id,
+      email: userData.email,
+      name: userData.name,
+      role: userData.role,
+      created_at: userData.created_at,
+      updated_at: userData.updated_at,
+    };
+
+    userCache = { user, timestamp: Date.now() };
+
     return {
-      user: {
-        id: userData.id,
-        email: userData.email,
-        name: userData.name,
-        role: userData.role,
-        created_at: userData.created_at,
-        updated_at: userData.updated_at,
-      },
+      user,
       error: null,
     };
   } catch (error) {
-    console.error('[authService] Exception:', error);
+    userCache = null;
     return {
       user: null,
       error: error instanceof Error ? error.message : 'Unknown error occurred',
@@ -172,11 +183,17 @@ export function hasRole(user: AdminUser | null, allowedRoles: string[]): boolean
  */
 export function onAuthStateChange(callback: (user: AdminUser | null) => void) {
   const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-    if (session?.user) {
-      const { user } = await getCurrentAdmin();
-      callback(user);
-    } else {
+    if (event === 'SIGNED_OUT' || event === 'USER_DELETED') {
+      userCache = null;
       callback(null);
+    } else if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+      if (session?.user) {
+        const { user } = await getCurrentAdmin();
+        callback(user);
+      } else {
+        userCache = null;
+        callback(null);
+      }
     }
   });
 
