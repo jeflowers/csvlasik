@@ -16,12 +16,9 @@ import { apiService } from '../../services/api';
 
 interface Statistic {
   id: number;
-  metric_name: string;
-  metric_value: string;
-  metric_type: 'number' | 'percentage' | 'text';
-  display_format: string;
+  name: string;
+  value: string;
   display_order: number;
-  created_at: string;
   updated_at: string;
 }
 
@@ -46,7 +43,7 @@ const StatisticsManager: React.FC = () => {
       // Initialize edit values
       const initialValues: { [key: string]: string } = {};
       stats.forEach((stat: Statistic) => {
-        initialValues[stat.metric_name] = stat.metric_value;
+        initialValues[stat.name] = stat.value;
       });
       setEditValues(initialValues);
     } catch (error) {
@@ -62,30 +59,28 @@ const StatisticsManager: React.FC = () => {
     setEditingStats(prev => ({ ...prev, [metricName]: true }));
   };
 
-  const handleSave = async (metricName: string) => {
+  const handleSave = async (name: string) => {
     try {
-      const statistic = statistics.find(s => s.metric_name === metricName);
+      const statistic = statistics.find(s => s.name === name);
       if (!statistic) return;
 
-      await apiService.updateStatistic(metricName, {
-        metric_value: editValues[metricName],
-        metric_type: statistic.metric_type,
-        display_format: statistic.display_format
+      await apiService.updateStatistic(name, {
+        value: editValues[name]
       });
 
-      setEditingStats(prev => ({ ...prev, [metricName]: false }));
+      setEditingStats(prev => ({ ...prev, [name]: false }));
       fetchStatistics();
     } catch (error) {
       console.error('Failed to update statistic:', error);
     }
   };
 
-  const handleCancel = (metricName: string) => {
-    const original = statistics.find(s => s.metric_name === metricName);
+  const handleCancel = (name: string) => {
+    const original = statistics.find(s => s.name === name);
     if (original) {
-      setEditValues(prev => ({ ...prev, [metricName]: original.metric_value }));
+      setEditValues(prev => ({ ...prev, [name]: original.value }));
     }
-    setEditingStats(prev => ({ ...prev, [metricName]: false }));
+    setEditingStats(prev => ({ ...prev, [name]: false }));
   };
 
   const handleDelete = async (metricName: string) => {
@@ -99,9 +94,17 @@ const StatisticsManager: React.FC = () => {
     }
   };
 
-  const formatDisplayValue = (value: string, format: string) => {
-    if (!format || !value) return value || '';
-    return format.replace('{value}', value);
+  const formatDisplayValue = (value: string, name: string) => {
+    if (!value) return '';
+
+    // Auto-format based on metric name
+    if (name.includes('rate') || name.includes('satisfaction')) {
+      return `${value}%`;
+    }
+    if (name.includes('rating')) {
+      return `${value}/5`;
+    }
+    return value;
   };
 
   const getStatIcon = (metricName: string) => {
@@ -173,26 +176,25 @@ const StatisticsManager: React.FC = () => {
             <div key={stat.id} className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center">
-                  {getStatIcon(stat.metric_name)}
+                  {getStatIcon(stat.name)}
                   <div className="ml-3">
                     <h3 className="text-lg font-medium text-gray-900">
-                      {getStatTitle(stat.metric_name)}
+                      {getStatTitle(stat.name)}
                     </h3>
-                    <p className="text-sm text-gray-500 capitalize">{stat.metric_type}</p>
                   </div>
                 </div>
                 <div className="flex space-x-1">
-                  {editingStats[stat.metric_name] ? (
+                  {editingStats[stat.name] ? (
                     <>
                       <button
-                        onClick={() => handleSave(stat.metric_name)}
+                        onClick={() => handleSave(stat.name)}
                         className="text-green-600 hover:text-green-900"
                         title="Save"
                       >
                         <Save className="h-4 w-4" />
                       </button>
                       <button
-                        onClick={() => handleCancel(stat.metric_name)}
+                        onClick={() => handleCancel(stat.name)}
                         className="text-gray-600 hover:text-gray-900"
                         title="Cancel"
                       >
@@ -202,14 +204,14 @@ const StatisticsManager: React.FC = () => {
                   ) : (
                     <>
                       <button
-                        onClick={() => handleEdit(stat.metric_name)}
+                        onClick={() => handleEdit(stat.name)}
                         className="text-blue-600 hover:text-blue-900"
                         title="Edit"
                       >
                         <Edit className="h-4 w-4" />
                       </button>
                       <button
-                        onClick={() => handleDelete(stat.metric_name)}
+                        onClick={() => handleDelete(stat.name)}
                         className="text-red-600 hover:text-red-900"
                         title="Delete"
                       >
@@ -221,24 +223,23 @@ const StatisticsManager: React.FC = () => {
               </div>
 
               <div className="mb-4">
-                {editingStats[stat.metric_name] ? (
+                {editingStats[stat.name] ? (
                   <input
                     type="text"
-                    value={editValues[stat.metric_name] || ''}
-                    onChange={(e) => setEditValues(prev => ({ ...prev, [stat.metric_name]: e.target.value }))}
+                    value={editValues[stat.name] || ''}
+                    onChange={(e) => setEditValues(prev => ({ ...prev, [stat.name]: e.target.value }))}
                     className="text-3xl font-bold text-gray-900 bg-transparent border-b-2 border-teal-500 focus:outline-none w-full"
                     autoFocus
                   />
                 ) : (
                   <div className="text-3xl font-bold text-gray-900">
-                    {formatDisplayValue(stat.metric_value, stat.display_format)}
+                    {formatDisplayValue(stat.value, stat.name)}
                   </div>
                 )}
               </div>
 
               <div className="text-sm text-gray-500">
                 <p>Last updated: {new Date(stat.updated_at).toLocaleDateString()}</p>
-                <p className="mt-1">Format: {stat.display_format}</p>
               </div>
             </div>
           ))
@@ -265,10 +266,9 @@ const CreateStatisticModal: React.FC<{
   onSave: () => void;
 }> = ({ onClose, onSave }) => {
   const [formData, setFormData] = useState({
-    metric_name: '',
-    metric_value: '',
-    metric_type: 'number',
-    display_format: '{value}'
+    name: '',
+    value: '',
+    display_order: 0
   });
   const [saving, setSaving] = useState(false);
 
@@ -304,11 +304,14 @@ const CreateStatisticModal: React.FC<{
             <input
               type="text"
               required
-              value={formData.metric_name}
-              onChange={(e) => setFormData(prev => ({ ...prev, metric_name: e.target.value }))}
+              value={formData.name}
+              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
               placeholder="e.g., total_procedures"
             />
+            <p className="text-xs text-gray-500 mt-1">
+              Use underscores for multi-word names (e.g., success_rate, patient_satisfaction)
+            </p>
           </div>
 
           <div>
@@ -318,42 +321,29 @@ const CreateStatisticModal: React.FC<{
             <input
               type="text"
               required
-              value={formData.metric_value}
-              onChange={(e) => setFormData(prev => ({ ...prev, metric_value: e.target.value }))}
+              value={formData.value}
+              onChange={(e) => setFormData(prev => ({ ...prev, value: e.target.value }))}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-              placeholder="e.g., 30000"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Type *
-            </label>
-            <select
-              required
-              value={formData.metric_type}
-              onChange={(e) => setFormData(prev => ({ ...prev, metric_type: e.target.value }))}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-            >
-              <option value="number">Number</option>
-              <option value="percentage">Percentage</option>
-              <option value="text">Text</option>
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Display Format
-            </label>
-            <input
-              type="text"
-              value={formData.display_format}
-              onChange={(e) => setFormData(prev => ({ ...prev, display_format: e.target.value }))}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-              placeholder="e.g., {value}+, {value}%, {value}"
+              placeholder="e.g., 30000 or 98 or 4.9"
             />
             <p className="text-xs text-gray-500 mt-1">
-              Use {'{value}'} as placeholder for the actual value
+              Format is auto-applied based on name (rates get %, ratings get /5)
+            </p>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Display Order
+            </label>
+            <input
+              type="number"
+              value={formData.display_order}
+              onChange={(e) => setFormData(prev => ({ ...prev, display_order: parseInt(e.target.value) || 0 }))}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+              placeholder="0"
+            />
+            <p className="text-xs text-gray-500 mt-1">
+              Lower numbers appear first
             </p>
           </div>
 
