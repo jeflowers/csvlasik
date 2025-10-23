@@ -103,19 +103,17 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-serif font-light mb-6 text-white tracking-wide">{t('contact.title')}</h3>
             <div className="space-y-5">
-              <a
-                href="https://www.google.com/maps/place/5750+Downey+Ave+suite+101,+Lakewood,+CA+90712/@33.8595678,-118.1533687,17z/data=!3m1!4b1!4m6!3m5!1s0x80dd32e42e2695f1:0x1108f8a7ff2c6497!8m2!3d33.8595678!4d-118.1507884!16s%2Fg%2F11ygln9y7v?entry=ttu&g_ep=EgoyMDI1MTAyMC4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/contact"
                 className="flex items-start space-x-4 hover:opacity-80 transition-opacity duration-300"
-                aria-label="Get directions to our office"
+                aria-label="View office location"
               >
                 <MapPin className="h-5 w-5 chopard-text-accent mt-1" />
                 <div>
                   <p className="text-white font-light text-sm">{t('contact.office')}</p>
                   <p className="text-white/70 text-sm leading-relaxed font-light">{t('contact.address')}</p>
                 </div>
-              </a>
+              </Link>
               <a href="tel:+18442115462" className="flex items-center space-x-4 text-white/70 hover:text-white transition-all duration-300 font-light">
                 <span className="inline-flex items-center space-x-4" dir="ltr">
                   <Phone className="h-5 w-5 chopard-text-accent" />

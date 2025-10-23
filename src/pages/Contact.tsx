@@ -212,21 +212,15 @@ const Contact = () => {
 
               {/* Contact Details */}
               <div className="space-y-6">
-                <a
-                  href="https://www.google.com/maps/place/5750+Downey+Ave+suite+101,+Lakewood,+CA+90712/@33.8595678,-118.1533687,17z/data=!3m1!4b1!4m6!3m5!1s0x80dd32e42e2695f1:0x1108f8a7ff2c6497!8m2!3d33.8595678!4d-118.1507884!16s%2Fg%2F11ygln9y7v?entry=ttu&g_ep=EgoyMDI1MTAyMC4wIKXMDSoASAFQAw%3D%3D"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start hover:opacity-80 transition-opacity duration-300 group"
-                  aria-label="Get directions to our office"
-                >
-                  <MapPin className="h-6 w-6 chopard-text-accent mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
+                <div className="flex items-start">
+                  <MapPin className="h-6 w-6 chopard-text-accent mr-4 mt-1" />
                   <div>
-                    <h3 className="font-light chopard-text-primary mb-1 group-hover:chopard-text-accent transition-colors duration-300">{t('office.name')}</h3>
-                    <p className="chopard-text-secondary font-light group-hover:chopard-text-accent transition-colors duration-300">
+                    <h3 className="font-light chopard-text-primary mb-1">{t('office.name')}</h3>
+                    <p className="chopard-text-secondary font-light">
                       {t('office.address')}
                     </p>
                   </div>
-                </a>
+                </div>
 
                 <div className="flex items-start">
                   <Phone className="h-6 w-6 chopard-text-accent mr-4 mt-1" />
@@ -298,8 +292,35 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* What to Expect */}
+      {/* Map Section */}
       <section className="py-16 chopard-hero">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
+              {t('map.title', 'Visit Our Office')}
+            </h2>
+            <p className="text-lg chopard-text-secondary max-w-2xl mx-auto font-light">
+              {t('map.subtitle', 'Find us in Lakewood, California')}
+            </p>
+          </div>
+
+          <div className="chopard-card rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.3896247879445!2d-118.15336871583247!3d33.85956780000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd32e42e2695f1%3A0x1108f8a7ff2c6497!2s5750%20Downey%20Ave%20suite%20101%2C%20Lakewood%2C%20CA%2090712!5e0!3m2!1sen!2sus!4v1729696800000!5m2!1sen!2sus"
+              width="100%"
+              height="500"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Clearsight LASIK Lakewood Office Location"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* What to Expect */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
