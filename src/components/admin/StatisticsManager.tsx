@@ -100,6 +100,7 @@ const StatisticsManager: React.FC = () => {
   };
 
   const formatDisplayValue = (value: string, format: string) => {
+    if (!format || !value) return value || '';
     return format.replace('{value}', value);
   };
 
@@ -117,6 +118,8 @@ const StatisticsManager: React.FC = () => {
   };
 
   const getStatTitle = (metricName: string) => {
+    if (!metricName) return 'Unknown Metric';
+
     const titleMap: { [key: string]: string } = {
       total_procedures: 'Total Procedures',
       pacific_procedures: 'Pacific Procedures',
@@ -125,7 +128,7 @@ const StatisticsManager: React.FC = () => {
       years_experience: 'Years Experience',
       islands_served: 'Islands Served'
     };
-    
+
     return titleMap[metricName] || metricName.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   };
 

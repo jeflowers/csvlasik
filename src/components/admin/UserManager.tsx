@@ -16,9 +16,10 @@ import {
 import { apiService } from '../../services/api';
 
 interface User {
-  id: number;
-  username: string;
-  role: 'admin' | 'editor' | 'contributor' | 'viewer';
+  id: string;
+  name: string;
+  email: string;
+  role: 'admin' | 'editor' | 'viewer';
   created_at: string;
   updated_at: string;
   last_login?: string;
@@ -93,7 +94,11 @@ const UserManager: React.FC = () => {
   };
 
   const filteredUsers = users.filter(user => {
-    const matchesSearch = user.username.toLowerCase().includes(searchTerm.toLowerCase());
+    const searchLower = searchTerm.toLowerCase();
+    const matchesSearch = !searchTerm ||
+      (user.name && user.name.toLowerCase().includes(searchLower)) ||
+      (user.email && user.email.toLowerCase().includes(searchLower)) ||
+      ((user as any).username && (user as any).username.toLowerCase().includes(searchLower));
     const matchesRole = roleFilter === 'all' || user.role === roleFilter;
     return matchesSearch && matchesRole;
   });
@@ -207,12 +212,12 @@ const UserManager: React.FC = () => {
                         <div className="flex-shrink-0 h-10 w-10">
                           <div className="h-10 w-10 rounded-full bg-teal-600 flex items-center justify-center">
                             <span className="text-sm font-medium text-white">
-                              {user.username.charAt(0).toUpperCase()}
+                              {user.name.charAt(0).toUpperCase()}
                             </span>
                           </div>
                         </div>
                         <div className="ml-4">
-                          <div className="text-sm font-medium text-gray-900">{user.username}</div>
+                          <div className="text-sm font-medium text-gray-900">{user.name}</div>
                           <div className="text-sm text-gray-500">ID: {user.id}</div>
                         </div>
                       </div>
@@ -271,7 +276,7 @@ const UserManager: React.FC = () => {
                           onClick={() => handleDelete(user.id)}
                           className="text-red-600 hover:text-red-900"
                           title="Delete User"
-                          disabled={user.username === 'admin'}
+                          disabled={user.role === 'admin'}
                         >
                           <Trash2 className="h-4 w-4" />
                         </button>
@@ -323,7 +328,8 @@ const UserModal: React.FC<{
   onSave: () => void;
 }> = ({ user, onClose, onSave }) => {
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',
+    email: '',
     password: '',
     confirmPassword: '',
     role: 'viewer',
@@ -335,7 +341,8 @@ const UserModal: React.FC<{
   useEffect(() => {
     if (user) {
       setFormData({
-        username: user.username,
+        name: user.name,
+        email: user.email,
         password: '',
         confirmPassword: '',
         role: user.role,
@@ -378,7 +385,8 @@ const UserModal: React.FC<{
 
     try {
       const submitData = {
-        username: formData.username,
+        name: formData.name,
+        email: formData.email,
         role: formData.role,
         is_active: formData.is_active,
         ...(formData.password && { password: formData.password })
@@ -413,15 +421,29 @@ const UserModal: React.FC<{
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Username *
+              Name *
             </label>
             <input
               type="text"
               required
-              value={formData.username}
-              onChange={(e) => setFormData(prev => ({ ...prev, username: e.target.value }))}
+              value={formData.name}
+              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-              placeholder="Enter username"
+              placeholder="Enter full name"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Email *
+            </label>
+            <input
+              type="email"
+              required
+              value={formData.email}
+              onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+              placeholder="user@example.com"
             />
           </div>
 
@@ -561,7 +583,7 @@ const PasswordResetModal: React.FC<{
 
         <div className="mb-4 p-3 bg-yellow-50 border border-yellow-200 rounded">
           <p className="text-sm text-yellow-800">
-            Resetting password for: <strong>{user.username}</strong>
+            Resetting password for: <strong>{user.name}</strong> ({user.email})
           </p>
         </div>
 
