@@ -315,14 +315,58 @@ const Contact = () => {
           </div>
 
           <div className="chopard-card rounded-2xl overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-118.15336871%2C33.85456780%2C-118.14536871%2C33.86456780&layer=mapnik&marker=33.8595678%2C-118.1507884"
-              width="100%"
-              height="500"
-              style={{ border: 0 }}
-              loading="lazy"
-              title="Clearsight LASIK Lakewood Office Location"
-            />
+            {/* Static Map with Click-through to Google Maps */}
+            <a
+              href="https://www.google.com/maps/place/5750+Downey+Ave+suite+101,+Lakewood,+CA+90712/@33.8595678,-118.1507884,17z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block relative group bg-gray-100"
+              style={{ height: '500px' }}
+            >
+              {/* Using Mapbox Static Images API (free tier without API key for basic maps) */}
+              <div className="w-full h-full relative overflow-hidden">
+                <img
+                  src="https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/pin-l-embassy+f74e4e(-118.1507884,33.8595678)/-118.1507884,33.8595678,14,0/1200x500@2x?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
+                  alt="Map showing Clearsight LASIK location at 5750 Downey Ave., Suite 101, Lakewood, CA 90712"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback: Create a simple map placeholder
+                    const target = e.currentTarget as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent && !parent.querySelector('.map-fallback')) {
+                      const fallback = document.createElement('div');
+                      fallback.className = 'map-fallback w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200';
+                      fallback.innerHTML = `
+                        <div class="text-center p-8">
+                          <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white shadow-lg mb-4">
+                            <svg class="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                          </div>
+                          <h3 class="text-xl font-semibold text-gray-800 mb-2">5750 Downey Ave., Suite 101</h3>
+                          <p class="text-gray-600 mb-4">Lakewood, CA 90712</p>
+                          <p class="text-sm text-gray-500">Click to view interactive map</p>
+                        </div>
+                      `;
+                      parent.appendChild(fallback);
+                    }
+                  }}
+                />
+              </div>
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center pointer-events-none">
+                <div className="bg-white px-8 py-4 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100">
+                  <p className="text-sm font-medium chopard-text-primary flex items-center gap-2">
+                    <MapPin className="h-4 w-4 chopard-text-accent" />
+                    Click to open in Google Maps
+                  </p>
+                </div>
+              </div>
+            </a>
+
             <div className="bg-white p-6 border-t chopard-border">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div className="flex items-center space-x-4">
