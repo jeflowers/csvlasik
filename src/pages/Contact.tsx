@@ -306,15 +306,42 @@ const Contact = () => {
 
           <div className="chopard-card rounded-2xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.3896247879445!2d-118.15336871583247!3d33.85956780000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd32e42e2695f1%3A0x1108f8a7ff2c6497!2s5750%20Downey%20Ave%20suite%20101%2C%20Lakewood%2C%20CA%2090712!5e0!3m2!1sen!2sus!4v1729696800000!5m2!1sen!2sus"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-118.15336871%2C33.85456780%2C-118.14536871%2C33.86456780&layer=mapnik&marker=33.8595678%2C-118.1507884"
               width="100%"
               height="500"
               style={{ border: 0 }}
-              allowFullScreen
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
               title="Clearsight LASIK Lakewood Office Location"
             />
+            <div className="bg-white p-6 border-t chopard-border">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="flex items-center space-x-4">
+                  <MapPin className="h-6 w-6 chopard-text-accent" />
+                  <div>
+                    <p className="font-light chopard-text-primary font-semibold">Lakewood Office</p>
+                    <p className="text-sm chopard-text-secondary">5750 Downey Ave., Suite 101, Lakewood, CA 90712</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=5750+Downey+Ave+suite+101,+Lakewood,+CA+90712"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="chopard-button px-6 py-3 rounded-lg text-sm font-light transition-all duration-300"
+                  >
+                    Get Directions
+                  </a>
+                  <a
+                    href="https://www.google.com/maps/place/5750+Downey+Ave+suite+101,+Lakewood,+CA+90712"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border chopard-border chopard-text-accent px-6 py-3 rounded-lg text-sm font-light hover:bg-gray-50 transition-all duration-300"
+                  >
+                    View on Google Maps
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
