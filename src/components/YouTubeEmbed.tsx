@@ -102,7 +102,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   };
 
   const getEmbedUrl = () => {
-    const baseUrl = 'https://www.youtube-nocookie.com/embed';
+    const baseUrl = 'https://www.youtube.com/embed';
     const params = new URLSearchParams();
 
     if (autoplay || isPlaying) params.append('autoplay', '1');
