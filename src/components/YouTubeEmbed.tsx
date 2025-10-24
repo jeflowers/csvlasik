@@ -116,7 +116,11 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   };
 
   const handlePlay = () => {
-    window.open(getYouTubeUrl(), '_blank', 'noopener,noreferrer');
+    if (embedFailed || isDevEnvironment) {
+      window.open(getYouTubeUrl(), '_blank', 'noopener,noreferrer');
+    } else {
+      setIsPlaying(true);
+    }
   };
 
   const openOnYouTube = (e: React.MouseEvent) => {
@@ -128,6 +132,33 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
                           window.location.hostname.includes('bolt.new') ||
                           window.location.hostname.includes('stackblitz') ||
                           window.location.hostname.includes('localhost');
+
+  if (isPlaying && !isDevEnvironment) {
+    return (
+      <div className={`relative ${className}`}>
+        <iframe
+          src={getEmbedUrl()}
+          title={getVideoTitle()}
+          className="w-full h-full rounded-lg"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          style={{ border: 0 }}
+          onError={() => setEmbedFailed(true)}
+        />
+
+        <button
+          onClick={openOnYouTube}
+          className="absolute top-4 right-4 bg-black/70 hover:bg-black/90 text-white px-3 py-2 rounded-lg text-sm flex items-center gap-2 transition-colors"
+          title="Open on YouTube"
+        >
+          <ExternalLink className="w-4 h-4" />
+          YouTube
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -155,7 +186,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
       </div>
 
       <div className="absolute bottom-4 right-4 bg-black/80 text-white px-3 py-1.5 rounded text-sm font-medium">
-        Open on YouTube
+        {isDevEnvironment ? 'Open on YouTube' : 'Watch Video'}
       </div>
 
       <button
