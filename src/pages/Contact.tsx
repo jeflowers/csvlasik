@@ -324,7 +324,7 @@ const Contact = () => {
               style={{ height: '500px' }}
             >
               {/* Google Maps Embed as Background */}
-              <div className="w-full h-full relative">
+              <div className="w-full h-full relative bg-gray-100">
                 <iframe
                   src="https://maps.google.com/maps?q=5750+Downey+Ave+suite+101,Lakewood,CA+90712&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
@@ -334,7 +334,15 @@ const Contact = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Clearsight LASIK Lakewood Office Location"
                   className="absolute inset-0"
+                  allow="geolocation"
                 />
+
+                {/* Fallback background image if map fails to load */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="text-center text-gray-400">
+                    <MapPin className="h-16 w-16 mx-auto mb-2 opacity-20" />
+                  </div>
+                </div>
 
                 {/* Invisible overlay to capture clicks */}
                 <div className="absolute inset-0 bg-transparent z-10" />
