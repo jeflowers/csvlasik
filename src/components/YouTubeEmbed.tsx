@@ -30,8 +30,9 @@
  * - Simplified iframe configuration
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Play, ExternalLink } from 'lucide-react';
+import { youtubeService } from '../services/youtubeService';
 
 interface YouTubeEmbedProps {
   videoId: string;
@@ -54,9 +55,44 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
 }) => {
   const [isPlaying, setIsPlaying] = useState(autoplay);
   const [embedFailed, setEmbedFailed] = useState(false);
+  const [videoData, setVideoData] = useState<{ title: string; thumbnail: string } | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+
+    async function fetchVideoData() {
+      try {
+        const data = await youtubeService.getVideoData(videoId);
+        if (mounted && data) {
+          setVideoData({
+            title: data.title,
+            thumbnail: youtubeService.getBestThumbnail(videoId, data.thumbnails)
+          });
+        }
+      } catch (error) {
+        console.warn('Failed to fetch YouTube video data:', error);
+      }
+    }
+
+    if (!thumbnail) {
+      fetchVideoData();
+    }
+
+    return () => {
+      mounted = false;
+    };
+  }, [videoId, thumbnail]);
 
   const getThumbnailUrl = () => {
-    return thumbnail || `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    if (thumbnail) return thumbnail;
+    if (videoData?.thumbnail) return videoData.thumbnail;
+    return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  };
+
+  const getVideoTitle = () => {
+    if (title && title !== 'YouTube video') return title;
+    if (videoData?.title) return videoData.title;
+    return title;
   };
 
   const getYouTubeUrl = () => {
@@ -103,7 +139,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
       <div className={`relative ${className}`}>
         <iframe
           src={getEmbedUrl()}
-          title={title}
+          title={getVideoTitle()}
           className="w-full h-full rounded-lg"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -136,7 +172,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     >
       <img
         src={getThumbnailUrl()}
-        alt={title}
+        alt={getVideoTitle()}
         className="w-full h-full object-cover"
         onError={(e) => {
           const target = e.target as HTMLImageElement;
