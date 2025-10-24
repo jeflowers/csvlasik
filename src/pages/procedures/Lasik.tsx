@@ -58,24 +58,14 @@ const Lasik = () => {
             </div>
 
             <div className="relative">
-              <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
-                <video
-                  src="/assets/videos/Do-I-Need-LASIK.mp4"
+              <div className="rounded-2xl shadow-2xl overflow-hidden">
+                <img
+                  src="/assets/images/procedures/lasik/brands-people-sWQrD5s0fWc-unsplash.jpg"
+                  alt="LASIK eye surgery procedure - Advanced laser vision correction"
                   className="w-full h-96 lg:h-[500px] object-cover"
-                  controls
-                  poster="/assets/images/procedures/lasik/brands-people-sWQrD5s0fWc-unsplash.jpg"
-                  preload="metadata"
-                >
-                  <source src="/assets/videos/Do-I-Need-LASIK.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                  <img
-                    src="/assets/images/procedures/lasik/brands-people-sWQrD5s0fWc-unsplash.jpg"
-                    alt="LASIK eye surgery procedure - Advanced laser vision correction"
-                    className="w-full h-96 lg:h-[500px] object-cover"
-                  />
-                </video>
+                />
                 <div className="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg">
-                  <p className="text-sm font-medium">LASIK Procedure Demonstration</p>
+                  <p className="text-sm font-medium">LASIK Procedure</p>
                   <p className="text-xs opacity-90">Dr. Flowers' Revolutionary Technique</p>
                 </div>
               </div>

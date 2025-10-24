@@ -58,22 +58,12 @@ const PRK = () => {
             </div>
 
             <div className="relative">
-              <div className="rounded-2xl shadow-2xl overflow-hidden bg-black">
-                <video
-                  src="/assets/videos/PRK-Treatment-Animation.mp4"
+              <div className="rounded-2xl shadow-2xl overflow-hidden">
+                <img
+                  src="/assets/images/procedures/lasik/jsb-co-G2sv2jjH3JU-unsplash.jpg"
+                  alt="PRK photorefractive keratectomy - Surface laser vision correction"
                   className="w-full h-96 lg:h-[500px] object-cover"
-                  controls
-                  poster="/assets/images/procedures/lasik/jsb-co-G2sv2jjH3JU-unsplash.jpg"
-                  preload="metadata"
-                >
-                  <source src="/assets/videos/PRK-Treatment-Animation.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                  <img
-                    src="/assets/images/procedures/lasik/jsb-co-G2sv2jjH3JU-unsplash.jpg"
-                    alt="PRK photorefractive keratectomy - Surface laser vision correction"
-                    className="w-full h-96 lg:h-[500px] object-cover"
-                  />
-                </video>
+                />
                 <div className="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg">
                   <p className="text-sm font-medium">PRK Surface Treatment</p>
                   <p className="text-xs opacity-90">No corneal flap required</p>
@@ -219,7 +209,7 @@ const PRK = () => {
                 step: '1',
                 title: 'Pre-Operative Preparation',
                 description: 'Comprehensive eye mapping and measurements. Topical anesthetic drops are applied for comfort during the procedure.',
-                image: './Flowers_cd2.jpg',
+                image: '/assets/images/misc/Flowers_cd2.jpg',
                 duration: '15 minutes'
               },
               {
