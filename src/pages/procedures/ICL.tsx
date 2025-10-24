@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Layers, Clock, Eye, Shield, ArrowRight, Check, Star, RotateCcw } from 'lucide-react';
+import YouTubeEmbed from '../../components/YouTubeEmbed';
 
 const ICL = () => {
   return (
@@ -69,8 +70,30 @@ const ICL = () => {
         </div>
       </section>
 
-      {/* What is ICL */}
+      {/* Video Section */}
       <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
+              Watch the ICL Procedure
+            </h2>
+            <p className="text-xl chopard-text-secondary max-w-3xl mx-auto font-light">
+              See how ICL implantable lenses provide exceptional vision correction
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <YouTubeEmbed
+              videoId="A35Rxqk83VA"
+              title="ICL Eye Surgery Procedure"
+              start={4}
+              className="w-full h-96 lg:h-[500px]"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* What is ICL */}
+      <section className="py-16 chopard-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>

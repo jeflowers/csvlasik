@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, Shield, Eye, Users, ArrowRight, Check, Star, Play } from 'lucide-react';
+import YouTubeEmbed from '../../components/YouTubeEmbed';
 
 const Lasik = () => {
   return (
@@ -74,8 +75,31 @@ const Lasik = () => {
         </div>
       </section>
 
-      {/* What is LASIK */}
+      {/* Video Section */}
       <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
+              Watch the LASIK Procedure
+            </h2>
+            <p className="text-xl chopard-text-secondary max-w-3xl mx-auto font-light">
+              See Dr. Flowers' revolutionary LASIK technique in action
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <YouTubeEmbed
+              videoId="a7q_r-y5x-k"
+              title="LASIK Eye Surgery Procedure"
+              start={0}
+              end={133}
+              className="w-full h-96 lg:h-[500px]"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* What is LASIK */}
+      <section className="py-16 chopard-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
