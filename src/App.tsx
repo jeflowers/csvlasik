@@ -75,6 +75,9 @@ const ExternalReviewsManager = lazy(() => import('./components/admin/ExternalRev
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Procedures = lazy(() => import('./pages/Procedures'));
+const Lasik = lazy(() => import('./pages/procedures/Lasik'));
+const PRK = lazy(() => import('./pages/procedures/PRK'));
+const ICL = lazy(() => import('./pages/procedures/ICL'));
 const PacificStory = lazy(() => import('./pages/PacificStory'));
 const Testimonials = lazy(() => import('./pages/Testimonials'));
 const Technology = lazy(() => import('./pages/Technology'));
@@ -209,6 +212,9 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/procedures" element={<Procedures />} />
+                        <Route path="/procedures/lasik" element={<Lasik />} />
+                        <Route path="/procedures/prk" element={<PRK />} />
+                        <Route path="/procedures/icl" element={<ICL />} />
                         <Route path="/pacific-story" element={<PacificStory />} />
                         <Route path="/testimonials" element={<Testimonials />} />
                         <Route path="/technology" element={<Technology />} />
