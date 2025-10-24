@@ -315,49 +315,28 @@ const Contact = () => {
           </div>
 
           <div className="chopard-card rounded-2xl overflow-hidden shadow-lg">
-            {/* Static Map with Click-through to Google Maps */}
-            <a
-              href="https://www.google.com/maps/place/5750+Downey+Ave+suite+101,+Lakewood,+CA+90712/@33.8595678,-118.1507884,17z"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block relative group overflow-hidden"
-              style={{ height: '500px' }}
-            >
-              {/* Google Maps Embed as Background */}
-              <div className="w-full h-full relative bg-gray-100">
-                <iframe
-                  src="https://maps.google.com/maps?q=5750+Downey+Ave+suite+101,Lakewood,CA+90712&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="500"
-                  style={{ border: 0, pointerEvents: 'none' }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Clearsight LASIK Lakewood Office Location"
-                  className="absolute inset-0"
-                  allow="geolocation"
-                />
+            {/* Interactive Google Maps Embed */}
+            <div className="relative bg-gray-100" style={{ height: '500px' }}>
+              <iframe
+                src="https://maps.google.com/maps?q=5750+Downey+Ave+suite+101,Lakewood,CA+90712&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="500"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Clearsight LASIK Lakewood Office Location"
+                className="w-full h-full"
+                allow="geolocation"
+              />
 
-                {/* Fallback background image if map fails to load */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="text-center text-gray-400">
-                    <MapPin className="h-16 w-16 mx-auto mb-2 opacity-20" />
-                  </div>
-                </div>
-
-                {/* Invisible overlay to capture clicks */}
-                <div className="absolute inset-0 bg-transparent z-10" />
-              </div>
-
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center pointer-events-none z-20">
-                <div className="bg-white px-8 py-4 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100">
-                  <p className="text-sm font-medium chopard-text-primary flex items-center gap-2">
-                    <MapPin className="h-4 w-4 chopard-text-accent" />
-                    Click to open in Google Maps
-                  </p>
+              {/* Fallback if map fails to load */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
+                <div className="text-center text-gray-400">
+                  <MapPin className="h-16 w-16 mx-auto mb-2 opacity-20" />
+                  <p className="text-sm">Map Loading...</p>
                 </div>
               </div>
-            </a>
+            </div>
 
             <div className="bg-white p-6 border-t chopard-border">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4">

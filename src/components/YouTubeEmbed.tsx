@@ -109,17 +109,6 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     params.append('rel', '0');
     params.append('modestbranding', '1');
 
-    const hostname = window.location.hostname;
-    const isDevOrPreview = hostname.includes('webcontainer') ||
-                          hostname.includes('bolt.new') ||
-                          hostname.includes('stackblitz') ||
-                          hostname.includes('localhost');
-
-    if (!isDevOrPreview) {
-      params.append('origin', window.location.origin);
-      params.append('enablejsapi', '1');
-    }
-
     if (start) params.append('start', start.toString());
     if (end) params.append('end', end.toString());
 
@@ -127,11 +116,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   };
 
   const handlePlay = () => {
-    const isDevEnvironment = window.location.hostname.includes('webcontainer') ||
-                            window.location.hostname.includes('bolt.new') ||
-                            window.location.hostname.includes('stackblitz');
-
-    if (embedFailed || isDevEnvironment) {
+    if (embedFailed) {
       window.open(getYouTubeUrl(), '_blank', 'noopener,noreferrer');
     } else {
       setIsPlaying(true);
@@ -151,7 +136,6 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
           title={getVideoTitle()}
           className="w-full h-full rounded-lg"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
