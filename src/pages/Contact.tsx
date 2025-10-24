@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Clock, Calendar, ArrowRight, CheckCircle, User, MessageSquare } from 'lucide-react';
+import GoogleMap from '../components/GoogleMap';
 
 const Contact = () => {
   const { t } = useTranslation(['contact', 'forms', 'common']);
@@ -315,28 +316,13 @@ const Contact = () => {
           </div>
 
           <div className="chopard-card rounded-2xl overflow-hidden shadow-lg">
-            {/* Interactive Google Maps Embed */}
-            <div className="relative bg-gray-100" style={{ height: '500px' }}>
-              <iframe
-                src="https://maps.google.com/maps?q=5750+Downey+Ave+suite+101,Lakewood,CA+90712&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="500"
-                style={{ border: 0 }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Clearsight LASIK Lakewood Office Location"
-                className="w-full h-full"
-                allow="geolocation"
-              />
-
-              {/* Fallback if map fails to load */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
-                <div className="text-center text-gray-400">
-                  <MapPin className="h-16 w-16 mx-auto mb-2 opacity-20" />
-                  <p className="text-sm">Map Loading...</p>
-                </div>
-              </div>
-            </div>
+            <GoogleMap
+              address="5750 Downey Ave, Suite 101, Lakewood, CA 90712"
+              zoom={15}
+              height="500px"
+              title="Clearsight LASIK Lakewood Office Location"
+              allowGeolocation={true}
+            />
 
             <div className="bg-white p-6 border-t chopard-border">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4">
