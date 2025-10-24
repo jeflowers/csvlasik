@@ -108,8 +108,17 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     if (autoplay || isPlaying) params.append('autoplay', '1');
     params.append('rel', '0');
     params.append('modestbranding', '1');
-    params.append('origin', window.location.origin);
-    params.append('enablejsapi', '1');
+
+    const hostname = window.location.hostname;
+    const isDevOrPreview = hostname.includes('webcontainer') ||
+                          hostname.includes('bolt.new') ||
+                          hostname.includes('stackblitz') ||
+                          hostname.includes('localhost');
+
+    if (!isDevOrPreview) {
+      params.append('origin', window.location.origin);
+      params.append('enablejsapi', '1');
+    }
 
     if (start) params.append('start', start.toString());
     if (end) params.append('end', end.toString());
@@ -142,9 +151,10 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
           title={getVideoTitle()}
           className="w-full h-full rounded-lg"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
           allowFullScreen
           loading="lazy"
-          referrerPolicy="strict-origin-when-cross-origin"
+          referrerPolicy="no-referrer-when-downgrade"
           style={{ border: 0 }}
           onError={() => setEmbedFailed(true)}
         />
