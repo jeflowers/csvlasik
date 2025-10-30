@@ -71,6 +71,7 @@ const SecurityDashboard = lazy(() => import('./components/admin/SecurityDashboar
 const ForgotPassword = lazy(() => import('./components/admin/ForgotPassword'));
 const ResetPassword = lazy(() => import('./components/admin/ResetPassword'));
 const ExternalReviewsManager = lazy(() => import('./components/admin/ExternalReviewsManager'));
+const AppointmentRequestsManager = lazy(() => import('./components/admin/AppointmentRequestsManager'));
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -86,6 +87,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Media = lazy(() => import('./pages/Media'));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
+const AppointmentRequestForm = lazy(() => import('./components/booking/AppointmentRequestForm'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -173,6 +175,7 @@ function AdminRoutes() {
         </ProtectedRoute>
       }>
         <Route index element={<Dashboard />} />
+        <Route path="appointments" element={<AppointmentRequestsManager />} />
         <Route path="testimonials" element={<TestimonialsManager />} />
         <Route path="external-reviews" element={<ExternalReviewsManager />} />
         <Route path="articles" element={<ArticlesManager />} />
@@ -220,6 +223,7 @@ function App() {
                         <Route path="/technology" element={<Technology />} />
                         <Route path="/financing" element={<Financing />} />
                         <Route path="/contact" element={<Contact />} />
+                        <Route path="/book-consultation" element={<AppointmentRequestForm />} />
                         <Route path="/blog" element={<Media />} />
                         <Route path="/media" element={<Media />} />
                         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

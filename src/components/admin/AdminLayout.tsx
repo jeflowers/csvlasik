@@ -13,7 +13,8 @@ import {
   X,
   Eye,
   Globe,
-  Shield
+  Shield,
+  Calendar
 } from 'lucide-react';
 import { useAdmin } from '../../hooks/useAdmin';
 
@@ -25,6 +26,7 @@ const AdminLayout: React.FC = () => {
 
   const navigation = [
     { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+    { name: 'Appointments', href: '/admin/appointments', icon: Calendar },
     { name: 'Testimonials', href: '/admin/testimonials', icon: MessageSquare },
     { name: 'External Reviews', href: '/admin/external-reviews', icon: Shield },
     { name: 'Articles', href: '/admin/articles', icon: FileText },

@@ -303,6 +303,12 @@ const Header = () => {
             >
               {t('contact')}
             </Link>
+            <Link
+              to="/book-consultation"
+              className="chopard-button px-6 py-2.5 rounded-lg text-sm transition-all duration-300"
+            >
+              {t('bookConsultation', { defaultValue: 'Book Consultation' })}
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
