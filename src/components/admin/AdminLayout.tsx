@@ -52,9 +52,12 @@ const AdminLayout: React.FC = () => {
         <div className="fixed inset-0 bg-gray-600 bg-opacity-75" onClick={() => setSidebarOpen(false)} />
         <div className="relative flex w-64 flex-col bg-white">
           <div className="flex h-16 items-center justify-between px-4">
-            <Link to="/" className="flex items-center space-x-2">
-              <Eye className="h-8 w-8 text-teal-600" />
-              <span className="text-xl font-bold text-gray-900">ClearSight CMS</span>
+            <Link to="/" className="flex items-center">
+              <img
+                src="/assets/images/ClearSight-full-color-nb.png"
+                alt="ClearSight"
+                className="h-12 w-auto"
+              />
             </Link>
             <button onClick={() => setSidebarOpen(false)}>
               <X className="h-6 w-6 text-gray-400" />
@@ -87,9 +90,12 @@ const AdminLayout: React.FC = () => {
       <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
         <div className="flex flex-col flex-grow bg-white border-r border-gray-200">
           <div className="flex h-16 items-center px-4">
-            <Link to="/" className="flex items-center space-x-2">
-              <Eye className="h-8 w-8 text-teal-600" />
-              <span className="text-xl font-bold text-gray-900">ClearSight CMS</span>
+            <Link to="/" className="flex items-center">
+              <img
+                src="/assets/images/ClearSight-full-color-nb.png"
+                alt="ClearSight"
+                className="h-12 w-auto"
+              />
             </Link>
           </div>
           <nav className="flex-1 space-y-1 px-2 py-4">
@@ -146,9 +152,12 @@ const AdminLayout: React.FC = () => {
             >
               <Menu className="h-6 w-6" />
             </button>
-            <Link to="/" className="flex items-center space-x-2">
-              <Eye className="h-6 w-6 text-teal-600" />
-              <span className="text-lg font-bold text-gray-900">ClearSight CMS</span>
+            <Link to="/" className="flex items-center">
+              <img
+                src="/assets/images/ClearSight-full-color-nb.png"
+                alt="ClearSight"
+                className="h-10 w-auto"
+              />
             </Link>
             <button
               onClick={handleLogout}

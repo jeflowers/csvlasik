@@ -119,16 +119,12 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex justify-between items-center py-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
           {/* Logo */}
-          <Link to="/" className={`flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}`}>
-            <div className="relative">
-              <div className="chopard-gradient p-3 rounded-lg shadow-lg">
-                <Eye className="h-8 w-8 text-white" />
-              </div>
-            </div>
-            <div className={isRTL ? 'text-right' : 'text-left'}>
-              <h1 className="text-2xl font-serif chopard-text-primary leading-tight">{t('brandName', { ns: 'common' })}</h1>
-              <p className="text-xs chopard-text-secondary font-light tracking-widest uppercase">{t('tagline', { ns: 'common' })}</p>
-            </div>
+          <Link to="/" className={`flex items-center ${isRTL ? 'space-x-reverse' : ''}`}>
+            <img
+              src="/assets/images/ClearSight-full-color-nb.png"
+              alt="ClearSight - Revolutionary Vision Care 20/20"
+              className="h-16 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
