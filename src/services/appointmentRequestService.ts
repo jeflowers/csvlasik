@@ -1,5 +1,7 @@
 import { supabase } from '../lib/supabase';
 import type { AppointmentRequest, AppointmentRequestCreate, AppointmentRequestUpdate } from '../types/appointments';
+import { emailService } from './emailService';
+import { emailTemplates } from '../utils/emailTemplates';
 
 export class AppointmentRequestService {
   async createRequest(data: AppointmentRequestCreate): Promise<{ data: AppointmentRequest | null; error: Error | null }> {
@@ -11,6 +13,41 @@ export class AppointmentRequestService {
         .single();
 
       if (error) throw error;
+
+      const confirmationEmail = emailTemplates.appointmentConfirmation({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        preferredDate: data.preferred_date,
+        message: data.message,
+        requestId: result.id,
+      });
+
+      await emailService.queueEmail({
+        to: data.email,
+        subject: confirmationEmail.subject,
+        htmlBody: confirmationEmail.html,
+        textBody: confirmationEmail.text,
+      });
+
+      const notificationEmail = emailTemplates.appointmentNotification({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        preferredDate: data.preferred_date,
+        message: data.message,
+        requestId: result.id,
+      });
+
+      await emailService.queueEmail({
+        to: 'appointments@clearsightvision.com',
+        subject: notificationEmail.subject,
+        htmlBody: notificationEmail.html,
+        textBody: notificationEmail.text,
+      });
+
+      await emailService.processQueue();
+
       return { data: result, error: null };
     } catch (error) {
       console.error('Error creating appointment request:', error);
