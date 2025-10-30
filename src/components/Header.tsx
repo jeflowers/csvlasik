@@ -303,7 +303,7 @@ const Header = () => {
               to="/book-consultation"
               className="chopard-button px-6 py-2.5 rounded-lg text-sm transition-all duration-300"
             >
-              {t('bookConsultation')}
+              {t('navigation:bookConsultation')}
             </Link>
           </nav>
 
