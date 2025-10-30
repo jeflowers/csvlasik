@@ -70,7 +70,11 @@ const LoginForm: React.FC = () => {
       <div className="max-w-md w-full space-y-8">
         <div>
           <div className="flex justify-center">
-            <Eye className="h-12 w-12 text-teal-600" />
+            <img
+              src="/assets/images/ClearSight-full-color-nb.png"
+              alt="ClearSight"
+              className="h-20 w-auto"
+            />
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             ClearSight CMS
