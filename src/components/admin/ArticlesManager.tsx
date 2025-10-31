@@ -14,6 +14,7 @@ import {
   X
 } from 'lucide-react';
 import { apiService } from '../../services/api';
+import { storageService } from '../../services/storageService';
 
 interface Article {
   id: number;
@@ -354,6 +355,7 @@ const ArticleModal: React.FC<{
     tags: ''
   });
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [activeTab, setActiveTab] = useState('content');
 
   useEffect(() => {
@@ -373,6 +375,25 @@ const ArticleModal: React.FC<{
     }
   }, [article]);
 
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+
+    try {
+      const category = formData.category?.toLowerCase() || 'general';
+      const result = await storageService.uploadMediaFile(file, category);
+      setFormData(prev => ({ ...prev, featured_image: result.publicUrl }));
+      alert('Featured image uploaded successfully!');
+    } catch (error) {
+      console.error('Failed to upload image:', error);
+      alert(`Failed to upload image: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setUploading(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
@@ -388,7 +409,7 @@ const ArticleModal: React.FC<{
       } else {
         await apiService.createArticle(submitData);
       }
-      
+
       onSave();
     } catch (error) {
       console.error('Failed to save article:', error);
@@ -506,17 +527,26 @@ const ArticleModal: React.FC<{
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Featured Image URL
+                    Featured Image
                   </label>
                   <input
-                    type="url"
-                    value={formData.featured_image}
-                    onChange={(e) => setFormData(prev => ({ ...prev, featured_image: e.target.value }))}
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    disabled={uploading}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-                    placeholder="https://example.com/featured-image.jpg"
                   />
+                  {formData.featured_image && (
+                    <div className="mt-3">
+                      <img
+                        src={formData.featured_image}
+                        alt="Featured image preview"
+                        className="w-full max-w-md h-48 object-cover rounded"
+                      />
+                    </div>
+                  )}
                   <p className="text-xs text-gray-500 mt-1">
-                    Upload image in Media Library and paste URL here.
+                    {uploading ? 'Uploading...' : 'Upload featured image (max 10MB)'}
                   </p>
                 </div>
 

@@ -9,6 +9,7 @@ import {
   Calendar
 } from 'lucide-react';
 import { apiService } from '../../services/api';
+import { storageService } from '../../services/storageService';
 
 interface Testimonial {
   id: number;
@@ -392,6 +393,9 @@ const TestimonialModal: React.FC<{
     video_thumbnail: ''
   });
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [videoFile, setVideoFile] = useState<File | null>(null);
 
   useEffect(() => {
     if (testimonial) {
@@ -409,6 +413,54 @@ const TestimonialModal: React.FC<{
       });
     }
   }, [testimonial]);
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setImageFile(file);
+    setUploading(true);
+
+    try {
+      const result = await storageService.uploadTestimonialImage(
+        file,
+        testimonial?.id.toString()
+      );
+      setFormData(prev => ({ ...prev, image_url: result.publicUrl }));
+      alert('Image uploaded successfully!');
+    } catch (error) {
+      console.error('Failed to upload image:', error);
+      alert(`Failed to upload image: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const handleVideoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setVideoFile(file);
+    setUploading(true);
+
+    try {
+      const result = await storageService.uploadTestimonialVideo(
+        file,
+        testimonial?.id.toString()
+      );
+      setFormData(prev => ({
+        ...prev,
+        video_url: result.publicUrl,
+        video_type: 'uploaded'
+      }));
+      alert('Video uploaded successfully!');
+    } catch (error) {
+      console.error('Failed to upload video:', error);
+      alert(`Failed to upload video: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -535,33 +587,30 @@ const TestimonialModal: React.FC<{
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Patient Photo / Image URL
+                  Patient Photo
                 </label>
                 <input
-                  type="url"
-                  value={formData.image_url}
-                  onChange={(e) => setFormData(prev => ({ ...prev, image_url: e.target.value }))}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  disabled={uploading}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-                  placeholder="https://example.com/patient-photo.jpg"
                 />
-                <p className="mt-1 text-xs text-gray-500">Upload images in Media Library and paste URL here</p>
+                {formData.image_url && (
+                  <div className="mt-2">
+                    <img
+                      src={formData.image_url}
+                      alt="Preview"
+                      className="w-32 h-32 object-cover rounded"
+                    />
+                  </div>
+                )}
+                <p className="mt-1 text-xs text-gray-500">
+                  {uploading ? 'Uploading...' : 'Upload patient photo (max 10MB)'}
+                </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Video URL / ID
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.video_url}
-                    onChange={(e) => setFormData(prev => ({ ...prev, video_url: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
-                    placeholder="YouTube ID or video URL"
-                  />
-                  <p className="mt-1 text-xs text-gray-500">YouTube ID: dQw4w9WgXcQ or full URL</p>
-                </div>
-
+              <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Video Type
@@ -573,9 +622,50 @@ const TestimonialModal: React.FC<{
                   >
                     <option value="youtube">YouTube</option>
                     <option value="vimeo">Vimeo</option>
-                    <option value="uploaded">Uploaded File</option>
+                    <option value="uploaded">Upload Video File</option>
                   </select>
                 </div>
+
+                {formData.video_type === 'uploaded' ? (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Upload Video
+                    </label>
+                    <input
+                      type="file"
+                      accept="video/*"
+                      onChange={handleVideoUpload}
+                      disabled={uploading}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    />
+                    {formData.video_url && (
+                      <div className="mt-2">
+                        <video src={formData.video_url} controls className="w-full max-w-md rounded" />
+                      </div>
+                    )}
+                    <p className="mt-1 text-xs text-gray-500">
+                      {uploading ? 'Uploading...' : 'Upload video file (max 100MB)'}
+                    </p>
+                  </div>
+                ) : (
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Video URL / ID
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.video_url}
+                      onChange={(e) => setFormData(prev => ({ ...prev, video_url: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                      placeholder={formData.video_type === 'youtube' ? 'YouTube ID: dQw4w9WgXcQ' : 'Vimeo URL'}
+                    />
+                    <p className="mt-1 text-xs text-gray-500">
+                      {formData.video_type === 'youtube'
+                        ? 'Enter YouTube video ID or full URL'
+                        : 'Enter Vimeo video URL'}
+                    </p>
+                  </div>
+                )}
               </div>
 
               <div>

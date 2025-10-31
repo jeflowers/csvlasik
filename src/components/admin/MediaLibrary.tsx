@@ -15,6 +15,7 @@ import {
   FolderOpen
 } from 'lucide-react';
 import { apiService } from '../../services/api';
+import { storageService } from '../../services/storageService';
 
 interface MediaFile {
   id: number;
@@ -83,11 +84,16 @@ const MediaLibrary: React.FC = () => {
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
         try {
+          const category = categoryFilter !== 'all' ? categoryFilter.toLowerCase() : 'general';
+          const result = await storageService.uploadMediaFile(file, category);
+
           await apiService.uploadMedia(file, {
             category: categoryFilter !== 'all' ? categoryFilter : 'Other',
             alt_text: '',
-            caption: ''
+            caption: '',
+            file_path: result.publicUrl
           });
+
           successCount++;
         } catch (error) {
           errorCount++;
