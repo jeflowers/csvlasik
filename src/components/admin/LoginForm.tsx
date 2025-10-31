@@ -69,12 +69,16 @@ const LoginForm: React.FC = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <div className="flex justify-center">
+          <div className="flex justify-center items-center space-x-3">
             <img
-              src="/assets/images/ClearSight-full-color-nb.png"
-              alt="ClearSight"
-              className="h-20 w-auto"
+              src="/assets/images/ClearSight-icon-nb-blk-gld.png"
+              alt="ClearSight Vision Institute"
+              className="h-16 w-auto"
             />
+            <div className="flex flex-col">
+              <h1 className="text-2xl font-serif text-gray-900 leading-tight">ClearSight</h1>
+              <p className="text-xs text-gray-600 font-light tracking-widest uppercase">Vision Institute</p>
+            </div>
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             ClearSight CMS

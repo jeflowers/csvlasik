@@ -119,12 +119,16 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex justify-between items-center py-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
           {/* Logo */}
-          <Link to="/" className={`flex items-center ${isRTL ? 'space-x-reverse' : ''}`}>
+          <Link to="/" className={`flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}`}>
             <img
-              src="/assets/images/ClearSight-full-color-nb.png"
-              alt="ClearSight - Revolutionary Vision Care 20/20"
-              className="h-16 w-auto"
+              src="/assets/images/ClearSight-icon-nb-blk-gld.png"
+              alt="ClearSight Vision Institute"
+              className="h-12 w-auto"
             />
+            <div className="flex flex-col">
+              <h1 className="text-xl font-serif chopard-text-primary leading-tight">ClearSight</h1>
+              <p className="text-xs chopard-text-secondary font-light tracking-widest uppercase">Vision Institute</p>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

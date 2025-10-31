@@ -13,11 +13,11 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <Link to="/" className="flex items-center space-x-3 mb-6">
-              <div className="relative">
-                <div className="chopard-gradient p-3 rounded-lg chopard-shadow">
-                  <Eye className="h-6 w-6 text-white" />
-                </div>
-              </div>
+              <img
+                src="/assets/images/ClearSight-icon-nb-blk-gld.png"
+                alt="ClearSight Vision Institute"
+                className="h-12 w-auto filter brightness-0 invert"
+              />
               <div>
                 <h3 className="text-xl font-serif chopard-text-primary leading-tight text-white">{t('company.name')}</h3>
                 <p className="text-xs chopard-text-secondary font-light tracking-widest uppercase text-white/70">{t('company.tagline')}</p>
