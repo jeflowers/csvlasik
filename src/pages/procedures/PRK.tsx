@@ -1,9 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, Clock, Eye, Users, ArrowRight, Check, Star } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import YouTubeEmbed from '../../components/YouTubeEmbed';
 
 const PRK = () => {
+  const { t } = useTranslation('procedures');
+
+  const recoveryPhases = [
+    { key: 'initial', icon: Eye },
+    { key: 'clearing', icon: Check },
+    { key: 'stabilization', icon: Star }
+  ];
+
+  const candidateTypes = [
+    { key: 'active', icon: Users },
+    { key: 'thin', icon: Shield },
+    { key: 'high', icon: Eye }
+  ];
+
   return (
     <div className="relative">
       {/* Hero Section */}
@@ -13,28 +28,27 @@ const PRK = () => {
             <div>
               <div className="inline-flex items-center chopard-glass px-6 py-3 rounded-full text-sm font-light chopard-text-accent border chopard-border mb-6">
                 <Shield className="h-4 w-4 mr-3 chopard-text-accent" />
-                Surface Treatment Alternative - Proven Results
+                {t('prk.hero.badge')}
               </div>
               <h1 className="text-4xl lg:text-5xl font-serif chopard-text-primary mb-6 leading-tight">
-                ClearSight PRK Surgery
+                {t('prk.hero.title')}
               </h1>
               <p className="text-xl chopard-text-secondary mb-8 leading-relaxed font-light">
-                Experience PRK (Photorefractive Keratectomy), the original laser vision correction procedure. 
-                Perfect for patients with thin corneas or active lifestyles, offering excellent long-term stability.
+                {t('prk.hero.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link
                   to="/contact"
                   className="inline-flex items-center chopard-button px-8 py-3 rounded-lg transition-all duration-300"
                 >
-                  Schedule Free Consultation
+                  {t('common:cta.scheduleConsultation', 'Schedule Free Consultation')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
                 <Link
                   to="/procedures"
                   className="inline-flex items-center border border-gray-900 chopard-text-primary px-8 py-3 rounded-lg font-light hover:bg-gray-900 hover:text-white transition-all duration-300"
                 >
-                  Compare Procedures
+                  {t('comparison.cta', 'Compare Procedures')}
                 </Link>
               </div>
 
@@ -42,18 +56,18 @@ const PRK = () => {
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center p-4 chopard-card rounded-lg">
                   <Clock className="h-6 w-6 chopard-text-accent mx-auto mb-2" />
-                  <p className="text-2xl font-serif chopard-text-primary">15 min</p>
-                  <p className="text-sm chopard-text-secondary font-light">Procedure Time</p>
+                  <p className="text-2xl font-serif chopard-text-primary">{t('prk.hero.stats.procedureTime')}</p>
+                  <p className="text-sm chopard-text-secondary font-light">{t('comparison.features.procedureTime', 'Procedure Time')}</p>
                 </div>
                 <div className="text-center p-4 chopard-card rounded-lg">
                   <Eye className="h-6 w-6 chopard-text-accent mx-auto mb-2" />
-                  <p className="text-2xl font-serif chopard-text-primary">3-5 days</p>
-                  <p className="text-sm chopard-text-secondary font-light">Recovery Time</p>
+                  <p className="text-2xl font-serif chopard-text-primary">{t('prk.hero.stats.recoveryTime')}</p>
+                  <p className="text-sm chopard-text-secondary font-light">{t('comparison.features.recoveryTime', 'Recovery Time')}</p>
                 </div>
                 <div className="text-center p-4 chopard-card rounded-lg">
                   <Shield className="h-6 w-6 chopard-text-accent mx-auto mb-2" />
-                  <p className="text-2xl font-serif chopard-text-primary">96%</p>
-                  <p className="text-sm chopard-text-secondary font-light">Success Rate</p>
+                  <p className="text-2xl font-serif chopard-text-primary">{t('prk.hero.stats.successRate')}</p>
+                  <p className="text-sm chopard-text-secondary font-light">{t('comparison.features.successRate', 'Success Rate')}</p>
                 </div>
               </div>
             </div>
@@ -80,10 +94,10 @@ const PRK = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
-              Watch the PRK Procedure
+              {t('common:video.watchProcedure', 'Watch the PRK Procedure')}
             </h2>
             <p className="text-xl chopard-text-secondary max-w-3xl mx-auto font-light">
-              See how PRK surface treatment provides excellent vision correction
+              {t('common:video.description', 'See how PRK surface treatment provides excellent vision correction')}
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
@@ -103,35 +117,21 @@ const PRK = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-6">
-                The Original Laser Vision Correction
+                {t('prk.technology.title')}
               </h2>
               <p className="text-lg chopard-text-secondary mb-6 font-light">
-                PRK (Photorefractive Keratectomy) was the first laser vision correction procedure and remains 
-                the gold standard for certain patients. Unlike LASIK, PRK treats the surface of the cornea 
-                directly, making it ideal for patients with thin corneas or those in high-impact professions.
+                {t('prk.technology.description')}
               </p>
               <div className="space-y-4">
-                <div className="flex items-start">
-                  <Check className="h-6 w-6 chopard-text-accent mr-3 mt-0.5" />
-                  <div>
-                    <h3 className="font-light chopard-text-primary">No Corneal Flap</h3>
-                    <p className="chopard-text-secondary font-light">Surface treatment eliminates flap-related complications</p>
+                {['noFlap', 'thinCorneas', 'stability'].map((key) => (
+                  <div key={key} className="flex items-start">
+                    <Check className="h-6 w-6 chopard-text-accent mr-3 mt-0.5" />
+                    <div>
+                      <h3 className="font-light chopard-text-primary">{t(`prk.technology.features.${key}.title`)}</h3>
+                      <p className="chopard-text-secondary font-light">{t(`prk.technology.features.${key}.description`)}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start">
-                  <Check className="h-6 w-6 chopard-text-accent mr-3 mt-0.5" />
-                  <div>
-                    <h3 className="font-light chopard-text-primary">Suitable for Thin Corneas</h3>
-                    <p className="chopard-text-secondary font-light">Perfect option when LASIK isn't recommended</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Check className="h-6 w-6 chopard-text-accent mr-3 mt-0.5" />
-                  <div>
-                    <h3 className="font-light chopard-text-primary">Excellent Long-term Stability</h3>
-                    <p className="chopard-text-secondary font-light">Proven track record with decades of data</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
             <div>
@@ -150,26 +150,18 @@ const PRK = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
-              Why Choose PRK?
+              {t('prk.advantages.title')}
             </h2>
             <p className="text-xl chopard-text-secondary max-w-3xl mx-auto font-light">
-              Understanding the unique advantages of PRK over other procedures
+              {t('prk.advantages.subtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="chopard-card p-8 rounded-xl">
-              <h3 className="text-2xl font-serif chopard-text-accent mb-6">PRK Advantages</h3>
+              <h3 className="text-2xl font-serif chopard-text-accent mb-6">{t('prk.advantages.prk.title')}</h3>
               <ul className="space-y-4">
-                {[
-                  'No risk of flap complications',
-                  'Suitable for thin corneas',
-                  'Ideal for contact sports and military',
-                  'Excellent long-term stability',
-                  'Preserves more corneal tissue',
-                  'Can correct higher prescriptions',
-                  'No risk of dry eyes from flap'
-                ].map((item, index) => (
+                {t('prk.advantages.prk.items', { returnObjects: true }).map((item, index) => (
                   <li key={index} className="flex items-start">
                     <Check className="h-5 w-5 chopard-text-accent mr-3 mt-0.5" />
                     <span className="chopard-text-secondary font-light">{item}</span>
@@ -179,17 +171,9 @@ const PRK = () => {
             </div>
 
             <div className="chopard-card p-8 rounded-xl">
-              <h3 className="text-2xl font-serif chopard-text-secondary mb-6">LASIK Comparison</h3>
+              <h3 className="text-2xl font-serif chopard-text-secondary mb-6">{t('prk.advantages.lasik.title')}</h3>
               <ul className="space-y-4">
-                {[
-                  'Requires corneal flap creation',
-                  'Needs adequate corneal thickness',
-                  'Faster initial recovery',
-                  'Immediate vision improvement',
-                  'Less post-op discomfort',
-                  'Most popular procedure',
-                  'Quick return to activities'
-                ].map((item, index) => (
+                {t('prk.advantages.lasik.items', { returnObjects: true }).map((item, index) => (
                   <li key={index} className="flex items-start">
                     <div className="w-5 h-5 rounded-full chopard-glass border-2 chopard-border mr-3 mt-0.5 flex-shrink-0"></div>
                     <span className="chopard-text-secondary font-light">{item}</span>
@@ -201,124 +185,44 @@ const PRK = () => {
 
           <div className="text-center mt-12">
             <p className="text-lg chopard-text-secondary mb-6 font-light">
-              Dr. Flowers will help determine which procedure is best for your unique situation.
+              {t('common:recommendation', "Dr. Flowers will help determine which procedure is best for your unique situation.")}
             </p>
             <Link
               to="/contact"
               className="inline-flex items-center chopard-button px-8 py-3 rounded-lg transition-all duration-300"
             >
-              Get Personalized Recommendation
+              {t('comparison.cta', 'Get Personalized Recommendation')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* The PRK Process */}
+      {/* Recovery Timeline */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
-              The PRK Process
+              {t('prk.recovery.title')}
             </h2>
             <p className="text-xl chopard-text-secondary max-w-3xl mx-auto font-light">
-              Dr. Flowers' refined PRK technique ensures optimal results with maximum comfort
-            </p>
-          </div>
-
-          <div className="space-y-12">
-            {[
-              {
-                step: '1',
-                title: 'Pre-Operative Preparation',
-                description: 'Comprehensive eye mapping and measurements. Topical anesthetic drops are applied for comfort during the procedure.',
-                image: '/assets/images/misc/Flowers_cd2.jpg',
-                duration: '15 minutes'
-              },
-              {
-                step: '2',
-                title: 'Epithelium Removal',
-                description: 'The thin surface layer of the cornea (epithelium) is gently removed to access the treatment area.',
-                duration: '2 minutes'
-              },
-              {
-                step: '3',
-                title: 'Laser Reshaping',
-                description: 'The excimer laser precisely reshapes the cornea to correct your vision prescription with advanced eye-tracking technology.',
-                duration: '30-60 seconds'
-              },
-              {
-                step: '4',
-                title: 'Protective Contact Lens',
-                description: 'A soft contact lens bandage is placed to protect the eye and promote healing while the epithelium regenerates.',
-                duration: '1 minute'
-              }
-            ].map((step, index) => (
-              <div key={index} className="chopard-card rounded-xl p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-                  <div className="flex items-center">
-                    <div className="w-16 h-16 chopard-gradient text-white rounded-full flex items-center justify-center text-2xl font-serif mr-6">
-                      {step.step}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-serif chopard-text-primary">{step.title}</h3>
-                      <p className="chopard-text-accent font-light">{step.duration}</p>
-                    </div>
-                  </div>
-                  <div className="lg:col-span-2">
-                    <p className="text-lg chopard-text-secondary font-light">{step.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Recovery Timeline */}
-      <section className="py-16 chopard-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
-              PRK Recovery Timeline
-            </h2>
-            <p className="text-xl chopard-text-secondary max-w-3xl mx-auto font-light">
-              What to expect during your healing journey
+              {t('prk.recovery.subtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                period: 'Days 1-3',
-                title: 'Initial Healing',
-                symptoms: ['Mild discomfort', 'Light sensitivity', 'Tearing', 'Blurry vision'],
-                care: ['Use prescribed drops', 'Wear sunglasses', 'Rest eyes frequently', 'Avoid screens']
-              },
-              {
-                period: 'Days 4-7',
-                title: 'Vision Clearing',
-                symptoms: ['Improving comfort', 'Clearer vision', 'Less sensitivity', 'Contact lens removal'],
-                care: ['Continue medications', 'Follow-up appointment', 'Gradual activity return', 'Protect eyes']
-              },
-              {
-                period: 'Weeks 2-4',
-                title: 'Stabilization',
-                symptoms: ['Stable vision', 'Minimal symptoms', 'Normal activities', 'Clear sight'],
-                care: ['Regular check-ups', 'UV protection', 'Normal routine', 'Final healing']
-              }
-            ].map((phase, index) => (
+            {recoveryPhases.map(({ key, icon: Icon }, index) => (
               <div key={index} className="chopard-card p-8 rounded-xl">
                 <div className="text-center mb-6">
-                  <div className="text-2xl font-serif chopard-text-accent mb-2">{phase.period}</div>
-                  <h3 className="text-xl font-serif chopard-text-primary">{phase.title}</h3>
+                  <div className="text-2xl font-serif chopard-text-accent mb-2">{t(`prk.recovery.phases.${key}.period`)}</div>
+                  <h3 className="text-xl font-serif chopard-text-primary">{t(`prk.recovery.phases.${key}.title`)}</h3>
                 </div>
-                
+
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-light chopard-text-primary mb-3">What to Expect:</h4>
+                    <h4 className="font-light chopard-text-primary mb-3">{t('common:whatToExpect', 'What to Expect:')}</h4>
                     <ul className="space-y-2">
-                      {phase.symptoms.map((symptom, symptomIndex) => (
+                      {t(`prk.recovery.phases.${key}.symptoms`, { returnObjects: true }).map((symptom, symptomIndex) => (
                         <li key={symptomIndex} className="flex items-start">
                           <Eye className="h-4 w-4 chopard-text-accent mr-2 mt-0.5" />
                           <span className="text-sm chopard-text-secondary font-light">{symptom}</span>
@@ -326,11 +230,11 @@ const PRK = () => {
                       ))}
                     </ul>
                   </div>
-                  
+
                   <div>
-                    <h4 className="font-light chopard-text-primary mb-3">Care Instructions:</h4>
+                    <h4 className="font-light chopard-text-primary mb-3">{t('common:careInstructions', 'Care Instructions:')}</h4>
                     <ul className="space-y-2">
-                      {phase.care.map((instruction, instructionIndex) => (
+                      {t(`prk.recovery.phases.${key}.care`, { returnObjects: true }).map((instruction, instructionIndex) => (
                         <li key={instructionIndex} className="flex items-start">
                           <Check className="h-4 w-4 chopard-text-accent mr-2 mt-0.5" />
                           <span className="text-sm chopard-text-secondary font-light">{instruction}</span>
@@ -346,44 +250,25 @@ const PRK = () => {
       </section>
 
       {/* Ideal Candidates */}
-      <section className="py-16 bg-white">
+      <section className="py-16 chopard-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-serif chopard-text-primary mb-4">
-              Who Benefits Most from PRK?
+              {t('prk.candidates.title')}
             </h2>
             <p className="text-xl chopard-text-secondary max-w-3xl mx-auto font-light">
-              PRK is often the preferred choice for specific patient profiles
+              {t('prk.candidates.subtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Active Professionals',
-                icon: <Users className="h-12 w-12 chopard-text-accent" />,
-                description: 'Military personnel, law enforcement, firefighters, and athletes who face potential eye trauma',
-                benefits: ['No flap displacement risk', 'Contact sport safe', 'High-impact activities']
-              },
-              {
-                title: 'Thin Corneas',
-                icon: <Shield className="h-12 w-12 chopard-text-accent" />,
-                description: 'Patients whose corneas are too thin for LASIK or who have irregular corneal shapes',
-                benefits: ['Preserves corneal tissue', 'Treats irregular astigmatism', 'Safe for thin corneas']
-              },
-              {
-                title: 'High Prescriptions',
-                icon: <Eye className="h-12 w-12 chopard-text-accent" />,
-                description: 'Patients with higher degrees of nearsightedness, farsightedness, or astigmatism',
-                benefits: ['Treats severe myopia', 'Corrects high astigmatism', 'Long-term stability']
-              }
-            ].map((candidate, index) => (
+            {candidateTypes.map(({ key, icon: Icon }, index) => (
               <div key={index} className="chopard-card p-8 rounded-xl text-center">
-                <div className="mb-6">{candidate.icon}</div>
-                <h3 className="text-xl font-serif chopard-text-primary mb-4">{candidate.title}</h3>
-                <p className="chopard-text-secondary mb-6 font-light">{candidate.description}</p>
+                <div className="mb-6"><Icon className="h-12 w-12 chopard-text-accent mx-auto" /></div>
+                <h3 className="text-xl font-serif chopard-text-primary mb-4">{t(`prk.candidates.${key}.title`)}</h3>
+                <p className="chopard-text-secondary mb-6 font-light">{t(`prk.candidates.${key}.description`)}</p>
                 <div className="space-y-2">
-                  {candidate.benefits.map((benefit, benefitIndex) => (
+                  {t(`prk.candidates.${key}.benefits`, { returnObjects: true }).map((benefit, benefitIndex) => (
                     <div key={benefitIndex} className="flex items-center justify-center">
                       <Check className="h-4 w-4 chopard-text-accent mr-2" />
                       <span className="text-sm chopard-text-secondary font-light">{benefit}</span>
@@ -396,70 +281,28 @@ const PRK = () => {
         </div>
       </section>
 
-      {/* Patient Success Story */}
-      <section className="py-16 chopard-gradient text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl lg:text-4xl font-serif mb-6">
-                PRK Success Story
-              </h2>
-              <blockquote className="text-xl italic text-white/70 mb-6 font-light">
-                "As a Marine, I needed a procedure that could withstand combat conditions. Dr. Flowers recommended 
-                PRK, and it was the best decision I ever made. No flap to worry about, perfect vision, and 
-                I'm back to active duty with confidence."
-              </blockquote>
-              <div className="flex items-center">
-                <img
-                  src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg"
-                  alt="Military patient"
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <p className="font-light">Sergeant Michael Torres</p>
-                  <p className="text-white/70 font-light">U.S. Marine Corps</p>
-                  <div className="flex mt-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img
-                src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg"
-                alt="Military service member"
-                className="rounded-2xl shadow-xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-16 chopard-gradient text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-serif mb-6">
-            Is PRK Right for You?
+            {t('prk.cta.title')}
           </h2>
           <p className="text-xl text-white/70 mb-8 font-light">
-            Discover if PRK is the perfect solution for your vision needs and lifestyle. 
-            Dr. Flowers will provide expert guidance and personalized recommendations.
+            {t('prk.cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
               className="inline-flex items-center bg-white chopard-text-primary px-8 py-4 rounded-lg text-lg font-light hover:bg-gray-100 transition-all duration-300"
             >
-              Schedule PRK Consultation
+              {t('prk.cta.schedule')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
             <Link
               to="/procedures"
               className="inline-flex items-center border border-white text-white px-8 py-4 rounded-lg text-lg font-light hover:bg-white hover:text-gray-900 transition-all duration-300"
             >
-              Compare All Procedures
+              {t('prk.cta.compare')}
             </Link>
           </div>
         </div>
