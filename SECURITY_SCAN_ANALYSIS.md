@@ -112,13 +112,15 @@ This CANNOT be fixed via SQL migration - it's a Supabase Auth configuration sett
 
 **Steps to Enable:**
 1. Open Supabase Dashboard
-2. Go to **Authentication** > **Settings**
-3. Scroll to **Security** section
-4. Toggle ON: **"Leaked Password Protection"**
+2. Navigate to **Authentication** > **Attack Protection**
+3. Under "Bot and Abuse Protection" section
+4. Find **"Prevent use of leaked passwords"**
+5. Click **"Configure email provider"** button to enable
 
 **What it does:**
 - Checks new passwords against HaveIBeenPwned.org database
 - Prevents users from setting compromised passwords
+- Rejects known or easy to guess passwords on sign up or password change
 - Does not affect existing passwords
 
 ---
@@ -154,7 +156,7 @@ This CANNOT be fixed via SQL migration - it's a Supabase Auth configuration sett
 
 4. **Enable Leaked Password Protection** ⚠️
    - This is the ONLY real security gap
-   - Must be done manually in dashboard
+   - Must be done manually in dashboard: **Authentication** > **Attack Protection** > **Prevent use of leaked passwords**
 
 ### Handling Security Scans
 
