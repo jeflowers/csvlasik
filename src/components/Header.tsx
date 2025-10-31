@@ -11,7 +11,7 @@ const Header = () => {
   const [isTestimonialsOpen, setIsTestimonialsOpen] = useState(false);
   const location = useLocation();
 
-  const { t, i18n } = useTranslation(['navigation', 'common']);
+  const { t, i18n } = useTranslation(['navigation', 'common', 'footer']);
   const isActive = (path: string) => location.pathname === path;
   const isActivePath = (path: string) => location.pathname.startsWith(path);
 
@@ -122,12 +122,12 @@ const Header = () => {
           <Link to="/" className={`flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}`}>
             <img
               src="/assets/images/ClearSight-icon-nb-blk-gld.png"
-              alt="ClearSight Revolutionary Vision Care"
+              alt={`${t('company.name', { ns: 'footer' })} ${t('company.tagline', { ns: 'footer' })}`}
               className="h-12 w-auto"
             />
             <div className="flex flex-col">
-              <h1 className="text-xl font-serif chopard-text-primary leading-tight">ClearSight</h1>
-              <p className="text-xs chopard-text-secondary font-light tracking-widest uppercase">Revolutionary Vision Care</p>
+              <h1 className="text-xl font-serif chopard-text-primary leading-tight">{t('company.name', { ns: 'footer' })}</h1>
+              <p className="text-xs chopard-text-secondary font-light tracking-widest uppercase">{t('company.tagline', { ns: 'footer' })}</p>
             </div>
           </Link>
 
