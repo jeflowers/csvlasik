@@ -122,12 +122,12 @@ const Header = () => {
           <Link to="/" className={`flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}`}>
             <img
               src="/assets/images/ClearSight-icon-nb-blk-gld.png"
-              alt="ClearSight Vision Institute"
+              alt="ClearSight Revolutionary Vision Care"
               className="h-12 w-auto"
             />
             <div className="flex flex-col">
               <h1 className="text-xl font-serif chopard-text-primary leading-tight">ClearSight</h1>
-              <p className="text-xs chopard-text-secondary font-light tracking-widest uppercase">Vision Institute</p>
+              <p className="text-xs chopard-text-secondary font-light tracking-widest uppercase">Revolutionary Vision Care</p>
             </div>
           </Link>
 

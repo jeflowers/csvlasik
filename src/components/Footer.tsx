@@ -15,7 +15,7 @@ const Footer = () => {
             <Link to="/" className="flex items-center space-x-3 mb-6">
               <img
                 src="/assets/images/ClearSight-icon-nb-blk-gld.png"
-                alt="ClearSight Vision Institute"
+                alt="ClearSight Revolutionary Vision Care"
                 className="h-12 w-auto filter brightness-0 invert"
               />
               <div>
