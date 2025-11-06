@@ -14,6 +14,7 @@ import {
   X
 } from 'lucide-react';
 import { apiService } from '../../services/api';
+import { supabase } from '../../lib/supabase';
 
 interface User {
   id: string;
@@ -26,8 +27,15 @@ interface User {
   is_active: boolean;
 }
 
+interface Role {
+  name: string;
+  description: string;
+  level: number;
+}
+
 const UserManager: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
+  const [roles, setRoles] = useState<Role[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [roleFilter, setRoleFilter] = useState('all');
@@ -35,15 +43,9 @@ const UserManager: React.FC = () => {
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [showPasswordModal, setShowPasswordModal] = useState<User | null>(null);
 
-  const roles = [
-    { value: 'admin', label: 'Administrator', description: 'Full system access' },
-    { value: 'editor', label: 'Editor', description: 'Content creation and approval' },
-    { value: 'contributor', label: 'Contributor', description: 'Content creation only' },
-    { value: 'viewer', label: 'Viewer', description: 'Read-only access' }
-  ];
-
   useEffect(() => {
     fetchUsers();
+    fetchRoles();
   }, []);
 
   const fetchUsers = async () => {
@@ -55,6 +57,20 @@ const UserManager: React.FC = () => {
       console.error('Failed to fetch users:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchRoles = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('roles')
+        .select('name, description, level')
+        .order('level', { ascending: true });
+
+      if (error) throw error;
+      setRoles(data || []);
+    } catch (error) {
+      console.error('Failed to fetch roles:', error);
     }
   };
 
@@ -146,7 +162,9 @@ const UserManager: React.FC = () => {
             >
               <option value="all">All Roles</option>
               {roles.map(role => (
-                <option key={role.value} value={role.value}>{role.label}</option>
+                <option key={role.name} value={role.name}>
+                  {role.name.charAt(0).toUpperCase() + role.name.slice(1).replace('_', ' ')}
+                </option>
               ))}
             </select>
           </div>
@@ -294,6 +312,7 @@ const UserManager: React.FC = () => {
       {(showCreateModal || editingUser) && (
         <UserModal
           user={editingUser}
+          roles={roles}
           onClose={() => {
             setShowCreateModal(false);
             setEditingUser(null);
@@ -324,9 +343,10 @@ const UserManager: React.FC = () => {
 // User Create/Edit Modal Component
 const UserModal: React.FC<{
   user?: User | null;
+  roles: Role[];
   onClose: () => void;
   onSave: () => void;
-}> = ({ user, onClose, onSave }) => {
+}> = ({ user, roles, onClose, onSave }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -489,10 +509,15 @@ const UserModal: React.FC<{
               onChange={(e) => setFormData(prev => ({ ...prev, role: e.target.value }))}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
             >
-              <option value="admin">Administrator - Full system access</option>
-              <option value="editor">Editor - Content creation and approval</option>
-              <option value="contributor">Contributor - Content creation only</option>
-              <option value="viewer">Viewer - Read-only access</option>
+              {roles.length === 0 ? (
+                <option value="">Loading roles...</option>
+              ) : (
+                roles.map(role => (
+                  <option key={role.name} value={role.name}>
+                    {role.name.charAt(0).toUpperCase() + role.name.slice(1).replace('_', ' ')} - {role.description}
+                  </option>
+                ))
+              )}
             </select>
           </div>
 
