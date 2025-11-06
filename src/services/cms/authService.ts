@@ -24,7 +24,7 @@ export interface AdminUser {
   id: string;
   email: string;
   name: string;
-  role: 'admin' | 'editor' | 'viewer';
+  role: string;
   created_at: string;
   updated_at: string;
 }
@@ -71,9 +71,16 @@ export async function signInAdmin(credentials: LoginCredentials): Promise<AuthRe
       return { user: null, error: 'User not found in database' };
     }
 
-    if (!['admin', 'editor', 'viewer'].includes(userData.role)) {
+    // Verify user has a valid role from the roles table
+    const { data: roleData } = await supabase
+      .from('roles')
+      .select('name')
+      .eq('name', userData.role)
+      .maybeSingle();
+
+    if (!roleData) {
       await supabase.auth.signOut();
-      return { user: null, error: 'Insufficient permissions' };
+      return { user: null, error: 'Invalid role assigned to user' };
     }
 
     const user = {
@@ -209,7 +216,7 @@ export async function createAdminUser(
   email: string,
   password: string,
   name: string,
-  role: 'admin' | 'editor' | 'viewer'
+  role: string
 ): Promise<AuthResponse> {
   try {
     const { data: authData, error: authError } = await supabase.auth.signUp({
