@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Diagnostic Tool</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #00ff00;
+        }
+        h1 {
+            color: #00ff00;
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 10px;
+        }
+        .test-section {
+            background: #0a0a0a;
+            border: 1px solid #00ff00;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .success { color: #00ff00; }
+        .error { color: #ff0000; }
+        .warning { color: #ffaa00; }
+        .info { color: #00aaff; }
+        button {
+            background: #00ff00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+        button:hover {
+            background: #00cc00;
+        }
+        input {
+            background: #0a0a0a;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            padding: 8px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        pre {
+            background: #000;
+            padding: 10px;
+            border-left: 3px solid #00ff00;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .step {
+            margin: 10px 0;
+            padding: 10px;
+            background: #111;
+            border-left: 3px solid #555;
+        }
+        .step.running { border-left-color: #ffaa00; }
+        .step.success { border-left-color: #00ff00; }
+        .step.failed { border-left-color: #ff0000; }
+    </style>
+</head>
+<body>
+    <h1>🔐 ClearSight Admin Login Diagnostic Tool</h1>
+
+    <div class="test-section">
+        <h3>Test Configuration</h3>
+        <label>Email:</label>
+        <input type="email" id="email" value="jeflowers@gmail.com">
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+        <br><br>
+        <button onclick="runFullDiagnostic()">🚀 Run Full Diagnostic</button>
+        <button onclick="clearOutput()">🧹 Clear Output</button>
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        const SUPABASE_URL = 'https://qdcykazqmowkmkhykepb.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkY3lrYXpxbW93a21raHlrZXBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk4NjQwNzEsImV4cCI6MjA3NTQ0MDA3MX0.lDeWRNri-hPV6JMH2tRiwvYrN64hOKYuGUhre6rQeaA';
+
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        function clearOutput() {
+            document.getElementById('output').innerHTML = '';
+        }
+
+        function addSection(title) {
+            const div = document.createElement('div');
+            div.className = 'test-section';
+            div.innerHTML = `<h3>${title}</h3><div id="section-${Date.now()}"></div>`;
+            document.getElementById('output').appendChild(div);
+            return div.querySelector('div');
+        }
+
+        function addStep(container, text, status = 'running') {
+            const step = document.createElement('div');
+            step.className = `step ${status}`;
+            step.textContent = text;
+            container.appendChild(step);
+            return step;
+        }
+
+        function updateStep(step, text, status) {
+            step.textContent = text;
+            step.className = `step ${status}`;
+        }
+
+        function addData(container, label, data) {
+            const pre = document.createElement('pre');
+            pre.innerHTML = `<span class="info">${label}:</span>\n${JSON.stringify(data, null, 2)}`;
+            container.appendChild(pre);
+        }
+
+        async function runFullDiagnostic() {
+            clearOutput();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!password) {
+                alert('Please enter a password');
+                return;
+            }
+
+            // Test 1: Connection
+            const conn = addSection('📡 Test 1: Supabase Connection');
+            const connStep = addStep(conn, '⏳ Testing connection to Supabase...');
+            try {
+                const { data, error } = await supabase.from('users').select('count').limit(1);
+                if (error) throw error;
+                updateStep(connStep, '✅ Connection successful!', 'success');
+            } catch (err) {
+                updateStep(connStep, `❌ Connection failed: ${err.message}`, 'failed');
+                addData(conn, 'Error Details', err);
+                return;
+            }
+
+            // Test 2: Authentication
+            const auth = addSection('🔑 Test 2: Authentication');
+            const authStep = addStep(auth, `⏳ Attempting authentication for ${email}...`);
+            let authData;
+            try {
+                const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+                if (error) throw error;
+                authData = data;
+                updateStep(authStep, `✅ Authentication successful! User ID: ${data.user.id}`, 'success');
+                addData(auth, 'Auth Response', {
+                    user_id: data.user.id,
+                    email: data.user.email,
+                    email_confirmed: data.user.email_confirmed_at ? 'Yes' : 'No',
+                    created_at: data.user.created_at
+                });
+            } catch (err) {
+                updateStep(authStep, `❌ Authentication failed: ${err.message}`, 'failed');
+                addData(auth, 'Error Details', err);
+                return;
+            }
+
+            // Test 3: Session
+            const sess = addSection('🎫 Test 3: Session Verification');
+            const sessStep = addStep(sess, '⏳ Verifying session...');
+            try {
+                const { data: { session }, error } = await supabase.auth.getSession();
+                if (error) throw error;
+                if (!session) throw new Error('No session found');
+                updateStep(sessStep, '✅ Session verified!', 'success');
+                addData(sess, 'Session Info', {
+                    access_token: session.access_token.substring(0, 20) + '...',
+                    token_type: session.token_type,
+                    expires_at: new Date(session.expires_at * 1000).toISOString()
+                });
+            } catch (err) {
+                updateStep(sessStep, `❌ Session verification failed: ${err.message}`, 'failed');
+                addData(sess, 'Error Details', err);
+                return;
+            }
+
+            // Test 4: Users Table Query
+            const users = addSection('👤 Test 4: Users Table Access');
+            const usersStep = addStep(users, '⏳ Querying users table...');
+            let userData;
+            try {
+                const { data, error } = await supabase
+                    .from('users')
+                    .select('id,email,name,role,created_at,updated_at')
+                    .eq('id', authData.user.id)
+                    .maybeSingle();
+
+                if (error) throw error;
+                if (!data) throw new Error('User not found in users table');
+                userData = data;
+                updateStep(usersStep, '✅ User data retrieved!', 'success');
+                addData(users, 'User Data', userData);
+            } catch (err) {
+                updateStep(usersStep, `❌ Users table query failed: ${err.message}`, 'failed');
+                addData(users, 'Error Details', err);
+                return;
+            }
+
+            // Test 5: Roles Table Query
+            const roles = addSection('🎭 Test 5: Role Verification');
+            const rolesStep = addStep(roles, `⏳ Checking role: ${userData.role}...`);
+            try {
+                const { data, error } = await supabase
+                    .from('roles')
+                    .select('name,level,description')
+                    .eq('name', userData.role)
+                    .maybeSingle();
+
+                if (error) throw error;
+                if (!data) throw new Error(`Role '${userData.role}' not found in roles table`);
+                updateStep(rolesStep, `✅ Valid role confirmed: ${data.name} (level ${data.level})`, 'success');
+                addData(roles, 'Role Data', data);
+            } catch (err) {
+                updateStep(rolesStep, `❌ Role verification failed: ${err.message}`, 'failed');
+                addData(roles, 'Error Details', err);
+                return;
+            }
+
+            // Test 6: is_current_user_admin Function
+            const adminFunc = addSection('⚙️ Test 6: Admin Function Check');
+            const adminStep = addStep(adminFunc, '⏳ Testing is_current_user_admin() function...');
+            try {
+                const { data, error } = await supabase.rpc('is_current_user_admin');
+                if (error) throw error;
+                if (data === true) {
+                    updateStep(adminStep, '✅ Admin function returned TRUE', 'success');
+                } else {
+                    updateStep(adminStep, '⚠️ Admin function returned FALSE - User may not be recognized as admin', 'warning');
+                }
+                addData(adminFunc, 'Function Result', { is_admin: data });
+            } catch (err) {
+                updateStep(adminStep, `❌ Admin function failed: ${err.message}`, 'failed');
+                addData(adminFunc, 'Error Details', err);
+            }
+
+            // Final Summary
+            const summary = addSection('📊 Diagnostic Summary');
+            const summaryDiv = document.createElement('div');
+            summaryDiv.innerHTML = `
+                <div class="step success">
+                    <strong>✅ ALL TESTS PASSED!</strong><br><br>
+                    <span class="info">Login Credentials:</span><br>
+                    Email: ${email}<br>
+                    User ID: ${authData.user.id}<br>
+                    Name: ${userData.name}<br>
+                    Role: ${userData.role}<br><br>
+                    <span class="success">👍 You should be able to log in successfully!</span><br><br>
+                    <span class="warning">⚠️ If login still fails in the app, check browser console for JavaScript errors.</span>
+                </div>
+            `;
+            summary.appendChild(summaryDiv);
+
+            // Sign out after test
+            await supabase.auth.signOut();
+        }
+    </script>
+</body>
+</html>

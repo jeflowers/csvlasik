@@ -124,23 +124,36 @@ export function useAdmin(): UseAdminReturn {
   }, []);
 
   const login = useCallback(async (credentials: LoginCredentials): Promise<boolean> => {
+    console.log('[useAdmin] Login started for:', credentials.email);
     setLoading(true);
     setError(null);
 
     try {
       const { user: loggedInUser, error: loginError } = await signInAdmin(credentials);
 
+      console.log('[useAdmin] signInAdmin returned:', { loggedInUser, loginError });
+
       if (loginError) {
+        console.error('[useAdmin] Login error:', loginError);
         setError(loginError);
         setLoading(false);
         return false;
       }
 
+      if (!loggedInUser) {
+        console.error('[useAdmin] No user returned from signInAdmin');
+        setError('Authentication failed - no user returned');
+        setLoading(false);
+        return false;
+      }
+
+      console.log('[useAdmin] Login successful, setting user:', loggedInUser.email);
       setUser(loggedInUser);
       setLoading(false);
       return true;
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Login failed';
+      console.error('[useAdmin] Login exception:', errorMessage, err);
       setError(errorMessage);
       setLoading(false);
       return false;
