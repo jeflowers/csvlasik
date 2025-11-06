@@ -30,6 +30,7 @@ interface Article {
   video_type?: 'youtube' | 'vimeo' | 'uploaded';
   gallery_images?: any[];
   status: 'draft' | 'published' | 'archived';
+  visibility?: 'internal' | 'external';
   created_at: string;
   updated_at: string;
 }
@@ -352,6 +353,7 @@ const ArticleModal: React.FC<{
     video_url: '',
     video_type: 'youtube' as 'youtube' | 'vimeo' | 'uploaded',
     status: 'draft' as 'draft' | 'published' | 'archived',
+    visibility: 'external' as 'internal' | 'external',
     tags: ''
   });
   const [saving, setSaving] = useState(false);
@@ -370,6 +372,7 @@ const ArticleModal: React.FC<{
         video_url: article.video_url || '',
         video_type: article.video_type || 'youtube',
         status: article.status,
+        visibility: article.visibility || 'external',
         tags: article.tags ? article.tags.join(', ') : ''
       });
     }
@@ -603,7 +606,7 @@ const ArticleModal: React.FC<{
 
             {activeTab === 'settings' && (
               <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Category
@@ -633,11 +636,33 @@ const ArticleModal: React.FC<{
                       <option value="archived">Archived</option>
                     </select>
                   </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Visibility
+                    </label>
+                    <select
+                      value={formData.visibility}
+                      onChange={(e) => setFormData(prev => ({ ...prev, visibility: e.target.value as 'internal' | 'external' }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    >
+                      <option value="external">External (Public-facing)</option>
+                      <option value="internal">Internal (Staff only)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 border border-blue-200 p-4 rounded-md">
+                  <h4 className="text-sm font-medium text-blue-900 mb-2">Visibility Settings</h4>
+                  <ul className="text-sm text-blue-700 space-y-1">
+                    <li><strong>External:</strong> Article appears on public website and in search results</li>
+                    <li><strong>Internal:</strong> Article only visible to authenticated staff members</li>
+                  </ul>
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-md">
                   <p className="text-sm text-gray-600">
-                    Articles are managed in the /blog section of the site. Published articles will appear immediately.
+                    Articles are managed in the /blog section of the site. Published external articles will appear immediately to the public.
                   </p>
                 </div>
               </div>
