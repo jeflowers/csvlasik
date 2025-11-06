@@ -40,19 +40,28 @@ const LoginForm: React.FC = () => {
     setLoading(true);
     setError('');
 
+    console.log('[LoginForm] Submitting login for:', formData.email);
+
     try {
       const success = await login({
         email: formData.email,
         password: formData.password,
       });
 
+      console.log('[LoginForm] Login result:', success, 'Auth error:', authError);
+
       if (success) {
+        console.log('[LoginForm] Login successful, navigating to /admin');
         navigate('/admin');
       } else {
-        setError(authError || 'Login failed. Please check your credentials.');
+        const errorMsg = authError || 'Login failed. Please check your credentials.';
+        console.error('[LoginForm] Login failed:', errorMsg);
+        setError(errorMsg);
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An unexpected error occurred');
+      const errorMsg = err instanceof Error ? err.message : 'An unexpected error occurred';
+      console.error('[LoginForm] Login exception:', errorMsg);
+      setError(errorMsg);
     } finally {
       setLoading(false);
     }
