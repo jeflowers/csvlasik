@@ -49,37 +49,13 @@ export async function signInAdmin(credentials: LoginCredentials): Promise<AuthRe
   console.log('[authService] Starting login for:', credentials.email);
 
   try {
-    // Test connectivity first
-    console.log('[authService] Testing Supabase connectivity...');
-    try {
-      const connectTest = await fetch('https://qdcykazqmowkmkhykepb.supabase.co/rest/v1/', {
-        method: 'HEAD',
-        signal: AbortSignal.timeout(5000)
-      });
-      console.log('[authService] Connectivity test result:', connectTest.status);
-    } catch (connErr) {
-      console.error('[authService] Connectivity test failed:', connErr);
-      return {
-        user: null,
-        error: 'Cannot connect to authentication server. Please check your internet connection.'
-      };
-    }
-
-    // Step 1: Authenticate with timeout
+    // Step 1: Authenticate (no timeout in dev/webcontainer, just let it run)
     console.log('[authService] Step 1: Authenticating with Supabase...');
-    const authPromise = supabase.auth.signInWithPassword({
+
+    const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
       email: credentials.email,
       password: credentials.password,
     });
-
-    const authTimeout = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error('Auth timeout after 15s - Supabase not responding')), 15000)
-    );
-
-    const { data: authData, error: authError } = await Promise.race([
-      authPromise,
-      authTimeout
-    ]);
 
     if (authError) {
       console.error('[authService] Auth failed:', authError.message);
@@ -93,21 +69,12 @@ export async function signInAdmin(credentials: LoginCredentials): Promise<AuthRe
 
     console.log('[authService] Step 2: Fetching user data for ID:', authData.user.id);
 
-    // Step 2: Fetch user data with timeout
-    const userPromise = supabase
+    // Step 2: Fetch user data
+    const { data: userData, error: userError } = await supabase
       .from('users')
       .select('id,email,name,role,created_at,updated_at')
       .eq('id', authData.user.id)
       .maybeSingle();
-
-    const userTimeout = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error('User query timeout after 10s')), 10000)
-    );
-
-    const { data: userData, error: userError } = await Promise.race([
-      userPromise,
-      userTimeout
-    ]);
 
     if (userError) {
       console.error('[authService] User query error:', userError);
@@ -123,21 +90,12 @@ export async function signInAdmin(credentials: LoginCredentials): Promise<AuthRe
 
     console.log('[authService] Step 3: Verifying role:', userData.role);
 
-    // Step 3: Verify role with timeout
-    const rolePromise = supabase
+    // Step 3: Verify role
+    const { data: roleData, error: roleError } = await supabase
       .from('roles')
       .select('name')
       .eq('name', userData.role)
       .maybeSingle();
-
-    const roleTimeout = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error('Role query timeout after 10s')), 10000)
-    );
-
-    const { data: roleData, error: roleError } = await Promise.race([
-      rolePromise,
-      roleTimeout
-    ]);
 
     if (roleError) {
       console.error('[authService] Role query error:', roleError);
