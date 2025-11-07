@@ -46,42 +46,96 @@ let userCache: { user: AdminUser | null; timestamp: number } | null = null;
 const CACHE_DURATION = 60000;
 
 export async function signInAdmin(credentials: LoginCredentials): Promise<AuthResponse> {
+  console.log('[authService] Starting login for:', credentials.email);
+
   try {
-    const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
+    // Step 1: Authenticate with timeout
+    console.log('[authService] Step 1: Authenticating with Supabase...');
+    const authPromise = supabase.auth.signInWithPassword({
       email: credentials.email,
       password: credentials.password,
     });
 
+    const authTimeout = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error('Auth timeout after 10s')), 10000)
+    );
+
+    const { data: authData, error: authError } = await Promise.race([
+      authPromise,
+      authTimeout
+    ]);
+
     if (authError) {
+      console.error('[authService] Auth failed:', authError.message);
       return { user: null, error: authError.message };
     }
 
     if (!authData.user) {
+      console.error('[authService] No user in auth response');
       return { user: null, error: 'Authentication failed' };
     }
 
-    const { data: userData, error: userError } = await supabase
+    console.log('[authService] Step 2: Fetching user data for ID:', authData.user.id);
+
+    // Step 2: Fetch user data with timeout
+    const userPromise = supabase
       .from('users')
       .select('id,email,name,role,created_at,updated_at')
       .eq('id', authData.user.id)
       .maybeSingle();
 
-    if (userError || !userData) {
+    const userTimeout = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error('User query timeout after 10s')), 10000)
+    );
+
+    const { data: userData, error: userError } = await Promise.race([
+      userPromise,
+      userTimeout
+    ]);
+
+    if (userError) {
+      console.error('[authService] User query error:', userError);
+      await supabase.auth.signOut();
+      return { user: null, error: 'Database error: ' + userError.message };
+    }
+
+    if (!userData) {
+      console.error('[authService] User not found in database');
       await supabase.auth.signOut();
       return { user: null, error: 'User not found in database' };
     }
 
-    // Verify user has a valid role from the roles table
-    const { data: roleData } = await supabase
+    console.log('[authService] Step 3: Verifying role:', userData.role);
+
+    // Step 3: Verify role with timeout
+    const rolePromise = supabase
       .from('roles')
       .select('name')
       .eq('name', userData.role)
       .maybeSingle();
 
+    const roleTimeout = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error('Role query timeout after 10s')), 10000)
+    );
+
+    const { data: roleData, error: roleError } = await Promise.race([
+      rolePromise,
+      roleTimeout
+    ]);
+
+    if (roleError) {
+      console.error('[authService] Role query error:', roleError);
+      await supabase.auth.signOut();
+      return { user: null, error: 'Role verification failed: ' + roleError.message };
+    }
+
     if (!roleData) {
+      console.error('[authService] Invalid role:', userData.role);
       await supabase.auth.signOut();
       return { user: null, error: 'Invalid role assigned to user' };
     }
+
+    console.log('[authService] Login successful!');
 
     const user = {
       id: userData.id,
@@ -99,6 +153,7 @@ export async function signInAdmin(credentials: LoginCredentials): Promise<AuthRe
       error: null,
     };
   } catch (error) {
+    console.error('[authService] Exception during login:', error);
     return {
       user: null,
       error: error instanceof Error ? error.message : 'Unknown error occurred',
