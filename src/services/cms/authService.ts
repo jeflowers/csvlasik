@@ -49,6 +49,22 @@ export async function signInAdmin(credentials: LoginCredentials): Promise<AuthRe
   console.log('[authService] Starting login for:', credentials.email);
 
   try {
+    // Test connectivity first
+    console.log('[authService] Testing Supabase connectivity...');
+    try {
+      const connectTest = await fetch('https://qdcykazqmowkmkhykepb.supabase.co/rest/v1/', {
+        method: 'HEAD',
+        signal: AbortSignal.timeout(5000)
+      });
+      console.log('[authService] Connectivity test result:', connectTest.status);
+    } catch (connErr) {
+      console.error('[authService] Connectivity test failed:', connErr);
+      return {
+        user: null,
+        error: 'Cannot connect to authentication server. Please check your internet connection.'
+      };
+    }
+
     // Step 1: Authenticate with timeout
     console.log('[authService] Step 1: Authenticating with Supabase...');
     const authPromise = supabase.auth.signInWithPassword({
@@ -57,7 +73,7 @@ export async function signInAdmin(credentials: LoginCredentials): Promise<AuthRe
     });
 
     const authTimeout = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error('Auth timeout after 10s')), 10000)
+      setTimeout(() => reject(new Error('Auth timeout after 15s - Supabase not responding')), 15000)
     );
 
     const { data: authData, error: authError } = await Promise.race([
