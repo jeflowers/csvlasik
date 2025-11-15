@@ -20,7 +20,7 @@
  */
 
 import React, { useState } from 'react';
-import { Eye, AlertCircle } from 'lucide-react';
+import { Eye, AlertCircle, Home } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAdmin } from '../../hooks/useAdmin';
 
@@ -78,6 +78,13 @@ const LoginForm: React.FC = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
+          <Link
+            to="/"
+            className="inline-flex items-center text-sm text-teal-600 hover:text-teal-700 mb-4"
+          >
+            <Home className="h-4 w-4 mr-1" />
+            Back to Website
+          </Link>
           <div className="flex justify-center items-center space-x-3">
             <img
               src="/assets/images/ClearSight-icon-nb-blk-gld.png"

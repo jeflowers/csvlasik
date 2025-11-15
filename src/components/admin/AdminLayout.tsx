@@ -14,7 +14,8 @@ import {
   Eye,
   Globe,
   Shield,
-  Calendar
+  Calendar,
+  ExternalLink
 } from 'lucide-react';
 import { useAdmin } from '../../hooks/useAdmin';
 
@@ -68,6 +69,14 @@ const AdminLayout: React.FC = () => {
             </button>
           </div>
           <nav className="flex-1 space-y-1 px-2 py-4">
+            <Link
+              to="/"
+              className="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-teal-600 hover:bg-teal-50 hover:text-teal-700 border-b border-gray-200 mb-2"
+              onClick={() => setSidebarOpen(false)}
+            >
+              <ExternalLink className="mr-3 h-6 w-6" />
+              View Website
+            </Link>
             {navigation.map((item) => {
               const isActive = location.pathname === item.href;
               return (
@@ -107,6 +116,13 @@ const AdminLayout: React.FC = () => {
             </Link>
           </div>
           <nav className="flex-1 space-y-1 px-2 py-4">
+            <Link
+              to="/"
+              className="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-teal-600 hover:bg-teal-50 hover:text-teal-700 border-b border-gray-200 mb-2"
+            >
+              <ExternalLink className="mr-3 h-6 w-6" />
+              View Website
+            </Link>
             {navigation.map((item) => {
               const isActive = location.pathname === item.href;
               return (
