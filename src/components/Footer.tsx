@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Eye, Phone, Mail, MapPin, Facebook, Twitter, Instagram, BookText as TikTok, Youtube, BadgeHelp as Yelp } from 'lucide-react';
+import { Eye, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube, BadgeHelp as Yelp } from 'lucide-react';
+import TikTokIcon from './icons/TikTokIcon';
 
 const Footer = () => {
   const { t } = useTranslation(['footer', 'common']);
@@ -70,7 +71,7 @@ const Footer = () => {
                 className="text-white/60 hover:text-white transition-all duration-300"
                 aria-label={t('social.tiktok')}
               >
-                <TikTok className="h-5 w-5" />
+                <TikTokIcon className="h-5 w-5" />
               </a>
             </div>
           </div>
