@@ -35,6 +35,7 @@ const AdminLayout: React.FC = () => {
     { name: 'Statistics', href: '/admin/statistics', icon: BarChart3 },
     { name: 'Translations', href: '/admin/translations', icon: Globe },
     { name: 'Compliance', href: '/admin/compliance', icon: Shield },
+    { name: 'Data Retention', href: '/admin/data-retention', icon: Shield },
     { name: 'Users', href: '/admin/users', icon: Users },
     { name: 'Roles & Permissions', href: '/admin/roles', icon: Shield },
     { name: 'Security', href: '/admin/security', icon: Shield },
