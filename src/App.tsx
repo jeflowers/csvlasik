@@ -65,6 +65,7 @@ const SettingsPanel = lazy(() => import('./components/admin/SettingsPanel'));
 const TranslationDashboard = lazy(() => import('./components/admin/TranslationDashboard'));
 const ComplianceManager = lazy(() => import('./components/admin/ComplianceManager'));
 const DataRetentionManager = lazy(() => import('./components/admin/DataRetentionManager'));
+const ManagementReviewManager = lazy(() => import('./components/admin/ManagementReviewManager'));
 const EncryptionManager = lazy(() => import('./components/admin/EncryptionManager'));
 const GDPRManager = lazy(() => import('./components/admin/GDPRManager'));
 const RoleManager = lazy(() => import('./components/admin/RoleManager'));
@@ -184,6 +185,7 @@ function AdminRoutes() {
         <Route path="statistics" element={<StatisticsManager />} />
         <Route path="compliance" element={<ComplianceManager />} />
         <Route path="data-retention" element={<DataRetentionManager />} />
+        <Route path="management-review" element={<ManagementReviewManager />} />
         <Route path="compliance/encryption" element={<EncryptionManager />} />
         <Route path="compliance/gdpr" element={<GDPRManager />} />
         <Route path="users" element={<UserManager />} />
