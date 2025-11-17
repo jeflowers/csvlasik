@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Globe, 
-  Settings, 
-  RefreshCw, 
-  CheckCircle, 
-  AlertCircle, 
+import { Link } from 'react-router-dom';
+import {
+  Globe,
+  Settings,
+  RefreshCw,
+  CheckCircle,
+  AlertCircle,
   Clock,
   Zap,
   Database,
-  TrendingUp
+  TrendingUp,
+  Edit
 } from 'lucide-react';
 import { useTranslationService } from '../../hooks/useTranslationService';
 import { SUPPORTED_LANGUAGES } from '../../i18n';
@@ -66,14 +68,23 @@ const TranslationDashboard: React.FC = () => {
           <h1 className="text-2xl font-bold text-gray-900">Translation Dashboard</h1>
           <p className="text-gray-600">Monitor and manage translation services</p>
         </div>
-        <button
-          onClick={handleRefreshStatus}
-          disabled={isRefreshing}
-          className="flex items-center px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 disabled:opacity-50"
-        >
-          <RefreshCw className={`h-4 w-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
-          Refresh Status
-        </button>
+        <div className="flex gap-2">
+          <Link
+            to="/admin/translations/editor"
+            className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+          >
+            <Edit className="h-4 w-4 mr-2" />
+            Edit Translations
+          </Link>
+          <button
+            onClick={handleRefreshStatus}
+            disabled={isRefreshing}
+            className="flex items-center px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 disabled:opacity-50"
+          >
+            <RefreshCw className={`h-4 w-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
+            Refresh Status
+          </button>
+        </div>
       </div>
 
       {/* Service Status Overview */}

@@ -63,6 +63,7 @@ const StatisticsManager = lazy(() => import('./components/admin/StatisticsManage
 const UserManager = lazy(() => import('./components/admin/UserManager'));
 const SettingsPanel = lazy(() => import('./components/admin/SettingsPanel'));
 const TranslationDashboard = lazy(() => import('./components/admin/TranslationDashboard'));
+const TranslationEditor = lazy(() => import('./components/admin/TranslationEditor'));
 const ComplianceManager = lazy(() => import('./components/admin/ComplianceManager'));
 const DataRetentionManager = lazy(() => import('./components/admin/DataRetentionManager'));
 const ManagementReviewManager = lazy(() => import('./components/admin/ManagementReviewManager'));
@@ -193,6 +194,7 @@ function AdminRoutes() {
         <Route path="security" element={<SecurityDashboard />} />
         <Route path="settings" element={<SettingsPanel />} />
         <Route path="translations" element={<TranslationDashboard />} />
+        <Route path="translations/editor" element={<TranslationEditor />} />
       </Route>
     </Routes>
   );
