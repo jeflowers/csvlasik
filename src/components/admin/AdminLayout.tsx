@@ -33,7 +33,7 @@ const AdminLayout: React.FC = () => {
     { name: 'Articles', href: '/admin/articles', icon: FileText },
     { name: 'Media Library', href: '/admin/media', icon: Image },
     { name: 'Statistics', href: '/admin/statistics', icon: BarChart3 },
-    { name: 'Translations', href: '/admin/translations', icon: Globe },
+    { name: 'Translation Editor', href: '/admin/translations/editor', icon: Globe },
     { name: 'Compliance', href: '/admin/compliance', icon: Shield },
     { name: 'Data Retention', href: '/admin/data-retention', icon: Shield },
     { name: 'Management Review', href: '/admin/management-review', icon: Shield },
