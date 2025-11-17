@@ -63,7 +63,7 @@ const AdminLayout: React.FC = () => {
               />
               <div className="flex flex-col">
                 <h1 className="text-lg font-serif text-gray-900 leading-tight">ClearSight</h1>
-                <p className="text-[10px] text-gray-600 font-light tracking-widest uppercase">Vision Institute</p>
+                <p className="text-[10px] text-gray-600 font-light tracking-widest uppercase">VISION INSTITUTE</p>
               </div>
             </Link>
             <button onClick={() => setSidebarOpen(false)}>
@@ -113,7 +113,7 @@ const AdminLayout: React.FC = () => {
               />
               <div className="flex flex-col">
                 <h1 className="text-lg font-serif text-gray-900 leading-tight">ClearSight</h1>
-                <p className="text-[10px] text-gray-600 font-light tracking-widest uppercase">Vision Institute</p>
+                <p className="text-[10px] text-gray-600 font-light tracking-widest uppercase">VISION INSTITUTE</p>
               </div>
             </Link>
           </div>
@@ -186,7 +186,7 @@ const AdminLayout: React.FC = () => {
               />
               <div className="flex flex-col">
                 <h1 className="text-sm font-serif text-gray-900 leading-tight">ClearSight</h1>
-                <p className="text-[9px] text-gray-600 font-light tracking-widest uppercase">Vision Institute</p>
+                <p className="text-[8px] text-gray-600 font-light tracking-widest uppercase">VISION INSTITUTE</p>
               </div>
             </Link>
             <button

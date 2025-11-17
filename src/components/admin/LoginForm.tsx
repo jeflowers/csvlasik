@@ -93,7 +93,7 @@ const LoginForm: React.FC = () => {
             />
             <div className="flex flex-col">
               <h1 className="text-2xl font-serif text-gray-900 leading-tight">ClearSight</h1>
-              <p className="text-xs text-gray-600 font-light tracking-widest uppercase">Vision Institute</p>
+              <p className="text-xs text-gray-600 font-light tracking-widest uppercase">VISION INSTITUTE</p>
             </div>
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
