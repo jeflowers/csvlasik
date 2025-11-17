@@ -12,9 +12,6 @@ export interface AppointmentRequest {
   phone: string;
   procedure_type: ProcedureType;
   location: LocationType;
-  preferred_time_1: string;
-  preferred_time_2: string;
-  preferred_time_3: string;
   notes: string;
   status: AppointmentStatus;
   confirmed_time: string | null;
@@ -32,9 +29,6 @@ export interface AppointmentRequestCreate {
   phone: string;
   procedure_type: ProcedureType;
   location: LocationType;
-  preferred_time_1: string;
-  preferred_time_2: string;
-  preferred_time_3: string;
   notes: string;
 }
 
