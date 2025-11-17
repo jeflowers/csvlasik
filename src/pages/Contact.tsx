@@ -47,9 +47,26 @@ const Contact = () => {
             <h1 className="text-4xl lg:text-5xl font-serif chopard-text-primary mb-6 leading-tight">
               {t('hero.title')} <span className="chopard-text-accent">{t('hero.titleAccent')}</span>
             </h1>
-            <p className="text-xl chopard-text-secondary max-w-3xl mx-auto mb-6 leading-relaxed font-light">
+            <p className="text-xl chopard-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed font-light">
               {t('hero.subtitle')}
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <Link
+                to="/book-consultation"
+                className="inline-flex items-center chopard-button px-8 py-3 rounded-lg transition-all duration-300"
+              >
+                <Calendar className="mr-2 h-5 w-5" />
+                {t('common:scheduleConsultation')}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <a
+                href="tel:+18442115462"
+                className="inline-flex items-center border border-gray-900 chopard-text-primary px-8 py-3 rounded-lg font-light hover:bg-gray-900 hover:text-white transition-all duration-300"
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                {t('common:callNow')}
+              </a>
+            </div>
             <div className="inline-flex items-center chopard-glass px-6 py-3 rounded-full text-base font-medium chopard-text-accent border-2 chopard-border">
               <Calendar className="h-5 w-5 mr-3 chopard-text-accent" />
               {t('hero.badge')}
@@ -196,10 +213,10 @@ const Contact = () => {
                 </div>
 
                 <button
-                  href="tel:+18442115462"
+                  type="submit"
                   className="w-full chopard-button px-8 py-4 rounded-lg transition-all duration-300 flex items-center justify-center"
                 >
-                  {t('buttons.scheduleConsultation', { ns: 'forms' })}
+                  {t('buttons.submit', { ns: 'forms' })}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
 
