@@ -15,6 +15,7 @@ import {
   Key
 } from 'lucide-react';
 import { apiService } from '../../services/api';
+import { complianceService, ComplianceStatus } from '../../services/complianceService';
 
 interface AuditLogEntry {
   id: number;
@@ -45,7 +46,7 @@ const ComplianceManager: React.FC = () => {
   const [activeTab, setActiveTab] = useState('hipaa');
   const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>([]);
   const [dataRequests, setDataRequests] = useState<DataSubjectRequest[]>([]);
-  const [complianceStatus, setComplianceStatus] = useState<any>({});
+  const [complianceStatus, setComplianceStatus] = useState<ComplianceStatus | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -56,19 +57,19 @@ const ComplianceManager: React.FC = () => {
     try {
       setLoading(true);
       const [logs, requests, status] = await Promise.all([
-        apiService.getAuditLogs().catch(err => { console.error('Audit logs error:', err); return []; }),
-        apiService.getDataSubjectRequests().catch(err => { console.error('Data requests error:', err); return []; }),
-        apiService.getComplianceStatus().catch(err => { console.error('Status error:', err); return {}; })
+        complianceService.getAuditLogs().catch(err => { console.error('Audit logs error:', err); return []; }),
+        complianceService.getDataSubjectRequests().catch(err => { console.error('Data requests error:', err); return []; }),
+        complianceService.getComplianceStatus().catch(err => { console.error('Status error:', err); return null; })
       ]);
 
       setAuditLogs(Array.isArray(logs) ? logs : []);
       setDataRequests(Array.isArray(requests) ? requests : []);
-      setComplianceStatus(status || {});
+      setComplianceStatus(status);
     } catch (error) {
       console.error('Failed to fetch compliance data:', error);
       setAuditLogs([]);
       setDataRequests([]);
-      setComplianceStatus({});
+      setComplianceStatus(null);
     } finally {
       setLoading(false);
     }
@@ -126,24 +127,32 @@ const ComplianceManager: React.FC = () => {
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-medium text-gray-900">HIPAA Status</h3>
-            <Shield className={`h-6 w-6 ${complianceStatus.hipaa?.compliant ? 'text-green-500' : 'text-yellow-500'}`} />
+            <Shield className={`h-6 w-6 ${complianceStatus?.hipaa?.compliant ? 'text-green-500' : 'text-yellow-500'}`} />
           </div>
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
               <span>Audit Logging:</span>
-              <span className="text-green-600">✓ Active</span>
+              <span className={complianceStatus?.hipaa?.auditLogging ? 'text-green-600' : 'text-red-600'}>
+                {complianceStatus?.hipaa?.auditLogging ? '✓ Active' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between text-sm">
               <span>Data Encryption:</span>
-              <span className="text-yellow-600">⚠ Partial</span>
+              <span className={complianceStatus?.hipaa?.dataEncryption === 'active' ? 'text-green-600' : complianceStatus?.hipaa?.dataEncryption === 'partial' ? 'text-yellow-600' : 'text-red-600'}>
+                {complianceStatus?.hipaa?.dataEncryption === 'active' ? '✓ Active' : complianceStatus?.hipaa?.dataEncryption === 'partial' ? '⚠ Partial' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between text-sm">
               <span>Access Controls:</span>
-              <span className="text-green-600">✓ Implemented</span>
+              <span className={complianceStatus?.hipaa?.accessControls ? 'text-green-600' : 'text-red-600'}>
+                {complianceStatus?.hipaa?.accessControls ? '✓ Implemented' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between text-sm">
               <span>BAAs in Place:</span>
-              <span className="text-red-600">✗ Missing</span>
+              <span className={complianceStatus?.hipaa?.baasInPlace ? 'text-green-600' : 'text-red-600'}>
+                {complianceStatus?.hipaa?.baasInPlace ? '✓ Active' : '✗ Missing'}
+              </span>
             </div>
           </div>
         </div>
@@ -151,24 +160,32 @@ const ComplianceManager: React.FC = () => {
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-medium text-gray-900">GDPR Status</h3>
-            <Globe className={`h-6 w-6 ${complianceStatus.gdpr?.compliant ? 'text-green-500' : 'text-yellow-500'}`} />
+            <Globe className={`h-6 w-6 ${complianceStatus?.gdpr?.compliant ? 'text-green-500' : 'text-yellow-500'}`} />
           </div>
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
               <span>Data Subject Rights:</span>
-              <span className="text-green-600">✓ Implemented</span>
+              <span className={complianceStatus?.gdpr?.dataSubjectRights ? 'text-green-600' : 'text-red-600'}>
+                {complianceStatus?.gdpr?.dataSubjectRights ? '✓ Implemented' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between text-sm">
               <span>Consent Management:</span>
-              <span className="text-yellow-600">⚠ Basic</span>
+              <span className={complianceStatus?.gdpr?.consentManagement === 'advanced' ? 'text-green-600' : complianceStatus?.gdpr?.consentManagement === 'basic' ? 'text-yellow-600' : 'text-red-600'}>
+                {complianceStatus?.gdpr?.consentManagement === 'advanced' ? '✓ Advanced' : complianceStatus?.gdpr?.consentManagement === 'basic' ? '⚠ Basic' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between text-sm">
               <span>Data Retention:</span>
-              <span className="text-yellow-600">⚠ Manual</span>
+              <span className={complianceStatus?.gdpr?.dataRetention === 'automated' ? 'text-green-600' : complianceStatus?.gdpr?.dataRetention === 'manual' ? 'text-yellow-600' : 'text-red-600'}>
+                {complianceStatus?.gdpr?.dataRetention === 'automated' ? '✓ Automated' : complianceStatus?.gdpr?.dataRetention === 'manual' ? '⚠ Manual' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between text-sm">
               <span>Privacy Policy:</span>
-              <span className="text-red-600">✗ Missing</span>
+              <span className={complianceStatus?.gdpr?.privacyPolicy ? 'text-green-600' : 'text-red-600'}>
+                {complianceStatus?.gdpr?.privacyPolicy ? `✓ Active (v${complianceStatus?.gdpr?.privacyPolicyVersion || '1.0'})` : '✗ Missing'}
+              </span>
             </div>
           </div>
         </div>
@@ -176,24 +193,32 @@ const ComplianceManager: React.FC = () => {
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-medium text-gray-900">ISO 27001 Status</h3>
-            <Lock className={`h-6 w-6 ${complianceStatus.iso27001?.compliant ? 'text-green-500' : 'text-yellow-500'}`} />
+            <Lock className={`h-6 w-6 ${complianceStatus?.iso27001?.compliant ? 'text-green-500' : 'text-yellow-500'}`} />
           </div>
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
               <span>Security Controls:</span>
-              <span className="text-green-600">✓ Implemented</span>
+              <span className={complianceStatus?.iso27001?.securityControls ? 'text-green-600' : 'text-red-600'}>
+                {complianceStatus?.iso27001?.securityControls ? '✓ Implemented' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between text-sm">
               <span>Risk Management:</span>
-              <span className="text-yellow-600">⚠ Basic</span>
+              <span className={complianceStatus?.iso27001?.riskManagement === 'advanced' ? 'text-green-600' : complianceStatus?.iso27001?.riskManagement === 'basic' ? 'text-yellow-600' : 'text-red-600'}>
+                {complianceStatus?.iso27001?.riskManagement === 'advanced' ? '✓ Advanced' : complianceStatus?.iso27001?.riskManagement === 'basic' ? '⚠ Basic' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between text-sm">
               <span>ISMS Documentation:</span>
-              <span className="text-red-600">✗ Missing</span>
+              <span className={complianceStatus?.iso27001?.ismsDocumentation ? 'text-green-600' : 'text-red-600'}>
+                {complianceStatus?.iso27001?.ismsDocumentation ? '✓ Active' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between text-sm">
               <span>Management Review:</span>
-              <span className="text-red-600">✗ Missing</span>
+              <span className={complianceStatus?.iso27001?.managementReview ? 'text-green-600' : 'text-red-600'}>
+                {complianceStatus?.iso27001?.managementReview ? '✓ Active' : '✗ Missing'}
+              </span>
             </div>
           </div>
         </div>
@@ -271,6 +296,11 @@ const HIPAACompliance: React.FC<{
   onRefresh: () => void;
 }> = ({ auditLogs, onRefresh }) => {
   const phiAccessLogs = auditLogs.filter(log => log.phi_accessed);
+  const [hipaaStatus, setHipaaStatus] = React.useState<any>(null);
+
+  React.useEffect(() => {
+    complianceService.checkHIPAACompliance().then(setHipaaStatus);
+  }, []);
 
   return (
     <div className="space-y-6">
@@ -280,29 +310,41 @@ const HIPAACompliance: React.FC<{
           <div className="space-y-2">
             <div className="flex justify-between">
               <span>Access Control:</span>
-              <span className="text-green-600">✓ Implemented</span>
+              <span className={hipaaStatus?.accessControls ? 'text-green-600' : 'text-red-600'}>
+                {hipaaStatus?.accessControls ? '✓ Implemented' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between">
               <span>Audit Controls:</span>
-              <span className="text-green-600">✓ Active</span>
+              <span className={hipaaStatus?.auditLogging ? 'text-green-600' : 'text-red-600'}>
+                {hipaaStatus?.auditLogging ? '✓ Active' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between">
               <span>Integrity:</span>
-              <span className="text-green-600">✓ Protected</span>
+              <span className={hipaaStatus?.integrity ? 'text-green-600' : 'text-red-600'}>
+                {hipaaStatus?.integrity ? '✓ Protected' : '✗ Missing'}
+              </span>
             </div>
           </div>
           <div className="space-y-2">
             <div className="flex justify-between">
               <span>Authentication:</span>
-              <span className="text-green-600">✓ Verified</span>
+              <span className={hipaaStatus?.authentication ? 'text-green-600' : 'text-red-600'}>
+                {hipaaStatus?.authentication ? '✓ Verified' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between">
               <span>Transmission Security:</span>
-              <span className="text-green-600">✓ Encrypted</span>
+              <span className={hipaaStatus?.transmissionSecurity ? 'text-green-600' : 'text-red-600'}>
+                {hipaaStatus?.transmissionSecurity ? '✓ Encrypted' : '✗ Missing'}
+              </span>
             </div>
             <div className="flex justify-between">
               <span>Encryption at Rest:</span>
-              <span className="text-yellow-600">⚠ Pending</span>
+              <span className={hipaaStatus?.encryptionAtRest === 'active' ? 'text-green-600' : hipaaStatus?.encryptionAtRest === 'pending' ? 'text-yellow-600' : 'text-red-600'}>
+                {hipaaStatus?.encryptionAtRest === 'active' ? '✓ Active' : hipaaStatus?.encryptionAtRest === 'pending' ? '⚠ Pending' : '✗ Missing'}
+              </span>
             </div>
           </div>
         </div>
