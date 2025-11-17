@@ -52,6 +52,11 @@ const RoleManager: React.FC = () => {
   const [rolePermissions, setRolePermissions] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'roles' | 'assignments' | 'permissions'>('roles');
+  const [showAssignModal, setShowAssignModal] = useState(false);
+  const [allUsers, setAllUsers] = useState<any[]>([]);
+  const [selectedUserId, setSelectedUserId] = useState('');
+  const [selectedRoleId, setSelectedRoleId] = useState('');
+  const [expiresAt, setExpiresAt] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -67,19 +72,21 @@ const RoleManager: React.FC = () => {
     try {
       setLoading(true);
 
-      const [rolesResult, permissionsResult, userRolesResult] = await Promise.all([
+      const [rolesResult, permissionsResult, userRolesResult, usersResult] = await Promise.all([
         supabase.from('roles').select('*').order('level', { ascending: false }),
         supabase.from('permissions').select('*').order('resource', { ascending: true }),
         supabase.from('user_roles').select(`
           *,
           user:users(email, name),
           role:roles(name, level)
-        `).order('granted_at', { ascending: false })
+        `).order('granted_at', { ascending: false }),
+        supabase.from('users').select('id, email, name, is_active').eq('is_active', true).order('name')
       ]);
 
       if (rolesResult.data) setRoles(rolesResult.data);
       if (permissionsResult.data) setPermissions(permissionsResult.data);
       if (userRolesResult.data) setUserRoles(userRolesResult.data as any);
+      if (usersResult.data) setAllUsers(usersResult.data);
     } catch (error) {
       console.error('Failed to fetch data:', error);
     } finally {
@@ -134,6 +141,38 @@ const RoleManager: React.FC = () => {
       fetchData();
     } catch (error) {
       console.error('Failed to revoke user role:', error);
+    }
+  };
+
+  const handleAssignRole = async () => {
+    if (!selectedUserId || !selectedRoleId) {
+      alert('Please select both a user and a role');
+      return;
+    }
+
+    try {
+      const assignment: any = {
+        user_id: selectedUserId,
+        role_id: selectedRoleId,
+        granted_at: new Date().toISOString()
+      };
+
+      if (expiresAt) {
+        assignment.expires_at = new Date(expiresAt).toISOString();
+      }
+
+      const { error } = await supabase.from('user_roles').insert(assignment);
+
+      if (error) throw error;
+
+      setShowAssignModal(false);
+      setSelectedUserId('');
+      setSelectedRoleId('');
+      setExpiresAt('');
+      fetchData();
+    } catch (error: any) {
+      console.error('Failed to assign role:', error);
+      alert(`Failed to assign role: ${error.message}`);
     }
   };
 
@@ -306,6 +345,16 @@ const RoleManager: React.FC = () => {
 
       {activeTab === 'assignments' && (
         <div className="bg-white rounded-lg shadow overflow-hidden">
+          <div className="p-4 border-b border-gray-200 flex justify-between items-center">
+            <h3 className="font-semibold text-gray-900">User Role Assignments</h3>
+            <button
+              onClick={() => setShowAssignModal(true)}
+              className="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 flex items-center"
+            >
+              <Plus className="h-4 w-4 mr-2" />
+              Assign Role
+            </button>
+          </div>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
@@ -414,6 +463,90 @@ const RoleManager: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      )}
+
+      {/* Assign Role Modal */}
+      {showAssignModal && (
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Assign Role to User</h3>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Select User
+                </label>
+                <select
+                  value={selectedUserId}
+                  onChange={(e) => setSelectedUserId(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                >
+                  <option value="">-- Select a user --</option>
+                  {allUsers.map((user) => (
+                    <option key={user.id} value={user.id}>
+                      {user.name} ({user.email})
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Select Role
+                </label>
+                <select
+                  value={selectedRoleId}
+                  onChange={(e) => setSelectedRoleId(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                >
+                  <option value="">-- Select a role --</option>
+                  {roles.map((role) => (
+                    <option key={role.id} value={role.id}>
+                      {role.name} (Level {role.level}) - {role.description}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Expiration Date (Optional)
+                </label>
+                <input
+                  type="date"
+                  value={expiresAt}
+                  onChange={(e) => setExpiresAt(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                  min={new Date().toISOString().split('T')[0]}
+                />
+                <p className="text-xs text-gray-500 mt-1">
+                  Leave empty for permanent assignment
+                </p>
+              </div>
+            </div>
+
+            <div className="flex justify-end space-x-3 mt-6">
+              <button
+                onClick={() => {
+                  setShowAssignModal(false);
+                  setSelectedUserId('');
+                  setSelectedRoleId('');
+                  setExpiresAt('');
+                }}
+                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleAssignRole}
+                disabled={!selectedUserId || !selectedRoleId}
+                className="px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md hover:bg-teal-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
+              >
+                Assign Role
+              </button>
+            </div>
           </div>
         </div>
       )}
