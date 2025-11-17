@@ -53,7 +53,7 @@
           "name": "Lisa Matsumoto",
           "age": 38,
           "location": "Guam",
-          "procedure": "SMILE",
+          "procedure": "LASIK",
           "date": "2018",
           "quote": "Tres generaciones de mi familia han tenido procedimientos con el Dr. Flowers. Mi abuela fue una de sus primeras pacientes en Guam. ¡El cuidado revolucionario ahora corre en nuestra familia!",
           "rating": 5,
@@ -112,7 +112,7 @@
           "name": "Sarah Chen",
           "age": 33,
           "location": "Pasadena",
-          "procedure": "SMILE",
+          "procedure": "PRK",
           "date": "2024",
           "quote": "El hecho de que todavía vuele a Guam trimestralmente mientras mantiene su práctica en LA muestra una dedicación increíble. Este es alguien que realmente se preocupa por el impacto, no solo por los ingresos.",
           "rating": 5,
@@ -154,9 +154,9 @@
           "name": "Marcus Johnson",
           "age": 31,
           "location": "Beverly Hills",
-          "procedure": "SMILE",
+          "procedure": "PRK",
           "date": "2024",
-          "quote": "Como artista de MMA, la integridad corneal era crucial. SMILE me dio visión perfecta sin comprometer la fuerza de mi ojo. Revolucionario es la palabra correcta.",
+          "quote": "Como artista de MMA, la integridad corneal era crucial. PRK me dio visión perfecta sin comprometer la fuerza de mi ojo. Revolucionario es la palabra correcta.",
           "rating": 5,
           "verified": true,
           "sport": "Artes Marciales Mixtas"
@@ -293,8 +293,8 @@
       {
         "prescription": "-6.25 con Astigmatismo",
         "result": "20/20",
-        "procedure": "SMILE",
-        "timeToResult": "48 horas"
+        "procedure": "PRK",
+        "timeToResult": "3-5 días"
       }
     ]
   },

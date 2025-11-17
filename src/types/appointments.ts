@@ -1,4 +1,4 @@
-export type ProcedureType = 'lasik' | 'prk' | 'icl' | 'smile' | 'consultation';
+export type ProcedureType = 'lasik' | 'prk' | 'icl' | 'consultation';
 
 export type LocationType = 'los_angeles' | 'guam';
 

@@ -126,7 +126,6 @@ const AppointmentRequestForm: React.FC = () => {
               <option value="lasik">LASIK</option>
               <option value="prk">PRK</option>
               <option value="icl">ICL</option>
-              <option value="smile">SMILE</option>
             </select>
           </div>
 

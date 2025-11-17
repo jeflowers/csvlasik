@@ -98,8 +98,8 @@ Both services are configured to protect medical terminology:
 
 ```javascript
 const protectedTerms = [
-  'LASIK', 'PRK', 'ICL', 'SMILE', 'FDA', 
-  'Dr. Charles Flowers', 'ClearSight', 
+  'LASIK', 'PRK', 'ICL', 'FDA',
+  'Dr. Charles Flowers', 'ClearSight',
   'Visian ICL', 'Femtosecond', 'Excimer'
 ];
 ```

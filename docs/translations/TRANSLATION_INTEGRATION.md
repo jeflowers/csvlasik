@@ -137,7 +137,7 @@ const Example = () => (
 
 ### Protected Terms
 The following medical terms are never translated:
-- LASIK, PRK, ICL, SMILE
+- LASIK, PRK, ICL
 - Dr. Charles Flowers, ClearSight
 - FDA, Visian ICL
 - Femtosecond, Excimer

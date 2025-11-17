@@ -96,22 +96,6 @@
         }
       }
     },
-    "smile": {
-      "title": "Tecnología SMILE",
-      "subtitle": "Small Incision Lenticule Extraction",
-      "description": "El procedimiento de corrección de visión más mínimamente invasivo disponible, utilizando solo un láser de femtosegundo.",
-      "innovations": {
-        "title": "Innovaciones",
-        "items": [
-          "Incisión de solo 2-4mm",
-          "Sin creación de colgajo",
-          "Preserva la integridad corneal",
-          "Menos sequedad ocular",
-          "Recuperación más rápida"
-        ]
-      },
-      "ideal": "Ideal para estilos de vida activos y prescripciones más altas"
-    },
     "icl": {
       "title": "Tecnología de Lentes ICL",
       "subtitle": "Lentes de Collamer Implantables",
