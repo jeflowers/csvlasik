@@ -1,120 +1,97 @@
 {
-  "title": "プライバシーポリシー",
-  "subtitle": "ClearSight Vision Institute - チャールズ・フラワーズ医学博士",
-  "lastUpdated": "最終更新",
+  "_meta": {
+    "language": "ja",
+    "translationStatus": "automated",
+    "requiresProfessionalTranslation": true,
+    "baseVersion": "1.0"
+  },
+  "meta": {
+    "title": "Privacy Policy - ClearSight Vision Center [ja]",
+    "lastUpdated": "November 16, 2025",
+    "effectiveDate": "November 16, 2025",
+    "version": "1.0"
+  },
+  "translationNotice": "This privacy policy has been automatically translated from English. For the most accurate information, please refer to the English version. Professional translation in progress.",
+  "tableOfContents": {
+    "title": "Table of Contents",
+    "items": [
+      "Information We Collect",
+      "How We Use Your Information",
+      "Legal Basis for Processing",
+      "Sharing Your Information",
+      "Data Retention",
+      "Your Privacy Rights",
+      "Cookies and Tracking",
+      "Data Security",
+      "Children's Privacy",
+      "International Transfers",
+      "HIPAA Compliance",
+      "California Rights (CCPA)",
+      "Policy Changes",
+      "Contact Us"
+    ]
+  },
+  "introduction": "Welcome to ClearSight Vision Center. We are committed to protecting your privacy and ensuring the security of your personal health information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.",
+  "agreement": "By using our website or services, you agree to the collection and use of information in accordance with this policy.",
   "sections": {
     "collection": {
-      "title": "Information We Collect",
-      "medicalNotice": {
-        "title": "Medical Practice Notice",
-        "description": "As a medical practice, we collect and maintain health information in accordance with HIPAA regulations and state medical privacy laws."
-      },
-      "personal": {
-        "title": "Personal Information",
-        "items": {
-          "contact": "Contact information (name, email, phone number, address)",
-          "medical": "Medical history and vision-related information",
-          "insurance": "Insurance information and payment details",
-          "appointments": "Appointment and consultation records",
-          "outcomes": "Treatment outcomes and follow-up information"
-        }
-      },
-      "technical": {
-        "title": "Technical Information",
-        "items": {
-          "ip": "IP address and browser information",
-          "usage": "Website usage patterns and preferences",
-          "language": "Language and accessibility preferences",
-          "device": "Device and operating system information"
-        }
-      }
+      "title": "1. Information We Collect",
+      "personal": "We collect: identification (name, DOB, gender), contact information (address, email, phone), health information (medical history, prescriptions, insurance), financial information, technical data (IP address, browser), and usage data.",
+      "phi": "As a healthcare provider, we collect Protected Health Information (PHI) including medical records, test results, treatment plans, insurance details, and care communications."
     },
     "usage": {
-      "title": "How We Use Your Information",
-      "medical": {
-        "title": "Medical Care",
-        "items": {
-          "consultations": "Providing vision correction consultations and treatments",
-          "scheduling": "Scheduling appointments and follow-up care",
-          "communication": "Communicating about your treatment and recovery",
-          "records": "Maintaining medical records as required by law"
-        }
-      },
-      "website": {
-        "title": "Website Functionality",
-        "items": {
-          "personalization": "Personalizing your website experience",
-          "language": "Providing content in your preferred language",
-          "improvement": "Improving our website and services",
-          "inquiries": "Responding to your inquiries and requests"
-        }
-      }
+      "title": "2. How We Use Your Information",
+      "purposes": "Healthcare services (appointments, treatment, records), website improvement, marketing communications (with consent), and legal compliance."
     },
-    "gdpr": {
-      "title": "Your Rights Under GDPR",
-      "euNotice": {
-        "title": "EU Residents",
-        "description": "If you are located in the European Union, you have additional rights under GDPR."
-      },
-      "rights": {
-        "title": "Your Rights Include",
-        "access": {
-          "title": "Right to Access",
-          "description": "Request a copy of your personal data"
-        },
-        "rectification": {
-          "title": "Right to Rectification",
-          "description": "Correct inaccurate information"
-        },
-        "erasure": {
-          "title": "Right to Erasure",
-          "description": "Request deletion of your data"
-        },
-        "portability": {
-          "title": "Right to Portability",
-          "description": "Receive your data in a portable format"
-        },
-        "object": {
-          "title": "Right to Object",
-          "description": "Object to certain data processing"
-        },
-        "restriction": {
-          "title": "Right to Restriction",
-          "description": "Limit how we process your data"
-        }
-      },
-      "exercise": {
-        "title": "How to Exercise Your Rights",
-        "email": "Email",
-        "phone": "Phone",
-        "response": "We will respond to your request within 30 days as required by GDPR."
-      }
+    "legalBasis": {
+      "title": "3. Legal Basis (GDPR)",
+      "bases": "We process data based on: Consent, Contract fulfillment, Legal obligations (HIPAA), Legitimate interests, and Vital interests (emergencies)."
+    },
+    "sharing": {
+      "title": "4. Sharing Your Information",
+      "parties": "We share with healthcare providers, service providers, and as legally required. We DO NOT sell your information."
+    },
+    "retention": {
+      "title": "5. Data Retention",
+      "periods": "Medical records: 7+ years. Financial: 7 years. Marketing consent: Until withdrawn. Analytics: 26 months. Logs: 90 days."
+    },
+    "rights": {
+      "title": "6. Your Privacy Rights",
+      "list": "Access, Correction, Deletion, Restriction, Portability, Withdraw Consent, HIPAA rights to medical records and accounting of disclosures."
+    },
+    "cookies": {
+      "title": "7. Cookies",
+      "types": "Necessary (required), Analytics (optional), Marketing (optional), Functional (optional). Manage via our Cookie Center."
     },
     "security": {
-      "title": "Data Security",
-      "description": "We implement appropriate technical and organizational measures to protect your personal information",
-      "measures": {
-        "encryption": "Encryption of data in transit and at rest",
-        "assessments": "Regular security assessments and updates",
-        "access": "Access controls and authentication systems",
-        "training": "Employee training on data protection",
-        "incident": "Incident response and breach notification procedures"
-      }
+      "title": "8. Data Security",
+      "measures": "256-bit encryption, firewalls, audits, multi-factor auth, HIPAA compliance, physical security, staff training."
+    },
+    "children": {
+      "title": "9. Children's Privacy",
+      "policy": "Not directed to under 13. Parental consent required for minors under 18."
+    },
+    "international": {
+      "title": "10. International Transfers",
+      "info": "Data may be transferred to US. We use Standard Contractual Clauses (SCCs) and ensure adequate safeguards."
+    },
+    "hipaa": {
+      "title": "11. HIPAA Compliance",
+      "compliance": "We comply with HIPAA Privacy and Security Rules. Full Notice of Privacy Practices available at office and website."
+    },
+    "ccpa": {
+      "title": "12. California Rights (CCPA)",
+      "rights": "Right to Know, Delete, Opt-Out (we don't sell data), Non-Discrimination. Contact privacy@clearsightvision.com"
+    },
+    "changes": {
+      "title": "13. Policy Changes",
+      "notification": "We'll notify via website, email, and consent updates. Continued use = acceptance."
     },
     "contact": {
-      "title": "Contact Information",
-      "dpo": {
-        "title": "Data Protection Officer",
-        "organization": "ClearSight Vision Institute",
-        "address1": "5750 Downey Ave., Suite 101",
-        "address2": "Lakewood, CA 90712"
-      },
-      "legal": {
-        "title": "Legal Department",
-        "organization": "ClearSight Vision Institute",
-        "address1": "5750 Downey Ave., Suite 101",
-        "address2": "Lakewood, CA 90712"
-      }
+      "title": "14. Contact Us",
+      "privacyOfficer": "privacy@clearsightvision.com",
+      "dpo": "dpo@clearsightvision.com",
+      "hhs": "HHS Office for Civil Rights: 1-877-696-6775, www.hhs.gov/ocr/privacy"
     }
   }
 }
