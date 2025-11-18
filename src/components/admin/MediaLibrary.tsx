@@ -18,7 +18,7 @@ import { apiService } from '../../services/api';
 import { storageService } from '../../services/storageService';
 
 interface MediaFile {
-  id: number;
+  id: string;
   filename: string;
   original_name: string;
   file_path: string;
@@ -28,7 +28,7 @@ interface MediaFile {
   category: string;
   alt_text: string;
   caption: string;
-  uploaded_by: number;
+  uploaded_by: string;
   uploaded_by_name: string;
   created_at: string;
 }
@@ -41,7 +41,7 @@ const MediaLibrary: React.FC = () => {
   const [typeFilter, setTypeFilter] = useState('all');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [selectedFiles, setSelectedFiles] = useState<number[]>([]);
+  const [selectedFiles, setSelectedFiles] = useState<string[]>([]);
   const [editingFile, setEditingFile] = useState<MediaFile | null>(null);
   const [pagination, setPagination] = useState({ page: 1, limit: 24, total: 0 });
 

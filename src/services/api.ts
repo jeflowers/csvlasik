@@ -277,7 +277,7 @@ class ApiService {
 
   async getMedia(params: any = {}) {
     let query = supabase
-      .from('media')
+      .from('media_files_with_uploader')
       .select('*', { count: 'exact' })
       .order('created_at', { ascending: false });
 
@@ -356,7 +356,7 @@ class ApiService {
     const { data: { session } } = await supabase.auth.getSession();
 
     const { data, error } = await supabase
-      .from('media')
+      .from('media_files')
       .insert([{
         filename: fileName,
         original_name: file.name,
@@ -380,9 +380,9 @@ class ApiService {
     return data;
   }
 
-  async updateMedia(id: number, updates: any) {
+  async updateMedia(id: string, updates: any) {
     const { data, error } = await supabase
-      .from('media')
+      .from('media_files')
       .update(updates)
       .eq('id', id)
       .select()
@@ -392,9 +392,9 @@ class ApiService {
     return data;
   }
 
-  async deleteMedia(id: number) {
+  async deleteMedia(id: string) {
     const { data: media, error: fetchError } = await supabase
-      .from('media')
+      .from('media_files')
       .select('file_path, filename, category')
       .eq('id', id)
       .single();
@@ -412,7 +412,7 @@ class ApiService {
     }
 
     const { error } = await supabase
-      .from('media')
+      .from('media_files')
       .delete()
       .eq('id', id);
 
@@ -420,9 +420,9 @@ class ApiService {
     return { success: true };
   }
 
-  async bulkDeleteMedia(ids: number[]) {
+  async bulkDeleteMedia(ids: string[]) {
     const { data: mediaFiles, error: fetchError } = await supabase
-      .from('media')
+      .from('media_files')
       .select('id, filename, category')
       .in('id', ids);
 
@@ -443,7 +443,7 @@ class ApiService {
     }
 
     const { error } = await supabase
-      .from('media')
+      .from('media_files')
       .delete()
       .in('id', ids);
 
