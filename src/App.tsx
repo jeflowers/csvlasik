@@ -75,8 +75,12 @@ const ForgotPassword = lazy(() => import('./components/admin/ForgotPassword'));
 const ResetPassword = lazy(() => import('./components/admin/ResetPassword'));
 const ExternalReviewsManager = lazy(() => import('./components/admin/ExternalReviewsManager'));
 const AppointmentRequestsManager = lazy(() => import('./components/admin/AppointmentRequestsManager'));
+const BAAManager = lazy(() => import('./components/admin/BAAManager'));
+const ISO27001Dashboard = lazy(() => import('./components/admin/ISO27001Dashboard'));
+const HIPAAAuditDashboard = lazy(() => import('./components/admin/HIPAAAuditDashboard'));
 
 const Home = lazy(() => import('./pages/Home'));
+const PrivacyPolicyDetailPage = lazy(() => import('./pages/PrivacyPolicyDetailPage'));
 const About = lazy(() => import('./pages/About'));
 const Procedures = lazy(() => import('./pages/Procedures'));
 const Lasik = lazy(() => import('./pages/procedures/Lasik'));
@@ -185,6 +189,9 @@ function AdminRoutes() {
         <Route path="media" element={<MediaLibrary />} />
         <Route path="statistics" element={<StatisticsManager />} />
         <Route path="compliance" element={<ComplianceManager />} />
+        <Route path="compliance/baa" element={<BAAManager />} />
+        <Route path="compliance/iso27001" element={<ISO27001Dashboard />} />
+        <Route path="compliance/hipaa-audit" element={<HIPAAAuditDashboard />} />
         <Route path="data-retention" element={<DataRetentionManager />} />
         <Route path="management-review" element={<ManagementReviewManager />} />
         <Route path="compliance/encryption" element={<EncryptionManager />} />
@@ -232,7 +239,8 @@ function App() {
                         <Route path="/book-consultation" element={<AppointmentRequestForm />} />
                         <Route path="/blog" element={<Media />} />
                         <Route path="/media" element={<Media />} />
-                        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                        <Route path="/privacy-policy" element={<PrivacyPolicyDetailPage />} />
+                        <Route path="/privacy" element={<PrivacyPolicy />} />
                         <Route path="/terms-of-service" element={<TermsOfService />} />
                       </Routes>
                     </Suspense>
