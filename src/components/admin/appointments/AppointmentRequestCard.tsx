@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, Clock, User, CheckCircle, FileText, ExternalLink } from 'lucide-react';
+import { Phone, Mail, Clock, User, CheckCircle, FileText, ExternalLink, MessageSquare, Calendar } from 'lucide-react';
 import type { ConsultationRequestWithUser } from '../../../types/Consultation';
 import { useConsultationSettings } from '../../../hooks/useConsultationSettings';
 import { ringCentralService } from '../../../services/ringcentral/ringCentralService';
@@ -10,6 +10,10 @@ interface AppointmentRequestCardProps {
   onAssign: (requestId: string, userId: string) => void;
   onMarkScheduled: (requestId: string, via: 'built-in' | 'ringcentral', eventId?: string) => void;
   onClose: (requestId: string) => void;
+  enableNextech?: boolean;
+  enableCommunications?: boolean;
+  onScheduleNextech?: () => void;
+  onCommunicate?: () => void;
 }
 
 export const AppointmentRequestCard: React.FC<AppointmentRequestCardProps> = ({
@@ -17,6 +21,10 @@ export const AppointmentRequestCard: React.FC<AppointmentRequestCardProps> = ({
   onAssign,
   onMarkScheduled,
   onClose,
+  enableNextech = false,
+  enableCommunications = false,
+  onScheduleNextech,
+  onCommunicate,
 }) => {
   const { settings } = useConsultationSettings();
   const [showNoteModal, setShowNoteModal] = useState(false);
@@ -63,6 +71,59 @@ export const AppointmentRequestCard: React.FC<AppointmentRequestCardProps> = ({
   const isAssignedToMe = request.assigned_to_user_id !== null;
 
   const renderActions = () => {
+    // Enhanced actions with Nextech and Communications
+    if (enableNextech || enableCommunications) {
+      return (
+        <div className="flex flex-wrap gap-2">
+          {enableCommunications && onCommunicate && (
+            <button
+              onClick={onCommunicate}
+              className="px-3 py-1.5 bg-teal-600 text-white rounded-lg text-sm hover:bg-teal-700 flex items-center space-x-1"
+            >
+              <MessageSquare className="w-4 h-4" />
+              <span>Communicate</span>
+            </button>
+          )}
+
+          {enableNextech && onScheduleNextech && (
+            <button
+              onClick={onScheduleNextech}
+              className="px-3 py-1.5 bg-purple-600 text-white rounded-lg text-sm hover:bg-purple-700 flex items-center space-x-1"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>Book with Nextech</span>
+            </button>
+          )}
+
+          <button
+            onClick={() => onMarkScheduled(request.id, 'built-in')}
+            className="px-3 py-1.5 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 flex items-center space-x-1"
+          >
+            <CheckCircle className="w-4 h-4" />
+            <span>Mark Scheduled</span>
+          </button>
+
+          <button
+            onClick={() => setShowNoteModal(true)}
+            className="px-3 py-1.5 border border-gray-300 text-gray-700 rounded-lg text-sm hover:bg-gray-50 flex items-center space-x-1"
+          >
+            <FileText className="w-4 h-4" />
+            <span>Add Note</span>
+          </button>
+
+          {isUnassigned && (
+            <button
+              onClick={() => {}}
+              className="px-3 py-1.5 border border-gray-300 text-gray-700 rounded-lg text-sm hover:bg-gray-50 flex items-center space-x-1"
+            >
+              <User className="w-4 h-4" />
+              <span>Assign</span>
+            </button>
+          )}
+        </div>
+      );
+    }
+
     if (settings?.scheduling_method === 'built-in') {
       return (
         <div className="flex flex-wrap gap-2">
