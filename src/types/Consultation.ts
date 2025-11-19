@@ -1,4 +1,4 @@
-export type SchedulingMethod = 'built-in' | 'ringcentral' | 'hybrid';
+export type SchedulingMethod = 'built-in' | 'ringcentral' | 'nextech' | 'hybrid';
 
 export type RoutingMode = 'notify_all' | 'round_robin';
 
@@ -8,7 +8,9 @@ export type PreferredContact = 'phone' | 'email' | 'sms';
 
 export type ConsultationStatus = 'unassigned' | 'assigned' | 'scheduled' | 'closed';
 
-export type ScheduledVia = 'built-in' | 'ringcentral';
+export type ScheduledVia = 'built-in' | 'ringcentral' | 'nextech';
+
+export type NextechSyncStatus = 'not_synced' | 'synced' | 'error';
 
 export type AuditAction =
   | 'created'
@@ -16,6 +18,7 @@ export type AuditAction =
   | 'contacted'
   | 'scheduled_builtin'
   | 'scheduled_rc'
+  | 'scheduled_nextech'
   | 'closed'
   | 'failover'
   | 'status_changed'
@@ -45,12 +48,16 @@ export interface ConsultationRequest {
   phone: string;
   procedure: string;
   preferred_contact: PreferredContact;
+  preferred_language?: string;
   comments: string | null;
   status: ConsultationStatus;
   assigned_to_user_id: string | null;
   scheduled_via: ScheduledVia | null;
   ringcentral_event_id: string | null;
   ringcentral_message_id: string | null;
+  nextech_patient_id: string | null;
+  nextech_appointment_id: string | null;
+  nextech_sync_status: NextechSyncStatus;
   submission_ip: string | null;
   duplicate_suppressed: boolean;
   duplicate_of_id: string | null;
@@ -102,4 +109,5 @@ export interface ConsultationStats {
   avg_time_to_schedule: number;
   scheduled_via_builtin: number;
   scheduled_via_ringcentral: number;
+  scheduled_via_nextech: number;
 }
