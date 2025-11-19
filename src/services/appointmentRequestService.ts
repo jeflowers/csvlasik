@@ -7,19 +7,37 @@ export class AppointmentRequestService {
   async createRequest(data: AppointmentRequestCreate): Promise<{ data: AppointmentRequest | null; error: Error | null }> {
     try {
       const { data: result, error } = await supabase
-        .from('appointment_requests')
-        .insert([data])
+        .from('consultation_requests')
+        .insert([{
+          first_name: data.first_name,
+          last_name: data.last_name,
+          email: data.email,
+          phone: data.phone,
+          procedure_type: data.procedure_type || 'consultation',
+          location: data.location || 'los_angeles',
+          notes: data.notes || '',
+          status: 'pending'
+        }])
         .select()
-        .single();
+        .maybeSingle();
 
-      if (error) throw error;
+      if (error) {
+        console.error('Database error:', error);
+        throw error;
+      }
+
+      if (!result) {
+        throw new Error('Failed to create appointment request');
+      }
+
+      const fullName = `${data.first_name} ${data.last_name}`;
 
       const confirmationEmail = emailTemplates.appointmentConfirmation({
-        name: data.name,
+        name: fullName,
         email: data.email,
         phone: data.phone,
-        preferredDate: data.preferred_date,
-        message: data.message,
+        preferredDate: new Date().toLocaleDateString(),
+        message: data.notes || 'Consultation request',
         requestId: result.id,
       });
 
@@ -28,14 +46,14 @@ export class AppointmentRequestService {
         subject: confirmationEmail.subject,
         htmlBody: confirmationEmail.html,
         textBody: confirmationEmail.text,
-      });
+      }).catch(err => console.warn('Email queue error:', err));
 
       const notificationEmail = emailTemplates.appointmentNotification({
-        name: data.name,
+        name: fullName,
         email: data.email,
         phone: data.phone,
-        preferredDate: data.preferred_date,
-        message: data.message,
+        preferredDate: new Date().toLocaleDateString(),
+        message: data.notes || 'Consultation request',
         requestId: result.id,
       });
 
@@ -44,11 +62,11 @@ export class AppointmentRequestService {
         subject: notificationEmail.subject,
         htmlBody: notificationEmail.html,
         textBody: notificationEmail.text,
-      });
+      }).catch(err => console.warn('Email queue error:', err));
 
-      await emailService.processQueue();
+      await emailService.processQueue().catch(err => console.warn('Email processing error:', err));
 
-      return { data: result, error: null };
+      return { data: result as any, error: null };
     } catch (error) {
       console.error('Error creating appointment request:', error);
       return { data: null, error: error as Error };
@@ -58,12 +76,12 @@ export class AppointmentRequestService {
   async getAllRequests(): Promise<{ data: AppointmentRequest[]; error: Error | null }> {
     try {
       const { data, error } = await supabase
-        .from('appointment_requests')
+        .from('consultation_requests')
         .select('*')
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      return { data: data || [], error: null };
+      return { data: data as any[] || [], error: null };
     } catch (error) {
       console.error('Error fetching appointment requests:', error);
       return { data: [], error: error as Error };
@@ -73,14 +91,14 @@ export class AppointmentRequestService {
   async updateRequest(id: string, updates: AppointmentRequestUpdate): Promise<{ data: AppointmentRequest | null; error: Error | null }> {
     try {
       const { data, error } = await supabase
-        .from('appointment_requests')
+        .from('consultation_requests')
         .update(updates)
         .eq('id', id)
         .select()
         .single();
 
       if (error) throw error;
-      return { data, error: null };
+      return { data: data as any, error: null };
     } catch (error) {
       console.error('Error updating appointment request:', error);
       return { data: null, error: error as Error };
