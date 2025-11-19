@@ -39,6 +39,18 @@ Security, compliance, and admin operations:
 - [Password Reset Setup](./administration/PASSWORD_RESET_SETUP.md) - Password reset configuration
 - [Compliance Implementation](./administration/COMPLIANCE_IMPLEMENTATION.md) - GDPR/HIPAA compliance
 - [Compliance Checklist](./administration/COMPLIANCE_CHECKLIST.md) - Compliance requirements
+- [Encryption at Rest](./administration/ENCRYPTION_AT_REST.md) - Data encryption guide
+
+### ✅ [Compliance](./compliance/)
+HIPAA, GDPR, and ISO 27001 compliance:
+- [HIPAA Audit Controls](./compliance/HIPAA_AUDIT_CONTROLS.md) - Comprehensive HIPAA audit system
+- [Compliance Checker Guide](./compliance/COMPLIANCE_CHECKER_GUIDE.md) - Compliance monitoring
+- [Data Retention System](./compliance/DATA_RETENTION_SYSTEM.md) - Data lifecycle management
+- [Privacy Policy Management](./compliance/PRIVACY_POLICY_MANAGEMENT.md) - Policy versioning
+- [Advanced Consent Management](./compliance/ADVANCED_CONSENT_MANAGEMENT.md) - Cookie consent system
+- [ISMS Framework](./compliance/ISMS_FRAMEWORK.md) - ISO 27001 documentation
+- [Risk Assessment Template](./compliance/RISK_ASSESSMENT_TEMPLATE.md) - Risk management
+- [Incident Response Plan](./compliance/INCIDENT_RESPONSE_PLAN.md) - Security incident handling
 
 ### 🌍 [Translations](./translations/)
 Internationalization and translation:
@@ -70,8 +82,9 @@ Development milestones and status:
 
 ### For Administrators
 1. [Security Guide](./administration/SECURITY.md)
-2. [Password Reset Setup](./administration/PASSWORD_RESET_SETUP.md)
-3. [Compliance Implementation](./administration/COMPLIANCE_IMPLEMENTATION.md)
+2. [HIPAA Audit Controls](./compliance/HIPAA_AUDIT_CONTROLS.md)
+3. [Password Reset Setup](./administration/PASSWORD_RESET_SETUP.md)
+4. [Compliance Implementation](./administration/COMPLIANCE_IMPLEMENTATION.md)
 
 ### For Operations
 1. [Deployment Guide](./deployment/DEPLOYMENT.md)

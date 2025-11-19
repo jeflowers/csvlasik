@@ -23,7 +23,8 @@ A comprehensive multilingual website for Dr. Charles Flowers' revolutionary LASI
 - **User Management**: Role-based access control
 - **Translation Management**: Manage translations across 11 languages
 - **GDPR Compliance**: Cookie consent, privacy controls, data export/deletion
-- **Audit Logging**: Track all content changes
+- **HIPAA Audit Controls**: Comprehensive PHI access tracking and compliance monitoring
+- **Audit Logging**: Track all content changes with tamper-proof logs
 
 ## Quick Start
 
