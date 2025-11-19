@@ -74,23 +74,25 @@ const UserManager: React.FC = () => {
     }
   };
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: string) => {
     if (confirm('Are you sure you want to delete this user?')) {
       try {
         await apiService.deleteUser(id);
         fetchUsers();
       } catch (error) {
         console.error('Failed to delete user:', error);
+        alert(`Failed to delete user: ${error instanceof Error ? error.message : 'Unknown error'}`);
       }
     }
   };
 
-  const handleToggleActive = async (id: number, isActive: boolean) => {
+  const handleToggleActive = async (id: string, isActive: boolean) => {
     try {
       await apiService.updateUser(id, { is_active: !isActive });
       fetchUsers();
     } catch (error) {
       console.error('Failed to update user status:', error);
+      alert(`Failed to update user status: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
   };
 
@@ -417,10 +419,13 @@ const UserModal: React.FC<{
       } else {
         await apiService.createUser(submitData);
       }
-      
+
+      alert(`User ${user ? 'updated' : 'created'} successfully!`);
       onSave();
     } catch (error) {
       console.error('Failed to save user:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      alert(`Failed to save user: ${errorMessage}`);
     } finally {
       setSaving(false);
     }
@@ -589,9 +594,12 @@ const PasswordResetModal: React.FC<{
 
     try {
       await apiService.resetUserPassword(user.id, newPassword);
+      alert('Password reset successfully!');
       onSave();
     } catch (error) {
-      setError('Failed to reset password');
+      console.error('Failed to reset password:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      setError(`Failed to reset password: ${errorMessage}`);
       setSaving(false);
     }
   };

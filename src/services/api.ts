@@ -566,7 +566,18 @@ class ApiService {
     return userData;
   }
 
-  async updateUser(id: number, updates: any) {
+  async updateUser(id: string | number, updates: any) {
+    // Handle password updates through Supabase Auth if password is provided
+    if (updates.password) {
+      const { error: authError } = await supabase.auth.admin.updateUserById(
+        id.toString(),
+        { password: updates.password }
+      );
+      if (authError) throw new Error(authError.message);
+      // Remove password from updates as it's managed by auth
+      delete updates.password;
+    }
+
     const { data, error } = await supabase
       .from('users')
       .update(updates)
@@ -578,7 +589,14 @@ class ApiService {
     return data;
   }
 
-  async deleteUser(id: number) {
+  async deleteUser(id: string | number) {
+    // Delete from auth.users first
+    const { error: authError } = await supabase.auth.admin.deleteUser(
+      id.toString()
+    );
+    if (authError) throw new Error(authError.message);
+
+    // Delete from public.users
     const { error } = await supabase
       .from('users')
       .delete()
@@ -588,7 +606,7 @@ class ApiService {
     return { success: true };
   }
 
-  async resetUserPassword(id: number, newPassword: string) {
+  async resetUserPassword(id: string | number, newPassword: string) {
     const { error } = await supabase.auth.admin.updateUserById(
       id.toString(),
       { password: newPassword }
