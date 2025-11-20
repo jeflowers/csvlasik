@@ -20,7 +20,7 @@ interface User {
   id: string;
   name: string;
   email: string;
-  role: 'admin' | 'editor' | 'viewer';
+  role: string;
   created_at: string;
   updated_at: string;
   last_login?: string;
@@ -97,16 +97,23 @@ const UserManager: React.FC = () => {
   };
 
   const getRoleBadge = (role: string) => {
-    const styles = {
+    const styles: Record<string, string> = {
+      super_admin: 'bg-purple-100 text-purple-800',
       admin: 'bg-red-100 text-red-800',
       editor: 'bg-blue-100 text-blue-800',
-      contributor: 'bg-green-100 text-green-800',
+      author: 'bg-green-100 text-green-800',
+      moderator: 'bg-yellow-100 text-yellow-800',
+      scheduler: 'bg-indigo-100 text-indigo-800',
       viewer: 'bg-gray-100 text-gray-800'
     };
-    
+
+    const displayName = role.split('_').map(word =>
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+
     return (
-      <span className={`px-2 py-1 text-xs rounded-full ${styles[role as keyof typeof styles]}`}>
-        {role.charAt(0).toUpperCase() + role.slice(1)}
+      <span className={`px-2 py-1 text-xs rounded-full ${styles[role] || 'bg-gray-100 text-gray-800'}`}>
+        {displayName}
       </span>
     );
   };

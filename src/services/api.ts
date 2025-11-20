@@ -558,11 +558,29 @@ class ApiService {
         name: user.name,
         role: user.role || 'viewer',
         password: '',
+        is_active: user.is_active !== undefined ? user.is_active : true
       }])
       .select()
       .single();
 
     if (userError) throw new Error(userError.message);
+
+    // Assign RBAC role
+    const { data: roleData } = await supabase
+      .from('roles')
+      .select('id')
+      .eq('name', user.role || 'viewer')
+      .single();
+
+    if (roleData) {
+      await supabase
+        .from('user_roles')
+        .insert({
+          user_id: data.user.id,
+          role_id: roleData.id
+        });
+    }
+
     return userData;
   }
 
@@ -576,6 +594,31 @@ class ApiService {
       if (authError) throw new Error(authError.message);
       // Remove password from updates as it's managed by auth
       delete updates.password;
+    }
+
+    // Handle role updates in RBAC system
+    if (updates.role) {
+      const { data: roleData } = await supabase
+        .from('roles')
+        .select('id')
+        .eq('name', updates.role)
+        .single();
+
+      if (roleData) {
+        // Delete old role assignments
+        await supabase
+          .from('user_roles')
+          .delete()
+          .eq('user_id', id);
+
+        // Assign new role
+        await supabase
+          .from('user_roles')
+          .insert({
+            user_id: id,
+            role_id: roleData.id
+          });
+      }
     }
 
     const { data, error } = await supabase
