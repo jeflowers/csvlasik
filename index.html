@@ -7,10 +7,68 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.supabase.co https://bolt.new https://cdn.jsdelivr.net wasm-unsafe-eval; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob: https://*.youtube.com https://*.ytimg.com https://img.youtube.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.googleapis.com https://*.youtube.com; media-src 'self' https://*.supabase.co; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://maps.google.com https://*.google.com; object-src 'none'; base-uri 'self'; worker-src 'self' blob:;" />
     <meta http-equiv="Permissions-Policy" content="autoplay=(self https://www.youtube.com https://www.youtube-nocookie.com), fullscreen=(self https://www.youtube.com https://www.youtube-nocookie.com)" />
     <title>ClearSight - Revolutionary Vision Care</title>
+
+    <!-- Extension interference protection -->
+    <script>
+      (function() {
+        // Freeze critical prototypes before extensions load
+        if (window.Element && window.Element.prototype) {
+          Object.freeze(window.Element.prototype);
+        }
+
+        // Protect against extension DOM mutations during load
+        window.__appLoading = true;
+
+        // Store original timing functions
+        window.__originalSetInterval = window.setInterval;
+        window.__originalSetTimeout = window.setTimeout;
+        window.__originalRequestAnimationFrame = window.requestAnimationFrame;
+
+        // Throttle extension-injected timers during load
+        const loadThrottle = (fn, threshold = 100) => {
+          let lastCall = 0;
+          return function(...args) {
+            const now = Date.now();
+            if (now - lastCall >= threshold) {
+              lastCall = now;
+              return fn.apply(this, args);
+            }
+          };
+        };
+
+        // Override with throttled versions during load
+        window.setInterval = new Proxy(window.__originalSetInterval, {
+          apply(target, thisArg, args) {
+            if (window.__appLoading && !args[0]?.toString().includes('React')) {
+              args[0] = loadThrottle(args[0], 1000);
+            }
+            return Reflect.apply(target, thisArg, args);
+          }
+        });
+
+        window.requestAnimationFrame = new Proxy(window.__originalRequestAnimationFrame, {
+          apply(target, thisArg, args) {
+            if (window.__appLoading) {
+              const callback = args[0];
+              args[0] = (timestamp) => {
+                try {
+                  return callback(timestamp);
+                } catch (e) {
+                  // Silently catch extension errors
+                  if (!e.stack?.includes('chrome-extension://')) {
+                    throw e;
+                  }
+                }
+              };
+            }
+            return Reflect.apply(target, thisArg, args);
+          }
+        });
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- Debug build v1 -->
   </body>
 </html>

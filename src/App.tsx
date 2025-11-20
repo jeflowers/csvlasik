@@ -6,6 +6,7 @@ import TranslationStatus from './components/TranslationStatus';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ConsentBanner from './components/ConsentBanner';
+import ExtensionShield from './components/ExtensionShield';
 import { useAdmin } from './hooks/useAdmin';
 
 interface ErrorBoundaryProps {
@@ -222,21 +223,22 @@ function AdminRoutes() {
 
 function App() {
   return (
-    <ErrorBoundary>
-      <Suspense fallback={<LoadingFallback />}>
-        <Routes>
-          {/* Admin Routes */}
-          <Route path="/admin/*" element={<AdminRoutes />} />
+    <ExtensionShield>
+      <ErrorBoundary>
+        <Suspense fallback={<LoadingFallback />}>
+          <Routes>
+            {/* Admin Routes */}
+            <Route path="/admin/*" element={<AdminRoutes />} />
 
-          {/* Public Routes */}
-          <Route path="/*" element={
-            <TranslationProvider preferredService="auto">
-              <RTLProvider>
-                <div className="min-h-screen bg-white">
-                  <TranslationStatus className="fixed top-4 right-4 z-50" />
-                  <Header />
-                  <main>
-                    <Suspense fallback={<LoadingFallback />}>
+            {/* Public Routes */}
+            <Route path="/*" element={
+              <TranslationProvider preferredService="auto">
+                <RTLProvider>
+                  <div className="min-h-screen bg-white">
+                    <TranslationStatus className="fixed top-4 right-4 z-50" />
+                    <Header />
+                    <main>
+                      <Suspense fallback={<LoadingFallback />}>
                       <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
@@ -270,6 +272,7 @@ function App() {
         </Routes>
       </Suspense>
     </ErrorBoundary>
+    </ExtensionShield>
   );
 }
 
