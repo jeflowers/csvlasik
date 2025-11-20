@@ -95,6 +95,11 @@ const Media = lazy(() => import('./pages/Media'));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
 const AppointmentRequestForm = lazy(() => import('./components/booking/AppointmentRequestForm'));
+const AppointmentCalendar = lazy(() => import('./components/booking/AppointmentCalendar'));
+const BeforeAfterGallery = lazy(() => import('./components/gallery/BeforeAfterGallery'));
+const FinancingCalculator = lazy(() => import('./components/FinancingCalculator'));
+const PhotoGalleryManager = lazy(() => import('./components/admin/PhotoGalleryManager'));
+const EmailQueueMonitor = lazy(() => import('./components/admin/EmailQueueMonitor'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -202,6 +207,11 @@ function AdminRoutes() {
         <Route path="settings" element={<SettingsPanel />} />
         <Route path="translations" element={<TranslationDashboard />} />
         <Route path="translations/editor" element={<TranslationEditor />} />
+        <Route path="analytics" element={<AnalyticsDashboard />} />
+        <Route path="analytics/errors" element={<ErrorMonitor />} />
+        <Route path="email-templates" element={<EmailTemplateManager />} />
+        <Route path="email-queue" element={<EmailQueueMonitor />} />
+        <Route path="gallery" element={<PhotoGalleryManager />} />
       </Route>
     </Routes>
   );
@@ -237,6 +247,9 @@ function App() {
                         <Route path="/financing" element={<Financing />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/book-consultation" element={<AppointmentRequestForm />} />
+                        <Route path="/book-appointment" element={<AppointmentCalendar />} />
+                        <Route path="/gallery" element={<BeforeAfterGallery />} />
+                        <Route path="/calculate-financing" element={<FinancingCalculator />} />
                         <Route path="/blog" element={<Media />} />
                         <Route path="/media" element={<Media />} />
                         <Route path="/privacy-policy" element={<PrivacyPolicyDetailPage />} />
