@@ -100,6 +100,9 @@ const BeforeAfterGallery = lazy(() => import('./components/gallery/BeforeAfterGa
 const FinancingCalculator = lazy(() => import('./components/FinancingCalculator'));
 const PhotoGalleryManager = lazy(() => import('./components/admin/PhotoGalleryManager'));
 const EmailQueueMonitor = lazy(() => import('./components/admin/EmailQueueMonitor'));
+const AnalyticsDashboard = lazy(() => import('./components/admin/AnalyticsDashboard'));
+const ErrorMonitor = lazy(() => import('./components/admin/ErrorMonitor'));
+const EmailTemplateManager = lazy(() => import('./components/admin/EmailTemplateManager'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
