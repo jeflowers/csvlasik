@@ -61,8 +61,41 @@ export default defineConfig({
             return 'vendor-misc';
           }
 
+          // Split admin components into smaller chunks
           if (id.includes('src/components/admin')) {
-            return 'admin';
+            if (id.includes('Analytics') || id.includes('Error')) {
+              return 'admin-analytics';
+            }
+            if (id.includes('Email') || id.includes('Notification')) {
+              return 'admin-email';
+            }
+            if (id.includes('Compliance') || id.includes('Security') || id.includes('HIPAA') || id.includes('ISO') || id.includes('BAA') || id.includes('GDPR')) {
+              return 'admin-compliance';
+            }
+            if (id.includes('Translation') || id.includes('Media') || id.includes('Photo')) {
+              return 'admin-content';
+            }
+            if (id.includes('Appointment') || id.includes('Consultation') || id.includes('Booking')) {
+              return 'admin-appointments';
+            }
+            return 'admin-core';
+          }
+
+          if (id.includes('src/services')) {
+            if (id.includes('analytics') || id.includes('ga4')) {
+              return 'service-analytics';
+            }
+            if (id.includes('email') || id.includes('notification')) {
+              return 'service-email';
+            }
+            if (id.includes('compliance') || id.includes('hipaa') || id.includes('audit')) {
+              return 'service-compliance';
+            }
+            return 'services';
+          }
+
+          if (id.includes('src/components/booking') || id.includes('src/components/gallery')) {
+            return 'booking-gallery';
           }
 
           if (id.includes('src/pages/procedures')) {
@@ -85,7 +118,7 @@ export default defineConfig({
         }
       }
     },
-    chunkSizeWarningLimit: 600,
+    chunkSizeWarningLimit: 1000,
     minify: 'terser',
     terserOptions: {
       compress: {
