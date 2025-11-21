@@ -6,34 +6,82 @@ interface ExtensionShieldProps {
 
 export const ExtensionShield: React.FC<ExtensionShieldProps> = ({ children }) => {
   useEffect(() => {
+    const isExtensionElement = (element: Element): boolean => {
+      const tagName = element.tagName?.toUpperCase();
+      const id = element.id?.toLowerCase() || '';
+      const className = element.className?.toString().toLowerCase() || '';
+
+      const extensionTags = [
+        'GRAMMARLY-EXTENSION',
+        'GRAMMARLY-CARD',
+        'GRAMMARLY-POPUPS',
+        'QUILLBOT-EXTENSION'
+      ];
+
+      if (extensionTags.includes(tagName)) {
+        return true;
+      }
+
+      if (
+        id.includes('grammarly') ||
+        id.includes('quillbot') ||
+        id.includes('chrome-extension') ||
+        id.includes('moz-extension')
+      ) {
+        return true;
+      }
+
+      if (
+        className.includes('grammarly') ||
+        className.includes('quillbot') ||
+        className.includes('extension-')
+      ) {
+        return true;
+      }
+
+      const dataExtension = element.getAttribute('data-extension');
+      const dataGrammarly = element.getAttribute('data-grammarly-shadow-root');
+
+      if (dataExtension || dataGrammarly) {
+        return true;
+      }
+
+      return false;
+    };
+
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         mutation.addedNodes.forEach((node) => {
           if (node.nodeType === Node.ELEMENT_NODE) {
             const element = node as Element;
 
-            // Detect and remove extension-injected elements
             if (
-              element.id?.includes('extension') ||
-              element.className?.toString().includes('extension') ||
-              element.getAttribute('data-extension') ||
-              element.tagName === 'GRAMMARLY-EXTENSION' ||
-              element.tagName === 'QUILLBOT-EXTENSION'
+              element.closest('#root') ||
+              element.closest('[data-app]') ||
+              element.closest('form') ||
+              element.closest('input') ||
+              element.closest('button')
             ) {
-              element.remove();
+              return;
+            }
+
+            if (isExtensionElement(element)) {
+              try {
+                element.remove();
+              } catch (e) {
+                console.debug('[ExtensionShield] Failed to remove element:', e);
+              }
             }
           }
         });
       });
     });
 
-    // Monitor document body for extension injections
     observer.observe(document.body, {
       childList: true,
-      subtree: true,
+      subtree: false,
     });
 
-    // Prevent extension-injected styles from affecting layout
     const styleObserver = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.type === 'childList') {
@@ -41,14 +89,20 @@ export const ExtensionShield: React.FC<ExtensionShieldProps> = ({ children }) =>
             if (node.nodeName === 'STYLE' || node.nodeName === 'LINK') {
               const element = node as HTMLElement;
               const content = element.textContent || '';
+              const href = (element as HTMLLinkElement).href || '';
 
-              // Remove extension styles
               if (
                 content.includes('chrome-extension://') ||
                 content.includes('moz-extension://') ||
-                (element as HTMLLinkElement).href?.includes('extension')
+                content.includes('grammarly') ||
+                href.includes('chrome-extension://') ||
+                href.includes('moz-extension://')
               ) {
-                element.remove();
+                try {
+                  element.remove();
+                } catch (e) {
+                  console.debug('[ExtensionShield] Failed to remove style:', e);
+                }
               }
             }
           });
@@ -60,37 +114,9 @@ export const ExtensionShield: React.FC<ExtensionShieldProps> = ({ children }) =>
       childList: true,
     });
 
-    // Protect React event handlers
-    const originalAddEventListener = EventTarget.prototype.addEventListener;
-    EventTarget.prototype.addEventListener = function(
-      type: string,
-      listener: EventListenerOrEventListenerObject,
-      options?: boolean | AddEventListenerOptions
-    ) {
-      if (typeof listener === 'function') {
-        const wrappedListener = function(this: any, event: Event) {
-          try {
-            return (listener as EventListener).call(this, event);
-          } catch (error: any) {
-            // Suppress extension errors
-            if (
-              error?.stack?.includes('chrome-extension://') ||
-              error?.stack?.includes('moz-extension://')
-            ) {
-              return;
-            }
-            throw error;
-          }
-        };
-        return originalAddEventListener.call(this, type, wrappedListener, options);
-      }
-      return originalAddEventListener.call(this, type, listener, options);
-    };
-
     return () => {
       observer.disconnect();
       styleObserver.disconnect();
-      EventTarget.prototype.addEventListener = originalAddEventListener;
     };
   }, []);
 
