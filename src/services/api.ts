@@ -542,120 +542,121 @@ class ApiService {
   }
 
   async createUser(user: any) {
-    const { data, error } = await supabase.auth.admin.createUser({
-      email: user.email,
-      password: user.password,
-      email_confirm: true,
-    });
+    const { data: { session } } = await supabase.auth.getSession();
 
-    if (error) throw new Error(error.message);
-
-    const { data: userData, error: userError } = await supabase
-      .from('users')
-      .insert([{
-        id: data.user.id,
-        email: user.email,
-        name: user.name,
-        role: user.role || 'viewer',
-        password: '',
-        is_active: user.is_active !== undefined ? user.is_active : true
-      }])
-      .select()
-      .single();
-
-    if (userError) throw new Error(userError.message);
-
-    // Assign RBAC role
-    const { data: roleData } = await supabase
-      .from('roles')
-      .select('id')
-      .eq('name', user.role || 'viewer')
-      .single();
-
-    if (roleData) {
-      await supabase
-        .from('user_roles')
-        .insert({
-          user_id: data.user.id,
-          role_id: roleData.id
-        });
+    if (!session) {
+      throw new Error('Not authenticated');
     }
 
+    const response = await fetch(
+      `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/create-user`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${session.access_token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: user.email,
+          password: user.password,
+          name: user.name,
+          role: user.role || 'viewer',
+          is_active: user.is_active !== undefined ? user.is_active : true,
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error || 'Failed to create user');
+    }
+
+    const userData = await response.json();
     return userData;
   }
 
   async updateUser(id: string | number, updates: any) {
-    // Handle password updates through Supabase Auth if password is provided
-    if (updates.password) {
-      const { error: authError } = await supabase.auth.admin.updateUserById(
-        id.toString(),
-        { password: updates.password }
-      );
-      if (authError) throw new Error(authError.message);
-      // Remove password from updates as it's managed by auth
-      delete updates.password;
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (!session) {
+      throw new Error('Not authenticated');
     }
 
-    // Handle role updates in RBAC system
-    if (updates.role) {
-      const { data: roleData } = await supabase
-        .from('roles')
-        .select('id')
-        .eq('name', updates.role)
-        .single();
-
-      if (roleData) {
-        // Delete old role assignments
-        await supabase
-          .from('user_roles')
-          .delete()
-          .eq('user_id', id);
-
-        // Assign new role
-        await supabase
-          .from('user_roles')
-          .insert({
-            user_id: id,
-            role_id: roleData.id
-          });
+    const response = await fetch(
+      `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/update-user`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${session.access_token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id: id.toString(),
+          updates,
+        }),
       }
+    );
+
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error || 'Failed to update user');
     }
 
-    const { data, error } = await supabase
-      .from('users')
-      .update(updates)
-      .eq('id', id)
-      .select()
-      .single();
-
-    if (error) throw new Error(error.message);
-    return data;
+    const userData = await response.json();
+    return userData;
   }
 
   async deleteUser(id: string | number) {
-    // Delete from auth.users first
-    const { error: authError } = await supabase.auth.admin.deleteUser(
-      id.toString()
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (!session) {
+      throw new Error('Not authenticated');
+    }
+
+    const response = await fetch(
+      `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/delete-user`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${session.access_token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: id.toString() }),
+      }
     );
-    if (authError) throw new Error(authError.message);
 
-    // Delete from public.users
-    const { error } = await supabase
-      .from('users')
-      .delete()
-      .eq('id', id);
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error || 'Failed to delete user');
+    }
 
-    if (error) throw new Error(error.message);
     return { success: true };
   }
 
   async resetUserPassword(id: string | number, newPassword: string) {
-    const { error } = await supabase.auth.admin.updateUserById(
-      id.toString(),
-      { password: newPassword }
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (!session) {
+      throw new Error('Not authenticated');
+    }
+
+    const response = await fetch(
+      `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/reset-user-password`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${session.access_token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: id.toString(), newPassword }),
+      }
     );
 
-    if (error) throw new Error(error.message);
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error || 'Failed to reset password');
+    }
+
     return { success: true };
   }
 
