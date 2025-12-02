@@ -15,7 +15,6 @@ import {
   Globe,
   Shield,
   Calendar,
-  ExternalLink,
   ChevronDown,
   ChevronRight,
   Mail,
@@ -134,14 +133,6 @@ const AdminLayout: React.FC = () => {
             </button>
           </div>
           <nav className="flex-1 overflow-y-auto px-2 py-4">
-            <Link
-              to="/"
-              className="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-teal-600 hover:bg-teal-50 hover:text-teal-700 border-b border-gray-200 mb-4"
-              onClick={() => setSidebarOpen(false)}
-            >
-              <ExternalLink className="mr-3 h-5 w-5" />
-              View Website
-            </Link>
             <div className="space-y-4">
               {navigationSections.map((section) => {
                 const sectionKey = section.name.toLowerCase().replace(/\s+/g, '-');
@@ -211,13 +202,6 @@ const AdminLayout: React.FC = () => {
             </Link>
           </div>
           <nav className="flex-1 overflow-y-auto px-2 py-4">
-            <Link
-              to="/"
-              className="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-teal-600 hover:bg-teal-50 hover:text-teal-700 border-b border-gray-200 mb-4"
-            >
-              <ExternalLink className="mr-3 h-5 w-5" />
-              View Website
-            </Link>
             <div className="space-y-4">
               {navigationSections.map((section) => {
                 const sectionKey = section.name.toLowerCase().replace(/\s+/g, '-');
