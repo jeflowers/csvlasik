@@ -18,7 +18,7 @@ export const emailService = {
         .from('email_queue')
         .insert({
           to_email: options.to,
-          from_email: options.from || 'noreply@clearsightvision.com',
+          from_email: options.from || 'noreply@csvlasik.com',
           subject: options.subject,
           html_body: options.htmlBody,
           text_body: options.textBody,
@@ -52,7 +52,7 @@ export const emailService = {
       const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
       const response = await fetch(
-        `${supabaseUrl}/functions/v1/process-email-queue`,
+        `${supabaseUrl}/functions/v1/process-email-queue-gmail`,
         {
           method: 'POST',
           headers: {
