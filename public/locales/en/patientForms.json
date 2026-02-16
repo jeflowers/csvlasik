@@ -1,0 +1,170 @@
+{
+  "badge": "PATIENT FORMS",
+  "title": "Complete Your Forms Online",
+  "subtitle": "Save time at your visit by filling out intake forms ahead of your appointment. All information is transmitted securely.",
+
+  "tabs": {
+    "registration": "New Patient Registration",
+    "medicalHistory": "Medical History",
+    "insuranceInfo": "Insurance Info",
+    "consent": "Consent Forms"
+  },
+
+  "registration": {
+    "firstName": {
+      "label": "First Name",
+      "placeholder": "Enter first name"
+    },
+    "lastName": {
+      "label": "Last Name",
+      "placeholder": "Enter last name"
+    },
+    "dateOfBirth": {
+      "label": "Date of Birth",
+      "placeholder": "mm/dd/yyyy"
+    },
+    "phoneNumber": {
+      "label": "Phone Number",
+      "placeholder": "(555) 555-5555"
+    },
+    "emailAddress": {
+      "label": "Email Address",
+      "placeholder": "email@example.com"
+    },
+    "streetAddress": {
+      "label": "Street Address",
+      "placeholder": "123 Main Street"
+    },
+    "city": {
+      "label": "City",
+      "placeholder": "City"
+    },
+    "state": {
+      "label": "State",
+      "placeholder": "State"
+    },
+    "zip": {
+      "label": "ZIP",
+      "placeholder": "ZIP"
+    },
+    "reasonForVisit": {
+      "label": "Reason for Visit",
+      "placeholder": "Please describe the reason for your visit"
+    }
+  },
+
+  "medicalHistory": {
+    "currentEyeConditions": {
+      "label": "Do you currently have any eye conditions?",
+      "placeholder": "List any current eye conditions or concerns"
+    },
+    "previousEyeSurgeries": {
+      "label": "Previous eye surgeries or treatments",
+      "placeholder": "List any past eye surgeries, laser treatments, etc."
+    },
+    "currentMedications": {
+      "label": "Current medications",
+      "placeholder": "List all current medications including eye drops"
+    },
+    "drugAllergies": {
+      "label": "Drug allergies",
+      "placeholder": "List any known drug allergies"
+    },
+    "hasDiabetes": {
+      "label": "Do you have diabetes?",
+      "options": {
+        "select": "Select",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "familyHistoryEyeDisease": {
+      "label": "Family history of eye disease?",
+      "options": {
+        "select": "Select",
+        "yes": "Yes",
+        "no": "No"
+      }
+    }
+  },
+
+  "insuranceInfo": {
+    "insuranceProvider": {
+      "label": "Insurance Provider",
+      "placeholder": "e.g., Blue Cross Blue Shield"
+    },
+    "policyNumber": {
+      "label": "Policy Number",
+      "placeholder": "Policy number"
+    },
+    "groupNumber": {
+      "label": "Group Number",
+      "placeholder": "Group number"
+    },
+    "policyholderName": {
+      "label": "Policyholder Name",
+      "placeholder": "Name on policy"
+    },
+    "relationshipToPatient": {
+      "label": "Relationship to Patient",
+      "options": {
+        "select": "Select",
+        "self": "Self",
+        "spouse": "Spouse",
+        "parent": "Parent",
+        "other": "Other"
+      }
+    },
+    "secondaryInsurance": {
+      "label": "Secondary Insurance (if applicable)",
+      "placeholder": "Secondary insurance provider"
+    }
+  },
+
+  "consent": {
+    "hipaaTitle": "HIPAA Privacy Acknowledgment",
+    "hipaaBody": "I acknowledge that I have been provided with a copy of the Notice of Privacy Practices, which describes how my health information may be used and disclosed, and how I can access this information. I understand that MEC Eye Specialists has the right to change the Notice of Privacy Practices at any time.",
+    "hipaaCheckbox": "I acknowledge receipt of the Notice of Privacy Practices",
+
+    "treatmentTitle": "Consent to Treatment",
+    "treatmentBody": "I consent to the examination and treatment by the ophthalmologist(s) at MEC Eye Specialists. I understand that no guarantees have been made regarding the outcome of any examination or treatment.",
+    "treatmentCheckbox": "I consent to examination and treatment",
+
+    "patientSignature": {
+      "label": "Patient Signature (type full name)",
+      "placeholder": "Full legal name"
+    },
+    "signatureDate": {
+      "label": "Date",
+      "placeholder": "mm/dd/yyyy"
+    }
+  },
+
+  "buttons": {
+    "submitForm": "Submit Form",
+    "submitting": "Submitting..."
+  },
+
+  "validation": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidPhone": "Please enter a valid phone number",
+    "invalidDate": "Please enter a valid date",
+    "invalidDateOfBirth": "Date of birth cannot be in the future",
+    "invalidSignatureDate": "Signature date must be within the last 7 days",
+    "signatureTooShort": "Please enter your full legal name",
+    "consentRequired": "You must acknowledge both consent forms to proceed"
+  },
+
+  "success": {
+    "registration": "Registration submitted successfully! Our team will contact you soon.",
+    "medicalHistory": "Medical history submitted successfully!",
+    "insuranceInfo": "Insurance information submitted successfully!",
+    "consent": "Consent forms submitted successfully! Thank you for completing all forms."
+  },
+
+  "error": {
+    "generic": "An error occurred while submitting the form. Please try again.",
+    "network": "Network error. Please check your connection and try again."
+  }
+}

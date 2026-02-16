@@ -1,0 +1,170 @@
+{
+  "badge": "FORMULARIOS DEL PACIENTE",
+  "title": "Complete Sus Formularios en Línea",
+  "subtitle": "Ahorre tiempo en su visita completando los formularios de admisión antes de su cita. Toda la información se transmite de forma segura.",
+
+  "tabs": {
+    "registration": "Registro de Nuevo Paciente",
+    "medicalHistory": "Historia Médica",
+    "insuranceInfo": "Información del Seguro",
+    "consent": "Formularios de Consentimiento"
+  },
+
+  "registration": {
+    "firstName": {
+      "label": "Nombre",
+      "placeholder": "Ingrese su nombre"
+    },
+    "lastName": {
+      "label": "Apellido",
+      "placeholder": "Ingrese su apellido"
+    },
+    "dateOfBirth": {
+      "label": "Fecha de Nacimiento",
+      "placeholder": "dd/mm/aaaa"
+    },
+    "phoneNumber": {
+      "label": "Número de Teléfono",
+      "placeholder": "(555) 555-5555"
+    },
+    "emailAddress": {
+      "label": "Correo Electrónico",
+      "placeholder": "correo@ejemplo.com"
+    },
+    "streetAddress": {
+      "label": "Dirección",
+      "placeholder": "123 Calle Principal"
+    },
+    "city": {
+      "label": "Ciudad",
+      "placeholder": "Ciudad"
+    },
+    "state": {
+      "label": "Estado",
+      "placeholder": "Estado"
+    },
+    "zip": {
+      "label": "Código Postal",
+      "placeholder": "Código Postal"
+    },
+    "reasonForVisit": {
+      "label": "Motivo de la Visita",
+      "placeholder": "Por favor describa el motivo de su visita"
+    }
+  },
+
+  "medicalHistory": {
+    "currentEyeConditions": {
+      "label": "¿Tiene actualmente alguna condición ocular?",
+      "placeholder": "Liste cualquier condición o preocupación ocular actual"
+    },
+    "previousEyeSurgeries": {
+      "label": "Cirugías o tratamientos oculares previos",
+      "placeholder": "Liste cualquier cirugía ocular pasada, tratamientos láser, etc."
+    },
+    "currentMedications": {
+      "label": "Medicamentos actuales",
+      "placeholder": "Liste todos los medicamentos actuales incluyendo gotas para los ojos"
+    },
+    "drugAllergies": {
+      "label": "Alergias a medicamentos",
+      "placeholder": "Liste cualquier alergia conocida a medicamentos"
+    },
+    "hasDiabetes": {
+      "label": "¿Tiene diabetes?",
+      "options": {
+        "select": "Seleccionar",
+        "yes": "Sí",
+        "no": "No"
+      }
+    },
+    "familyHistoryEyeDisease": {
+      "label": "¿Historia familiar de enfermedades oculares?",
+      "options": {
+        "select": "Seleccionar",
+        "yes": "Sí",
+        "no": "No"
+      }
+    }
+  },
+
+  "insuranceInfo": {
+    "insuranceProvider": {
+      "label": "Proveedor de Seguro",
+      "placeholder": "ej., Blue Cross Blue Shield"
+    },
+    "policyNumber": {
+      "label": "Número de Póliza",
+      "placeholder": "Número de póliza"
+    },
+    "groupNumber": {
+      "label": "Número de Grupo",
+      "placeholder": "Número de grupo"
+    },
+    "policyholderName": {
+      "label": "Nombre del Titular",
+      "placeholder": "Nombre en la póliza"
+    },
+    "relationshipToPatient": {
+      "label": "Relación con el Paciente",
+      "options": {
+        "select": "Seleccionar",
+        "self": "Yo mismo",
+        "spouse": "Cónyuge",
+        "parent": "Padre/Madre",
+        "other": "Otro"
+      }
+    },
+    "secondaryInsurance": {
+      "label": "Seguro Secundario (si aplica)",
+      "placeholder": "Proveedor de seguro secundario"
+    }
+  },
+
+  "consent": {
+    "hipaaTitle": "Reconocimiento de Privacidad HIPAA",
+    "hipaaBody": "Reconozco que se me ha proporcionado una copia del Aviso de Prácticas de Privacidad, que describe cómo se puede usar y divulgar mi información de salud, y cómo puedo acceder a esta información. Entiendo que MEC Eye Specialists tiene el derecho de cambiar el Aviso de Prácticas de Privacidad en cualquier momento.",
+    "hipaaCheckbox": "Reconozco recibo del Aviso de Prácticas de Privacidad",
+
+    "treatmentTitle": "Consentimiento para Tratamiento",
+    "treatmentBody": "Consiento el examen y tratamiento por el(los) oftalmólogo(s) en MEC Eye Specialists. Entiendo que no se han hecho garantías con respecto al resultado de cualquier examen o tratamiento.",
+    "treatmentCheckbox": "Consiento examen y tratamiento",
+
+    "patientSignature": {
+      "label": "Firma del Paciente (escriba nombre completo)",
+      "placeholder": "Nombre legal completo"
+    },
+    "signatureDate": {
+      "label": "Fecha",
+      "placeholder": "dd/mm/aaaa"
+    }
+  },
+
+  "buttons": {
+    "submitForm": "Enviar Formulario",
+    "submitting": "Enviando..."
+  },
+
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "invalidEmail": "Por favor ingrese un correo electrónico válido",
+    "invalidPhone": "Por favor ingrese un número de teléfono válido",
+    "invalidDate": "Por favor ingrese una fecha válida",
+    "invalidDateOfBirth": "La fecha de nacimiento no puede ser en el futuro",
+    "invalidSignatureDate": "La fecha de firma debe ser dentro de los últimos 7 días",
+    "signatureTooShort": "Por favor ingrese su nombre legal completo",
+    "consentRequired": "Debe reconocer ambos formularios de consentimiento para continuar"
+  },
+
+  "success": {
+    "registration": "¡Registro enviado exitosamente! Nuestro equipo se pondrá en contacto pronto.",
+    "medicalHistory": "¡Historia médica enviada exitosamente!",
+    "insuranceInfo": "¡Información de seguro enviada exitosamente!",
+    "consent": "¡Formularios de consentimiento enviados exitosamente! Gracias por completar todos los formularios."
+  },
+
+  "error": {
+    "generic": "Ocurrió un error al enviar el formulario. Por favor intente nuevamente.",
+    "network": "Error de red. Por favor verifique su conexión e intente nuevamente."
+  }
+}
