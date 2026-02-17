@@ -1,4 +1,5 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.58.0';
+import { SMTPClient } from 'npm:emailjs@4.0.3';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -27,10 +28,12 @@ Deno.serve(async (req: Request) => {
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    const resendApiKey = Deno.env.get('RESEND_API_KEY');
 
-    if (!resendApiKey) {
-      throw new Error('RESEND_API_KEY environment variable is not set');
+    const gmailUser = Deno.env.get('GMAIL_SMTP_USER');
+    const gmailPassword = Deno.env.get('GMAIL_SMTP_PASSWORD');
+
+    if (!gmailUser || !gmailPassword) {
+      throw new Error('GMAIL_SMTP_USER and GMAIL_SMTP_PASSWORD environment variables must be set');
     }
 
     const supabase = createClient(supabaseUrl, supabaseKey);
@@ -56,6 +59,14 @@ Deno.serve(async (req: Request) => {
       );
     }
 
+    const client = new SMTPClient({
+      user: gmailUser,
+      password: gmailPassword,
+      host: 'smtp.gmail.com',
+      port: 587,
+      tls: true,
+    });
+
     const results = [];
 
     for (const email of emails as EmailQueueItem[]) {
@@ -65,28 +76,16 @@ Deno.serve(async (req: Request) => {
           .update({ status: 'processing', attempts: email.attempts + 1 })
           .eq('id', email.id);
 
-        const response = await fetch('https://api.resend.com/emails', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${resendApiKey}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            from: email.from_email || 'noreply@clearsightvision.com',
-            to: email.to_email,
-            subject: email.subject,
-            html: email.html_body,
-            text: email.text_body,
-            reply_to: email.reply_to,
-          }),
+        await client.sendAsync({
+          from: email.from_email || gmailUser,
+          to: email.to_email,
+          subject: email.subject,
+          text: email.text_body || '',
+          attachment: [
+            { data: email.html_body, alternative: true },
+          ],
+          ...(email.reply_to && { 'reply-to': email.reply_to }),
         });
-
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(JSON.stringify(errorData));
-        }
-
-        const result = await response.json();
 
         await supabase
           .from('email_queue')
@@ -96,10 +95,10 @@ Deno.serve(async (req: Request) => {
           })
           .eq('id', email.id);
 
-        results.push({ id: email.id, status: 'sent', result });
+        results.push({ id: email.id, status: 'sent' });
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-        
+
         const newAttempts = email.attempts + 1;
         const isFailed = newAttempts >= email.max_attempts;
 

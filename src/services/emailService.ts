@@ -52,7 +52,7 @@ export const emailService = {
       const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
       const response = await fetch(
-        `${supabaseUrl}/functions/v1/process-email-queue-gmail`,
+        `${supabaseUrl}/functions/v1/process-email-queue`,
         {
           method: 'POST',
           headers: {
