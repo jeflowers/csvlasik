@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Eye, Phone, Menu, X, ChevronDown, Mail, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown, Mail, Facebook, Twitter, Instagram, Youtube, User } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 import TikTokIcon from './icons/TikTokIcon';
 
@@ -105,6 +105,10 @@ const Header = () => {
 
             {/* Contact Info */}
             <div className={`flex items-center space-x-6 text-sm font-medium ${isRTL ? 'space-x-reverse' : ''}`}>
+              <Link to="/portal" className="flex items-center hover:text-gray-200 transition-colors">
+                <User className={`h-4 w-4 text-white ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                <span>{t('patientPortal', { defaultValue: 'Patient Portal' })}</span>
+              </Link>
               <Link to="/contact" className="flex items-center hover:text-gray-200 transition-colors">
                 <Mail className={`h-4 w-4 text-white ${isRTL ? 'ml-2' : 'mr-2'}`} />
                 <span>{t('contactUs')}</span>
@@ -367,12 +371,19 @@ const Header = () => {
               >
                 {t('financing')}
               </Link>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="chopard-text-secondary hover:chopard-text-primary font-light transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('contact')}
+              </Link>
+              <Link
+                to="/portal"
+                className="chopard-text-secondary hover:chopard-text-primary font-light transition-all duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('patientPortal', { defaultValue: 'Patient Portal' })}
               </Link>
               <div className="pt-4 border-t chopard-border">
                 <a 

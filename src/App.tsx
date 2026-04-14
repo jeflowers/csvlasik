@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import ConsentBanner from './components/ConsentBanner';
 import ExtensionShield from './components/ExtensionShield';
 import { useAdmin } from './hooks/useAdmin';
+import { usePatient } from './hooks/usePatient';
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -80,6 +81,12 @@ const BAAManager = lazy(() => import('./components/admin/BAAManager'));
 const ISO27001Dashboard = lazy(() => import('./components/admin/ISO27001Dashboard'));
 const HIPAAAuditDashboard = lazy(() => import('./components/admin/HIPAAAuditDashboard'));
 
+const PortalLayout = lazy(() => import('./components/portal/PortalLayout'));
+const PortalAuth = lazy(() => import('./components/portal/PortalAuth'));
+const PortalDashboard = lazy(() => import('./components/portal/PortalDashboard'));
+const PortalForms = lazy(() => import('./components/portal/PortalForms'));
+const PortalSubmissions = lazy(() => import('./components/portal/PortalSubmissions'));
+
 const Home = lazy(() => import('./pages/Home'));
 const PrivacyPolicyDetailPage = lazy(() => import('./pages/PrivacyPolicyDetailPage'));
 const About = lazy(() => import('./pages/About'));
@@ -95,7 +102,6 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Media = lazy(() => import('./pages/Media'));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
-const AppointmentRequestForm = lazy(() => import('./components/booking/AppointmentRequestForm'));
 const AppointmentCalendar = lazy(() => import('./components/booking/AppointmentCalendar'));
 const BeforeAfterGallery = lazy(() => import('./components/gallery/BeforeAfterGallery'));
 const BookConsultation = lazy(() => import('./pages/BookConsultation'));
@@ -145,6 +151,23 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
   }
 
   return user ? <>{children}</> : <Navigate to="/admin/login" replace />;
+}
+
+function ProtectedPortalRoute({ children }: { children: React.ReactNode }) {
+  const { user, loading } = usePatient();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading patient portal...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return user ? <>{children}</> : <Navigate to="/portal/login" replace />;
 }
 
 function AdminRoutes() {
@@ -222,16 +245,41 @@ function AdminRoutes() {
   );
 }
 
+function PortalRoutes() {
+  const { user, loading } = usePatient();
+
+  if (loading) {
+    return <LoadingFallback />;
+  }
+
+  return (
+    <Routes>
+      <Route path="login" element={
+        user ? <Navigate to="/portal" replace /> : <PortalAuth />
+      } />
+      <Route path="/" element={
+        <ProtectedPortalRoute>
+          <PortalLayout />
+        </ProtectedPortalRoute>
+      }>
+        <Route index element={<PortalDashboard />} />
+        <Route path="forms" element={<PortalForms />} />
+        <Route path="submissions" element={<PortalSubmissions />} />
+      </Route>
+    </Routes>
+  );
+}
+
 function App() {
   return (
     <ExtensionShield>
       <ErrorBoundary>
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
-            {/* Admin Routes */}
             <Route path="/admin/*" element={<AdminRoutes />} />
 
-            {/* Public Routes */}
+            <Route path="/portal/*" element={<PortalRoutes />} />
+
             <Route path="/*" element={
               <TranslationProvider preferredService="auto">
                 <RTLProvider>
