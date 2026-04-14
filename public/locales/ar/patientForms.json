@@ -1,0 +1,170 @@
+{
+  "badge": "نماذج المريض",
+  "title": "أكمل نماذجك عبر الإنترنت",
+  "subtitle": "وفر وقتك في زيارتك عن طريق ملء نماذج القبول قبل موعدك. يتم نقل جميع المعلومات بشكل آمن.",
+
+  "tabs": {
+    "registration": "تسجيل مريض جديد",
+    "medicalHistory": "التاريخ الطبي",
+    "insuranceInfo": "معلومات التأمين",
+    "consent": "نماذج الموافقة"
+  },
+
+  "registration": {
+    "firstName": {
+      "label": "الاسم الأول",
+      "placeholder": "أدخل الاسم الأول"
+    },
+    "lastName": {
+      "label": "اسم العائلة",
+      "placeholder": "أدخل اسم العائلة"
+    },
+    "dateOfBirth": {
+      "label": "تاريخ الميلاد",
+      "placeholder": "يوم/شهر/سنة"
+    },
+    "phoneNumber": {
+      "label": "رقم الهاتف",
+      "placeholder": "(555) 555-5555"
+    },
+    "emailAddress": {
+      "label": "البريد الإلكتروني",
+      "placeholder": "email@example.com"
+    },
+    "streetAddress": {
+      "label": "عنوان الشارع",
+      "placeholder": "123 الشارع الرئيسي"
+    },
+    "city": {
+      "label": "المدينة",
+      "placeholder": "المدينة"
+    },
+    "state": {
+      "label": "الولاية",
+      "placeholder": "الولاية"
+    },
+    "zip": {
+      "label": "الرمز البريدي",
+      "placeholder": "الرمز البريدي"
+    },
+    "reasonForVisit": {
+      "label": "سبب الزيارة",
+      "placeholder": "يرجى وصف سبب زيارتك"
+    }
+  },
+
+  "medicalHistory": {
+    "currentEyeConditions": {
+      "label": "هل لديك حالياً أي حالات في العين؟",
+      "placeholder": "اذكر أي حالات أو مخاوف حالية في العين"
+    },
+    "previousEyeSurgeries": {
+      "label": "جراحات أو علاجات سابقة للعين",
+      "placeholder": "اذكر أي جراحات عين سابقة، علاجات بالليزر، إلخ."
+    },
+    "currentMedications": {
+      "label": "الأدوية الحالية",
+      "placeholder": "اذكر جميع الأدوية الحالية بما في ذلك قطرات العين"
+    },
+    "drugAllergies": {
+      "label": "الحساسية من الأدوية",
+      "placeholder": "اذكر أي حساسية معروفة من الأدوية"
+    },
+    "hasDiabetes": {
+      "label": "هل لديك مرض السكري؟",
+      "options": {
+        "select": "اختر",
+        "yes": "نعم",
+        "no": "لا"
+      }
+    },
+    "familyHistoryEyeDisease": {
+      "label": "تاريخ عائلي لأمراض العيون؟",
+      "options": {
+        "select": "اختر",
+        "yes": "نعم",
+        "no": "لا"
+      }
+    }
+  },
+
+  "insuranceInfo": {
+    "insuranceProvider": {
+      "label": "مزود التأمين",
+      "placeholder": "مثال: Blue Cross Blue Shield"
+    },
+    "policyNumber": {
+      "label": "رقم البوليصة",
+      "placeholder": "رقم البوليصة"
+    },
+    "groupNumber": {
+      "label": "رقم المجموعة",
+      "placeholder": "رقم المجموعة"
+    },
+    "policyholderName": {
+      "label": "اسم حامل البوليصة",
+      "placeholder": "الاسم على البوليصة"
+    },
+    "relationshipToPatient": {
+      "label": "العلاقة بالمريض",
+      "options": {
+        "select": "اختر",
+        "self": "نفسي",
+        "spouse": "الزوج/الزوجة",
+        "parent": "الوالد/الوالدة",
+        "other": "آخر"
+      }
+    },
+    "secondaryInsurance": {
+      "label": "التأمين الثانوي (إن وجد)",
+      "placeholder": "مزود التأمين الثانوي"
+    }
+  },
+
+  "consent": {
+    "hipaaTitle": "إقرار خصوصية HIPAA",
+    "hipaaBody": "أقر بأنه تم تزويدي بنسخة من إشعار ممارسات الخصوصية، الذي يصف كيف يمكن استخدام معلوماتي الصحية والإفصاح عنها، وكيف يمكنني الوصول إلى هذه المعلومات. أفهم أن MEC Eye Specialists لها الحق في تغيير إشعار ممارسات الخصوصية في أي وقت.",
+    "hipaaCheckbox": "أقر باستلام إشعار ممارسات الخصوصية",
+
+    "treatmentTitle": "الموافقة على العلاج",
+    "treatmentBody": "أوافق على الفحص والعلاج من قبل طبيب/أطباء العيون في MEC Eye Specialists. أفهم أنه لم يتم تقديم أي ضمانات بشأن نتيجة أي فحص أو علاج.",
+    "treatmentCheckbox": "أوافق على الفحص والعلاج",
+
+    "patientSignature": {
+      "label": "توقيع المريض (اكتب الاسم الكامل)",
+      "placeholder": "الاسم القانوني الكامل"
+    },
+    "signatureDate": {
+      "label": "التاريخ",
+      "placeholder": "يوم/شهر/سنة"
+    }
+  },
+
+  "buttons": {
+    "submitForm": "إرسال النموذج",
+    "submitting": "جاري الإرسال..."
+  },
+
+  "validation": {
+    "required": "هذا الحقل مطلوب",
+    "invalidEmail": "يرجى إدخال بريد إلكتروني صالح",
+    "invalidPhone": "يرجى إدخال رقم هاتف صالح",
+    "invalidDate": "يرجى إدخال تاريخ صالح",
+    "invalidDateOfBirth": "لا يمكن أن يكون تاريخ الميلاد في المستقبل",
+    "invalidSignatureDate": "يجب أن يكون تاريخ التوقيع خلال آخر 7 أيام",
+    "signatureTooShort": "يرجى إدخال اسمك القانوني الكامل",
+    "consentRequired": "يجب الإقرار بنموذجي الموافقة للمتابعة"
+  },
+
+  "success": {
+    "registration": "تم إرسال التسجيل بنجاح! سيتواصل معك فريقنا قريباً.",
+    "medicalHistory": "تم إرسال التاريخ الطبي بنجاح!",
+    "insuranceInfo": "تم إرسال معلومات التأمين بنجاح!",
+    "consent": "تم إرسال نماذج الموافقة بنجاح! شكراً لإكمال جميع النماذج."
+  },
+
+  "error": {
+    "generic": "حدث خطأ أثناء إرسال النموذج. يرجى المحاولة مرة أخرى.",
+    "network": "خطأ في الشبكة. يرجى التحقق من اتصالك والمحاولة مرة أخرى."
+  }
+}

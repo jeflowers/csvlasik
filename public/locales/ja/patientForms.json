@@ -1,0 +1,170 @@
+{
+  "badge": "患者フォーム",
+  "title": "オンラインでフォームを記入",
+  "subtitle": "ご予約前に受付フォームを記入して、来院時の時間を節約しましょう。すべての情報は安全に送信されます。",
+
+  "tabs": {
+    "registration": "新規患者登録",
+    "medicalHistory": "病歴",
+    "insuranceInfo": "保険情報",
+    "consent": "同意書"
+  },
+
+  "registration": {
+    "firstName": {
+      "label": "名",
+      "placeholder": "名を入力"
+    },
+    "lastName": {
+      "label": "姓",
+      "placeholder": "姓を入力"
+    },
+    "dateOfBirth": {
+      "label": "生年月日",
+      "placeholder": "年/月/日"
+    },
+    "phoneNumber": {
+      "label": "電話番号",
+      "placeholder": "(555) 555-5555"
+    },
+    "emailAddress": {
+      "label": "メールアドレス",
+      "placeholder": "email@example.com"
+    },
+    "streetAddress": {
+      "label": "住所",
+      "placeholder": "東京都渋谷区..."
+    },
+    "city": {
+      "label": "市区町村",
+      "placeholder": "市区町村"
+    },
+    "state": {
+      "label": "都道府県",
+      "placeholder": "都道府県"
+    },
+    "zip": {
+      "label": "郵便番号",
+      "placeholder": "郵便番号"
+    },
+    "reasonForVisit": {
+      "label": "来院理由",
+      "placeholder": "来院の理由をご記入ください"
+    }
+  },
+
+  "medicalHistory": {
+    "currentEyeConditions": {
+      "label": "現在、目の疾患はありますか？",
+      "placeholder": "現在の目の疾患や気になる症状をご記入ください"
+    },
+    "previousEyeSurgeries": {
+      "label": "過去の目の手術や治療",
+      "placeholder": "過去の目の手術、レーザー治療などをご記入ください"
+    },
+    "currentMedications": {
+      "label": "現在服用中の薬",
+      "placeholder": "点眼薬を含む、現在服用中のすべての薬をご記入ください"
+    },
+    "drugAllergies": {
+      "label": "薬物アレルギー",
+      "placeholder": "既知の薬物アレルギーをご記入ください"
+    },
+    "hasDiabetes": {
+      "label": "糖尿病はありますか？",
+      "options": {
+        "select": "選択",
+        "yes": "はい",
+        "no": "いいえ"
+      }
+    },
+    "familyHistoryEyeDisease": {
+      "label": "目の疾患の家族歴はありますか？",
+      "options": {
+        "select": "選択",
+        "yes": "はい",
+        "no": "いいえ"
+      }
+    }
+  },
+
+  "insuranceInfo": {
+    "insuranceProvider": {
+      "label": "保険会社",
+      "placeholder": "例：Blue Cross Blue Shield"
+    },
+    "policyNumber": {
+      "label": "保険証番号",
+      "placeholder": "保険証番号"
+    },
+    "groupNumber": {
+      "label": "グループ番号",
+      "placeholder": "グループ番号"
+    },
+    "policyholderName": {
+      "label": "契約者名",
+      "placeholder": "保険契約者名"
+    },
+    "relationshipToPatient": {
+      "label": "患者との関係",
+      "options": {
+        "select": "選択",
+        "self": "本人",
+        "spouse": "配偶者",
+        "parent": "親",
+        "other": "その他"
+      }
+    },
+    "secondaryInsurance": {
+      "label": "二次保険（該当する場合）",
+      "placeholder": "二次保険会社"
+    }
+  },
+
+  "consent": {
+    "hipaaTitle": "HIPAAプライバシー確認",
+    "hipaaBody": "私は、健康情報がどのように使用・開示されるか、またその情報へのアクセス方法を説明したプライバシー慣行通知のコピーを受け取ったことを確認します。MEC Eye Specialistsはプライバシー慣行通知をいつでも変更する権利を有することを理解しています。",
+    "hipaaCheckbox": "プライバシー慣行通知の受領を確認します",
+
+    "treatmentTitle": "治療への同意",
+    "treatmentBody": "MEC Eye Specialistsの眼科医による検査および治療に同意します。検査または治療の結果について、いかなる保証もなされていないことを理解しています。",
+    "treatmentCheckbox": "検査および治療に同意します",
+
+    "patientSignature": {
+      "label": "患者署名（フルネームを入力）",
+      "placeholder": "正式な氏名"
+    },
+    "signatureDate": {
+      "label": "日付",
+      "placeholder": "年/月/日"
+    }
+  },
+
+  "buttons": {
+    "submitForm": "フォームを送信",
+    "submitting": "送信中..."
+  },
+
+  "validation": {
+    "required": "この項目は必須です",
+    "invalidEmail": "有効なメールアドレスを入力してください",
+    "invalidPhone": "有効な電話番号を入力してください",
+    "invalidDate": "有効な日付を入力してください",
+    "invalidDateOfBirth": "生年月日は未来の日付にはできません",
+    "invalidSignatureDate": "署名日は過去7日以内でなければなりません",
+    "signatureTooShort": "正式な氏名を入力してください",
+    "consentRequired": "続行するには両方の同意書を確認する必要があります"
+  },
+
+  "success": {
+    "registration": "登録が正常に送信されました！チームからまもなくご連絡いたします。",
+    "medicalHistory": "病歴が正常に送信されました！",
+    "insuranceInfo": "保険情報が正常に送信されました！",
+    "consent": "同意書が正常に送信されました！すべてのフォームを完了していただきありがとうございます。"
+  },
+
+  "error": {
+    "generic": "フォームの送信中にエラーが発生しました。もう一度お試しください。",
+    "network": "ネットワークエラーです。接続を確認して、もう一度お試しください。"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "badge": "FORMULÁRIOS DO PACIENTE",
+  "title": "Preencha Seus Formulários Online",
+  "subtitle": "Economize tempo na sua consulta preenchendo os formulários de admissão antes da sua consulta. Todas as informações são transmitidas com segurança.",
+
+  "tabs": {
+    "registration": "Cadastro de Novo Paciente",
+    "medicalHistory": "Histórico Médico",
+    "insuranceInfo": "Informações do Seguro",
+    "consent": "Formulários de Consentimento"
+  },
+
+  "registration": {
+    "firstName": {
+      "label": "Nome",
+      "placeholder": "Digite seu nome"
+    },
+    "lastName": {
+      "label": "Sobrenome",
+      "placeholder": "Digite seu sobrenome"
+    },
+    "dateOfBirth": {
+      "label": "Data de Nascimento",
+      "placeholder": "dd/mm/aaaa"
+    },
+    "phoneNumber": {
+      "label": "Telefone",
+      "placeholder": "(555) 555-5555"
+    },
+    "emailAddress": {
+      "label": "E-mail",
+      "placeholder": "email@exemplo.com"
+    },
+    "streetAddress": {
+      "label": "Endereço",
+      "placeholder": "Rua Principal, 123"
+    },
+    "city": {
+      "label": "Cidade",
+      "placeholder": "Cidade"
+    },
+    "state": {
+      "label": "Estado",
+      "placeholder": "Estado"
+    },
+    "zip": {
+      "label": "CEP",
+      "placeholder": "CEP"
+    },
+    "reasonForVisit": {
+      "label": "Motivo da Consulta",
+      "placeholder": "Descreva o motivo da sua consulta"
+    }
+  },
+
+  "medicalHistory": {
+    "currentEyeConditions": {
+      "label": "Possui alguma condição ocular atualmente?",
+      "placeholder": "Liste quaisquer condições ou preocupações oculares atuais"
+    },
+    "previousEyeSurgeries": {
+      "label": "Cirurgias ou tratamentos oculares anteriores",
+      "placeholder": "Liste cirurgias oculares anteriores, tratamentos a laser, etc."
+    },
+    "currentMedications": {
+      "label": "Medicamentos atuais",
+      "placeholder": "Liste todos os medicamentos atuais, incluindo colírios"
+    },
+    "drugAllergies": {
+      "label": "Alergias a medicamentos",
+      "placeholder": "Liste quaisquer alergias conhecidas a medicamentos"
+    },
+    "hasDiabetes": {
+      "label": "Possui diabetes?",
+      "options": {
+        "select": "Selecione",
+        "yes": "Sim",
+        "no": "Não"
+      }
+    },
+    "familyHistoryEyeDisease": {
+      "label": "Histórico familiar de doenças oculares?",
+      "options": {
+        "select": "Selecione",
+        "yes": "Sim",
+        "no": "Não"
+      }
+    }
+  },
+
+  "insuranceInfo": {
+    "insuranceProvider": {
+      "label": "Operadora de Saúde",
+      "placeholder": "ex.: Blue Cross Blue Shield"
+    },
+    "policyNumber": {
+      "label": "Número da Apólice",
+      "placeholder": "Número da apólice"
+    },
+    "groupNumber": {
+      "label": "Número do Grupo",
+      "placeholder": "Número do grupo"
+    },
+    "policyholderName": {
+      "label": "Nome do Titular",
+      "placeholder": "Nome na apólice"
+    },
+    "relationshipToPatient": {
+      "label": "Relação com o Paciente",
+      "options": {
+        "select": "Selecione",
+        "self": "Próprio",
+        "spouse": "Cônjuge",
+        "parent": "Pai/Mãe",
+        "other": "Outro"
+      }
+    },
+    "secondaryInsurance": {
+      "label": "Seguro Secundário (se aplicável)",
+      "placeholder": "Operadora de saúde secundária"
+    }
+  },
+
+  "consent": {
+    "hipaaTitle": "Confirmação de Privacidade HIPAA",
+    "hipaaBody": "Confirmo que recebi uma cópia do Aviso de Práticas de Privacidade, que descreve como minhas informações de saúde podem ser usadas e divulgadas, e como posso acessar essas informações. Compreendo que a MEC Eye Specialists tem o direito de alterar o Aviso de Práticas de Privacidade a qualquer momento.",
+    "hipaaCheckbox": "Confirmo o recebimento do Aviso de Práticas de Privacidade",
+
+    "treatmentTitle": "Consentimento para Tratamento",
+    "treatmentBody": "Consinto com o exame e tratamento pelo(s) oftalmologista(s) da MEC Eye Specialists. Compreendo que nenhuma garantia foi feita em relação ao resultado de qualquer exame ou tratamento.",
+    "treatmentCheckbox": "Consinto com exame e tratamento",
+
+    "patientSignature": {
+      "label": "Assinatura do Paciente (digite o nome completo)",
+      "placeholder": "Nome legal completo"
+    },
+    "signatureDate": {
+      "label": "Data",
+      "placeholder": "dd/mm/aaaa"
+    }
+  },
+
+  "buttons": {
+    "submitForm": "Enviar Formulário",
+    "submitting": "Enviando..."
+  },
+
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "invalidEmail": "Digite um endereço de e-mail válido",
+    "invalidPhone": "Digite um número de telefone válido",
+    "invalidDate": "Digite uma data válida",
+    "invalidDateOfBirth": "A data de nascimento não pode ser no futuro",
+    "invalidSignatureDate": "A data da assinatura deve ser nos últimos 7 dias",
+    "signatureTooShort": "Digite seu nome legal completo",
+    "consentRequired": "Você deve confirmar ambos os formulários de consentimento para continuar"
+  },
+
+  "success": {
+    "registration": "Cadastro enviado com sucesso! Nossa equipe entrará em contato em breve.",
+    "medicalHistory": "Histórico médico enviado com sucesso!",
+    "insuranceInfo": "Informações do seguro enviadas com sucesso!",
+    "consent": "Formulários de consentimento enviados com sucesso! Obrigado por completar todos os formulários."
+  },
+
+  "error": {
+    "generic": "Ocorreu um erro ao enviar o formulário. Tente novamente.",
+    "network": "Erro de rede. Verifique sua conexão e tente novamente."
+  }
+}

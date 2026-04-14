@@ -1,0 +1,170 @@
+{
+  "badge": "טפסי מטופל",
+  "title": "מלאו את הטפסים שלכם באינטרנט",
+  "subtitle": "חסכו זמן בביקור שלכם על ידי מילוי טפסי קליטה לפני התור. כל המידע מועבר באופן מאובטח.",
+
+  "tabs": {
+    "registration": "רישום מטופל חדש",
+    "medicalHistory": "היסטוריה רפואית",
+    "insuranceInfo": "מידע ביטוחי",
+    "consent": "טפסי הסכמה"
+  },
+
+  "registration": {
+    "firstName": {
+      "label": "שם פרטי",
+      "placeholder": "הזינו שם פרטי"
+    },
+    "lastName": {
+      "label": "שם משפחה",
+      "placeholder": "הזינו שם משפחה"
+    },
+    "dateOfBirth": {
+      "label": "תאריך לידה",
+      "placeholder": "יום/חודש/שנה"
+    },
+    "phoneNumber": {
+      "label": "מספר טלפון",
+      "placeholder": "(555) 555-5555"
+    },
+    "emailAddress": {
+      "label": "כתובת דוא\"ל",
+      "placeholder": "email@example.com"
+    },
+    "streetAddress": {
+      "label": "כתובת רחוב",
+      "placeholder": "רחוב הראשי 123"
+    },
+    "city": {
+      "label": "עיר",
+      "placeholder": "עיר"
+    },
+    "state": {
+      "label": "מדינה",
+      "placeholder": "מדינה"
+    },
+    "zip": {
+      "label": "מיקוד",
+      "placeholder": "מיקוד"
+    },
+    "reasonForVisit": {
+      "label": "סיבת הביקור",
+      "placeholder": "אנא תארו את סיבת הביקור שלכם"
+    }
+  },
+
+  "medicalHistory": {
+    "currentEyeConditions": {
+      "label": "האם יש לכם כרגע בעיות עיניים?",
+      "placeholder": "ציינו כל מצב או דאגה נוכחית בעיניים"
+    },
+    "previousEyeSurgeries": {
+      "label": "ניתוחי עיניים או טיפולים קודמים",
+      "placeholder": "ציינו כל ניתוח עיניים קודם, טיפולי לייזר וכו'"
+    },
+    "currentMedications": {
+      "label": "תרופות נוכחיות",
+      "placeholder": "ציינו את כל התרופות הנוכחיות כולל טיפות עיניים"
+    },
+    "drugAllergies": {
+      "label": "אלרגיות לתרופות",
+      "placeholder": "ציינו כל אלרגיה ידועה לתרופות"
+    },
+    "hasDiabetes": {
+      "label": "האם יש לכם סוכרת?",
+      "options": {
+        "select": "בחרו",
+        "yes": "כן",
+        "no": "לא"
+      }
+    },
+    "familyHistoryEyeDisease": {
+      "label": "היסטוריה משפחתית של מחלות עיניים?",
+      "options": {
+        "select": "בחרו",
+        "yes": "כן",
+        "no": "לא"
+      }
+    }
+  },
+
+  "insuranceInfo": {
+    "insuranceProvider": {
+      "label": "חברת ביטוח",
+      "placeholder": "לדוגמה: Blue Cross Blue Shield"
+    },
+    "policyNumber": {
+      "label": "מספר פוליסה",
+      "placeholder": "מספר פוליסה"
+    },
+    "groupNumber": {
+      "label": "מספר קבוצה",
+      "placeholder": "מספר קבוצה"
+    },
+    "policyholderName": {
+      "label": "שם בעל הפוליסה",
+      "placeholder": "השם על הפוליסה"
+    },
+    "relationshipToPatient": {
+      "label": "קרבה למטופל",
+      "options": {
+        "select": "בחרו",
+        "self": "עצמי",
+        "spouse": "בן/בת זוג",
+        "parent": "הורה",
+        "other": "אחר"
+      }
+    },
+    "secondaryInsurance": {
+      "label": "ביטוח משני (אם רלוונטי)",
+      "placeholder": "חברת ביטוח משנית"
+    }
+  },
+
+  "consent": {
+    "hipaaTitle": "הצהרת פרטיות HIPAA",
+    "hipaaBody": "אני מאשר/ת שקיבלתי עותק של הודעת נוהלי הפרטיות, המתארת כיצד ניתן להשתמש במידע הבריאותי שלי ולחשוף אותו, וכיצד אוכל לגשת למידע זה. אני מבין/ה ש-MEC Eye Specialists שומרת לעצמה את הזכות לשנות את הודעת נוהלי הפרטיות בכל עת.",
+    "hipaaCheckbox": "אני מאשר/ת קבלת הודעת נוהלי הפרטיות",
+
+    "treatmentTitle": "הסכמה לטיפול",
+    "treatmentBody": "אני מסכים/ה לבדיקה ולטיפול על ידי רופא/י העיניים ב-MEC Eye Specialists. אני מבין/ה שלא ניתנו כל ערבויות לגבי תוצאות כל בדיקה או טיפול.",
+    "treatmentCheckbox": "אני מסכים/ה לבדיקה ולטיפול",
+
+    "patientSignature": {
+      "label": "חתימת המטופל (הקלידו שם מלא)",
+      "placeholder": "שם משפטי מלא"
+    },
+    "signatureDate": {
+      "label": "תאריך",
+      "placeholder": "יום/חודש/שנה"
+    }
+  },
+
+  "buttons": {
+    "submitForm": "שליחת טופס",
+    "submitting": "שולח..."
+  },
+
+  "validation": {
+    "required": "שדה זה נדרש",
+    "invalidEmail": "אנא הזינו כתובת דוא\"ל תקינה",
+    "invalidPhone": "אנא הזינו מספר טלפון תקין",
+    "invalidDate": "אנא הזינו תאריך תקין",
+    "invalidDateOfBirth": "תאריך הלידה לא יכול להיות בעתיד",
+    "invalidSignatureDate": "תאריך החתימה חייב להיות בתוך 7 הימים האחרונים",
+    "signatureTooShort": "אנא הזינו את שמכם המשפטי המלא",
+    "consentRequired": "עליכם לאשר את שני טפסי ההסכמה כדי להמשיך"
+  },
+
+  "success": {
+    "registration": "הרישום נשלח בהצלחה! הצוות שלנו ייצור אתכם קשר בקרוב.",
+    "medicalHistory": "ההיסטוריה הרפואית נשלחה בהצלחה!",
+    "insuranceInfo": "מידע הביטוח נשלח בהצלחה!",
+    "consent": "טפסי ההסכמה נשלחו בהצלחה! תודה על השלמת כל הטפסים."
+  },
+
+  "error": {
+    "generic": "אירעה שגיאה בעת שליחת הטופס. אנא נסו שוב.",
+    "network": "שגיאת רשת. אנא בדקו את החיבור שלכם ונסו שוב."
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "badge": "患者表格",
+  "title": "在线填写您的表格",
+  "subtitle": "在就诊前填写接诊表格，节省就诊时间。所有信息均通过安全方式传输。",
+
+  "tabs": {
+    "registration": "新患者注册",
+    "medicalHistory": "病史",
+    "insuranceInfo": "保险信息",
+    "consent": "知情同意书"
+  },
+
+  "registration": {
+    "firstName": {
+      "label": "名",
+      "placeholder": "请输入名"
+    },
+    "lastName": {
+      "label": "姓",
+      "placeholder": "请输入姓"
+    },
+    "dateOfBirth": {
+      "label": "出生日期",
+      "placeholder": "年/月/日"
+    },
+    "phoneNumber": {
+      "label": "电话号码",
+      "placeholder": "(555) 555-5555"
+    },
+    "emailAddress": {
+      "label": "电子邮件",
+      "placeholder": "email@example.com"
+    },
+    "streetAddress": {
+      "label": "街道地址",
+      "placeholder": "主街123号"
+    },
+    "city": {
+      "label": "城市",
+      "placeholder": "城市"
+    },
+    "state": {
+      "label": "州/省",
+      "placeholder": "州/省"
+    },
+    "zip": {
+      "label": "邮编",
+      "placeholder": "邮编"
+    },
+    "reasonForVisit": {
+      "label": "就诊原因",
+      "placeholder": "请描述您的就诊原因"
+    }
+  },
+
+  "medicalHistory": {
+    "currentEyeConditions": {
+      "label": "您目前是否有任何眼部疾病？",
+      "placeholder": "列出当前任何眼部疾病或问题"
+    },
+    "previousEyeSurgeries": {
+      "label": "以往眼部手术或治疗",
+      "placeholder": "列出以往的眼部手术、激光治疗等"
+    },
+    "currentMedications": {
+      "label": "当前用药",
+      "placeholder": "列出所有当前用药，包括眼药水"
+    },
+    "drugAllergies": {
+      "label": "药物过敏",
+      "placeholder": "列出已知的药物过敏"
+    },
+    "hasDiabetes": {
+      "label": "您是否患有糖尿病？",
+      "options": {
+        "select": "请选择",
+        "yes": "是",
+        "no": "否"
+      }
+    },
+    "familyHistoryEyeDisease": {
+      "label": "是否有眼部疾病家族史？",
+      "options": {
+        "select": "请选择",
+        "yes": "是",
+        "no": "否"
+      }
+    }
+  },
+
+  "insuranceInfo": {
+    "insuranceProvider": {
+      "label": "保险公司",
+      "placeholder": "例如：Blue Cross Blue Shield"
+    },
+    "policyNumber": {
+      "label": "保单号",
+      "placeholder": "保单号"
+    },
+    "groupNumber": {
+      "label": "团体号",
+      "placeholder": "团体号"
+    },
+    "policyholderName": {
+      "label": "投保人姓名",
+      "placeholder": "保单上的姓名"
+    },
+    "relationshipToPatient": {
+      "label": "与患者的关系",
+      "options": {
+        "select": "请选择",
+        "self": "本人",
+        "spouse": "配偶",
+        "parent": "父母",
+        "other": "其他"
+      }
+    },
+    "secondaryInsurance": {
+      "label": "次要保险（如适用）",
+      "placeholder": "次要保险公司"
+    }
+  },
+
+  "consent": {
+    "hipaaTitle": "HIPAA隐私确认",
+    "hipaaBody": "本人确认已收到《隐私惯例通知》副本，该通知描述了本人的健康信息如何被使用和披露，以及本人如何获取该信息。本人理解MEC Eye Specialists有权随时更改《隐私惯例通知》。",
+    "hipaaCheckbox": "本人确认收到《隐私惯例通知》",
+
+    "treatmentTitle": "治疗同意书",
+    "treatmentBody": "本人同意接受MEC Eye Specialists眼科医生的检查和治疗。本人理解，对于任何检查或治疗的结果，未作出任何保证。",
+    "treatmentCheckbox": "本人同意接受检查和治疗",
+
+    "patientSignature": {
+      "label": "患者签名（输入全名）",
+      "placeholder": "法定全名"
+    },
+    "signatureDate": {
+      "label": "日期",
+      "placeholder": "年/月/日"
+    }
+  },
+
+  "buttons": {
+    "submitForm": "提交表格",
+    "submitting": "提交中..."
+  },
+
+  "validation": {
+    "required": "此字段为必填项",
+    "invalidEmail": "请输入有效的电子邮件地址",
+    "invalidPhone": "请输入有效的电话号码",
+    "invalidDate": "请输入有效的日期",
+    "invalidDateOfBirth": "出生日期不能是未来日期",
+    "invalidSignatureDate": "签名日期必须在最近7天内",
+    "signatureTooShort": "请输入您的法定全名",
+    "consentRequired": "您必须确认两份同意书才能继续"
+  },
+
+  "success": {
+    "registration": "注册提交成功！我们的团队将尽快与您联系。",
+    "medicalHistory": "病史提交成功！",
+    "insuranceInfo": "保险信息提交成功！",
+    "consent": "知情同意书提交成功！感谢您完成所有表格。"
+  },
+
+  "error": {
+    "generic": "提交表格时发生错误。请重试。",
+    "network": "网络错误。请检查您的连接并重试。"
+  }
+}

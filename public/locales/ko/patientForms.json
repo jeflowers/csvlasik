@@ -1,0 +1,170 @@
+{
+  "badge": "환자 양식",
+  "title": "온라인으로 양식을 작성하세요",
+  "subtitle": "예약 전에 접수 양식을 미리 작성하여 방문 시간을 절약하세요. 모든 정보는 안전하게 전송됩니다.",
+
+  "tabs": {
+    "registration": "신규 환자 등록",
+    "medicalHistory": "병력",
+    "insuranceInfo": "보험 정보",
+    "consent": "동의서"
+  },
+
+  "registration": {
+    "firstName": {
+      "label": "이름",
+      "placeholder": "이름을 입력하세요"
+    },
+    "lastName": {
+      "label": "성",
+      "placeholder": "성을 입력하세요"
+    },
+    "dateOfBirth": {
+      "label": "생년월일",
+      "placeholder": "년/월/일"
+    },
+    "phoneNumber": {
+      "label": "전화번호",
+      "placeholder": "(555) 555-5555"
+    },
+    "emailAddress": {
+      "label": "이메일 주소",
+      "placeholder": "email@example.com"
+    },
+    "streetAddress": {
+      "label": "주소",
+      "placeholder": "도로명 주소"
+    },
+    "city": {
+      "label": "도시",
+      "placeholder": "도시"
+    },
+    "state": {
+      "label": "주/도",
+      "placeholder": "주/도"
+    },
+    "zip": {
+      "label": "우편번호",
+      "placeholder": "우편번호"
+    },
+    "reasonForVisit": {
+      "label": "방문 사유",
+      "placeholder": "방문 사유를 설명해 주세요"
+    }
+  },
+
+  "medicalHistory": {
+    "currentEyeConditions": {
+      "label": "현재 눈 관련 질환이 있으십니까?",
+      "placeholder": "현재 눈 관련 질환이나 우려 사항을 기재해 주세요"
+    },
+    "previousEyeSurgeries": {
+      "label": "이전 눈 수술 또는 치료",
+      "placeholder": "과거 눈 수술, 레이저 치료 등을 기재해 주세요"
+    },
+    "currentMedications": {
+      "label": "현재 복용 중인 약물",
+      "placeholder": "안약을 포함한 모든 현재 복용 약물을 기재해 주세요"
+    },
+    "drugAllergies": {
+      "label": "약물 알레르기",
+      "placeholder": "알려진 약물 알레르기를 기재해 주세요"
+    },
+    "hasDiabetes": {
+      "label": "당뇨병이 있으십니까?",
+      "options": {
+        "select": "선택",
+        "yes": "예",
+        "no": "아니오"
+      }
+    },
+    "familyHistoryEyeDisease": {
+      "label": "눈 질환 가족력이 있으십니까?",
+      "options": {
+        "select": "선택",
+        "yes": "예",
+        "no": "아니오"
+      }
+    }
+  },
+
+  "insuranceInfo": {
+    "insuranceProvider": {
+      "label": "보험 회사",
+      "placeholder": "예: Blue Cross Blue Shield"
+    },
+    "policyNumber": {
+      "label": "보험증 번호",
+      "placeholder": "보험증 번호"
+    },
+    "groupNumber": {
+      "label": "그룹 번호",
+      "placeholder": "그룹 번호"
+    },
+    "policyholderName": {
+      "label": "보험 계약자 이름",
+      "placeholder": "보험증에 기재된 이름"
+    },
+    "relationshipToPatient": {
+      "label": "환자와의 관계",
+      "options": {
+        "select": "선택",
+        "self": "본인",
+        "spouse": "배우자",
+        "parent": "부모",
+        "other": "기타"
+      }
+    },
+    "secondaryInsurance": {
+      "label": "2차 보험 (해당 시)",
+      "placeholder": "2차 보험 회사"
+    }
+  },
+
+  "consent": {
+    "hipaaTitle": "HIPAA 개인정보 확인",
+    "hipaaBody": "본인은 건강 정보가 어떻게 사용 및 공개될 수 있는지, 그리고 이 정보에 어떻게 접근할 수 있는지 설명하는 개인정보 관행 고지의 사본을 받았음을 확인합니다. MEC Eye Specialists는 언제든지 개인정보 관행 고지를 변경할 권리가 있음을 이해합니다.",
+    "hipaaCheckbox": "개인정보 관행 고지 수령을 확인합니다",
+
+    "treatmentTitle": "치료 동의",
+    "treatmentBody": "MEC Eye Specialists의 안과 의사에 의한 검사 및 치료에 동의합니다. 검사 또는 치료 결과에 대해 어떠한 보장도 이루어지지 않았음을 이해합니다.",
+    "treatmentCheckbox": "검사 및 치료에 동의합니다",
+
+    "patientSignature": {
+      "label": "환자 서명 (전체 이름 입력)",
+      "placeholder": "법적 성명"
+    },
+    "signatureDate": {
+      "label": "날짜",
+      "placeholder": "년/월/일"
+    }
+  },
+
+  "buttons": {
+    "submitForm": "양식 제출",
+    "submitting": "제출 중..."
+  },
+
+  "validation": {
+    "required": "이 항목은 필수입니다",
+    "invalidEmail": "유효한 이메일 주소를 입력해 주세요",
+    "invalidPhone": "유효한 전화번호를 입력해 주세요",
+    "invalidDate": "유효한 날짜를 입력해 주세요",
+    "invalidDateOfBirth": "생년월일은 미래 날짜일 수 없습니다",
+    "invalidSignatureDate": "서명 날짜는 최근 7일 이내여야 합니다",
+    "signatureTooShort": "법적 성명을 입력해 주세요",
+    "consentRequired": "계속하려면 두 동의서를 모두 확인해야 합니다"
+  },
+
+  "success": {
+    "registration": "등록이 성공적으로 제출되었습니다! 곧 연락드리겠습니다.",
+    "medicalHistory": "병력이 성공적으로 제출되었습니다!",
+    "insuranceInfo": "보험 정보가 성공적으로 제출되었습니다!",
+    "consent": "동의서가 성공적으로 제출되었습니다! 모든 양식을 작성해 주셔서 감사합니다."
+  },
+
+  "error": {
+    "generic": "양식 제출 중 오류가 발생했습니다. 다시 시도해 주세요.",
+    "network": "네트워크 오류입니다. 연결을 확인하고 다시 시도해 주세요."
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "badge": "MGA FORM NG PASYENTE",
+  "title": "Kumpletuhin ang Iyong mga Form Online",
+  "subtitle": "Makatipid ng oras sa iyong pagbisita sa pamamagitan ng pagkumpleto ng mga intake form bago ang iyong appointment. Lahat ng impormasyon ay ligtas na ipinapadala.",
+
+  "tabs": {
+    "registration": "Pagpaparehistro ng Bagong Pasyente",
+    "medicalHistory": "Medikal na Kasaysayan",
+    "insuranceInfo": "Impormasyon ng Insurance",
+    "consent": "Mga Form ng Pahintulot"
+  },
+
+  "registration": {
+    "firstName": {
+      "label": "Pangalan",
+      "placeholder": "Ilagay ang pangalan"
+    },
+    "lastName": {
+      "label": "Apelyido",
+      "placeholder": "Ilagay ang apelyido"
+    },
+    "dateOfBirth": {
+      "label": "Petsa ng Kapanganakan",
+      "placeholder": "mm/dd/yyyy"
+    },
+    "phoneNumber": {
+      "label": "Numero ng Telepono",
+      "placeholder": "(555) 555-5555"
+    },
+    "emailAddress": {
+      "label": "Email Address",
+      "placeholder": "email@example.com"
+    },
+    "streetAddress": {
+      "label": "Address ng Kalye",
+      "placeholder": "123 Pangunahing Kalye"
+    },
+    "city": {
+      "label": "Lungsod",
+      "placeholder": "Lungsod"
+    },
+    "state": {
+      "label": "Estado",
+      "placeholder": "Estado"
+    },
+    "zip": {
+      "label": "ZIP Code",
+      "placeholder": "ZIP Code"
+    },
+    "reasonForVisit": {
+      "label": "Dahilan ng Pagbisita",
+      "placeholder": "Mangyaring ilarawan ang dahilan ng iyong pagbisita"
+    }
+  },
+
+  "medicalHistory": {
+    "currentEyeConditions": {
+      "label": "Mayroon ka bang kasalukuyang kondisyon sa mata?",
+      "placeholder": "Ilista ang anumang kasalukuyang kondisyon o alalahanin sa mata"
+    },
+    "previousEyeSurgeries": {
+      "label": "Mga nakaraang operasyon o paggamot sa mata",
+      "placeholder": "Ilista ang mga nakaraang operasyon sa mata, laser treatment, atbp."
+    },
+    "currentMedications": {
+      "label": "Kasalukuyang mga gamot",
+      "placeholder": "Ilista ang lahat ng kasalukuyang gamot kasama ang eye drops"
+    },
+    "drugAllergies": {
+      "label": "Alerdyi sa gamot",
+      "placeholder": "Ilista ang anumang kilalang alerdyi sa gamot"
+    },
+    "hasDiabetes": {
+      "label": "Mayroon ka bang diabetes?",
+      "options": {
+        "select": "Pumili",
+        "yes": "Oo",
+        "no": "Hindi"
+      }
+    },
+    "familyHistoryEyeDisease": {
+      "label": "Kasaysayan ng sakit sa mata sa pamilya?",
+      "options": {
+        "select": "Pumili",
+        "yes": "Oo",
+        "no": "Hindi"
+      }
+    }
+  },
+
+  "insuranceInfo": {
+    "insuranceProvider": {
+      "label": "Insurance Provider",
+      "placeholder": "hal., Blue Cross Blue Shield"
+    },
+    "policyNumber": {
+      "label": "Numero ng Polisiya",
+      "placeholder": "Numero ng polisiya"
+    },
+    "groupNumber": {
+      "label": "Numero ng Grupo",
+      "placeholder": "Numero ng grupo"
+    },
+    "policyholderName": {
+      "label": "Pangalan ng May-ari ng Polisiya",
+      "placeholder": "Pangalan sa polisiya"
+    },
+    "relationshipToPatient": {
+      "label": "Relasyon sa Pasyente",
+      "options": {
+        "select": "Pumili",
+        "self": "Sarili",
+        "spouse": "Asawa",
+        "parent": "Magulang",
+        "other": "Iba pa"
+      }
+    },
+    "secondaryInsurance": {
+      "label": "Pangalawang Insurance (kung naaangkop)",
+      "placeholder": "Pangalawang insurance provider"
+    }
+  },
+
+  "consent": {
+    "hipaaTitle": "Pagkilala sa Privacy ng HIPAA",
+    "hipaaBody": "Kinikilala ko na nabigyan ako ng kopya ng Abiso ng mga Kasanayan sa Privacy, na naglalarawan kung paano maaaring gamitin at ibunyag ang aking impormasyon sa kalusugan, at kung paano ko ma-access ang impormasyong ito. Nauunawaan ko na may karapatan ang MEC Eye Specialists na baguhin ang Abiso ng mga Kasanayan sa Privacy sa anumang oras.",
+    "hipaaCheckbox": "Kinikilala ko ang pagtanggap ng Abiso ng mga Kasanayan sa Privacy",
+
+    "treatmentTitle": "Pahintulot sa Paggamot",
+    "treatmentBody": "Pumapayag ako sa pagsusuri at paggamot ng (mga) ophthalmologist sa MEC Eye Specialists. Nauunawaan ko na walang mga garantiya na ginawa tungkol sa resulta ng anumang pagsusuri o paggamot.",
+    "treatmentCheckbox": "Pumapayag ako sa pagsusuri at paggamot",
+
+    "patientSignature": {
+      "label": "Lagda ng Pasyente (i-type ang buong pangalan)",
+      "placeholder": "Buong legal na pangalan"
+    },
+    "signatureDate": {
+      "label": "Petsa",
+      "placeholder": "mm/dd/yyyy"
+    }
+  },
+
+  "buttons": {
+    "submitForm": "Isumite ang Form",
+    "submitting": "Isinusumite..."
+  },
+
+  "validation": {
+    "required": "Kinakailangan ang field na ito",
+    "invalidEmail": "Mangyaring maglagay ng wastong email address",
+    "invalidPhone": "Mangyaring maglagay ng wastong numero ng telepono",
+    "invalidDate": "Mangyaring maglagay ng wastong petsa",
+    "invalidDateOfBirth": "Ang petsa ng kapanganakan ay hindi maaaring sa hinaharap",
+    "invalidSignatureDate": "Ang petsa ng lagda ay dapat nasa loob ng huling 7 araw",
+    "signatureTooShort": "Mangyaring ilagay ang iyong buong legal na pangalan",
+    "consentRequired": "Kailangan mong kilalanin ang parehong form ng pahintulot upang magpatuloy"
+  },
+
+  "success": {
+    "registration": "Matagumpay na naisumite ang rehistrasyon! Makikipag-ugnayan sa iyo ang aming team sa lalong madaling panahon.",
+    "medicalHistory": "Matagumpay na naisumite ang medikal na kasaysayan!",
+    "insuranceInfo": "Matagumpay na naisumite ang impormasyon ng insurance!",
+    "consent": "Matagumpay na naisumite ang mga form ng pahintulot! Salamat sa pagkumpleto ng lahat ng form."
+  },
+
+  "error": {
+    "generic": "May naganap na error habang isinusumite ang form. Pakisubukang muli.",
+    "network": "Error sa network. Suriin ang iyong koneksyon at subukang muli."
+  }
+}

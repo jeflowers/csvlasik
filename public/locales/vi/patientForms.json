@@ -1,0 +1,170 @@
+{
+  "badge": "BIỂU MẪU BỆNH NHÂN",
+  "title": "Hoàn thành biểu mẫu trực tuyến",
+  "subtitle": "Tiết kiệm thời gian khi đến khám bằng cách điền các biểu mẫu tiếp nhận trước cuộc hẹn. Tất cả thông tin được truyền tải an toàn.",
+
+  "tabs": {
+    "registration": "Đăng ký bệnh nhân mới",
+    "medicalHistory": "Tiền sử bệnh",
+    "insuranceInfo": "Thông tin bảo hiểm",
+    "consent": "Biểu mẫu đồng ý"
+  },
+
+  "registration": {
+    "firstName": {
+      "label": "Tên",
+      "placeholder": "Nhập tên"
+    },
+    "lastName": {
+      "label": "Họ",
+      "placeholder": "Nhập họ"
+    },
+    "dateOfBirth": {
+      "label": "Ngày sinh",
+      "placeholder": "ngày/tháng/năm"
+    },
+    "phoneNumber": {
+      "label": "Số điện thoại",
+      "placeholder": "(555) 555-5555"
+    },
+    "emailAddress": {
+      "label": "Địa chỉ email",
+      "placeholder": "email@example.com"
+    },
+    "streetAddress": {
+      "label": "Địa chỉ đường",
+      "placeholder": "123 Đường chính"
+    },
+    "city": {
+      "label": "Thành phố",
+      "placeholder": "Thành phố"
+    },
+    "state": {
+      "label": "Bang",
+      "placeholder": "Bang"
+    },
+    "zip": {
+      "label": "Mã bưu điện",
+      "placeholder": "Mã bưu điện"
+    },
+    "reasonForVisit": {
+      "label": "Lý do khám",
+      "placeholder": "Vui lòng mô tả lý do khám của bạn"
+    }
+  },
+
+  "medicalHistory": {
+    "currentEyeConditions": {
+      "label": "Bạn hiện có tình trạng mắt nào không?",
+      "placeholder": "Liệt kê các tình trạng hoặc lo ngại về mắt hiện tại"
+    },
+    "previousEyeSurgeries": {
+      "label": "Các phẫu thuật hoặc điều trị mắt trước đây",
+      "placeholder": "Liệt kê các phẫu thuật mắt, điều trị laser trước đây, v.v."
+    },
+    "currentMedications": {
+      "label": "Thuốc đang dùng",
+      "placeholder": "Liệt kê tất cả thuốc đang dùng bao gồm thuốc nhỏ mắt"
+    },
+    "drugAllergies": {
+      "label": "Dị ứng thuốc",
+      "placeholder": "Liệt kê các dị ứng thuốc đã biết"
+    },
+    "hasDiabetes": {
+      "label": "Bạn có bị tiểu đường không?",
+      "options": {
+        "select": "Chọn",
+        "yes": "Có",
+        "no": "Không"
+      }
+    },
+    "familyHistoryEyeDisease": {
+      "label": "Tiền sử gia đình có bệnh mắt?",
+      "options": {
+        "select": "Chọn",
+        "yes": "Có",
+        "no": "Không"
+      }
+    }
+  },
+
+  "insuranceInfo": {
+    "insuranceProvider": {
+      "label": "Công ty bảo hiểm",
+      "placeholder": "ví dụ: Blue Cross Blue Shield"
+    },
+    "policyNumber": {
+      "label": "Số hợp đồng",
+      "placeholder": "Số hợp đồng"
+    },
+    "groupNumber": {
+      "label": "Số nhóm",
+      "placeholder": "Số nhóm"
+    },
+    "policyholderName": {
+      "label": "Tên chủ hợp đồng",
+      "placeholder": "Tên trên hợp đồng"
+    },
+    "relationshipToPatient": {
+      "label": "Quan hệ với bệnh nhân",
+      "options": {
+        "select": "Chọn",
+        "self": "Bản thân",
+        "spouse": "Vợ/Chồng",
+        "parent": "Cha/Mẹ",
+        "other": "Khác"
+      }
+    },
+    "secondaryInsurance": {
+      "label": "Bảo hiểm phụ (nếu có)",
+      "placeholder": "Công ty bảo hiểm phụ"
+    }
+  },
+
+  "consent": {
+    "hipaaTitle": "Xác nhận quyền riêng tư HIPAA",
+    "hipaaBody": "Tôi xác nhận rằng tôi đã được cung cấp bản sao Thông báo về Thực hành Bảo mật, mô tả cách thông tin sức khỏe của tôi có thể được sử dụng và tiết lộ, và cách tôi có thể truy cập thông tin này. Tôi hiểu rằng MEC Eye Specialists có quyền thay đổi Thông báo về Thực hành Bảo mật bất cứ lúc nào.",
+    "hipaaCheckbox": "Tôi xác nhận đã nhận Thông báo về Thực hành Bảo mật",
+
+    "treatmentTitle": "Đồng ý điều trị",
+    "treatmentBody": "Tôi đồng ý để bác sĩ nhãn khoa tại MEC Eye Specialists khám và điều trị. Tôi hiểu rằng không có bảo đảm nào được đưa ra về kết quả của bất kỳ cuộc khám hoặc điều trị nào.",
+    "treatmentCheckbox": "Tôi đồng ý khám và điều trị",
+
+    "patientSignature": {
+      "label": "Chữ ký bệnh nhân (nhập họ tên đầy đủ)",
+      "placeholder": "Họ tên pháp lý đầy đủ"
+    },
+    "signatureDate": {
+      "label": "Ngày",
+      "placeholder": "ngày/tháng/năm"
+    }
+  },
+
+  "buttons": {
+    "submitForm": "Gửi biểu mẫu",
+    "submitting": "Đang gửi..."
+  },
+
+  "validation": {
+    "required": "Trường này là bắt buộc",
+    "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ",
+    "invalidPhone": "Vui lòng nhập số điện thoại hợp lệ",
+    "invalidDate": "Vui lòng nhập ngày hợp lệ",
+    "invalidDateOfBirth": "Ngày sinh không thể ở tương lai",
+    "invalidSignatureDate": "Ngày ký phải trong vòng 7 ngày gần nhất",
+    "signatureTooShort": "Vui lòng nhập họ tên pháp lý đầy đủ",
+    "consentRequired": "Bạn phải xác nhận cả hai biểu mẫu đồng ý để tiếp tục"
+  },
+
+  "success": {
+    "registration": "Đăng ký đã được gửi thành công! Đội ngũ của chúng tôi sẽ liên hệ với bạn sớm.",
+    "medicalHistory": "Tiền sử bệnh đã được gửi thành công!",
+    "insuranceInfo": "Thông tin bảo hiểm đã được gửi thành công!",
+    "consent": "Biểu mẫu đồng ý đã được gửi thành công! Cảm ơn bạn đã hoàn thành tất cả biểu mẫu."
+  },
+
+  "error": {
+    "generic": "Đã xảy ra lỗi khi gửi biểu mẫu. Vui lòng thử lại.",
+    "network": "Lỗi mạng. Vui lòng kiểm tra kết nối và thử lại."
+  }
+}
