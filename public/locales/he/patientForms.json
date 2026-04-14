@@ -54,36 +54,118 @@
   },
 
   "medicalHistory": {
-    "currentEyeConditions": {
-      "label": "האם יש לכם כרגע בעיות עיניים?",
-      "placeholder": "ציינו כל מצב או דאגה נוכחית בעיניים"
+    "sectionTitle": "היסטוריה רפואית / עיניים",
+    "sectionSubtitle": "אנא ענו על השאלות הבאות בצורה מדויקת ככל האפשר",
+    "generalHealthTitle": "בריאות כללית",
+    "generalHealthSubtitle": "מצבים רפואיים, תרופות ואלרגיות",
+
+    "q1": {
+      "label": "האם אתם מרכיבים:",
+      "glasses": "משקפיים",
+      "contacts": "עדשות מגע",
+      "contactTypeLabel": "סוג עדשות מגע:",
+      "soft": "עדשות רכות",
+      "hard": "עדשות קשות",
+      "extended_wear": "שימוש ממושך",
+      "toric": "טוריות",
+      "toricPlaceholder": "אנא ציינו פרטי עדשות טוריות"
     },
-    "previousEyeSurgeries": {
-      "label": "ניתוחי עיניים או טיפולים קודמים",
-      "placeholder": "ציינו כל ניתוח עיניים קודם, טיפולי לייזר וכו'"
+    "q2": {
+      "label": "בדיקת עיניים אחרונה:",
+      "dateLabel": "תאריך או תקופה",
+      "datePlaceholder": "למשל: יוני 2024 או לפני 6 חודשים",
+      "doctorLabel": "שם הרופא",
+      "doctorPlaceholder": "שם הרופא/אופטומטריסט",
+      "clinicLabel": "מרפאה",
+      "clinicPlaceholder": "שם המרפאה או המרכז",
+      "mayVerify": "מותר לאמת את הרשומות שלי"
     },
-    "currentMedications": {
-      "label": "תרופות נוכחיות",
-      "placeholder": "ציינו את כל התרופות הנוכחיות כולל טיפות עיניים"
+    "q3": {
+      "label": "בן כמה המרשם הנוכחי שלכם?",
+      "placeholder": "למשל: שנתיים, 6 חודשים"
     },
-    "drugAllergies": {
-      "label": "אלרגיות לתרופות",
-      "placeholder": "ציינו כל אלרגיה ידועה לתרופות"
+    "q4": {
+      "label": "האם המרשם שלכם השתנה בשנה האחרונה?",
+      "no": "לא",
+      "yes": "כן",
+      "notSure": "לא בטוח/ה"
     },
-    "hasDiabetes": {
-      "label": "האם יש לכם סוכרת?",
-      "options": {
-        "select": "בחרו",
-        "yes": "כן",
-        "no": "לא"
+    "q5": {
+      "label": "האם אתם חווים כרגע אחד מהתסמינים הבאים? סמנו את כל המתאימים.",
+      "symptoms": {
+        "pressure_pain": "כאב לחץ",
+        "sandy_sensation": "תחושת חול",
+        "throbbing": "פעימות",
+        "eyelid_crusting": "קרום על העפעפיים",
+        "excessive_tearing": "דמעות מוגברות",
+        "redness": "אדמומיות",
+        "floaters": "זבובי עיניים",
+        "mucous_discharge": "הפרשה רירית",
+        "light_sensitivity": "רגישות לאור",
+        "flashing_lights": "הבזקי אור",
+        "itchiness": "גירוד",
+        "halos": "הילות",
+        "double_vision": "ראייה כפולה",
+        "loss_of_vision": "אובדן ראייה",
+        "blurry_vision": "ראייה מטושטשת",
+        "dryness": "יובש",
+        "burning_sensation": "תחושת צריבה"
       }
     },
-    "familyHistoryEyeDisease": {
-      "label": "היסטוריה משפחתית של מחלות עיניים?",
-      "options": {
-        "select": "בחרו",
-        "yes": "כן",
-        "no": "לא"
+    "q6": {
+      "label": "האם נפגעתם בעין?",
+      "no": "לא",
+      "yes": "כן",
+      "detailsPlaceholder": "תארו את הפגיעה, באיזו עין ומתי קרתה"
+    },
+    "q7": {
+      "label": "האם עברתם ניתוח עיניים או טיפול בלייזר?",
+      "no": "לא",
+      "yes": "כן",
+      "detailsPlaceholder": "ציינו את הסוג, באיזו עין ומתי"
+    },
+    "q8": {
+      "label": "האם אתם מטופלים כרגע בגלל מצב רפואי כלשהו? סמנו את כל המתאימים.",
+      "conditions": {
+        "diabetes": "סוכרת",
+        "heart_disease": "מחלת לב",
+        "hypertension": "לחץ דם גבוה",
+        "high_cholesterol": "כולסטרול גבוה",
+        "stroke": "שבץ מוחי",
+        "arthritis": "דלקת פרקים",
+        "lupus": "לופוס",
+        "thyroid_disease": "מחלת בלוטת התריס",
+        "anemia": "אנמיה",
+        "kidney_disease": "מחלת כליות",
+        "tuberculosis": "שחפת",
+        "cancer": "סרטן",
+        "asthma": "אסתמה"
+      },
+      "otherLabel": "מצבים אחרים",
+      "otherPlaceholder": "ציינו מצבים אחרים שלא מופיעים למעלה"
+    },
+    "q9": {
+      "label": "האם אתם משתמשים כרגע בתרופות? ציינו שם והוראות.",
+      "placeholder": "ציינו את כל התרופות הנוכחיות, מינונים והוראות"
+    },
+    "q10": {
+      "label": "האם יש לכם אלרגיה לתרופות, מזון או סמים?",
+      "yes": "כן",
+      "no": "לא",
+      "detailsPlaceholder": "ציינו את הסוג והתגובות"
+    },
+    "q11": {
+      "label": "האם לבני משפחה יש היסטוריה של אחד מהמצבים הבאים? סמנו את כל המתאימים.",
+      "conditions": {
+        "glaucoma": "גלאוקומה",
+        "cataracts": "קטרקט",
+        "macular_degeneration": "ניוון מקולרי",
+        "retinal_detachment": "היפרדות רשתית",
+        "blindness": "עיוורון",
+        "diabetes": "סוכרת",
+        "hypertension": "לחץ דם גבוה",
+        "heart_disease": "מחלת לב",
+        "cancer": "סרטן"
       }
     }
   },

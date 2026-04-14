@@ -54,36 +54,118 @@
   },
 
   "medicalHistory": {
-    "currentEyeConditions": {
-      "label": "Possui alguma condição ocular atualmente?",
-      "placeholder": "Liste quaisquer condições ou preocupações oculares atuais"
+    "sectionTitle": "Histórico Ocular / Médico",
+    "sectionSubtitle": "Por favor responda o seguinte com a maior precisão possível",
+    "generalHealthTitle": "Saúde Geral",
+    "generalHealthSubtitle": "Condições médicas, medicamentos e alergias",
+
+    "q1": {
+      "label": "Você usa:",
+      "glasses": "Óculos",
+      "contacts": "Lentes de contato",
+      "contactTypeLabel": "Tipo de lente de contato:",
+      "soft": "Lentes gelatinosas",
+      "hard": "Lentes rígidas",
+      "extended_wear": "Uso prolongado",
+      "toric": "Tórica",
+      "toricPlaceholder": "Especifique os detalhes da lente tórica"
     },
-    "previousEyeSurgeries": {
-      "label": "Cirurgias ou tratamentos oculares anteriores",
-      "placeholder": "Liste cirurgias oculares anteriores, tratamentos a laser, etc."
+    "q2": {
+      "label": "Último exame oftalmológico:",
+      "dateLabel": "Data ou período",
+      "datePlaceholder": "ex., Junho 2024 ou 6 meses atrás",
+      "doctorLabel": "Nome do médico",
+      "doctorPlaceholder": "Nome do médico/optometrista",
+      "clinicLabel": "Clínica",
+      "clinicPlaceholder": "Nome da clínica ou consultório",
+      "mayVerify": "Podem verificar meus registros"
     },
-    "currentMedications": {
-      "label": "Medicamentos atuais",
-      "placeholder": "Liste todos os medicamentos atuais, incluindo colírios"
+    "q3": {
+      "label": "Qual a idade da sua receita atual?",
+      "placeholder": "ex., 2 anos, 6 meses"
     },
-    "drugAllergies": {
-      "label": "Alergias a medicamentos",
-      "placeholder": "Liste quaisquer alergias conhecidas a medicamentos"
+    "q4": {
+      "label": "Sua receita mudou no último ano?",
+      "no": "Não",
+      "yes": "Sim",
+      "notSure": "Não tenho certeza"
     },
-    "hasDiabetes": {
-      "label": "Possui diabetes?",
-      "options": {
-        "select": "Selecione",
-        "yes": "Sim",
-        "no": "Não"
+    "q5": {
+      "label": "Você está experimentando algum dos seguintes sintomas atualmente? Marque todos que se aplicam.",
+      "symptoms": {
+        "pressure_pain": "Dor por pressão",
+        "sandy_sensation": "Sensação de areia",
+        "throbbing": "Latejamento",
+        "eyelid_crusting": "Crostas nas pálpebras",
+        "excessive_tearing": "Lacrimejamento excessivo",
+        "redness": "Vermelhidão",
+        "floaters": "Moscas volantes",
+        "mucous_discharge": "Secreção mucosa",
+        "light_sensitivity": "Sensibilidade à luz",
+        "flashing_lights": "Flashes de luz",
+        "itchiness": "Coceira",
+        "halos": "Halos",
+        "double_vision": "Visão dupla",
+        "loss_of_vision": "Perda de visão",
+        "blurry_vision": "Visão embaçada",
+        "dryness": "Ressecamento",
+        "burning_sensation": "Sensação de queimação"
       }
     },
-    "familyHistoryEyeDisease": {
-      "label": "Histórico familiar de doenças oculares?",
-      "options": {
-        "select": "Selecione",
-        "yes": "Sim",
-        "no": "Não"
+    "q6": {
+      "label": "Você já teve alguma lesão ocular?",
+      "no": "Não",
+      "yes": "Sim",
+      "detailsPlaceholder": "Descreva a lesão, em qual olho e quando ocorreu"
+    },
+    "q7": {
+      "label": "Você já fez alguma cirurgia ocular ou tratamento a laser?",
+      "no": "Não",
+      "yes": "Sim",
+      "detailsPlaceholder": "Liste o tipo, qual olho e quando"
+    },
+    "q8": {
+      "label": "Você está sendo tratado atualmente por alguma condição médica? Marque todas que se aplicam.",
+      "conditions": {
+        "diabetes": "Diabetes",
+        "heart_disease": "Doença cardíaca",
+        "hypertension": "Hipertensão",
+        "high_cholesterol": "Colesterol alto",
+        "stroke": "Acidente vascular cerebral",
+        "arthritis": "Artrite",
+        "lupus": "Lúpus",
+        "thyroid_disease": "Doença da tireoide",
+        "anemia": "Anemia",
+        "kidney_disease": "Doença renal",
+        "tuberculosis": "Tuberculose",
+        "cancer": "Câncer",
+        "asthma": "Asma"
+      },
+      "otherLabel": "Outras condições",
+      "otherPlaceholder": "Liste outras condições não mencionadas acima"
+    },
+    "q9": {
+      "label": "Você está usando algum medicamento atualmente? Liste nome e instruções.",
+      "placeholder": "Liste todos os medicamentos atuais, dosagens e instruções"
+    },
+    "q10": {
+      "label": "Você tem alguma alergia a medicamentos, alimentos ou drogas?",
+      "yes": "Sim",
+      "no": "Não",
+      "detailsPlaceholder": "Liste o tipo e as reações"
+    },
+    "q11": {
+      "label": "Algum familiar tem histórico de alguma das seguintes condições? Marque todas que se aplicam.",
+      "conditions": {
+        "glaucoma": "Glaucoma",
+        "cataracts": "Cataratas",
+        "macular_degeneration": "Degeneração macular",
+        "retinal_detachment": "Descolamento de retina",
+        "blindness": "Cegueira",
+        "diabetes": "Diabetes",
+        "hypertension": "Hipertensão",
+        "heart_disease": "Doença cardíaca",
+        "cancer": "Câncer"
       }
     }
   },

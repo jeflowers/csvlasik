@@ -54,36 +54,118 @@
   },
 
   "medicalHistory": {
-    "currentEyeConditions": {
-      "label": "Bạn hiện có tình trạng mắt nào không?",
-      "placeholder": "Liệt kê các tình trạng hoặc lo ngại về mắt hiện tại"
+    "sectionTitle": "Lịch Sử Mắt / Y Khoa",
+    "sectionSubtitle": "Vui lòng trả lời các câu hỏi sau đây chính xác nhất có thể",
+    "generalHealthTitle": "Sức Khỏe Tổng Quát",
+    "generalHealthSubtitle": "Tình trạng bệnh, thuốc và dị ứng",
+
+    "q1": {
+      "label": "Bạn có đeo:",
+      "glasses": "Kính mắt",
+      "contacts": "Kính áp tròng",
+      "contactTypeLabel": "Loại kính áp tròng:",
+      "soft": "Kính mềm",
+      "hard": "Kính cứng",
+      "extended_wear": "Đeo dài hạn",
+      "toric": "Toric",
+      "toricPlaceholder": "Vui lòng ghi rõ chi tiết kính toric"
     },
-    "previousEyeSurgeries": {
-      "label": "Các phẫu thuật hoặc điều trị mắt trước đây",
-      "placeholder": "Liệt kê các phẫu thuật mắt, điều trị laser trước đây, v.v."
+    "q2": {
+      "label": "Lần khám mắt gần nhất:",
+      "dateLabel": "Ngày hoặc khoảng thời gian",
+      "datePlaceholder": "ví dụ: Tháng 6/2024 hoặc 6 tháng trước",
+      "doctorLabel": "Tên bác sĩ",
+      "doctorPlaceholder": "Tên bác sĩ/nhãn khoa",
+      "clinicLabel": "Phòng khám",
+      "clinicPlaceholder": "Tên phòng khám hoặc bệnh viện",
+      "mayVerify": "Bạn có thể xác minh hồ sơ của tôi"
     },
-    "currentMedications": {
-      "label": "Thuốc đang dùng",
-      "placeholder": "Liệt kê tất cả thuốc đang dùng bao gồm thuốc nhỏ mắt"
+    "q3": {
+      "label": "Đơn thuốc hiện tại của bạn đã bao lâu?",
+      "placeholder": "ví dụ: 2 năm, 6 tháng"
     },
-    "drugAllergies": {
-      "label": "Dị ứng thuốc",
-      "placeholder": "Liệt kê các dị ứng thuốc đã biết"
+    "q4": {
+      "label": "Đơn thuốc của bạn có thay đổi trong năm qua không?",
+      "no": "Không",
+      "yes": "Có",
+      "notSure": "Không chắc"
     },
-    "hasDiabetes": {
-      "label": "Bạn có bị tiểu đường không?",
-      "options": {
-        "select": "Chọn",
-        "yes": "Có",
-        "no": "Không"
+    "q5": {
+      "label": "Bạn có đang gặp bất kỳ triệu chứng nào sau đây không? Đánh dấu tất cả các mục phù hợp.",
+      "symptoms": {
+        "pressure_pain": "Đau do áp lực",
+        "sandy_sensation": "Cảm giác cát trong mắt",
+        "throbbing": "Nhức nhối",
+        "eyelid_crusting": "Đóng vảy mi mắt",
+        "excessive_tearing": "Chảy nước mắt quá nhiều",
+        "redness": "Đỏ mắt",
+        "floaters": "Ruồi bay",
+        "mucous_discharge": "Tiết dịch nhầy",
+        "light_sensitivity": "Nhạy cảm với ánh sáng",
+        "flashing_lights": "Nhấp nháy ánh sáng",
+        "itchiness": "Ngứa",
+        "halos": "Quầng sáng",
+        "double_vision": "Nhìn đôi",
+        "loss_of_vision": "Mất thị lực",
+        "blurry_vision": "Nhìn mờ",
+        "dryness": "Khô mắt",
+        "burning_sensation": "Cảm giác rát bỏng"
       }
     },
-    "familyHistoryEyeDisease": {
-      "label": "Tiền sử gia đình có bệnh mắt?",
-      "options": {
-        "select": "Chọn",
-        "yes": "Có",
-        "no": "Không"
+    "q6": {
+      "label": "Bạn có bị chấn thương mắt bao giờ không?",
+      "no": "Không",
+      "yes": "Có",
+      "detailsPlaceholder": "Mô tả chấn thương, mắt nào và khi nào xảy ra"
+    },
+    "q7": {
+      "label": "Bạn có từng phẫu thuật mắt hoặc điều trị laser không?",
+      "no": "Không",
+      "yes": "Có",
+      "detailsPlaceholder": "Liệt kê loại, mắt nào và khi nào"
+    },
+    "q8": {
+      "label": "Bạn có đang được điều trị bệnh gì không? Đánh dấu tất cả các mục phù hợp.",
+      "conditions": {
+        "diabetes": "Tiểu đường",
+        "heart_disease": "Bệnh tim",
+        "hypertension": "Huyết áp cao",
+        "high_cholesterol": "Cholesterol cao",
+        "stroke": "Đột quỵ",
+        "arthritis": "Viêm khớp",
+        "lupus": "Lupus",
+        "thyroid_disease": "Bệnh tuyến giáp",
+        "anemia": "Thiếu máu",
+        "kidney_disease": "Bệnh thận",
+        "tuberculosis": "Lao phổi",
+        "cancer": "Ung thư",
+        "asthma": "Hen suyễn"
+      },
+      "otherLabel": "Bệnh khác",
+      "otherPlaceholder": "Liệt kê các bệnh khác không nêu ở trên"
+    },
+    "q9": {
+      "label": "Bạn có đang dùng thuốc gì không? Liệt kê tên và hướng dẫn.",
+      "placeholder": "Liệt kê tất cả thuốc đang dùng, liều lượng và hướng dẫn"
+    },
+    "q10": {
+      "label": "Bạn có dị ứng với thuốc, thực phẩm hoặc ma túy không?",
+      "yes": "Có",
+      "no": "Không",
+      "detailsPlaceholder": "Liệt kê loại và phản ứng"
+    },
+    "q11": {
+      "label": "Thành viên gia đình có tiền sử bệnh nào sau đây không? Đánh dấu tất cả các mục phù hợp.",
+      "conditions": {
+        "glaucoma": "Cườm nước",
+        "cataracts": "Đục thủy tinh thể",
+        "macular_degeneration": "Thoái hóa điểm vàng",
+        "retinal_detachment": "Bong võng mạc",
+        "blindness": "Mù lòa",
+        "diabetes": "Tiểu đường",
+        "hypertension": "Huyết áp cao",
+        "heart_disease": "Bệnh tim",
+        "cancer": "Ung thư"
       }
     }
   },

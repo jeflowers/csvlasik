@@ -54,36 +54,118 @@
   },
 
   "medicalHistory": {
-    "currentEyeConditions": {
-      "label": "Mayroon ka bang kasalukuyang kondisyon sa mata?",
-      "placeholder": "Ilista ang anumang kasalukuyang kondisyon o alalahanin sa mata"
+    "sectionTitle": "Kasaysayan ng Mata / Medikal",
+    "sectionSubtitle": "Mangyaring sagutin ang sumusunod nang tumpak hangga't maaari",
+    "generalHealthTitle": "Pangkalahatang Kalusugan",
+    "generalHealthSubtitle": "Mga kondisyong medikal, gamot at alerhiya",
+
+    "q1": {
+      "label": "Gumagamit ka ba ng:",
+      "glasses": "Salamin sa mata",
+      "contacts": "Contact lenses",
+      "contactTypeLabel": "Uri ng contact lens:",
+      "soft": "Malambot na Contact",
+      "hard": "Matigas na Contact",
+      "extended_wear": "Extended Wear",
+      "toric": "Toric",
+      "toricPlaceholder": "Tukuyin ang mga detalye ng toric lens"
     },
-    "previousEyeSurgeries": {
-      "label": "Mga nakaraang operasyon o paggamot sa mata",
-      "placeholder": "Ilista ang mga nakaraang operasyon sa mata, laser treatment, atbp."
+    "q2": {
+      "label": "Huling eksaminasyon sa mata:",
+      "dateLabel": "Petsa o panahon",
+      "datePlaceholder": "hal., Hunyo 2024 o 6 na buwan ang nakalipas",
+      "doctorLabel": "Pangalan ng doktor",
+      "doctorPlaceholder": "Pangalan ng doktor/optometrist",
+      "clinicLabel": "Klinika",
+      "clinicPlaceholder": "Pangalan ng klinika o ospital",
+      "mayVerify": "Maaari ninyong i-verify ang aking mga rekord"
     },
-    "currentMedications": {
-      "label": "Kasalukuyang mga gamot",
-      "placeholder": "Ilista ang lahat ng kasalukuyang gamot kasama ang eye drops"
+    "q3": {
+      "label": "Gaano kaluma ang kasalukuyan mong reseta?",
+      "placeholder": "hal., 2 taon, 6 na buwan"
     },
-    "drugAllergies": {
-      "label": "Alerdyi sa gamot",
-      "placeholder": "Ilista ang anumang kilalang alerdyi sa gamot"
+    "q4": {
+      "label": "Nagbago ba ang iyong reseta sa nakaraang taon?",
+      "no": "Hindi",
+      "yes": "Oo",
+      "notSure": "Hindi sigurado"
     },
-    "hasDiabetes": {
-      "label": "Mayroon ka bang diabetes?",
-      "options": {
-        "select": "Pumili",
-        "yes": "Oo",
-        "no": "Hindi"
+    "q5": {
+      "label": "Nararanasan mo ba ang alinman sa mga sumusunod na sintomas? Lagyan ng tsek ang lahat ng naaangkop.",
+      "symptoms": {
+        "pressure_pain": "Sakit mula sa presyon",
+        "sandy_sensation": "Pakiramdam na may buhangin",
+        "throbbing": "Titibok-tibok na sakit",
+        "eyelid_crusting": "Kumukulubot na talukap",
+        "excessive_tearing": "Labis na pagluluha",
+        "redness": "Pamumula",
+        "floaters": "Mga lumulutang",
+        "mucous_discharge": "Malagkit na dumi",
+        "light_sensitivity": "Sensitibo sa liwanag",
+        "flashing_lights": "Kumikislap na liwanag",
+        "itchiness": "Pangangati",
+        "halos": "Mga halo",
+        "double_vision": "Dobleng paningin",
+        "loss_of_vision": "Pagkawala ng paningin",
+        "blurry_vision": "Malabo ang paningin",
+        "dryness": "Pagkatuyo",
+        "burning_sensation": "Nasusunog na pakiramdam"
       }
     },
-    "familyHistoryEyeDisease": {
-      "label": "Kasaysayan ng sakit sa mata sa pamilya?",
-      "options": {
-        "select": "Pumili",
-        "yes": "Oo",
-        "no": "Hindi"
+    "q6": {
+      "label": "Nagkaroon ka ba ng anumang pinsala sa mata?",
+      "no": "Hindi",
+      "yes": "Oo",
+      "detailsPlaceholder": "Ilarawan ang pinsala, aling mata at kailan nangyari"
+    },
+    "q7": {
+      "label": "Nagkaroon ka ba ng operasyon sa mata o laser treatment?",
+      "no": "Hindi",
+      "yes": "Oo",
+      "detailsPlaceholder": "Ilista ang uri, aling mata at kailan"
+    },
+    "q8": {
+      "label": "Kasalukuyan ka bang ginagamot sa anumang kondisyong medikal? Lagyan ng tsek ang lahat ng naaangkop.",
+      "conditions": {
+        "diabetes": "Diabetes",
+        "heart_disease": "Sakit sa puso",
+        "hypertension": "Altapresyon",
+        "high_cholesterol": "Mataas na kolesterol",
+        "stroke": "Stroke",
+        "arthritis": "Arthritis",
+        "lupus": "Lupus",
+        "thyroid_disease": "Sakit sa thyroid",
+        "anemia": "Anemia",
+        "kidney_disease": "Sakit sa bato",
+        "tuberculosis": "Tuberculosis",
+        "cancer": "Kanser",
+        "asthma": "Hika"
+      },
+      "otherLabel": "Ibang kondisyon",
+      "otherPlaceholder": "Ilista ang ibang kondisyon na wala sa itaas"
+    },
+    "q9": {
+      "label": "Gumagamit ka ba ng anumang gamot sa kasalukuyan? Ilista ang pangalan at tagubilin.",
+      "placeholder": "Ilista ang lahat ng kasalukuyang gamot, dosis at tagubilin"
+    },
+    "q10": {
+      "label": "Mayroon ka bang alerhiya sa gamot, pagkain o droga?",
+      "yes": "Oo",
+      "no": "Hindi",
+      "detailsPlaceholder": "Ilista ang uri at reaksyon"
+    },
+    "q11": {
+      "label": "Mayroon bang miyembro ng pamilya na may kasaysayan ng alinman sa mga sumusunod? Lagyan ng tsek ang lahat ng naaangkop.",
+      "conditions": {
+        "glaucoma": "Glaucoma",
+        "cataracts": "Katarata",
+        "macular_degeneration": "Macular Degeneration",
+        "retinal_detachment": "Retinal Detachment",
+        "blindness": "Pagkabulag",
+        "diabetes": "Diabetes",
+        "hypertension": "Altapresyon",
+        "heart_disease": "Sakit sa puso",
+        "cancer": "Kanser"
       }
     }
   },

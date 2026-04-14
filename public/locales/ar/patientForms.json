@@ -54,36 +54,118 @@
   },
 
   "medicalHistory": {
-    "currentEyeConditions": {
-      "label": "هل لديك حالياً أي حالات في العين؟",
-      "placeholder": "اذكر أي حالات أو مخاوف حالية في العين"
+    "sectionTitle": "التاريخ الطبي للعيون",
+    "sectionSubtitle": "يرجى الإجابة بأكبر قدر ممكن من الدقة",
+    "generalHealthTitle": "الصحة العامة",
+    "generalHealthSubtitle": "الحالات الطبية والأدوية والحساسية",
+
+    "q1": {
+      "label": "هل ترتدي:",
+      "glasses": "نظارات",
+      "contacts": "عدسات لاصقة",
+      "contactTypeLabel": "نوع العدسات اللاصقة:",
+      "soft": "عدسات لينة",
+      "hard": "عدسات صلبة",
+      "extended_wear": "ارتداء ممتد",
+      "toric": "توريك",
+      "toricPlaceholder": "يرجى تحديد تفاصيل عدسات التوريك"
     },
-    "previousEyeSurgeries": {
-      "label": "جراحات أو علاجات سابقة للعين",
-      "placeholder": "اذكر أي جراحات عين سابقة، علاجات بالليزر، إلخ."
+    "q2": {
+      "label": "آخر فحص للعيون:",
+      "dateLabel": "التاريخ أو الفترة الزمنية",
+      "datePlaceholder": "مثال: يونيو 2024 أو قبل 6 أشهر",
+      "doctorLabel": "اسم الطبيب",
+      "doctorPlaceholder": "اسم الطبيب/أخصائي البصريات",
+      "clinicLabel": "العيادة",
+      "clinicPlaceholder": "اسم العيادة أو المركز",
+      "mayVerify": "يمكنكم التحقق من سجلاتي"
     },
-    "currentMedications": {
-      "label": "الأدوية الحالية",
-      "placeholder": "اذكر جميع الأدوية الحالية بما في ذلك قطرات العين"
+    "q3": {
+      "label": "كم عمر وصفتك الطبية الحالية؟",
+      "placeholder": "مثال: سنتان، 6 أشهر"
     },
-    "drugAllergies": {
-      "label": "الحساسية من الأدوية",
-      "placeholder": "اذكر أي حساسية معروفة من الأدوية"
+    "q4": {
+      "label": "هل تغيرت وصفتك الطبية خلال العام الماضي؟",
+      "no": "لا",
+      "yes": "نعم",
+      "notSure": "غير متأكد"
     },
-    "hasDiabetes": {
-      "label": "هل لديك مرض السكري؟",
-      "options": {
-        "select": "اختر",
-        "yes": "نعم",
-        "no": "لا"
+    "q5": {
+      "label": "هل تعاني حالياً من أي من الأعراض التالية؟ حدد كل ما ينطبق.",
+      "symptoms": {
+        "pressure_pain": "ألم ضغطي",
+        "sandy_sensation": "إحساس بالرمل",
+        "throbbing": "خفقان",
+        "eyelid_crusting": "تقشر الجفون",
+        "excessive_tearing": "دموع مفرطة",
+        "redness": "احمرار",
+        "floaters": "عوائم",
+        "mucous_discharge": "إفرازات مخاطية",
+        "light_sensitivity": "حساسية للضوء",
+        "flashing_lights": "ومضات ضوئية",
+        "itchiness": "حكة",
+        "halos": "هالات",
+        "double_vision": "رؤية مزدوجة",
+        "loss_of_vision": "فقدان البصر",
+        "blurry_vision": "رؤية ضبابية",
+        "dryness": "جفاف",
+        "burning_sensation": "إحساس بالحرقة"
       }
     },
-    "familyHistoryEyeDisease": {
-      "label": "تاريخ عائلي لأمراض العيون؟",
-      "options": {
-        "select": "اختر",
-        "yes": "نعم",
-        "no": "لا"
+    "q6": {
+      "label": "هل تعرضت لأي إصابات في العين؟",
+      "no": "لا",
+      "yes": "نعم",
+      "detailsPlaceholder": "صف الإصابة وأي عين وتاريخ الحدث"
+    },
+    "q7": {
+      "label": "هل أجريت أي عملية جراحية للعين أو علاج بالليزر؟",
+      "no": "لا",
+      "yes": "نعم",
+      "detailsPlaceholder": "اذكر النوع وأي عين ومتى"
+    },
+    "q8": {
+      "label": "هل تتلقى حالياً علاجاً لأي حالة طبية؟ حدد كل ما ينطبق.",
+      "conditions": {
+        "diabetes": "السكري",
+        "heart_disease": "أمراض القلب",
+        "hypertension": "ارتفاع ضغط الدم",
+        "high_cholesterol": "ارتفاع الكوليسترول",
+        "stroke": "السكتة الدماغية",
+        "arthritis": "التهاب المفاصل",
+        "lupus": "الذئبة",
+        "thyroid_disease": "أمراض الغدة الدرقية",
+        "anemia": "فقر الدم",
+        "kidney_disease": "أمراض الكلى",
+        "tuberculosis": "السل",
+        "cancer": "السرطان",
+        "asthma": "الربو"
+      },
+      "otherLabel": "حالات أخرى",
+      "otherPlaceholder": "اذكر أي حالات أخرى غير مدرجة أعلاه"
+    },
+    "q9": {
+      "label": "هل تستخدم حالياً أي أدوية؟ اذكر الاسم والتعليمات.",
+      "placeholder": "اذكر جميع الأدوية الحالية والجرعات والتعليمات"
+    },
+    "q10": {
+      "label": "هل لديك أي حساسية تجاه الأدوية أو الطعام أو العقاقير؟",
+      "yes": "نعم",
+      "no": "لا",
+      "detailsPlaceholder": "اذكر النوع وردود الفعل"
+    },
+    "q11": {
+      "label": "هل لدى أي فرد من العائلة تاريخ في أي مما يلي؟ حدد كل ما ينطبق.",
+      "conditions": {
+        "glaucoma": "الزرق (الجلوكوما)",
+        "cataracts": "إعتام العدسة",
+        "macular_degeneration": "تنكس البقعة الصفراء",
+        "retinal_detachment": "انفصال الشبكية",
+        "blindness": "العمى",
+        "diabetes": "السكري",
+        "hypertension": "ارتفاع ضغط الدم",
+        "heart_disease": "أمراض القلب",
+        "cancer": "السرطان"
       }
     }
   },

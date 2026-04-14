@@ -54,36 +54,118 @@
   },
 
   "medicalHistory": {
-    "currentEyeConditions": {
-      "label": "Do you currently have any eye conditions?",
-      "placeholder": "List any current eye conditions or concerns"
+    "sectionTitle": "Eye / Medical History",
+    "sectionSubtitle": "Please answer the following as accurately as possible",
+    "generalHealthTitle": "General Health",
+    "generalHealthSubtitle": "Medical conditions, medications, and allergies",
+
+    "q1": {
+      "label": "Do you wear:",
+      "glasses": "Glasses",
+      "contacts": "Contacts",
+      "contactTypeLabel": "Contact lens type:",
+      "soft": "Soft Contacts",
+      "hard": "Hard Contacts",
+      "extended_wear": "Extended Wear",
+      "toric": "Toric",
+      "toricPlaceholder": "Please specify toric lens details"
     },
-    "previousEyeSurgeries": {
-      "label": "Previous eye surgeries or treatments",
-      "placeholder": "List any past eye surgeries, laser treatments, etc."
+    "q2": {
+      "label": "Last eye exam:",
+      "dateLabel": "Date or time frame",
+      "datePlaceholder": "e.g., June 2024 or 6 months ago",
+      "doctorLabel": "Doctor name",
+      "doctorPlaceholder": "Name of doctor/optometrist",
+      "clinicLabel": "Clinic",
+      "clinicPlaceholder": "Clinic or practice name",
+      "mayVerify": "You may verify my records"
     },
-    "currentMedications": {
-      "label": "Current medications",
-      "placeholder": "List all current medications including eye drops"
+    "q3": {
+      "label": "How old is your current prescription?",
+      "placeholder": "e.g., 2 years, 6 months"
     },
-    "drugAllergies": {
-      "label": "Drug allergies",
-      "placeholder": "List any known drug allergies"
+    "q4": {
+      "label": "Has your prescription changed within the past year?",
+      "no": "No",
+      "yes": "Yes",
+      "notSure": "Not Sure"
     },
-    "hasDiabetes": {
-      "label": "Do you have diabetes?",
-      "options": {
-        "select": "Select",
-        "yes": "Yes",
-        "no": "No"
+    "q5": {
+      "label": "Are you currently experiencing any of the following symptoms? Check all that apply.",
+      "symptoms": {
+        "pressure_pain": "Pressure Pain",
+        "sandy_sensation": "Sandy Sensation",
+        "throbbing": "Throbbing",
+        "eyelid_crusting": "Eyelid Crusting",
+        "excessive_tearing": "Excessive Tearing",
+        "redness": "Redness",
+        "floaters": "Floaters",
+        "mucous_discharge": "Mucous Discharge",
+        "light_sensitivity": "Light Sensitivity",
+        "flashing_lights": "Flashing Lights",
+        "itchiness": "Itchiness",
+        "halos": "Halos",
+        "double_vision": "Double Vision",
+        "loss_of_vision": "Loss of Vision",
+        "blurry_vision": "Blurry Vision",
+        "dryness": "Dryness",
+        "burning_sensation": "Burning Sensation"
       }
     },
-    "familyHistoryEyeDisease": {
-      "label": "Family history of eye disease?",
-      "options": {
-        "select": "Select",
-        "yes": "Yes",
-        "no": "No"
+    "q6": {
+      "label": "Have you had any eye injuries?",
+      "no": "No",
+      "yes": "Yes",
+      "detailsPlaceholder": "Please describe the injury, which eye, and when it occurred"
+    },
+    "q7": {
+      "label": "Have you had any eye surgery or laser treatments?",
+      "no": "No",
+      "yes": "Yes",
+      "detailsPlaceholder": "Please list type, which eye, and when"
+    },
+    "q8": {
+      "label": "Are you currently being treated for any medical conditions? Check all that apply.",
+      "conditions": {
+        "diabetes": "Diabetes",
+        "heart_disease": "Heart Disease",
+        "hypertension": "Hypertension",
+        "high_cholesterol": "High Cholesterol",
+        "stroke": "Stroke",
+        "arthritis": "Arthritis",
+        "lupus": "Lupus",
+        "thyroid_disease": "Thyroid Disease",
+        "anemia": "Anemia",
+        "kidney_disease": "Kidney Disease",
+        "tuberculosis": "Tuberculosis",
+        "cancer": "Cancer",
+        "asthma": "Asthma"
+      },
+      "otherLabel": "Other conditions",
+      "otherPlaceholder": "List any other conditions not listed above"
+    },
+    "q9": {
+      "label": "Are you currently using any medications? Please list name and instructions.",
+      "placeholder": "List all current medications, dosages, and instructions"
+    },
+    "q10": {
+      "label": "Do you have any medication, food, or drug allergies?",
+      "yes": "Yes",
+      "no": "No",
+      "detailsPlaceholder": "Please list type and reactions"
+    },
+    "q11": {
+      "label": "Does any family member(s) have a history of any of the following? Check all that apply.",
+      "conditions": {
+        "glaucoma": "Glaucoma",
+        "cataracts": "Cataracts",
+        "macular_degeneration": "Macular Degeneration",
+        "retinal_detachment": "Retinal Detachment",
+        "blindness": "Blindness",
+        "diabetes": "Diabetes",
+        "hypertension": "Hypertension",
+        "heart_disease": "Heart Disease",
+        "cancer": "Cancer"
       }
     }
   },

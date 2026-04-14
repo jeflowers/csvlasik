@@ -21,12 +21,17 @@ interface RegistrationRecord {
 
 interface MedicalHistoryRecord {
   id: string;
-  current_eye_conditions?: string;
-  previous_eye_surgeries?: string;
+  vision_correction?: { glasses?: boolean; contacts?: boolean; contactType?: string };
+  last_eye_exam_date?: string;
+  last_eye_exam_doctor?: string;
+  prescription_age?: string;
+  current_symptoms?: string[];
+  eye_injuries?: string;
+  eye_surgery_history?: string;
+  medical_conditions?: string[];
   current_medications?: string;
-  drug_allergies?: string;
-  has_diabetes?: boolean;
-  family_history_eye_disease?: boolean;
+  has_allergies?: string;
+  family_history_conditions?: string[];
   status: string;
   created_at: string;
 }
@@ -256,10 +261,20 @@ const PortalSubmissions: React.FC = () => {
                           <StatusBadge status={m.status} />
                         </div>
                         <div className="grid grid-cols-1 gap-y-1 text-xs text-gray-500">
-                          {m.current_eye_conditions && <span>Eye Conditions: {m.current_eye_conditions}</span>}
+                          {m.vision_correction && (
+                            <span>
+                              Vision: {[m.vision_correction.glasses && 'Glasses', m.vision_correction.contacts && 'Contacts'].filter(Boolean).join(', ') || 'None'}
+                            </span>
+                          )}
+                          {m.last_eye_exam_date && <span>Last Exam: {m.last_eye_exam_date}{m.last_eye_exam_doctor ? ` with Dr. ${m.last_eye_exam_doctor}` : ''}</span>}
+                          {m.current_symptoms && m.current_symptoms.length > 0 && (
+                            <span>Symptoms: {m.current_symptoms.length} reported</span>
+                          )}
+                          {m.medical_conditions && m.medical_conditions.length > 0 && (
+                            <span>Conditions: {m.medical_conditions.length} reported</span>
+                          )}
                           {m.current_medications && <span>Medications: {m.current_medications}</span>}
-                          {m.drug_allergies && <span>Allergies: {m.drug_allergies}</span>}
-                          <span>Diabetes: {m.has_diabetes === true ? 'Yes' : m.has_diabetes === false ? 'No' : 'Not specified'}</span>
+                          {m.has_allergies && <span>Allergies: {m.has_allergies === 'yes' ? 'Yes' : 'No'}</span>}
                         </div>
                         <p className="text-xs text-gray-400 mt-2">Submitted {formatDateTime(m.created_at)}</p>
                       </div>

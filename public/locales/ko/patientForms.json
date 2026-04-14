@@ -54,36 +54,118 @@
   },
 
   "medicalHistory": {
-    "currentEyeConditions": {
-      "label": "현재 눈 관련 질환이 있으십니까?",
-      "placeholder": "현재 눈 관련 질환이나 우려 사항을 기재해 주세요"
+    "sectionTitle": "안과 / 병력",
+    "sectionSubtitle": "가능한 정확하게 답변해 주세요",
+    "generalHealthTitle": "일반 건강",
+    "generalHealthSubtitle": "질환, 약물, 알레르기",
+
+    "q1": {
+      "label": "착용하시는 것:",
+      "glasses": "안경",
+      "contacts": "콘택트렌즈",
+      "contactTypeLabel": "콘택트렌즈 유형:",
+      "soft": "소프트 콘택트",
+      "hard": "하드 콘택트",
+      "extended_wear": "장기 착용",
+      "toric": "토릭",
+      "toricPlaceholder": "토릭 렌즈 세부 사항을 입력해 주세요"
     },
-    "previousEyeSurgeries": {
-      "label": "이전 눈 수술 또는 치료",
-      "placeholder": "과거 눈 수술, 레이저 치료 등을 기재해 주세요"
+    "q2": {
+      "label": "마지막 안과 검진:",
+      "dateLabel": "날짜 또는 시기",
+      "datePlaceholder": "예: 2024년 6월 또는 6개월 전",
+      "doctorLabel": "의사 이름",
+      "doctorPlaceholder": "의사/안과의사 이름",
+      "clinicLabel": "클리닉",
+      "clinicPlaceholder": "클리닉 또는 병원 이름",
+      "mayVerify": "기록을 확인해도 됩니다"
     },
-    "currentMedications": {
-      "label": "현재 복용 중인 약물",
-      "placeholder": "안약을 포함한 모든 현재 복용 약물을 기재해 주세요"
+    "q3": {
+      "label": "현재 처방전은 얼마나 오래되었습니까?",
+      "placeholder": "예: 2년, 6개월"
     },
-    "drugAllergies": {
-      "label": "약물 알레르기",
-      "placeholder": "알려진 약물 알레르기를 기재해 주세요"
+    "q4": {
+      "label": "지난 1년간 처방이 변경되었습니까?",
+      "no": "아니오",
+      "yes": "예",
+      "notSure": "확실하지 않음"
     },
-    "hasDiabetes": {
-      "label": "당뇨병이 있으십니까?",
-      "options": {
-        "select": "선택",
-        "yes": "예",
-        "no": "아니오"
+    "q5": {
+      "label": "현재 다음 증상 중 경험하고 있는 것이 있습니까? 해당하는 것을 모두 선택하세요.",
+      "symptoms": {
+        "pressure_pain": "압박 통증",
+        "sandy_sensation": "모래 느낌",
+        "throbbing": "욱신거림",
+        "eyelid_crusting": "눈꺼풀 딱지",
+        "excessive_tearing": "과도한 눈물",
+        "redness": "충혈",
+        "floaters": "비문증",
+        "mucous_discharge": "점액 분비물",
+        "light_sensitivity": "빛 민감도",
+        "flashing_lights": "번쩍이는 빛",
+        "itchiness": "가려움",
+        "halos": "빛 번짐",
+        "double_vision": "복시",
+        "loss_of_vision": "시력 저하",
+        "blurry_vision": "흐린 시야",
+        "dryness": "건조감",
+        "burning_sensation": "작열감"
       }
     },
-    "familyHistoryEyeDisease": {
-      "label": "눈 질환 가족력이 있으십니까?",
-      "options": {
-        "select": "선택",
-        "yes": "예",
-        "no": "아니오"
+    "q6": {
+      "label": "눈 부상을 입은 적이 있습니까?",
+      "no": "아니오",
+      "yes": "예",
+      "detailsPlaceholder": "부상 내용, 어느 눈인지, 언제 발생했는지 설명해 주세요"
+    },
+    "q7": {
+      "label": "눈 수술이나 레이저 치료를 받은 적이 있습니까?",
+      "no": "아니오",
+      "yes": "예",
+      "detailsPlaceholder": "유형, 어느 눈인지, 언제인지 기재해 주세요"
+    },
+    "q8": {
+      "label": "현재 치료 중인 질환이 있습니까? 해당하는 것을 모두 선택하세요.",
+      "conditions": {
+        "diabetes": "당뇨병",
+        "heart_disease": "심장병",
+        "hypertension": "고혈압",
+        "high_cholesterol": "고콜레스테롤",
+        "stroke": "뇌졸중",
+        "arthritis": "관절염",
+        "lupus": "루푸스",
+        "thyroid_disease": "갑상선 질환",
+        "anemia": "빈혈",
+        "kidney_disease": "신장 질환",
+        "tuberculosis": "결핵",
+        "cancer": "암",
+        "asthma": "천식"
+      },
+      "otherLabel": "기타 질환",
+      "otherPlaceholder": "위에 나열되지 않은 기타 질환을 기재해 주세요"
+    },
+    "q9": {
+      "label": "현재 복용 중인 약이 있습니까? 이름과 용법을 기재해 주세요.",
+      "placeholder": "모든 약물, 용량, 용법을 기재해 주세요"
+    },
+    "q10": {
+      "label": "약물, 음식, 약에 대한 알레르기가 있습니까?",
+      "yes": "예",
+      "no": "아니오",
+      "detailsPlaceholder": "종류와 반응을 기재해 주세요"
+    },
+    "q11": {
+      "label": "가족 중 다음 병력이 있는 분이 계십니까? 해당하는 것을 모두 선택하세요.",
+      "conditions": {
+        "glaucoma": "녹내장",
+        "cataracts": "백내장",
+        "macular_degeneration": "황반변성",
+        "retinal_detachment": "망막박리",
+        "blindness": "실명",
+        "diabetes": "당뇨병",
+        "hypertension": "고혈압",
+        "heart_disease": "심장병",
+        "cancer": "암"
       }
     }
   },

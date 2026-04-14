@@ -39,13 +39,32 @@ export interface PatientRegistrationFormData extends PatientRegistrationData {
 // Tab 2: Medical History
 // =====================================================
 
+export interface VisionCorrectionData {
+  glasses: boolean;
+  contacts: boolean;
+  contactType?: 'soft' | 'hard' | 'extended_wear' | 'toric' | '';
+  toricDetails?: string;
+}
+
 export interface MedicalHistoryData {
-  currentEyeConditions?: string;
-  previousEyeSurgeries?: string;
+  visionCorrection?: VisionCorrectionData;
+  lastEyeExamDate?: string;
+  lastEyeExamDoctor?: string;
+  lastEyeExamClinic?: string;
+  lastEyeExamMayVerify?: boolean;
+  prescriptionAge?: string;
+  prescriptionChangedPastYear?: 'no' | 'yes' | 'not_sure' | '';
+  currentSymptoms?: string[];
+  eyeInjuries?: 'no' | 'yes' | '';
+  eyeInjuriesDetails?: string;
+  eyeSurgeryHistory?: 'no' | 'yes' | '';
+  eyeSurgeryDetails?: string;
+  medicalConditions?: string[];
+  medicalConditionsOther?: string;
   currentMedications?: string;
-  drugAllergies?: string;
-  hasDiabetes?: boolean;
-  familyHistoryEyeDisease?: boolean;
+  hasAllergies?: 'yes' | 'no' | '';
+  allergiesDetails?: string;
+  familyHistoryConditions?: string[];
 }
 
 export interface MedicalHistoryFormData extends MedicalHistoryData {

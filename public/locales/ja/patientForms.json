@@ -54,36 +54,118 @@
   },
 
   "medicalHistory": {
-    "currentEyeConditions": {
-      "label": "現在、目の疾患はありますか？",
-      "placeholder": "現在の目の疾患や気になる症状をご記入ください"
+    "sectionTitle": "眼科・医療歴",
+    "sectionSubtitle": "できるだけ正確にご回答ください",
+    "generalHealthTitle": "一般的な健康状態",
+    "generalHealthSubtitle": "病状、薬、アレルギーについて",
+
+    "q1": {
+      "label": "使用しているもの：",
+      "glasses": "メガネ",
+      "contacts": "コンタクトレンズ",
+      "contactTypeLabel": "コンタクトレンズの種類：",
+      "soft": "ソフトコンタクト",
+      "hard": "ハードコンタクト",
+      "extended_wear": "連続装用",
+      "toric": "トーリック",
+      "toricPlaceholder": "トーリックレンズの詳細を入力してください"
     },
-    "previousEyeSurgeries": {
-      "label": "過去の目の手術や治療",
-      "placeholder": "過去の目の手術、レーザー治療などをご記入ください"
+    "q2": {
+      "label": "最後の眼科検診：",
+      "dateLabel": "日付または時期",
+      "datePlaceholder": "例：2024年6月または6ヶ月前",
+      "doctorLabel": "医師名",
+      "doctorPlaceholder": "医師/眼科医の名前",
+      "clinicLabel": "クリニック",
+      "clinicPlaceholder": "クリニックまたは診療所名",
+      "mayVerify": "記録を確認してもかまいません"
     },
-    "currentMedications": {
-      "label": "現在服用中の薬",
-      "placeholder": "点眼薬を含む、現在服用中のすべての薬をご記入ください"
+    "q3": {
+      "label": "現在の処方箋はどのくらい前のものですか？",
+      "placeholder": "例：2年、6ヶ月"
     },
-    "drugAllergies": {
-      "label": "薬物アレルギー",
-      "placeholder": "既知の薬物アレルギーをご記入ください"
+    "q4": {
+      "label": "過去1年間に処方箋は変更されましたか？",
+      "no": "いいえ",
+      "yes": "はい",
+      "notSure": "わかりません"
     },
-    "hasDiabetes": {
-      "label": "糖尿病はありますか？",
-      "options": {
-        "select": "選択",
-        "yes": "はい",
-        "no": "いいえ"
+    "q5": {
+      "label": "現在、以下の症状がありますか？該当するものすべてにチェックしてください。",
+      "symptoms": {
+        "pressure_pain": "圧迫痛",
+        "sandy_sensation": "砂が入ったような感覚",
+        "throbbing": "ズキズキする痛み",
+        "eyelid_crusting": "まぶたのかさぶた",
+        "excessive_tearing": "過度の涙",
+        "redness": "充血",
+        "floaters": "飛蚊症",
+        "mucous_discharge": "粘液性分泌物",
+        "light_sensitivity": "光過敏",
+        "flashing_lights": "光の点滅",
+        "itchiness": "かゆみ",
+        "halos": "ハロー",
+        "double_vision": "複視",
+        "loss_of_vision": "視力低下",
+        "blurry_vision": "ぼやけた視界",
+        "dryness": "乾燥",
+        "burning_sensation": "灼熱感"
       }
     },
-    "familyHistoryEyeDisease": {
-      "label": "目の疾患の家族歴はありますか？",
-      "options": {
-        "select": "選択",
-        "yes": "はい",
-        "no": "いいえ"
+    "q6": {
+      "label": "眼の怪我をしたことがありますか？",
+      "no": "いいえ",
+      "yes": "はい",
+      "detailsPlaceholder": "怪我の内容、どちらの目か、いつ起きたかを記載してください"
+    },
+    "q7": {
+      "label": "眼の手術またはレーザー治療を受けたことがありますか？",
+      "no": "いいえ",
+      "yes": "はい",
+      "detailsPlaceholder": "種類、どちらの目か、いつかを記載してください"
+    },
+    "q8": {
+      "label": "現在治療中の病気はありますか？該当するものすべてにチェックしてください。",
+      "conditions": {
+        "diabetes": "糖尿病",
+        "heart_disease": "心臓病",
+        "hypertension": "高血圧",
+        "high_cholesterol": "高コレステロール",
+        "stroke": "脳卒中",
+        "arthritis": "関節炎",
+        "lupus": "ループス",
+        "thyroid_disease": "甲状腺疾患",
+        "anemia": "貧血",
+        "kidney_disease": "腎臓病",
+        "tuberculosis": "結核",
+        "cancer": "がん",
+        "asthma": "喘息"
+      },
+      "otherLabel": "その他の病状",
+      "otherPlaceholder": "上記にない病状を記載してください"
+    },
+    "q9": {
+      "label": "現在使用中の薬はありますか？名前と用法を記載してください。",
+      "placeholder": "すべての薬、用量、用法を記載してください"
+    },
+    "q10": {
+      "label": "薬、食品、薬物にアレルギーはありますか？",
+      "yes": "はい",
+      "no": "いいえ",
+      "detailsPlaceholder": "種類と反応を記載してください"
+    },
+    "q11": {
+      "label": "ご家族に以下の病歴はありますか？該当するものすべてにチェックしてください。",
+      "conditions": {
+        "glaucoma": "緑内障",
+        "cataracts": "白内障",
+        "macular_degeneration": "黄斑変性",
+        "retinal_detachment": "網膜剥離",
+        "blindness": "失明",
+        "diabetes": "糖尿病",
+        "hypertension": "高血圧",
+        "heart_disease": "心臓病",
+        "cancer": "がん"
       }
     }
   },
