@@ -113,16 +113,12 @@ const RadioGroup: React.FC<RadioGroupProps> = ({ name, value, options, onChange 
 );
 
 interface QuestionCardProps {
-  number: number;
   children: React.ReactNode;
   className?: string;
 }
 
-const QuestionCard: React.FC<QuestionCardProps> = ({ number, children, className = '' }) => (
-  <div className={`relative bg-white rounded-xl border border-gray-200 p-5 sm:p-6 hover:border-gray-300 transition-colors ${className}`}>
-    <div className="absolute -top-3 left-4 bg-teal-600 text-white text-xs font-bold px-2.5 py-0.5 rounded-full">
-      {number}
-    </div>
+const QuestionCard: React.FC<QuestionCardProps> = ({ children, className = '' }) => (
+  <div className={`bg-white rounded-xl border border-gray-200 p-5 sm:p-6 hover:border-gray-300 transition-colors ${className}`}>
     {children}
   </div>
 );
@@ -198,7 +194,7 @@ const MedicalHistoryForm: React.FC = () => {
         </div>
       )}
 
-      <QuestionCard number={1}>
+      <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q1.label')}</p>
         <div className="space-y-3">
           <div className="flex flex-wrap gap-4">
@@ -254,7 +250,7 @@ const MedicalHistoryForm: React.FC = () => {
         </div>
       </QuestionCard>
 
-      <QuestionCard number={2}>
+      <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q2.label')}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
@@ -301,7 +297,7 @@ const MedicalHistoryForm: React.FC = () => {
         </div>
       </QuestionCard>
 
-      <QuestionCard number={3}>
+      <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q3.label')}</p>
         <input
           type="text"
@@ -312,7 +308,7 @@ const MedicalHistoryForm: React.FC = () => {
         />
       </QuestionCard>
 
-      <QuestionCard number={4}>
+      <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q4.label')}</p>
         <RadioGroup
           name="prescriptionChanged"
@@ -326,7 +322,7 @@ const MedicalHistoryForm: React.FC = () => {
         />
       </QuestionCard>
 
-      <QuestionCard number={5}>
+      <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q5.label')}</p>
         <CheckboxGroup
           items={SYMPTOMS}
@@ -337,7 +333,7 @@ const MedicalHistoryForm: React.FC = () => {
         />
       </QuestionCard>
 
-      <QuestionCard number={6}>
+      <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q6.label')}</p>
         <RadioGroup
           name="eyeInjuries"
@@ -359,7 +355,7 @@ const MedicalHistoryForm: React.FC = () => {
         )}
       </QuestionCard>
 
-      <QuestionCard number={7}>
+      <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q7.label')}</p>
         <RadioGroup
           name="eyeSurgery"
@@ -391,7 +387,7 @@ const MedicalHistoryForm: React.FC = () => {
         </div>
       </div>
 
-      <QuestionCard number={8}>
+      <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q8.label')}</p>
         <CheckboxGroup
           items={MEDICAL_CONDITIONS}
@@ -412,7 +408,7 @@ const MedicalHistoryForm: React.FC = () => {
         </div>
       </QuestionCard>
 
-      <QuestionCard number={9}>
+      <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q9.label')}</p>
         <textarea
           value={formData.currentMedications || ''}
@@ -423,7 +419,7 @@ const MedicalHistoryForm: React.FC = () => {
         />
       </QuestionCard>
 
-      <QuestionCard number={10}>
+      <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q10.label')}</p>
         <RadioGroup
           name="hasAllergies"
@@ -445,7 +441,7 @@ const MedicalHistoryForm: React.FC = () => {
         )}
       </QuestionCard>
 
-      <QuestionCard number={11}>
+      <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q11.label')}</p>
         <CheckboxGroup
           items={FAMILY_CONDITIONS}
