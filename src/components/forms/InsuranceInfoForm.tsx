@@ -57,6 +57,10 @@ const InsuranceInfoForm: React.FC = () => {
 
   const showAccountFields = formData.hasHsaFsa === 'hsa' || formData.hasHsaFsa === 'fsa' || formData.hasHsaFsa === 'both';
 
+  const isFormValid =
+    formData.hasHsaFsa !== '' &&
+    formData.interestedInPaymentPlan !== '';
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {submitSuccess && (
@@ -224,7 +228,7 @@ const InsuranceInfoForm: React.FC = () => {
 
       <button
         type="submit"
-        disabled={isSubmitting}
+        disabled={isSubmitting || !isFormValid}
         className="w-full bg-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-teal-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
       >
         {isSubmitting ? t('buttons.submitting') : t('buttons.submitForm')}

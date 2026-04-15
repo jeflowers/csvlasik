@@ -68,6 +68,12 @@ const ConsentForm: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const isFormValid =
+    formData.hipaaPrivacyAcknowledgment &&
+    formData.consentToTreatment &&
+    formData.patientSignature.trim().length >= 2 &&
+    formData.signatureDate !== '';
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitError('');
@@ -234,7 +240,7 @@ const ConsentForm: React.FC = () => {
       {/* Submit Button */}
       <button
         type="submit"
-        disabled={isSubmitting}
+        disabled={isSubmitting || !isFormValid}
         className="w-full bg-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-teal-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
       >
         {isSubmitting ? t('buttons.submitting') : t('buttons.submitForm')}
