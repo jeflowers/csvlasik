@@ -6,7 +6,7 @@
   "tabs": {
     "registration": "New Patient Registration",
     "medicalHistory": "Medical History",
-    "insuranceInfo": "Insurance Info",
+    "insuranceInfo": "HSA / FSA Info",
     "consent": "Consent Forms"
   },
 
@@ -171,36 +171,42 @@
     }
   },
 
-  "insuranceInfo": {
-    "insuranceProvider": {
-      "label": "Insurance Provider",
-      "placeholder": "e.g., Blue Cross Blue Shield"
+  "hsaFsa": {
+    "notice": {
+      "title": "LASIK is typically not covered by insurance",
+      "body": "However, you can use your HSA (Health Savings Account) or FSA (Flexible Spending Account) funds to pay for LASIK. We also offer flexible payment plans."
     },
-    "policyNumber": {
-      "label": "Policy Number",
-      "placeholder": "Policy number"
-    },
-    "groupNumber": {
-      "label": "Group Number",
-      "placeholder": "Group number"
-    },
-    "policyholderName": {
-      "label": "Policyholder Name",
-      "placeholder": "Name on policy"
-    },
-    "relationshipToPatient": {
-      "label": "Relationship to Patient",
+    "hasAccount": {
+      "label": "Do you have an HSA or FSA account?",
       "options": {
-        "select": "Select",
-        "self": "Self",
-        "spouse": "Spouse",
-        "parent": "Parent",
-        "other": "Other"
+        "hsa": "HSA Only",
+        "fsa": "FSA Only",
+        "both": "Both",
+        "none": "Neither"
       }
     },
-    "secondaryInsurance": {
-      "label": "Secondary Insurance (if applicable)",
-      "placeholder": "Secondary insurance provider"
+    "provider": {
+      "label": "HSA / FSA Provider",
+      "placeholder": "e.g., Fidelity, HealthEquity, WageWorks"
+    },
+    "accountHolder": {
+      "label": "Account Holder Name",
+      "placeholder": "Name on the account"
+    },
+    "estimatedBalance": {
+      "label": "Estimated Available Balance (optional)",
+      "placeholder": "e.g., $2,500"
+    },
+    "paymentPlan": {
+      "label": "Are you interested in learning about our payment plans?",
+      "options": {
+        "yes": "Yes, tell me more",
+        "no": "No, thank you"
+      }
+    },
+    "additionalNotes": {
+      "label": "Questions or Notes",
+      "placeholder": "Any questions about financing your procedure?"
     }
   },
 
@@ -242,7 +248,7 @@
   "success": {
     "registration": "Registration submitted successfully! Our team will contact you soon.",
     "medicalHistory": "Medical history submitted successfully!",
-    "insuranceInfo": "Insurance information submitted successfully!",
+    "insuranceInfo": "HSA/FSA information submitted successfully!",
     "consent": "Consent forms submitted successfully! Thank you for completing all forms."
   },
 

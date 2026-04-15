@@ -77,16 +77,16 @@ export interface MedicalHistoryFormData extends MedicalHistoryData {
 }
 
 // =====================================================
-// Tab 3: Insurance Information
+// Tab 3: HSA / FSA Information
 // =====================================================
 
 export interface InsuranceInfoData {
-  insuranceProvider?: string;
-  policyNumber?: string;
-  groupNumber?: string;
-  policyholderName?: string;
-  relationshipToPatient?: 'self' | 'spouse' | 'parent' | 'other' | '';
-  secondaryInsurance?: string;
+  hasHsaFsa?: 'hsa' | 'fsa' | 'both' | 'none' | '';
+  hsaFsaProvider?: string;
+  accountHolderName?: string;
+  estimatedBalance?: string;
+  interestedInPaymentPlan?: 'yes' | 'no' | '';
+  additionalNotes?: string;
 }
 
 export interface InsuranceInfoFormData extends InsuranceInfoData {

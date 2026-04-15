@@ -178,12 +178,12 @@ export async function submitInsuranceInfo(
     const sanitizedData = {
       registration_id: registrationId,
       user_id: userId,
-      insurance_provider: sanitizeInput(data.insuranceProvider),
-      policy_number: sanitizeInput(data.policyNumber),
-      group_number: sanitizeInput(data.groupNumber),
-      policyholder_name: sanitizeInput(data.policyholderName),
-      relationship_to_patient: data.relationshipToPatient,
-      secondary_insurance: sanitizeInput(data.secondaryInsurance),
+      has_hsa_fsa: data.hasHsaFsa || null,
+      hsa_fsa_provider: sanitizeInput(data.hsaFsaProvider),
+      account_holder_name: sanitizeInput(data.accountHolderName),
+      estimated_balance: sanitizeInput(data.estimatedBalance),
+      interested_in_payment_plan: data.interestedInPaymentPlan || null,
+      additional_notes: sanitizeInput(data.additionalNotes),
       status: 'submitted',
     };
 

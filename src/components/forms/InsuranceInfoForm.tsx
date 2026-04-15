@@ -1,14 +1,6 @@
-/**
- * ClearSight LASIK - Insurance Information Form
- *
- * Form for capturing patient insurance provider and policy information.
- * Tab 3 of the patient forms system.
- *
- * @module components/forms/InsuranceInfoForm
- */
-
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Wallet, Info } from 'lucide-react';
 import type { InsuranceInfoData } from '../../types/PatientForms';
 import { submitInsuranceInfo } from '../../services/patientFormsService';
 
@@ -19,16 +11,16 @@ const InsuranceInfoForm: React.FC = () => {
   const [submitError, setSubmitError] = useState('');
 
   const [formData, setFormData] = useState<InsuranceInfoData>({
-    insuranceProvider: '',
-    policyNumber: '',
-    groupNumber: '',
-    policyholderName: '',
-    relationshipToPatient: '',
-    secondaryInsurance: '',
+    hasHsaFsa: '',
+    hsaFsaProvider: '',
+    accountHolderName: '',
+    estimatedBalance: '',
+    interestedInPaymentPlan: '',
+    additionalNotes: '',
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -46,170 +38,190 @@ const InsuranceInfoForm: React.FC = () => {
       if (result.success) {
         setSubmitSuccess(true);
         setFormData({
-          insuranceProvider: '',
-          policyNumber: '',
-          groupNumber: '',
-          policyholderName: '',
-          relationshipToPatient: '',
-          secondaryInsurance: '',
+          hasHsaFsa: '',
+          hsaFsaProvider: '',
+          accountHolderName: '',
+          estimatedBalance: '',
+          interestedInPaymentPlan: '',
+          additionalNotes: '',
         });
       } else {
         setSubmitError(result.error || t('error.generic'));
       }
-    } catch (err) {
+    } catch {
       setSubmitError(t('error.network'));
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const showAccountFields = formData.hasHsaFsa === 'hsa' || formData.hasHsaFsa === 'fsa' || formData.hasHsaFsa === 'both';
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Success Message */}
       {submitSuccess && (
         <div className="bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg">
           {t('success.insuranceInfo')}
         </div>
       )}
 
-      {/* Error Message */}
       {submitError && (
         <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
           {submitError}
         </div>
       )}
 
-      {/* Insurance Provider */}
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 flex gap-3">
+        <Info className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+        <div>
+          <p className="text-sm font-semibold text-amber-900">{t('hsaFsa.notice.title')}</p>
+          <p className="text-sm text-amber-800 mt-1">{t('hsaFsa.notice.body')}</p>
+        </div>
+      </div>
+
       <div>
         <label
-          htmlFor="insuranceProvider"
+          htmlFor="hasHsaFsa"
           className="block text-sm font-semibold text-gray-700 mb-2"
         >
-          {t('insuranceInfo.insuranceProvider.label')}
+          {t('hsaFsa.hasAccount.label')}
         </label>
-        <input
-          type="text"
-          id="insuranceProvider"
-          name="insuranceProvider"
-          value={formData.insuranceProvider}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {(['hsa', 'fsa', 'both', 'none'] as const).map((option) => (
+            <label
+              key={option}
+              className={`flex items-center justify-center gap-2 px-4 py-3 border rounded-lg cursor-pointer transition-all text-sm font-medium ${
+                formData.hasHsaFsa === option
+                  ? 'border-teal-600 bg-teal-50 text-teal-700 ring-2 ring-teal-600/20'
+                  : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
+              }`}
+            >
+              <input
+                type="radio"
+                name="hasHsaFsa"
+                value={option}
+                checked={formData.hasHsaFsa === option}
+                onChange={handleChange}
+                className="sr-only"
+              />
+              {option === 'hsa' || option === 'fsa' ? (
+                <Wallet className="h-4 w-4" />
+              ) : null}
+              {t(`hsaFsa.hasAccount.options.${option}`)}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {showAccountFields && (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label
+                htmlFor="hsaFsaProvider"
+                className="block text-sm font-semibold text-gray-700 mb-2"
+              >
+                {t('hsaFsa.provider.label')}
+              </label>
+              <input
+                type="text"
+                id="hsaFsaProvider"
+                name="hsaFsaProvider"
+                value={formData.hsaFsaProvider}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                placeholder={t('hsaFsa.provider.placeholder')}
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="accountHolderName"
+                className="block text-sm font-semibold text-gray-700 mb-2"
+              >
+                {t('hsaFsa.accountHolder.label')}
+              </label>
+              <input
+                type="text"
+                id="accountHolderName"
+                name="accountHolderName"
+                value={formData.accountHolderName}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                placeholder={t('hsaFsa.accountHolder.placeholder')}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label
+              htmlFor="estimatedBalance"
+              className="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              {t('hsaFsa.estimatedBalance.label')}
+            </label>
+            <input
+              type="text"
+              id="estimatedBalance"
+              name="estimatedBalance"
+              value={formData.estimatedBalance}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              placeholder={t('hsaFsa.estimatedBalance.placeholder')}
+            />
+          </div>
+        </>
+      )}
+
+      <div>
+        <label
+          htmlFor="interestedInPaymentPlan"
+          className="block text-sm font-semibold text-gray-700 mb-2"
+        >
+          {t('hsaFsa.paymentPlan.label')}
+        </label>
+        <div className="flex gap-3">
+          {(['yes', 'no'] as const).map((option) => (
+            <label
+              key={option}
+              className={`flex-1 flex items-center justify-center px-4 py-3 border rounded-lg cursor-pointer transition-all text-sm font-medium ${
+                formData.interestedInPaymentPlan === option
+                  ? 'border-teal-600 bg-teal-50 text-teal-700 ring-2 ring-teal-600/20'
+                  : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
+              }`}
+            >
+              <input
+                type="radio"
+                name="interestedInPaymentPlan"
+                value={option}
+                checked={formData.interestedInPaymentPlan === option}
+                onChange={handleChange}
+                className="sr-only"
+              />
+              {t(`hsaFsa.paymentPlan.options.${option}`)}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <label
+          htmlFor="additionalNotes"
+          className="block text-sm font-semibold text-gray-700 mb-2"
+        >
+          {t('hsaFsa.additionalNotes.label')}
+        </label>
+        <textarea
+          id="additionalNotes"
+          name="additionalNotes"
+          value={formData.additionalNotes}
           onChange={handleChange}
+          rows={3}
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-          placeholder={t('insuranceInfo.insuranceProvider.placeholder')}
+          placeholder={t('hsaFsa.additionalNotes.placeholder')}
         />
       </div>
 
-      {/* Policy Number & Group Number */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label
-            htmlFor="policyNumber"
-            className="block text-sm font-semibold text-gray-700 mb-2"
-          >
-            {t('insuranceInfo.policyNumber.label')}
-          </label>
-          <input
-            type="text"
-            id="policyNumber"
-            name="policyNumber"
-            value={formData.policyNumber}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-            placeholder={t('insuranceInfo.policyNumber.placeholder')}
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="groupNumber"
-            className="block text-sm font-semibold text-gray-700 mb-2"
-          >
-            {t('insuranceInfo.groupNumber.label')}
-          </label>
-          <input
-            type="text"
-            id="groupNumber"
-            name="groupNumber"
-            value={formData.groupNumber}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-            placeholder={t('insuranceInfo.groupNumber.placeholder')}
-          />
-        </div>
-      </div>
-
-      {/* Policyholder Name & Relationship to Patient */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label
-            htmlFor="policyholderName"
-            className="block text-sm font-semibold text-gray-700 mb-2"
-          >
-            {t('insuranceInfo.policyholderName.label')}
-          </label>
-          <input
-            type="text"
-            id="policyholderName"
-            name="policyholderName"
-            value={formData.policyholderName}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-            placeholder={t('insuranceInfo.policyholderName.placeholder')}
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="relationshipToPatient"
-            className="block text-sm font-semibold text-gray-700 mb-2"
-          >
-            {t('insuranceInfo.relationshipToPatient.label')}
-          </label>
-          <select
-            id="relationshipToPatient"
-            name="relationshipToPatient"
-            value={formData.relationshipToPatient}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-          >
-            <option value="">
-              {t('insuranceInfo.relationshipToPatient.options.select')}
-            </option>
-            <option value="self">
-              {t('insuranceInfo.relationshipToPatient.options.self')}
-            </option>
-            <option value="spouse">
-              {t('insuranceInfo.relationshipToPatient.options.spouse')}
-            </option>
-            <option value="parent">
-              {t('insuranceInfo.relationshipToPatient.options.parent')}
-            </option>
-            <option value="other">
-              {t('insuranceInfo.relationshipToPatient.options.other')}
-            </option>
-          </select>
-        </div>
-      </div>
-
-      {/* Secondary Insurance */}
-      <div>
-        <label
-          htmlFor="secondaryInsurance"
-          className="block text-sm font-semibold text-gray-700 mb-2"
-        >
-          {t('insuranceInfo.secondaryInsurance.label')}
-        </label>
-        <input
-          type="text"
-          id="secondaryInsurance"
-          name="secondaryInsurance"
-          value={formData.secondaryInsurance}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-          placeholder={t('insuranceInfo.secondaryInsurance.placeholder')}
-        />
-      </div>
-
-      {/* Submit Button */}
       <button
         type="submit"
         disabled={isSubmitting}
