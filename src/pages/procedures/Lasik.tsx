@@ -26,7 +26,7 @@ const Lasik = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link
-                  to="/book-consultation"
+                  to="/portal"
                   className="inline-flex items-center chopard-button px-8 py-3 rounded-lg transition-all duration-300"
                 >
                   {t('common:cta.scheduleConsultation', 'Schedule Free Consultation')}

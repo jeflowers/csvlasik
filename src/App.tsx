@@ -104,7 +104,7 @@ const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
 const AppointmentCalendar = lazy(() => import('./components/booking/AppointmentCalendar'));
 const BeforeAfterGallery = lazy(() => import('./components/gallery/BeforeAfterGallery'));
-const BookConsultation = lazy(() => import('./pages/BookConsultation'));
+
 const FinancingCalculator = lazy(() => import('./components/FinancingCalculator'));
 const PhotoGalleryManager = lazy(() => import('./components/admin/PhotoGalleryManager'));
 const EmailQueueMonitor = lazy(() => import('./components/admin/EmailQueueMonitor'));
@@ -300,7 +300,7 @@ function App() {
                         <Route path="/technology" element={<Technology />} />
                         <Route path="/financing" element={<Financing />} />
                         <Route path="/contact" element={<Contact />} />
-                        <Route path="/book-consultation" element={<BookConsultation />} />
+                        <Route path="/book-consultation" element={<Navigate to="/portal" replace />} />
                         <Route path="/book-appointment" element={<AppointmentCalendar />} />
                         <Route path="/gallery" element={<BeforeAfterGallery />} />
                         <Route path="/calculate-financing" element={<FinancingCalculator />} />

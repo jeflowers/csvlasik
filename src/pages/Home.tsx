@@ -104,7 +104,7 @@ const Home = () => {
 
               <div className="flex flex-col sm:flex-row gap-6 mt-10">
                 <Link
-                  to="/book-consultation"
+                  to="/portal"
                   className="inline-flex items-center chopard-button px-10 py-4 rounded-lg transition-all duration-300"
                 >
                   <Calendar className="mr-3 h-5 w-5" />

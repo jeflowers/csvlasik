@@ -210,7 +210,7 @@ const PortalDashboard: React.FC = () => {
             </Link>
 
             <Link
-              to="/book-consultation"
+              to="/portal/forms"
               className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-teal-300 hover:bg-teal-50/50 transition-all group"
             >
               <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center group-hover:bg-emerald-100 transition-colors">

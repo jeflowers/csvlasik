@@ -52,7 +52,7 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <Link
-                to="/book-consultation"
+                to="/portal"
                 className="inline-flex items-center chopard-button px-8 py-3 rounded-lg transition-all duration-300"
               >
                 <Calendar className="mr-2 h-5 w-5" />
