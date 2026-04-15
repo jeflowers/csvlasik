@@ -1,82 +1,39 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Wallet, Info, ArrowLeft, ArrowRight } from 'lucide-react';
 import type { InsuranceInfoData } from '../../types/PatientForms';
-import { submitInsuranceInfo } from '../../services/patientFormsService';
 
 interface Props {
+  data: InsuranceInfoData;
+  onChange: (data: InsuranceInfoData) => void;
   onPrevious?: () => void;
   onNext?: () => void;
-  onSubmitSuccess?: () => void;
 }
 
-const InsuranceInfoForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSuccess }) => {
+const InsuranceInfoForm: React.FC<Props> = ({ data, onChange, onPrevious, onNext }) => {
   const { t } = useTranslation('patientForms');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState('');
-
-  const [formData, setFormData] = useState<InsuranceInfoData>({
-    hasHsaFsa: '',
-    hsaFsaProvider: '',
-    accountHolderName: '',
-    estimatedBalance: '',
-    interestedInPaymentPlan: '',
-    additionalNotes: '',
-  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    onChange({ ...data, [name]: value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitError('');
-    setSubmitSuccess(false);
-    setIsSubmitting(true);
-
-    try {
-      const result = await submitInsuranceInfo(formData);
-
-      if (result.success) {
-        setSubmitSuccess(true);
-        onSubmitSuccess?.();
-        if (onNext) {
-          setTimeout(() => onNext(), 400);
-        }
-      } else {
-        setSubmitError(result.error || t('error.generic'));
-      }
-    } catch {
-      setSubmitError(t('error.network'));
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const showAccountFields = formData.hasHsaFsa === 'hsa' || formData.hasHsaFsa === 'fsa' || formData.hasHsaFsa === 'both';
+  const showAccountFields = data.hasHsaFsa === 'hsa' || data.hasHsaFsa === 'fsa' || data.hasHsaFsa === 'both';
 
   const isFormValid =
-    formData.hasHsaFsa !== '' &&
-    formData.interestedInPaymentPlan !== '';
+    data.hasHsaFsa !== '' &&
+    data.interestedInPaymentPlan !== '';
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+    onNext?.();
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {submitSuccess && (
-        <div className="bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg text-sm">
-          {t('success.insuranceInfo')}
-        </div>
-      )}
-
-      {submitError && (
-        <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-sm">
-          {submitError}
-        </div>
-      )}
-
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 flex gap-3">
         <Info className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
         <div>
@@ -97,7 +54,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucces
             <label
               key={option}
               className={`flex items-center justify-center gap-2 px-4 py-3 border rounded-lg cursor-pointer transition-all text-sm font-medium ${
-                formData.hasHsaFsa === option
+                data.hasHsaFsa === option
                   ? 'border-teal-600 bg-teal-50 text-teal-700 ring-2 ring-teal-600/20'
                   : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
               }`}
@@ -106,7 +63,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucces
                 type="radio"
                 name="hasHsaFsa"
                 value={option}
-                checked={formData.hasHsaFsa === option}
+                checked={data.hasHsaFsa === option}
                 onChange={handleChange}
                 className="sr-only"
               />
@@ -133,7 +90,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucces
                 type="text"
                 id="hsaFsaProvider"
                 name="hsaFsaProvider"
-                value={formData.hsaFsaProvider}
+                value={data.hsaFsaProvider}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 placeholder={t('hsaFsa.provider.placeholder')}
@@ -151,7 +108,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucces
                 type="text"
                 id="accountHolderName"
                 name="accountHolderName"
-                value={formData.accountHolderName}
+                value={data.accountHolderName}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 placeholder={t('hsaFsa.accountHolder.placeholder')}
@@ -170,7 +127,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucces
               type="text"
               id="estimatedBalance"
               name="estimatedBalance"
-              value={formData.estimatedBalance}
+              value={data.estimatedBalance}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
               placeholder={t('hsaFsa.estimatedBalance.placeholder')}
@@ -191,7 +148,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucces
             <label
               key={option}
               className={`flex-1 flex items-center justify-center px-4 py-3 border rounded-lg cursor-pointer transition-all text-sm font-medium ${
-                formData.interestedInPaymentPlan === option
+                data.interestedInPaymentPlan === option
                   ? 'border-teal-600 bg-teal-50 text-teal-700 ring-2 ring-teal-600/20'
                   : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
               }`}
@@ -200,7 +157,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucces
                 type="radio"
                 name="interestedInPaymentPlan"
                 value={option}
-                checked={formData.interestedInPaymentPlan === option}
+                checked={data.interestedInPaymentPlan === option}
                 onChange={handleChange}
                 className="sr-only"
               />
@@ -220,7 +177,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucces
         <textarea
           id="additionalNotes"
           name="additionalNotes"
-          value={formData.additionalNotes}
+          value={data.additionalNotes}
           onChange={handleChange}
           rows={3}
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
@@ -243,15 +200,11 @@ const InsuranceInfoForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucces
         )}
         <button
           type="submit"
-          disabled={isSubmitting || !isFormValid}
+          disabled={!isFormValid}
           className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
         >
-          {isSubmitting ? t('buttons.submitting') : (
-            <>
-              {t('buttons.next', { defaultValue: 'Save & Continue' })}
-              <ArrowRight className="h-4 w-4" />
-            </>
-          )}
+          {t('buttons.next', { defaultValue: 'Save & Continue' })}
+          <ArrowRight className="h-4 w-4" />
         </button>
       </div>
     </form>

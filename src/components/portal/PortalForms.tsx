@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { FileText, Clipboard, CreditCard, Shield, CheckCircle2, Check } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { usePatient } from '../../hooks/usePatient';
 import { supabase } from '../../lib/supabase';
-import type { PatientFormTab } from '../../types/PatientForms';
+import type {
+  PatientFormTab,
+  PatientRegistrationData,
+  MedicalHistoryData,
+  InsuranceInfoData,
+  ConsentFormData,
+  VisionCorrectionData,
+} from '../../types/PatientForms';
+import { submitAllPatientForms } from '../../services/patientFormsService';
 import PatientRegistrationForm from '../forms/PatientRegistrationForm';
 import MedicalHistoryForm from '../forms/MedicalHistoryForm';
 import InsuranceInfoForm from '../forms/InsuranceInfoForm';
@@ -22,7 +31,65 @@ const STEPS: { id: PatientFormTab; icon: React.ElementType; label: string }[] = 
   { id: 'consent', icon: Shield, label: 'Consent' },
 ];
 
+const initialVisionCorrection: VisionCorrectionData = {
+  glasses: false,
+  contacts: false,
+  contactType: '',
+  toricDetails: '',
+};
+
+const initialRegistration: PatientRegistrationData = {
+  firstName: '',
+  lastName: '',
+  dateOfBirth: '',
+  phoneNumber: '',
+  emailAddress: '',
+  streetAddress: '',
+  city: '',
+  state: '',
+  zip: '',
+  reasonForVisit: '',
+};
+
+const initialMedicalHistory: MedicalHistoryData = {
+  visionCorrection: { ...initialVisionCorrection },
+  lastEyeExamDate: '',
+  lastEyeExamDoctor: '',
+  lastEyeExamClinic: '',
+  lastEyeExamMayVerify: false,
+  prescriptionAge: '',
+  prescriptionChangedPastYear: '',
+  currentSymptoms: [],
+  eyeInjuries: '',
+  eyeInjuriesDetails: '',
+  eyeSurgeryHistory: '',
+  eyeSurgeryDetails: '',
+  medicalConditions: [],
+  medicalConditionsOther: '',
+  currentMedications: '',
+  hasAllergies: '',
+  allergiesDetails: '',
+  familyHistoryConditions: [],
+};
+
+const initialInsurance: InsuranceInfoData = {
+  hasHsaFsa: '',
+  hsaFsaProvider: '',
+  accountHolderName: '',
+  estimatedBalance: '',
+  interestedInPaymentPlan: '',
+  additionalNotes: '',
+};
+
+const initialConsent: ConsentFormData = {
+  hipaaPrivacyAcknowledgment: false,
+  consentToTreatment: false,
+  patientSignature: '',
+  signatureDate: '',
+};
+
 const PortalForms: React.FC = () => {
+  const { t } = useTranslation('patientForms');
   const { user } = usePatient();
   const [activeStep, setActiveStep] = useState(0);
   const [status, setStatus] = useState<CompletionStatus>({
@@ -31,6 +98,15 @@ const PortalForms: React.FC = () => {
     insuranceInfo: false,
     consent: false,
   });
+
+  const [registration, setRegistration] = useState<PatientRegistrationData>({ ...initialRegistration });
+  const [medicalHistory, setMedicalHistory] = useState<MedicalHistoryData>({ ...initialMedicalHistory });
+  const [insurance, setInsurance] = useState<InsuranceInfoData>({ ...initialInsurance });
+  const [consent, setConsent] = useState<ConsentFormData>({ ...initialConsent });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   useEffect(() => {
     if (!user) return;
@@ -64,39 +140,103 @@ const PortalForms: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const refreshStatus = async () => {
-    if (!user) return;
-    const [reg, med, ins, con] = await Promise.all([
-      supabase.from('patient_registrations').select('id', { count: 'exact', head: true }).eq('user_id', user.id),
-      supabase.from('patient_medical_histories').select('id', { count: 'exact', head: true }).eq('user_id', user.id),
-      supabase.from('patient_insurance_info').select('id', { count: 'exact', head: true }).eq('user_id', user.id),
-      supabase.from('patient_consent_forms').select('id', { count: 'exact', head: true }).eq('user_id', user.id),
-    ]);
-    setStatus({
-      registration: (reg.count || 0) > 0,
-      medicalHistory: (med.count || 0) > 0,
-      insuranceInfo: (ins.count || 0) > 0,
-      consent: (con.count || 0) > 0,
-    });
+  const handleFinalSubmit = async () => {
+    setSubmitError('');
+    setSubmitSuccess(false);
+    setIsSubmitting(true);
+
+    try {
+      const result = await submitAllPatientForms({
+        registration,
+        medicalHistory,
+        insurance,
+        consent,
+      });
+
+      if (result.success) {
+        setSubmitSuccess(true);
+        setStatus({
+          registration: true,
+          medicalHistory: true,
+          insuranceInfo: true,
+          consent: true,
+        });
+      } else {
+        setSubmitError(result.error || t('error.generic'));
+      }
+    } catch {
+      setSubmitError(t('error.network'));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
+  const allCompleted = status.registration && status.medicalHistory && status.insuranceInfo && status.consent;
   const statusKeys: PatientFormTab[] = ['registration', 'medicalHistory', 'insuranceInfo', 'consent'];
 
   const renderForm = () => {
     const currentTab = STEPS[activeStep].id;
     switch (currentTab) {
       case 'registration':
-        return <PatientRegistrationForm onNext={goNext} onSubmitSuccess={refreshStatus} />;
+        return (
+          <PatientRegistrationForm
+            data={registration}
+            onChange={setRegistration}
+            onNext={goNext}
+          />
+        );
       case 'medicalHistory':
-        return <MedicalHistoryForm onPrevious={goPrevious} onNext={goNext} onSubmitSuccess={refreshStatus} />;
+        return (
+          <MedicalHistoryForm
+            data={medicalHistory}
+            onChange={setMedicalHistory}
+            onPrevious={goPrevious}
+            onNext={goNext}
+          />
+        );
       case 'insuranceInfo':
-        return <InsuranceInfoForm onPrevious={goPrevious} onNext={goNext} onSubmitSuccess={refreshStatus} />;
+        return (
+          <InsuranceInfoForm
+            data={insurance}
+            onChange={setInsurance}
+            onPrevious={goPrevious}
+            onNext={goNext}
+          />
+        );
       case 'consent':
-        return <ConsentForm onPrevious={goPrevious} onSubmitSuccess={refreshStatus} />;
+        return (
+          <ConsentForm
+            data={consent}
+            onChange={setConsent}
+            onPrevious={goPrevious}
+            onSubmit={handleFinalSubmit}
+            isSubmitting={isSubmitting}
+            submitError={submitError}
+            submitSuccess={submitSuccess}
+          />
+        );
       default:
-        return <PatientRegistrationForm onNext={goNext} onSubmitSuccess={refreshStatus} />;
+        return null;
     }
   };
+
+  if (allCompleted || submitSuccess) {
+    return (
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-12 text-center">
+          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-teal-100 mx-auto mb-6">
+            <Check className="h-8 w-8 text-teal-600" />
+          </div>
+          <h2 className="text-2xl font-serif text-gray-900 mb-3">
+            {t('success.allForms', { defaultValue: 'Forms Submitted Successfully' })}
+          </h2>
+          <p className="text-gray-600 max-w-md mx-auto">
+            {t('success.allFormsDescription', { defaultValue: 'Thank you for completing your patient forms. Our team will review your information and contact you shortly.' })}
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto">

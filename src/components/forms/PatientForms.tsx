@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FileText, Clipboard, CreditCard, Shield, Check } from 'lucide-react';
-import type { PatientFormTab } from '../../types/PatientForms';
+import type {
+  PatientFormTab,
+  PatientRegistrationData,
+  MedicalHistoryData,
+  InsuranceInfoData,
+  ConsentFormData,
+  VisionCorrectionData,
+} from '../../types/PatientForms';
+import { submitAllPatientForms } from '../../services/patientFormsService';
 import PatientRegistrationForm from './PatientRegistrationForm';
 import MedicalHistoryForm from './MedicalHistoryForm';
 import InsuranceInfoForm from './InsuranceInfoForm';
@@ -14,10 +22,76 @@ const STEPS: { id: PatientFormTab; icon: React.ElementType; label: string }[] = 
   { id: 'consent', icon: Shield, label: 'Consent' },
 ];
 
+const initialVisionCorrection: VisionCorrectionData = {
+  glasses: false,
+  contacts: false,
+  contactType: '',
+  toricDetails: '',
+};
+
+const initialRegistration: PatientRegistrationData = {
+  firstName: '',
+  lastName: '',
+  dateOfBirth: '',
+  phoneNumber: '',
+  emailAddress: '',
+  streetAddress: '',
+  city: '',
+  state: '',
+  zip: '',
+  reasonForVisit: '',
+};
+
+const initialMedicalHistory: MedicalHistoryData = {
+  visionCorrection: { ...initialVisionCorrection },
+  lastEyeExamDate: '',
+  lastEyeExamDoctor: '',
+  lastEyeExamClinic: '',
+  lastEyeExamMayVerify: false,
+  prescriptionAge: '',
+  prescriptionChangedPastYear: '',
+  currentSymptoms: [],
+  eyeInjuries: '',
+  eyeInjuriesDetails: '',
+  eyeSurgeryHistory: '',
+  eyeSurgeryDetails: '',
+  medicalConditions: [],
+  medicalConditionsOther: '',
+  currentMedications: '',
+  hasAllergies: '',
+  allergiesDetails: '',
+  familyHistoryConditions: [],
+};
+
+const initialInsurance: InsuranceInfoData = {
+  hasHsaFsa: '',
+  hsaFsaProvider: '',
+  accountHolderName: '',
+  estimatedBalance: '',
+  interestedInPaymentPlan: '',
+  additionalNotes: '',
+};
+
+const initialConsent: ConsentFormData = {
+  hipaaPrivacyAcknowledgment: false,
+  consentToTreatment: false,
+  patientSignature: '',
+  signatureDate: '',
+};
+
 const PatientForms: React.FC = () => {
   const { t } = useTranslation('patientForms');
   const [activeStep, setActiveStep] = useState(0);
   const [completed, setCompleted] = useState<boolean[]>([false, false, false, false]);
+
+  const [registration, setRegistration] = useState<PatientRegistrationData>({ ...initialRegistration });
+  const [medicalHistory, setMedicalHistory] = useState<MedicalHistoryData>({ ...initialMedicalHistory });
+  const [insurance, setInsurance] = useState<InsuranceInfoData>({ ...initialInsurance });
+  const [consent, setConsent] = useState<ConsentFormData>({ ...initialConsent });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const goNext = () => {
     setCompleted((prev) => {
@@ -34,19 +108,75 @@ const PatientForms: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleFinalSubmit = async () => {
+    setSubmitError('');
+    setSubmitSuccess(false);
+    setIsSubmitting(true);
+
+    try {
+      const result = await submitAllPatientForms({
+        registration,
+        medicalHistory,
+        insurance,
+        consent,
+      });
+
+      if (result.success) {
+        setSubmitSuccess(true);
+        setCompleted([true, true, true, true]);
+      } else {
+        setSubmitError(result.error || t('error.generic'));
+      }
+    } catch {
+      setSubmitError(t('error.network'));
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const renderForm = () => {
     const currentTab = STEPS[activeStep].id;
     switch (currentTab) {
       case 'registration':
-        return <PatientRegistrationForm onNext={goNext} />;
+        return (
+          <PatientRegistrationForm
+            data={registration}
+            onChange={setRegistration}
+            onNext={goNext}
+          />
+        );
       case 'medicalHistory':
-        return <MedicalHistoryForm onPrevious={goPrevious} onNext={goNext} />;
+        return (
+          <MedicalHistoryForm
+            data={medicalHistory}
+            onChange={setMedicalHistory}
+            onPrevious={goPrevious}
+            onNext={goNext}
+          />
+        );
       case 'insuranceInfo':
-        return <InsuranceInfoForm onPrevious={goPrevious} onNext={goNext} />;
+        return (
+          <InsuranceInfoForm
+            data={insurance}
+            onChange={setInsurance}
+            onPrevious={goPrevious}
+            onNext={goNext}
+          />
+        );
       case 'consent':
-        return <ConsentForm onPrevious={goPrevious} />;
+        return (
+          <ConsentForm
+            data={consent}
+            onChange={setConsent}
+            onPrevious={goPrevious}
+            onSubmit={handleFinalSubmit}
+            isSubmitting={isSubmitting}
+            submitError={submitError}
+            submitSuccess={submitSuccess}
+          />
+        );
       default:
-        return <PatientRegistrationForm onNext={goNext} />;
+        return null;
     }
   };
 
@@ -121,22 +251,36 @@ const PatientForms: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-        <div className="border-b border-gray-100 bg-gray-50/50 px-6 py-4">
-          <div className="flex items-center gap-3">
-            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-teal-600 text-white text-xs font-bold">
-              {activeStep + 1}
-            </span>
-            <div>
-              <p className="text-sm font-semibold text-gray-900">{STEPS[activeStep].label}</p>
-              <p className="text-xs text-gray-500">Step {activeStep + 1} of {STEPS.length}</p>
+      {submitSuccess ? (
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden p-12 text-center">
+          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-teal-100 mx-auto mb-6">
+            <Check className="h-8 w-8 text-teal-600" />
+          </div>
+          <h2 className="text-2xl font-serif text-gray-900 mb-3">
+            {t('success.allForms', { defaultValue: 'Forms Submitted Successfully' })}
+          </h2>
+          <p className="text-gray-600 max-w-md mx-auto">
+            {t('success.allFormsDescription', { defaultValue: 'Thank you for completing your patient forms. Our team will review your information and contact you shortly.' })}
+          </p>
+        </div>
+      ) : (
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          <div className="border-b border-gray-100 bg-gray-50/50 px-6 py-4">
+            <div className="flex items-center gap-3">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-teal-600 text-white text-xs font-bold">
+                {activeStep + 1}
+              </span>
+              <div>
+                <p className="text-sm font-semibold text-gray-900">{STEPS[activeStep].label}</p>
+                <p className="text-xs text-gray-500">Step {activeStep + 1} of {STEPS.length}</p>
+              </div>
             </div>
           </div>
+          <div className="p-8">
+            {renderForm()}
+          </div>
         </div>
-        <div className="p-8">
-          {renderForm()}
-        </div>
-      </div>
+      )}
     </div>
   );
 };

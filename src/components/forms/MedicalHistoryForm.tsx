@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Eye, Stethoscope, AlertCircle, CheckCircle2, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Eye, Stethoscope, ArrowLeft, ArrowRight } from 'lucide-react';
 import type { MedicalHistoryData, VisionCorrectionData } from '../../types/PatientForms';
-import { submitMedicalHistory } from '../../services/patientFormsService';
 
 const SYMPTOMS = [
   'pressure_pain', 'sandy_sensation', 'throbbing', 'eyelid_crusting',
@@ -25,32 +24,11 @@ const FAMILY_CONDITIONS = [
 
 const CONTACT_TYPES = ['soft', 'hard', 'extended_wear', 'toric'] as const;
 
-const initialVisionCorrection: VisionCorrectionData = {
+const defaultVisionCorrection: VisionCorrectionData = {
   glasses: false,
   contacts: false,
   contactType: '',
   toricDetails: '',
-};
-
-const initialFormData: MedicalHistoryData = {
-  visionCorrection: { ...initialVisionCorrection },
-  lastEyeExamDate: '',
-  lastEyeExamDoctor: '',
-  lastEyeExamClinic: '',
-  lastEyeExamMayVerify: false,
-  prescriptionAge: '',
-  prescriptionChangedPastYear: '',
-  currentSymptoms: [],
-  eyeInjuries: '',
-  eyeInjuriesDetails: '',
-  eyeSurgeryHistory: '',
-  eyeSurgeryDetails: '',
-  medicalConditions: [],
-  medicalConditionsOther: '',
-  currentMedications: '',
-  hasAllergies: '',
-  allergiesDetails: '',
-  familyHistoryConditions: [],
 };
 
 interface CheckboxGroupProps {
@@ -124,60 +102,39 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ children, className = '' })
 );
 
 interface Props {
+  data: MedicalHistoryData;
+  onChange: (data: MedicalHistoryData) => void;
   onPrevious?: () => void;
   onNext?: () => void;
-  onSubmitSuccess?: () => void;
 }
 
-const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSuccess }) => {
+const MedicalHistoryForm: React.FC<Props> = ({ data, onChange, onPrevious, onNext }) => {
   const { t } = useTranslation('patientForms');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState('');
-  const [formData, setFormData] = useState<MedicalHistoryData>({ ...initialFormData });
 
   const updateField = <K extends keyof MedicalHistoryData>(key: K, value: MedicalHistoryData[K]) => {
-    setFormData((prev) => ({ ...prev, [key]: value }));
+    onChange({ ...data, [key]: value });
   };
 
   const updateVisionCorrection = <K extends keyof VisionCorrectionData>(key: K, value: VisionCorrectionData[K]) => {
-    setFormData((prev) => ({
-      ...prev,
-      visionCorrection: { ...(prev.visionCorrection || initialVisionCorrection), [key]: value },
-    }));
+    onChange({
+      ...data,
+      visionCorrection: { ...(data.visionCorrection || defaultVisionCorrection), [key]: value },
+    });
   };
 
   const isFormValid =
-    (formData.prescriptionChangedPastYear || '') !== '' &&
-    (formData.eyeInjuries || '') !== '' &&
-    (formData.eyeSurgeryHistory || '') !== '' &&
-    (formData.hasAllergies || '') !== '';
+    (data.prescriptionChangedPastYear || '') !== '' &&
+    (data.eyeInjuries || '') !== '' &&
+    (data.eyeSurgeryHistory || '') !== '' &&
+    (data.hasAllergies || '') !== '';
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitError('');
-    setSubmitSuccess(false);
-    setIsSubmitting(true);
-
-    try {
-      const result = await submitMedicalHistory(formData);
-      if (result.success) {
-        setSubmitSuccess(true);
-        onSubmitSuccess?.();
-        if (onNext) {
-          setTimeout(() => onNext(), 400);
-        }
-      } else {
-        setSubmitError(result.error || t('error.generic'));
-      }
-    } catch {
-      setSubmitError(t('error.network'));
-    } finally {
-      setIsSubmitting(false);
-    }
+    if (!isFormValid) return;
+    onNext?.();
   };
 
-  const vc = formData.visionCorrection || initialVisionCorrection;
+  const vc = data.visionCorrection || defaultVisionCorrection;
 
   const inputClass = 'w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all';
   const textareaClass = `${inputClass} resize-none`;
@@ -193,20 +150,6 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
           <p className="text-xs text-gray-500">{t('medicalHistory.sectionSubtitle')}</p>
         </div>
       </div>
-
-      {submitSuccess && (
-        <div className="flex items-center gap-3 bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg">
-          <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
-          <span className="text-sm">{t('success.medicalHistory')}</span>
-        </div>
-      )}
-
-      {submitError && (
-        <div className="flex items-center gap-3 bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-          <AlertCircle className="h-5 w-5 flex-shrink-0" />
-          <span className="text-sm">{submitError}</span>
-        </div>
-      )}
 
       <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q1.label')}</p>
@@ -271,7 +214,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
             <label className="block text-xs font-medium text-gray-500 mb-1">{t('medicalHistory.q2.dateLabel')}</label>
             <input
               type="text"
-              value={formData.lastEyeExamDate || ''}
+              value={data.lastEyeExamDate || ''}
               onChange={(e) => updateField('lastEyeExamDate', e.target.value)}
               className={inputClass}
               placeholder={t('medicalHistory.q2.datePlaceholder')}
@@ -281,7 +224,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
             <label className="block text-xs font-medium text-gray-500 mb-1">{t('medicalHistory.q2.doctorLabel')}</label>
             <input
               type="text"
-              value={formData.lastEyeExamDoctor || ''}
+              value={data.lastEyeExamDoctor || ''}
               onChange={(e) => updateField('lastEyeExamDoctor', e.target.value)}
               className={inputClass}
               placeholder={t('medicalHistory.q2.doctorPlaceholder')}
@@ -291,7 +234,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
             <label className="block text-xs font-medium text-gray-500 mb-1">{t('medicalHistory.q2.clinicLabel')}</label>
             <input
               type="text"
-              value={formData.lastEyeExamClinic || ''}
+              value={data.lastEyeExamClinic || ''}
               onChange={(e) => updateField('lastEyeExamClinic', e.target.value)}
               className={inputClass}
               placeholder={t('medicalHistory.q2.clinicPlaceholder')}
@@ -301,7 +244,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
             <label className="flex items-center gap-2 cursor-pointer">
               <input
                 type="checkbox"
-                checked={formData.lastEyeExamMayVerify || false}
+                checked={data.lastEyeExamMayVerify || false}
                 onChange={(e) => updateField('lastEyeExamMayVerify', e.target.checked)}
                 className="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
               />
@@ -315,7 +258,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q3.label')}</p>
         <input
           type="text"
-          value={formData.prescriptionAge || ''}
+          value={data.prescriptionAge || ''}
           onChange={(e) => updateField('prescriptionAge', e.target.value)}
           className={`${inputClass} max-w-sm`}
           placeholder={t('medicalHistory.q3.placeholder')}
@@ -326,7 +269,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q4.label')}</p>
         <RadioGroup
           name="prescriptionChanged"
-          value={formData.prescriptionChangedPastYear || ''}
+          value={data.prescriptionChangedPastYear || ''}
           options={[
             { value: 'no', label: t('medicalHistory.q4.no') },
             { value: 'yes', label: t('medicalHistory.q4.yes') },
@@ -340,7 +283,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q5.label')}</p>
         <CheckboxGroup
           items={SYMPTOMS}
-          selected={formData.currentSymptoms || []}
+          selected={data.currentSymptoms || []}
           onChange={(items) => updateField('currentSymptoms', items)}
           t={t}
           translationPrefix="medicalHistory.q5.symptoms"
@@ -351,16 +294,16 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q6.label')}</p>
         <RadioGroup
           name="eyeInjuries"
-          value={formData.eyeInjuries || ''}
+          value={data.eyeInjuries || ''}
           options={[
             { value: 'no', label: t('medicalHistory.q6.no') },
             { value: 'yes', label: t('medicalHistory.q6.yes') },
           ]}
           onChange={(v) => updateField('eyeInjuries', v as MedicalHistoryData['eyeInjuries'])}
         />
-        {formData.eyeInjuries === 'yes' && (
+        {data.eyeInjuries === 'yes' && (
           <textarea
-            value={formData.eyeInjuriesDetails || ''}
+            value={data.eyeInjuriesDetails || ''}
             onChange={(e) => updateField('eyeInjuriesDetails', e.target.value)}
             rows={2}
             className={`${textareaClass} mt-3`}
@@ -373,16 +316,16 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q7.label')}</p>
         <RadioGroup
           name="eyeSurgery"
-          value={formData.eyeSurgeryHistory || ''}
+          value={data.eyeSurgeryHistory || ''}
           options={[
             { value: 'no', label: t('medicalHistory.q7.no') },
             { value: 'yes', label: t('medicalHistory.q7.yes') },
           ]}
           onChange={(v) => updateField('eyeSurgeryHistory', v as MedicalHistoryData['eyeSurgeryHistory'])}
         />
-        {formData.eyeSurgeryHistory === 'yes' && (
+        {data.eyeSurgeryHistory === 'yes' && (
           <textarea
-            value={formData.eyeSurgeryDetails || ''}
+            value={data.eyeSurgeryDetails || ''}
             onChange={(e) => updateField('eyeSurgeryDetails', e.target.value)}
             rows={2}
             className={`${textareaClass} mt-3`}
@@ -405,7 +348,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q8.label')}</p>
         <CheckboxGroup
           items={MEDICAL_CONDITIONS}
-          selected={formData.medicalConditions || []}
+          selected={data.medicalConditions || []}
           onChange={(items) => updateField('medicalConditions', items)}
           t={t}
           translationPrefix="medicalHistory.q8.conditions"
@@ -414,7 +357,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
           <label className="block text-xs font-medium text-gray-500 mb-1">{t('medicalHistory.q8.otherLabel')}</label>
           <input
             type="text"
-            value={formData.medicalConditionsOther || ''}
+            value={data.medicalConditionsOther || ''}
             onChange={(e) => updateField('medicalConditionsOther', e.target.value)}
             className={inputClass}
             placeholder={t('medicalHistory.q8.otherPlaceholder')}
@@ -425,7 +368,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
       <QuestionCard>
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q9.label')}</p>
         <textarea
-          value={formData.currentMedications || ''}
+          value={data.currentMedications || ''}
           onChange={(e) => updateField('currentMedications', e.target.value)}
           rows={3}
           className={textareaClass}
@@ -437,16 +380,16 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q10.label')}</p>
         <RadioGroup
           name="hasAllergies"
-          value={formData.hasAllergies || ''}
+          value={data.hasAllergies || ''}
           options={[
             { value: 'yes', label: t('medicalHistory.q10.yes') },
             { value: 'no', label: t('medicalHistory.q10.no') },
           ]}
           onChange={(v) => updateField('hasAllergies', v as MedicalHistoryData['hasAllergies'])}
         />
-        {formData.hasAllergies === 'yes' && (
+        {data.hasAllergies === 'yes' && (
           <textarea
-            value={formData.allergiesDetails || ''}
+            value={data.allergiesDetails || ''}
             onChange={(e) => updateField('allergiesDetails', e.target.value)}
             rows={2}
             className={`${textareaClass} mt-3`}
@@ -459,7 +402,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
         <p className="text-sm font-semibold text-gray-800 mb-3">{t('medicalHistory.q11.label')}</p>
         <CheckboxGroup
           items={FAMILY_CONDITIONS}
-          selected={formData.familyHistoryConditions || []}
+          selected={data.familyHistoryConditions || []}
           onChange={(items) => updateField('familyHistoryConditions', items)}
           t={t}
           translationPrefix="medicalHistory.q11.conditions"
@@ -481,15 +424,11 @@ const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSucce
         )}
         <button
           type="submit"
-          disabled={isSubmitting || !isFormValid}
+          disabled={!isFormValid}
           className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
         >
-          {isSubmitting ? t('buttons.submitting') : (
-            <>
-              {t('buttons.next', { defaultValue: 'Save & Continue' })}
-              <ArrowRight className="h-4 w-4" />
-            </>
-          )}
+          {t('buttons.next', { defaultValue: 'Save & Continue' })}
+          <ArrowRight className="h-4 w-4" />
         </button>
       </div>
     </form>

@@ -2,33 +2,33 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, Send } from 'lucide-react';
 import type { ConsentFormData, ValidationErrors } from '../../types/PatientForms';
-import {
-  submitConsentForm,
-  validateSignatureDate,
-} from '../../services/patientFormsService';
+import { validateSignatureDate } from '../../services/patientFormsService';
 
 interface Props {
+  data: ConsentFormData;
+  onChange: (data: ConsentFormData) => void;
   onPrevious?: () => void;
-  onSubmitSuccess?: () => void;
+  onSubmit: () => Promise<void>;
+  isSubmitting: boolean;
+  submitError: string;
+  submitSuccess: boolean;
 }
 
-const ConsentForm: React.FC<Props> = ({ onPrevious, onSubmitSuccess }) => {
+const ConsentForm: React.FC<Props> = ({
+  data,
+  onChange,
+  onPrevious,
+  onSubmit,
+  isSubmitting,
+  submitError,
+  submitSuccess,
+}) => {
   const { t } = useTranslation('patientForms');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState('');
   const [errors, setErrors] = useState<ValidationErrors>({});
-
-  const [formData, setFormData] = useState<ConsentFormData>({
-    hipaaPrivacyAcknowledgment: false,
-    consentToTreatment: false,
-    patientSignature: '',
-    signatureDate: '',
-  });
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: checked }));
+    onChange({ ...data, [name]: checked });
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -36,7 +36,7 @@ const ConsentForm: React.FC<Props> = ({ onPrevious, onSubmitSuccess }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    onChange({ ...data, [name]: value });
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -45,19 +45,19 @@ const ConsentForm: React.FC<Props> = ({ onPrevious, onSubmitSuccess }) => {
   const validateForm = (): boolean => {
     const newErrors: ValidationErrors = {};
 
-    if (!formData.hipaaPrivacyAcknowledgment || !formData.consentToTreatment) {
+    if (!data.hipaaPrivacyAcknowledgment || !data.consentToTreatment) {
       newErrors.consents = t('validation.consentRequired');
     }
 
-    if (!formData.patientSignature.trim()) {
+    if (!data.patientSignature.trim()) {
       newErrors.patientSignature = t('validation.required');
-    } else if (formData.patientSignature.trim().length < 2) {
+    } else if (data.patientSignature.trim().length < 2) {
       newErrors.patientSignature = t('validation.signatureTooShort');
     }
 
-    if (!formData.signatureDate) {
+    if (!data.signatureDate) {
       newErrors.signatureDate = t('validation.required');
-    } else if (!validateSignatureDate(formData.signatureDate)) {
+    } else if (!validateSignatureDate(data.signatureDate)) {
       newErrors.signatureDate = t('validation.invalidSignatureDate');
     }
 
@@ -66,40 +66,15 @@ const ConsentForm: React.FC<Props> = ({ onPrevious, onSubmitSuccess }) => {
   };
 
   const isFormValid =
-    formData.hipaaPrivacyAcknowledgment &&
-    formData.consentToTreatment &&
-    formData.patientSignature.trim().length >= 2 &&
-    formData.signatureDate !== '';
+    data.hipaaPrivacyAcknowledgment &&
+    data.consentToTreatment &&
+    data.patientSignature.trim().length >= 2 &&
+    data.signatureDate !== '';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitError('');
-    setSubmitSuccess(false);
-
     if (!validateForm()) return;
-
-    setIsSubmitting(true);
-
-    try {
-      const result = await submitConsentForm(formData);
-
-      if (result.success) {
-        setSubmitSuccess(true);
-        onSubmitSuccess?.();
-        setFormData({
-          hipaaPrivacyAcknowledgment: false,
-          consentToTreatment: false,
-          patientSignature: '',
-          signatureDate: '',
-        });
-      } else {
-        setSubmitError(result.error || t('error.generic'));
-      }
-    } catch {
-      setSubmitError(t('error.network'));
-    } finally {
-      setIsSubmitting(false);
-    }
+    await onSubmit();
   };
 
   return (
@@ -133,7 +108,7 @@ const ConsentForm: React.FC<Props> = ({ onPrevious, onSubmitSuccess }) => {
           <input
             type="checkbox"
             name="hipaaPrivacyAcknowledgment"
-            checked={formData.hipaaPrivacyAcknowledgment}
+            checked={data.hipaaPrivacyAcknowledgment}
             onChange={handleCheckboxChange}
             className="mt-1 h-5 w-5 text-teal-600 border-gray-300 rounded focus:ring-2 focus:ring-teal-500"
             aria-required="true"
@@ -156,7 +131,7 @@ const ConsentForm: React.FC<Props> = ({ onPrevious, onSubmitSuccess }) => {
           <input
             type="checkbox"
             name="consentToTreatment"
-            checked={formData.consentToTreatment}
+            checked={data.consentToTreatment}
             onChange={handleCheckboxChange}
             className="mt-1 h-5 w-5 text-teal-600 border-gray-300 rounded focus:ring-2 focus:ring-teal-500"
             aria-required="true"
@@ -181,7 +156,7 @@ const ConsentForm: React.FC<Props> = ({ onPrevious, onSubmitSuccess }) => {
             type="text"
             id="patientSignature"
             name="patientSignature"
-            value={formData.patientSignature}
+            value={data.patientSignature}
             onChange={handleChange}
             className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
               errors.patientSignature ? 'border-red-500' : 'border-gray-300'
@@ -210,7 +185,7 @@ const ConsentForm: React.FC<Props> = ({ onPrevious, onSubmitSuccess }) => {
             type="date"
             id="signatureDate"
             name="signatureDate"
-            value={formData.signatureDate}
+            value={data.signatureDate}
             onChange={handleChange}
             className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
               errors.signatureDate ? 'border-red-500' : 'border-gray-300'

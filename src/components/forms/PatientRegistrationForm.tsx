@@ -3,43 +3,26 @@ import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 import type { PatientRegistrationData, ValidationErrors } from '../../types/PatientForms';
 import {
-  submitPatientRegistration,
   validateEmail,
   validatePhone,
   validateDateOfBirth,
-  formatPhoneNumber,
 } from '../../services/patientFormsService';
 
 interface Props {
+  data: PatientRegistrationData;
+  onChange: (data: PatientRegistrationData) => void;
   onNext?: () => void;
-  onSubmitSuccess?: () => void;
 }
 
-const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) => {
+const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) => {
   const { t } = useTranslation('patientForms');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState('');
   const [errors, setErrors] = useState<ValidationErrors>({});
-
-  const [formData, setFormData] = useState<PatientRegistrationData>({
-    firstName: '',
-    lastName: '',
-    dateOfBirth: '',
-    phoneNumber: '',
-    emailAddress: '',
-    streetAddress: '',
-    city: '',
-    state: '',
-    zip: '',
-    reasonForVisit: '',
-  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    onChange({ ...data, [name]: value });
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -48,25 +31,25 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
   const validateForm = (): boolean => {
     const newErrors: ValidationErrors = {};
 
-    if (!formData.firstName.trim()) {
+    if (!data.firstName.trim()) {
       newErrors.firstName = t('validation.required');
     }
-    if (!formData.lastName.trim()) {
+    if (!data.lastName.trim()) {
       newErrors.lastName = t('validation.required');
     }
-    if (!formData.dateOfBirth) {
+    if (!data.dateOfBirth) {
       newErrors.dateOfBirth = t('validation.required');
-    } else if (!validateDateOfBirth(formData.dateOfBirth)) {
+    } else if (!validateDateOfBirth(data.dateOfBirth)) {
       newErrors.dateOfBirth = t('validation.invalidDateOfBirth');
     }
-    if (!formData.phoneNumber.trim()) {
+    if (!data.phoneNumber.trim()) {
       newErrors.phoneNumber = t('validation.required');
-    } else if (!validatePhone(formData.phoneNumber)) {
+    } else if (!validatePhone(data.phoneNumber)) {
       newErrors.phoneNumber = t('validation.invalidPhone');
     }
-    if (!formData.emailAddress.trim()) {
+    if (!data.emailAddress.trim()) {
       newErrors.emailAddress = t('validation.required');
-    } else if (!validateEmail(formData.emailAddress)) {
+    } else if (!validateEmail(data.emailAddress)) {
       newErrors.emailAddress = t('validation.invalidEmail');
     }
 
@@ -75,57 +58,20 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
   };
 
   const isFormValid =
-    formData.firstName.trim() !== '' &&
-    formData.lastName.trim() !== '' &&
-    formData.dateOfBirth !== '' &&
-    formData.phoneNumber.trim() !== '' &&
-    formData.emailAddress.trim() !== '';
+    data.firstName.trim() !== '' &&
+    data.lastName.trim() !== '' &&
+    data.dateOfBirth !== '' &&
+    data.phoneNumber.trim() !== '' &&
+    data.emailAddress.trim() !== '';
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitError('');
-    setSubmitSuccess(false);
-
     if (!validateForm()) return;
-
-    setIsSubmitting(true);
-
-    try {
-      const result = await submitPatientRegistration({
-        ...formData,
-        phoneNumber: formatPhoneNumber(formData.phoneNumber),
-      });
-
-      if (result.success) {
-        setSubmitSuccess(true);
-        onSubmitSuccess?.();
-        if (onNext) {
-          setTimeout(() => onNext(), 400);
-        }
-      } else {
-        setSubmitError(result.error || t('error.generic'));
-      }
-    } catch {
-      setSubmitError(t('error.network'));
-    } finally {
-      setIsSubmitting(false);
-    }
+    onNext?.();
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {submitSuccess && (
-        <div className="bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg text-sm">
-          {t('success.registration')}
-        </div>
-      )}
-
-      {submitError && (
-        <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-sm">
-          {submitError}
-        </div>
-      )}
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -136,7 +82,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
             type="text"
             id="firstName"
             name="firstName"
-            value={formData.firstName}
+            value={data.firstName}
             onChange={handleChange}
             className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
               errors.firstName ? 'border-red-500' : 'border-gray-300'
@@ -160,7 +106,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
             type="text"
             id="lastName"
             name="lastName"
-            value={formData.lastName}
+            value={data.lastName}
             onChange={handleChange}
             className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
               errors.lastName ? 'border-red-500' : 'border-gray-300'
@@ -186,7 +132,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
             type="date"
             id="dateOfBirth"
             name="dateOfBirth"
-            value={formData.dateOfBirth}
+            value={data.dateOfBirth}
             onChange={handleChange}
             className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
               errors.dateOfBirth ? 'border-red-500' : 'border-gray-300'
@@ -209,7 +155,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
             type="tel"
             id="phoneNumber"
             name="phoneNumber"
-            value={formData.phoneNumber}
+            value={data.phoneNumber}
             onChange={handleChange}
             className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
               errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
@@ -234,7 +180,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
           type="email"
           id="emailAddress"
           name="emailAddress"
-          value={formData.emailAddress}
+          value={data.emailAddress}
           onChange={handleChange}
           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
             errors.emailAddress ? 'border-red-500' : 'border-gray-300'
@@ -257,7 +203,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
           type="text"
           id="streetAddress"
           name="streetAddress"
-          value={formData.streetAddress}
+          value={data.streetAddress}
           onChange={handleChange}
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
           placeholder={t('registration.streetAddress.placeholder')}
@@ -273,7 +219,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
             type="text"
             id="city"
             name="city"
-            value={formData.city}
+            value={data.city}
             onChange={handleChange}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
             placeholder={t('registration.city.placeholder')}
@@ -288,7 +234,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
             type="text"
             id="state"
             name="state"
-            value={formData.state}
+            value={data.state}
             onChange={handleChange}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
             placeholder={t('registration.state.placeholder')}
@@ -304,7 +250,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
             type="text"
             id="zip"
             name="zip"
-            value={formData.zip}
+            value={data.zip}
             onChange={handleChange}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
             placeholder={t('registration.zip.placeholder')}
@@ -320,7 +266,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
         <textarea
           id="reasonForVisit"
           name="reasonForVisit"
-          value={formData.reasonForVisit}
+          value={data.reasonForVisit}
           onChange={handleChange}
           rows={4}
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
@@ -331,15 +277,11 @@ const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) =
       <div className="flex justify-end pt-4 border-t border-gray-100">
         <button
           type="submit"
-          disabled={isSubmitting || !isFormValid}
+          disabled={!isFormValid}
           className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
         >
-          {isSubmitting ? t('buttons.submitting') : (
-            <>
-              {t('buttons.next', { defaultValue: 'Save & Continue' })}
-              <ArrowRight className="h-4 w-4" />
-            </>
-          )}
+          {t('buttons.next', { defaultValue: 'Save & Continue' })}
+          <ArrowRight className="h-4 w-4" />
         </button>
       </div>
     </form>
