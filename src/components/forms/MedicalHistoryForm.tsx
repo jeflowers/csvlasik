@@ -9,7 +9,7 @@ const SYMPTOMS = [
   'excessive_tearing', 'redness', 'floaters', 'mucous_discharge',
   'light_sensitivity', 'flashing_lights', 'itchiness', 'halos',
   'double_vision', 'loss_of_vision', 'blurry_vision', 'dryness',
-  'burning_sensation',
+  'burning_sensation', 'keratoconus',
 ] as const;
 
 const MEDICAL_CONDITIONS = [
