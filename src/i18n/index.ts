@@ -200,7 +200,7 @@ i18n
     react: {
       useSuspense: false,
       bindI18n: 'languageChanged loaded',
-      bindI18nStore: '',
+      bindI18nStore: 'added loaded',
       transEmptyNodeValue: '',
       transSupportBasicHtmlNodes: true,
       transKeepBasicHtmlNodesFor: ['br', 'strong', 'i']
