@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Eye, Stethoscope, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Eye, Stethoscope, AlertCircle, CheckCircle2, ArrowLeft, ArrowRight } from 'lucide-react';
 import type { MedicalHistoryData, VisionCorrectionData } from '../../types/PatientForms';
 import { submitMedicalHistory } from '../../services/patientFormsService';
 
@@ -123,7 +123,13 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ children, className = '' })
   </div>
 );
 
-const MedicalHistoryForm: React.FC = () => {
+interface Props {
+  onPrevious?: () => void;
+  onNext?: () => void;
+  onSubmitSuccess?: () => void;
+}
+
+const MedicalHistoryForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSuccess }) => {
   const { t } = useTranslation('patientForms');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -157,8 +163,10 @@ const MedicalHistoryForm: React.FC = () => {
       const result = await submitMedicalHistory(formData);
       if (result.success) {
         setSubmitSuccess(true);
-        setFormData({ ...initialFormData, visionCorrection: { ...initialVisionCorrection } });
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        onSubmitSuccess?.();
+        if (onNext) {
+          setTimeout(() => onNext(), 400);
+        }
       } else {
         setSubmitError(result.error || t('error.generic'));
       }
@@ -458,13 +466,32 @@ const MedicalHistoryForm: React.FC = () => {
         />
       </QuestionCard>
 
-      <button
-        type="submit"
-        disabled={isSubmitting || !isFormValid}
-        className="w-full bg-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-teal-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
-      >
-        {isSubmitting ? t('buttons.submitting') : t('buttons.submitForm')}
-      </button>
+      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+        {onPrevious ? (
+          <button
+            type="button"
+            onClick={onPrevious}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 shadow-sm"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            {t('buttons.previous', { defaultValue: 'Previous' })}
+          </button>
+        ) : (
+          <div />
+        )}
+        <button
+          type="submit"
+          disabled={isSubmitting || !isFormValid}
+          className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
+        >
+          {isSubmitting ? t('buttons.submitting') : (
+            <>
+              {t('buttons.next', { defaultValue: 'Save & Continue' })}
+              <ArrowRight className="h-4 w-4" />
+            </>
+          )}
+        </button>
+      </div>
     </form>
   );
 };

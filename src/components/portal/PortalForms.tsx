@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FileText, Clipboard, CreditCard, Shield, CheckCircle2 } from 'lucide-react';
+import { FileText, Clipboard, CreditCard, Shield, CheckCircle2, Check } from 'lucide-react';
 import { usePatient } from '../../hooks/usePatient';
 import { supabase } from '../../lib/supabase';
 import type { PatientFormTab } from '../../types/PatientForms';
@@ -15,9 +15,16 @@ interface CompletionStatus {
   consent: boolean;
 }
 
+const STEPS: { id: PatientFormTab; icon: React.ElementType; label: string }[] = [
+  { id: 'registration', icon: FileText, label: 'Registration' },
+  { id: 'medicalHistory', icon: Clipboard, label: 'Medical History' },
+  { id: 'insuranceInfo', icon: CreditCard, label: 'Insurance' },
+  { id: 'consent', icon: Shield, label: 'Consent' },
+];
+
 const PortalForms: React.FC = () => {
   const { user } = usePatient();
-  const [activeTab, setActiveTab] = useState<PatientFormTab>('registration');
+  const [activeStep, setActiveStep] = useState(0);
   const [status, setStatus] = useState<CompletionStatus>({
     registration: false,
     medicalHistory: false,
@@ -47,25 +54,47 @@ const PortalForms: React.FC = () => {
     checkStatus();
   }, [user]);
 
-  const tabs = [
-    { id: 'registration' as PatientFormTab, icon: FileText, label: 'Registration', done: status.registration },
-    { id: 'medicalHistory' as PatientFormTab, icon: Clipboard, label: 'Medical History', done: status.medicalHistory },
-    { id: 'insuranceInfo' as PatientFormTab, icon: CreditCard, label: 'Insurance', done: status.insuranceInfo },
-    { id: 'consent' as PatientFormTab, icon: Shield, label: 'Consent', done: status.consent },
-  ];
+  const goNext = () => {
+    setActiveStep((prev) => Math.min(prev + 1, STEPS.length - 1));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const goPrevious = () => {
+    setActiveStep((prev) => Math.max(prev - 1, 0));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const refreshStatus = async () => {
+    if (!user) return;
+    const [reg, med, ins, con] = await Promise.all([
+      supabase.from('patient_registrations').select('id', { count: 'exact', head: true }).eq('user_id', user.id),
+      supabase.from('patient_medical_histories').select('id', { count: 'exact', head: true }).eq('user_id', user.id),
+      supabase.from('patient_insurance_info').select('id', { count: 'exact', head: true }).eq('user_id', user.id),
+      supabase.from('patient_consent_forms').select('id', { count: 'exact', head: true }).eq('user_id', user.id),
+    ]);
+    setStatus({
+      registration: (reg.count || 0) > 0,
+      medicalHistory: (med.count || 0) > 0,
+      insuranceInfo: (ins.count || 0) > 0,
+      consent: (con.count || 0) > 0,
+    });
+  };
+
+  const statusKeys: PatientFormTab[] = ['registration', 'medicalHistory', 'insuranceInfo', 'consent'];
 
   const renderForm = () => {
-    switch (activeTab) {
+    const currentTab = STEPS[activeStep].id;
+    switch (currentTab) {
       case 'registration':
-        return <PatientRegistrationForm />;
+        return <PatientRegistrationForm onNext={goNext} onSubmitSuccess={refreshStatus} />;
       case 'medicalHistory':
-        return <MedicalHistoryForm />;
+        return <MedicalHistoryForm onPrevious={goPrevious} onNext={goNext} onSubmitSuccess={refreshStatus} />;
       case 'insuranceInfo':
-        return <InsuranceInfoForm />;
+        return <InsuranceInfoForm onPrevious={goPrevious} onNext={goNext} onSubmitSuccess={refreshStatus} />;
       case 'consent':
-        return <ConsentForm />;
+        return <ConsentForm onPrevious={goPrevious} onSubmitSuccess={refreshStatus} />;
       default:
-        return <PatientRegistrationForm />;
+        return <PatientRegistrationForm onNext={goNext} onSubmitSuccess={refreshStatus} />;
     }
   };
 
@@ -78,37 +107,76 @@ const PortalForms: React.FC = () => {
         </p>
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-        <div role="tablist" className="border-b border-gray-200">
-          <div className="grid grid-cols-4">
-            {tabs.map((tab) => {
-              const Icon = tab.icon;
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  role="tab"
-                  aria-selected={isActive}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`
-                    relative flex flex-col items-center gap-1.5 px-3 py-4 text-xs font-medium
-                    transition-all duration-200 border-b-2
-                    ${isActive
-                      ? 'text-teal-600 border-teal-600 bg-teal-50/50'
-                      : 'text-gray-500 border-transparent hover:text-gray-700 hover:bg-gray-50'
-                    }
-                  `}
-                >
-                  <div className="relative">
-                    <Icon className="h-5 w-5" />
-                    {tab.done && (
-                      <CheckCircle2 className="absolute -top-1.5 -right-1.5 h-3.5 w-3.5 text-teal-600 bg-white rounded-full" />
+      <div className="mb-8">
+        <div className="flex items-center justify-between">
+          {STEPS.map((step, index) => {
+            const Icon = step.icon;
+            const isCurrent = index === activeStep;
+            const isCompleted = status[statusKeys[index]];
+            const isPast = index < activeStep;
+
+            return (
+              <React.Fragment key={step.id}>
+                <div className="flex flex-col items-center gap-2">
+                  <div
+                    className={`
+                      relative flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-300
+                      ${isCurrent
+                        ? 'border-teal-600 bg-teal-600 text-white shadow-lg shadow-teal-600/25'
+                        : isCompleted
+                          ? 'border-teal-600 bg-teal-50 text-teal-600'
+                          : isPast
+                            ? 'border-gray-300 bg-gray-50 text-gray-500'
+                            : 'border-gray-200 bg-white text-gray-400'
+                      }
+                    `}
+                  >
+                    {isCompleted && !isCurrent ? (
+                      <Check className="h-5 w-5" />
+                    ) : (
+                      <Icon className="h-5 w-5" />
+                    )}
+                    {isCompleted && (
+                      <CheckCircle2 className="absolute -top-1 -right-1 h-4 w-4 text-teal-600 bg-white rounded-full" />
                     )}
                   </div>
-                  <span className="hidden sm:inline">{tab.label}</span>
-                </button>
-              );
-            })}
+                  <span
+                    className={`text-xs font-medium text-center hidden sm:block ${
+                      isCurrent ? 'text-teal-700' : isCompleted ? 'text-teal-600' : 'text-gray-400'
+                    }`}
+                  >
+                    {step.label}
+                  </span>
+                </div>
+
+                {index < STEPS.length - 1 && (
+                  <div className="flex-1 mx-2 sm:mx-4 mb-6 sm:mb-4">
+                    <div className="h-0.5 rounded-full bg-gray-200 relative">
+                      <div
+                        className="absolute inset-y-0 left-0 bg-teal-600 rounded-full transition-all duration-500"
+                        style={{
+                          width: index < activeStep || status[statusKeys[index]] ? '100%' : '0%',
+                        }}
+                      />
+                    </div>
+                  </div>
+                )}
+              </React.Fragment>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+        <div className="border-b border-gray-100 bg-gray-50/50 px-6 py-4">
+          <div className="flex items-center gap-3">
+            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-teal-600 text-white text-xs font-bold">
+              {activeStep + 1}
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-gray-900">{STEPS[activeStep].label}</p>
+              <p className="text-xs text-gray-500">Step {activeStep + 1} of {STEPS.length}</p>
+            </div>
           </div>
         </div>
 

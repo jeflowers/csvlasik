@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Wallet, Info } from 'lucide-react';
+import { Wallet, Info, ArrowLeft, ArrowRight } from 'lucide-react';
 import type { InsuranceInfoData } from '../../types/PatientForms';
 import { submitInsuranceInfo } from '../../services/patientFormsService';
 
-const InsuranceInfoForm: React.FC = () => {
+interface Props {
+  onPrevious?: () => void;
+  onNext?: () => void;
+  onSubmitSuccess?: () => void;
+}
+
+const InsuranceInfoForm: React.FC<Props> = ({ onPrevious, onNext, onSubmitSuccess }) => {
   const { t } = useTranslation('patientForms');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -37,14 +43,10 @@ const InsuranceInfoForm: React.FC = () => {
 
       if (result.success) {
         setSubmitSuccess(true);
-        setFormData({
-          hasHsaFsa: '',
-          hsaFsaProvider: '',
-          accountHolderName: '',
-          estimatedBalance: '',
-          interestedInPaymentPlan: '',
-          additionalNotes: '',
-        });
+        onSubmitSuccess?.();
+        if (onNext) {
+          setTimeout(() => onNext(), 400);
+        }
       } else {
         setSubmitError(result.error || t('error.generic'));
       }
@@ -64,13 +66,13 @@ const InsuranceInfoForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {submitSuccess && (
-        <div className="bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg">
+        <div className="bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg text-sm">
           {t('success.insuranceInfo')}
         </div>
       )}
 
       {submitError && (
-        <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+        <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-sm">
           {submitError}
         </div>
       )}
@@ -226,13 +228,32 @@ const InsuranceInfoForm: React.FC = () => {
         />
       </div>
 
-      <button
-        type="submit"
-        disabled={isSubmitting || !isFormValid}
-        className="w-full bg-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-teal-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
-      >
-        {isSubmitting ? t('buttons.submitting') : t('buttons.submitForm')}
-      </button>
+      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+        {onPrevious ? (
+          <button
+            type="button"
+            onClick={onPrevious}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 shadow-sm"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            {t('buttons.previous', { defaultValue: 'Previous' })}
+          </button>
+        ) : (
+          <div />
+        )}
+        <button
+          type="submit"
+          disabled={isSubmitting || !isFormValid}
+          className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
+        >
+          {isSubmitting ? t('buttons.submitting') : (
+            <>
+              {t('buttons.next', { defaultValue: 'Save & Continue' })}
+              <ArrowRight className="h-4 w-4" />
+            </>
+          )}
+        </button>
+      </div>
     </form>
   );
 };

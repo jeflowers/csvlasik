@@ -1,14 +1,6 @@
-/**
- * ClearSight LASIK - Patient Registration Form
- *
- * Form for capturing new patient demographic and contact information.
- * Tab 1 of the patient forms system.
- *
- * @module components/forms/PatientRegistrationForm
- */
-
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ArrowRight } from 'lucide-react';
 import type { PatientRegistrationData, ValidationErrors } from '../../types/PatientForms';
 import {
   submitPatientRegistration,
@@ -18,7 +10,12 @@ import {
   formatPhoneNumber,
 } from '../../services/patientFormsService';
 
-const PatientRegistrationForm: React.FC = () => {
+interface Props {
+  onNext?: () => void;
+  onSubmitSuccess?: () => void;
+}
+
+const PatientRegistrationForm: React.FC<Props> = ({ onNext, onSubmitSuccess }) => {
   const { t } = useTranslation('patientForms');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -89,9 +86,7 @@ const PatientRegistrationForm: React.FC = () => {
     setSubmitError('');
     setSubmitSuccess(false);
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
 
@@ -103,22 +98,14 @@ const PatientRegistrationForm: React.FC = () => {
 
       if (result.success) {
         setSubmitSuccess(true);
-        setFormData({
-          firstName: '',
-          lastName: '',
-          dateOfBirth: '',
-          phoneNumber: '',
-          emailAddress: '',
-          streetAddress: '',
-          city: '',
-          state: '',
-          zip: '',
-          reasonForVisit: '',
-        });
+        onSubmitSuccess?.();
+        if (onNext) {
+          setTimeout(() => onNext(), 400);
+        }
       } else {
         setSubmitError(result.error || t('error.generic'));
       }
-    } catch (err) {
+    } catch {
       setSubmitError(t('error.network'));
     } finally {
       setIsSubmitting(false);
@@ -127,27 +114,21 @@ const PatientRegistrationForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Success Message */}
       {submitSuccess && (
-        <div className="bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg">
+        <div className="bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg text-sm">
           {t('success.registration')}
         </div>
       )}
 
-      {/* Error Message */}
       {submitError && (
-        <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+        <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-sm">
           {submitError}
         </div>
       )}
 
-      {/* First Name & Last Name */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label
-            htmlFor="firstName"
-            className="block text-sm font-semibold text-gray-700 mb-2"
-          >
+          <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
             {t('registration.firstName.label')}
             <span className="text-red-600 ml-1">*</span>
           </label>
@@ -166,17 +147,12 @@ const PatientRegistrationForm: React.FC = () => {
             aria-describedby={errors.firstName ? 'firstName-error' : undefined}
           />
           {errors.firstName && (
-            <p id="firstName-error" className="mt-1 text-sm text-red-600">
-              {errors.firstName}
-            </p>
+            <p id="firstName-error" className="mt-1 text-sm text-red-600">{errors.firstName}</p>
           )}
         </div>
 
         <div>
-          <label
-            htmlFor="lastName"
-            className="block text-sm font-semibold text-gray-700 mb-2"
-          >
+          <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2">
             {t('registration.lastName.label')}
             <span className="text-red-600 ml-1">*</span>
           </label>
@@ -195,20 +171,14 @@ const PatientRegistrationForm: React.FC = () => {
             aria-describedby={errors.lastName ? 'lastName-error' : undefined}
           />
           {errors.lastName && (
-            <p id="lastName-error" className="mt-1 text-sm text-red-600">
-              {errors.lastName}
-            </p>
+            <p id="lastName-error" className="mt-1 text-sm text-red-600">{errors.lastName}</p>
           )}
         </div>
       </div>
 
-      {/* Date of Birth & Phone Number */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label
-            htmlFor="dateOfBirth"
-            className="block text-sm font-semibold text-gray-700 mb-2"
-          >
+          <label htmlFor="dateOfBirth" className="block text-sm font-semibold text-gray-700 mb-2">
             {t('registration.dateOfBirth.label')}
             <span className="text-red-600 ml-1">*</span>
           </label>
@@ -226,17 +196,12 @@ const PatientRegistrationForm: React.FC = () => {
             aria-describedby={errors.dateOfBirth ? 'dateOfBirth-error' : undefined}
           />
           {errors.dateOfBirth && (
-            <p id="dateOfBirth-error" className="mt-1 text-sm text-red-600">
-              {errors.dateOfBirth}
-            </p>
+            <p id="dateOfBirth-error" className="mt-1 text-sm text-red-600">{errors.dateOfBirth}</p>
           )}
         </div>
 
         <div>
-          <label
-            htmlFor="phoneNumber"
-            className="block text-sm font-semibold text-gray-700 mb-2"
-          >
+          <label htmlFor="phoneNumber" className="block text-sm font-semibold text-gray-700 mb-2">
             {t('registration.phoneNumber.label')}
             <span className="text-red-600 ml-1">*</span>
           </label>
@@ -255,19 +220,13 @@ const PatientRegistrationForm: React.FC = () => {
             aria-describedby={errors.phoneNumber ? 'phoneNumber-error' : undefined}
           />
           {errors.phoneNumber && (
-            <p id="phoneNumber-error" className="mt-1 text-sm text-red-600">
-              {errors.phoneNumber}
-            </p>
+            <p id="phoneNumber-error" className="mt-1 text-sm text-red-600">{errors.phoneNumber}</p>
           )}
         </div>
       </div>
 
-      {/* Email Address */}
       <div>
-        <label
-          htmlFor="emailAddress"
-          className="block text-sm font-semibold text-gray-700 mb-2"
-        >
+        <label htmlFor="emailAddress" className="block text-sm font-semibold text-gray-700 mb-2">
           {t('registration.emailAddress.label')}
           <span className="text-red-600 ml-1">*</span>
         </label>
@@ -286,18 +245,12 @@ const PatientRegistrationForm: React.FC = () => {
           aria-describedby={errors.emailAddress ? 'emailAddress-error' : undefined}
         />
         {errors.emailAddress && (
-          <p id="emailAddress-error" className="mt-1 text-sm text-red-600">
-            {errors.emailAddress}
-          </p>
+          <p id="emailAddress-error" className="mt-1 text-sm text-red-600">{errors.emailAddress}</p>
         )}
       </div>
 
-      {/* Street Address */}
       <div>
-        <label
-          htmlFor="streetAddress"
-          className="block text-sm font-semibold text-gray-700 mb-2"
-        >
+        <label htmlFor="streetAddress" className="block text-sm font-semibold text-gray-700 mb-2">
           {t('registration.streetAddress.label')}
         </label>
         <input
@@ -311,13 +264,9 @@ const PatientRegistrationForm: React.FC = () => {
         />
       </div>
 
-      {/* City, State, ZIP */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="md:col-span-1">
-          <label
-            htmlFor="city"
-            className="block text-sm font-semibold text-gray-700 mb-2"
-          >
+          <label htmlFor="city" className="block text-sm font-semibold text-gray-700 mb-2">
             {t('registration.city.label')}
           </label>
           <input
@@ -332,10 +281,7 @@ const PatientRegistrationForm: React.FC = () => {
         </div>
 
         <div>
-          <label
-            htmlFor="state"
-            className="block text-sm font-semibold text-gray-700 mb-2"
-          >
+          <label htmlFor="state" className="block text-sm font-semibold text-gray-700 mb-2">
             {t('registration.state.label')}
           </label>
           <input
@@ -351,10 +297,7 @@ const PatientRegistrationForm: React.FC = () => {
         </div>
 
         <div>
-          <label
-            htmlFor="zip"
-            className="block text-sm font-semibold text-gray-700 mb-2"
-          >
+          <label htmlFor="zip" className="block text-sm font-semibold text-gray-700 mb-2">
             {t('registration.zip.label')}
           </label>
           <input
@@ -370,12 +313,8 @@ const PatientRegistrationForm: React.FC = () => {
         </div>
       </div>
 
-      {/* Reason for Visit */}
       <div>
-        <label
-          htmlFor="reasonForVisit"
-          className="block text-sm font-semibold text-gray-700 mb-2"
-        >
+        <label htmlFor="reasonForVisit" className="block text-sm font-semibold text-gray-700 mb-2">
           {t('registration.reasonForVisit.label')}
         </label>
         <textarea
@@ -389,14 +328,20 @@ const PatientRegistrationForm: React.FC = () => {
         />
       </div>
 
-      {/* Submit Button */}
-      <button
-        type="submit"
-        disabled={isSubmitting || !isFormValid}
-        className="w-full bg-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-teal-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
-      >
-        {isSubmitting ? t('buttons.submitting') : t('buttons.submitForm')}
-      </button>
+      <div className="flex justify-end pt-4 border-t border-gray-100">
+        <button
+          type="submit"
+          disabled={isSubmitting || !isFormValid}
+          className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
+        >
+          {isSubmitting ? t('buttons.submitting') : (
+            <>
+              {t('buttons.next', { defaultValue: 'Save & Continue' })}
+              <ArrowRight className="h-4 w-4" />
+            </>
+          )}
+        </button>
+      </div>
     </form>
   );
 };

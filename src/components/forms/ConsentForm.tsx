@@ -1,21 +1,18 @@
-/**
- * ClearSight LASIK - Consent Form
- *
- * Form for capturing HIPAA privacy acknowledgment and consent to treatment.
- * Tab 4 of the patient forms system.
- *
- * @module components/forms/ConsentForm
- */
-
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ArrowLeft, Send } from 'lucide-react';
 import type { ConsentFormData, ValidationErrors } from '../../types/PatientForms';
 import {
   submitConsentForm,
   validateSignatureDate,
 } from '../../services/patientFormsService';
 
-const ConsentForm: React.FC = () => {
+interface Props {
+  onPrevious?: () => void;
+  onSubmitSuccess?: () => void;
+}
+
+const ConsentForm: React.FC<Props> = ({ onPrevious, onSubmitSuccess }) => {
   const { t } = useTranslation('patientForms');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -79,9 +76,7 @@ const ConsentForm: React.FC = () => {
     setSubmitError('');
     setSubmitSuccess(false);
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
 
@@ -90,6 +85,7 @@ const ConsentForm: React.FC = () => {
 
       if (result.success) {
         setSubmitSuccess(true);
+        onSubmitSuccess?.();
         setFormData({
           hipaaPrivacyAcknowledgment: false,
           consentToTreatment: false,
@@ -99,7 +95,7 @@ const ConsentForm: React.FC = () => {
       } else {
         setSubmitError(result.error || t('error.generic'));
       }
-    } catch (err) {
+    } catch {
       setSubmitError(t('error.network'));
     } finally {
       setIsSubmitting(false);
@@ -108,28 +104,24 @@ const ConsentForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Success Message */}
       {submitSuccess && (
-        <div className="bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg">
+        <div className="bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg text-sm">
           {t('success.consent')}
         </div>
       )}
 
-      {/* Error Message */}
       {submitError && (
-        <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+        <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-sm">
           {submitError}
         </div>
       )}
 
-      {/* Consent Error */}
       {errors.consents && (
-        <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+        <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-sm">
           {errors.consents}
         </div>
       )}
 
-      {/* HIPAA Privacy Acknowledgment Card */}
       <div className="border border-gray-200 rounded-lg p-6 bg-white shadow-sm">
         <h3 className="text-lg font-bold text-gray-900 mb-3">
           {t('consent.hipaaTitle')}
@@ -153,7 +145,6 @@ const ConsentForm: React.FC = () => {
         </label>
       </div>
 
-      {/* Consent to Treatment Card */}
       <div className="border border-gray-200 rounded-lg p-6 bg-white shadow-sm">
         <h3 className="text-lg font-bold text-gray-900 mb-3">
           {t('consent.treatmentTitle')}
@@ -177,7 +168,6 @@ const ConsentForm: React.FC = () => {
         </label>
       </div>
 
-      {/* Signature Fields */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
         <div>
           <label
@@ -237,14 +227,32 @@ const ConsentForm: React.FC = () => {
         </div>
       </div>
 
-      {/* Submit Button */}
-      <button
-        type="submit"
-        disabled={isSubmitting || !isFormValid}
-        className="w-full bg-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-teal-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
-      >
-        {isSubmitting ? t('buttons.submitting') : t('buttons.submitForm')}
-      </button>
+      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+        {onPrevious ? (
+          <button
+            type="button"
+            onClick={onPrevious}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 shadow-sm"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            {t('buttons.previous', { defaultValue: 'Previous' })}
+          </button>
+        ) : (
+          <div />
+        )}
+        <button
+          type="submit"
+          disabled={isSubmitting || !isFormValid}
+          className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
+        >
+          {isSubmitting ? t('buttons.submitting') : (
+            <>
+              <Send className="h-4 w-4" />
+              {t('buttons.submitForm', { defaultValue: 'Submit All Forms' })}
+            </>
+          )}
+        </button>
+      </div>
     </form>
   );
 };
