@@ -12,6 +12,7 @@ import {
   CalendarClock,
   Star,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { usePatient } from '../../hooks/usePatient';
 import { supabase } from '../../lib/supabase';
 
@@ -121,15 +122,16 @@ function wasUpdated(created: string, updated: string): boolean {
   return Math.abs(u - c) > 2000;
 }
 
-const FORM_SECTIONS = [
-  { key: 'registration' as const, stepIndex: 0, icon: FileText, label: 'Patient Registration', color: 'teal' },
-  { key: 'medicalHistory' as const, stepIndex: 1, icon: Clipboard, label: 'Medical History', color: 'blue' },
-  { key: 'insurance' as const, stepIndex: 2, icon: CreditCard, label: 'Insurance Information', color: 'emerald' },
-  { key: 'consent' as const, stepIndex: 3, icon: Shield, label: 'Consent Form', color: 'amber' },
+const FORM_SECTION_KEYS = [
+  { key: 'registration' as const, stepIndex: 0, icon: FileText, labelKey: 'dashboard.formLabels.registration', color: 'teal' },
+  { key: 'medicalHistory' as const, stepIndex: 1, icon: Clipboard, labelKey: 'dashboard.formLabels.medicalHistory', color: 'blue' },
+  { key: 'insurance' as const, stepIndex: 2, icon: CreditCard, labelKey: 'dashboard.formLabels.insurance', color: 'emerald' },
+  { key: 'consent' as const, stepIndex: 3, icon: Shield, labelKey: 'dashboard.formLabels.consent', color: 'amber' },
 ];
 
 const PortalSubmissions: React.FC = () => {
   const { user } = usePatient();
+  const { t } = useTranslation('patientForms');
   const [loading, setLoading] = useState(true);
   const [registrations, setRegistrations] = useState<RegistrationRecord[]>([]);
   const [medicalHistories, setMedicalHistories] = useState<MedicalHistoryRecord[]>([]);
@@ -203,11 +205,11 @@ const PortalSubmissions: React.FC = () => {
     ? allUpdatedDates.sort((a, b) => new Date(b).getTime() - new Date(a).getTime())[0]
     : null;
 
-  const updatedForms: string[] = [];
-  if (latestReg && wasUpdated(latestReg.created_at, latestReg.updated_at)) updatedForms.push('Registration');
-  if (latestMed && wasUpdated(latestMed.created_at, latestMed.updated_at)) updatedForms.push('Medical History');
-  if (latestIns && wasUpdated(latestIns.created_at, latestIns.updated_at)) updatedForms.push('Insurance');
-  if (latestCon && wasUpdated(latestCon.created_at, latestCon.updated_at)) updatedForms.push('Consent');
+  const updatedFormKeys: string[] = [];
+  if (latestReg && wasUpdated(latestReg.created_at, latestReg.updated_at)) updatedFormKeys.push('dashboard.formLabels.registration');
+  if (latestMed && wasUpdated(latestMed.created_at, latestMed.updated_at)) updatedFormKeys.push('dashboard.formLabels.medicalHistory');
+  if (latestIns && wasUpdated(latestIns.created_at, latestIns.updated_at)) updatedFormKeys.push('dashboard.formLabels.insurance');
+  if (latestCon && wasUpdated(latestCon.created_at, latestCon.updated_at)) updatedFormKeys.push('dashboard.formLabels.consent');
 
   const getRecordForSection = (key: string) => {
     switch (key) {
@@ -222,24 +224,24 @@ const PortalSubmissions: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-2xl font-serif text-gray-900">My Submissions</h1>
+        <h1 className="text-2xl font-serif text-gray-900">{t('submissions.title')}</h1>
         <p className="text-gray-500 mt-1">
           {!hasSubmissions
-            ? 'You haven\'t submitted any forms yet.'
-            : 'View and manage your submitted patient forms.'}
+            ? t('submissions.noSubmissionsDesc')
+            : t('submissions.subtitle')}
         </p>
       </div>
 
       {!hasSubmissions ? (
         <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
           <FileText className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-          <h2 className="text-lg font-medium text-gray-900 mb-2">No submissions yet</h2>
-          <p className="text-sm text-gray-500 mb-6">Complete your patient forms to see them here.</p>
+          <h2 className="text-lg font-medium text-gray-900 mb-2">{t('submissions.noSubmissions')}</h2>
+          <p className="text-sm text-gray-500 mb-6">{t('submissions.noSubmissionsDesc')}</p>
           <Link
             to="/portal/forms"
             className="inline-flex items-center px-4 py-2 bg-teal-600 text-white text-sm font-medium rounded-lg hover:bg-teal-700 transition-colors"
           >
-            Go to Forms
+            {t('submissions.goToForms')}
           </Link>
         </div>
       ) : (
@@ -258,7 +260,7 @@ const PortalSubmissions: React.FC = () => {
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-lg hover:bg-teal-700 transition-colors"
               >
                 <Pencil className="h-3.5 w-3.5" />
-                Update Forms
+                {t('dashboard.updateForms')}
               </Link>
             </div>
 
@@ -266,7 +268,7 @@ const PortalSubmissions: React.FC = () => {
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-gray-400" />
                 <span>
-                  <span className="text-gray-500">Original Submission</span>{' '}
+                  <span className="text-gray-500">{t('submissions.originalSubmission')}</span>{' '}
                   <span className="font-medium text-gray-800">{formatDateTime(originalDate)}</span>
                 </span>
               </div>
@@ -274,22 +276,22 @@ const PortalSubmissions: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <CalendarClock className="h-4 w-4 text-gray-400" />
                   <span>
-                    <span className="text-gray-500">Last Updated</span>{' '}
+                    <span className="text-gray-500">{t('submissions.lastUpdated')}</span>{' '}
                     <span className="font-medium text-gray-800">{formatDateTime(lastUpdatedDate)}</span>
                   </span>
                 </div>
               )}
             </div>
 
-            {updatedForms.length > 0 && (
+            {updatedFormKeys.length > 0 && (
               <div className="mt-3 flex items-center gap-2 flex-wrap">
-                <span className="text-xs text-gray-500">Updated:</span>
-                {updatedForms.map((name) => (
+                <span className="text-xs text-gray-500">{t('submissions.updated')}:</span>
+                {updatedFormKeys.map((key) => (
                   <span
-                    key={name}
+                    key={key}
                     className="text-xs font-medium px-2 py-0.5 rounded-full bg-teal-50 text-teal-700"
                   >
-                    {name}
+                    {t(key)}
                   </span>
                 ))}
               </div>
@@ -298,7 +300,7 @@ const PortalSubmissions: React.FC = () => {
 
           {/* Individual Form Sections */}
           <div className="space-y-3">
-            {FORM_SECTIONS.map((section) => {
+            {FORM_SECTION_KEYS.map((section) => {
               const Icon = section.icon;
               const isOpen = expanded === section.key;
               const record = getRecordForSection(section.key);
@@ -313,10 +315,10 @@ const PortalSubmissions: React.FC = () => {
                     >
                       <div className="flex items-center gap-3">
                         <Icon className="h-5 w-5 text-gray-500" />
-                        <span className="text-sm font-medium text-gray-900">{section.label}</span>
+                        <span className="text-sm font-medium text-gray-900">{t(section.labelKey)}</span>
                         {hasRecord && wasUpdated(record.created_at, record.updated_at) && (
                           <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-teal-50 text-teal-600">
-                            Updated
+                            {t('submissions.updated')}
                           </span>
                         )}
                       </div>
@@ -333,7 +335,7 @@ const PortalSubmissions: React.FC = () => {
                       <Link
                         to={`/portal/forms?edit=true&step=${section.stepIndex}`}
                         className="px-4 py-4 border-l border-gray-100 text-gray-400 hover:text-teal-600 hover:bg-teal-50/50 transition-colors"
-                        title={`Edit ${section.label}`}
+                        title={t('submissions.editForm')}
                       >
                         <Pencil className="h-4 w-4" />
                       </Link>
@@ -345,20 +347,20 @@ const PortalSubmissions: React.FC = () => {
                       {section.key === 'registration' && latestReg && (
                         <>
                           <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-xs text-gray-600">
-                            <span>DOB: {formatDate(latestReg.date_of_birth)}</span>
-                            <span>Phone: {latestReg.phone_number}</span>
-                            <span>Email: {latestReg.email_address}</span>
+                            <span>{t('submissionDetails.dob')}: {formatDate(latestReg.date_of_birth)}</span>
+                            <span>{t('submissionDetails.phone')}: {latestReg.phone_number}</span>
+                            <span>{t('submissionDetails.email')}: {latestReg.email_address}</span>
                             {latestReg.city && (
-                              <span>Location: {latestReg.city}{latestReg.state ? `, ${latestReg.state}` : ''}</span>
+                              <span>{t('submissionDetails.location')}: {latestReg.city}{latestReg.state ? `, ${latestReg.state}` : ''}</span>
                             )}
                             {latestReg.reason_for_visit && (
-                              <span className="col-span-2">Reason: {latestReg.reason_for_visit}</span>
+                              <span className="col-span-2">{t('submissionDetails.reason')}: {latestReg.reason_for_visit}</span>
                             )}
                           </div>
                           <div className="mt-3 text-xs text-gray-400">
-                            Submitted {formatDateTime(latestReg.created_at)}
+                            {t('submissionDetails.submitted')} {formatDateTime(latestReg.created_at)}
                             {wasUpdated(latestReg.created_at, latestReg.updated_at) && (
-                              <span className="ml-2">| Updated {formatDateTime(latestReg.updated_at)}</span>
+                              <span className="ml-2">| {t('submissions.updated')} {formatDateTime(latestReg.updated_at)}</span>
                             )}
                           </div>
                         </>
@@ -369,25 +371,25 @@ const PortalSubmissions: React.FC = () => {
                           <div className="grid grid-cols-1 gap-y-1.5 text-xs text-gray-600">
                             {latestMed.vision_correction && (
                               <span>
-                                Vision: {[latestMed.vision_correction.glasses && 'Glasses', latestMed.vision_correction.contacts && 'Contacts'].filter(Boolean).join(', ') || 'None'}
+                                {t('submissionDetails.vision')}: {[latestMed.vision_correction.glasses && t('submissionDetails.glasses'), latestMed.vision_correction.contacts && t('submissionDetails.contacts')].filter(Boolean).join(', ') || t('submissionDetails.none')}
                               </span>
                             )}
                             {latestMed.last_eye_exam_date && (
-                              <span>Last Exam: {latestMed.last_eye_exam_date}{latestMed.last_eye_exam_doctor ? ` with Dr. ${latestMed.last_eye_exam_doctor}` : ''}</span>
+                              <span>{t('submissionDetails.lastExam')}: {latestMed.last_eye_exam_date}{latestMed.last_eye_exam_doctor ? ` ${t('submissionDetails.withDr', { doctor: latestMed.last_eye_exam_doctor })}` : ''}</span>
                             )}
                             {latestMed.current_symptoms && latestMed.current_symptoms.length > 0 && (
-                              <span>Symptoms: {latestMed.current_symptoms.length} reported</span>
+                              <span>{t('submissionDetails.symptoms')}: {t('submissionDetails.reported', { count: latestMed.current_symptoms.length })}</span>
                             )}
                             {latestMed.medical_conditions && latestMed.medical_conditions.length > 0 && (
-                              <span>Conditions: {latestMed.medical_conditions.length} reported</span>
+                              <span>{t('submissionDetails.conditions')}: {t('submissionDetails.reported', { count: latestMed.medical_conditions.length })}</span>
                             )}
-                            {latestMed.current_medications && <span>Medications: {latestMed.current_medications}</span>}
-                            {latestMed.has_allergies && <span>Allergies: {latestMed.has_allergies === 'yes' ? 'Yes' : 'No'}</span>}
+                            {latestMed.current_medications && <span>{t('submissionDetails.medications')}: {latestMed.current_medications}</span>}
+                            {latestMed.has_allergies && <span>{t('submissionDetails.allergies')}: {latestMed.has_allergies === 'yes' ? t('submissionDetails.yes') : t('submissionDetails.no')}</span>}
                           </div>
                           <div className="mt-3 text-xs text-gray-400">
-                            Submitted {formatDateTime(latestMed.created_at)}
+                            {t('submissionDetails.submitted')} {formatDateTime(latestMed.created_at)}
                             {wasUpdated(latestMed.created_at, latestMed.updated_at) && (
-                              <span className="ml-2">| Updated {formatDateTime(latestMed.updated_at)}</span>
+                              <span className="ml-2">| {t('submissions.updated')} {formatDateTime(latestMed.updated_at)}</span>
                             )}
                           </div>
                         </>
@@ -397,22 +399,22 @@ const PortalSubmissions: React.FC = () => {
                         <>
                           <div className="grid grid-cols-2 gap-x-6 gap-y-1.5 text-xs text-gray-600">
                             {latestIns.has_hsa_fsa && latestIns.has_hsa_fsa !== 'none' && (
-                              <span>HSA/FSA: {latestIns.has_hsa_fsa.toUpperCase()}</span>
+                              <span>{t('submissionDetails.hsaFsa')}: {latestIns.has_hsa_fsa.toUpperCase()}</span>
                             )}
-                            {latestIns.hsa_fsa_provider && <span>Provider: {latestIns.hsa_fsa_provider}</span>}
-                            {latestIns.account_holder_name && <span>Account Holder: {latestIns.account_holder_name}</span>}
-                            {latestIns.estimated_balance && <span>Est. Balance: {latestIns.estimated_balance}</span>}
+                            {latestIns.hsa_fsa_provider && <span>{t('submissionDetails.provider')}: {latestIns.hsa_fsa_provider}</span>}
+                            {latestIns.account_holder_name && <span>{t('submissionDetails.accountHolder')}: {latestIns.account_holder_name}</span>}
+                            {latestIns.estimated_balance && <span>{t('submissionDetails.estBalance')}: {latestIns.estimated_balance}</span>}
                             {latestIns.interested_in_payment_plan && (
-                              <span>Payment Plan: {latestIns.interested_in_payment_plan === 'yes' ? 'Interested' : 'Not needed'}</span>
+                              <span>{t('submissionDetails.paymentPlan')}: {latestIns.interested_in_payment_plan === 'yes' ? t('submissionDetails.interested') : t('submissionDetails.notNeeded')}</span>
                             )}
                             {latestIns.additional_notes && (
-                              <span className="col-span-2">Notes: {latestIns.additional_notes}</span>
+                              <span className="col-span-2">{t('submissionDetails.notes')}: {latestIns.additional_notes}</span>
                             )}
                           </div>
                           <div className="mt-3 text-xs text-gray-400">
-                            Submitted {formatDateTime(latestIns.created_at)}
+                            {t('submissionDetails.submitted')} {formatDateTime(latestIns.created_at)}
                             {wasUpdated(latestIns.created_at, latestIns.updated_at) && (
-                              <span className="ml-2">| Updated {formatDateTime(latestIns.updated_at)}</span>
+                              <span className="ml-2">| {t('submissions.updated')} {formatDateTime(latestIns.updated_at)}</span>
                             )}
                           </div>
                         </>
@@ -421,15 +423,15 @@ const PortalSubmissions: React.FC = () => {
                       {section.key === 'consent' && latestCon && (
                         <>
                           <div className="grid grid-cols-1 gap-y-1.5 text-xs text-gray-600">
-                            <span>HIPAA Acknowledged: {latestCon.hipaa_privacy_acknowledgment ? 'Yes' : 'No'}</span>
-                            <span>Treatment Consent: {latestCon.consent_to_treatment ? 'Yes' : 'No'}</span>
-                            <span>Signed by: {latestCon.patient_signature}</span>
-                            <span>Signed on: {formatDate(latestCon.signature_date)}</span>
+                            <span>{t('submissionDetails.hipaaAcknowledged')}: {latestCon.hipaa_privacy_acknowledgment ? t('submissionDetails.yes') : t('submissionDetails.no')}</span>
+                            <span>{t('submissionDetails.treatmentConsent')}: {latestCon.consent_to_treatment ? t('submissionDetails.yes') : t('submissionDetails.no')}</span>
+                            <span>{t('submissionDetails.signedBy')}: {latestCon.patient_signature}</span>
+                            <span>{t('submissionDetails.signedOn')}: {formatDate(latestCon.signature_date)}</span>
                           </div>
                           <div className="mt-3 text-xs text-gray-400">
-                            Submitted {formatDateTime(latestCon.created_at)}
+                            {t('submissionDetails.submitted')} {formatDateTime(latestCon.created_at)}
                             {wasUpdated(latestCon.created_at, latestCon.updated_at) && (
-                              <span className="ml-2">| Updated {formatDateTime(latestCon.updated_at)}</span>
+                              <span className="ml-2">| {t('submissions.updated')} {formatDateTime(latestCon.updated_at)}</span>
                             )}
                           </div>
                         </>
@@ -448,9 +450,9 @@ const PortalSubmissions: React.FC = () => {
                 <Star className="h-6 w-6 text-amber-500" />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-semibold text-gray-900">Had a great experience?</h3>
+                <h3 className="text-sm font-semibold text-gray-900">{t('submissions.shareStoryDesc')}</h3>
                 <p className="text-xs text-gray-500 mt-0.5">
-                  Share your story to help others considering vision correction.
+                  {t('submissions.shareStory')}
                 </p>
               </div>
               <Link
@@ -458,7 +460,7 @@ const PortalSubmissions: React.FC = () => {
                 className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-200 rounded-lg hover:bg-amber-100 transition-colors shrink-0"
               >
                 <Star className="h-4 w-4" />
-                Share Your Story
+                {t('submissions.writeTestimonial')}
               </Link>
             </div>
           </div>

@@ -1,29 +1,41 @@
 import React, { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import {
   LayoutDashboard,
   FileText,
   ClipboardList,
   Star,
+  History,
   LogOut,
   Menu,
   X,
   User,
   Shield,
+  Globe,
+  ChevronDown,
+  Check,
 } from 'lucide-react';
 import { usePatient } from '../../hooks/usePatient';
+import { SUPPORTED_LANGUAGES, DEMOGRAPHIC_GROUPS } from '../../i18n';
+import Cookies from 'js-cookie';
 
 const navItems = [
-  { path: '/portal', icon: LayoutDashboard, label: 'Dashboard', end: true },
-  { path: '/portal/forms', icon: FileText, label: 'Patient Forms' },
-  { path: '/portal/submissions', icon: ClipboardList, label: 'My Submissions' },
-  { path: '/portal/testimonial', icon: Star, label: 'Share Your Story' },
+  { path: '/portal', labelKey: 'nav.dashboard', fallback: 'Dashboard', icon: LayoutDashboard, end: true },
+  { path: '/portal/forms', labelKey: 'nav.patientForms', fallback: 'Patient Forms', icon: FileText },
+  { path: '/portal/submissions', labelKey: 'nav.mySubmissions', fallback: 'My Submissions', icon: ClipboardList },
+  { path: '/portal/testimonial', labelKey: 'nav.shareStory', fallback: 'Share Your Story', icon: Star },
+  { path: '/portal/history', labelKey: 'nav.activityHistory', fallback: 'Activity History', icon: History },
 ];
 
 const PortalLayout: React.FC = () => {
   const { user, logout } = usePatient();
+  const { t, i18n } = useTranslation('patientForms');
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+
+  const currentLang = SUPPORTED_LANGUAGES[i18n.language as keyof typeof SUPPORTED_LANGUAGES] || SUPPORTED_LANGUAGES.en;
 
   const isActive = (path: string, end?: boolean) => {
     if (end) return location.pathname === path;
@@ -37,6 +49,32 @@ const PortalLayout: React.FC = () => {
   const initials = user?.firstName
     ? `${user.firstName[0]}${user.lastName?.[0] || ''}`.toUpperCase()
     : (user?.email?.[0] || 'P').toUpperCase();
+
+  const handleLanguageChange = async (code: string) => {
+    try {
+      await i18n.changeLanguage(code);
+      Cookies.set('i18next', code, { expires: 365 });
+      const lang = SUPPORTED_LANGUAGES[code as keyof typeof SUPPORTED_LANGUAGES];
+      document.documentElement.dir = lang?.rtl ? 'rtl' : 'ltr';
+      document.documentElement.lang = code;
+      if (lang?.rtl) {
+        document.body.classList.add('rtl');
+      } else {
+        document.body.classList.remove('rtl');
+      }
+      setLangOpen(false);
+    } catch {
+      // non-critical
+    }
+  };
+
+  const sortedLanguages = Object.values(SUPPORTED_LANGUAGES).sort((a, b) => a.order - b.order);
+  const grouped: Record<string, typeof sortedLanguages> = { default: [] };
+  for (const lang of sortedLanguages) {
+    const key = lang.demographic || 'default';
+    if (!grouped[key]) grouped[key] = [];
+    grouped[key].push(lang);
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -71,7 +109,9 @@ const PortalLayout: React.FC = () => {
                   <Shield className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-sm font-semibold text-gray-900">Patient Portal</h2>
+                  <h2 className="text-sm font-semibold text-gray-900">
+                    {t('portal.title', { defaultValue: 'Patient Portal' })}
+                  </h2>
                   <p className="text-xs text-gray-500">ClearSight LASIK</p>
                 </div>
               </Link>
@@ -97,7 +137,7 @@ const PortalLayout: React.FC = () => {
             </div>
           </div>
 
-          <nav className="flex-1 px-3 py-4 space-y-1">
+          <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
             {navItems.map((item) => {
               const Icon = item.icon;
               const active = isActive(item.path, item.end);
@@ -116,11 +156,70 @@ const PortalLayout: React.FC = () => {
                   `}
                 >
                   <Icon className={`h-5 w-5 ${active ? 'text-teal-600' : 'text-gray-400'}`} />
-                  {item.label}
+                  {t(item.labelKey, { defaultValue: item.fallback })}
                 </Link>
               );
             })}
           </nav>
+
+          <div className="px-3 py-3 border-t border-gray-100">
+            <div className="relative">
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+              >
+                <Globe className="h-5 w-5 text-gray-400" />
+                <span className="flex-1 text-left truncate">
+                  {currentLang.flag} {currentLang.nativeName}
+                </span>
+                <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {langOpen && (
+                <div className="absolute bottom-full left-0 right-0 mb-1 bg-white border border-gray-200 rounded-lg shadow-xl max-h-72 overflow-y-auto z-50">
+                  {grouped.default.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => handleLanguageChange(lang.code)}
+                      className={`w-full flex items-center gap-3 px-3 py-2.5 text-sm hover:bg-gray-50 transition-colors ${
+                        i18n.language === lang.code ? 'bg-teal-50 text-teal-900' : 'text-gray-700'
+                      }`}
+                    >
+                      <span className="text-lg">{lang.flag}</span>
+                      <span className="flex-1 text-left truncate">{lang.nativeName}</span>
+                      {i18n.language === lang.code && <Check className="h-4 w-4 text-teal-600" />}
+                    </button>
+                  ))}
+                  {[DEMOGRAPHIC_GROUPS.SOUTHERN_CALIFORNIA, DEMOGRAPHIC_GROUPS.PACIFIC_ISLANDS, DEMOGRAPHIC_GROUPS.ADDITIONAL].map(
+                    (groupName) =>
+                      grouped[groupName] &&
+                      grouped[groupName].length > 0 && (
+                        <div key={groupName}>
+                          <div className="px-3 py-1.5 mt-1">
+                            <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
+                              {groupName}
+                            </span>
+                          </div>
+                          {grouped[groupName].map((lang) => (
+                            <button
+                              key={lang.code}
+                              onClick={() => handleLanguageChange(lang.code)}
+                              className={`w-full flex items-center gap-3 px-3 py-2.5 text-sm hover:bg-gray-50 transition-colors ${
+                                i18n.language === lang.code ? 'bg-teal-50 text-teal-900' : 'text-gray-700'
+                              }`}
+                            >
+                              <span className="text-lg">{lang.flag}</span>
+                              <span className="flex-1 text-left truncate">{lang.nativeName}</span>
+                              {i18n.language === lang.code && <Check className="h-4 w-4 text-teal-600" />}
+                            </button>
+                          ))}
+                        </div>
+                      )
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
 
           <div className="p-3 border-t border-gray-100">
             <Link
@@ -128,14 +227,14 @@ const PortalLayout: React.FC = () => {
               className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors mb-1"
             >
               <User className="h-5 w-5 text-gray-400" />
-              Back to Website
+              {t('nav.backToWebsite', { defaultValue: 'Back to Website' })}
             </Link>
             <button
               onClick={logout}
               className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-red-50 hover:text-red-700 transition-colors"
             >
               <LogOut className="h-5 w-5 text-gray-400" />
-              Sign Out
+              {t('nav.signOut', { defaultValue: 'Sign Out' })}
             </button>
           </div>
         </div>

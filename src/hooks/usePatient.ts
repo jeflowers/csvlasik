@@ -7,6 +7,7 @@ import {
   signOutPatient,
   getCurrentPatient,
 } from '../services/patientAuthService';
+import { logPatientActivity } from '../services/patientActivityService';
 
 export interface UsePatientReturn {
   user: PatientUser | null;
@@ -84,6 +85,9 @@ export function usePatient(): UsePatientReturn {
 
     setUser(loggedIn);
     setLoading(false);
+    if (loggedIn) {
+      logPatientActivity('login', 'Signed in to patient portal');
+    }
     return true;
   }, []);
 
@@ -106,6 +110,9 @@ export function usePatient(): UsePatientReturn {
 
     setUser(registered);
     setLoading(false);
+    if (registered) {
+      logPatientActivity('login', 'Created account and signed in');
+    }
     return true;
   }, []);
 
@@ -113,6 +120,7 @@ export function usePatient(): UsePatientReturn {
     setLoading(true);
     setError(null);
 
+    await logPatientActivity('logout', 'Signed out of patient portal');
     const { error: logoutError } = await signOutPatient();
     if (logoutError) {
       setError(logoutError);

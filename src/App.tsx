@@ -87,6 +87,7 @@ const PortalDashboard = lazy(() => import('./components/portal/PortalDashboard')
 const PortalForms = lazy(() => import('./components/portal/PortalForms'));
 const PortalSubmissions = lazy(() => import('./components/portal/PortalSubmissions'));
 const PortalTestimonial = lazy(() => import('./components/portal/PortalTestimonial'));
+const PortalHistory = lazy(() => import('./components/portal/PortalHistory'));
 
 const Home = lazy(() => import('./pages/Home'));
 const PrivacyPolicyDetailPage = lazy(() => import('./pages/PrivacyPolicyDetailPage'));
@@ -254,21 +255,24 @@ function PortalRoutes() {
   }
 
   return (
-    <Routes>
-      <Route path="login" element={
-        user ? <Navigate to="/portal" replace /> : <PortalAuth />
-      } />
-      <Route path="/" element={
-        <ProtectedPortalRoute>
-          <PortalLayout />
-        </ProtectedPortalRoute>
-      }>
-        <Route index element={<PortalDashboard />} />
-        <Route path="forms" element={<PortalForms />} />
-        <Route path="submissions" element={<PortalSubmissions />} />
-        <Route path="testimonial" element={<PortalTestimonial />} />
-      </Route>
-    </Routes>
+    <RTLProvider>
+      <Routes>
+        <Route path="login" element={
+          user ? <Navigate to="/portal" replace /> : <PortalAuth />
+        } />
+        <Route path="/" element={
+          <ProtectedPortalRoute>
+            <PortalLayout />
+          </ProtectedPortalRoute>
+        }>
+          <Route index element={<PortalDashboard />} />
+          <Route path="forms" element={<PortalForms />} />
+          <Route path="submissions" element={<PortalSubmissions />} />
+          <Route path="testimonial" element={<PortalTestimonial />} />
+          <Route path="history" element={<PortalHistory />} />
+        </Route>
+      </Routes>
+    </RTLProvider>
   );
 }
 

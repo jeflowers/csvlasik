@@ -250,7 +250,7 @@ const PortalForms: React.FC = () => {
             isSubmitting={isSubmitting}
             submitError={submitError}
             submitSuccess={submitSuccess}
-            submitLabel={isEditMode ? 'Update All Forms' : undefined}
+            submitLabel={isEditMode ? t('forms.updateAllForms', { defaultValue: 'Update All Forms' }) : undefined}
           />
         );
       default:
@@ -263,7 +263,7 @@ const PortalForms: React.FC = () => {
       <div className="flex items-center justify-center h-64">
         <div className="flex items-center gap-3 text-gray-500">
           <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
-          <span className="text-sm">{isEditMode ? 'Loading your forms...' : 'Checking status...'}</span>
+          <span className="text-sm">{isEditMode ? t('forms.loading', { defaultValue: 'Loading your forms...' }) : t('forms.checkingStatus', { defaultValue: 'Checking status...' })}</span>
         </div>
       </div>
     );
@@ -278,26 +278,26 @@ const PortalForms: React.FC = () => {
           </div>
           <h2 className="text-2xl font-serif text-gray-900 mb-3">
             {submitSuccess && isEditMode
-              ? 'Forms Updated Successfully'
-              : t('success.allForms', { defaultValue: 'Forms Submitted Successfully' })}
+              ? t('forms.successUpdateTitle', { defaultValue: 'Forms Updated Successfully' })
+              : t('forms.successTitle', { defaultValue: 'Forms Submitted Successfully' })}
           </h2>
           <p className="text-gray-600 max-w-md mx-auto mb-6">
             {submitSuccess && isEditMode
-              ? 'Your patient forms have been updated. Our team will review the changes.'
-              : t('success.allFormsDescription', { defaultValue: 'Thank you for completing your patient forms. Our team will review your information and contact you shortly.' })}
+              ? t('forms.successUpdateDescription', { defaultValue: 'Your patient forms have been updated. Our team will review the changes.' })
+              : t('forms.successDescription', { defaultValue: 'Thank you for completing your patient forms. Our team will review your information and contact you shortly.' })}
           </p>
           <div className="flex items-center justify-center gap-3">
             <button
               onClick={() => navigate('/portal/submissions')}
               className="px-5 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
             >
-              View Submissions
+              {t('forms.viewSubmissions', { defaultValue: 'View Submissions' })}
             </button>
             <button
               onClick={() => navigate('/portal')}
               className="px-5 py-2.5 text-sm font-medium text-white bg-teal-600 rounded-lg hover:bg-teal-700 transition-colors"
             >
-              Back to Dashboard
+              {t('forms.backToDashboard', { defaultValue: 'Back to Dashboard' })}
             </button>
           </div>
         </div>
@@ -309,12 +309,12 @@ const PortalForms: React.FC = () => {
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
         <h1 className="text-2xl font-serif text-gray-900">
-          {isEditMode ? 'Update Patient Forms' : 'Patient Forms'}
+          {isEditMode ? t('forms.editTitle', { defaultValue: 'Update Patient Forms' }) : t('forms.title', { defaultValue: 'Patient Forms' })}
         </h1>
         <p className="text-gray-500 mt-1">
           {isEditMode
-            ? 'Review and update your previously submitted information. You must re-sign the consent form to save changes.'
-            : 'Complete all four forms before your appointment. Your information is encrypted and HIPAA-compliant.'}
+            ? t('forms.editSubtitle', { defaultValue: 'Review and update your previously submitted information. You must re-sign the consent form to save changes.' })
+            : t('forms.subtitle', { defaultValue: 'Complete all four forms before your appointment. Your information is encrypted and HIPAA-compliant.' })}
         </p>
       </div>
 
@@ -397,7 +397,7 @@ const PortalForms: React.FC = () => {
             </span>
             <div>
               <p className="text-sm font-semibold text-gray-900">{STEPS[activeStep].label}</p>
-              <p className="text-xs text-gray-500">Step {activeStep + 1} of {STEPS.length}</p>
+              <p className="text-xs text-gray-500">{t('forms.step', { current: activeStep + 1, total: STEPS.length, defaultValue: `Step ${activeStep + 1} of ${STEPS.length}` })}</p>
             </div>
           </div>
         </div>

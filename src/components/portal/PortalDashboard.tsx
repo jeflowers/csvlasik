@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { FileText, ClipboardList, CheckCircle2, Clock, ArrowRight, Shield, Pencil } from 'lucide-react';
 import { usePatient } from '../../hooks/usePatient';
 import { supabase } from '../../lib/supabase';
@@ -13,6 +14,7 @@ interface FormStatus {
 
 const PortalDashboard: React.FC = () => {
   const { user } = usePatient();
+  const { t } = useTranslation('patientForms');
   const [formStatus, setFormStatus] = useState<FormStatus>({
     registration: false,
     medicalHistory: false,
@@ -66,14 +68,14 @@ const PortalDashboard: React.FC = () => {
   const progressPercent = (completedCount / 4) * 100;
 
   const greeting = user?.firstName
-    ? `Welcome, ${user.firstName}`
-    : 'Welcome';
+    ? t('dashboard.welcome', { name: user.firstName })
+    : t('dashboard.welcomeGeneric', { defaultValue: 'Welcome' });
 
   const formChecklist = [
-    { key: 'registration', label: 'Patient Registration', done: formStatus.registration },
-    { key: 'medicalHistory', label: 'Medical History', done: formStatus.medicalHistory },
-    { key: 'insurance', label: 'Insurance Information', done: formStatus.insurance },
-    { key: 'consent', label: 'Consent Forms', done: formStatus.consent },
+    { key: 'registration', labelKey: 'dashboard.formLabels.registration', done: formStatus.registration },
+    { key: 'medicalHistory', labelKey: 'dashboard.formLabels.medicalHistory', done: formStatus.medicalHistory },
+    { key: 'insurance', labelKey: 'dashboard.formLabels.insurance', done: formStatus.insurance },
+    { key: 'consent', labelKey: 'dashboard.formLabels.consent', done: formStatus.consent },
   ];
 
   if (loading) {
@@ -88,7 +90,7 @@ const PortalDashboard: React.FC = () => {
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
         <h1 className="text-2xl font-serif text-gray-900">{greeting}</h1>
-        <p className="text-gray-500 mt-1">Manage your patient forms and view your submission history.</p>
+        <p className="text-gray-500 mt-1">{t('dashboard.subtitle')}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -99,7 +101,7 @@ const PortalDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-semibold text-gray-900">{completedCount}/4</p>
-              <p className="text-xs text-gray-500">Forms Completed</p>
+              <p className="text-xs text-gray-500">{t('dashboard.formsCompleted')}</p>
             </div>
           </div>
           <div className="w-full bg-gray-100 rounded-full h-2">
@@ -117,7 +119,7 @@ const PortalDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-semibold text-gray-900">{submissionCount}</p>
-              <p className="text-xs text-gray-500">Total Submissions</p>
+              <p className="text-xs text-gray-500">{t('dashboard.totalSubmissions')}</p>
             </div>
           </div>
         </div>
@@ -129,7 +131,7 @@ const PortalDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-semibold text-gray-900">HIPAA</p>
-              <p className="text-xs text-gray-500">Compliant & Secure</p>
+              <p className="text-xs text-gray-500">{t('dashboard.compliantSecure')}</p>
             </div>
           </div>
         </div>
@@ -137,7 +139,7 @@ const PortalDashboard: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Forms Checklist</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">{t('dashboard.formsChecklist')}</h2>
           <div className="space-y-3">
             {formChecklist.map((item) => (
               <div
@@ -151,16 +153,16 @@ const PortalDashboard: React.FC = () => {
                     <Clock className="h-5 w-5 text-gray-400" />
                   )}
                   <span className={`text-sm ${item.done ? 'text-gray-700' : 'text-gray-500'}`}>
-                    {item.label}
+                    {t(item.labelKey)}
                   </span>
                 </div>
                 {item.done ? (
                   <span className="text-xs font-medium text-teal-600 bg-teal-50 px-2 py-1 rounded">
-                    Complete
+                    {t('dashboard.complete')}
                   </span>
                 ) : (
                   <span className="text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded">
-                    Pending
+                    {t('dashboard.pending')}
                   </span>
                 )}
               </div>
@@ -172,7 +174,7 @@ const PortalDashboard: React.FC = () => {
               to="/portal/forms"
               className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700"
             >
-              Complete your forms
+              {t('dashboard.completeYourForms')}
               <ArrowRight className="h-4 w-4" />
             </Link>
           ) : (
@@ -181,13 +183,13 @@ const PortalDashboard: React.FC = () => {
               className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700"
             >
               <Pencil className="h-3.5 w-3.5" />
-              Update your forms
+              {t('dashboard.updateYourForms')}
             </Link>
           )}
         </div>
 
         <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">{t('dashboard.quickActions')}</h2>
           <div className="space-y-3">
             <Link
               to={completedCount === 4 ? '/portal/forms?edit=true' : '/portal/forms'}
@@ -198,10 +200,10 @@ const PortalDashboard: React.FC = () => {
               </div>
               <div className="flex-1">
                 <p className="text-sm font-medium text-gray-900">
-                  {completedCount === 4 ? 'Update Forms' : 'Patient Forms'}
+                  {completedCount === 4 ? t('dashboard.updateForms') : t('nav.patientForms')}
                 </p>
                 <p className="text-xs text-gray-500">
-                  {completedCount === 4 ? 'Review and update your submitted information' : 'Fill out your intake forms'}
+                  {completedCount === 4 ? t('dashboard.reviewAndUpdate') : t('dashboard.fillOutForms')}
                 </p>
               </div>
               <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-teal-600 transition-colors" />
@@ -215,8 +217,8 @@ const PortalDashboard: React.FC = () => {
                 <ClipboardList className="h-5 w-5 text-blue-600" />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium text-gray-900">View Submissions</p>
-                <p className="text-xs text-gray-500">Review your submitted forms</p>
+                <p className="text-sm font-medium text-gray-900">{t('dashboard.viewSubmissions')}</p>
+                <p className="text-xs text-gray-500">{t('dashboard.reviewSubmitted')}</p>
               </div>
               <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-teal-600 transition-colors" />
             </Link>
@@ -229,8 +231,8 @@ const PortalDashboard: React.FC = () => {
                 <Clock className="h-5 w-5 text-emerald-600" />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium text-gray-900">Book Consultation</p>
-                <p className="text-xs text-gray-500">Schedule your next appointment</p>
+                <p className="text-sm font-medium text-gray-900">{t('dashboard.bookConsultation')}</p>
+                <p className="text-xs text-gray-500">{t('dashboard.scheduleAppointment')}</p>
               </div>
               <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-teal-600 transition-colors" />
             </Link>

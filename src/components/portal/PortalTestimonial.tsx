@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Star, Send, CheckCircle2, ArrowLeft } from 'lucide-react';
 import { usePatient } from '../../hooks/usePatient';
 import { supabase } from '../../lib/supabase';
-
-const PROCEDURE_OPTIONS = [
-  { value: '', label: 'Select a procedure (optional)' },
-  { value: 'LASIK', label: 'LASIK' },
-  { value: 'PRK', label: 'PRK' },
-  { value: 'ICL', label: 'ICL' },
-  { value: 'Consultation', label: 'Consultation' },
-  { value: 'Other', label: 'Other' },
-];
+import { logPatientActivity } from '../../services/patientActivityService';
 
 const PortalTestimonial: React.FC = () => {
   const { user } = usePatient();
+  const { t } = useTranslation('patientForms');
 
   const [name, setName] = useState(
     user?.firstName ? `${user.firstName} ${user.lastName || ''}`.trim() : ''
@@ -51,12 +45,16 @@ const PortalTestimonial: React.FC = () => {
       ]);
 
       if (error) {
-        setSubmitError('Failed to submit your testimonial. Please try again.');
+        setSubmitError(t('testimonial.errorGeneric'));
       } else {
         setSubmitSuccess(true);
+        logPatientActivity('testimonial_submit', 'Submitted a testimonial', {
+          rating,
+          procedure_type: procedureType || null,
+        });
       }
     } catch {
-      setSubmitError('An unexpected error occurred. Please try again.');
+      setSubmitError(t('testimonial.errorUnexpected'));
     } finally {
       setIsSubmitting(false);
     }
@@ -69,25 +67,25 @@ const PortalTestimonial: React.FC = () => {
           <div className="flex items-center justify-center w-16 h-16 rounded-full bg-teal-100 mx-auto mb-6">
             <CheckCircle2 className="h-8 w-8 text-teal-600" />
           </div>
-          <h2 className="text-2xl font-serif text-gray-900 mb-3">Thank You for Sharing!</h2>
+          <h2 className="text-2xl font-serif text-gray-900 mb-3">{t('testimonial.successTitle')}</h2>
           <p className="text-gray-600 max-w-md mx-auto mb-2">
-            Your testimonial has been submitted and will appear on our website after review by our team.
+            {t('testimonial.successDescription')}
           </p>
           <p className="text-sm text-gray-500 mb-8">
-            We appreciate you taking the time to share your experience with ClearSight LASIK.
+            {t('testimonial.successNote')}
           </p>
           <div className="flex items-center justify-center gap-3">
             <Link
               to="/portal"
               className="px-5 py-2.5 text-sm font-medium text-white bg-teal-600 rounded-lg hover:bg-teal-700 transition-colors"
             >
-              Back to Dashboard
+              {t('testimonial.backToDashboard')}
             </Link>
             <Link
               to="/testimonials"
               className="px-5 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
             >
-              View Testimonials
+              {t('testimonial.viewTestimonials')}
             </Link>
           </div>
         </div>
@@ -103,12 +101,10 @@ const PortalTestimonial: React.FC = () => {
           className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-teal-600 transition-colors mb-4"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Dashboard
+          {t('testimonial.backToDashboard')}
         </Link>
-        <h1 className="text-2xl font-serif text-gray-900">Share Your Story</h1>
-        <p className="text-gray-500 mt-1">
-          Tell us about your experience at ClearSight LASIK. Your feedback helps others make informed decisions about their vision care.
-        </p>
+        <h1 className="text-2xl font-serif text-gray-900">{t('testimonial.title')}</h1>
+        <p className="text-gray-500 mt-1">{t('testimonial.subtitle')}</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -121,7 +117,7 @@ const PortalTestimonial: React.FC = () => {
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 space-y-6">
           <div>
             <label htmlFor="testimonial-name" className="block text-sm font-semibold text-gray-700 mb-2">
-              Your Name <span className="text-red-600">*</span>
+              {t('testimonial.name')} <span className="text-red-600">*</span>
             </label>
             <input
               type="text"
@@ -129,16 +125,14 @@ const PortalTestimonial: React.FC = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-              placeholder="How you'd like your name displayed"
+              placeholder={t('testimonial.namePlaceholder')}
             />
-            <p className="mt-1 text-xs text-gray-500">
-              This will be shown publicly with your testimonial.
-            </p>
+            <p className="mt-1 text-xs text-gray-500">{t('testimonial.nameNote')}</p>
           </div>
 
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Your Rating <span className="text-red-600">*</span>
+              {t('testimonial.rating')} <span className="text-red-600">*</span>
             </label>
             <div className="flex items-center gap-1">
               {[1, 2, 3, 4, 5].map((star) => (
@@ -161,14 +155,16 @@ const PortalTestimonial: React.FC = () => {
                 </button>
               ))}
               {rating > 0 && (
-                <span className="ml-2 text-sm text-gray-600">{rating} of 5</span>
+                <span className="ml-2 text-sm text-gray-600">
+                  {t('testimonial.ratingOf', { rating })}
+                </span>
               )}
             </div>
           </div>
 
           <div>
             <label htmlFor="testimonial-content" className="block text-sm font-semibold text-gray-700 mb-2">
-              Your Experience <span className="text-red-600">*</span>
+              {t('testimonial.experience')} <span className="text-red-600">*</span>
             </label>
             <textarea
               id="testimonial-content"
@@ -176,17 +172,17 @@ const PortalTestimonial: React.FC = () => {
               onChange={(e) => setContent(e.target.value)}
               rows={5}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none"
-              placeholder="Share your experience with ClearSight LASIK. What was the process like? How has your vision improved?"
+              placeholder={t('testimonial.experiencePlaceholder')}
             />
             <p className="mt-1 text-xs text-gray-500">
-              Minimum 10 characters. {content.length > 0 && `${content.length} characters`}
+              {t('testimonial.minChars')} {content.length > 0 && t('testimonial.charCount', { count: content.length })}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label htmlFor="procedure-type" className="block text-sm font-semibold text-gray-700 mb-2">
-                Procedure Type
+                {t('testimonial.procedureType')}
               </label>
               <select
                 id="procedure-type"
@@ -194,17 +190,18 @@ const PortalTestimonial: React.FC = () => {
                 onChange={(e) => setProcedureType(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white"
               >
-                {PROCEDURE_OPTIONS.map((opt) => (
-                  <option key={opt.value} value={opt.value}>
-                    {opt.label}
-                  </option>
-                ))}
+                <option value="">{t('testimonial.selectProcedure')}</option>
+                <option value="LASIK">LASIK</option>
+                <option value="PRK">PRK</option>
+                <option value="ICL">ICL</option>
+                <option value="Consultation">{t('dashboard.bookConsultation', { defaultValue: 'Consultation' })}</option>
+                <option value="Other">{t('testimonial.other', { defaultValue: 'Other' })}</option>
               </select>
             </div>
 
             <div>
               <label htmlFor="procedure-date" className="block text-sm font-semibold text-gray-700 mb-2">
-                Procedure Date
+                {t('testimonial.procedureDate')}
               </label>
               <input
                 type="date"
@@ -219,9 +216,7 @@ const PortalTestimonial: React.FC = () => {
         </div>
 
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-          <p className="text-sm text-amber-800">
-            Your testimonial will be reviewed by our team before it appears on our website. We may reach out to you if we have any questions.
-          </p>
+          <p className="text-sm text-amber-800">{t('testimonial.reviewNotice')}</p>
         </div>
 
         <div className="flex justify-end">
@@ -231,11 +226,11 @@ const PortalTestimonial: React.FC = () => {
             className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
           >
             {isSubmitting ? (
-              'Submitting...'
+              t('testimonial.submitting')
             ) : (
               <>
                 <Send className="h-4 w-4" />
-                Submit Testimonial
+                {t('testimonial.submitTestimonial')}
               </>
             )}
           </button>

@@ -6,6 +6,7 @@ import type {
   ConsentFormData,
   FormSubmissionResult,
 } from '../types/PatientForms';
+import { logPatientActivity } from './patientActivityService';
 
 function sanitizeInput(value: string | undefined): string | undefined {
   if (!value) return undefined;
@@ -164,6 +165,10 @@ export async function submitAllPatientForms(
         error: consentError.message,
       };
     }
+
+    logPatientActivity('form_submit', 'Submitted all patient forms', {
+      forms: ['registration', 'medicalHistory', 'insurance', 'consent'],
+    });
 
     return {
       success: true,
@@ -439,6 +444,10 @@ export async function updateAllPatientForms(
     if (consentError) {
       return { success: false, message: 'Failed to update consent form', error: consentError.message };
     }
+
+    logPatientActivity('form_update', 'Updated patient forms', {
+      forms: ['registration', 'medicalHistory', 'insurance', 'consent'],
+    });
 
     return { success: true, message: 'All forms updated successfully' };
   } catch (err) {
