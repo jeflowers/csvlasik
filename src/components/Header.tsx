@@ -4,12 +4,14 @@ import { useTranslation } from 'react-i18next';
 import { Phone, Menu, X, ChevronDown, Mail, Facebook, Twitter, Instagram, Youtube, User } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 import TikTokIcon from './icons/TikTokIcon';
+import { usePatient } from '../hooks/usePatient';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProceduresOpen, setIsProceduresOpen] = useState(false);
   const [isTestimonialsOpen, setIsTestimonialsOpen] = useState(false);
   const location = useLocation();
+  const { user: patientUser } = usePatient();
 
   const { t, i18n } = useTranslation(['navigation', 'common', 'footer']);
   const isActive = (path: string) => location.pathname === path;
@@ -107,7 +109,7 @@ const Header = () => {
             <div className={`flex items-center space-x-6 text-sm font-medium ${isRTL ? 'space-x-reverse' : ''}`}>
               <Link to="/portal" className="flex items-center hover:text-gray-200 transition-colors">
                 <User className={`h-4 w-4 text-white ${isRTL ? 'ml-2' : 'mr-2'}`} />
-                <span>{t('patientPortal', { defaultValue: 'Patient Portal' })}</span>
+                <span>{patientUser?.firstName ? `${patientUser.firstName}'s Portal` : t('patientPortal', { defaultValue: 'Patient Portal' })}</span>
               </Link>
               <Link to="/contact" className="flex items-center hover:text-gray-200 transition-colors">
                 <Mail className={`h-4 w-4 text-white ${isRTL ? 'ml-2' : 'mr-2'}`} />
@@ -383,7 +385,7 @@ const Header = () => {
                 className="chopard-text-secondary hover:chopard-text-primary font-light transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('patientPortal', { defaultValue: 'Patient Portal' })}
+                {patientUser?.firstName ? `${patientUser.firstName}'s Portal` : t('patientPortal', { defaultValue: 'Patient Portal' })}
               </Link>
               <div className="pt-4 border-t chopard-border">
                 <a 
