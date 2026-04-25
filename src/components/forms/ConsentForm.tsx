@@ -12,6 +12,7 @@ interface Props {
   isSubmitting: boolean;
   submitError: string;
   submitSuccess: boolean;
+  submitLabel?: string;
 }
 
 const ConsentForm: React.FC<Props> = ({
@@ -22,6 +23,7 @@ const ConsentForm: React.FC<Props> = ({
   isSubmitting,
   submitError,
   submitSuccess,
+  submitLabel,
 }) => {
   const { t } = useTranslation('patientForms');
   const [errors, setErrors] = useState<ValidationErrors>({});
@@ -223,7 +225,7 @@ const ConsentForm: React.FC<Props> = ({
           {isSubmitting ? t('buttons.submitting') : (
             <>
               <Send className="h-4 w-4" />
-              {t('buttons.submitForm', { defaultValue: 'Submit All Forms' })}
+              {submitLabel || t('buttons.submitForm', { defaultValue: 'Submit All Forms' })}
             </>
           )}
         </button>

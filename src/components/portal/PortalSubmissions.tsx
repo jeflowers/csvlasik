@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { FileText, Clipboard, CreditCard, Shield, ChevronDown, ChevronUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { FileText, Clipboard, CreditCard, Shield, ChevronDown, ChevronUp, Pencil } from 'lucide-react';
 import { usePatient } from '../../hooks/usePatient';
 import { supabase } from '../../lib/supabase';
 
@@ -186,14 +187,25 @@ const PortalSubmissions: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-2xl font-serif text-gray-900">My Submissions</h1>
-        <p className="text-gray-500 mt-1">
-          {totalSubmissions === 0
-            ? 'You haven\'t submitted any forms yet.'
-            : `You have ${totalSubmissions} form submission${totalSubmissions === 1 ? '' : 's'}.`
-          }
-        </p>
+      <div className="mb-8 flex items-start justify-between">
+        <div>
+          <h1 className="text-2xl font-serif text-gray-900">My Submissions</h1>
+          <p className="text-gray-500 mt-1">
+            {totalSubmissions === 0
+              ? 'You haven\'t submitted any forms yet.'
+              : `You have ${totalSubmissions} form submission${totalSubmissions === 1 ? '' : 's'}.`
+            }
+          </p>
+        </div>
+        {registrations.length > 0 && (
+          <Link
+            to="/portal/forms?edit=true"
+            className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-white bg-teal-600 rounded-lg hover:bg-teal-700 transition-colors shrink-0"
+          >
+            <Pencil className="h-4 w-4" />
+            Update Forms
+          </Link>
+        )}
       </div>
 
       {totalSubmissions === 0 ? (

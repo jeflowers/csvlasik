@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FileText, ClipboardList, CheckCircle2, Clock, ArrowRight, Shield } from 'lucide-react';
+import { FileText, ClipboardList, CheckCircle2, Clock, ArrowRight, Shield, Pencil } from 'lucide-react';
 import { usePatient } from '../../hooks/usePatient';
 import { supabase } from '../../lib/supabase';
 
@@ -167,13 +167,21 @@ const PortalDashboard: React.FC = () => {
             ))}
           </div>
 
-          {completedCount < 4 && (
+          {completedCount < 4 ? (
             <Link
               to="/portal/forms"
               className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700"
             >
               Complete your forms
               <ArrowRight className="h-4 w-4" />
+            </Link>
+          ) : (
+            <Link
+              to="/portal/forms?edit=true"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700"
+            >
+              <Pencil className="h-3.5 w-3.5" />
+              Update your forms
             </Link>
           )}
         </div>
@@ -182,15 +190,19 @@ const PortalDashboard: React.FC = () => {
           <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
           <div className="space-y-3">
             <Link
-              to="/portal/forms"
+              to={completedCount === 4 ? '/portal/forms?edit=true' : '/portal/forms'}
               className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-teal-300 hover:bg-teal-50/50 transition-all group"
             >
               <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center group-hover:bg-teal-100 transition-colors">
-                <FileText className="h-5 w-5 text-teal-600" />
+                {completedCount === 4 ? <Pencil className="h-5 w-5 text-teal-600" /> : <FileText className="h-5 w-5 text-teal-600" />}
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium text-gray-900">Patient Forms</p>
-                <p className="text-xs text-gray-500">Fill out or update your intake forms</p>
+                <p className="text-sm font-medium text-gray-900">
+                  {completedCount === 4 ? 'Update Forms' : 'Patient Forms'}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {completedCount === 4 ? 'Review and update your submitted information' : 'Fill out your intake forms'}
+                </p>
               </div>
               <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-teal-600 transition-colors" />
             </Link>
