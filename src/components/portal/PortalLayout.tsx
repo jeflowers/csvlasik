@@ -4,6 +4,7 @@ import {
   LayoutDashboard,
   FileText,
   ClipboardList,
+  Star,
   LogOut,
   Menu,
   X,
@@ -16,6 +17,7 @@ const navItems = [
   { path: '/portal', icon: LayoutDashboard, label: 'Dashboard', end: true },
   { path: '/portal/forms', icon: FileText, label: 'Patient Forms' },
   { path: '/portal/submissions', icon: ClipboardList, label: 'My Submissions' },
+  { path: '/portal/testimonial', icon: Star, label: 'Share Your Story' },
 ];
 
 const PortalLayout: React.FC = () => {

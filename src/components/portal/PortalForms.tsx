@@ -101,7 +101,10 @@ const PortalForms: React.FC = () => {
   const navigate = useNavigate();
   const isEditMode = searchParams.get('edit') === 'true';
 
-  const [activeStep, setActiveStep] = useState(0);
+  const initialStep = parseInt(searchParams.get('step') || '0', 10);
+  const [activeStep, setActiveStep] = useState(
+    Number.isFinite(initialStep) && initialStep >= 0 && initialStep < 4 ? initialStep : 0
+  );
   const [loading, setLoading] = useState(true);
   const [existingIds, setExistingIds] = useState<Pick<ExistingSubmission, 'registrationId' | 'medicalHistoryId' | 'insuranceId' | 'consentId'> | null>(null);
   const [status, setStatus] = useState<CompletionStatus>({
@@ -322,13 +325,23 @@ const PortalForms: React.FC = () => {
             const isCurrent = index === activeStep;
             const isCompleted = status[statusKeys[index]];
             const isPast = index < activeStep;
+            const canClick = isEditMode && index !== activeStep;
 
             return (
               <React.Fragment key={step.id}>
                 <div className="flex flex-col items-center gap-2">
-                  <div
+                  <button
+                    type="button"
+                    disabled={!canClick}
+                    onClick={() => {
+                      if (canClick) {
+                        setActiveStep(index);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }
+                    }}
                     className={`
                       relative flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-300
+                      ${canClick ? 'cursor-pointer hover:scale-110' : !isEditMode ? 'cursor-default' : ''}
                       ${isCurrent
                         ? 'border-teal-600 bg-teal-600 text-white shadow-lg shadow-teal-600/25'
                         : isCompleted
@@ -338,6 +351,7 @@ const PortalForms: React.FC = () => {
                             : 'border-gray-200 bg-white text-gray-400'
                       }
                     `}
+                    aria-label={`${canClick ? 'Go to ' : ''}${step.label}`}
                   >
                     {isCompleted && !isCurrent ? (
                       <Check className="h-5 w-5" />
@@ -347,7 +361,7 @@ const PortalForms: React.FC = () => {
                     {isCompleted && (
                       <CheckCircle2 className="absolute -top-1 -right-1 h-4 w-4 text-teal-600 bg-white rounded-full" />
                     )}
-                  </div>
+                  </button>
                   <span
                     className={`text-xs font-medium text-center hidden sm:block ${
                       isCurrent ? 'text-teal-700' : isCompleted ? 'text-teal-600' : 'text-gray-400'

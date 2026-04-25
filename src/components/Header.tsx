@@ -271,8 +271,8 @@ const Header = () => {
                   >
                     {t('featuredStories')}
                   </Link>
-                  <Link 
-                    to="/testimonials?filter=procedure" 
+                  <Link
+                    to="/testimonials?filter=procedure"
                     onClick={() => setIsTestimonialsOpen(false)}
                     className={`block px-4 py-3 chopard-text-secondary hover:bg-gray-50 hover:chopard-text-primary transition-all duration-200 font-light ${
                       isRTL ? 'text-right' : 'text-left'
@@ -280,6 +280,17 @@ const Header = () => {
                     role="menuitem"
                   >
                     {t('byProcedure')}
+                  </Link>
+                  <div className="border-t border-gray-100 my-1" />
+                  <Link
+                    to="/portal/testimonial"
+                    onClick={() => setIsTestimonialsOpen(false)}
+                    className={`block px-4 py-3 chopard-text-secondary hover:bg-gray-50 hover:chopard-text-primary transition-all duration-200 font-light ${
+                      isRTL ? 'text-right' : 'text-left'
+                    }`}
+                    role="menuitem"
+                  >
+                    {t('shareYourStory', { defaultValue: 'Share Your Story' })}
                   </Link>
                 </div>
               )}
@@ -352,14 +363,21 @@ const Header = () => {
               >
                 {t('about')}
               </Link>
-              <Link 
-                to="/testimonials" 
+              <Link
+                to="/testimonials"
                 className="chopard-text-secondary hover:chopard-text-primary font-light transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('testimonials')}
               </Link>
-              <Link 
+              <Link
+                to="/portal/testimonial"
+                className="chopard-text-secondary hover:chopard-text-primary font-light transition-all duration-300 text-sm pl-4"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('shareYourStory', { defaultValue: 'Share Your Story' })}
+              </Link>
+              <Link
                 to="/blog" 
                 className="chopard-text-secondary hover:chopard-text-primary font-light transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}

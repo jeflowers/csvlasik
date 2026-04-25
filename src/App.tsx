@@ -86,6 +86,7 @@ const PortalAuth = lazy(() => import('./components/portal/PortalAuth'));
 const PortalDashboard = lazy(() => import('./components/portal/PortalDashboard'));
 const PortalForms = lazy(() => import('./components/portal/PortalForms'));
 const PortalSubmissions = lazy(() => import('./components/portal/PortalSubmissions'));
+const PortalTestimonial = lazy(() => import('./components/portal/PortalTestimonial'));
 
 const Home = lazy(() => import('./pages/Home'));
 const PrivacyPolicyDetailPage = lazy(() => import('./pages/PrivacyPolicyDetailPage'));
@@ -265,6 +266,7 @@ function PortalRoutes() {
         <Route index element={<PortalDashboard />} />
         <Route path="forms" element={<PortalForms />} />
         <Route path="submissions" element={<PortalSubmissions />} />
+        <Route path="testimonial" element={<PortalTestimonial />} />
       </Route>
     </Routes>
   );
