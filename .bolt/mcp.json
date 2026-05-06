@@ -11,6 +11,9 @@
     },
     "firecrawl": {
       "enabled": true
+    },
+    "zapier": {
+      "enabled": true
     }
   }
 }
