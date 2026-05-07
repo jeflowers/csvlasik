@@ -12,13 +12,15 @@ import {
   X,
   User,
   Shield,
-  Globe,
-  ChevronDown,
-  Check,
+  Mail,
+  Facebook,
+  Twitter,
+  Instagram,
+  Youtube,
 } from 'lucide-react';
 import { usePatient } from '../../hooks/usePatient';
-import { SUPPORTED_LANGUAGES, DEMOGRAPHIC_GROUPS } from '../../i18n';
-import Cookies from 'js-cookie';
+import LanguageSelector from '../LanguageSelector';
+import TikTokIcon from '../icons/TikTokIcon';
 
 const navItems = [
   { path: '/portal', labelKey: 'nav.dashboard', fallback: 'Dashboard', icon: LayoutDashboard, end: true },
@@ -33,9 +35,8 @@ const PortalLayout: React.FC = () => {
   const { t, i18n } = useTranslation('patientForms');
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
 
-  const currentLang = SUPPORTED_LANGUAGES[i18n.language as keyof typeof SUPPORTED_LANGUAGES] || SUPPORTED_LANGUAGES.en;
+  const isRTL = i18n.dir() === 'rtl';
 
   const isActive = (path: string, end?: boolean) => {
     if (end) return location.pathname === path;
@@ -50,40 +51,85 @@ const PortalLayout: React.FC = () => {
     ? `${user.firstName[0]}${user.lastName?.[0] || ''}`.toUpperCase()
     : (user?.email?.[0] || 'P').toUpperCase();
 
-  const handleLanguageChange = async (code: string) => {
-    try {
-      await i18n.changeLanguage(code);
-      Cookies.set('i18next', code, { expires: 365 });
-      const lang = SUPPORTED_LANGUAGES[code as keyof typeof SUPPORTED_LANGUAGES];
-      document.documentElement.dir = lang?.rtl ? 'rtl' : 'ltr';
-      document.documentElement.lang = code;
-      if (lang?.rtl) {
-        document.body.classList.add('rtl');
-      } else {
-        document.body.classList.remove('rtl');
-      }
-      setLangOpen(false);
-    } catch {
-      // non-critical
-    }
-  };
-
-  const sortedLanguages = Object.values(SUPPORTED_LANGUAGES).sort((a, b) => a.order - b.order);
-  const grouped: Record<string, typeof sortedLanguages> = { default: [] };
-  for (const lang of sortedLanguages) {
-    const key = lang.demographic || 'default';
-    if (!grouped[key]) grouped[key] = [];
-    grouped[key].push(lang);
-  }
+  const portalLabel = user?.firstName
+    ? `${user.firstName}'s Portal`
+    : t('portal.title', { defaultValue: 'Patient Portal' });
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Top Bar - matches main site */}
+      <div className="chopard-gradient text-white relative z-30">
+        <div className="max-w-full px-4 sm:px-6 lg:px-8">
+          <div className={`flex justify-between items-center py-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+            <div className={`flex items-center space-x-4 ${isRTL ? 'space-x-reverse' : ''} ${sidebarOpen ? '' : 'ml-12 lg:ml-0'}`}>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-all duration-300"
+                aria-label="YouTube"
+              >
+                <Youtube className="h-4 w-4" />
+              </a>
+              <a
+                href="https://x.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-all duration-300"
+                aria-label="X (Twitter)"
+              >
+                <Twitter className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.tiktok.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-all duration-300"
+                aria-label="TikTok"
+              >
+                <TikTokIcon className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div className={`flex items-center space-x-6 text-sm font-medium ${isRTL ? 'space-x-reverse' : ''}`}>
+              <Link to="/portal" className="hidden sm:flex items-center hover:text-gray-200 transition-colors">
+                <User className={`h-4 w-4 text-white ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                <span>{portalLabel}</span>
+              </Link>
+              <Link to="/contact" className="hidden md:flex items-center hover:text-gray-200 transition-colors">
+                <Mail className={`h-4 w-4 text-white ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                <span>{t('nav.contactUs', { defaultValue: 'Contact Us' })}</span>
+              </Link>
+              <LanguageSelector />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <button
         onClick={() => setSidebarOpen(true)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-white rounded-lg shadow-md border border-gray-200"
+        className="lg:hidden fixed top-3 left-4 z-50 p-1.5 bg-white/10 hover:bg-white/20 rounded-lg text-white transition-colors"
         aria-label="Open menu"
       >
-        <Menu className="h-5 w-5 text-gray-700" />
+        <Menu className="h-5 w-5" />
       </button>
 
       {sidebarOpen && (
@@ -98,7 +144,7 @@ const PortalLayout: React.FC = () => {
           fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50
           transform transition-transform duration-200 ease-in-out
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-          lg:translate-x-0
+          lg:translate-x-0 lg:top-[52px] lg:h-[calc(100vh-52px)] lg:z-20
         `}
       >
         <div className="flex flex-col h-full">
@@ -161,65 +207,6 @@ const PortalLayout: React.FC = () => {
               );
             })}
           </nav>
-
-          <div className="px-3 py-3 border-t border-gray-100">
-            <div className="relative">
-              <button
-                onClick={() => setLangOpen(!langOpen)}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
-              >
-                <Globe className="h-5 w-5 text-gray-400" />
-                <span className="flex-1 text-left truncate">
-                  {currentLang.flag} {currentLang.nativeName}
-                </span>
-                <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              {langOpen && (
-                <div className="absolute bottom-full left-0 right-0 mb-1 bg-white border border-gray-200 rounded-lg shadow-xl max-h-72 overflow-y-auto z-50">
-                  {grouped.default.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => handleLanguageChange(lang.code)}
-                      className={`w-full flex items-center gap-3 px-3 py-2.5 text-sm hover:bg-gray-50 transition-colors ${
-                        i18n.language === lang.code ? 'bg-teal-50 text-teal-900' : 'text-gray-700'
-                      }`}
-                    >
-                      <span className="text-lg">{lang.flag}</span>
-                      <span className="flex-1 text-left truncate">{lang.nativeName}</span>
-                      {i18n.language === lang.code && <Check className="h-4 w-4 text-teal-600" />}
-                    </button>
-                  ))}
-                  {[DEMOGRAPHIC_GROUPS.SOUTHERN_CALIFORNIA, DEMOGRAPHIC_GROUPS.PACIFIC_ISLANDS, DEMOGRAPHIC_GROUPS.ADDITIONAL].map(
-                    (groupName) =>
-                      grouped[groupName] &&
-                      grouped[groupName].length > 0 && (
-                        <div key={groupName}>
-                          <div className="px-3 py-1.5 mt-1">
-                            <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
-                              {groupName}
-                            </span>
-                          </div>
-                          {grouped[groupName].map((lang) => (
-                            <button
-                              key={lang.code}
-                              onClick={() => handleLanguageChange(lang.code)}
-                              className={`w-full flex items-center gap-3 px-3 py-2.5 text-sm hover:bg-gray-50 transition-colors ${
-                                i18n.language === lang.code ? 'bg-teal-50 text-teal-900' : 'text-gray-700'
-                              }`}
-                            >
-                              <span className="text-lg">{lang.flag}</span>
-                              <span className="flex-1 text-left truncate">{lang.nativeName}</span>
-                              {i18n.language === lang.code && <Check className="h-4 w-4 text-teal-600" />}
-                            </button>
-                          ))}
-                        </div>
-                      )
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
 
           <div className="p-3 border-t border-gray-100">
             <Link
