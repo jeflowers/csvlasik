@@ -5,15 +5,6 @@
     },
     "notion": {
       "enabled": true
-    },
-    "huggingface": {
-      "enabled": true
-    },
-    "firecrawl": {
-      "enabled": true
-    },
-    "zapier": {
-      "enabled": true
     }
   }
 }
