@@ -112,6 +112,7 @@ const PhotoGalleryManager = lazy(() => import('./components/admin/PhotoGalleryMa
 const EmailQueueMonitor = lazy(() => import('./components/admin/EmailQueueMonitor'));
 const AnalyticsDashboard = lazy(() => import('./components/admin/AnalyticsDashboard'));
 const ErrorMonitor = lazy(() => import('./components/admin/ErrorMonitor'));
+const SystemLogs = lazy(() => import('./components/admin/SystemLogs'));
 const EmailTemplateManager = lazy(() => import('./components/admin/EmailTemplateManager'));
 
 const LoadingFallback = () => (
@@ -239,6 +240,8 @@ function AdminRoutes() {
         <Route path="translations/editor" element={<TranslationEditor />} />
         <Route path="analytics" element={<AnalyticsDashboard />} />
         <Route path="analytics/errors" element={<ErrorMonitor />} />
+        <Route path="system/logs" element={<SystemLogs />} />
+        <Route path="system/logs/email-queue" element={<SystemLogs />} />
         <Route path="email-templates" element={<EmailTemplateManager />} />
         <Route path="email-queue" element={<EmailQueueMonitor />} />
         <Route path="gallery" element={<PhotoGalleryManager />} />

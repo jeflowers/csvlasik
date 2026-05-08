@@ -18,9 +18,9 @@ import {
   ChevronDown,
   ChevronRight,
   Mail,
-  AlertCircle,
   Database,
-  Lock
+  Lock,
+  ScrollText
 } from 'lucide-react';
 import { useAdmin } from '../../hooks/useAdmin';
 
@@ -92,7 +92,7 @@ const AdminLayout: React.FC = () => {
         { name: 'Users', href: '/admin/users', icon: Users },
         { name: 'Roles & Permissions', href: '/admin/roles', icon: Shield },
         { name: 'Translation Editor', href: '/admin/translations/editor', icon: Globe },
-        { name: 'Error Monitor', href: '/admin/analytics/errors', icon: AlertCircle },
+        { name: 'Logs', href: '/admin/system/logs', icon: ScrollText },
         { name: 'Settings', href: '/admin/settings', icon: Settings },
       ]
     },
@@ -153,7 +153,9 @@ const AdminLayout: React.FC = () => {
                     {isExpanded && (
                       <div className="mt-1 space-y-1">
                         {section.items.map((item) => {
-                          const isActive = location.pathname === item.href;
+                          const isActive =
+                            location.pathname === item.href ||
+                            (item.href !== '/admin' && location.pathname.startsWith(`${item.href}/`));
                           return (
                             <Link
                               key={item.name}
@@ -222,7 +224,9 @@ const AdminLayout: React.FC = () => {
                     {isExpanded && (
                       <div className="mt-1 space-y-1">
                         {section.items.map((item) => {
-                          const isActive = location.pathname === item.href;
+                          const isActive =
+                            location.pathname === item.href ||
+                            (item.href !== '/admin' && location.pathname.startsWith(`${item.href}/`));
                           return (
                             <Link
                               key={item.name}
