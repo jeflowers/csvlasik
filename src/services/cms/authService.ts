@@ -67,9 +67,22 @@ export async function signInAdmin(credentials: LoginCredentials): Promise<AuthRe
       return { user: null, error: 'Authentication failed' };
     }
 
-    console.log('[authService] Step 2: Fetching user data for ID:', authData.user.id);
+    console.log('[authService] Step 2: Verifying account is not a patient...');
 
-    // Step 2: Fetch user data with timeout
+    const { data: patientRow } = await supabase
+      .from('patient_profiles')
+      .select('id')
+      .eq('id', authData.user.id)
+      .maybeSingle();
+
+    if (patientRow) {
+      console.error('[authService] Patient account attempted admin login');
+      await supabase.auth.signOut();
+      return { user: null, error: 'This account is not authorized for system access.' };
+    }
+
+    console.log('[authService] Step 3: Fetching user data for ID:', authData.user.id);
+
     const userPromise = supabase
       .from('users')
       .select('id,email,name,role,created_at,updated_at')

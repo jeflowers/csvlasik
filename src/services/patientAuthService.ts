@@ -50,6 +50,19 @@ export async function signUpPatient(
       return { user: null, error: 'Registration failed' };
     }
 
+    const { error: profileError } = await supabase
+      .from('patient_profiles')
+      .insert({
+        id: data.user.id,
+        email: data.user.email || email,
+        first_name: firstName,
+        last_name: lastName,
+      });
+
+    if (profileError && !profileError.message.includes('duplicate')) {
+      console.error('[patientAuthService] Failed to create patient profile:', profileError);
+    }
+
     return { user: mapAuthUser(data.user), error: null };
   } catch (err) {
     return {
