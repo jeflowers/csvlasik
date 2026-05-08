@@ -6,7 +6,12 @@ export type ActivityType =
   | 'form_submit'
   | 'form_update'
   | 'testimonial_submit'
-  | 'password_reset';
+  | 'password_reset'
+  | 'account_created'
+  | 'admin_updated_profile'
+  | 'admin_updated_form'
+  | 'admin_deactivated'
+  | 'admin_reactivated';
 
 export interface ActivityLogEntry {
   id: number;

@@ -3,9 +3,6 @@ import {
   MessageSquare,
   FileText,
   Image,
-  Users,
-  TrendingUp,
-  Clock,
   CheckCircle,
   AlertCircle,
   Calendar,
@@ -14,12 +11,15 @@ import {
   BarChart3,
   Activity,
   Database,
-  Eye,
   ArrowUpRight,
-  ArrowDownRight
+  ArrowDownRight,
+  UserPlus,
+  UserCog,
+  HeartPulse
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { apiService } from '../../services/api';
+import { supabase } from '../../lib/supabase';
 
 interface DashboardStats {
   totalTestimonials: number;
@@ -44,6 +44,22 @@ interface ActivityItem {
   details?: string;
 }
 
+interface PortalActivityItem {
+  id: number;
+  activity_type: string;
+  activity_label: string;
+  created_at: string;
+  metadata: Record<string, unknown> | null;
+  user_id: string;
+}
+
+interface PortalStats {
+  totalPatients: number;
+  newPatientsThisWeek: number;
+  activePatients: number;
+  deactivatedPatients: number;
+}
+
 const Dashboard: React.FC = () => {
   const [stats, setStats] = useState<DashboardStats>({
     totalTestimonials: 0,
@@ -59,15 +75,41 @@ const Dashboard: React.FC = () => {
     appointmentsChange: 0
   });
   const [recentActivity, setRecentActivity] = useState<ActivityItem[]>([]);
+  const [portalActivity, setPortalActivity] = useState<PortalActivityItem[]>([]);
+  const [portalStats, setPortalStats] = useState<PortalStats>({
+    totalPatients: 0,
+    newPatientsThisWeek: 0,
+    activePatients: 0,
+    deactivatedPatients: 0,
+  });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const [overviewData, statsData] = await Promise.all([
+        const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+
+        const [overviewData, , portalActivityRes, totalPatientsRes, newPatientsRes, activePatientsRes, deactivatedPatientsRes] = await Promise.all([
           apiService.getDashboardOverview(),
-          apiService.getDashboardStats()
+          apiService.getDashboardStats(),
+          supabase
+            .from('patient_activity_log')
+            .select('id, activity_type, activity_label, created_at, metadata, user_id')
+            .order('created_at', { ascending: false })
+            .limit(10),
+          supabase.from('patient_profiles').select('id', { count: 'exact', head: true }),
+          supabase.from('patient_profiles').select('id', { count: 'exact', head: true }).gte('created_at', weekAgo),
+          supabase.from('patient_profiles').select('id', { count: 'exact', head: true }).eq('is_active', true),
+          supabase.from('patient_profiles').select('id', { count: 'exact', head: true }).eq('is_active', false),
         ]);
+
+        setPortalActivity((portalActivityRes.data as PortalActivityItem[]) || []);
+        setPortalStats({
+          totalPatients: totalPatientsRes.count ?? 0,
+          newPatientsThisWeek: newPatientsRes.count ?? 0,
+          activePatients: activePatientsRes.count ?? 0,
+          deactivatedPatients: deactivatedPatientsRes.count ?? 0,
+        });
 
         setStats({
           totalTestimonials: overviewData.overview?.total_testimonials || 0,
@@ -132,8 +174,17 @@ const Dashboard: React.FC = () => {
       name: 'Media Files',
       value: stats.totalMedia,
       icon: Image,
-      color: 'bg-purple-500',
+      color: 'bg-slate-500',
       link: '/admin/media'
+    },
+    {
+      name: 'Portal Patients',
+      value: portalStats.totalPatients,
+      pending: portalStats.newPatientsThisWeek,
+      pendingLabel: 'new this week',
+      icon: HeartPulse,
+      color: 'bg-rose-500',
+      link: '/admin/patients'
     }
   ];
 
@@ -245,7 +296,7 @@ const Dashboard: React.FC = () => {
                   <p className="text-3xl font-semibold text-gray-900">{stat.value}</p>
                   {stat.pending !== undefined && stat.pending > 0 && (
                     <span className="ml-2 text-sm text-orange-600">
-                      ({stat.pending} pending)
+                      ({stat.pending} {('pendingLabel' in stat && stat.pendingLabel) ? stat.pendingLabel : 'pending'})
                     </span>
                   )}
                 </div>
@@ -326,6 +377,49 @@ const Dashboard: React.FC = () => {
           </div>
 
           <div className="bg-white rounded-lg shadow">
+            <div className="p-6 border-b border-gray-200 flex items-center justify-between">
+              <h3 className="text-lg font-medium text-gray-900">Portal Activity</h3>
+              <Link to="/admin/patients" className="text-sm text-teal-600 hover:text-teal-700">
+                View all
+              </Link>
+            </div>
+            <div className="p-6">
+              {portalActivity.length === 0 ? (
+                <p className="text-gray-500 text-center py-8">No portal activity yet</p>
+              ) : (
+                <div className="space-y-4">
+                  {portalActivity.map((item) => {
+                    const isAdminAction = item.activity_type.startsWith('admin_');
+                    const isAccountCreated = item.activity_type === 'account_created';
+                    const Icon = isAccountCreated ? UserPlus : isAdminAction ? UserCog : Activity;
+                    const iconBg = isAccountCreated
+                      ? 'bg-emerald-100 text-emerald-600'
+                      : isAdminAction
+                      ? 'bg-amber-100 text-amber-600'
+                      : 'bg-sky-100 text-sky-600';
+                    const actor = (item.metadata as Record<string, unknown> | null)?.actor as string | undefined;
+                    return (
+                      <div key={item.id} className="flex items-start space-x-3">
+                        <div className={`h-8 w-8 rounded-full flex items-center justify-center ${iconBg}`}>
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm text-gray-900">{item.activity_label}</p>
+                          <p className="text-xs text-gray-500 mt-0.5">
+                            {actor === 'admin' ? 'By admin' : actor === 'system' ? 'By system' : 'By patient'}
+                            {' \u00b7 '}
+                            {new Date(item.created_at).toLocaleString()}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow">
             <div className="p-6 border-b border-gray-200">
               <h3 className="text-lg font-medium text-gray-900">Quick Actions</h3>
             </div>
@@ -388,7 +482,7 @@ const Dashboard: React.FC = () => {
 
           <div className="bg-white rounded-lg shadow p-6">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-medium text-gray-900">Users</h3>
+              <h3 className="text-lg font-medium text-gray-900">System Users</h3>
               <Link to="/admin/users" className="text-sm text-teal-600 hover:text-teal-700">
                 View all
               </Link>
@@ -401,6 +495,33 @@ const Dashboard: React.FC = () => {
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-600">Active Today</span>
                 <span className="text-sm font-semibold text-gray-900">{stats.activeUsers}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-medium text-gray-900">Patient Portal</h3>
+              <Link to="/admin/patients" className="text-sm text-teal-600 hover:text-teal-700">
+                View all
+              </Link>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-600">Total Patients</span>
+                <span className="text-sm font-semibold text-gray-900">{portalStats.totalPatients}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-600">New This Week</span>
+                <span className="text-sm font-semibold text-emerald-600">{portalStats.newPatientsThisWeek}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-600">Active</span>
+                <span className="text-sm font-semibold text-gray-900">{portalStats.activePatients}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-600">Deactivated</span>
+                <span className="text-sm font-semibold text-gray-900">{portalStats.deactivatedPatients}</span>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { supabase } from '../lib/supabase';
+import { logPatientActivity } from './patientActivityService';
 
 export interface PatientUser {
   id: string;
@@ -62,6 +63,10 @@ export async function signUpPatient(
     if (profileError && !profileError.message.includes('duplicate')) {
       console.error('[patientAuthService] Failed to create patient profile:', profileError);
     }
+
+    await logPatientActivity('account_created', 'Portal account created', {
+      email: data.user.email,
+    });
 
     return { user: mapAuthUser(data.user), error: null };
   } catch (err) {
