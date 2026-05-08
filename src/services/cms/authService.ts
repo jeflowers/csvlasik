@@ -236,18 +236,24 @@ export function hasRole(user: AdminUser | null, allowedRoles: string[]): boolean
  * Subscribe to auth state changes
  */
 export function onAuthStateChange(callback: (user: AdminUser | null) => void) {
-  const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+  const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
     if (event === 'SIGNED_OUT' || event === 'USER_DELETED') {
       userCache = null;
       callback(null);
-    } else if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
-      if (session?.user) {
-        const { user } = await getCurrentAdmin();
-        callback(user);
-      } else {
+      return;
+    }
+
+    if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+      if (!session?.user) {
         userCache = null;
         callback(null);
+        return;
       }
+
+      (async () => {
+        const { user } = await getCurrentAdmin();
+        callback(user);
+      })();
     }
   });
 
