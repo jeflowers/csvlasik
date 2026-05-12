@@ -7,7 +7,7 @@
       "enabled": true
     },
     "huggingface": {
-      "enabled": false
+      "enabled": true
     }
   }
 }
