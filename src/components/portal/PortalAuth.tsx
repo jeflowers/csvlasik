@@ -9,7 +9,7 @@ type AuthView = 'login' | 'register' | 'forgot-password';
 
 const PortalAuth: React.FC = () => {
   const { login, register, loading, error } = usePatient();
-  const { t } = useTranslation('patientForms');
+  const { t, ready } = useTranslation('patientForms');
   const [view, setView] = useState<AuthView>('login');
   const [showPassword, setShowPassword] = useState(false);
   const [localError, setLocalError] = useState('');
@@ -92,6 +92,14 @@ const PortalAuth: React.FC = () => {
   };
 
   const displayError = localError || error;
+
+  if (!ready) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4 py-12">
+        <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4 py-12">
