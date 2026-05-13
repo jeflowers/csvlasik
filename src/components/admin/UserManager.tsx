@@ -1,18 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Users,
-  Search,
-  Plus,
-  Edit,
-  Trash2,
-  Shield,
-  Key,
-  UserCheck,
-  UserX,
-  Calendar,
-  Activity,
-  X
-} from 'lucide-react';
+import { Users, Search, Plus, CreditCard as Edit, Trash2, Shield, Key, UserCheck, UserX, Calendar, Activity, X } from 'lucide-react';
 import { apiService } from '../../services/api';
 import { supabase } from '../../lib/supabase';
 
@@ -33,10 +20,23 @@ interface Role {
   level: number;
 }
 
+interface PatientProfile {
+  id: string;
+  email: string;
+  first_name: string | null;
+  last_name: string | null;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
 const UserManager: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'staff' | 'patients'>('staff');
   const [users, setUsers] = useState<User[]>([]);
+  const [patients, setPatients] = useState<PatientProfile[]>([]);
   const [roles, setRoles] = useState<Role[]>([]);
   const [loading, setLoading] = useState(true);
+  const [patientsLoading, setPatientsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [roleFilter, setRoleFilter] = useState('all');
   const [showCreateModal, setShowCreateModal] = useState(false);
@@ -47,6 +47,44 @@ const UserManager: React.FC = () => {
     fetchUsers();
     fetchRoles();
   }, []);
+
+  useEffect(() => {
+    if (activeTab === 'patients') fetchPatients();
+  }, [activeTab]);
+
+  const fetchPatients = async () => {
+    try {
+      setPatientsLoading(true);
+      const { data, error } = await supabase
+        .from('patient_profiles')
+        .select('id, email, first_name, last_name, is_active, created_at, updated_at')
+        .order('created_at', { ascending: false });
+      if (error) throw error;
+      setPatients(data || []);
+    } catch (error) {
+      console.error('Failed to fetch patients:', error);
+    } finally {
+      setPatientsLoading(false);
+    }
+  };
+
+  const handleTogglePatientActive = async (id: string, isActive: boolean) => {
+    try {
+      const { error } = await supabase
+        .from('patient_profiles')
+        .update({
+          is_active: !isActive,
+          deactivated_at: !isActive ? null : new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+        })
+        .eq('id', id);
+      if (error) throw error;
+      fetchPatients();
+    } catch (error) {
+      console.error('Failed to update patient status:', error);
+      alert(`Failed to update: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  };
 
   const fetchUsers = async () => {
     try {
@@ -134,17 +172,53 @@ const UserManager: React.FC = () => {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">User Management</h1>
-          <p className="text-gray-600">Manage system users and their permissions</p>
+          <p className="text-gray-600">
+            {activeTab === 'staff'
+              ? 'Manage system users and their permissions'
+              : 'Manage patient portal accounts'}
+          </p>
         </div>
-        <button
-          onClick={() => setShowCreateModal(true)}
-          className="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors"
-        >
-          <Plus className="h-4 w-4 mr-2 inline" />
-          Add User
-        </button>
+        {activeTab === 'staff' && (
+          <button
+            onClick={() => setShowCreateModal(true)}
+            className="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors"
+          >
+            <Plus className="h-4 w-4 mr-2 inline" />
+            Add User
+          </button>
+        )}
       </div>
 
+      {/* Tabs */}
+      <div className="border-b border-gray-200">
+        <nav className="-mb-px flex space-x-8">
+          <button
+            onClick={() => setActiveTab('staff')}
+            className={`py-3 px-1 border-b-2 font-medium text-sm ${
+              activeTab === 'staff'
+                ? 'border-teal-600 text-teal-600'
+                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+          >
+            <Users className="h-4 w-4 mr-2 inline" />
+            Staff Users ({users.length})
+          </button>
+          <button
+            onClick={() => setActiveTab('patients')}
+            className={`py-3 px-1 border-b-2 font-medium text-sm ${
+              activeTab === 'patients'
+                ? 'border-teal-600 text-teal-600'
+                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+          >
+            <UserCheck className="h-4 w-4 mr-2 inline" />
+            Patient Portal Users ({patients.length})
+          </button>
+        </nav>
+      </div>
+
+      {activeTab === 'staff' && (
+      <>
       {/* Filters and Search */}
       <div className="bg-white rounded-lg shadow p-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -316,6 +390,19 @@ const UserManager: React.FC = () => {
           </table>
         </div>
       </div>
+
+      </>
+      )}
+
+      {activeTab === 'patients' && (
+        <PatientsTable
+          patients={patients}
+          loading={patientsLoading}
+          searchTerm={searchTerm}
+          onSearchChange={setSearchTerm}
+          onToggleActive={handleTogglePatientActive}
+        />
+      )}
 
       {/* Create/Edit User Modal */}
       {(showCreateModal || editingUser) && (
@@ -691,6 +778,125 @@ const PasswordResetModal: React.FC<{
         </form>
       </div>
     </div>
+  );
+};
+
+const PatientsTable: React.FC<{
+  patients: PatientProfile[];
+  loading: boolean;
+  searchTerm: string;
+  onSearchChange: (v: string) => void;
+  onToggleActive: (id: string, isActive: boolean) => void;
+}> = ({ patients, loading, searchTerm, onSearchChange, onToggleActive }) => {
+  const filtered = patients.filter((p) => {
+    if (!searchTerm) return true;
+    const q = searchTerm.toLowerCase();
+    return (
+      (p.email && p.email.toLowerCase().includes(q)) ||
+      (p.first_name && p.first_name.toLowerCase().includes(q)) ||
+      (p.last_name && p.last_name.toLowerCase().includes(q))
+    );
+  });
+
+  return (
+    <>
+      <div className="bg-white rounded-lg shadow p-6">
+        <label className="block text-sm font-medium text-gray-700 mb-2">Search Patients</label>
+        <div className="relative max-w-md">
+          <Search className="h-4 w-4 absolute left-3 top-3 text-gray-400" />
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => onSearchChange(e.target.value)}
+            placeholder="Search by name or email..."
+            className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+          />
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Patient</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Email</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Registered</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {loading ? (
+                <tr>
+                  <td colSpan={5} className="px-6 py-12 text-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600 mx-auto"></div>
+                  </td>
+                </tr>
+              ) : filtered.length === 0 ? (
+                <tr>
+                  <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                    No portal patients found
+                  </td>
+                </tr>
+              ) : (
+                filtered.map((p) => {
+                  const fullName = [p.first_name, p.last_name].filter(Boolean).join(' ') || '(No name)';
+                  return (
+                    <tr key={p.id} className="hover:bg-gray-50">
+                      <td className="px-6 py-4">
+                        <div className="flex items-center">
+                          <div className="h-10 w-10 rounded-full bg-teal-600 flex items-center justify-center">
+                            <span className="text-sm font-medium text-white">
+                              {(p.first_name || p.email).charAt(0).toUpperCase()}
+                            </span>
+                          </div>
+                          <div className="ml-4">
+                            <div className="text-sm font-medium text-gray-900">{fullName}</div>
+                            <div className="text-xs text-gray-500">ID: {p.id.slice(0, 8)}...</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-700">{p.email}</td>
+                      <td className="px-6 py-4">
+                        {p.is_active ? (
+                          <span className="inline-flex items-center text-sm text-green-800">
+                            <UserCheck className="h-4 w-4 text-green-500 mr-2" />
+                            Active
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center text-sm text-red-800">
+                            <UserX className="h-4 w-4 text-red-500 mr-2" />
+                            Inactive
+                          </span>
+                        )}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-500">
+                        <Calendar className="h-3 w-3 inline mr-1" />
+                        {new Date(p.created_at).toLocaleDateString()}
+                      </td>
+                      <td className="px-6 py-4">
+                        <button
+                          onClick={() => onToggleActive(p.id, p.is_active)}
+                          className={
+                            p.is_active
+                              ? 'text-red-600 hover:text-red-900'
+                              : 'text-green-600 hover:text-green-900'
+                          }
+                          title={p.is_active ? 'Deactivate' : 'Activate'}
+                        >
+                          {p.is_active ? <UserX className="h-4 w-4" /> : <UserCheck className="h-4 w-4" />}
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
   );
 };
 
