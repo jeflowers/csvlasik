@@ -33,6 +33,7 @@ const ExternalReviewsManager: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [showImportModal, setShowImportModal] = useState(false);
   const [selectedSource, setSelectedSource] = useState<string>('');
+  const [editingSource, setEditingSource] = useState<ReviewSource | null>(null);
 
   useEffect(() => {
     fetchData();
@@ -177,6 +178,13 @@ const ExternalReviewsManager: React.FC = () => {
                   <Download className="h-4 w-4" />
                 </button>
                 <button
+                  onClick={() => setEditingSource(source)}
+                  className="text-teal-600 hover:text-teal-700"
+                  title="Edit Profile URL"
+                >
+                  <Edit className="h-4 w-4" />
+                </button>
+                <button
                   onClick={() => handleToggleActive(source.id, source.active)}
                   className="text-gray-600 hover:text-gray-700"
                   title={source.active ? 'Deactivate' : 'Activate'}
@@ -318,6 +326,120 @@ const ExternalReviewsManager: React.FC = () => {
           }}
         />
       )}
+
+      {editingSource && (
+        <EditSourceModal
+          source={editingSource}
+          onClose={() => {
+            setEditingSource(null);
+            fetchData();
+          }}
+        />
+      )}
+    </div>
+  );
+};
+
+const EditSourceModal: React.FC<{
+  source: ReviewSource;
+  onClose: () => void;
+}> = ({ source, onClose }) => {
+  const [profileUrl, setProfileUrl] = useState(source.profile_url || '');
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const placeholders: Record<string, string> = {
+    webmd: 'https://doctor.webmd.com/doctor/your-doctor-name-overview',
+    vitals: 'https://www.vitals.com/doctors/Dr_Your_Name.html',
+    usnews: 'https://health.usnews.com/doctors/your-doctor-id',
+    healthgrades: 'https://www.healthgrades.com/physician/dr-your-name',
+    google: 'https://www.google.com/maps/place/?q=place_id:YOUR_PLACE_ID',
+    yelp: 'https://www.yelp.com/biz/your-business-lakewood',
+  };
+
+  const searchHint: Record<string, string> = {
+    webmd: 'Search doctor.webmd.com for the provider, then copy the profile URL.',
+    vitals: 'Search vitals.com for the provider in Lakewood, CA, then copy the URL.',
+    usnews: 'Search health.usnews.com/doctors using ZIP 90712 to find the listing.',
+    healthgrades: 'Search healthgrades.com by name + Lakewood, CA, then copy the URL.',
+    google: 'On Google Maps, find the business, click Share, and copy the link.',
+    yelp: 'On yelp.com, search the business name + Lakewood, then copy the page URL.',
+  };
+
+  const handleSave = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSaving(true);
+    setError(null);
+    try {
+      const { error: updateError } = await supabase
+        .from('review_sources')
+        .update({ profile_url: profileUrl, updated_at: new Date().toISOString() })
+        .eq('id', source.id);
+      if (updateError) throw updateError;
+      onClose();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to update');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-lg p-6 w-full max-w-xl">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-lg font-semibold text-gray-900">
+            Edit {source.display_name} Profile
+          </h3>
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
+            ×
+          </button>
+        </div>
+
+        <p className="text-sm text-gray-600 mb-4">
+          {searchHint[source.source_name]} Use the listing closest to the Lakewood
+          office (5750 Downey Ave., Suite 101, Lakewood, CA 90712).
+        </p>
+
+        <form onSubmit={handleSave} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Profile URL
+            </label>
+            <input
+              type="url"
+              required
+              value={profileUrl}
+              onChange={(e) => setProfileUrl(e.target.value)}
+              placeholder={placeholders[source.source_name]}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md"
+            />
+          </div>
+
+          {error && (
+            <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded px-3 py-2">
+              {error}
+            </div>
+          )}
+
+          <div className="flex justify-end space-x-3 pt-2">
+            <button
+              type="button"
+              onClick={onClose}
+              className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              disabled={saving}
+              className="px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md hover:bg-teal-700 disabled:opacity-50"
+            >
+              {saving ? 'Saving...' : 'Save'}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
