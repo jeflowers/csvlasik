@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  ExternalLink,
-  Plus,
-  Edit,
-  Trash2,
-  Shield,
-  CheckCircle,
-  AlertCircle,
-  Download
-} from 'lucide-react';
+import { ExternalLink, Plus, CreditCard as Edit, Trash2, Shield, CheckCircle, AlertCircle, Download } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 
 interface ReviewSource {
@@ -360,10 +351,16 @@ const ImportReviewsModal: React.FC<{
         published_date: formData.published_date || null
       });
 
+      const { data: currentSource } = await supabase
+        .from('review_sources')
+        .select('total_reviews')
+        .eq('source_name', formData.source)
+        .maybeSingle();
+
       await supabase
         .from('review_sources')
         .update({
-          total_reviews: supabase.sql`total_reviews + 1`,
+          total_reviews: (currentSource?.total_reviews ?? 0) + 1,
           last_synced_at: new Date().toISOString()
         })
         .eq('source_name', formData.source);
