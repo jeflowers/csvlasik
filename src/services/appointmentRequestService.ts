@@ -3,11 +3,13 @@ import type { AppointmentRequest, AppointmentRequestCreate, AppointmentRequestUp
 import { emailService } from './emailService';
 import { emailTemplates } from '../utils/emailTemplates';
 
+const APPOINTMENT_REQUESTS_TABLE = 'appointment_requests';
+
 export class AppointmentRequestService {
   async createRequest(data: AppointmentRequestCreate): Promise<{ data: AppointmentRequest | null; error: Error | null }> {
     try {
       const { data: result, error } = await supabase
-        .from('consultation_requests')
+        .from(APPOINTMENT_REQUESTS_TABLE)
         .insert([{
           first_name: data.first_name,
           last_name: data.last_name,
@@ -76,7 +78,7 @@ export class AppointmentRequestService {
   async getAllRequests(): Promise<{ data: AppointmentRequest[]; error: Error | null }> {
     try {
       const { data, error } = await supabase
-        .from('consultation_requests')
+        .from(APPOINTMENT_REQUESTS_TABLE)
         .select('*')
         .order('created_at', { ascending: false });
 
@@ -91,7 +93,7 @@ export class AppointmentRequestService {
   async updateRequest(id: string, updates: AppointmentRequestUpdate): Promise<{ data: AppointmentRequest | null; error: Error | null }> {
     try {
       const { data, error } = await supabase
-        .from('consultation_requests')
+        .from(APPOINTMENT_REQUESTS_TABLE)
         .update(updates)
         .eq('id', id)
         .select()
@@ -150,6 +152,39 @@ export class AppointmentRequestService {
 
   async setReviewing(id: string): Promise<{ data: AppointmentRequest | null; error: Error | null }> {
     return await this.updateRequest(id, { status: 'reviewing' });
+  }
+
+  async createFromPatientPortal(input: {
+    user_id: string | null;
+    registration_id: string | null;
+    first_name: string;
+    last_name: string;
+    email: string;
+    phone: string;
+    notes?: string;
+  }): Promise<{ data: AppointmentRequest | null; error: Error | null }> {
+    try {
+      const { data: result, error } = await supabase
+        .from(APPOINTMENT_REQUESTS_TABLE)
+        .insert([{
+          first_name: input.first_name,
+          last_name: input.last_name,
+          email: input.email,
+          phone: input.phone,
+          procedure_type: 'consultation',
+          location: 'los_angeles',
+          notes: input.notes || 'Submitted via Patient Portal',
+          status: 'pending',
+        }])
+        .select()
+        .maybeSingle();
+
+      if (error) throw error;
+      return { data: result as any, error: null };
+    } catch (error) {
+      console.error('Error creating appointment request from portal:', error);
+      return { data: null, error: error as Error };
+    }
   }
 }
 

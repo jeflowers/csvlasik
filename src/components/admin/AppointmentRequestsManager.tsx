@@ -97,14 +97,21 @@ const AppointmentRequestsManager: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="bg-gray-50 rounded-lg p-3">
-                      <p className="text-xs text-gray-500 mb-2">Preferred Times:</p>
-                      <div className="space-y-1 text-sm text-gray-700">
-                        <div>1. {new Date(request.preferred_time_1).toLocaleString()}</div>
-                        <div>2. {new Date(request.preferred_time_2).toLocaleString()}</div>
-                        <div>3. {new Date(request.preferred_time_3).toLocaleString()}</div>
+                    {(request.preferred_time_1 || request.preferred_time_2 || request.preferred_time_3) ? (
+                      <div className="bg-gray-50 rounded-lg p-3">
+                        <p className="text-xs text-gray-500 mb-2">Preferred Times:</p>
+                        <div className="space-y-1 text-sm text-gray-700">
+                          {request.preferred_time_1 && <div>1. {new Date(request.preferred_time_1).toLocaleString()}</div>}
+                          {request.preferred_time_2 && <div>2. {new Date(request.preferred_time_2).toLocaleString()}</div>}
+                          {request.preferred_time_3 && <div>3. {new Date(request.preferred_time_3).toLocaleString()}</div>}
+                        </div>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="bg-gray-50 rounded-lg p-3">
+                        <p className="text-xs text-gray-500">No preferred times specified. Patient submitted via portal — contact to schedule.</p>
+                        {request.notes && <p className="text-sm text-gray-700 mt-2">{request.notes}</p>}
+                      </div>
+                    )}
                   </div>
 
                   <div className="flex flex-col gap-2 ml-4">
@@ -119,7 +126,7 @@ const AppointmentRequestsManager: React.FC = () => {
                     {request.status === 'reviewing' && (
                       <>
                         <button
-                          onClick={() => handleConfirm(request.id, request.preferred_time_1)}
+                          onClick={() => handleConfirm(request.id, request.preferred_time_1 || new Date().toISOString())}
                           className="px-4 py-2 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700 flex items-center"
                         >
                           <CheckCircle className="h-4 w-4 mr-1" />

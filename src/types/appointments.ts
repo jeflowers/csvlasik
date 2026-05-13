@@ -12,6 +12,9 @@ export interface AppointmentRequest {
   phone: string;
   procedure_type: ProcedureType;
   location: LocationType;
+  preferred_time_1: string | null;
+  preferred_time_2: string | null;
+  preferred_time_3: string | null;
   notes: string;
   status: AppointmentStatus;
   confirmed_time: string | null;

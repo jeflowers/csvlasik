@@ -7,6 +7,7 @@ import type {
   FormSubmissionResult,
 } from '../types/PatientForms';
 import { logPatientActivity } from './patientActivityService';
+import { appointmentRequestService } from './appointmentRequestService';
 
 function sanitizeInput(value: string | undefined): string | undefined {
   if (!value) return undefined;
@@ -169,6 +170,20 @@ export async function submitAllPatientForms(
     logPatientActivity('form_submit', 'Submitted all patient forms', {
       forms: ['registration', 'medicalHistory', 'insurance', 'consent'],
     });
+
+    await appointmentRequestService
+      .createFromPatientPortal({
+        user_id: userId,
+        registration_id: registrationId || null,
+        first_name: registrationData.first_name || '',
+        last_name: registrationData.last_name || '',
+        email: registrationData.email_address || '',
+        phone: registrationData.phone_number || '',
+        notes: registration.reasonForVisit
+          ? `Reason for visit: ${registration.reasonForVisit}`
+          : 'Submitted via Patient Portal',
+      })
+      .catch((err) => console.warn('Appointment request creation error:', err));
 
     return {
       success: true,
