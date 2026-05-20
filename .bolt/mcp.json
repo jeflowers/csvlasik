@@ -8,6 +8,9 @@
     },
     "huggingface": {
       "enabled": true
+    },
+    "firecrawl": {
+      "enabled": false
     }
   }
 }
