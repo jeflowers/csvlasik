@@ -34,7 +34,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^12.3.1",
-    "react-router-dom": "^6.26.2"
+    "react-router-dom": "^6.26.2",
+    "typecheck": "^0.1.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
