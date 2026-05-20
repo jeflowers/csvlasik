@@ -15,9 +15,7 @@ export default defineConfig({
         'src/test/',
         '**/*.d.ts',
         '**/*.config.*',
-        'dist/',
-        'server/uploads/',
-        'server/data/'
+        'dist/'
       ],
       thresholds: {
         global: {

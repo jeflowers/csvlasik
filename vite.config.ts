@@ -31,7 +31,7 @@ export default defineConfig({
     },
     watch: {
       usePolling: false,
-      ignored: ['**/node_modules/**', '**/dist/**', '**/.env', '**/server/**']
+      ignored: ['**/node_modules/**', '**/dist/**', '**/.env']
     }
   },
   publicDir: 'public',
