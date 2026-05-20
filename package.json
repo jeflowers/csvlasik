@@ -20,7 +20,6 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",
-    "test:cleanup-testimonials": "node scripts/cleanup-test-testimonials.mjs",
     "clean": "rm -rf node_modules package-lock.json dist",
     "reinstall": "npm run clean && npm install"
   },

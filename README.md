@@ -55,16 +55,6 @@ npm run dev
 - **Public Website**: http://localhost:5173
 - **Admin Panel**: http://localhost:5173/admin (Supabase Auth required)
 
-### Server API (Optional)
-For the legacy Node.js backend (if using):
-```bash
-cd server
-npm install
-npm run init-db
-npm run dev
-```
-- **API**: http://localhost:3001/api
-
 ## Project Structure
 
 ```
@@ -80,13 +70,8 @@ npm run dev
 │   ├── lib/               # Supabase client
 │   └── test/              # Unit and integration tests
 ├── supabase/              # Supabase configuration
-│   └── migrations/        # Database migrations
-├── server/                # Node.js backend (legacy)
-│   ├── config/            # Database configuration
-│   ├── routes/            # API routes
-│   ├── middleware/        # Authentication & security
-│   ├── uploads/           # File storage
-│   └── test/              # Backend tests
+│   ├── migrations/        # Database migrations
+│   └── functions/         # Edge functions (privileged user/email/retention ops)
 ├── public/                # Static assets
 │   ├── locales/           # Translation files (11 languages)
 │   └── assets/            # Images and videos
@@ -100,20 +85,9 @@ npm run dev
     └── project-history/   # Development milestones
 ```
 
-## API Endpoints
+## Data Access
 
-### Public Endpoints
-- `GET /api/testimonials/public` - Get approved testimonials
-- `GET /api/articles/public` - Get published articles
-- `GET /api/statistics/public` - Get public statistics
-
-### Admin Endpoints (Authentication Required)
-- `POST /api/auth/login` - Admin login
-- `GET /api/dashboard/overview` - Dashboard data
-- `POST /api/testimonials` - Create testimonial
-- `PATCH /api/testimonials/:id/status` - Update testimonial status
-- `POST /api/articles` - Create article
-- `POST /api/media/upload` - Upload media files
+All data access goes through the Supabase client (`src/lib/supabase.ts`) and the domain wrappers in `src/services/` (e.g. `services/cms/`, `services/consultation/`, `services/nextech/`, `services/ringcentral/`). There is no separate REST/Express API — RLS policies on the Postgres tables enforce auth, and the `supabase/functions/` edge functions handle privileged operations (`create-user`, `delete-user`, `reset-user-password`, `update-user`, `process-email-queue`, `process-email-queue-gmail`, `run-retention-policies`).
 
 ## User Roles
 
@@ -205,12 +179,6 @@ npm run test:e2e:ui       # Run with Playwright UI
 npm run test:e2e:headed   # Run in headed mode
 ```
 
-### Backend Tests
-```bash
-cd server
-npm test
-```
-
 ## Documentation
 
 Comprehensive documentation is organized by topic in the `/docs` folder:
@@ -261,15 +229,15 @@ The CMS integrates seamlessly with the existing React application:
 ## Development
 
 ### Adding New Content Types
-1. Create database table in `server/config/database.js`
-2. Add API routes in `server/routes/`
+1. Add a migration in `supabase/migrations/` (timestamp-prefixed) defining the table and RLS policies
+2. Add a service wrapper in `src/services/` (or a domain sub-folder) that calls Supabase via `src/lib/supabase.ts`
 3. Create admin components in `src/components/admin/`
 4. Add to navigation in `AdminLayout.tsx`
 
 ### Customizing the Admin Interface
 - Modify `src/components/admin/` components
 - Update navigation in `AdminLayout.tsx`
-- Add new API endpoints as needed
+- Add new service methods in `src/services/` as needed
 
 ## Technology Stack
 
@@ -282,10 +250,9 @@ The CMS integrates seamlessly with the existing React application:
 - **Lucide React** for icons
 
 ### Backend
-- **Supabase** for database and authentication
+- **Supabase** for database, authentication, storage, and edge functions
 - **PostgreSQL** with Row Level Security
-- **Node.js/Express** (legacy backend)
-- **SQLite** (legacy database)
+- **Deno** edge functions for privileged operations (`supabase/functions/`)
 
 ### Testing
 - **Vitest** for unit testing
