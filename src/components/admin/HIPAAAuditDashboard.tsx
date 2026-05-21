@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { hipaaAuditService, type AuditMetrics, type HIPAAAuditEvent, type SecurityAuditEvent, type SuspiciousPattern } from '../../services/hipaaAuditService';
-import { Shield, AlertTriangle, Activity, Users, FileText, Eye, Download, Search, Calendar } from 'lucide-react';
+import { Shield, AlertTriangle, Activity, Users, Eye, Download, Search, Calendar } from 'lucide-react';
 
 export default function HIPAAAuditDashboard() {
   const [activeTab, setActiveTab] = useState('overview');
