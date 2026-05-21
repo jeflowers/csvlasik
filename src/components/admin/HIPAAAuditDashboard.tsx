@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { hipaaAuditService, type AuditMetrics, type HIPAAAuditEvent, type SecurityAuditEvent, type SuspiciousPattern } from '../../services/hipaaAuditService';
 import { Shield, AlertTriangle, Activity, Users, Eye, Download, Search, Calendar } from 'lucide-react';
 
@@ -16,11 +16,7 @@ export default function HIPAAAuditDashboard() {
     end: new Date().toISOString().split('T')[0]
   });
 
-  useEffect(() => {
-    loadData();
-  }, [dateRange]);
-
-  const loadData = async () => {
+  const loadData = useCallback(async () => {
     setLoading(true);
     try {
       const [
@@ -47,7 +43,11 @@ export default function HIPAAAuditDashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [dateRange.start, dateRange.end]);
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
 
   const getComplianceColor = (score: number) => {
     if (score >= 95) return 'text-green-600';
