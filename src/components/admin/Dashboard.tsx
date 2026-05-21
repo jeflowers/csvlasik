@@ -30,9 +30,9 @@ interface DashboardStats {
   pendingAppointments: number;
   totalUsers: number;
   activeUsers: number;
-  testimonialsChange: number;
-  articlesChange: number;
-  appointmentsChange: number;
+  testimonialsChange?: number;
+  articlesChange?: number;
+  appointmentsChange?: number;
 }
 
 interface ActivityItem {
@@ -70,9 +70,6 @@ const Dashboard: React.FC = () => {
     pendingAppointments: 0,
     totalUsers: 0,
     activeUsers: 0,
-    testimonialsChange: 0,
-    articlesChange: 0,
-    appointmentsChange: 0
   });
   const [recentActivity, setRecentActivity] = useState<ActivityItem[]>([]);
   const [portalActivity, setPortalActivity] = useState<PortalActivityItem[]>([]);
@@ -120,9 +117,6 @@ const Dashboard: React.FC = () => {
           pendingAppointments: overviewData.overview?.pending_appointments || 0,
           totalUsers: overviewData.overview?.total_users || 0,
           activeUsers: overviewData.overview?.active_users || 0,
-          testimonialsChange: Math.floor(Math.random() * 20) - 5,
-          articlesChange: Math.floor(Math.random() * 15) - 3,
-          appointmentsChange: Math.floor(Math.random() * 25)
         });
         setRecentActivity(overviewData.recentActivity || []);
       } catch (error) {
@@ -148,6 +142,7 @@ const Dashboard: React.FC = () => {
       name: 'Total Appointments',
       value: stats.totalAppointments,
       pending: stats.pendingAppointments,
+      pendingTone: 'warning' as const,
       icon: Calendar,
       color: 'bg-blue-500',
       change: stats.appointmentsChange,
@@ -157,6 +152,7 @@ const Dashboard: React.FC = () => {
       name: 'Testimonials',
       value: stats.totalTestimonials,
       pending: stats.pendingTestimonials,
+      pendingTone: 'warning' as const,
       icon: MessageSquare,
       color: 'bg-teal-500',
       change: stats.testimonialsChange,
@@ -182,6 +178,7 @@ const Dashboard: React.FC = () => {
       value: portalStats.totalPatients,
       pending: portalStats.newPatientsThisWeek,
       pendingLabel: 'new this week',
+      pendingTone: 'info' as const,
       icon: HeartPulse,
       color: 'bg-rose-500',
       link: '/admin/patients'
@@ -287,40 +284,46 @@ const Dashboard: React.FC = () => {
           <Link
             key={index}
             to={stat.link}
-            className="bg-white rounded-lg shadow hover:shadow-md transition-shadow p-6"
+            className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow p-6"
           >
-            <div className="flex items-start justify-between">
-              <div className="flex-1">
-                <p className="text-sm font-medium text-gray-600">{stat.name}</p>
-                <div className="mt-2 flex items-baseline">
-                  <p className="text-3xl font-semibold text-gray-900">{stat.value}</p>
-                  {stat.pending !== undefined && stat.pending > 0 && (
-                    <span className="ml-2 text-sm text-orange-600">
-                      ({stat.pending} {('pendingLabel' in stat && stat.pendingLabel) ? stat.pendingLabel : 'pending'})
-                    </span>
-                  )}
-                </div>
-                {stat.change !== undefined && (
-                  <div className="mt-2 flex items-center text-sm">
-                    {stat.change >= 0 ? (
-                      <>
-                        <ArrowUpRight className="h-4 w-4 text-green-600" />
-                        <span className="text-green-600 font-medium">{stat.change}%</span>
-                      </>
-                    ) : (
-                      <>
-                        <ArrowDownRight className="h-4 w-4 text-red-600" />
-                        <span className="text-red-600 font-medium">{Math.abs(stat.change)}%</span>
-                      </>
-                    )}
-                    <span className="text-gray-500 ml-1">vs last month</span>
-                  </div>
-                )}
-              </div>
-              <div className={`${stat.color} rounded-md p-3`}>
-                <stat.icon className="h-6 w-6 text-white" />
+            <div className="flex items-center justify-between">
+              <p className="text-xs font-semibold tracking-wider uppercase text-gray-500">
+                {stat.name}
+              </p>
+              <div className={`${stat.color} rounded-md w-10 h-10 flex items-center justify-center`}>
+                <stat.icon className="h-5 w-5 text-white" />
               </div>
             </div>
+            <div className="mt-3 flex items-baseline gap-2">
+              <p className="text-3xl font-semibold tabular-nums text-gray-900">{stat.value}</p>
+              {stat.pending !== undefined && stat.pending > 0 && (
+                <span
+                  className={`text-sm ${
+                    'pendingTone' in stat && stat.pendingTone === 'info'
+                      ? 'text-blue-700'
+                      : 'text-amber-700'
+                  }`}
+                >
+                  ({stat.pending} {('pendingLabel' in stat && stat.pendingLabel) ? stat.pendingLabel : 'pending'})
+                </span>
+              )}
+            </div>
+            {stat.change !== undefined && (
+              <div className="mt-2 flex items-center text-sm">
+                {stat.change >= 0 ? (
+                  <>
+                    <ArrowUpRight className="h-4 w-4 text-green-600" />
+                    <span className="text-green-600 font-medium">{stat.change}%</span>
+                  </>
+                ) : (
+                  <>
+                    <ArrowDownRight className="h-4 w-4 text-red-600" />
+                    <span className="text-red-600 font-medium">{Math.abs(stat.change)}%</span>
+                  </>
+                )}
+                <span className="text-gray-500 ml-1">vs last month</span>
+              </div>
+            )}
           </Link>
         ))}
       </div>
@@ -442,8 +445,13 @@ const Dashboard: React.FC = () => {
 
         <div className="space-y-6">
           <div className="bg-white rounded-lg shadow">
-            <div className="p-6 border-b border-gray-200">
+            <div className="p-6 border-b border-gray-200 flex items-center justify-between">
               <h3 className="text-lg font-medium text-gray-900">System Health</h3>
+              {systemHealth.every((s) => s.color === 'text-green-600') && (
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                  All Systems Go
+                </span>
+              )}
             </div>
             <div className="p-6">
               <div className="space-y-4">
