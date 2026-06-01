@@ -108,7 +108,7 @@ const Media = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-5xl font-serif chopard-text-primary mb-6 leading-tight">
-              <span className="chopard-text-accent">ClearSight</span> {t('hero.title')}
+              <span className="chopard-text-accent">Atelier</span> {t('hero.title')}
             </h1>
             <p className="text-xl chopard-text-secondary max-w-3xl mx-auto mb-6 leading-relaxed font-light">
               {t('hero.description')}

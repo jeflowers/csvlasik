@@ -1,6 +1,6 @@
 {
   "title": "服务条款",
-  "subtitle": "ClearSight 视力研究所 - 查尔斯·弗劳尔斯医生",
+  "subtitle": "Atelier 视力研究所 - 查尔斯·弗劳尔斯医生",
   "lastUpdated": "最后更新",
   "sections": {
     "acceptance": {
@@ -11,7 +11,7 @@
       "title": "医疗服务",
       "medicalNotice": {
         "title": "医疗实践通知",
-        "description": "ClearSight 视力研究所是一家医疗机构，在查尔斯·弗劳尔斯医学博士的监督下提供专业眼科护理服务。"
+        "description": "Atelier 视力研究所是一家医疗机构，在查尔斯·弗劳尔斯医学博士的监督下提供专业眼科护理服务。"
       },
       "vision": {
         "title": "视力矫正服务",
@@ -59,13 +59,13 @@
         "title": "医疗免责声明",
         "description": "个体结果可能有所不同。本网站提供一般信息，不能替代专业医疗建议。"
       },
-      "description": "ClearSight 视力研究所的责任仅限于法律允许的范围。我们不对间接、偶然或后果性损害负责。"
+      "description": "Atelier 视力研究所的责任仅限于法律允许的范围。我们不对间接、偶然或后果性损害负责。"
     },
     "contact": {
       "title": "联系信息",
       "legal": {
         "title": "法务部",
-        "organization": "ClearSight 视力研究所",
+        "organization": "Atelier 视力研究所",
         "address1": "5750 Downey Ave., Suite 101",
         "address2": "Lakewood, CA 90712"
       }

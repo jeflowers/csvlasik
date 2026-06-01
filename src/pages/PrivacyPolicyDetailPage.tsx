@@ -130,7 +130,7 @@ const PrivacyPolicyDetailPage: React.FC = () => {
     const element = document.createElement('a');
     const file = new Blob([policyContent.content], { type: 'text/markdown' });
     element.href = URL.createObjectURL(file);
-    element.download = `ClearSight-Privacy-Policy-v${policyVersion?.version_number}.md`;
+    element.download = `Atelier-Privacy-Policy-v${policyVersion?.version_number}.md`;
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);

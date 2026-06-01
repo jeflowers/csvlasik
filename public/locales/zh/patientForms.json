@@ -325,7 +325,7 @@
 
   "testimonial": {
     "title": "分享您的故事",
-    "subtitle": "请告诉我们您在ClearSight LASIK的体验。您的反馈将帮助其他人就视力护理做出明智的决定。",
+    "subtitle": "请告诉我们您在Atelier LASIK的体验。您的反馈将帮助其他人就视力护理做出明智的决定。",
     "backToDashboard": "返回仪表板",
     "name": "您的姓名",
     "namePlaceholder": "您希望显示的姓名",
@@ -333,7 +333,7 @@
     "rating": "您的评分",
     "ratingOf": "{{rating}} / 5",
     "experience": "您的体验",
-    "experiencePlaceholder": "分享您在ClearSight LASIK的体验。过程如何？您的视力有何改善？",
+    "experiencePlaceholder": "分享您在Atelier LASIK的体验。过程如何？您的视力有何改善？",
     "minChars": "至少10个字符。",
     "charCount": "{{count}} 个字符",
     "procedureType": "手术类型",
@@ -346,7 +346,7 @@
     "errorUnexpected": "发生意外错误。请重试。",
     "successTitle": "感谢您的分享！",
     "successDescription": "您的感言已提交，经我们团队审核后将发布在网站上。",
-    "successNote": "感谢您花时间分享在ClearSight LASIK的体验。",
+    "successNote": "感谢您花时间分享在Atelier LASIK的体验。",
     "viewTestimonials": "查看感言",
     "other": "其他"
   },
@@ -360,7 +360,7 @@
 
   "auth": {
     "loginTitle": "患者门户",
-    "loginSubtitle": "ClearSight LASIK",
+    "loginSubtitle": "Atelier LASIK",
     "welcomeBack": "欢迎回来",
     "signInDescription": "登录以访问您的患者门户。",
     "email": "电子邮件",

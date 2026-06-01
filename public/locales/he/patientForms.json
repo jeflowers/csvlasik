@@ -327,7 +327,7 @@
 
   "testimonial": {
     "title": "שתפו את הסיפור שלכם",
-    "subtitle": "ספרו לנו על החוויה שלכם ב-ClearSight LASIK. המשוב שלכם עוזר לאחרים לקבל החלטות מושכלות לגבי טיפול בראייה.",
+    "subtitle": "ספרו לנו על החוויה שלכם ב-Atelier LASIK. המשוב שלכם עוזר לאחרים לקבל החלטות מושכלות לגבי טיפול בראייה.",
     "backToDashboard": "חזרה ללוח הבקרה",
     "name": "שמכם",
     "namePlaceholder": "כיצד תרצו ששמכם יוצג",
@@ -335,7 +335,7 @@
     "rating": "הדירוג שלכם",
     "ratingOf": "{{rating}} מתוך 5",
     "experience": "החוויה שלכם",
-    "experiencePlaceholder": "שתפו את החוויה שלכם עם ClearSight LASIK. איך היה התהליך? איך השתפרה הראייה שלכם?",
+    "experiencePlaceholder": "שתפו את החוויה שלכם עם Atelier LASIK. איך היה התהליך? איך השתפרה הראייה שלכם?",
     "minChars": "מינימום 10 תווים.",
     "charCount": "{{count}} תווים",
     "procedureType": "סוג הפרוצדורה",
@@ -348,7 +348,7 @@
     "errorUnexpected": "אירעה שגיאה בלתי צפויה. אנא נסו שוב.",
     "successTitle": "תודה ששיתפתם!",
     "successDescription": "ההמלצה שלכם נשלחה ותופיע באתר שלנו לאחר בדיקה על ידי הצוות.",
-    "successNote": "אנו מעריכים שהקדשתם מזמנכם לשתף את החוויה שלכם עם ClearSight LASIK.",
+    "successNote": "אנו מעריכים שהקדשתם מזמנכם לשתף את החוויה שלכם עם Atelier LASIK.",
     "viewTestimonials": "צפייה בהמלצות"
   },
 
@@ -361,7 +361,7 @@
 
   "auth": {
     "loginTitle": "פורטל מטופלים",
-    "loginSubtitle": "ClearSight LASIK",
+    "loginSubtitle": "Atelier LASIK",
     "welcomeBack": "ברוכים השבים",
     "signInDescription": "התחברו כדי לגשת לפורטל המטופלים שלכם.",
     "email": "דוא\"ל",

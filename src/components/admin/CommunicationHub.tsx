@@ -69,21 +69,21 @@ const emailTemplates: EmailTemplate[] = [
     id: '1',
     name: 'Consultation Confirmation',
     subject: 'Your {procedure} Consultation is Scheduled',
-    body: `Dear {name},\n\nThank you for choosing ClearSight Vision Institute for your {procedure} consultation.\n\nYour appointment details:\nDate: {date}\nTime: {time}\nLocation: {location}\n\nPlease arrive 15 minutes early to complete any necessary paperwork.\n\nBest regards,\nClearSight Vision Institute`,
+    body: `Dear {name},\n\nThank you for choosing Atelier Vision Institute for your {procedure} consultation.\n\nYour appointment details:\nDate: {date}\nTime: {time}\nLocation: {location}\n\nPlease arrive 15 minutes early to complete any necessary paperwork.\n\nBest regards,\nAtelier Vision Institute`,
     category: 'confirmation'
   },
   {
     id: '2',
     name: 'Appointment Reminder',
     subject: 'Reminder: {procedure} Consultation Tomorrow',
-    body: `Dear {name},\n\nThis is a friendly reminder of your upcoming consultation:\n\nProcedure: {procedure}\nDate: {date}\nTime: {time}\n\nIf you need to reschedule, please contact us at least 24 hours in advance.\n\nLooking forward to seeing you!\n\nBest regards,\nClearSight Vision Institute`,
+    body: `Dear {name},\n\nThis is a friendly reminder of your upcoming consultation:\n\nProcedure: {procedure}\nDate: {date}\nTime: {time}\n\nIf you need to reschedule, please contact us at least 24 hours in advance.\n\nLooking forward to seeing you!\n\nBest regards,\nAtelier Vision Institute`,
     category: 'reminder'
   },
   {
     id: '3',
     name: 'Follow-up',
     subject: 'Thank You for Your Consultation',
-    body: `Dear {name},\n\nThank you for meeting with us to discuss your {procedure} options.\n\nWe hope we answered all your questions. If you have any additional concerns or would like to proceed with scheduling, please don't hesitate to contact us.\n\nBest regards,\nClearSight Vision Institute`,
+    body: `Dear {name},\n\nThank you for meeting with us to discuss your {procedure} options.\n\nWe hope we answered all your questions. If you have any additional concerns or would like to proceed with scheduling, please don't hesitate to contact us.\n\nBest regards,\nAtelier Vision Institute`,
     category: 'followup'
   }
 ];
@@ -115,7 +115,7 @@ export const CommunicationHub: React.FC<CommunicationHubProps> = ({
       .replace(/{procedure}/g, request.procedure_type)
       .replace(/{date}/g, request.preferred_date || 'TBD')
       .replace(/{time}/g, request.preferred_time || 'TBD')
-      .replace(/{location}/g, 'ClearSight Vision Institute')
+      .replace(/{location}/g, 'Atelier Vision Institute')
       .replace(/{phone}/g, '(555) 123-4567');
   };
 

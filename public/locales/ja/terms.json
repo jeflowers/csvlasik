@@ -1,6 +1,6 @@
 {
   "title": "利用規約",
-  "subtitle": "ClearSight Vision Institute - チャールズ・フラワーズ医学博士",
+  "subtitle": "Atelier Vision Institute - チャールズ・フラワーズ医学博士",
   "lastUpdated": "最終更新",
   "sections": {
     "acceptance": {
@@ -11,7 +11,7 @@
       "title": "医療サービス",
       "medicalNotice": {
         "title": "医療行為に関する通知",
-        "description": "ClearSight Vision Instituteは、チャールズ・フラワーズ医学博士の監督の下で専門的な眼科ケアサービスを提供する医療機関です。"
+        "description": "Atelier Vision Instituteは、チャールズ・フラワーズ医学博士の監督の下で専門的な眼科ケアサービスを提供する医療機関です。"
       },
       "vision": {
         "title": "視力矯正サービス",
@@ -59,13 +59,13 @@
         "title": "医療免責事項",
         "description": "個人差があります。このウェブサイトは一般的な情報を提供しており、専門的な医学的助言の代わりにはなりません。"
       },
-      "description": "ClearSight Vision Instituteの責任は、法律で許可される範囲に限定されます。当社は、間接的、付随的、または結果的損害について責任を負いません。"
+      "description": "Atelier Vision Instituteの責任は、法律で許可される範囲に限定されます。当社は、間接的、付随的、または結果的損害について責任を負いません。"
     },
     "contact": {
       "title": "お問い合わせ",
       "legal": {
         "title": "法務部",
-        "organization": "ClearSight Vision Institute",
+        "organization": "Atelier Vision Institute",
         "address1": "5750 Downey Ave., Suite 101",
         "address2": "Lakewood, CA 90712"
       }

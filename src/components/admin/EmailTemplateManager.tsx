@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Edit, Plus, Trash2, Eye } from 'lucide-react';
+import { Mail, CreditCard as Edit, Plus, Trash2, Eye } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 
 interface EmailTemplate {
@@ -238,7 +238,7 @@ export const EmailTemplateManager: React.FC = () => {
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     className="w-full border rounded px-3 py-2"
-                    placeholder="e.g., Welcome to ClearSight Vision"
+                    placeholder="e.g., Welcome to Atelier Vision"
                   />
                 </div>
 

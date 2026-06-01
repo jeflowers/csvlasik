@@ -327,7 +327,7 @@
 
   "testimonial": {
     "title": "Compartilhe Sua História",
-    "subtitle": "Conte-nos sobre sua experiência na ClearSight LASIK. Seu feedback ajuda outras pessoas a tomar decisões informadas sobre seus cuidados com a visão.",
+    "subtitle": "Conte-nos sobre sua experiência na Atelier LASIK. Seu feedback ajuda outras pessoas a tomar decisões informadas sobre seus cuidados com a visão.",
     "backToDashboard": "Voltar ao Painel",
     "name": "Seu Nome",
     "namePlaceholder": "Como você gostaria que seu nome fosse exibido",
@@ -335,7 +335,7 @@
     "rating": "Sua Avaliação",
     "ratingOf": "{{rating}} de 5",
     "experience": "Sua Experiência",
-    "experiencePlaceholder": "Compartilhe sua experiência com a ClearSight LASIK. Como foi o processo? Como sua visão melhorou?",
+    "experiencePlaceholder": "Compartilhe sua experiência com a Atelier LASIK. Como foi o processo? Como sua visão melhorou?",
     "minChars": "Mínimo de 10 caracteres.",
     "charCount": "{{count}} caracteres",
     "procedureType": "Tipo de Procedimento",
@@ -348,7 +348,7 @@
     "errorUnexpected": "Ocorreu um erro inesperado. Tente novamente.",
     "successTitle": "Obrigado por Compartilhar!",
     "successDescription": "Seu depoimento foi enviado e aparecerá em nosso site após revisão da nossa equipe.",
-    "successNote": "Agradecemos por dedicar seu tempo para compartilhar sua experiência com a ClearSight LASIK.",
+    "successNote": "Agradecemos por dedicar seu tempo para compartilhar sua experiência com a Atelier LASIK.",
     "viewTestimonials": "Ver Depoimentos"
   },
 
@@ -361,7 +361,7 @@
 
   "auth": {
     "loginTitle": "Portal do Paciente",
-    "loginSubtitle": "ClearSight LASIK",
+    "loginSubtitle": "Atelier LASIK",
     "welcomeBack": "Bem-vindo(a) de volta",
     "signInDescription": "Entre para acessar seu portal do paciente.",
     "email": "E-mail",

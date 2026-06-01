@@ -4,7 +4,7 @@ test.describe('Procedures Pages', () => {
   test('procedures overview page displays all options', async ({ page }) => {
     await page.goto('/procedures');
     
-    await expect(page.getByText('ClearSight Vision Correction Options')).toBeVisible();
+    await expect(page.getByText('Atelier Vision Correction Options')).toBeVisible();
     
     // Check for all three procedures
     await expect(page.getByText('LASIK')).toBeVisible();
@@ -20,7 +20,7 @@ test.describe('Procedures Pages', () => {
   test('LASIK page displays comprehensive information', async ({ page }) => {
     await page.goto('/procedures/lasik');
     
-    await expect(page.getByText('ClearSight LASIK Surgery')).toBeVisible();
+    await expect(page.getByText('Atelier LASIK Surgery')).toBeVisible();
     
     // Check procedure stats
     await expect(page.getByText('15 min')).toBeVisible();
@@ -38,7 +38,7 @@ test.describe('Procedures Pages', () => {
   test('PRK page shows surface treatment information', async ({ page }) => {
     await page.goto('/procedures/prk');
     
-    await expect(page.getByText('ClearSight PRK Surgery')).toBeVisible();
+    await expect(page.getByText('Atelier PRK Surgery')).toBeVisible();
     await expect(page.getByText('Surface Treatment Alternative')).toBeVisible();
     
     // Check recovery timeline
@@ -54,7 +54,7 @@ test.describe('Procedures Pages', () => {
   test('ICL page explains implantable solution', async ({ page }) => {
     await page.goto('/procedures/icl');
     
-    await expect(page.getByText('ClearSight ICL Surgery')).toBeVisible();
+    await expect(page.getByText('Atelier ICL Surgery')).toBeVisible();
     await expect(page.getByText('Implantable Solution')).toBeVisible();
     
     // Check unique advantages

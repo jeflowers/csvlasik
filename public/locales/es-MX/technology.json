@@ -166,9 +166,9 @@
   },
   "comparison": {
     "title": "Comparación de Tecnología",
-    "subtitle": "ClearSight vs. LASIK Tradicional",
+    "subtitle": "Atelier vs. LASIK Tradicional",
     "table": {
-      "headers": ["Característica", "ClearSight", "LASIK Tradicional"],
+      "headers": ["Característica", "Atelier", "LASIK Tradicional"],
       "rows": [
         ["Creación del Colgajo", "Láser de Femtosegundo", "Microquerátomo con Cuchilla"],
         ["Mapeo Personalizado", "Wavefront 3D", "Mediciones Estándar"],

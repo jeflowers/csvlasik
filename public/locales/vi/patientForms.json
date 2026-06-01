@@ -327,7 +327,7 @@
 
   "testimonial": {
     "title": "Chia sẻ câu chuyện của bạn",
-    "subtitle": "Hãy cho chúng tôi biết về trải nghiệm của bạn tại ClearSight LASIK. Phản hồi của bạn giúp người khác đưa ra quyết định sáng suốt về chăm sóc thị lực.",
+    "subtitle": "Hãy cho chúng tôi biết về trải nghiệm của bạn tại Atelier LASIK. Phản hồi của bạn giúp người khác đưa ra quyết định sáng suốt về chăm sóc thị lực.",
     "backToDashboard": "Quay lại bảng điều khiển",
     "name": "Tên của bạn",
     "namePlaceholder": "Tên bạn muốn hiển thị",
@@ -335,7 +335,7 @@
     "rating": "Đánh giá của bạn",
     "ratingOf": "{{rating}} trên 5",
     "experience": "Trải nghiệm của bạn",
-    "experiencePlaceholder": "Chia sẻ trải nghiệm của bạn với ClearSight LASIK. Quy trình như thế nào? Thị lực của bạn đã cải thiện ra sao?",
+    "experiencePlaceholder": "Chia sẻ trải nghiệm của bạn với Atelier LASIK. Quy trình như thế nào? Thị lực của bạn đã cải thiện ra sao?",
     "minChars": "Tối thiểu 10 ký tự.",
     "charCount": "{{count}} ký tự",
     "procedureType": "Loại thủ thuật",
@@ -348,7 +348,7 @@
     "errorUnexpected": "Đã xảy ra lỗi không mong muốn. Vui lòng thử lại.",
     "successTitle": "Cảm ơn bạn đã chia sẻ!",
     "successDescription": "Lời chứng thực của bạn đã được gửi và sẽ xuất hiện trên trang web sau khi được đội ngũ xem xét.",
-    "successNote": "Chúng tôi trân trọng việc bạn dành thời gian chia sẻ trải nghiệm với ClearSight LASIK.",
+    "successNote": "Chúng tôi trân trọng việc bạn dành thời gian chia sẻ trải nghiệm với Atelier LASIK.",
     "viewTestimonials": "Xem lời chứng thực"
   },
 
@@ -361,7 +361,7 @@
 
   "auth": {
     "loginTitle": "Cổng Bệnh Nhân",
-    "loginSubtitle": "ClearSight LASIK",
+    "loginSubtitle": "Atelier LASIK",
     "welcomeBack": "Chào mừng trở lại",
     "signInDescription": "Đăng nhập để truy cập cổng bệnh nhân của bạn.",
     "email": "Email",

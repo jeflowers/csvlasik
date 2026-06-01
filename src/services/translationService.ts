@@ -35,7 +35,7 @@ class TranslationService {
   // Medical terms that should never be translated
   private protectedTerms = [
     'LASIK', 'PRK', 'ICL', 'FDA', 'Dr. Charles Flowers',
-    'ClearSight', 'Visian ICL', 'Femtosecond', 'Excimer',
+    'Atelier', 'Visian ICL', 'Femtosecond', 'Excimer',
     'Keratomileusis', 'Keratectomy', 'Topography', 'Wavefront'
   ];
 

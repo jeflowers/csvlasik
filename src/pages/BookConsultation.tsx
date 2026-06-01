@@ -1,5 +1,5 @@
 /**
- * ClearSight LASIK - Book Consultation Page
+ * Atelier LASIK - Book Consultation Page
  *
  * Main page for patients to complete online forms before their visit.
  * Contains tabbed interface for registration, medical history, insurance, and consent forms.

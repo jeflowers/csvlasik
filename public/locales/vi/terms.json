@@ -1,6 +1,6 @@
 {
   "title": "Điều khoản Dịch vụ",
-  "subtitle": "Viện Thị lực ClearSight - Bác sĩ Charles Flowers",
+  "subtitle": "Viện Thị lực Atelier - Bác sĩ Charles Flowers",
   "lastUpdated": "Cập nhật lần cuối",
   "sections": {
     "acceptance": {
@@ -11,7 +11,7 @@
       "title": "Dịch vụ Y tế",
       "medicalNotice": {
         "title": "Thông báo Thực hành Y khoa",
-        "description": "Viện Thị lực ClearSight là một cơ sở y tế cung cấp dịch vụ chăm sóc mắt chuyên nghiệp dưới sự giám sát của Bác sĩ Charles Flowers, MD."
+        "description": "Viện Thị lực Atelier là một cơ sở y tế cung cấp dịch vụ chăm sóc mắt chuyên nghiệp dưới sự giám sát của Bác sĩ Charles Flowers, MD."
       },
       "vision": {
         "title": "Dịch vụ Điều chỉnh Thị lực",
@@ -59,13 +59,13 @@
         "title": "Tuyên bố Miễn trừ Y tế",
         "description": "Kết quả cá nhân có thể khác nhau. Trang web này cung cấp thông tin chung và không thay thế lời khuyên y tế chuyên nghiệp."
       },
-      "description": "Trách nhiệm của Viện Thị lực ClearSight bị giới hạn trong phạm vi cho phép của pháp luật. Chúng tôi không chịu trách nhiệm về các thiệt hại gián tiếp, ngẫu nhiên hoặc hậu quả."
+      "description": "Trách nhiệm của Viện Thị lực Atelier bị giới hạn trong phạm vi cho phép của pháp luật. Chúng tôi không chịu trách nhiệm về các thiệt hại gián tiếp, ngẫu nhiên hoặc hậu quả."
     },
     "contact": {
       "title": "Thông tin Liên hệ",
       "legal": {
         "title": "Phòng Pháp chế",
-        "organization": "Viện Thị lực ClearSight",
+        "organization": "Viện Thị lực Atelier",
         "address1": "5750 Downey Ave., Suite 101",
         "address2": "Lakewood, CA 90712"
       }

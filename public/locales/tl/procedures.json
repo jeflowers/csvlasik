@@ -1,7 +1,7 @@
 {
   "hero": {
     "badge": "Revolutionary Vision Correction",
-    "title": "ClearSight Vision Correction Options",
+    "title": "Atelier Vision Correction Options",
     "subtitle": "Si Dr. Flowers ay nag-aalok ng advanced vision correction procedures, bawat isa ay tailored sa specific needs at lifestyles. Ikumpara ang options at hanapin ang perfect solution para sa inyong revolutionary vision transformation."
   },
   "procedures": {
@@ -49,8 +49,8 @@
   "lasik": {
     "hero": {
       "badge": "Pinaka-Popular na Pagpipilian - Revolutionary Results",
-      "title": "ClearSight LASIK Surgery",
-      "subtitle": "Maranasan ang revolutionary LASIK technique na pioneered ni Dr. Flowers sa buong Pacific region, available na ngayon sa ClearSight sa Los Angeles. Mabilis na recovery, excellent results, at life-changing clarity ang naghihintay.",
+      "title": "Atelier LASIK Surgery",
+      "subtitle": "Maranasan ang revolutionary LASIK technique na pioneered ni Dr. Flowers sa buong Pacific region, available na ngayon sa Atelier sa Los Angeles. Mabilis na recovery, excellent results, at life-changing clarity ang naghihintay.",
       "stats": {
         "procedureTime": "15 min",
         "recoveryTime": "1-2 araw",
@@ -170,7 +170,7 @@
   "prk": {
     "hero": {
       "badge": "Surface Treatment Alternative - Proven Results",
-      "title": "ClearSight PRK Surgery",
+      "title": "Atelier PRK Surgery",
       "subtitle": "Maranasan ang PRK (Photorefractive Keratectomy), ang original laser vision correction procedure. Perpekto para sa mga pasyenteng may manipis na corneas o active lifestyles, nag-aalok ng excellent long-term stability.",
       "stats": {
         "procedureTime": "15 min",
@@ -277,7 +277,7 @@
   "icl": {
     "hero": {
       "badge": "Implantable Solution - Reversible Results",
-      "title": "ClearSight ICL Surgery",
+      "title": "Atelier ICL Surgery",
       "subtitle": "Maranasan ang ICL (Implantable Contact Lens), ang revolutionary permanent solution para sa mataas na prescriptions. Reversible, protective, at nag-aalok ng superior vision quality para sa patients na lampas sa traditional laser limits.",
       "stats": {
         "procedureTime": "30 min",

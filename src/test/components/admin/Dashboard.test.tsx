@@ -26,7 +26,7 @@ describe('Admin Dashboard', () => {
       expect(screen.getByText('Dashboard')).toBeInTheDocument();
     });
     
-    expect(screen.getByText('Welcome to ClearSight CMS')).toBeInTheDocument();
+    expect(screen.getByText('Welcome to Atelier CMS')).toBeInTheDocument();
   });
 
   it('shows statistics cards', async () => {

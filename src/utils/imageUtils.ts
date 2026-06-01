@@ -1,4 +1,4 @@
-// Image utility functions for ClearSight website
+// Image utility functions for Atelier website
 
 export interface ImageConfig {
   src: string;
@@ -137,12 +137,12 @@ export const BRAND_IMAGES = {
   logos: {
     primary: {
       src: `${IMAGE_PATHS.brand}/logos/clearsight-logo-primary.svg`,
-      alt: 'ClearSight Vision Institute - Revolutionary LASIK Surgery',
+      alt: 'Atelier Vision Institute - Revolutionary LASIK Surgery',
       priority: true
     },
     white: {
       src: `${IMAGE_PATHS.brand}/logos/clearsight-logo-white.svg`,
-      alt: 'ClearSight Vision Institute Logo - White Version'
+      alt: 'Atelier Vision Institute Logo - White Version'
     }
   },
   icons: {

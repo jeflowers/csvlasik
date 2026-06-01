@@ -333,7 +333,7 @@
 
   "testimonial": {
     "title": "Share Your Story",
-    "subtitle": "Tell us about your experience at ClearSight LASIK. Your feedback helps others make informed decisions about their vision care.",
+    "subtitle": "Tell us about your experience at Atelier LASIK. Your feedback helps others make informed decisions about their vision care.",
     "backToDashboard": "Back to Dashboard",
     "name": "Your Name",
     "namePlaceholder": "How you'd like your name displayed",
@@ -341,7 +341,7 @@
     "rating": "Your Rating",
     "ratingOf": "{{rating}} of 5",
     "experience": "Your Experience",
-    "experiencePlaceholder": "Share your experience with ClearSight LASIK. What was the process like? How has your vision improved?",
+    "experiencePlaceholder": "Share your experience with Atelier LASIK. What was the process like? How has your vision improved?",
     "minChars": "Minimum 10 characters.",
     "charCount": "{{count}} characters",
     "procedureType": "Procedure Type",
@@ -354,7 +354,7 @@
     "errorUnexpected": "An unexpected error occurred. Please try again.",
     "successTitle": "Thank You for Sharing!",
     "successDescription": "Your testimonial has been submitted and will appear on our website after review by our team.",
-    "successNote": "We appreciate you taking the time to share your experience with ClearSight LASIK.",
+    "successNote": "We appreciate you taking the time to share your experience with Atelier LASIK.",
     "viewTestimonials": "View Testimonials"
   },
 
@@ -367,7 +367,7 @@
 
   "auth": {
     "loginTitle": "Patient Portal",
-    "loginSubtitle": "ClearSight LASIK",
+    "loginSubtitle": "Atelier LASIK",
     "welcomeBack": "Welcome back",
     "signInDescription": "Sign in to access your patient portal.",
     "email": "Email",

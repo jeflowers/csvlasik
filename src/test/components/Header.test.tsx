@@ -19,10 +19,10 @@ describe('Header Component', () => {
     vi.clearAllMocks();
   });
 
-  it('renders the ClearSight logo and navigation', () => {
+  it('renders the Atelier logo and navigation', () => {
     render(<Header />);
     
-    expect(screen.getByText('ClearSight')).toBeInTheDocument();
+    expect(screen.getByText('Atelier')).toBeInTheDocument();
     expect(screen.getByText('home')).toBeInTheDocument();
     expect(screen.getByText('procedures')).toBeInTheDocument();
     expect(screen.getByText('about')).toBeInTheDocument();

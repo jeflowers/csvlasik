@@ -1,6 +1,6 @@
 {
   "title": "Termos de Serviço",
-  "subtitle": "Instituto de Visão ClearSight - Dr. Charles Flowers",
+  "subtitle": "Instituto de Visão Atelier - Dr. Charles Flowers",
   "lastUpdated": "Última atualização",
   "sections": {
     "acceptance": {
@@ -11,7 +11,7 @@
       "title": "Serviços Médicos",
       "medicalNotice": {
         "title": "Aviso de Prática Médica",
-        "description": "O Instituto de Visão ClearSight é uma prática médica que fornece serviços profissionais de cuidados oculares sob a supervisão do Dr. Charles Flowers, MD."
+        "description": "O Instituto de Visão Atelier é uma prática médica que fornece serviços profissionais de cuidados oculares sob a supervisão do Dr. Charles Flowers, MD."
       },
       "vision": {
         "title": "Serviços de Correção Visual",
@@ -59,13 +59,13 @@
         "title": "Isenção de Responsabilidade Médica",
         "description": "Os resultados individuais podem variar. Este site fornece informações gerais e não substitui o aconselhamento médico profissional."
       },
-      "description": "A responsabilidade do Instituto de Visão ClearSight é limitada ao máximo permitido por lei. Não somos responsáveis por danos indiretos, incidentais ou consequenciais."
+      "description": "A responsabilidade do Instituto de Visão Atelier é limitada ao máximo permitido por lei. Não somos responsáveis por danos indiretos, incidentais ou consequenciais."
     },
     "contact": {
       "title": "Informações de Contato",
       "legal": {
         "title": "Departamento Jurídico",
-        "organization": "Instituto de Visão ClearSight",
+        "organization": "Instituto de Visão Atelier",
         "address1": "5750 Downey Ave., Suite 101",
         "address2": "Lakewood, CA 90712"
       }

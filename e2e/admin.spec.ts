@@ -7,7 +7,7 @@ test.describe('Admin Interface', () => {
   });
 
   test('admin login flow', async ({ page }) => {
-    await expect(page.getByText('ClearSight CMS')).toBeVisible();
+    await expect(page.getByText('Atelier CMS')).toBeVisible();
     
     // Fill login form
     await page.fill('input[name="username"]', 'admin');
@@ -28,7 +28,7 @@ test.describe('Admin Interface', () => {
     await page.getByRole('button', { name: 'Sign in' }).click();
     
     // Check dashboard elements
-    await expect(page.getByText('Welcome to ClearSight CMS')).toBeVisible();
+    await expect(page.getByText('Welcome to Atelier CMS')).toBeVisible();
     
     // Check stat cards
     await expect(page.getByText('Total Testimonials')).toBeVisible();

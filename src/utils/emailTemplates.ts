@@ -9,7 +9,7 @@ interface AppointmentRequestData {
 
 export const emailTemplates = {
   appointmentConfirmation: (data: AppointmentRequestData): { subject: string; html: string; text: string } => ({
-    subject: 'Appointment Request Received - ClearSight Vision',
+    subject: 'Appointment Request Received - Atelier Vision',
     html: `
       <!DOCTYPE html>
       <html>
@@ -33,7 +33,7 @@ export const emailTemplates = {
         <body>
           <div class="container">
             <div class="header">
-              <h1>ClearSight Vision</h1>
+              <h1>Atelier Vision</h1>
               <p style="margin: 10px 0 0 0; font-size: 16px;">Your Vision, Our Priority</p>
             </div>
 
@@ -69,7 +69,7 @@ export const emailTemplates = {
             </div>
 
             <div class="footer">
-              <p><strong>ClearSight Vision Center</strong></p>
+              <p><strong>Atelier Vision Center</strong></p>
               <p>Excellence in Eye Care Since 2005</p>
               <p style="font-size: 12px; margin-top: 15px;">
                 This is an automated confirmation. Please do not reply to this email.<br>
@@ -81,7 +81,7 @@ export const emailTemplates = {
       </html>
     `,
     text: `
-ClearSight Vision - Appointment Request Received
+Atelier Vision - Appointment Request Received
 
 Dear ${data.name},
 
@@ -104,7 +104,7 @@ Contact Information:
 Phone: (619) 377-8600
 Email: info@clearsightvision.com
 
-ClearSight Vision Center
+Atelier Vision Center
 Excellence in Eye Care Since 2005
 
 This is an automated confirmation. Please do not reply to this email.

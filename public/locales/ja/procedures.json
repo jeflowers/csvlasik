@@ -49,8 +49,8 @@
   "lasik": {
     "hero": {
       "badge": "Most Popular Choice - Revolutionary Results",
-      "title": "ClearSight LASIK Surgery",
-      "subtitle": "Experience the revolutionary LASIK technique that Dr. Flowers pioneered across the Pacific region, now available at ClearSight in Los Angeles. Quick recovery, excellent results, and life-changing clarity await.",
+      "title": "Atelier LASIK Surgery",
+      "subtitle": "Experience the revolutionary LASIK technique that Dr. Flowers pioneered across the Pacific region, now available at Atelier in Los Angeles. Quick recovery, excellent results, and life-changing clarity await.",
       "stats": {
         "procedureTime": "15 min",
         "recoveryTime": "1-2 days",
@@ -170,7 +170,7 @@
   "prk": {
     "hero": {
       "badge": "Surface Treatment Alternative - Proven Results",
-      "title": "ClearSight PRK Surgery",
+      "title": "Atelier PRK Surgery",
       "subtitle": "Experience PRK (Photorefractive Keratectomy), the original laser vision correction procedure. Perfect for patients with thin corneas or active lifestyles, offering excellent long-term stability.",
       "stats": {
         "procedureTime": "15 min",
@@ -319,7 +319,7 @@
   "icl": {
     "hero": {
       "badge": "Implantable Solution - Reversible Results",
-      "title": "ClearSight ICL Surgery",
+      "title": "Atelier ICL Surgery",
       "subtitle": "Experience ICL (Implantable Contact Lens), the revolutionary permanent solution for high prescriptions. Reversible, protective, and offering superior vision quality for patients beyond traditional laser limits.",
       "stats": {
         "procedureTime": "30 min",

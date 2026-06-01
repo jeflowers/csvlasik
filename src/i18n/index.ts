@@ -155,7 +155,7 @@ export const MEDICAL_PROTECTED_TERMS = [
   'ICL',
   'FDA',
   'Dr. Charles Flowers',
-  'ClearSight',
+  'Atelier',
   'Visian ICL',
   'Femtosecond',
   'Excimer',

@@ -34,7 +34,7 @@ describe('CMS Integration Tests', () => {
   it('renders public website when not authenticated', () => {
     render(<App />);
     
-    expect(screen.getByText('ClearSight')).toBeInTheDocument();
+    expect(screen.getByText('Atelier')).toBeInTheDocument();
     expect(screen.getByText('Revolutionary')).toBeInTheDocument();
   });
 
@@ -50,7 +50,7 @@ describe('CMS Integration Tests', () => {
 
     render(<App />);
     
-    expect(screen.getByText('ClearSight CMS')).toBeInTheDocument();
+    expect(screen.getByText('Atelier CMS')).toBeInTheDocument();
     expect(screen.getByLabelText('Username')).toBeInTheDocument();
   });
 
@@ -93,7 +93,7 @@ describe('CMS Integration Tests', () => {
     render(<App />);
     
     // Should show login form
-    expect(screen.getByText('ClearSight CMS')).toBeInTheDocument();
+    expect(screen.getByText('Atelier CMS')).toBeInTheDocument();
     expect(screen.getByLabelText('Username')).toBeInTheDocument();
     
     // Token should be removed
@@ -104,10 +104,10 @@ describe('CMS Integration Tests', () => {
     render(<App />);
     
     // Translation provider should be active
-    expect(screen.getByText('ClearSight')).toBeInTheDocument();
+    expect(screen.getByText('Atelier')).toBeInTheDocument();
     
     // RTL provider should be active (no visual test, but component should render)
-    const app = screen.getByText('ClearSight').closest('div');
+    const app = screen.getByText('Atelier').closest('div');
     expect(app).toBeInTheDocument();
   });
 

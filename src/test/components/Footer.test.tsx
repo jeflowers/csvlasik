@@ -16,8 +16,8 @@ describe('Footer Component', () => {
   it('renders company information', () => {
     render(<Footer />);
     
-    expect(screen.getByText('ClearSight')).toBeInTheDocument();
-    expect(screen.getByText(/© 2025 ClearSight/)).toBeInTheDocument();
+    expect(screen.getByText('Atelier')).toBeInTheDocument();
+    expect(screen.getByText(/© 2025 Atelier/)).toBeInTheDocument();
   });
 
   it('displays contact information', () => {

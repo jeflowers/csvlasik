@@ -119,12 +119,12 @@ const AdminLayout: React.FC = () => {
           <div className="flex h-16 items-center justify-between px-4">
             <Link to="/" className="flex items-center space-x-2">
               <img
-                src="/assets/images/ClearSight-icon-nb-blk-gld.png"
-                alt="ClearSight Vision Institute"
+                src="/assets/images/Atelier-icon-nb-blk-gld.png"
+                alt="Atelier Vision Institute"
                 className="h-10 w-auto"
               />
               <div className="flex flex-col">
-                <h1 className="text-lg font-serif text-gray-900 leading-tight">ClearSight</h1>
+                <h1 className="text-lg font-serif text-gray-900 leading-tight">Atelier</h1>
                 <p className="text-[10px] text-gray-600 font-light tracking-widest uppercase">VISION INSTITUTE</p>
               </div>
             </Link>
@@ -193,12 +193,12 @@ const AdminLayout: React.FC = () => {
           <div className="flex h-16 items-center px-4">
             <Link to="/" className="flex items-center space-x-2">
               <img
-                src="/assets/images/ClearSight-icon-nb-blk-gld.png"
-                alt="ClearSight Vision Institute"
+                src="/assets/images/Atelier-icon-nb-blk-gld.png"
+                alt="Atelier Vision Institute"
                 className="h-10 w-auto"
               />
               <div className="flex flex-col">
-                <h1 className="text-lg font-serif text-gray-900 leading-tight">ClearSight</h1>
+                <h1 className="text-lg font-serif text-gray-900 leading-tight">Atelier</h1>
                 <p className="text-[10px] text-gray-600 font-light tracking-widest uppercase">VISION INSTITUTE</p>
               </div>
             </Link>
@@ -291,12 +291,12 @@ const AdminLayout: React.FC = () => {
             </button>
             <Link to="/" className="flex items-center space-x-2">
               <img
-                src="/assets/images/ClearSight-icon-nb-blk-gld.png"
-                alt="ClearSight Vision Institute"
+                src="/assets/images/Atelier-icon-nb-blk-gld.png"
+                alt="Atelier Vision Institute"
                 className="h-8 w-auto"
               />
               <div className="flex flex-col">
-                <h1 className="text-sm font-serif text-gray-900 leading-tight">ClearSight</h1>
+                <h1 className="text-sm font-serif text-gray-900 leading-tight">Atelier</h1>
                 <p className="text-[8px] text-gray-600 font-light tracking-widest uppercase">VISION INSTITUTE</p>
               </div>
             </Link>

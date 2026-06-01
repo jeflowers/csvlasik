@@ -279,7 +279,7 @@ const PrivacyPolicyPage: React.FC = () => {
         {/* Footer */}
         <div className="mt-8 text-center text-sm text-gray-600">
           <p className="mb-2">
-            © {new Date().getFullYear()} ClearSight Vision Center. All Rights Reserved.
+            © {new Date().getFullYear()} Atelier Vision Center. All Rights Reserved.
           </p>
           <p>
             This Privacy Policy is effective as of {t('meta.effectiveDate')}.

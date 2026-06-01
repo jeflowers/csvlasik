@@ -158,7 +158,7 @@ const PortalLayout: React.FC = () => {
                   <h2 className="text-sm font-semibold text-gray-900">
                     {t('portal.title', { defaultValue: 'Patient Portal' })}
                   </h2>
-                  <p className="text-xs text-gray-500">ClearSight LASIK</p>
+                  <p className="text-xs text-gray-500">Atelier LASIK</p>
                 </div>
               </Link>
               <button

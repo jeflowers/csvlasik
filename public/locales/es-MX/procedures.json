@@ -1,7 +1,7 @@
 {
   "hero": {
     "badge": "Corrección de Visión Revolucionaria",
-    "title": "Opciones de Corrección de Visión ClearSight",
+    "title": "Opciones de Corrección de Visión Atelier",
     "subtitle": "El Dr. Flowers ofrece procedimientos avanzados de corrección de visión, cada uno adaptado a necesidades y estilos de vida específicos. Compare opciones y encuentre la solución perfecta para su transformación de visión revolucionaria."
   },
   "procedures": {
@@ -49,8 +49,8 @@
   "lasik": {
     "hero": {
       "badge": "Opción Más Popular - Resultados Revolucionarios",
-      "title": "Cirugía LASIK ClearSight",
-      "subtitle": "Experimente la técnica LASIK revolucionaria que el Dr. Flowers desarrolló en la región del Pacífico, ahora disponible en ClearSight en Los Ángeles. Recuperación rápida, excelentes resultados y claridad que cambia vidas le esperan.",
+      "title": "Cirugía LASIK Atelier",
+      "subtitle": "Experimente la técnica LASIK revolucionaria que el Dr. Flowers desarrolló en la región del Pacífico, ahora disponible en Atelier en Los Ángeles. Recuperación rápida, excelentes resultados y claridad que cambia vidas le esperan.",
       "stats": {
         "procedureTime": "15 min",
         "recoveryTime": "1-2 días",
@@ -170,7 +170,7 @@
   "prk": {
     "hero": {
       "badge": "Alternativa de Tratamiento Superficial - Resultados Comprobados",
-      "title": "Cirugía PRK ClearSight",
+      "title": "Cirugía PRK Atelier",
       "subtitle": "Experimente PRK (Queratectomía Fotorrefractiva), el procedimiento original de corrección de visión con láser. Perfecto para pacientes con córneas delgadas o estilos de vida activos, ofreciendo excelente estabilidad a largo plazo.",
       "stats": {
         "procedureTime": "15 min",
@@ -277,7 +277,7 @@
   "icl": {
     "hero": {
       "badge": "Solución Implantable - Resultados Reversibles",
-      "title": "Cirugía ICL ClearSight",
+      "title": "Cirugía ICL Atelier",
       "subtitle": "Experimente ICL (Lente de Contacto Implantable), la solución permanente revolucionaria para prescripciones altas. Reversible, protectora y ofreciendo calidad de visión superior para pacientes más allá de los límites láser tradicionales.",
       "stats": {
         "procedureTime": "30 min",

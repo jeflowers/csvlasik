@@ -30,7 +30,7 @@ interface SystemSettings {
 
 const SettingsPanel: React.FC = () => {
   const [settings, setSettings] = useState<SystemSettings>({
-    site_name: 'ClearSight CMS',
+    site_name: 'Atelier CMS',
     site_description: 'Revolutionary Vision Care Content Management',
     admin_email: 'admin@atelierlasik.com',
     maintenance_mode: false,

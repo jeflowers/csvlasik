@@ -260,7 +260,7 @@ const Dashboard: React.FC = () => {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-gray-600">Welcome to ClearSight CMS</p>
+          <p className="text-gray-600">Welcome to Atelier CMS</p>
         </div>
         <div className="flex items-center space-x-3">
           <Link

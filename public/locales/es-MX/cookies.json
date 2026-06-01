@@ -1,7 +1,7 @@
 {
   "title": "Política de Cookies",
   "lastUpdated": "Última actualización: {date}",
-  "introduction": "ClearSight utiliza cookies para mejorar su experiencia revolucionaria de atención oftalmológica.",
+  "introduction": "Atelier utiliza cookies para mejorar su experiencia revolucionaria de atención oftalmológica.",
   "sections": {
     "whatAreCookies": {
       "title": "¿Qué son las Cookies?",
@@ -28,7 +28,7 @@
       },
       "firstParty": {
         "name": "Cookies de Primera Parte",
-        "description": "Establecidas por nuestro sitio web ClearSight"
+        "description": "Establecidas por nuestro sitio web Atelier"
       },
       "thirdParty": {
         "name": "Cookies de Terceros",

@@ -1,5 +1,5 @@
 /**
- * ClearSight LASIK - Patient Forms Type Definitions
+ * Atelier LASIK - Patient Forms Type Definitions
  *
  * TypeScript interfaces for the tabbed patient forms system including:
  * - New Patient Registration

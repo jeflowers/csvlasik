@@ -19,7 +19,7 @@ describe('Admin LoginForm', () => {
   it('renders login form elements', () => {
     render(<LoginForm onLogin={mockOnLogin} />);
     
-    expect(screen.getByText('ClearSight CMS')).toBeInTheDocument();
+    expect(screen.getByText('Atelier CMS')).toBeInTheDocument();
     expect(screen.getByLabelText('Username')).toBeInTheDocument();
     expect(screen.getByLabelText('Password')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Sign in' })).toBeInTheDocument();

@@ -1,4 +1,4 @@
-# ClearSight - Dr. Charles Flowers LASIK Website
+# Atelier - Dr. Charles Flowers LASIK Website
 
 A comprehensive multilingual website for Dr. Charles Flowers' revolutionary LASIK surgery practice, featuring a React frontend with Supabase backend and full CMS capabilities.
 
@@ -285,7 +285,7 @@ For technical support or questions:
 
 ## License
 
-This system is proprietary software developed specifically for ClearSight - Dr. Charles Flowers' practice.
+This system is proprietary software developed specifically for Atelier - Dr. Charles Flowers' practice.
 
 ## Recent Updates
 

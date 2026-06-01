@@ -327,7 +327,7 @@
 
   "testimonial": {
     "title": "Ibahagi ang Iyong Kwento",
-    "subtitle": "Sabihin sa amin ang iyong karanasan sa ClearSight LASIK. Ang iyong feedback ay nakakatulong sa iba na gumawa ng tamang desisyon tungkol sa pangangalaga ng kanilang paningin.",
+    "subtitle": "Sabihin sa amin ang iyong karanasan sa Atelier LASIK. Ang iyong feedback ay nakakatulong sa iba na gumawa ng tamang desisyon tungkol sa pangangalaga ng kanilang paningin.",
     "backToDashboard": "Bumalik sa Dashboard",
     "name": "Iyong Pangalan",
     "namePlaceholder": "Kung paano mo gustong ipakita ang iyong pangalan",
@@ -335,7 +335,7 @@
     "rating": "Iyong Rating",
     "ratingOf": "{{rating}} sa 5",
     "experience": "Iyong Karanasan",
-    "experiencePlaceholder": "Ibahagi ang iyong karanasan sa ClearSight LASIK. Kumusta ang proseso? Paano bumuti ang iyong paningin?",
+    "experiencePlaceholder": "Ibahagi ang iyong karanasan sa Atelier LASIK. Kumusta ang proseso? Paano bumuti ang iyong paningin?",
     "minChars": "Minimum na 10 karakter.",
     "charCount": "{{count}} karakter",
     "procedureType": "Uri ng Pamamaraan",
@@ -348,7 +348,7 @@
     "errorUnexpected": "May hindi inaasahang error na naganap. Pakisubukang muli.",
     "successTitle": "Salamat sa Pagbabahagi!",
     "successDescription": "Ang iyong testimonya ay naisumite na at lalabas sa aming website pagkatapos suriin ng aming team.",
-    "successNote": "Pinahahalagahan namin ang iyong oras sa pagbabahagi ng iyong karanasan sa ClearSight LASIK.",
+    "successNote": "Pinahahalagahan namin ang iyong oras sa pagbabahagi ng iyong karanasan sa Atelier LASIK.",
     "viewTestimonials": "Tingnan ang mga Testimonya"
   },
 
@@ -361,7 +361,7 @@
 
   "auth": {
     "loginTitle": "Portal ng Pasyente",
-    "loginSubtitle": "ClearSight LASIK",
+    "loginSubtitle": "Atelier LASIK",
     "welcomeBack": "Maligayang pagbabalik",
     "signInDescription": "Mag-sign in upang ma-access ang iyong portal ng pasyente.",
     "email": "Email",

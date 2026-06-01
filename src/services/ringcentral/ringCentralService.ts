@@ -156,7 +156,7 @@ export class RingCentralService {
   ): string {
     const params = new URLSearchParams({
       subject: `Consultation: ${consultationRequest.first_name} ${consultationRequest.last_name}`,
-      location: connection.default_provider_location || 'ClearSight LASIK',
+      location: connection.default_provider_location || 'Atelier LASIK',
       description: `Patient: ${consultationRequest.first_name} ${consultationRequest.last_name}\nEmail: ${consultationRequest.email}\nPhone: ${consultationRequest.phone}\nProcedure: ${consultationRequest.procedure}`,
     });
 

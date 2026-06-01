@@ -2,13 +2,13 @@
   "pageTitle": "Términos de Servicio",
   "hero": {
     "title": "Términos de Servicio",
-    "subtitle": "Acuerdo de uso del sitio web de ClearSight"
+    "subtitle": "Acuerdo de uso del sitio web de Atelier"
   },
   "lastUpdated": "Última actualización: {date}",
   "sections": {
     "acceptance": {
       "title": "1. Aceptación de Términos",
-      "content": "Al acceder y utilizar el sitio web de ClearSight ('el Sitio'), usted acepta estar sujeto a estos Términos de Servicio y todas las leyes y regulaciones aplicables. Si no está de acuerdo con estos términos, no debe usar este sitio."
+      "content": "Al acceder y utilizar el sitio web de Atelier ('el Sitio'), usted acepta estar sujeto a estos Términos de Servicio y todas las leyes y regulaciones aplicables. Si no está de acuerdo con estos términos, no debe usar este sitio."
     },
     "useOfSite": {
       "title": "2. Uso del Sitio Web",
@@ -55,7 +55,7 @@
       "subsections": {
         "ownership": {
           "title": "4.1 Propiedad",
-          "content": "Todo el contenido en este sitio, incluidos textos, gráficos, logotipos, imágenes y software, es propiedad de ClearSight o sus licenciantes y está protegido por las leyes de derechos de autor."
+          "content": "Todo el contenido en este sitio, incluidos textos, gráficos, logotipos, imágenes y software, es propiedad de Atelier o sus licenciantes y está protegido por las leyes de derechos de autor."
         },
         "limitedLicense": {
           "title": "4.2 Licencia Limitada",
@@ -63,7 +63,7 @@
         },
         "trademarks": {
           "title": "4.3 Marcas Registradas",
-          "content": "ClearSight y los logotipos relacionados son marcas registradas. El uso no autorizado está estrictamente prohibido."
+          "content": "Atelier y los logotipos relacionados son marcas registradas. El uso no autorizado está estrictamente prohibido."
         }
       }
     },
@@ -109,12 +109,12 @@
     },
     "limitationOfLiability": {
       "title": "9. Limitación de Responsabilidad",
-      "content": "En ningún caso ClearSight, el Dr. Charles Flowers, o nuestros afiliados serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos resultantes de su uso o incapacidad para usar el sitio.",
+      "content": "En ningún caso Atelier, el Dr. Charles Flowers, o nuestros afiliados serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos resultantes de su uso o incapacidad para usar el sitio.",
       "exceptions": "Algunas jurisdicciones no permiten la exclusión de ciertas garantías o limitaciones de responsabilidad, por lo que algunas de las anteriores pueden no aplicarse a usted."
     },
     "indemnification": {
       "title": "10. Indemnización",
-      "content": "Usted acepta indemnizar y eximir de responsabilidad a ClearSight, sus oficiales, directores, empleados y agentes de cualquier reclamo o demanda, incluidos honorarios razonables de abogados, hechos por terceros debido a o como resultado de su uso del sitio o violación de estos Términos."
+      "content": "Usted acepta indemnizar y eximir de responsabilidad a Atelier, sus oficiales, directores, empleados y agentes de cualquier reclamo o demanda, incluidos honorarios razonables de abogados, hechos por terceros debido a o como resultado de su uso del sitio o violación de estos Términos."
     },
     "modifications": {
       "title": "11. Modificaciones a los Términos",
@@ -135,13 +135,13 @@
     },
     "entireAgreement": {
       "title": "15. Acuerdo Completo",
-      "content": "Estos Términos constituyen el acuerdo completo entre usted y ClearSight con respecto al uso del sitio y reemplazan todos los acuerdos anteriores."
+      "content": "Estos Términos constituyen el acuerdo completo entre usted y Atelier con respecto al uso del sitio y reemplazan todos los acuerdos anteriores."
     },
     "contact": {
       "title": "16. Información de Contacto",
       "content": "Para preguntas sobre estos Términos de Servicio, contáctenos en:",
       "details": {
-        "name": "ClearSight Vision Center",
+        "name": "Atelier Vision Center",
         "address": "3650 Martin Luther King Jr Blvd, Lakewood, CA 90712",
         "phone": "(562) 555-EYES (3937)",
         "email": "legal@clearsight-la.com"
@@ -167,7 +167,7 @@
       },
       "classAction": {
         "title": "20.2 Renuncia a Demanda Colectiva",
-        "content": "Usted renuncia al derecho de participar en demandas colectivas contra ClearSight."
+        "content": "Usted renuncia al derecho de participar en demandas colectivas contra Atelier."
       }
     }
   },

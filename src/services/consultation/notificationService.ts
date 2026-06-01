@@ -135,7 +135,7 @@ export class NotificationService {
       <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
 
       <p style="color: #666; font-size: 14px;">
-        ClearSight LASIK<br>
+        Atelier LASIK<br>
         Dr. Charles Flowers
       </p>
     `;

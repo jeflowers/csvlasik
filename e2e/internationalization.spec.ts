@@ -100,6 +100,6 @@ test.describe('Internationalization', () => {
     await page.waitForTimeout(1000);
     
     // Even if some translations are missing, page should still function
-    await expect(page.getByText('ClearSight')).toBeVisible();
+    await expect(page.getByText('Atelier')).toBeVisible();
   });
 });

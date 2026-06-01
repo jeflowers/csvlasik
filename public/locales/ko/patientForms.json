@@ -327,7 +327,7 @@
 
   "testimonial": {
     "title": "경험 공유하기",
-    "subtitle": "ClearSight LASIK에서의 경험을 알려주세요. 여러분의 피드백은 다른 분들이 시력 관리에 대해 올바른 결정을 내리는 데 도움이 됩니다.",
+    "subtitle": "Atelier LASIK에서의 경험을 알려주세요. 여러분의 피드백은 다른 분들이 시력 관리에 대해 올바른 결정을 내리는 데 도움이 됩니다.",
     "backToDashboard": "대시보드로 돌아가기",
     "name": "이름",
     "namePlaceholder": "표시되길 원하는 이름",
@@ -335,7 +335,7 @@
     "rating": "평점",
     "ratingOf": "5점 만점 중 {{rating}}점",
     "experience": "경험",
-    "experiencePlaceholder": "ClearSight LASIK에서의 경험을 공유해 주세요. 과정은 어떠셨나요? 시력은 어떻게 개선되었나요?",
+    "experiencePlaceholder": "Atelier LASIK에서의 경험을 공유해 주세요. 과정은 어떠셨나요? 시력은 어떻게 개선되었나요?",
     "minChars": "최소 10자 이상 입력해 주세요.",
     "charCount": "{{count}}자",
     "procedureType": "시술 유형",
@@ -348,7 +348,7 @@
     "errorUnexpected": "예기치 않은 오류가 발생했습니다. 다시 시도해 주세요.",
     "successTitle": "공유해 주셔서 감사합니다!",
     "successDescription": "후기가 제출되었으며, 저희 팀의 검토 후 웹사이트에 게시됩니다.",
-    "successNote": "ClearSight LASIK에서의 경험을 공유해 주셔서 감사합니다.",
+    "successNote": "Atelier LASIK에서의 경험을 공유해 주셔서 감사합니다.",
     "viewTestimonials": "후기 보기"
   },
 
@@ -361,7 +361,7 @@
 
   "auth": {
     "loginTitle": "환자 포털",
-    "loginSubtitle": "ClearSight LASIK",
+    "loginSubtitle": "Atelier LASIK",
     "welcomeBack": "다시 오신 것을 환영합니다",
     "signInDescription": "환자 포털에 접속하려면 로그인하세요.",
     "email": "이메일",

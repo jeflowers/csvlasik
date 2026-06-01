@@ -127,7 +127,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className={`flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}`}>
             <img
-              src="/assets/images/ClearSight-icon-nb-blk-gld.png"
+              src="/assets/images/Atelier-icon-nb-blk-gld.png"
               alt={`${t('company.name', { ns: 'footer' })} ${t('company.tagline', { ns: 'footer' })}`}
               className="h-12 w-auto"
             />

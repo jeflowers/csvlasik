@@ -327,7 +327,7 @@
 
   "testimonial": {
     "title": "体験談を共有",
-    "subtitle": "ClearSight LASIKでの体験をお聞かせください。あなたのフィードバックは、他の方が視力ケアについて十分な情報に基づいた決定をするのに役立ちます。",
+    "subtitle": "Atelier LASIKでの体験をお聞かせください。あなたのフィードバックは、他の方が視力ケアについて十分な情報に基づいた決定をするのに役立ちます。",
     "backToDashboard": "ダッシュボードに戻る",
     "name": "お名前",
     "namePlaceholder": "表示されるお名前",
@@ -335,7 +335,7 @@
     "rating": "評価",
     "ratingOf": "5段階中 {{rating}}",
     "experience": "体験内容",
-    "experiencePlaceholder": "ClearSight LASIKでの体験を共有してください。施術の流れはいかがでしたか？視力はどのように改善されましたか？",
+    "experiencePlaceholder": "Atelier LASIKでの体験を共有してください。施術の流れはいかがでしたか？視力はどのように改善されましたか？",
     "minChars": "最低10文字。",
     "charCount": "{{count}}文字",
     "procedureType": "施術の種類",
@@ -348,7 +348,7 @@
     "errorUnexpected": "予期しないエラーが発生しました。もう一度お試しください。",
     "successTitle": "ご共有ありがとうございます！",
     "successDescription": "体験談が送信されました。チームの確認後、ウェブサイトに掲載されます。",
-    "successNote": "ClearSight LASIKでの体験を共有していただき、ありがとうございます。",
+    "successNote": "Atelier LASIKでの体験を共有していただき、ありがとうございます。",
     "viewTestimonials": "体験談を見る"
   },
 
@@ -361,7 +361,7 @@
 
   "auth": {
     "loginTitle": "患者ポータル",
-    "loginSubtitle": "ClearSight LASIK",
+    "loginSubtitle": "Atelier LASIK",
     "welcomeBack": "おかえりなさい",
     "signInDescription": "患者ポータルにアクセスするにはサインインしてください。",
     "email": "メールアドレス",

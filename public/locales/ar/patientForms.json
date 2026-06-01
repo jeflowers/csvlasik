@@ -327,7 +327,7 @@
 
   "testimonial": {
     "title": "شارك قصتك",
-    "subtitle": "أخبرنا عن تجربتك في ClearSight LASIK. ملاحظاتك تساعد الآخرين على اتخاذ قرارات مستنيرة بشأن رعاية بصرهم.",
+    "subtitle": "أخبرنا عن تجربتك في Atelier LASIK. ملاحظاتك تساعد الآخرين على اتخاذ قرارات مستنيرة بشأن رعاية بصرهم.",
     "backToDashboard": "العودة إلى لوحة التحكم",
     "name": "اسمك",
     "namePlaceholder": "كيف تريد أن يظهر اسمك",
@@ -335,7 +335,7 @@
     "rating": "تقييمك",
     "ratingOf": "{{rating}} من 5",
     "experience": "تجربتك",
-    "experiencePlaceholder": "شارك تجربتك مع ClearSight LASIK. كيف كانت العملية؟ كيف تحسنت رؤيتك؟",
+    "experiencePlaceholder": "شارك تجربتك مع Atelier LASIK. كيف كانت العملية؟ كيف تحسنت رؤيتك؟",
     "minChars": "10 أحرف كحد أدنى.",
     "charCount": "{{count}} حرف",
     "procedureType": "نوع الإجراء",
@@ -348,7 +348,7 @@
     "errorUnexpected": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.",
     "successTitle": "شكراً لمشاركتك!",
     "successDescription": "تم إرسال شهادتك وستظهر على موقعنا بعد مراجعتها من قبل فريقنا.",
-    "successNote": "نقدر وقتك في مشاركة تجربتك مع ClearSight LASIK.",
+    "successNote": "نقدر وقتك في مشاركة تجربتك مع Atelier LASIK.",
     "viewTestimonials": "عرض الشهادات"
   },
 
@@ -361,7 +361,7 @@
 
   "auth": {
     "loginTitle": "بوابة المريض",
-    "loginSubtitle": "ClearSight LASIK",
+    "loginSubtitle": "Atelier LASIK",
     "welcomeBack": "مرحباً بعودتك",
     "signInDescription": "سجل الدخول للوصول إلى بوابة المريض الخاصة بك.",
     "email": "البريد الإلكتروني",
