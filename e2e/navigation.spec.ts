@@ -92,6 +92,6 @@ test.describe('Navigation', () => {
     
     // Check email in footer
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await expect(page.getByText('info@clearsightlasik.com')).toBeVisible();
+    await expect(page.getByText('info@atelierlasik.com')).toBeVisible();
   });
 });

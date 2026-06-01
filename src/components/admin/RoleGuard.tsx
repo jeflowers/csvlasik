@@ -2,7 +2,7 @@
  * @file RoleGuard.tsx
  * @description Permission wrapper component for role-based access control
  * @author Development
- * @filepath csvlasik/src/components/admin/RoleGuard.tsx
+ * @filepath atelierlasik/src/components/admin/RoleGuard.tsx
  * @category Component
  * @pattern Guard Pattern
  * @version 1.0.0

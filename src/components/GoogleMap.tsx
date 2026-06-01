@@ -2,7 +2,7 @@
  * @file GoogleMap.tsx
  * @description Reusable Google Maps embed component
  * @author Development
- * @filepath csvlasik/src/components/GoogleMap.tsx
+ * @filepath atelierlasik/src/components/GoogleMap.tsx
  * @category Component
  * @pattern Component Composition
  * @version 1.0.0

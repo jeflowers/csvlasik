@@ -3,7 +3,7 @@
 # CORS Headers
 <IfModule mod_headers.c>
     # Allow cross-origin requests from specified domains
-    SetEnvIf Origin "^https?://(www\.)?(csvlasik\.com|localhost:[0-9]+)$" ORIGIN_MATCH=$0
+    SetEnvIf Origin "^https?://(www\.)?(atelierlasik\.com|localhost:[0-9]+)$" ORIGIN_MATCH=$0
     Header set Access-Control-Allow-Origin "%{ORIGIN_MATCH}e" env=ORIGIN_MATCH
     Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS, PATCH"
     Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With, Accept"
@@ -104,7 +104,7 @@
 # Prevent hotlinking of medical images
 <IfModule mod_rewrite.c>
     RewriteCond %{HTTP_REFERER} !^$
-    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?clearsightlasik\.com [NC]
+    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?atelierlasik\.com [NC]
     RewriteCond %{REQUEST_URI} ^/assets/images/(procedures|diagrams|team)/ [NC]
     RewriteRule \.(jpg|jpeg|png|webp|avif)$ /assets/images/brand/watermark.png [R=302,L]
 </IfModule>

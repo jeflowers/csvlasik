@@ -1,6 +1,6 @@
 # Branch Protection Rulesets Runbook
 
-Repository: `jeflowers/csvlasik`
+Repository: `jeflowers/atelierlasik`
 Default branch: `main`
 Owner of this runbook: Engineering
 Last reviewed: 2026-05-08
@@ -27,7 +27,7 @@ Reference: [GitHub docs — About rulesets](https://docs.github.com/en/repositor
 
 ### Step 1 — Navigate to Rulesets
 
-1. Open <https://github.com/jeflowers/csvlasik>
+1. Open <https://github.com/jeflowers/atelierlasik>
 2. Click **Settings** (top nav, requires admin access)
 3. In the left sidebar under **Code and automation**, click **Rules → Rulesets**
 4. Click **New ruleset → New branch ruleset**

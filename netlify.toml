@@ -90,15 +90,15 @@
 
 # Redirect www to non-www
 [[redirects]]
-  from = "https://www.csvlasik.com/*"
-  to = "https://csvlasik.com/:splat"
+  from = "https://www.atelierlasik.com/*"
+  to = "https://atelierlasik.com/:splat"
   status = 301
   force = true
 
 # Redirect HTTP to HTTPS
 [[redirects]]
-  from = "http://csvlasik.com/*"
-  to = "https://csvlasik.com/:splat"
+  from = "http://atelierlasik.com/*"
+  to = "https://atelierlasik.com/:splat"
   status = 301
   force = true
 

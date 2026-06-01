@@ -24,7 +24,7 @@ describe('Footer Component', () => {
     render(<Footer />);
     
     expect(screen.getByText('(844) 211-5462')).toBeInTheDocument();
-    expect(screen.getByText('info@clearsightlasik.com')).toBeInTheDocument();
+    expect(screen.getByText('info@atelierlasik.com')).toBeInTheDocument();
     expect(screen.getByText(/Lakewood Office/)).toBeInTheDocument();
   });
 

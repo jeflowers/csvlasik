@@ -2,7 +2,7 @@
  * @file authService.ts
  * @description Supabase authentication service for CMS admin panel
  * @author Development
- * @filepath csvlasik/src/services/cms/authService.ts
+ * @filepath atelierlasik/src/services/cms/authService.ts
  * @category Service
  * @pattern Service Layer
  * @version 1.0.0

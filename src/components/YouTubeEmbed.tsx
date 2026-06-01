@@ -2,7 +2,7 @@
  * @file YouTubeEmbed.tsx
  * @description YouTube video embed component with comprehensive error handling
  * @author Development
- * @filepath csvlasik/src/components/YouTubeEmbed.tsx
+ * @filepath atelierlasik/src/components/YouTubeEmbed.tsx
  * @category Component
  * @pattern Component Composition
  * @version 2.0.0

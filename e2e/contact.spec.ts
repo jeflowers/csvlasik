@@ -17,7 +17,7 @@ test.describe('Contact Page', () => {
     // Check contact information
     await expect(page.getByText('Lakewood Office')).toBeVisible();
     await expect(page.getByText('(844) 211-5462')).toBeVisible();
-    await expect(page.getByText('info@clearsightlasik.com')).toBeVisible();
+    await expect(page.getByText('info@atelierlasik.com')).toBeVisible();
   });
 
   test('form validation works correctly', async ({ page }) => {
@@ -97,8 +97,8 @@ test.describe('Contact Page', () => {
   });
 
   test('email links are clickable', async ({ page }) => {
-    const emailLink = page.getByRole('link', { name: 'info@clearsightlasik.com' });
-    await expect(emailLink).toHaveAttribute('href', 'mailto:info@clearsightlasik.com');
+    const emailLink = page.getByRole('link', { name: 'info@atelierlasik.com' });
+    await expect(emailLink).toHaveAttribute('href', 'mailto:info@atelierlasik.com');
   });
 
   test('office hours are displayed', async ({ page }) => {

@@ -2,7 +2,7 @@
  * @file LoginForm.tsx
  * @description Admin login form component using Supabase authentication
  * @author Development
- * @filepath csvlasik/src/components/admin/LoginForm.tsx
+ * @filepath atelierlasik/src/components/admin/LoginForm.tsx
  * @category Component
  * @pattern Controlled Form
  * @version 2.0.0

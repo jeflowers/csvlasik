@@ -32,7 +32,7 @@ const SettingsPanel: React.FC = () => {
   const [settings, setSettings] = useState<SystemSettings>({
     site_name: 'ClearSight CMS',
     site_description: 'Revolutionary Vision Care Content Management',
-    admin_email: 'admin@clearsightlasik.com',
+    admin_email: 'admin@atelierlasik.com',
     maintenance_mode: false,
     registration_enabled: false,
     max_upload_size: 50,

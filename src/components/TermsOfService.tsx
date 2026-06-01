@@ -102,8 +102,8 @@ const TermsOfService: React.FC = () => {
               <p className="text-gray-700">{t('sections.contact.legal.address2')}</p>
               <div className="flex items-center mt-3">
                 <Mail className="h-4 w-4 text-teal-600 mr-2" />
-                <a href="mailto:legal@clearsightlasik.com" className="text-teal-600 hover:text-teal-700">
-                  legal@clearsightlasik.com
+                <a href="mailto:legal@atelierlasik.com" className="text-teal-600 hover:text-teal-700">
+                  legal@atelierlasik.com
                 </a>
               </div>
               <div className="flex items-center">

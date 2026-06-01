@@ -17,8 +17,8 @@ export default defineConfig({
       origin: [
         'http://localhost:5173',
         'http://localhost:3000',
-        'https://csvlasik.com',
-        'https://www.csvlasik.com'
+        'https://atelierlasik.com',
+        'https://www.atelierlasik.com'
       ],
       credentials: true,
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],

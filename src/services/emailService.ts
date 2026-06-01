@@ -18,7 +18,7 @@ export const emailService = {
         .from('email_queue')
         .insert({
           to_email: options.to,
-          from_email: options.from || 'noreply@csvlasik.com',
+          from_email: options.from || 'noreply@atelierlasik.com',
           subject: options.subject,
           html_body: options.htmlBody,
           text_body: options.textBody,

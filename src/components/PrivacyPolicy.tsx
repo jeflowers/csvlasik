@@ -101,7 +101,7 @@ const PrivacyPolicy: React.FC = () => {
               <div className="space-y-3">
                 <div className="flex items-center">
                   <Mail className="h-4 w-4 text-teal-600 mr-2" />
-                  <span className="text-sm">{t('sections.gdpr.exercise.email')}: privacy@clearsightlasik.com</span>
+                  <span className="text-sm">{t('sections.gdpr.exercise.email')}: privacy@atelierlasik.com</span>
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-4 w-4 text-teal-600 mr-2" />
@@ -152,8 +152,8 @@ const PrivacyPolicy: React.FC = () => {
               <p className="text-gray-700">{t('sections.contact.dpo.address2')}</p>
               <div className="flex items-center mt-3">
                 <Mail className="h-4 w-4 text-teal-600 mr-2" />
-                <a href="mailto:privacy@clearsightlasik.com" className="text-teal-600 hover:text-teal-700">
-                  privacy@clearsightlasik.com
+                <a href="mailto:privacy@atelierlasik.com" className="text-teal-600 hover:text-teal-700">
+                  privacy@atelierlasik.com
                 </a>
               </div>
               <div className="flex items-center">

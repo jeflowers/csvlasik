@@ -2,7 +2,7 @@
  * @file useAdmin.ts
  * @description React hook for admin authentication state management
  * @author Development
- * @filepath csvlasik/src/hooks/useAdmin.ts
+ * @filepath atelierlasik/src/hooks/useAdmin.ts
  * @category Hook
  * @pattern Observer
  * @version 1.0.0

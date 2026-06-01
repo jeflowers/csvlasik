@@ -267,7 +267,7 @@ const Contact = () => {
                   <Mail className="h-6 w-6 chopard-text-accent mr-4 mt-1" />
                   <div>
                     <h3 className="font-light chopard-text-primary mb-1">{t('email.title')}</h3>
-                    <a href="mailto:info@clearsightlasik.com" className="chopard-text-accent hover:chopard-text-primary font-light">
+                    <a href="mailto:info@atelierlasik.com" className="chopard-text-accent hover:chopard-text-primary font-light">
                       {t('email.address')}
                     </a>
                     <p className="chopard-text-secondary text-sm font-light">{t('email.note')}</p>

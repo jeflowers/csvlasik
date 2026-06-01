@@ -125,7 +125,7 @@ const Footer = () => {
               </a>
               <div className="flex items-center space-x-4">
                 <Mail className="h-5 w-5 chopard-text-accent" />
-                <a href="mailto:info@clearsightlasik.com" className="text-white/70 hover:text-white transition-all duration-300 font-light">
+                <a href="mailto:info@atelierlasik.com" className="text-white/70 hover:text-white transition-all duration-300 font-light">
                   {t('contact.email')}
                 </a>
               </div>
