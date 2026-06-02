@@ -64,7 +64,7 @@ export const emailTemplates = {
               <p style="margin-top: 30px;">If you have any immediate questions, please don't hesitate to contact us:</p>
               <p>
                 📞 <strong>Phone:</strong> (619) 377-8600<br>
-                📧 <strong>Email:</strong> info@clearsightvision.com
+                📧 <strong>Email:</strong> info@atelierlasik.com
               </p>
             </div>
 
@@ -73,7 +73,7 @@ export const emailTemplates = {
               <p>Excellence in Eye Care Since 2005</p>
               <p style="font-size: 12px; margin-top: 15px;">
                 This is an automated confirmation. Please do not reply to this email.<br>
-                For assistance, contact us at info@clearsightvision.com
+                For assistance, contact us at info@atelierlasik.com
               </p>
             </div>
           </div>
@@ -102,13 +102,13 @@ What's Next?
 
 Contact Information:
 Phone: (619) 377-8600
-Email: info@clearsightvision.com
+Email: info@atelierlasik.com
 
 Atelier Vision Center
 Excellence in Eye Care Since 2005
 
 This is an automated confirmation. Please do not reply to this email.
-For assistance, contact us at info@clearsightvision.com
+For assistance, contact us at info@atelierlasik.com
     `.trim(),
   }),
 

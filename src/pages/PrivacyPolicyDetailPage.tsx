@@ -264,8 +264,8 @@ const PrivacyPolicyDetailPage: React.FC = () => {
                     </p>
                     <p className="text-gray-600 text-sm mt-2">
                       For questions about this privacy policy, please contact our Privacy Officer at{' '}
-                      <a href="mailto:privacy@clearsightvision.com" className="text-blue-600 hover:underline">
-                        privacy@clearsightvision.com
+                      <a href="mailto:privacy@atelierlasik.com" className="text-blue-600 hover:underline">
+                        privacy@atelierlasik.com
                       </a>
                     </p>
                   </div>

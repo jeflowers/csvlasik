@@ -136,12 +136,12 @@ export const DIAGRAM_IMAGES = {
 export const BRAND_IMAGES = {
   logos: {
     primary: {
-      src: `${IMAGE_PATHS.brand}/logos/clearsight-logo-primary.svg`,
+      src: `${IMAGE_PATHS.brand}/logos/atelier-logo-primary.svg`,
       alt: 'Atelier Vision Institute - Revolutionary LASIK Surgery',
       priority: true
     },
     white: {
-      src: `${IMAGE_PATHS.brand}/logos/clearsight-logo-white.svg`,
+      src: `${IMAGE_PATHS.brand}/logos/atelier-logo-white.svg`,
       alt: 'Atelier Vision Institute Logo - White Version'
     }
   },

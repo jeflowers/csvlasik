@@ -101,7 +101,7 @@ export const AppointmentCalendar: React.FC = () => {
 
       await supabase.from('email_queue').insert({
         to_email: formData.patient_email,
-        from_email: 'appointments@clearsightvision.com',
+        from_email: 'appointments@atelierlasik.com',
         subject: 'Appointment Booking Confirmation',
         html_body: `
           <h1>Appointment Confirmed!</h1>

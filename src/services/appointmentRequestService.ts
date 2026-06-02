@@ -60,7 +60,7 @@ export class AppointmentRequestService {
       });
 
       await emailService.queueEmail({
-        to: 'appointments@clearsightvision.com',
+        to: 'appointments@atelierlasik.com',
         subject: notificationEmail.subject,
         htmlBody: notificationEmail.html,
         textBody: notificationEmail.text,

@@ -337,7 +337,7 @@ const Contact = () => {
               address="5750 Downey Ave, Suite 101, Lakewood, CA 90712"
               zoom={15}
               height="500px"
-              title="Clearsight LASIK Lakewood Office Location"
+              title="Atelier LASIK Lakewood Office Location"
               allowGeolocation={true}
             />
 

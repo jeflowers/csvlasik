@@ -8,7 +8,7 @@ const SUPABASE_ANON_KEY =
 
 export const TEST_MARKER = '[TEST-DATA-TESTIMONIAL]';
 const TEST_RUN_ID = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-const TEST_EMAIL = `testimonial.test.${TEST_RUN_ID}@clearsight-test.local`;
+const TEST_EMAIL = `testimonial.test.${TEST_RUN_ID}@atelier-test.local`;
 const TEST_PASSWORD = `Tt!${TEST_RUN_ID}_aZ9`;
 
 const isLiveDb = SUPABASE_URL.includes('supabase.co') && !SUPABASE_URL.includes('test.supabase.co');

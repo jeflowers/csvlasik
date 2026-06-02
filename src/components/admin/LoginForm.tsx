@@ -129,7 +129,7 @@ const LoginForm: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-teal-500 focus:border-teal-500 focus:z-10 sm:text-sm"
-                placeholder="admin@clearsight.com"
+                placeholder="admin@atelierlasik.com"
               />
             </div>
             <div>

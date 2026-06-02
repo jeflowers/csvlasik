@@ -74,7 +74,7 @@
     },
     "ccpa": {
       "title": "12. California Rights (CCPA)",
-      "rights": "Right to Know, Delete, Opt-Out (we don't sell data), Non-Discrimination. Contact privacy@clearsightvision.com"
+      "rights": "Right to Know, Delete, Opt-Out (we don't sell data), Non-Discrimination. Contact privacy@atelierlasik.com"
     },
     "changes": {
       "title": "13. Policy Changes",
@@ -82,8 +82,8 @@
     },
     "contact": {
       "title": "14. Contact Us",
-      "privacyOfficer": "privacy@clearsightvision.com",
-      "dpo": "dpo@clearsightvision.com",
+      "privacyOfficer": "privacy@atelierlasik.com",
+      "dpo": "dpo@atelierlasik.com",
       "hhs": "HHS Office for Civil Rights: 1-877-696-6775, www.hhs.gov/ocr/privacy"
     }
   }

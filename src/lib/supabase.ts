@@ -11,11 +11,11 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     autoRefreshToken: true,
     detectSessionInUrl: false,
     storage: localStorage,
-    storageKey: 'clearsight-auth',
+    storageKey: 'atelier-auth',
   },
   global: {
     headers: {
-      'x-application-name': 'clearsight-lasik',
+      'x-application-name': 'atelier-lasik',
     },
   },
   db: {
