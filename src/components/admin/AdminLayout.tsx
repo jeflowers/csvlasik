@@ -119,7 +119,7 @@ const AdminLayout: React.FC = () => {
           <div className="flex h-16 items-center justify-between px-4">
             <Link to="/" className="flex items-center space-x-2">
               <img
-                src="/assets/images/Atelier-icon-nb-blk-gld.png"
+                src="/assets/images/atelier_nobg.png"
                 alt="Atelier Vision Institute"
                 className="h-10 w-auto"
               />
@@ -193,7 +193,7 @@ const AdminLayout: React.FC = () => {
           <div className="flex h-16 items-center px-4">
             <Link to="/" className="flex items-center space-x-2">
               <img
-                src="/assets/images/Atelier-icon-nb-blk-gld.png"
+                src="/assets/images/atelier_nobg.png"
                 alt="Atelier Vision Institute"
                 className="h-10 w-auto"
               />
@@ -291,7 +291,7 @@ const AdminLayout: React.FC = () => {
             </button>
             <Link to="/" className="flex items-center space-x-2">
               <img
-                src="/assets/images/Atelier-icon-nb-blk-gld.png"
+                src="/assets/images/atelier_nobg.png"
                 alt="Atelier Vision Institute"
                 className="h-8 w-auto"
               />

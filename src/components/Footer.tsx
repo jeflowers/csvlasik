@@ -13,16 +13,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <Link to="/" className="flex items-center space-x-3 mb-6">
+            <Link to="/" className="flex items-center mb-6">
               <img
-                src="/assets/images/Atelier-icon-nb-blk-gld.png"
+                src="/assets/images/atelier_nobg.png"
                 alt="Atelier Revolutionary Vision Care"
-                className="h-12 w-auto filter brightness-0 invert"
+                className="h-14 w-auto"
               />
-              <div>
-                <h3 className="text-xl font-serif chopard-text-primary leading-tight text-white">{t('company.name')}</h3>
-                <p className="text-xs chopard-text-secondary font-light tracking-widest uppercase text-white/70">{t('company.tagline')}</p>
-              </div>
             </Link>
             <p className="text-white/70 text-sm mb-6 leading-relaxed font-light">
               {t('company.description')}

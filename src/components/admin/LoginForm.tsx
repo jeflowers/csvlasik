@@ -87,7 +87,7 @@ const LoginForm: React.FC = () => {
           </Link>
           <div className="flex justify-center items-center space-x-3">
             <img
-              src="/assets/images/Atelier-icon-nb-blk-gld.png"
+              src="/assets/images/atelier_nobg.png"
               alt="Atelier Vision Institute"
               className="h-16 w-auto"
             />

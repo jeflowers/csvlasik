@@ -125,16 +125,12 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex justify-between items-center py-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
           {/* Logo */}
-          <Link to="/" className={`flex items-center space-x-3 ${isRTL ? 'space-x-reverse' : ''}`}>
+          <Link to="/" className={`flex items-center ${isRTL ? 'space-x-reverse' : ''}`}>
             <img
-              src="/assets/images/Atelier-icon-nb-blk-gld.png"
-              alt={`${t('company.name', { ns: 'footer' })} ${t('company.tagline', { ns: 'footer' })}`}
-              className="h-12 w-auto"
+              src="/assets/images/atelier_nobg.png"
+              alt={`${t('company.name', { ns: 'footer' })} - ${t('company.tagline', { ns: 'footer' })}`}
+              className="h-14 w-auto"
             />
-            <div className="flex flex-col">
-              <h1 className="text-xl font-serif chopard-text-primary leading-tight">{t('company.name', { ns: 'footer' })}</h1>
-              <p className="text-xs chopard-text-secondary font-light tracking-widest uppercase">{t('company.tagline', { ns: 'footer' })}</p>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
