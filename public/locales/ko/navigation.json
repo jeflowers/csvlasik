@@ -1,6 +1,10 @@
 {
   "home": "홈",
   "about": "소개",
+  "thePractice": "클리닉",
+  "drFlowers": "Dr. Flowers",
+  "journal": "저널",
+  "book": "예약",
   "procedures": "시술",
   "allProcedures": "모든 시술",
   "lasikSurgery": "LASIK 수술",
