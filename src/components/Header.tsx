@@ -123,18 +123,18 @@ const Header = () => {
 
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex justify-between items-center py-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
+        <div className={`flex justify-between items-center py-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
           {/* Logo */}
-          <Link to="/" className={`flex items-center ${isRTL ? 'space-x-reverse' : ''}`}>
+          <Link to="/" className={`flex-shrink-0 ${isRTL ? 'space-x-reverse' : ''}`}>
             <img
-              src="/assets/images/atelier_nobg.png"
+              src="/assets/images/atelier_nobg_v2.png"
               alt={`${t('company.name', { ns: 'footer' })} - ${t('company.tagline', { ns: 'footer' })}`}
-              className="h-14 w-auto"
+              className="h-16 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className={`hidden lg:flex items-center space-x-8 ${isRTL ? 'space-x-reverse ml-16' : 'ml-16'}`}>
+          <nav className={`hidden lg:flex items-center space-x-6 ${isRTL ? 'space-x-reverse' : ''}`}>
             <Link
               to="/"
               className={`chopard-text-secondary hover:chopard-text-primary transition-all duration-300 font-light text-sm tracking-wide ${

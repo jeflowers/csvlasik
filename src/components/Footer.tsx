@@ -15,7 +15,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center mb-6">
               <img
-                src="/assets/images/atelier_nobg.png"
+                src="/assets/images/atelier_nobg_v2.png"
                 alt="Atelier Revolutionary Vision Care"
                 className="h-14 w-auto"
               />
