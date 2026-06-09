@@ -16,7 +16,7 @@ test.describe('Contact Page', () => {
     
     // Check contact information
     await expect(page.getByText('Lakewood Office')).toBeVisible();
-    await expect(page.getByText('(844) 211-5462')).toBeVisible();
+    await expect(page.getByText('(844) 954-8686')).toBeVisible();
     await expect(page.getByText('info@atelierlasik.com')).toBeVisible();
   });
 
@@ -85,14 +85,14 @@ test.describe('Contact Page', () => {
 
   test('emergency contact information is prominent', async ({ page }) => {
     await expect(page.getByText('Post-Operative Emergency Contact')).toBeVisible();
-    await expect(page.getByText('Emergency Line: (844) 211-5462')).toBeVisible();
+    await expect(page.getByText('Emergency Line: (844) 954-8686')).toBeVisible();
   });
 
   test('phone numbers are clickable', async ({ page }) => {
-    const phoneLinks = page.getByRole('link', { name: /\(844\) 211-5462/ });
+    const phoneLinks = page.getByRole('link', { name: /\(844\) 954-8686/ });
     
     for (const link of await phoneLinks.all()) {
-      await expect(link).toHaveAttribute('href', 'tel:+18442115462');
+      await expect(link).toHaveAttribute('href', 'tel:+18449548686');
     }
   });
 

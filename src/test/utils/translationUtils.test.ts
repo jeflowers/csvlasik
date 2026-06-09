@@ -28,7 +28,7 @@ describe('Translation Utils', () => {
 
   describe('formatPhoneNumber', () => {
     it('formats US phone numbers correctly', () => {
-      expect(formatPhoneNumber('8442115462', 'en')).toBe('(844) 211-5462');
+      expect(formatPhoneNumber('8449548686', 'en')).toBe('(844) 954-8686');
     });
 
     it('formats Mexican phone numbers correctly', () => {

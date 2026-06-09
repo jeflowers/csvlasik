@@ -105,7 +105,7 @@ const PrivacyPolicy: React.FC = () => {
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-4 w-4 text-teal-600 mr-2" />
-                  <span className="text-sm">{t('sections.gdpr.exercise.phone')}: <span dir="ltr">(844) 211-5462</span></span>
+                  <span className="text-sm">{t('sections.gdpr.exercise.phone')}: <span dir="ltr">(844) 954-8686</span></span>
                 </div>
                 <p className="text-sm text-gray-600">
                   {t('sections.gdpr.exercise.response')}
@@ -158,8 +158,8 @@ const PrivacyPolicy: React.FC = () => {
               </div>
               <div className="flex items-center">
                 <Phone className="h-4 w-4 text-teal-600 mr-2" />
-                <a href="tel:+18442115462" className="text-teal-600 hover:text-teal-700" dir="ltr">
-                  (844) 211-5462
+                <a href="tel:+18449548686" className="text-teal-600 hover:text-teal-700" dir="ltr">
+                  (844) 954-8686
                 </a>
               </div>
             </div>

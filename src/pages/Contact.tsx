@@ -60,7 +60,7 @@ const Contact = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <a
-                href="tel:+18442115462"
+                href="tel:+18449548686"
                 className="inline-flex items-center border border-gray-900 chopard-text-primary px-8 py-3 rounded-lg font-light hover:bg-gray-900 hover:text-white transition-all duration-300"
               >
                 <Phone className="mr-2 h-5 w-5" />
@@ -254,7 +254,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 chopard-text-accent mr-4 mt-1" />
                   <div>
                     <h3 className="font-light chopard-text-primary mb-1">{t('phone.title')}</h3>
-                    <a href="tel:+18442115462" className="chopard-text-accent hover:chopard-text-primary font-light">
+                    <a href="tel:+18449548686" className="chopard-text-accent hover:chopard-text-primary font-light">
                       <span className="font-light" dir="ltr">
                         {t('phone.number')}
                       </span>
@@ -293,7 +293,7 @@ const Contact = () => {
                 <h3 className="font-light chopard-text-primary mb-4">{t('quickActions.title')}</h3>
                 <div className="space-y-3">
                   <a
-                    href="tel:+18442115462"
+                    href="tel:+18449548686"
                     className="flex items-center chopard-text-accent hover:chopard-text-primary font-light"
                   >
                     <Phone className="h-5 w-5 mr-3" />
@@ -472,7 +472,7 @@ const Contact = () => {
             {t('emergency.description')}
           </p>
           <a
-            href="tel:+18442115462"
+            href="tel:+18449548686"
             className="inline-flex items-center bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors"
           >
             <Phone className="mr-2 h-5 w-5" />
@@ -495,7 +495,7 @@ const Contact = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+18442115462"
+              href="tel:+18449548686"
               className="inline-flex items-center bg-white chopard-text-primary px-8 py-4 rounded-lg text-lg font-light hover:bg-gray-100 transition-all duration-300"
             >
               <Phone className="mr-2 h-5 w-5" />

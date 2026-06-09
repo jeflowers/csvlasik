@@ -43,7 +43,7 @@ describe('Home Page', () => {
     render(<Home />);
     
     expect(screen.getByText('SCHEDULE CONSULTATION')).toBeInTheDocument();
-    expect(screen.getByText('(844) 211-5462')).toBeInTheDocument();
+    expect(screen.getByText('(844) 954-8686')).toBeInTheDocument();
   });
 
   it('cycles through hero images', async () => {
@@ -63,7 +63,7 @@ describe('Home Page', () => {
   it('shows contact phone number as clickable link', () => {
     render(<Home />);
     
-    const phoneLink = screen.getByRole('link', { name: /\(844\) 211-5462/ });
-    expect(phoneLink).toHaveAttribute('href', 'tel:+18442115462');
+    const phoneLink = screen.getByRole('link', { name: /\(844\) 954-8686/ });
+    expect(phoneLink).toHaveAttribute('href', 'tel:+18449548686');
   });
 });

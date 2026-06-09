@@ -23,7 +23,7 @@ describe('Footer Component', () => {
   it('displays contact information', () => {
     render(<Footer />);
     
-    expect(screen.getByText('(844) 211-5462')).toBeInTheDocument();
+    expect(screen.getByText('(844) 954-8686')).toBeInTheDocument();
     expect(screen.getByText('info@atelierlasik.com')).toBeInTheDocument();
     expect(screen.getByText(/Lakewood Office/)).toBeInTheDocument();
   });

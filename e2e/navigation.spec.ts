@@ -88,7 +88,7 @@ test.describe('Navigation', () => {
 
   test('contact information is accessible', async ({ page }) => {
     // Check phone number in header
-    await expect(page.getByText('(844) 211-5462')).toBeVisible();
+    await expect(page.getByText('(844) 954-8686')).toBeVisible();
     
     // Check email in footer
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));

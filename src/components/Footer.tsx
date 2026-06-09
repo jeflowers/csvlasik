@@ -111,7 +111,7 @@ const Footer = () => {
                   <p className="text-white/70 text-sm leading-relaxed font-light">{t('contact.address')}</p>
                 </div>
               </Link>
-              <a href="tel:+18442115462" className="flex items-center space-x-4 text-white/70 hover:text-white transition-all duration-300 font-light">
+              <a href="tel:+18449548686" className="flex items-center space-x-4 text-white/70 hover:text-white transition-all duration-300 font-light">
                 <span className="inline-flex items-center space-x-4" dir="ltr">
                   <Phone className="h-5 w-5 chopard-text-accent" />
                   <span className="font-light">

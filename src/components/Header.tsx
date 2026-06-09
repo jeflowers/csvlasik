@@ -89,12 +89,12 @@ const Header = () => {
             {/* Right side: Phone + Language + CTA */}
             <div className={`flex items-center ${isRTL ? 'space-x-reverse mr-8' : 'ml-8'} space-x-5`}>
               <a
-                href="tel:+18442115462"
+                href="tel:+18449548686"
                 className={`flex items-center text-white/80 hover:text-white transition-colors duration-200 text-sm font-light ${
                   isRTL ? 'flex-row-reverse' : ''
                 }`}
               >
-                <span dir="ltr">{t('phone', { defaultValue: '(844) 211-5462' })}</span>
+                <span dir="ltr">{t('phone', { defaultValue: '(844) 954-8686' })}</span>
               </a>
 
               <LanguageSelector variant="transparent" />
@@ -167,13 +167,13 @@ const Header = () => {
 
               <div className="pt-4 border-t border-white/20">
                 <a
-                  href="tel:+18442115462"
+                  href="tel:+18449548686"
                   className={`flex items-center text-white/80 hover:text-white mb-4 transition-colors duration-200 ${
                     isRTL ? 'flex-row-reverse' : ''
                   }`}
                 >
                   <Phone className={`h-4 w-4 ${isRTL ? 'ml-2' : 'mr-2'}`} />
-                  <span dir="ltr">{t('phone', { defaultValue: '(844) 211-5462' })}</span>
+                  <span dir="ltr">{t('phone', { defaultValue: '(844) 954-8686' })}</span>
                 </a>
                 <div className="mb-4">
                   <LanguageSelector variant="transparent" />

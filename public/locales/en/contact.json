@@ -19,7 +19,7 @@
   },
   "phone": {
     "title": "Phone",
-    "number": "(844) 211-5462",
+    "number": "(844) 954-8686",
     "note": "Click to call directly"
   },
   "email": {
@@ -77,13 +77,13 @@
   "emergency": {
     "title": "Post-Operative Emergency Contact",
     "description": "If you are a current patient experiencing a post-operative emergency outside of normal business hours:",
-    "phone": "Emergency Line: (844) 211-5462",
+    "phone": "Emergency Line: (844) 954-8686",
     "note": "For non-emergency questions, please use our regular contact methods above."
   },
   "cta": {
     "title": "Ready to Transform Your Vision?",
     "subtitle": "Join the hundreds of patients who have trusted Dr. Flowers with their vision. Your revolutionary journey to perfect sight starts with a simple phone call.",
-    "call": "Call (844) 211-5462",
+    "call": "Call (844) 954-8686",
     "testimonials": "See Testimonials"
   }
 }

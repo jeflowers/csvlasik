@@ -11,7 +11,7 @@ test.describe('Homepage', () => {
     
     // Check for CTA buttons
     await expect(page.getByText('SCHEDULE CONSULTATION')).toBeVisible();
-    await expect(page.getByText('(844) 211-5462')).toBeVisible();
+    await expect(page.getByText('(844) 954-8686')).toBeVisible();
   });
 
   test('shows animated procedure counter', async ({ page }) => {
@@ -41,8 +41,8 @@ test.describe('Homepage', () => {
   });
 
   test('phone number is clickable', async ({ page }) => {
-    const phoneLink = page.getByRole('link', { name: /\(844\) 211-5462/ });
-    await expect(phoneLink).toHaveAttribute('href', 'tel:+18442115462');
+    const phoneLink = page.getByRole('link', { name: /\(844\) 954-8686/ });
+    await expect(phoneLink).toHaveAttribute('href', 'tel:+18449548686');
   });
 
   test('navigation to other pages works', async ({ page }) => {

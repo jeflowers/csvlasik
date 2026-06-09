@@ -70,7 +70,7 @@ test.describe('Internationalization', () => {
 
   test('phone number formats correctly for different languages', async ({ page }) => {
     // Check US format (default)
-    await expect(page.getByText('(844) 211-5462')).toBeVisible();
+    await expect(page.getByText('(844) 954-8686')).toBeVisible();
     
     // Change to Korean
     await page.getByLabelText(/selectLanguage/i).click();
@@ -78,7 +78,7 @@ test.describe('Internationalization', () => {
     await page.waitForTimeout(1000);
     
     // Phone number should still be visible and clickable
-    await expect(page.getByRole('link', { name: /211-5462/ })).toBeVisible();
+    await expect(page.getByRole('link', { name: /954-8686/ })).toBeVisible();
   });
 
   test('translation status indicator works', async ({ page }) => {

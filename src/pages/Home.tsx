@@ -111,7 +111,7 @@ const Home = () => {
                   {t('hero.cta.schedule')}
                 </Link>
                 <a
-                  href="tel:+18442115462"
+                  href="tel:+18449548686"
                   className="inline-flex items-center border border-gray-900 chopard-text-primary px-10 py-4 rounded-lg font-light hover:bg-gray-900 hover:text-white transition-all duration-300"
                 >
                   <span className="inline-flex items-center" dir="ltr">
