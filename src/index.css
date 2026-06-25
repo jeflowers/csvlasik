@@ -4,6 +4,14 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-onyx: #1A1A1A;
+    --color-graphite: #2C2C2C;
+    --color-bullion: #D4AF37;
+    --color-champagne: #C9A96E;
+    --color-cream: #FBF7EF;
+  }
+
   body {
     font-family: 'Inter', sans-serif;
     background: #ffffff;

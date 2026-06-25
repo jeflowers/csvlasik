@@ -4,6 +4,18 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    'bg-onyx',
+    'bg-cream',
+    'bg-bullion',
+    'text-onyx',
+    'text-white',
+    'text-champagne',
+    'text-bullion',
+    'text-graphite',
+    'border-white/10',
+    'border-onyx/20',
+  ],
   theme: {
     extend: {
       fontFamily: {

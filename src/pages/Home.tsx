@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <div className="pt-[72px]">
       {/* Hero */}
-      <section className="bg-onyx relative overflow-hidden">
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A1A' }}>
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
           backgroundSize: '48px 48px'
@@ -38,17 +38,18 @@ const Home = () => {
               <div className="mb-10">
                 <Logo variant="stacked" mode="dark" height={48} />
               </div>
-              <h1 className="font-serif font-semibold text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.1]">
+              <h1 className="font-serif font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.1]" style={{ color: '#FFFFFF' }}>
                 Vision, perfected<br />
-                <span className="text-champagne">like fine craft.</span>
+                <span style={{ color: '#C9A96E' }}>like fine craft.</span>
               </h1>
-              <p className="mt-6 text-white/50 font-light text-lg max-w-md leading-relaxed">
+              <p className="mt-6 font-light text-lg max-w-md leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
                 Bespoke refractive surgery by Dr. Charles Flowers, MD &mdash; the first LASIK pioneer in the Pacific region.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
                 <Link
                   to="/portal"
-                  className="bg-bullion text-onyx px-8 py-4 text-xs font-medium tracking-widest hover:bg-champagne transition-colors duration-200"
+                  className="px-8 py-4 text-xs font-medium tracking-widest transition-colors duration-200"
+                  style={{ backgroundColor: '#D4AF37', color: '#1A1A1A' }}
                 >
                   BOOK CONSULTATION
                 </Link>
@@ -241,23 +242,23 @@ const Home = () => {
       </section>
 
       {/* Testimonial */}
-      <section className="bg-onyx relative">
+      <section className="relative" style={{ backgroundColor: '#1A1A1A' }}>
         <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
           backgroundSize: '48px 48px'
         }} />
         <div className="max-w-4xl mx-auto px-6 lg:px-8 py-28 lg:py-36 text-center relative">
-          <span className="text-xs font-sans font-medium tracking-eyebrow text-champagne uppercase block mb-12">
+          <span className="text-xs font-sans font-medium tracking-eyebrow uppercase block mb-12" style={{ color: '#C9A96E' }}>
             Patient Stories
           </span>
-          <blockquote className="font-serif font-semibold text-2xl sm:text-3xl lg:text-4xl text-white leading-snug mb-8">
+          <blockquote className="font-serif font-semibold text-2xl sm:text-3xl lg:text-4xl leading-snug mb-8" style={{ color: '#FFFFFF' }}>
             &ldquo;I woke up the next morning and could read the clock across the room. After twenty years of glasses, it felt like a miracle.&rdquo;
           </blockquote>
-          <cite className="not-italic text-sm text-white/50 font-light">
+          <cite className="not-italic text-sm font-light" style={{ color: 'rgba(255,255,255,0.5)' }}>
             &mdash; Sarah M., LASIK patient, 2024
           </cite>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-bullion/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(212,175,55,0.3), transparent)' }} />
       </section>
 
       {/* CTA */}

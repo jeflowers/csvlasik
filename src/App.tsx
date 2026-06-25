@@ -2,7 +2,6 @@ import React, { lazy, Suspense, Component, ErrorInfo, ReactNode } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { TranslationProvider } from './components/TranslationProvider';
 import RTLProvider from './components/RTLProvider';
-import TranslationStatus from './components/TranslationStatus';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ConsentBanner from './components/ConsentBanner';
@@ -293,7 +292,6 @@ function App() {
               <TranslationProvider preferredService="auto">
                 <RTLProvider>
                   <div className="min-h-screen bg-white">
-                    <TranslationStatus className="fixed top-4 right-4 z-50" />
                     <Header />
                     <main>
                       <Suspense fallback={<LoadingFallback />}>

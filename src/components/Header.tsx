@@ -19,7 +19,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-onyx border-b border-white/10 shadow-lg shadow-black/20">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10" style={{ backgroundColor: '#1A1A1A' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-[72px]">
           <Link to="/" className="flex-shrink-0">
@@ -31,11 +31,10 @@ const Header = () => {
               <Link
                 key={to}
                 to={to}
-                className={`text-sm font-light tracking-wide transition-colors duration-200 ${
-                  isActive(to) || isActivePath(to)
-                    ? 'text-white'
-                    : 'text-white/70 hover:text-white'
-                }`}
+                className="text-sm font-light tracking-wide transition-colors duration-200"
+                style={{
+                  color: isActive(to) || isActivePath(to) ? '#FFFFFF' : 'rgba(255,255,255,0.7)',
+                }}
               >
                 {label}
               </Link>
@@ -45,24 +44,27 @@ const Header = () => {
           <div className="hidden xl:flex items-center gap-4">
             <a
               href="tel:+18449548686"
-              className="flex items-center gap-2 text-white/60 hover:text-white text-sm font-light transition-colors"
+              className="flex items-center gap-2 text-sm font-light transition-colors"
+              style={{ color: 'rgba(255,255,255,0.6)' }}
             >
               <Phone className="w-3.5 h-3.5" />
               <span>(844) 954-8686</span>
             </a>
-            <div className="w-px h-5 bg-white/15" />
+            <div className="w-px h-5" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }} />
             <LanguageSelector variant="transparent" />
-            <div className="w-px h-5 bg-white/15" />
+            <div className="w-px h-5" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }} />
             <Link
               to="/portal"
-              className="flex items-center gap-1.5 text-white/60 hover:text-white text-sm font-light transition-colors"
+              className="flex items-center gap-1.5 text-sm font-light transition-colors"
+              style={{ color: 'rgba(255,255,255,0.6)' }}
             >
               <User className="w-3.5 h-3.5" />
               <span>Portal</span>
             </Link>
             <Link
               to="/portal"
-              className="bg-bullion text-onyx px-6 py-2.5 text-xs font-medium tracking-widest hover:bg-champagne transition-colors duration-200 ml-2"
+              className="px-6 py-2.5 text-xs font-medium tracking-widest transition-colors duration-200 ml-2"
+              style={{ backgroundColor: '#D4AF37', color: '#1A1A1A' }}
             >
               BOOK CONSULT
             </Link>
@@ -70,7 +72,8 @@ const Header = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="xl:hidden p-2 text-white/90 hover:text-white"
+            className="xl:hidden p-2"
+            style={{ color: 'rgba(255,255,255,0.9)' }}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
