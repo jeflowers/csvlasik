@@ -20,6 +20,7 @@ import {
 import { Link } from 'react-router-dom';
 import { apiService } from '../../services/api';
 import { supabase } from '../../lib/supabase';
+import { Card, StatusBadge, Button } from './ui';
 
 interface DashboardStats {
   totalTestimonials: number;
@@ -132,7 +133,7 @@ const Dashboard: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-bullion"></div>
       </div>
     );
   }
@@ -144,7 +145,7 @@ const Dashboard: React.FC = () => {
       pending: stats.pendingAppointments,
       pendingTone: 'warning' as const,
       icon: Calendar,
-      color: 'bg-blue-500',
+      color: 'bg-blue-600',
       change: stats.appointmentsChange,
       link: '/admin/appointments'
     },
@@ -154,7 +155,7 @@ const Dashboard: React.FC = () => {
       pending: stats.pendingTestimonials,
       pendingTone: 'warning' as const,
       icon: MessageSquare,
-      color: 'bg-teal-500',
+      color: 'bg-onyx',
       change: stats.testimonialsChange,
       link: '/admin/testimonials'
     },
@@ -162,7 +163,7 @@ const Dashboard: React.FC = () => {
       name: 'Published Articles',
       value: stats.publishedArticles,
       icon: FileText,
-      color: 'bg-green-500',
+      color: 'bg-emerald-600',
       change: stats.articlesChange,
       link: '/admin/articles'
     },
@@ -170,7 +171,7 @@ const Dashboard: React.FC = () => {
       name: 'Media Files',
       value: stats.totalMedia,
       icon: Image,
-      color: 'bg-slate-500',
+      color: 'bg-gray-600',
       link: '/admin/media'
     },
     {
@@ -180,7 +181,7 @@ const Dashboard: React.FC = () => {
       pendingLabel: 'new this week',
       pendingTone: 'info' as const,
       icon: HeartPulse,
-      color: 'bg-rose-500',
+      color: 'bg-rose-600',
       link: '/admin/patients'
     }
   ];
@@ -195,19 +196,19 @@ const Dashboard: React.FC = () => {
     {
       name: 'Add Testimonial',
       icon: MessageSquare,
-      color: 'bg-teal-50 text-teal-700 hover:bg-teal-100',
+      color: 'bg-gray-50 text-gray-700 hover:bg-gray-100',
       link: '/admin/testimonials'
     },
     {
       name: 'Write Article',
       icon: FileText,
-      color: 'bg-green-50 text-green-700 hover:bg-green-100',
+      color: 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100',
       link: '/admin/articles'
     },
     {
       name: 'Upload Media',
       icon: Image,
-      color: 'bg-purple-50 text-purple-700 hover:bg-purple-100',
+      color: 'bg-amber-50 text-amber-700 hover:bg-amber-100',
       link: '/admin/media'
     },
     {
@@ -219,7 +220,7 @@ const Dashboard: React.FC = () => {
     {
       name: 'Email Queue',
       icon: Mail,
-      color: 'bg-pink-50 text-pink-700 hover:bg-pink-100',
+      color: 'bg-sky-50 text-sky-700 hover:bg-sky-100',
       link: '/admin/email-queue'
     }
   ];
@@ -229,29 +230,29 @@ const Dashboard: React.FC = () => {
       name: 'Database',
       status: 'Operational',
       icon: Database,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50'
+      color: 'text-emerald-600',
+      bgColor: 'bg-emerald-50'
     },
     {
       name: 'API Services',
       status: 'Operational',
       icon: Activity,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50'
+      color: 'text-emerald-600',
+      bgColor: 'bg-emerald-50'
     },
     {
       name: 'Email Service',
       status: 'Operational',
       icon: Mail,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50'
+      color: 'text-emerald-600',
+      bgColor: 'bg-emerald-50'
     },
     {
       name: 'Security',
       status: 'All Clear',
       icon: Shield,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50'
+      color: 'text-emerald-600',
+      bgColor: 'bg-emerald-50'
     }
   ];
 
@@ -259,22 +260,18 @@ const Dashboard: React.FC = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-gray-600">Welcome to Atelier CMS</p>
+          <h1 className="text-2xl font-serif font-semibold text-gray-900">Dashboard</h1>
+          <p className="text-sm text-gray-500 mt-1">Welcome to Atelier CMS</p>
         </div>
         <div className="flex items-center space-x-3">
-          <Link
-            to="/admin/analytics"
-            className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-          >
-            <BarChart3 className="h-4 w-4 mr-2" />
-            View Analytics
+          <Link to="/admin/analytics">
+            <Button variant="secondary">
+              <BarChart3 className="h-4 w-4 mr-2" />
+              View Analytics
+            </Button>
           </Link>
-          <Link
-            to="/admin/settings"
-            className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700"
-          >
-            Settings
+          <Link to="/admin/settings">
+            <Button variant="primary">Settings</Button>
           </Link>
         </div>
       </div>
@@ -284,7 +281,7 @@ const Dashboard: React.FC = () => {
           <Link
             key={index}
             to={stat.link}
-            className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow p-6"
+            className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-px transition-all duration-200 p-6"
           >
             <div className="flex items-center justify-between">
               <p className="text-xs font-semibold tracking-wider uppercase text-gray-500">
@@ -312,8 +309,8 @@ const Dashboard: React.FC = () => {
               <div className="mt-2 flex items-center text-sm">
                 {stat.change >= 0 ? (
                   <>
-                    <ArrowUpRight className="h-4 w-4 text-green-600" />
-                    <span className="text-green-600 font-medium">{stat.change}%</span>
+                    <ArrowUpRight className="h-4 w-4 text-emerald-600" />
+                    <span className="text-emerald-600 font-medium">{stat.change}%</span>
                   </>
                 ) : (
                   <>
@@ -330,9 +327,9 @@ const Dashboard: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-white rounded-lg shadow">
+          <Card padding="none">
             <div className="p-6 border-b border-gray-200">
-              <h3 className="text-lg font-medium text-gray-900">Recent Activity</h3>
+              <h3 className="text-base font-serif font-medium text-gray-900">Recent Activity</h3>
             </div>
             <div className="p-6">
               {recentActivity.length === 0 ? (
@@ -343,8 +340,8 @@ const Dashboard: React.FC = () => {
                     <div key={index} className="flex items-start space-x-3">
                       <div className="flex-shrink-0 mt-0.5">
                         {activity.action === 'CREATE' && (
-                          <div className="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center">
-                            <CheckCircle className="h-4 w-4 text-green-600" />
+                          <div className="h-8 w-8 rounded-full bg-emerald-100 flex items-center justify-center">
+                            <CheckCircle className="h-4 w-4 text-emerald-600" />
                           </div>
                         )}
                         {activity.action === 'UPDATE' && (
@@ -377,12 +374,12 @@ const Dashboard: React.FC = () => {
                 </div>
               )}
             </div>
-          </div>
+          </Card>
 
-          <div className="bg-white rounded-lg shadow">
+          <Card padding="none">
             <div className="p-6 border-b border-gray-200 flex items-center justify-between">
-              <h3 className="text-lg font-medium text-gray-900">Portal Activity</h3>
-              <Link to="/admin/patients" className="text-sm text-teal-600 hover:text-teal-700">
+              <h3 className="text-base font-serif font-medium text-gray-900">Portal Activity</h3>
+              <Link to="/admin/patients" className="text-sm text-champagne hover:text-bullion font-medium transition-colors">
                 View all
               </Link>
             </div>
@@ -420,11 +417,11 @@ const Dashboard: React.FC = () => {
                 </div>
               )}
             </div>
-          </div>
+          </Card>
 
-          <div className="bg-white rounded-lg shadow">
+          <Card padding="none">
             <div className="p-6 border-b border-gray-200">
-              <h3 className="text-lg font-medium text-gray-900">Quick Actions</h3>
+              <h3 className="text-base font-serif font-medium text-gray-900">Quick Actions</h3>
             </div>
             <div className="p-6">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -440,17 +437,15 @@ const Dashboard: React.FC = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </Card>
         </div>
 
         <div className="space-y-6">
-          <div className="bg-white rounded-lg shadow">
+          <Card padding="none">
             <div className="p-6 border-b border-gray-200 flex items-center justify-between">
-              <h3 className="text-lg font-medium text-gray-900">System Health</h3>
-              {systemHealth.every((s) => s.color === 'text-green-600') && (
-                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                  All Systems Go
-                </span>
+              <h3 className="text-base font-serif font-medium text-gray-900">System Health</h3>
+              {systemHealth.every((s) => s.color === 'text-emerald-600') && (
+                <StatusBadge variant="success">All Systems Go</StatusBadge>
               )}
             </div>
             <div className="p-6">
@@ -471,27 +466,27 @@ const Dashboard: React.FC = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </Card>
 
-          <div className="bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg shadow p-6 text-white">
-            <h3 className="text-lg font-semibold mb-2">Need Help?</h3>
-            <p className="text-teal-100 text-sm mb-4">
+          <div className="bg-gradient-to-br from-onyx to-graphite rounded-lg shadow-sm border border-gray-200 p-6 text-white">
+            <h3 className="text-base font-serif font-semibold mb-2">Need Help?</h3>
+            <p className="text-white/60 text-sm mb-4">
               Check out our documentation or contact support for assistance.
             </p>
             <div className="flex flex-col space-y-2">
-              <button className="px-4 py-2 bg-white text-teal-600 rounded-md text-sm font-medium hover:bg-teal-50 transition-colors">
+              <button className="px-4 py-2 bg-champagne text-onyx rounded-md text-sm font-medium hover:bg-bullion transition-colors">
                 View Documentation
               </button>
-              <button className="px-4 py-2 border border-white text-white rounded-md text-sm font-medium hover:bg-teal-700 transition-colors">
+              <button className="px-4 py-2 border border-white/20 text-white rounded-md text-sm font-medium hover:bg-white/10 transition-colors">
                 Contact Support
               </button>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow p-6">
+          <Card padding="md">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-medium text-gray-900">System Users</h3>
-              <Link to="/admin/users" className="text-sm text-teal-600 hover:text-teal-700">
+              <h3 className="text-base font-serif font-medium text-gray-900">System Users</h3>
+              <Link to="/admin/users" className="text-sm text-champagne hover:text-bullion font-medium transition-colors">
                 View all
               </Link>
             </div>
@@ -505,12 +500,12 @@ const Dashboard: React.FC = () => {
                 <span className="text-sm font-semibold text-gray-900">{stats.activeUsers}</span>
               </div>
             </div>
-          </div>
+          </Card>
 
-          <div className="bg-white rounded-lg shadow p-6">
+          <Card padding="md">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-medium text-gray-900">Patient Portal</h3>
-              <Link to="/admin/patients" className="text-sm text-teal-600 hover:text-teal-700">
+              <h3 className="text-base font-serif font-medium text-gray-900">Patient Portal</h3>
+              <Link to="/admin/patients" className="text-sm text-champagne hover:text-bullion font-medium transition-colors">
                 View all
               </Link>
             </div>
@@ -532,7 +527,7 @@ const Dashboard: React.FC = () => {
                 <span className="text-sm font-semibold text-gray-900">{portalStats.deactivatedPatients}</span>
               </div>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </div>
