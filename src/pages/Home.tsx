@@ -1,17 +1,49 @@
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Eye, Shield, Clock } from 'lucide-react';
 import Logo from '../components/Logo';
 
+const heroImages = [
+  '/assets/images/eyes/eric-ward-ES60LMf18KU-unsplash.jpg',
+  '/assets/images/eyes/lana-graves-h0ZHYdy1qTI-unsplash.jpg',
+  '/assets/images/eyes/luca-iaconelli-GmoHIZ61eMo-unsplash.jpg',
+  '/assets/images/eyes/polina-kuzovkova-6VXBBFt_k9Q-unsplash.jpg',
+  '/assets/images/eyes/simone-stallo-xpZ5AVjw67U-unsplash.jpg',
+];
+
 const Home = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const nextImage = useCallback(() => {
+    setCurrentImage((prev) => (prev + 1) % heroImages.length);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(nextImage, 4000);
+    return () => clearInterval(interval);
+  }, [nextImage]);
+
   return (
     <div className="pt-[72px]">
       {/* Hero */}
-      <section className="bg-onyx relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-          backgroundSize: '48px 48px'
-        }} />
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-44 relative">
+      <section className="bg-onyx relative overflow-hidden min-h-[85vh] flex items-center">
+        {/* Background carousel */}
+        {heroImages.map((src, index) => (
+          <div
+            key={src}
+            className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+            style={{ opacity: index === currentImage ? 1 : 0 }}
+          >
+            <img
+              src={src}
+              alt=""
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-onyx/70" />
+          </div>
+        ))}
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-44 relative z-10 w-full">
           <div className="flex flex-col items-center text-center">
             <div className="mb-16">
               <Logo variant="stacked" mode="dark" height={60} />
@@ -38,9 +70,25 @@ const Home = () => {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
+
+            {/* Carousel indicators */}
+            <div className="mt-16 flex items-center gap-2">
+              {heroImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImage(index)}
+                  className={`transition-all duration-300 rounded-full ${
+                    index === currentImage
+                      ? 'w-8 h-2 bg-bullion'
+                      : 'w-2 h-2 bg-white/30 hover:bg-white/50'
+                  }`}
+                  aria-label={`View image ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-bullion/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-bullion/30 to-transparent z-10" />
       </section>
 
       {/* Procedures */}
