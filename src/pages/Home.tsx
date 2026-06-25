@@ -26,69 +26,75 @@ const Home = () => {
   return (
     <div className="pt-[72px]">
       {/* Hero */}
-      <section className="bg-onyx relative overflow-hidden min-h-[85vh] flex items-center">
-        {/* Background carousel */}
-        {heroImages.map((src, index) => (
-          <div
-            key={src}
-            className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-            style={{ opacity: index === currentImage ? 1 : 0 }}
-          >
-            <img
-              src={src}
-              alt=""
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-onyx/70" />
-          </div>
-        ))}
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-44 relative z-10 w-full">
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-16">
-              <Logo variant="stacked" mode="dark" height={60} />
-            </div>
-            <h1 className="font-serif font-semibold text-4xl sm:text-5xl lg:text-7xl text-white leading-[1.1] max-w-4xl">
-              Vision, perfected<br />
-              <span className="text-champagne">like fine craft.</span>
-            </h1>
-            <p className="mt-8 text-white/50 font-light text-lg max-w-xl leading-relaxed">
-              Bespoke refractive surgery by Dr. Charles Flowers, MD &mdash; the first LASIK pioneer in the Pacific region.
-            </p>
-            <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
-              <Link
-                to="/portal"
-                className="bg-bullion text-onyx px-8 py-4 text-xs font-medium tracking-widest hover:bg-champagne transition-colors duration-200"
-              >
-                BOOK CONSULTATION
-              </Link>
-              <Link
-                to="/procedures"
-                className="flex items-center gap-2 text-white/60 hover:text-white text-sm font-light transition-colors group"
-              >
-                <span>Explore procedures</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+      <section className="bg-onyx relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+          backgroundSize: '48px 48px'
+        }} />
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-28 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left: Text content */}
+            <div className="flex flex-col items-start">
+              <div className="mb-10">
+                <Logo variant="stacked" mode="dark" height={48} />
+              </div>
+              <h1 className="font-serif font-semibold text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.1]">
+                Vision, perfected<br />
+                <span className="text-champagne">like fine craft.</span>
+              </h1>
+              <p className="mt-6 text-white/50 font-light text-lg max-w-md leading-relaxed">
+                Bespoke refractive surgery by Dr. Charles Flowers, MD &mdash; the first LASIK pioneer in the Pacific region.
+              </p>
+              <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
+                <Link
+                  to="/portal"
+                  className="bg-bullion text-onyx px-8 py-4 text-xs font-medium tracking-widest hover:bg-champagne transition-colors duration-200"
+                >
+                  BOOK CONSULTATION
+                </Link>
+                <Link
+                  to="/procedures"
+                  className="flex items-center gap-2 text-white/60 hover:text-white text-sm font-light transition-colors group py-4"
+                >
+                  <span>Explore procedures</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
 
-            {/* Carousel indicators */}
-            <div className="mt-16 flex items-center gap-2">
-              {heroImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentImage(index)}
-                  className={`transition-all duration-300 rounded-full ${
-                    index === currentImage
-                      ? 'w-8 h-2 bg-bullion'
-                      : 'w-2 h-2 bg-white/30 hover:bg-white/50'
-                  }`}
-                  aria-label={`View image ${index + 1}`}
-                />
-              ))}
+            {/* Right: Image carousel */}
+            <div className="relative">
+              <div className="aspect-[4/3] relative overflow-hidden rounded-sm">
+                {heroImages.map((src, index) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+                    style={{ opacity: index === currentImage ? 1 : 0 }}
+                  />
+                ))}
+                <div className="absolute inset-0 ring-1 ring-white/10 rounded-sm pointer-events-none" />
+              </div>
+              {/* Carousel indicators */}
+              <div className="mt-5 flex items-center gap-2 justify-center">
+                {heroImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImage(index)}
+                    className={`transition-all duration-300 rounded-full ${
+                      index === currentImage
+                        ? 'w-8 h-2 bg-bullion'
+                        : 'w-2 h-2 bg-white/30 hover:bg-white/50'
+                    }`}
+                    aria-label={`View image ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-bullion/30 to-transparent z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-bullion/30 to-transparent" />
       </section>
 
       {/* Procedures */}
