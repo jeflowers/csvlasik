@@ -34,7 +34,7 @@ export default function Logo({
   tagline = true,
 }: LogoProps) {
   const wordColor = mode === "dark" ? CREAM : INK;
-  const wordBlock = (size: number, ls = "0.24em") => (
+  const wordBlock = (size: number, ls = "0.24em", showTagline = tagline) => (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", lineHeight: 1 }}>
       <span
         style={{
@@ -63,20 +63,23 @@ export default function Logo({
       >
         LASIK
       </span>
+      {showTagline && (
+        <span
+          style={{
+            fontFamily: "'Inter', system-ui, sans-serif",
+            fontWeight: 300,
+            fontSize: Math.max(7, size * 0.27),
+            letterSpacing: "0.24em",
+            paddingLeft: "0.24em",
+            color: GOLD,
+            lineHeight: 1,
+            marginTop: size * 0.08,
+          }}
+        >
+          REVOLUTIONARY VISION CARE
+        </span>
+      )}
     </div>
-  );
-  const tag = (size: number) => (
-    <span
-      style={{
-        fontFamily: "'Inter', system-ui, sans-serif",
-        fontSize: size,
-        letterSpacing: "0.46em",
-        paddingLeft: "0.46em",
-        color: CHAMPAGNE,
-      }}
-    >
-      REVOLUTIONARY VISION CARE
-    </span>
   );
 
   // marquise mark is wide; scale its box from the requested height
@@ -90,7 +93,6 @@ export default function Logo({
         <Mark size={markH * 2.6} mode={mode} />
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: height * 0.18 }}>
           {wordBlock(height * 0.62)}
-          {tagline && tag(Math.max(7, height * 0.18))}
         </div>
       </div>
     );
@@ -102,7 +104,6 @@ export default function Logo({
       <Mark size={markH * 1.9} mode={mode} />
       <div style={{ display: "flex", flexDirection: "column", gap: height * 0.16 }}>
         {wordBlock(height * 0.66)}
-        {tagline && tag(Math.max(7, height * 0.18))}
       </div>
     </div>
   );
