@@ -1,73 +1,43 @@
 {
-  "title": "Política de Cookies",
-  "lastUpdated": "Última actualización: {date}",
-  "introduction": "Atelier utiliza cookies para mejorar su experiencia revolucionaria de atención oftalmológica.",
-  "sections": {
-    "whatAreCookies": {
-      "title": "¿Qué son las Cookies?",
-      "description": "Las cookies son pequeños archivos de texto que ayudan a personalizar su experiencia en nuestro sitio web de cirugía LASIK revolucionaria."
-    },
-    "howWeUseCookies": {
-      "title": "Cómo Utilizamos las Cookies",
-      "purposes": {
-        "essential": "Cookies Esenciales: Necesarias para el funcionamiento del sitio",
-        "analytics": "Cookies Analíticas: Nos ayudan a mejorar nuestros servicios",
-        "preferences": "Cookies de Preferencias: Recuerdan sus selecciones",
-        "marketing": "Cookies de Marketing: Proporcionan contenido relevante"
-      }
-    },
-    "typesOfCookies": {
-      "title": "Tipos de Cookies que Utilizamos",
-      "session": {
-        "name": "Cookies de Sesión",
-        "description": "Se eliminan cuando cierra su navegador"
-      },
-      "persistent": {
-        "name": "Cookies Persistentes",
-        "description": "Permanecen en su dispositivo hasta su fecha de expiración"
-      },
-      "firstParty": {
-        "name": "Cookies de Primera Parte",
-        "description": "Establecidas por nuestro sitio web Atelier"
-      },
-      "thirdParty": {
-        "name": "Cookies de Terceros",
-        "description": "Establecidas por servicios externos de confianza"
-      }
-    },
-    "specificCookies": {
-      "title": "Cookies Específicas que Utilizamos",
-      "appointment": "Cookie de Programación de Citas: Recuerda su progreso en el formulario",
-      "language": "Cookie de Idioma: Mantiene su preferencia de idioma",
-      "consent": "Cookie de Consentimiento: Registra sus preferencias de cookies"
-    },
-    "managingCookies": {
-      "title": "Gestión de Cookies",
-      "description": "Puede controlar y eliminar cookies a través de la configuración de su navegador.",
-      "note": "Nota: Deshabilitar cookies puede afectar la funcionalidad del sitio."
-    },
-    "updates": {
-      "title": "Actualizaciones de la Política",
-      "description": "Esta política puede actualizarse para reflejar cambios en nuestras prácticas o requisitos legales."
-    },
-    "contact": {
-      "title": "Contáctenos",
-      "description": "Para preguntas sobre nuestra política de cookies, contáctenos en privacy@atelierlasik.com"
-    }
+  "banner": {
+    "title": "Valoramos su privacidad",
+    "description": "Utilizamos cookies para mejorar su experiencia, analizar el uso del sitio y ayudar en nuestros esfuerzos de marketing. Al hacer clic en \"Aceptar todo\", usted consiente nuestro uso de cookies.",
+    "learnMore": "Saber mas",
+    "preferences": "Preferencias",
+    "necessaryOnly": "Solo necesarias",
+    "acceptAll": "Aceptar todo"
   },
-  "consent": {
-    "banner": {
-      "title": "Este sitio utiliza cookies",
-      "description": "Utilizamos cookies para mejorar su experiencia y analizar el tráfico del sitio.",
-      "accept": "Aceptar Todas",
-      "decline": "Solo Esenciales",
-      "customize": "Personalizar"
+  "preferences": {
+    "title": "Preferencias de Cookies",
+    "description": "Puede elegir que tipos de cookies permitir. Tenga en cuenta que bloquear algunos tipos de cookies puede afectar su experiencia en nuestro sitio.",
+    "categories": {
+      "necessary": {
+        "title": "Cookies necesarias",
+        "description": "Estas cookies son esenciales para que el sitio web funcione correctamente. No se pueden deshabilitar."
+      },
+      "analytics": {
+        "title": "Cookies analiticas",
+        "description": "Nos ayudan a comprender como los visitantes interactuan con nuestro sitio web al recopilar e informar datos de forma anonima."
+      },
+      "marketing": {
+        "title": "Cookies de marketing",
+        "description": "Se utilizan para rastrear visitantes en diferentes sitios web para mostrar anuncios relevantes y atractivos."
+      },
+      "personalization": {
+        "title": "Cookies de personalizacion",
+        "description": "Nos permiten recordar sus preferencias y proporcionar funciones mejoradas y personalizadas."
+      }
     },
-    "modal": {
-      "title": "Preferencias de Cookies",
-      "save": "Guardar Preferencias",
-      "acceptAll": "Aceptar Todas",
-      "rejectAll": "Rechazar Todas"
+    "rights": {
+      "title": "Sus derechos",
+      "change": "Puede cambiar sus preferencias en cualquier momento",
+      "access": "Puede solicitar acceso a sus datos personales",
+      "deletion": "Puede solicitar la eliminacion de sus datos personales",
+      "withdraw": "Puede retirar su consentimiento en cualquier momento"
+    },
+    "buttons": {
+      "cancel": "Cancelar",
+      "save": "Guardar preferencias"
     }
   }
 }
