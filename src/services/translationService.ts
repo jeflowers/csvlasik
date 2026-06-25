@@ -1,90 +1,27 @@
+import { supabase } from '../lib/supabase';
+
 interface CacheEntry {
   translation: string;
   timestamp: number;
-  service: 'deepl' | 'google';
+  service: string;
 }
 
 interface TranslationCache {
   [key: string]: CacheEntry;
 }
 
-interface ServiceConfig {
-  enabled: boolean;
-  apiKey: string;
-  baseUrl: string;
-}
-
-// DeepL language code mapping
-const DEEPL_LANG_MAP: Record<string, string> = {
-  'ja': 'JA',
-  'es-MX': 'ES',
-  'pt-BR': 'PT-BR',
-  'ko': 'KO',
-  'zh': 'ZH-HANS',
-  'ar': 'AR',
-  'he': 'HE'
-};
-
-// Google Translate language code mapping
-const GOOGLE_LANG_MAP: Record<string, string> = {
-  'ja': 'ja',
-  'es-MX': 'es',
-  'pt-BR': 'pt',
-  'ko': 'ko',
-  'vi': 'vi',
-  'zh': 'zh-CN',
-  'ar': 'ar',
-  'hy': 'hy',
-  'he': 'iw',
-  'tl': 'tl'
-};
-
-// Medical terms that should never be translated
-const PROTECTED_TERMS = [
-  'LASIK', 'PRK', 'ICL', 'FDA', 'Dr. Charles Flowers',
-  'Atelier', 'Visian ICL', 'Femtosecond', 'Excimer',
-  'Keratomileusis', 'Keratectomy', 'Topography', 'Wavefront',
-  'Aberrometry'
-];
+const DEEPL_LANGUAGES = ['ja', 'es-MX', 'pt-BR', 'ko', 'zh', 'ar', 'he'];
+const GOOGLE_ONLY_LANGUAGES = ['tl', 'vi', 'hy'];
+const ALL_SUPPORTED = [...DEEPL_LANGUAGES, ...GOOGLE_ONLY_LANGUAGES];
 
 const CACHE_KEY = 'atelier_translation_cache';
 const CACHE_EXPIRY_MS = 24 * 60 * 60 * 1000; // 24 hours
 
 class TranslationService {
   private cache: TranslationCache = {};
-  private deepl: ServiceConfig;
-  private google: ServiceConfig;
 
   constructor() {
-    this.deepl = {
-      enabled: false,
-      apiKey: '',
-      baseUrl: import.meta.env.VITE_DEEPL_API_URL || 'https://api-free.deepl.com/v2'
-    };
-
-    this.google = {
-      enabled: false,
-      apiKey: '',
-      baseUrl: 'https://translation.googleapis.com/language/translate/v2'
-    };
-
-    this.initializeServices();
     this.loadCache();
-  }
-
-  private initializeServices() {
-    const deeplKey = import.meta.env.VITE_DEEPL_API_KEY;
-    const googleKey = import.meta.env.VITE_GOOGLE_TRANSLATE_API_KEY;
-
-    if (deeplKey && deeplKey !== 'your-deepl-api-key-here') {
-      this.deepl.enabled = true;
-      this.deepl.apiKey = deeplKey;
-    }
-
-    if (googleKey && googleKey !== 'your-google-translate-api-key-here') {
-      this.google.enabled = true;
-      this.google.apiKey = googleKey;
-    }
   }
 
   private loadCache() {
@@ -102,7 +39,7 @@ class TranslationService {
     try {
       localStorage.setItem(CACHE_KEY, JSON.stringify(this.cache));
     } catch {
-      // localStorage full or unavailable - silently continue
+      // localStorage full or unavailable
     }
   }
 
@@ -129,78 +66,18 @@ class TranslationService {
     return hash.toString();
   }
 
-  private protectTerms(translated: string): string {
-    let result = translated;
-    for (const term of PROTECTED_TERMS) {
-      const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const regex = new RegExp(escaped, 'gi');
-      result = result.replace(regex, term);
-    }
-    return result;
-  }
-
   isDeeplSupported(lang: string): boolean {
-    return lang in DEEPL_LANG_MAP;
+    return DEEPL_LANGUAGES.includes(lang);
   }
 
   isGoogleSupported(lang: string): boolean {
-    return lang in GOOGLE_LANG_MAP;
-  }
-
-  private async callDeepL(text: string, targetLang: string, sourceLang: string): Promise<string> {
-    const deeplTarget = DEEPL_LANG_MAP[targetLang];
-    if (!deeplTarget) throw new Error(`DeepL: unsupported language ${targetLang}`);
-
-    const response = await fetch(`${this.deepl.baseUrl}/translate`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `DeepL-Auth-Key ${this.deepl.apiKey}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        text,
-        source_lang: sourceLang.toUpperCase(),
-        target_lang: deeplTarget,
-        preserve_formatting: '1'
-      })
-    });
-
-    if (!response.ok) {
-      const body = await response.text().catch(() => '');
-      throw new Error(`DeepL ${response.status}: ${body}`);
-    }
-
-    const data = await response.json();
-    return data.translations[0].text;
-  }
-
-  private async callGoogle(text: string, targetLang: string, sourceLang: string): Promise<string> {
-    const googleTarget = GOOGLE_LANG_MAP[targetLang];
-    if (!googleTarget) throw new Error(`Google: unsupported language ${targetLang}`);
-
-    const response = await fetch(`${this.google.baseUrl}?key=${this.google.apiKey}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        q: text,
-        source: sourceLang,
-        target: googleTarget,
-        format: 'text'
-      })
-    });
-
-    if (!response.ok) {
-      const body = await response.text().catch(() => '');
-      throw new Error(`Google Translate ${response.status}: ${body}`);
-    }
-
-    const data = await response.json();
-    return data.data.translations[0].translatedText;
+    return ALL_SUPPORTED.includes(lang);
   }
 
   /**
-   * Translate text using the service chain: DeepL -> Google -> original text.
-   * Static JSON files (loaded by i18next) are checked BEFORE this service is called.
+   * Translate text via the Supabase Edge Function proxy.
+   * The edge function holds API keys securely and routes:
+   *   DeepL (ja, es-MX, pt-BR, ko, zh, ar, he) -> Google (tl, vi, hy) -> original text
    */
   async translate(
     text: string,
@@ -213,11 +90,12 @@ class TranslationService {
       key?: string;
     } = {}
   ): Promise<string> {
-    const { preferredService = 'auto', useCache = true } = options;
+    const { useCache = true } = options;
 
     if (targetLang === sourceLang || targetLang === 'en') return text;
+    if (!ALL_SUPPORTED.includes(targetLang)) return text;
 
-    // Check cache
+    // Check cache first
     if (useCache) {
       const cacheKey = this.makeCacheKey(text, targetLang, sourceLang);
       const cached = this.cache[cacheKey];
@@ -226,55 +104,31 @@ class TranslationService {
       }
     }
 
-    // Determine service order based on language support
-    const tryDeepL = this.deepl.enabled && this.isDeeplSupported(targetLang);
-    const tryGoogle = this.google.enabled && this.isGoogleSupported(targetLang);
+    try {
+      const { data, error } = await supabase.functions.invoke('translate', {
+        body: { text, targetLang, sourceLang },
+      });
 
-    let services: Array<'deepl' | 'google'> = [];
+      if (error) throw error;
 
-    if (preferredService === 'deepl') {
-      if (tryDeepL) services.push('deepl');
-      if (tryGoogle) services.push('google');
-    } else if (preferredService === 'google') {
-      if (tryGoogle) services.push('google');
-      if (tryDeepL) services.push('deepl');
-    } else {
-      // Auto: DeepL first (higher quality), Google as fallback
-      if (tryDeepL) services.push('deepl');
-      if (tryGoogle) services.push('google');
-    }
+      const translation = data?.translation || text;
 
-    if (services.length === 0) {
-      return text; // No services available, return original
-    }
-
-    for (const service of services) {
-      try {
-        let translation: string;
-        if (service === 'deepl') {
-          translation = await this.callDeepL(text, targetLang, sourceLang);
-        } else {
-          translation = await this.callGoogle(text, targetLang, sourceLang);
-        }
-
-        translation = this.protectTerms(translation);
-
-        // Cache the result
-        if (useCache) {
-          const cacheKey = this.makeCacheKey(text, targetLang, sourceLang);
-          this.cache[cacheKey] = { translation, timestamp: Date.now(), service };
-          this.saveCache();
-        }
-
-        return translation;
-      } catch (error) {
-        console.warn(`Translation via ${service} failed for "${text.slice(0, 40)}..." to ${targetLang}:`, error);
-        // Continue to next service
+      // Cache the result
+      if (useCache && translation !== text) {
+        const cacheKey = this.makeCacheKey(text, targetLang, sourceLang);
+        this.cache[cacheKey] = {
+          translation,
+          timestamp: Date.now(),
+          service: data?.service || 'unknown',
+        };
+        this.saveCache();
       }
-    }
 
-    // All services failed - return original text
-    return text;
+      return translation;
+    } catch (error) {
+      console.warn(`Translation failed for "${text.slice(0, 40)}..." to ${targetLang}:`, error);
+      return text;
+    }
   }
 
   async batchTranslate(
@@ -291,10 +145,10 @@ class TranslationService {
           results[lang][i] = await this.translate(items[i].text, lang, 'en', {
             ...options,
             key: items[i].key,
-            namespace: items[i].namespace
+            namespace: items[i].namespace,
           });
           // Rate limiting delay
-          await new Promise(resolve => setTimeout(resolve, 100));
+          await new Promise(resolve => setTimeout(resolve, 50));
         } catch {
           results[lang][i] = items[i].text;
         }
@@ -307,19 +161,19 @@ class TranslationService {
   getServiceStatus() {
     return {
       deepl: {
-        enabled: this.deepl.enabled,
-        supportedLanguages: Object.keys(DEEPL_LANG_MAP),
-        name: 'DeepL'
+        enabled: true,
+        supportedLanguages: DEEPL_LANGUAGES,
+        name: 'DeepL (via Edge Function)',
       },
       google: {
-        enabled: this.google.enabled,
-        supportedLanguages: Object.keys(GOOGLE_LANG_MAP),
-        name: 'Google Translate'
+        enabled: true,
+        supportedLanguages: ALL_SUPPORTED,
+        name: 'Google Translate (via Edge Function)',
       },
       cache: {
         entries: Object.keys(this.cache).length,
-        lastCleared: localStorage.getItem('translation_cache_cleared') || 'Never'
-      }
+        lastCleared: localStorage.getItem('translation_cache_cleared') || 'Never',
+      },
     };
   }
 
@@ -330,7 +184,7 @@ class TranslationService {
   }
 
   isAvailable(): boolean {
-    return this.deepl.enabled || this.google.enabled;
+    return true; // Always available since edge function handles availability
   }
 }
 

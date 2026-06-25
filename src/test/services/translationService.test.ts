@@ -1,12 +1,21 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import translationService from '../../services/translationService';
 
-global.fetch = vi.fn();
+vi.mock('../../lib/supabase', () => ({
+  supabase: {
+    functions: {
+      invoke: vi.fn(),
+    },
+  },
+}));
+
+import { supabase } from '../../lib/supabase';
 
 describe('Translation Service', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     localStorage.clear();
+    translationService.clearCache();
   });
 
   describe('Service Status', () => {
@@ -15,10 +24,8 @@ describe('Translation Service', () => {
 
       expect(status).toHaveProperty('deepl');
       expect(status).toHaveProperty('google');
-      expect(status.deepl).toHaveProperty('enabled');
-      expect(status.google).toHaveProperty('enabled');
-      expect(status.deepl).toHaveProperty('supportedLanguages');
-      expect(status.google).toHaveProperty('supportedLanguages');
+      expect(status.deepl.enabled).toBe(true);
+      expect(status.google.enabled).toBe(true);
     });
 
     it('reports DeepL supports expected languages', () => {
@@ -43,23 +50,55 @@ describe('Translation Service', () => {
     it('returns original text for same language', async () => {
       const result = await translationService.translate('Hello', 'en', 'en');
       expect(result).toBe('Hello');
+      expect(supabase.functions.invoke).not.toHaveBeenCalled();
     });
 
     it('returns original text when target is English', async () => {
       const result = await translationService.translate('Hello', 'en', 'es');
       expect(result).toBe('Hello');
+      expect(supabase.functions.invoke).not.toHaveBeenCalled();
     });
 
-    it('returns original text when no services available', async () => {
-      const result = await translationService.translate('Hello', 'es', 'en');
+    it('returns original text for unsupported languages', async () => {
+      const result = await translationService.translate('Hello', 'xx', 'en');
+      expect(result).toBe('Hello');
+      expect(supabase.functions.invoke).not.toHaveBeenCalled();
+    });
+
+    it('calls edge function for supported languages', async () => {
+      vi.mocked(supabase.functions.invoke).mockResolvedValueOnce({
+        data: { translation: 'Hola', service: 'deepl' },
+        error: null,
+      });
+
+      const result = await translationService.translate('Hello', 'es-MX', 'en');
+      expect(result).toBe('Hola');
+      expect(supabase.functions.invoke).toHaveBeenCalledWith('translate', {
+        body: { text: 'Hello', targetLang: 'es-MX', sourceLang: 'en' },
+      });
+    });
+
+    it('handles edge function errors gracefully', async () => {
+      vi.mocked(supabase.functions.invoke).mockResolvedValueOnce({
+        data: null,
+        error: new Error('Function invocation failed'),
+      });
+
+      const result = await translationService.translate('Hello', 'es-MX', 'en');
       expect(result).toBe('Hello');
     });
 
-    it('handles API failures gracefully', async () => {
-      (fetch as any).mockRejectedValueOnce(new Error('Network error'));
+    it('caches successful translations', async () => {
+      vi.mocked(supabase.functions.invoke).mockResolvedValueOnce({
+        data: { translation: 'Hola', service: 'deepl' },
+        error: null,
+      });
 
-      const result = await translationService.translate('Hello', 'es', 'en');
-      expect(result).toBe('Hello');
+      await translationService.translate('Hello', 'es-MX', 'en');
+      const result = await translationService.translate('Hello', 'es-MX', 'en');
+
+      expect(result).toBe('Hola');
+      expect(supabase.functions.invoke).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -76,7 +115,7 @@ describe('Translation Service', () => {
       const expired = {
         translation: 'Test',
         timestamp: Date.now() - (25 * 60 * 60 * 1000),
-        service: 'deepl' as const
+        service: 'deepl',
       };
 
       expect(translationService.isCacheValid(expired)).toBe(false);
@@ -86,7 +125,7 @@ describe('Translation Service', () => {
       const fresh = {
         translation: 'Test',
         timestamp: Date.now() - (1 * 60 * 60 * 1000),
-        service: 'deepl' as const
+        service: 'deepl',
       };
 
       expect(translationService.isCacheValid(fresh)).toBe(true);
@@ -106,6 +145,12 @@ describe('Translation Service', () => {
       expect(translationService.isGoogleSupported('vi')).toBe(true);
       expect(translationService.isGoogleSupported('hy')).toBe(true);
       expect(translationService.isGoogleSupported('ja')).toBe(true);
+    });
+  });
+
+  describe('isAvailable', () => {
+    it('is always available (edge function handles availability)', () => {
+      expect(translationService.isAvailable()).toBe(true);
     });
   });
 });
