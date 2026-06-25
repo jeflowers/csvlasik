@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, ArrowLeft, CheckCircle, AlertCircle } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
+import Logo from '../Logo';
 
 const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -32,73 +33,69 @@ const ForgotPassword: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-blue-50 flex items-center justify-center p-4">
-      <div className="max-w-md w-full">
-        <div className="bg-white rounded-2xl shadow-xl p-8">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-teal-100 rounded-full mb-4">
-              <Mail className="h-8 w-8 text-teal-600" />
+    <div className="min-h-screen bg-onyx flex items-center justify-center p-4">
+      <div className="max-w-sm w-full">
+        <div className="flex flex-col items-center mb-8">
+          <Logo variant="stacked" mode="dark" height={44} />
+        </div>
+
+        <div className="bg-graphite border border-white/10 rounded-lg p-8">
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-white/5 border border-white/10 rounded-full mb-4">
+              <Mail className="h-5 w-5 text-champagne" />
             </div>
-            <h2 className="text-3xl font-bold text-gray-900">Forgot Password?</h2>
-            <p className="text-gray-600 mt-2">
-              No worries! Enter your email and we'll send you reset instructions.
+            <h2 className="text-xl font-serif text-white">Forgot Password?</h2>
+            <p className="text-white/50 mt-2 text-sm">
+              Enter your email and we'll send you reset instructions.
             </p>
           </div>
 
           {success ? (
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+            <div className="bg-green-900/20 border border-green-500/30 rounded-md p-4">
               <div className="flex items-start">
-                <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
+                <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 mr-3 flex-shrink-0" />
                 <div>
-                  <h3 className="text-sm font-medium text-green-900 mb-1">Email Sent!</h3>
-                  <p className="text-sm text-green-700">
-                    Check your email for a password reset link. If you don't see it, check your spam folder.
+                  <h3 className="text-sm font-medium text-green-300 mb-1">Email Sent!</h3>
+                  <p className="text-sm text-green-400/70">
+                    Check your email for a password reset link.
                   </p>
                 </div>
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
               {error && (
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                <div className="bg-red-900/20 border border-red-500/30 rounded-md p-4">
                   <div className="flex items-start">
-                    <AlertCircle className="h-5 w-5 text-red-600 mt-0.5 mr-3 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-sm font-medium text-red-900 mb-1">Error</h3>
-                      <p className="text-sm text-red-700">{error}</p>
-                    </div>
+                    <AlertCircle className="h-5 w-5 text-red-400 mt-0.5 mr-3 flex-shrink-0" />
+                    <p className="text-sm text-red-300">{error}</p>
                   </div>
                 </div>
               )}
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-white/70 mb-1.5">
                   Email Address
                 </label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Mail className="h-5 w-5 text-gray-400" />
-                  </div>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="block w-full px-3 py-2.5 bg-white/5 border border-white/20 text-white placeholder-white/30 rounded-md focus:outline-none focus:ring-2 focus:ring-bullion focus:border-bullion sm:text-sm"
+                  placeholder="your.email@example.com"
+                />
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+                className="w-full py-2.5 px-4 text-sm font-medium rounded-md bg-onyx text-white border border-white/20 hover:bg-champagne hover:text-onyx hover:border-champagne focus:outline-none focus:ring-2 focus:ring-bullion disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 {loading ? (
                   <span className="flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-current mr-2"></div>
                     Sending...
                   </span>
                 ) : (
@@ -111,20 +108,11 @@ const ForgotPassword: React.FC = () => {
           <div className="mt-6 text-center">
             <Link
               to="/admin/login"
-              className="inline-flex items-center text-sm text-teal-600 hover:text-teal-700 font-medium"
+              className="inline-flex items-center text-sm text-champagne hover:text-bullion font-medium transition-colors"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Login
             </Link>
-          </div>
-
-          <div className="mt-8 pt-6 border-t border-gray-200">
-            <div className="text-center text-sm text-gray-600">
-              <p className="mb-2">Need help?</p>
-              <p>
-                Contact your system administrator if you continue to have issues.
-              </p>
-            </div>
           </div>
         </div>
       </div>

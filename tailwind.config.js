@@ -28,6 +28,21 @@ export default {
         bullion: '#D4AF37',
         champagne: '#C9A96E',
         cream: '#FBF7EF',
+        status: {
+          success: '#059669',
+          warning: '#D97706',
+          info: '#2563EB',
+          danger: '#DC2626',
+        },
+        role: {
+          super_admin: '#DC2626',
+          admin: '#EA580C',
+          editor: '#2563EB',
+          author: '#059669',
+          moderator: '#6B7280',
+          scheduler: '#6B7280',
+          viewer: '#6B7280',
+        },
         chopard: {
           primary: '#2c2c2c',
           secondary: '#666666',
