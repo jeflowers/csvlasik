@@ -1,18 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  FileText,
-  Search,
-  Filter,
-  Plus,
-  Edit,
-  Trash2,
-  Eye,
-  Calendar,
-  Tag,
-  Globe,
-  BarChart3,
-  X
-} from 'lucide-react';
+import { FileText, Search, Filter, Plus, CreditCard as Edit, Trash2, Eye, Calendar, Tag, Globe, BarChart3, X } from 'lucide-react';
 import { apiService } from '../../services/api';
 import { storageService } from '../../services/storageService';
 
@@ -123,12 +110,12 @@ const ArticlesManager: React.FC = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Articles Management</h1>
-          <p className="text-gray-600">Create and manage educational content and blog posts</p>
+          <h1 className="text-2xl font-serif font-semibold text-gray-900">Articles Management</h1>
+          <p className="text-sm text-gray-500 mt-1">Create and manage educational content and blog posts</p>
         </div>
         <button
           onClick={() => setShowCreateModal(true)}
-          className="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors"
+          className="bg-onyx text-white px-4 py-2 rounded-lg hover:bg-champagne hover:text-onyx border border-onyx hover:border-champagne transition-colors"
         >
           <Plus className="h-4 w-4 mr-2 inline" />
           New Article
@@ -147,7 +134,7 @@ const ArticlesManager: React.FC = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search articles..."
-                className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
               />
             </div>
           </div>
@@ -157,7 +144,7 @@ const ArticlesManager: React.FC = () => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
             >
               <option value="all">All Statuses</option>
               <option value="draft">Draft</option>
@@ -170,7 +157,7 @@ const ArticlesManager: React.FC = () => {
             <select
               value={categoryFilter}
               onChange={(e) => setCategoryFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
             >
               <option value="all">All Categories</option>
               {categories.map(category => (
@@ -224,7 +211,7 @@ const ArticlesManager: React.FC = () => {
               {loading ? (
                 <tr>
                   <td colSpan={6} className="px-6 py-12 text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600 mx-auto"></div>
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-bullion mx-auto"></div>
                   </td>
                 </tr>
               ) : filteredArticles.length === 0 ? (
@@ -304,7 +291,7 @@ const ArticlesManager: React.FC = () => {
             >
               Previous
             </button>
-            <span className="px-3 py-1 bg-teal-100 text-teal-800 rounded">
+            <span className="px-3 py-1 bg-cream text-champagne rounded font-medium">
               Page {pagination.page} of {Math.ceil(pagination.total / pagination.limit)}
             </span>
             <button
@@ -446,7 +433,7 @@ const ArticleModal: React.FC<{
                 onClick={() => setActiveTab(tab.id)}
                 className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center ${
                   activeTab === tab.id
-                    ? 'border-teal-500 text-teal-600'
+                    ? 'border-bullion text-bullion'
                     : 'border-transparent text-gray-500 hover:text-gray-700'
                 }`}
               >
@@ -470,7 +457,7 @@ const ArticleModal: React.FC<{
                     required
                     value={formData.title}
                     onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                     placeholder="Enter article title..."
                   />
                 </div>
@@ -484,7 +471,7 @@ const ArticleModal: React.FC<{
                     rows={15}
                     value={formData.content}
                     onChange={(e) => setFormData(prev => ({ ...prev, content: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                     placeholder="Write your article content here..."
                   />
                   <p className="text-xs text-gray-500 mt-1">
@@ -504,7 +491,7 @@ const ArticleModal: React.FC<{
                     rows={3}
                     value={formData.excerpt}
                     onChange={(e) => setFormData(prev => ({ ...prev, excerpt: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                     placeholder="Brief summary shown in article listings..."
                   />
                   <p className="text-xs text-gray-500 mt-1">
@@ -520,7 +507,7 @@ const ArticleModal: React.FC<{
                     rows={3}
                     value={formData.meta_description}
                     onChange={(e) => setFormData(prev => ({ ...prev, meta_description: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                     placeholder="Meta description for search results..."
                   />
                   <p className="text-xs text-gray-500 mt-1">
@@ -537,7 +524,7 @@ const ArticleModal: React.FC<{
                     accept="image/*"
                     onChange={handleImageUpload}
                     disabled={uploading}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                   />
                   {formData.featured_image && (
                     <div className="mt-3">
@@ -562,7 +549,7 @@ const ArticleModal: React.FC<{
                       type="text"
                       value={formData.video_url}
                       onChange={(e) => setFormData(prev => ({ ...prev, video_url: e.target.value }))}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                       placeholder="YouTube ID or video URL"
                     />
                     <p className="text-xs text-gray-500 mt-1">
@@ -577,7 +564,7 @@ const ArticleModal: React.FC<{
                     <select
                       value={formData.video_type}
                       onChange={(e) => setFormData(prev => ({ ...prev, video_type: e.target.value as 'youtube' | 'vimeo' | 'uploaded' }))}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                     >
                       <option value="youtube">YouTube</option>
                       <option value="vimeo">Vimeo</option>
@@ -594,7 +581,7 @@ const ArticleModal: React.FC<{
                     type="text"
                     value={formData.tags}
                     onChange={(e) => setFormData(prev => ({ ...prev, tags: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                     placeholder="LASIK, vision correction, eye surgery"
                   />
                   <p className="text-xs text-gray-500 mt-1">
@@ -614,7 +601,7 @@ const ArticleModal: React.FC<{
                     <select
                       value={formData.category}
                       onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value }))}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                     >
                       {['Procedures', 'Technology', 'Patient Care', 'News', 'Education'].map(category => (
                         <option key={category} value={category}>{category}</option>
@@ -629,7 +616,7 @@ const ArticleModal: React.FC<{
                     <select
                       value={formData.status}
                       onChange={(e) => setFormData(prev => ({ ...prev, status: e.target.value as 'draft' | 'published' | 'archived' }))}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                     >
                       <option value="draft">Draft</option>
                       <option value="published">Published</option>
@@ -644,7 +631,7 @@ const ArticleModal: React.FC<{
                     <select
                       value={formData.visibility}
                       onChange={(e) => setFormData(prev => ({ ...prev, visibility: e.target.value as 'internal' | 'external' }))}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                     >
                       <option value="external">External (Public-facing)</option>
                       <option value="internal">Internal (Staff only)</option>
@@ -680,7 +667,7 @@ const ArticleModal: React.FC<{
             <button
               type="submit"
               disabled={saving}
-              className="px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md hover:bg-teal-700 disabled:opacity-50"
+              className="px-4 py-2 text-sm font-medium text-white bg-onyx rounded-md hover:bg-champagne hover:text-onyx border border-onyx hover:border-champagne disabled:opacity-50 transition-colors"
             >
               {saving ? 'Saving...' : article ? 'Update Article' : 'Create Article'}
             </button>

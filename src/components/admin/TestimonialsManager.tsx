@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  MessageSquare,
-  Search,
-  Check,
-  X,
-  Edit,
-  Star,
-  Calendar
-} from 'lucide-react';
+import { MessageSquare, Search, Check, X, CreditCard as Edit, Star, Calendar } from 'lucide-react';
 import { apiService } from '../../services/api';
 import { storageService } from '../../services/storageService';
 
@@ -112,12 +104,12 @@ const TestimonialsManager: React.FC = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Testimonials Management</h1>
-          <p className="text-gray-600">Manage patient testimonials and success stories</p>
+          <h1 className="text-2xl font-serif font-semibold text-gray-900">Testimonials Management</h1>
+          <p className="text-sm text-gray-500 mt-1">Manage patient testimonials and success stories</p>
         </div>
         <button
           onClick={() => setShowCreateModal(true)}
-          className="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors"
+          className="bg-onyx text-white px-4 py-2 rounded-lg hover:bg-champagne hover:text-onyx border border-onyx hover:border-champagne transition-colors"
         >
           <MessageSquare className="h-4 w-4 mr-2 inline" />
           Add Testimonial
@@ -136,7 +128,7 @@ const TestimonialsManager: React.FC = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search testimonials..."
-                className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
               />
             </div>
           </div>
@@ -146,7 +138,7 @@ const TestimonialsManager: React.FC = () => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
             >
               <option value="all">All Statuses</option>
               <option value="pending">Pending</option>
@@ -159,7 +151,7 @@ const TestimonialsManager: React.FC = () => {
             <select
               value={procedureFilter}
               onChange={(e) => setProcedureFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
             >
               <option value="all">All Procedures</option>
               <option value="LASIK">LASIK</option>
@@ -185,9 +177,9 @@ const TestimonialsManager: React.FC = () => {
 
       {/* Bulk Actions */}
       {selectedTestimonials.length > 0 && (
-        <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+        <div className="bg-cream/50 border border-champagne/30 rounded-lg p-4">
           <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-teal-900">
+            <span className="text-sm font-medium text-gray-900">
               {selectedTestimonials.length} testimonial(s) selected
             </span>
             <div className="flex space-x-2">
@@ -256,7 +248,7 @@ const TestimonialsManager: React.FC = () => {
               {loading ? (
                 <tr>
                   <td colSpan={8} className="px-6 py-12 text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600 mx-auto"></div>
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-bullion mx-auto"></div>
                   </td>
                 </tr>
               ) : filteredTestimonials.length === 0 ? (
@@ -294,7 +286,7 @@ const TestimonialsManager: React.FC = () => {
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <span className="px-2 py-1 bg-teal-100 text-teal-800 text-xs rounded">
+                      <span className="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded">
                         {testimonial.procedure_type || 'N/A'}
                       </span>
                     </td>
@@ -505,7 +497,7 @@ const TestimonialModal: React.FC<{
                 required
                 value={formData.name}
                 onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
               />
             </div>
 
@@ -517,7 +509,7 @@ const TestimonialModal: React.FC<{
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                 placeholder="patient@email.com"
               />
             </div>
@@ -531,7 +523,7 @@ const TestimonialModal: React.FC<{
               <select
                 value={formData.procedure_type}
                 onChange={(e) => setFormData(prev => ({ ...prev, procedure_type: e.target.value }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
               >
                 <option value="LASIK">LASIK</option>
                 <option value="PRK">PRK</option>
@@ -547,7 +539,7 @@ const TestimonialModal: React.FC<{
                 type="date"
                 value={formData.procedure_date}
                 onChange={(e) => setFormData(prev => ({ ...prev, procedure_date: e.target.value }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
               />
             </div>
           </div>
@@ -561,7 +553,7 @@ const TestimonialModal: React.FC<{
               rows={6}
               value={formData.content}
               onChange={(e) => setFormData(prev => ({ ...prev, content: e.target.value }))}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
               placeholder="Share the patient's experience..."
             />
           </div>
@@ -571,7 +563,7 @@ const TestimonialModal: React.FC<{
             <select
               value={formData.rating}
               onChange={(e) => setFormData(prev => ({ ...prev, rating: parseInt(e.target.value) }))}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
             >
               <option value={5}>5 Stars - Excellent</option>
               <option value={4}>4 Stars - Very Good</option>
@@ -594,7 +586,7 @@ const TestimonialModal: React.FC<{
                   accept="image/*"
                   onChange={handleImageUpload}
                   disabled={uploading}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                 />
                 {formData.image_url && (
                   <div className="mt-2">
@@ -618,7 +610,7 @@ const TestimonialModal: React.FC<{
                   <select
                     value={formData.video_type}
                     onChange={(e) => setFormData(prev => ({ ...prev, video_type: e.target.value as 'youtube' | 'vimeo' | 'uploaded' }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                   >
                     <option value="youtube">YouTube</option>
                     <option value="vimeo">Vimeo</option>
@@ -636,7 +628,7 @@ const TestimonialModal: React.FC<{
                       accept="video/*"
                       onChange={handleVideoUpload}
                       disabled={uploading}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                     />
                     {formData.video_url && (
                       <div className="mt-2">
@@ -656,7 +648,7 @@ const TestimonialModal: React.FC<{
                       type="text"
                       value={formData.video_url}
                       onChange={(e) => setFormData(prev => ({ ...prev, video_url: e.target.value }))}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                       placeholder={formData.video_type === 'youtube' ? 'YouTube ID: dQw4w9WgXcQ' : 'Vimeo URL'}
                     />
                     <p className="mt-1 text-xs text-gray-500">
@@ -676,7 +668,7 @@ const TestimonialModal: React.FC<{
                   type="url"
                   value={formData.video_thumbnail}
                   onChange={(e) => setFormData(prev => ({ ...prev, video_thumbnail: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-bullion focus:border-bullion"
                   placeholder="https://example.com/video-thumbnail.jpg"
                 />
               </div>
@@ -694,7 +686,7 @@ const TestimonialModal: React.FC<{
             <button
               type="submit"
               disabled={saving}
-              className="px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md hover:bg-teal-700 disabled:opacity-50"
+              className="px-4 py-2 text-sm font-medium text-white bg-onyx rounded-md hover:bg-champagne hover:text-onyx border border-onyx hover:border-champagne disabled:opacity-50 transition-colors"
             >
               {saving ? 'Saving...' : testimonial ? 'Update Testimonial' : 'Create Testimonial'}
             </button>

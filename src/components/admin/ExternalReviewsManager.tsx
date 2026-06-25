@@ -97,7 +97,7 @@ const ExternalReviewsManager: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-bullion"></div>
       </div>
     );
   }
@@ -106,12 +106,12 @@ const ExternalReviewsManager: React.FC = () => {
     <div className="space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">External Reviews</h1>
-          <p className="text-gray-600">Manage reviews from trusted medical platforms</p>
+          <h1 className="text-2xl font-serif font-semibold text-gray-900">External Reviews</h1>
+          <p className="text-sm text-gray-500 mt-1">Manage reviews from trusted medical platforms</p>
         </div>
         <button
           onClick={() => setShowImportModal(true)}
-          className="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors"
+          className="bg-onyx text-white px-4 py-2 rounded-lg hover:bg-champagne hover:text-onyx border border-onyx hover:border-champagne transition-colors"
         >
           <Plus className="h-4 w-4 mr-2 inline" />
           Import Reviews
@@ -146,7 +146,7 @@ const ExternalReviewsManager: React.FC = () => {
                     href={source.profile_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-teal-600 hover:text-teal-700 flex items-center"
+                    className="text-champagne hover:text-bullion flex items-center"
                   >
                     View Profile
                     <ExternalLink className="h-3 w-3 ml-1" />
@@ -179,7 +179,7 @@ const ExternalReviewsManager: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setEditingSource(source)}
-                  className="text-teal-600 hover:text-teal-700"
+                  className="text-champagne hover:text-bullion"
                   title="Edit Profile URL"
                 >
                   <Edit className="h-4 w-4" />
@@ -433,7 +433,7 @@ const EditSourceModal: React.FC<{
             <button
               type="submit"
               disabled={saving}
-              className="px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md hover:bg-teal-700 disabled:opacity-50"
+              className="px-4 py-2 text-sm font-medium text-white bg-onyx rounded-md hover:bg-champagne hover:text-onyx border border-onyx hover:border-champagne disabled:opacity-50 transition-colors"
             >
               {saving ? 'Saving...' : 'Save'}
             </button>
@@ -622,7 +622,7 @@ const ImportReviewsModal: React.FC<{
             <button
               type="submit"
               disabled={saving}
-              className="px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md hover:bg-teal-700 disabled:opacity-50"
+              className="px-4 py-2 text-sm font-medium text-white bg-onyx rounded-md hover:bg-champagne hover:text-onyx border border-onyx hover:border-champagne disabled:opacity-50 transition-colors"
             >
               {saving ? 'Importing...' : 'Import Review'}
             </button>
