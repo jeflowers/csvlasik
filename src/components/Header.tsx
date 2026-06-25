@@ -13,11 +13,11 @@ const Header = () => {
   const isActivePath = (path: string) => location.pathname.startsWith(path);
 
   const navLinks = [
-    { to: '/procedures', label: t('procedures') },
-    { to: '/about', label: t('drFlowers') },
-    { to: '/journal', label: t('journal') },
-    { to: '/financing', label: t('financing') },
-    { to: '/contact', label: t('contact') },
+    { to: '/procedures', label: t('procedures', 'Procedures') },
+    { to: '/about', label: t('drFlowers', 'Dr. Flowers') },
+    { to: '/journal', label: t('journal', 'Journal') },
+    { to: '/financing', label: t('financing', 'Financing') },
+    { to: '/contact', label: t('contact', 'Contact') },
   ];
 
   return (
@@ -34,7 +34,7 @@ const Header = () => {
               className="flex items-center gap-2 text-[#A8A39A] hover:text-[#E2C88B] transition-colors"
             >
               <Phone className="w-3 h-3 text-[#C8A15B]" strokeWidth={1.6} />
-              <span className="text-[11.5px] tracking-[0.04em] font-light">{t('phone')}</span>
+              <span className="text-[11.5px] tracking-[0.04em] font-light">{t('phone', '(844) 954-8686')}</span>
             </a>
 
             <span className="w-px h-3.5 bg-white/[0.13]" />
@@ -48,7 +48,7 @@ const Header = () => {
               className="flex items-center gap-[7px] text-[#A8A39A] hover:text-[#E2C88B] transition-colors"
             >
               <User className="w-[13px] h-[13px]" strokeWidth={1.4} />
-              <span className="text-[11.5px] tracking-[0.08em] font-light">{t('patientPortal')}</span>
+              <span className="text-[11.5px] tracking-[0.08em] font-light">{t('patientPortal', 'Patient Portal')}</span>
             </Link>
           </div>
         </div>

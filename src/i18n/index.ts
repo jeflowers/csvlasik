@@ -178,6 +178,22 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    resources: {
+      en: {
+        navigation: {
+          procedures: 'Procedures',
+          drFlowers: 'Dr. Flowers',
+          journal: 'Journal',
+          financing: 'Financing',
+          contact: 'Contact',
+          phone: '(844) 954-8686',
+          patientPortal: 'Patient Portal',
+          bookConsultation: 'Book Consultation',
+          closeMenu: 'Close Menu',
+          openMenu: 'Open Menu'
+        }
+      }
+    },
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
       requestOptions: {
