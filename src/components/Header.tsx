@@ -1,21 +1,23 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Menu, X, User, Globe, ChevronDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Phone, Menu, X, User } from 'lucide-react';
 import Logo from './Logo';
 import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useTranslation('navigation');
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
   const isActivePath = (path: string) => location.pathname.startsWith(path);
 
   const navLinks = [
-    { to: '/procedures', label: 'Procedures' },
-    { to: '/about', label: 'Dr. Flowers' },
-    { to: '/journal', label: 'Journal' },
-    { to: '/financing', label: 'Financing' },
-    { to: '/contact', label: 'Contact' },
+    { to: '/procedures', label: t('procedures') },
+    { to: '/about', label: t('drFlowers') },
+    { to: '/journal', label: t('journal') },
+    { to: '/financing', label: t('financing') },
+    { to: '/contact', label: t('contact') },
   ];
 
   return (
@@ -32,7 +34,7 @@ const Header = () => {
               className="flex items-center gap-2 text-[#A8A39A] hover:text-[#E2C88B] transition-colors"
             >
               <Phone className="w-3 h-3 text-[#C8A15B]" strokeWidth={1.6} />
-              <span className="text-[11.5px] tracking-[0.04em] font-light">(844) 954-8686</span>
+              <span className="text-[11.5px] tracking-[0.04em] font-light">{t('phone')}</span>
             </a>
 
             <span className="w-px h-3.5 bg-white/[0.13]" />
@@ -46,7 +48,7 @@ const Header = () => {
               className="flex items-center gap-[7px] text-[#A8A39A] hover:text-[#E2C88B] transition-colors"
             >
               <User className="w-[13px] h-[13px]" strokeWidth={1.4} />
-              <span className="text-[11.5px] tracking-[0.08em] font-light">Patient Portal</span>
+              <span className="text-[11.5px] tracking-[0.08em] font-light">{t('patientPortal')}</span>
             </Link>
           </div>
         </div>
@@ -85,7 +87,7 @@ const Header = () => {
                 to="/book-consultation"
                 className="inline-flex items-center h-[42px] px-6 border border-[#C8A15B] text-[#E2C88B] text-xs font-semibold tracking-[0.2em] rounded-[3px] hover:bg-[#C8A15B] hover:text-[#16130D] transition-all duration-200"
               >
-                BOOK CONSULT
+                {t('bookConsultation', { defaultValue: 'BOOK CONSULT' })}
               </Link>
             </div>
 
@@ -93,7 +95,7 @@ const Header = () => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 text-white/90"
-              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={isMenuOpen ? t('closeMenu') : t('openMenu')}
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -125,14 +127,14 @@ const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <User className="w-4 h-4" />
-                    <span>Patient Portal</span>
+                    <span>{t('patientPortal')}</span>
                   </Link>
                   <a
                     href="tel:+18449548686"
                     className="flex items-center gap-2 text-white/60 hover:text-[#E2C88B] text-sm"
                   >
                     <Phone className="w-4 h-4 text-[#C8A15B]" />
-                    <span>(844) 954-8686</span>
+                    <span>{t('phone')}</span>
                   </a>
                   <div className="pt-2">
                     <LanguageSelector variant="transparent" />
@@ -142,7 +144,7 @@ const Header = () => {
                     className="inline-flex items-center justify-center h-[44px] border border-[#C8A15B] text-[#E2C88B] text-xs font-semibold tracking-[0.2em] rounded-[3px] hover:bg-[#C8A15B] hover:text-[#16130D] transition-all duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    BOOK CONSULT
+                    {t('bookConsultation', { defaultValue: 'BOOK CONSULT' })}
                   </Link>
                 </div>
               </div>

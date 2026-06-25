@@ -1,36 +1,69 @@
 {
   "hero": {
-    "badge": "Người tiên phong LASIK đầu tiên trong khu vực Thái Bình Dương",
-    "title": "Cách mạng",
-    "titleAccent": "Chăm sóc thị lực",
-    "subtitle": "Từ việc tiên phong phẫu thuật LASIK trên các đảo Thái Bình Dương đến cách mạng hóa chăm sóc thị lực ở Los Angeles, Bác sĩ Flowers mang đến hàng thập kỷ chuyên môn cho mỗi thủ thuật.",
+    "badge": "Nguoi tien phong LASIK dau tien tai khu vuc Thai Binh Duong",
+    "title": "Thi luc, hoan hao",
+    "titleAccent": "nhu nghe thuat tinh xao.",
+    "subtitle": "Phau thuat khuc xa theo yeu cau boi Bac si Charles Flowers, MD — nguoi tien phong LASIK dau tien tai khu vuc Thai Binh Duong.",
     "cta": {
-      "schedule": "ĐẶT LỊCH TỬ VẤN",
-      "phone": "(844) 954-8686"
+      "schedule": "DAT LICH TU VAN",
+      "explore": "Kham pha cac thu thuat"
     }
   },
-  "stats": {
-    "livesTransformed": {
-      "label": "Cuộc sống được thay đổi",
-      "description": "Các thủ thuật thành công đã hoàn thành"
+  "procedures": {
+    "eyebrow": "Thu thuat",
+    "title": "Ba con duong den su ro rang",
+    "lasik": {
+      "title": "LASIK",
+      "description": "Tao vat femtosecond khong dao voi dinh hinh lai bang excimer. Thu thuat 15 phut, thi luc ngay hom sau.",
+      "detail": "Pho bien nhat"
     },
-    "pacificIslands": {
-      "label": "Đảo Thái Bình Dương",
-      "description": "Các địa điểm xa xôi được phục vụ"
+    "prk": {
+      "title": "PRK",
+      "description": "Cat bo be mat khong can vat giac mac. Ly tuong cho giac mac mong hoac loi song nang dong.",
+      "detail": "Thay the khong vat"
     },
-    "successRate": {
-      "label": "Tỷ lệ thành công",
-      "description": "Bệnh nhân đạt được thị lực 20/20"
+    "icl": {
+      "title": "ICL",
+      "description": "Thau kinh Collamer cay ghep cho don thuoc cuc cao. Co the dao nguoc, chong tia UV, vinh vien.",
+      "detail": "Don thuoc cao"
     },
-    "yearsExperience": {
-      "label": "Năm kinh nghiệm",
-      "description": "Cung cấp dịch vụ y tế cách mạng"
+    "learnMore": "Tim hieu them"
+  },
+  "pioneer": {
+    "eyebrow": "Nguoi Tien Phong",
+    "title": "Bac si Charles Flowers, MD",
+    "paragraph1": "Bac si Flowers da thuc hien cac thu thuat LASIK dau tien tai Guam, Saipan, Palau va Quan dao Marshall — mang phau thuat phuc hoi thi luc den cac cong dong Thai Binh Duong xa xoi chua bao gio duoc tiep can cham soc khuc xa.",
+    "paragraph2": "Ngay nay, tinh than tien phong do van thuc day moi thu thuat tai Atelier. Hon 30.000 ca phau thuat thanh cong. Ty le hai long cua benh nhan 99,2%. Su chinh xac cua mot nghe nhan ap dung cho mon qua thi luc.",
+    "readMore": "Doc toan bo cau chuyen",
+    "stat": "30,000+",
+    "statLabel": "thu thuat"
+  },
+  "whyAtelier": {
+    "eyebrow": "Tai sao Atelier",
+    "title": "Duoc tao ra voi su chinh xac",
+    "wavefront": {
+      "title": "Ban do mat song tuy chinh",
+      "description": "Moi mat la duy nhat. Chung toi tao ban do dia hinh giac mac cua ban de huong dan dieu tri laser voi do chinh xac duoi micron."
+    },
+    "expertise": {
+      "title": "Chuyen mon da duoc thu nghiem tai Thai Binh Duong",
+      "description": "Bac si Flowers da mai giua ky nang cua minh trong dieu kien kho khan tren cac hon dao xa xoi. Benh nhan Los Angeles duoc huong loi tu chieu sau kinh nghiem do."
+    },
+    "consultations": {
+      "title": "Tu van trong cung tuan",
+      "description": "Khong co danh sach cho. Danh gia toan dien, danh gia trung thuc ve tinh du dieu kien va con duong ro rang phia truoc trong vai ngay."
     }
+  },
+  "testimonial": {
+    "eyebrow": "Cau chuyen benh nhan",
+    "quote": "Toi thuc day sang hom sau va co the doc dong ho o ben kia phong. Sau hai muoi nam doi kinh, no cam giac nhu mot phep la.",
+    "author": "Sarah M., benh nhan LASIK, 2024"
   },
   "cta": {
-    "title": "Trải nghiệm chăm sóc thị lực cách mạng",
-    "subtitle": "Tham gia cùng hàng trăm bệnh nhân đã tin tưởng Bác sĩ Flowers với thị lực của họ. Từ các đảo Thái Bình Dương đến Los Angeles, trải nghiệm sự khác biệt mà chăm sóc cách mạng mang lại.",
-    "schedule": "ĐẶT LỊCH TỬ VẤN",
-    "pacificStory": "CÂU CHUYỆN THÁI BÌNH DƯƠNG"
+    "eyebrow": "Bat dau",
+    "title": "Buoi tu van cua ban dang cho",
+    "subtitle": "Danh gia 90 phut de xac dinh tinh du dieu kien, lap ban do giac mac va thiet ke ke hoach dieu tri phu hop voi mat cua ban.",
+    "schedule": "DAT LICH TU VAN",
+    "orCall": "hoac goi (844) 954-8686"
   }
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ArrowRight, Eye, Shield, Clock } from 'lucide-react';
 import Logo from '../components/Logo';
 
@@ -12,6 +13,7 @@ const heroImages = [
 ];
 
 const Home = () => {
+  const { t } = useTranslation('home');
   const [currentImage, setCurrentImage] = useState(0);
 
   const nextImage = useCallback(() => {
@@ -39,11 +41,11 @@ const Home = () => {
                 <Logo variant="stacked" mode="dark" height={48} />
               </div>
               <h1 className="font-serif font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.1]" style={{ color: '#FFFFFF' }}>
-                Vision, perfected<br />
-                <span style={{ color: '#C9A96E' }}>like fine craft.</span>
+                {t('hero.title')}<br />
+                <span style={{ color: '#C9A96E' }}>{t('hero.titleAccent')}</span>
               </h1>
               <p className="mt-6 font-light text-lg max-w-md leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                Bespoke refractive surgery by Dr. Charles Flowers, MD &mdash; the first LASIK pioneer in the Pacific region.
+                {t('hero.subtitle')}
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
                 <Link
@@ -51,13 +53,13 @@ const Home = () => {
                   className="px-8 py-4 text-xs font-medium tracking-widest transition-colors duration-200"
                   style={{ backgroundColor: '#D4AF37', color: '#1A1A1A' }}
                 >
-                  BOOK CONSULTATION
+                  {t('hero.cta.schedule')}
                 </Link>
                 <Link
                   to="/procedures"
                   className="flex items-center gap-2 text-white/60 hover:text-white text-sm font-light transition-colors group py-4"
                 >
-                  <span>Explore procedures</span>
+                  <span>{t('hero.cta.explore')}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -103,36 +105,36 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-28 lg:py-36">
           <div className="text-center mb-20">
             <span className="text-xs font-sans font-medium tracking-eyebrow text-champagne uppercase block mb-4">
-              Procedures
+              {t('procedures.eyebrow')}
             </span>
             <h2 className="font-serif font-semibold text-3xl sm:text-4xl lg:text-5xl text-onyx">
-              Three paths to clarity
+              {t('procedures.title')}
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-onyx/10">
             {[
               {
-                title: 'LASIK',
-                description: 'Bladeless femtosecond flap creation with excimer reshaping. 15-minute procedure, next-day vision.',
-                detail: 'Most popular',
+                title: t('procedures.lasik.title'),
+                description: t('procedures.lasik.description'),
+                detail: t('procedures.lasik.detail'),
                 link: '/procedures/lasik',
               },
               {
-                title: 'PRK',
-                description: 'Surface ablation without a corneal flap. Ideal for thin corneas or active lifestyles.',
-                detail: 'No-flap alternative',
+                title: t('procedures.prk.title'),
+                description: t('procedures.prk.description'),
+                detail: t('procedures.prk.detail'),
                 link: '/procedures/prk',
               },
               {
-                title: 'ICL',
-                description: 'Implantable Collamer Lens for extreme prescriptions. Reversible, UV-protective, permanent.',
-                detail: 'High prescriptions',
+                title: t('procedures.icl.title'),
+                description: t('procedures.icl.description'),
+                detail: t('procedures.icl.detail'),
                 link: '/procedures/icl',
               },
             ].map((proc) => (
               <Link
-                key={proc.title}
+                key={proc.link}
                 to={proc.link}
                 className="bg-white p-10 lg:p-14 group hover:bg-cream/50 transition-colors duration-300"
               >
@@ -146,7 +148,7 @@ const Home = () => {
                   {proc.description}
                 </p>
                 <span className="flex items-center gap-2 text-sm text-onyx/70 group-hover:text-onyx font-light transition-colors">
-                  Learn more
+                  {t('procedures.learnMore')}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>
@@ -161,22 +163,22 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div>
               <span className="text-xs font-sans font-medium tracking-eyebrow text-champagne uppercase block mb-4">
-                The Pioneer
+                {t('pioneer.eyebrow')}
               </span>
               <h2 className="font-serif font-semibold text-3xl sm:text-4xl lg:text-5xl text-onyx leading-[1.15] mb-8">
-                Dr. Charles Flowers, MD
+                {t('pioneer.title')}
               </h2>
               <p className="text-graphite/60 font-light leading-relaxed mb-6">
-                Dr. Flowers performed the first LASIK procedures across Guam, Saipan, Palau, and the Marshall Islands &mdash; bringing sight-restoring surgery to remote Pacific communities that had never had access to refractive care.
+                {t('pioneer.paragraph1')}
               </p>
               <p className="text-graphite/60 font-light leading-relaxed mb-10">
-                Today, that same pioneering spirit drives every procedure at Atelier. Over 30,000 successful surgeries. A 99.2% patient satisfaction rate. The precision of a craftsman applied to the gift of vision.
+                {t('pioneer.paragraph2')}
               </p>
               <Link
                 to="/about"
                 className="inline-flex items-center gap-2 text-sm text-onyx font-light border-b border-onyx/20 pb-1 hover:border-onyx transition-colors group"
               >
-                Read the full story
+                {t('pioneer.readMore')}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -190,8 +192,8 @@ const Home = () => {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white p-6 shadow-chopard">
                 <div className="flex items-baseline gap-2">
-                  <span className="font-serif font-semibold text-3xl text-onyx">30,000+</span>
-                  <span className="text-xs text-champagne font-medium tracking-eyebrow uppercase">procedures</span>
+                  <span className="font-serif font-semibold text-3xl text-onyx">{t('pioneer.stat')}</span>
+                  <span className="text-xs text-champagne font-medium tracking-eyebrow uppercase">{t('pioneer.statLabel')}</span>
                 </div>
               </div>
             </div>
@@ -204,10 +206,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-28 lg:py-36">
           <div className="text-center mb-20">
             <span className="text-xs font-sans font-medium tracking-eyebrow text-champagne uppercase block mb-4">
-              Why Atelier
+              {t('whyAtelier.eyebrow')}
             </span>
             <h2 className="font-serif font-semibold text-3xl sm:text-4xl lg:text-5xl text-onyx">
-              Crafted with precision
+              {t('whyAtelier.title')}
             </h2>
           </div>
 
@@ -215,18 +217,18 @@ const Home = () => {
             {[
               {
                 icon: Eye,
-                title: 'Custom wavefront mapping',
-                description: 'Every eye is unique. We create a topographic map of your cornea to guide laser treatment with sub-micron accuracy.',
+                title: t('whyAtelier.wavefront.title'),
+                description: t('whyAtelier.wavefront.description'),
               },
               {
                 icon: Shield,
-                title: 'Pacific-tested expertise',
-                description: 'Dr. Flowers honed his craft in challenging conditions across remote islands. Los Angeles patients benefit from that depth of experience.',
+                title: t('whyAtelier.expertise.title'),
+                description: t('whyAtelier.expertise.description'),
               },
               {
                 icon: Clock,
-                title: 'Same-week consultations',
-                description: 'No waitlists. Comprehensive evaluation, honest candidacy assessment, and a clear path forward within days.',
+                title: t('whyAtelier.consultations.title'),
+                description: t('whyAtelier.consultations.description'),
               },
             ].map(({ icon: Icon, title, description }) => (
               <div key={title} className="text-center">
@@ -249,13 +251,13 @@ const Home = () => {
         }} />
         <div className="max-w-4xl mx-auto px-6 lg:px-8 py-28 lg:py-36 text-center relative">
           <span className="text-xs font-sans font-medium tracking-eyebrow uppercase block mb-12" style={{ color: '#C9A96E' }}>
-            Patient Stories
+            {t('testimonial.eyebrow')}
           </span>
           <blockquote className="font-serif font-semibold text-2xl sm:text-3xl lg:text-4xl leading-snug mb-8" style={{ color: '#FFFFFF' }}>
-            &ldquo;I woke up the next morning and could read the clock across the room. After twenty years of glasses, it felt like a miracle.&rdquo;
+            &ldquo;{t('testimonial.quote')}&rdquo;
           </blockquote>
           <cite className="not-italic text-sm font-light" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            &mdash; Sarah M., LASIK patient, 2024
+            &mdash; {t('testimonial.author')}
           </cite>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(212,175,55,0.3), transparent)' }} />
@@ -265,26 +267,26 @@ const Home = () => {
       <section className="bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 py-28 lg:py-36 text-center">
           <span className="text-xs font-sans font-medium tracking-eyebrow text-champagne uppercase block mb-4">
-            Begin
+            {t('cta.eyebrow')}
           </span>
           <h2 className="font-serif font-semibold text-3xl sm:text-4xl lg:text-5xl text-onyx mb-6">
-            Your consultation awaits
+            {t('cta.title')}
           </h2>
           <p className="text-graphite/60 font-light leading-relaxed max-w-lg mx-auto mb-10">
-            A 90-minute evaluation to determine your candidacy, map your cornea, and design a treatment plan tailored to your eyes.
+            {t('cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/portal"
               className="bg-bullion text-onyx px-8 py-4 text-xs font-medium tracking-widest hover:bg-champagne transition-colors duration-200"
             >
-              SCHEDULE CONSULTATION
+              {t('cta.schedule')}
             </Link>
             <a
               href="tel:+18449548686"
               className="text-sm text-graphite/60 hover:text-onyx font-light transition-colors"
             >
-              or call (844) 954-8686
+              {t('cta.orCall')}
             </a>
           </div>
         </div>

@@ -1,36 +1,69 @@
 {
   "hero": {
     "badge": "Primer Pionero LASIK en la Región del Pacífico",
-    "title": "Revolucionario",
-    "titleAccent": "Cuidado de la Visión",
-    "subtitle": "Desde ser pionero en cirugía LASIK a través de las islas del Pacífico hasta revolucionar el cuidado de la visión en Los Ángeles, el Dr. Flowers aporta décadas de experiencia a cada procedimiento.",
+    "title": "Visión, perfeccionada",
+    "titleAccent": "como artesanía fina.",
+    "subtitle": "Cirugía refractiva personalizada por el Dr. Charles Flowers, MD — el primer pionero LASIK en la región del Pacífico.",
     "cta": {
-      "schedule": "PROGRAMAR CONSULTA",
-      "phone": "(844) 954-8686"
+      "schedule": "RESERVAR CONSULTA",
+      "explore": "Explorar procedimientos"
     }
   },
-  "stats": {
-    "livesTransformed": {
-      "label": "Vidas Transformadas",
-      "description": "Procedimientos exitosos completados"
+  "procedures": {
+    "eyebrow": "Procedimientos",
+    "title": "Tres caminos a la claridad",
+    "lasik": {
+      "title": "LASIK",
+      "description": "Creación de colgajo con femtosegundo sin bisturí y remodelación con excímer. Procedimiento de 15 minutos, visión al día siguiente.",
+      "detail": "Más popular"
     },
-    "pacificIslands": {
-      "label": "Islas del Pacífico",
-      "description": "Ubicaciones remotas atendidas"
+    "prk": {
+      "title": "PRK",
+      "description": "Ablación de superficie sin colgajo corneal. Ideal para córneas delgadas o estilos de vida activos.",
+      "detail": "Alternativa sin colgajo"
     },
-    "successRate": {
-      "label": "Tasa de Éxito",
-      "description": "Pacientes logrando visión 20/20"
+    "icl": {
+      "title": "ICL",
+      "description": "Lente Collamer Implantable para prescripciones extremas. Reversible, protección UV, permanente.",
+      "detail": "Prescripciones altas"
     },
-    "yearsExperience": {
-      "label": "Años de Experiencia",
-      "description": "Entrega revolucionaria de atención médica"
+    "learnMore": "Más información"
+  },
+  "pioneer": {
+    "eyebrow": "El Pionero",
+    "title": "Dr. Charles Flowers, MD",
+    "paragraph1": "El Dr. Flowers realizó los primeros procedimientos LASIK en Guam, Saipán, Palaos y las Islas Marshall — llevando cirugía restauradora de la vista a comunidades remotas del Pacífico que nunca habían tenido acceso a la atención refractiva.",
+    "paragraph2": "Hoy, ese mismo espíritu pionero impulsa cada procedimiento en Atelier. Más de 30,000 cirugías exitosas. Una tasa de satisfacción del 99.2%. La precisión de un artesano aplicada al regalo de la visión.",
+    "readMore": "Leer la historia completa",
+    "stat": "30,000+",
+    "statLabel": "procedimientos"
+  },
+  "whyAtelier": {
+    "eyebrow": "Por Qué Atelier",
+    "title": "Elaborado con precisión",
+    "wavefront": {
+      "title": "Mapeo de frente de onda personalizado",
+      "description": "Cada ojo es único. Creamos un mapa topográfico de su córnea para guiar el tratamiento láser con precisión submicrónica."
+    },
+    "expertise": {
+      "title": "Experiencia probada en el Pacífico",
+      "description": "El Dr. Flowers perfeccionó su oficio en condiciones desafiantes en islas remotas. Los pacientes de Los Ángeles se benefician de esa profundidad de experiencia."
+    },
+    "consultations": {
+      "title": "Consultas en la misma semana",
+      "description": "Sin listas de espera. Evaluación integral, evaluación honesta de candidatura y un camino claro en días."
     }
+  },
+  "testimonial": {
+    "eyebrow": "Historias de Pacientes",
+    "quote": "Me desperté a la mañana siguiente y pude leer el reloj al otro lado de la habitación. Después de veinte años con gafas, se sintió como un milagro.",
+    "author": "Sarah M., paciente LASIK, 2024"
   },
   "cta": {
-    "title": "Experimente el Cuidado Revolucionario de la Visión",
-    "subtitle": "Únase a los cientos de pacientes que han confiado en el Dr. Flowers con su visión. Desde las islas del Pacífico hasta Los Ángeles, experimente la diferencia que hace el cuidado revolucionario.",
+    "eyebrow": "Comience",
+    "title": "Su consulta le espera",
+    "subtitle": "Una evaluación de 90 minutos para determinar su candidatura, mapear su córnea y diseñar un plan de tratamiento adaptado a sus ojos.",
     "schedule": "PROGRAMAR CONSULTA",
-    "pacificStory": "LA HISTORIA DEL PACÍFICO"
+    "orCall": "o llame al (844) 954-8686"
   }
 }

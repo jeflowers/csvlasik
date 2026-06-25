@@ -1,36 +1,69 @@
 {
   "hero": {
     "badge": "Unang LASIK Pioneer sa Pacific Region",
-    "title": "Revolutionary",
-    "titleAccent": "Vision Care",
-    "subtitle": "Mula sa pagiging pioneer sa LASIK surgery sa Pacific islands hanggang sa pag-revolutionize ng vision care sa Los Angeles, si Dr. Flowers ay nagdadala ng decades ng expertise sa bawat procedure.",
+    "title": "Vision, pinerpekto",
+    "titleAccent": "tulad ng pinong sining.",
+    "subtitle": "Pasadyang refractive surgery ni Dr. Charles Flowers, MD — ang unang LASIK pioneer sa Pacific region.",
     "cta": {
-      "schedule": "MAG-SCHEDULE NG CONSULTATION",
-      "phone": "(844) 954-8686"
+      "schedule": "MAG-BOOK NG CONSULTATION",
+      "explore": "Tuklasin ang mga procedure"
     }
   },
-  "stats": {
-    "livesTransformed": {
-      "label": "Mga Buhay na Nabago",
-      "description": "Mga matagumpay na procedure na natapos"
+  "procedures": {
+    "eyebrow": "Mga Procedure",
+    "title": "Tatlong daan patungo sa kalinawan",
+    "lasik": {
+      "title": "LASIK",
+      "description": "Bladeless femtosecond flap creation na may excimer reshaping. 15-minutong procedure, kinabukasang vision.",
+      "detail": "Pinakasikat"
     },
-    "pacificIslands": {
-      "label": "Pacific Islands",
-      "description": "Mga remote na lugar na naserve"
+    "prk": {
+      "title": "PRK",
+      "description": "Surface ablation na walang corneal flap. Ideal para sa manipis na cornea o aktibong lifestyle.",
+      "detail": "Walang-flap na alternatibo"
     },
-    "successRate": {
-      "label": "Success Rate",
-      "description": "Mga pasyente na nakakuha ng 20/20 vision"
+    "icl": {
+      "title": "ICL",
+      "description": "Implantable Collamer Lens para sa matinding prescription. Reversible, UV-protective, permanente.",
+      "detail": "Mataas na prescription"
     },
-    "yearsExperience": {
-      "label": "Taon ng Karanasan",
-      "description": "Revolutionary healthcare delivery"
+    "learnMore": "Alamin pa"
+  },
+  "pioneer": {
+    "eyebrow": "Ang Pioneer",
+    "title": "Dr. Charles Flowers, MD",
+    "paragraph1": "Si Dr. Flowers ang nagsagawa ng unang LASIK procedures sa Guam, Saipan, Palau, at Marshall Islands — nagdala ng sight-restoring surgery sa malalayong Pacific communities na hindi kailanman nagkaroon ng access sa refractive care.",
+    "paragraph2": "Ngayon, ang parehong pioneering spirit ang nagtutulak sa bawat procedure sa Atelier. Mahigit 30,000 matagumpay na surgery. 99.2% patient satisfaction rate. Ang precision ng isang craftsman na inilapat sa regalo ng vision.",
+    "readMore": "Basahin ang buong kwento",
+    "stat": "30,000+",
+    "statLabel": "mga procedure"
+  },
+  "whyAtelier": {
+    "eyebrow": "Bakit Atelier",
+    "title": "Ginawa nang may precision",
+    "wavefront": {
+      "title": "Custom wavefront mapping",
+      "description": "Ang bawat mata ay natatangi. Gumagawa kami ng topographic map ng iyong cornea para gabayan ang laser treatment na may sub-micron accuracy."
+    },
+    "expertise": {
+      "title": "Pacific-tested na expertise",
+      "description": "Hinasa ni Dr. Flowers ang kanyang craft sa mahihirap na kondisyon sa malalayong isla. Nakikinabang ang mga pasyente sa Los Angeles sa lalim ng karanasang iyon."
+    },
+    "consultations": {
+      "title": "Same-week consultations",
+      "description": "Walang waitlist. Komprehensibong evaluation, tapat na candidacy assessment, at malinaw na daan sa loob ng ilang araw."
     }
+  },
+  "testimonial": {
+    "eyebrow": "Mga Kwento ng Pasyente",
+    "quote": "Nagising ako kinaumagahan at nabasa ko ang orasan sa kabila ng kwarto. Pagkatapos ng dalawampung taon ng salamin, parang himala ang pakiramdam.",
+    "author": "Sarah M., LASIK patient, 2024"
   },
   "cta": {
-    "title": "Maranasan ang Revolutionary Vision Care",
-    "subtitle": "Sumama sa mga daan-daang pasyente na nagtiwala kay Dr. Flowers sa kanilang vision. Mula sa Pacific islands hanggang Los Angeles, maranasan ang pagkakaiba na ginagawa ng revolutionary care.",
+    "eyebrow": "Magsimula",
+    "title": "Naghihintay ang iyong consultation",
+    "subtitle": "Isang 90-minutong evaluation para matukoy ang iyong candidacy, i-map ang iyong cornea, at magdisenyo ng treatment plan na akma sa iyong mga mata.",
     "schedule": "MAG-SCHEDULE NG CONSULTATION",
-    "pacificStory": "ANG PACIFIC STORY"
+    "orCall": "o tumawag sa (844) 954-8686"
   }
 }

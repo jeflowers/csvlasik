@@ -1,36 +1,69 @@
 {
   "hero": {
     "badge": "太平洋地区首位LASIK先驱",
-    "title": "革命性",
-    "titleAccent": "视力护理",
-    "subtitle": "从在太平洋岛屿开创LASIK手术到在洛杉矶革新视力护理，Flowers医生为每个手术带来数十年的专业知识。",
+    "title": "视力，精雕细琢",
+    "titleAccent": "如精工巧艺。",
+    "subtitle": "由Charles Flowers医学博士提供的定制屈光手术——太平洋地区首位LASIK先驱。",
     "cta": {
       "schedule": "预约咨询",
-      "phone": "(844) 954-8686"
+      "explore": "探索手术项目"
     }
   },
-  "stats": {
-    "livesTransformed": {
-      "label": "改变的生活",
-      "description": "成功完成的手术"
+  "procedures": {
+    "eyebrow": "手术项目",
+    "title": "通往清晰的三条路径",
+    "lasik": {
+      "title": "LASIK",
+      "description": "无刀飞秒激光制瓣配合准分子激光塑形。15分钟手术，次日恢复视力。",
+      "detail": "最受欢迎"
     },
-    "pacificIslands": {
-      "label": "太平洋岛屿",
-      "description": "服务的偏远地区"
+    "prk": {
+      "title": "PRK",
+      "description": "无需角膜瓣的表面消融术。适合薄角膜或活跃生活方式。",
+      "detail": "无瓣替代方案"
     },
-    "successRate": {
-      "label": "成功率",
-      "description": "达到20/20视力的患者"
+    "icl": {
+      "title": "ICL",
+      "description": "用于极端处方的可植入式Collamer镜片。可逆、防紫外线、永久性。",
+      "detail": "高度数处方"
     },
-    "yearsExperience": {
-      "label": "经验年数",
-      "description": "革命性医疗服务提供"
+    "learnMore": "了解更多"
+  },
+  "pioneer": {
+    "eyebrow": "先驱者",
+    "title": "Charles Flowers 医学博士",
+    "paragraph1": "Flowers医生在关岛、塞班岛、帕劳和马绍尔群岛进行了首批LASIK手术——将视力恢复手术带到了从未获得屈光护理的偏远太平洋社区。",
+    "paragraph2": "今天，同样的开拓精神驱动着Atelier的每一项手术。超过30,000例成功手术。99.2%的患者满意度。将工匠的精准应用于视力的馈赠。",
+    "readMore": "阅读完整故事",
+    "stat": "30,000+",
+    "statLabel": "手术"
+  },
+  "whyAtelier": {
+    "eyebrow": "为什么选择Atelier",
+    "title": "精密打造",
+    "wavefront": {
+      "title": "定制波前分析",
+      "description": "每只眼睛都是独特的。我们创建角膜地形图，以亚微米精度指导激光治疗。"
+    },
+    "expertise": {
+      "title": "太平洋验证的专业技术",
+      "description": "Flowers医生在偏远岛屿的艰苦条件下磨练了技艺。洛杉矶患者受益于这种深厚的经验。"
+    },
+    "consultations": {
+      "title": "同周咨询",
+      "description": "无需等待。全面评估、诚实的候选资格评估，几天内即有明确方向。"
     }
+  },
+  "testimonial": {
+    "eyebrow": "患者故事",
+    "quote": "第二天早上醒来，我能看清房间对面的时钟了。戴了二十年眼镜后，这感觉像是奇迹。",
+    "author": "Sarah M., LASIK患者, 2024"
   },
   "cta": {
-    "title": "体验革命性视力护理",
-    "subtitle": "加入数百名信任Flowers医生视力的患者。从太平洋岛屿到洛杉矶，体验革命性护理带来的不同。",
+    "eyebrow": "开始",
+    "title": "您的咨询已就绪",
+    "subtitle": "90分钟评估，确定您的候选资格，绘制角膜地图，并设计针对您双眼的治疗方案。",
     "schedule": "预约咨询",
-    "pacificStory": "太平洋故事"
+    "orCall": "或致电 (844) 954-8686"
   }
 }

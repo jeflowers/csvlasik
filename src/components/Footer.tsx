@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer = () => {
+  const { t } = useTranslation('footer');
+
   return (
     <footer className="bg-cream">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
@@ -12,42 +15,42 @@ const Footer = () => {
               <Logo mode="light" height={40} />
             </Link>
             <p className="text-graphite/60 text-sm font-light leading-relaxed max-w-sm">
-              Pioneering LASIK surgery in the Pacific region and bringing revolutionary vision care to Los Angeles.
+              {t('company.description')}
             </p>
           </div>
 
           <div>
             <h4 className="text-xs font-sans font-medium tracking-eyebrow text-champagne uppercase mb-6">
-              Practice
+              {t('quickLinks.title')}
             </h4>
             <div className="flex flex-col gap-3">
               <Link to="/procedures" className="text-sm text-graphite/70 hover:text-onyx font-light transition-colors">
-                Procedures
+                {t('procedures.title')}
               </Link>
               <Link to="/about" className="text-sm text-graphite/70 hover:text-onyx font-light transition-colors">
-                Dr. Flowers
+                {t('quickLinks.about')}
               </Link>
               <Link to="/testimonials" className="text-sm text-graphite/70 hover:text-onyx font-light transition-colors">
-                Results
+                {t('quickLinks.testimonials')}
               </Link>
               <Link to="/financing" className="text-sm text-graphite/70 hover:text-onyx font-light transition-colors">
-                Financing
+                {t('procedures.consultation', { defaultValue: 'Financing' })}
               </Link>
             </div>
           </div>
 
           <div>
             <h4 className="text-xs font-sans font-medium tracking-eyebrow text-champagne uppercase mb-6">
-              Contact
+              {t('contact.title')}
             </h4>
             <div className="flex flex-col gap-4">
               <a href="tel:+18449548686" className="flex items-start gap-3 text-sm text-graphite/70 hover:text-onyx font-light transition-colors">
                 <Phone className="w-4 h-4 mt-0.5 text-champagne flex-shrink-0" />
-                <span>(844) 954-8686</span>
+                <span>{t('contact.phone')}</span>
               </a>
               <a href="mailto:info@atelierlasik.com" className="flex items-start gap-3 text-sm text-graphite/70 hover:text-onyx font-light transition-colors">
                 <Mail className="w-4 h-4 mt-0.5 text-champagne flex-shrink-0" />
-                <span>info@atelierlasik.com</span>
+                <span>{t('contact.email')}</span>
               </a>
               <div className="flex items-start gap-3 text-sm text-graphite/70 font-light">
                 <MapPin className="w-4 h-4 mt-0.5 text-champagne flex-shrink-0" />
@@ -63,10 +66,10 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-6">
             <Link to="/privacy-policy" className="text-xs text-graphite/50 hover:text-onyx font-light transition-colors">
-              Privacy
+              {t('legal.privacy')}
             </Link>
             <Link to="/terms-of-service" className="text-xs text-graphite/50 hover:text-onyx font-light transition-colors">
-              Terms
+              {t('legal.terms')}
             </Link>
           </div>
         </div>
