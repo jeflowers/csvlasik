@@ -26,7 +26,7 @@ const Header = () => {
             <Logo mode="dark" height={36} tagline={false} />
           </Link>
 
-          <nav className="hidden xl:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map(({ to, label }) => (
               <Link
                 key={to}
@@ -41,7 +41,7 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="hidden xl:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:+18449548686"
               className="flex items-center gap-2 text-sm font-light transition-colors"
@@ -72,7 +72,7 @@ const Header = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="xl:hidden p-2"
+            className="lg:hidden p-2"
             style={{ color: 'rgba(255,255,255,0.9)' }}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
@@ -81,7 +81,7 @@ const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="xl:hidden pb-8 pt-4 border-t border-white/10">
+          <div className="lg:hidden pb-8 pt-4 border-t border-white/10">
             <div className="flex flex-col gap-5">
               {navLinks.map(({ to, label }) => (
                 <Link
