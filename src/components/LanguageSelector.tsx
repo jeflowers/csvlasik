@@ -77,9 +77,20 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'dark' })
 
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
+      // Check if click is inside panel bounding box (covers scrollbar clicks)
+      if (panelRef.current) {
+        const rect = panelRef.current.getBoundingClientRect();
+        if (
+          event.clientX >= rect.left &&
+          event.clientX <= rect.right &&
+          event.clientY >= rect.top &&
+          event.clientY <= rect.bottom
+        ) {
+          return;
+        }
+      }
       if (
-        buttonRef.current && !buttonRef.current.contains(target) &&
-        panelRef.current && !panelRef.current.contains(target)
+        buttonRef.current && !buttonRef.current.contains(target)
       ) {
         closePanel();
       }
@@ -89,7 +100,13 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'dark' })
       if (e.key === 'Escape') closePanel();
     };
 
-    const handleScroll = () => closePanel();
+    const handleScroll = (e: Event) => {
+      // Don't close if scrolling inside the panel itself
+      if (panelRef.current && panelRef.current.contains(e.target as Node)) {
+        return;
+      }
+      closePanel();
+    };
 
     const handleResize = () => {
       const pos = computePosition();
