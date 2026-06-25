@@ -5,7 +5,6 @@ import { ArrowRight, Eye, Shield, Clock } from 'lucide-react';
 import Logo from '../components/Logo';
 
 const heroImages = [
-  '/assets/images/eyes/eric-ward-ES60LMf18KU-unsplash.jpg',
   '/assets/images/eyes/lana-graves-h0ZHYdy1qTI-unsplash.jpg',
   '/assets/images/eyes/luca-iaconelli-GmoHIZ61eMo-unsplash.jpg',
   '/assets/images/eyes/polina-kuzovkova-6VXBBFt_k9Q-unsplash.jpg',
