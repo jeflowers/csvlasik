@@ -7,7 +7,7 @@
       "enabled": true
     },
     "huggingface": {
-      "enabled": true
+      "enabled": false
     },
     "firecrawl": {
       "enabled": false
