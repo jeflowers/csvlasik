@@ -1,3 +1,5 @@
+import { supabase } from '../lib/supabase';
+
 interface YouTubeVideoData {
   id: string;
   title: string;
@@ -13,32 +15,9 @@ interface YouTubeVideoData {
   publishedAt: string;
 }
 
-interface YouTubeAPIResponse {
-  items: Array<{
-    id: string;
-    snippet: {
-      title: string;
-      description: string;
-      thumbnails: YouTubeVideoData['thumbnails'];
-      channelTitle: string;
-      publishedAt: string;
-    };
-  }>;
-}
-
 class YouTubeService {
-  private apiKey: string;
-  private baseURL = 'https://www.googleapis.com/youtube/v3';
   private cache: Map<string, { data: YouTubeVideoData; timestamp: number }> = new Map();
   private cacheDuration = 24 * 60 * 60 * 1000;
-
-  constructor() {
-    this.apiKey = import.meta.env.VITE_YOUTUBE_API_KEY || '';
-  }
-
-  private isApiKeyConfigured(): boolean {
-    return this.apiKey.length > 0;
-  }
 
   private getCachedData(videoId: string): YouTubeVideoData | null {
     const cached = this.cache.get(videoId);
@@ -53,46 +32,28 @@ class YouTubeService {
   }
 
   async getVideoData(videoId: string): Promise<YouTubeVideoData | null> {
-    if (!this.isApiKeyConfigured()) {
-      console.warn('YouTube API key not configured. Using default thumbnails.');
-      return null;
-    }
-
     const cached = this.getCachedData(videoId);
     if (cached) {
       return cached;
     }
 
     try {
-      const url = `${this.baseURL}/videos?id=${videoId}&key=${this.apiKey}&part=snippet`;
-      const response = await fetch(url);
+      const { data, error } = await supabase.functions.invoke('youtube-proxy', {
+        body: { videoId },
+      });
 
-      if (!response.ok) {
-        console.error('YouTube API error:', response.status, response.statusText);
+      if (error) throw error;
+
+      if (!data?.videos || data.videos.length === 0) {
+        console.warn('Video not found:', videoId);
         return null;
       }
 
-      const data: YouTubeAPIResponse = await response.json();
-
-      if (!data.items || data.items.length === 0) {
-        console.error('Video not found:', videoId);
-        return null;
-      }
-
-      const video = data.items[0];
-      const videoData: YouTubeVideoData = {
-        id: video.id,
-        title: video.snippet.title,
-        description: video.snippet.description,
-        thumbnails: video.snippet.thumbnails,
-        channelTitle: video.snippet.channelTitle,
-        publishedAt: video.snippet.publishedAt,
-      };
-
+      const videoData: YouTubeVideoData = data.videos[0];
       this.setCachedData(videoId, videoData);
       return videoData;
     } catch (error) {
-      console.error('Error fetching YouTube video data:', error);
+      console.warn('Error fetching YouTube video data:', error);
       return null;
     }
   }
