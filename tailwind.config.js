@@ -7,10 +7,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'serif': ['Cormorant Garamond', 'Playfair Display', 'serif'],
-        'sans': ['Inter', 'sans-serif'],
+        'serif': ['Cormorant Garamond', 'Georgia', 'serif'],
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
+        onyx: '#1A1A1A',
+        graphite: '#2C2C2C',
+        bullion: '#D4AF37',
+        champagne: '#C9A96E',
+        cream: '#FBF7EF',
         chopard: {
           primary: '#2c2c2c',
           secondary: '#666666',
@@ -20,6 +25,9 @@ export default {
           hero: '#fafafa',
           glass: 'rgba(255, 255, 255, 0.95)',
         }
+      },
+      letterSpacing: {
+        'eyebrow': '0.4em',
       },
       backgroundImage: {
         'chopard-gradient': 'linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%)',

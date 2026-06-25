@@ -1,163 +1,73 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { Eye, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube, BadgeHelp as Yelp } from 'lucide-react';
-import TikTokIcon from './icons/TikTokIcon';
+import { Phone, Mail, MapPin } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
-  const { t } = useTranslation(['footer', 'common']);
-
   return (
-    <footer className="chopard-gradient text-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Company Info */}
-          <div>
-            <Link to="/" className="flex items-center mb-6">
-              <img
-                src="/assets/images/atelier_nobg copy.png"
-                alt="Atelier Revolutionary Vision Care"
-                className="h-14 w-auto"
-              />
+    <footer className="bg-cream">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+          <div className="lg:col-span-2">
+            <Link to="/" className="inline-block mb-8">
+              <Logo mode="light" height={40} />
             </Link>
-            <p className="text-white/70 text-sm mb-6 leading-relaxed font-light">
-              {t('company.description')}
+            <p className="text-graphite/60 text-sm font-light leading-relaxed max-w-sm">
+              Pioneering LASIK surgery in the Pacific region and bringing revolutionary vision care to Los Angeles.
             </p>
-            <div className="flex space-x-5">
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white transition-all duration-300"
-                aria-label={t('social.facebook')}
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white transition-all duration-300"
-                aria-label={t('social.instagram')}
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.youtube.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white transition-all duration-300"
-                aria-label={t('social.youtube')}
-              >
-                <Youtube className="h-5 w-5" />
-              </a>
-              <a
-                href="https://x.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white transition-all duration-300"
-                aria-label={t('social.twitter')}
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.tiktok.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white transition-all duration-300"
-                aria-label={t('social.tiktok')}
-              >
-                <TikTokIcon className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-serif font-light mb-6 text-white tracking-wide">{t('quickLinks.title')}</h3>
-            <ul className="space-y-4">
-              <li><Link to="/about" className="text-white/70 hover:text-white transition-all duration-300 font-light">{t('quickLinks.about')}</Link></li>
-              <li><Link to="/procedures" className="text-white/70 hover:text-white transition-all duration-300 font-light">{t('quickLinks.allProcedures')}</Link></li>
-              <li><Link to="/pacific-story" className="text-white/70 hover:text-white transition-all duration-300 font-light">{t('quickLinks.pacificStory')}</Link></li>
-              <li><Link to="/testimonials" className="text-white/70 hover:text-white transition-all duration-300 font-light">{t('quickLinks.testimonials')}</Link></li>
-              <li><Link to="/technology" className="text-white/70 hover:text-white transition-all duration-300 font-light">{t('quickLinks.technology')}</Link></li>
-            </ul>
-          </div>
-
-          {/* Procedures */}
-          <div>
-            <h3 className="text-lg font-serif font-light mb-6 text-white tracking-wide">{t('procedures.title')}</h3>
-            <ul className="space-y-4">
-              <li><Link to="/procedures/lasik" className="text-white/70 hover:text-white transition-all duration-300 font-light">{t('procedures.lasik')}</Link></li>
-              <li><Link to="/procedures/prk" className="text-white/70 hover:text-white transition-all duration-300 font-light">{t('procedures.prk')}</Link></li>
-              <li><Link to="/procedures/icl" className="text-white/70 hover:text-white transition-all duration-300 font-light">{t('procedures.icl')}</Link></li>
-              <li><Link to="/blog" className="text-white/70 hover:text-white transition-all duration-300 font-light">{t('procedures.blog')}</Link></li>
-              <li><Link to="/contact" className="text-white/70 hover:text-white transition-all duration-300 font-light">{t('procedures.consultation')}</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-serif font-light mb-6 text-white tracking-wide">{t('contact.title')}</h3>
-            <div className="space-y-5">
-              <Link
-                to="/contact"
-                className="flex items-start space-x-4 hover:opacity-80 transition-opacity duration-300"
-                aria-label="View office location"
-              >
-                <MapPin className="h-5 w-5 chopard-text-accent mt-1" />
-                <div>
-                  <p className="text-white font-light text-sm">{t('contact.office')}</p>
-                  <p className="text-white/70 text-sm leading-relaxed font-light">{t('contact.address')}</p>
-                </div>
+            <h4 className="text-xs font-sans font-medium tracking-eyebrow text-champagne uppercase mb-6">
+              Practice
+            </h4>
+            <div className="flex flex-col gap-3">
+              <Link to="/procedures" className="text-sm text-graphite/70 hover:text-onyx font-light transition-colors">
+                Procedures
               </Link>
-              <a href="tel:+18449548686" className="flex items-center space-x-4 text-white/70 hover:text-white transition-all duration-300 font-light">
-                <span className="inline-flex items-center space-x-4" dir="ltr">
-                  <Phone className="h-5 w-5 chopard-text-accent" />
-                  <span className="font-light">
-                    {t('contact.phone')}
-                  </span>
-                </span>
-              </a>
-              <div className="flex items-center space-x-4">
-                <Mail className="h-5 w-5 chopard-text-accent" />
-                <a href="mailto:info@atelierlasik.com" className="text-white/70 hover:text-white transition-all duration-300 font-light">
-                  {t('contact.email')}
-                </a>
-              </div>
+              <Link to="/about" className="text-sm text-graphite/70 hover:text-onyx font-light transition-colors">
+                Dr. Flowers
+              </Link>
+              <Link to="/testimonials" className="text-sm text-graphite/70 hover:text-onyx font-light transition-colors">
+                Results
+              </Link>
+              <Link to="/financing" className="text-sm text-graphite/70 hover:text-onyx font-light transition-colors">
+                Financing
+              </Link>
             </div>
+          </div>
 
-            {/* Newsletter Signup */}
-            <div className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-              <h4 className="text-sm font-light mb-3 chopard-text-accent">{t('newsletter.title')}</h4>
-              <p className="text-xs text-white/70 mb-4 leading-relaxed font-light">{t('newsletter.description')}</p>
-              <div className="flex flex-col gap-3">
-                <input
-                  type="email"
-                  placeholder={t('newsletter.placeholder')}
-                  className="w-full px-3 py-2 bg-white/20 text-white text-sm rounded-lg border-0 focus:ring-2 focus:ring-white/50 focus:outline-none placeholder-white/50 backdrop-blur-sm font-light"
-                />
-                <button className="w-full chopard-accent text-white px-4 py-2 rounded-lg text-sm font-light hover:bg-opacity-90 transition-all duration-300">
-                  {t('newsletter.subscribe')}
-                </button>
+          <div>
+            <h4 className="text-xs font-sans font-medium tracking-eyebrow text-champagne uppercase mb-6">
+              Contact
+            </h4>
+            <div className="flex flex-col gap-4">
+              <a href="tel:+18449548686" className="flex items-start gap-3 text-sm text-graphite/70 hover:text-onyx font-light transition-colors">
+                <Phone className="w-4 h-4 mt-0.5 text-champagne flex-shrink-0" />
+                <span>(844) 954-8686</span>
+              </a>
+              <a href="mailto:info@atelierlasik.com" className="flex items-start gap-3 text-sm text-graphite/70 hover:text-onyx font-light transition-colors">
+                <Mail className="w-4 h-4 mt-0.5 text-champagne flex-shrink-0" />
+                <span>info@atelierlasik.com</span>
+              </a>
+              <div className="flex items-start gap-3 text-sm text-graphite/70 font-light">
+                <MapPin className="w-4 h-4 mt-0.5 text-champagne flex-shrink-0" />
+                <span>5750 Downey Ave., Suite 101<br />Lakewood, CA 90712</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/20 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center space-x-4 text-sm text-white/60 font-light">
-            <p>{t('legal.copyright')}</p>
-            <span className="hidden md:inline">|</span>
-            <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('legal.privacy')}</Link>
-            <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">{t('legal.terms')}</a>
-          </div>
-          <div className="mt-4 md:mt-0">
-            <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-xs chopard-text-accent font-light border border-white/20">
-              {t('badge.pacificMission')}
-            </div>
+        <div className="mt-16 pt-8 border-t border-onyx/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-graphite/50 font-light">
+            &copy; {new Date().getFullYear()} Atelier &mdash; Dr. Charles Flowers, MD. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            <Link to="/privacy-policy" className="text-xs text-graphite/50 hover:text-onyx font-light transition-colors">
+              Privacy
+            </Link>
+            <Link to="/terms-of-service" className="text-xs text-graphite/50 hover:text-onyx font-light transition-colors">
+              Terms
+            </Link>
           </div>
         </div>
       </div>
