@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight, Eye, Shield, Clock } from 'lucide-react';
-import Logo from '../components/Logo';
 
 const heroImages = [
   '/assets/images/eyes/lana-graves-h0ZHYdy1qTI-unsplash.jpg',
@@ -36,9 +35,6 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: Text content */}
             <div className="flex flex-col items-start">
-              <div className="mb-10">
-                <Logo variant="stacked" mode="dark" height={48} />
-              </div>
               <h1 className="font-serif font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.1]" style={{ color: '#FFFFFF' }}>
                 {t('hero.title')}<br />
                 <span style={{ color: '#C9A96E' }}>{t('hero.titleAccent')}</span>
