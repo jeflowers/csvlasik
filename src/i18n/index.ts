@@ -2,6 +2,7 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
+import { createMissingKeyHandler } from './missingKeyHandler';
 
 // Demographic groups for language organization
 export const DEMOGRAPHIC_GROUPS = {
@@ -197,6 +198,8 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    saveMissing: true,
+    missingKeyHandler: createMissingKeyHandler(i18n),
     react: {
       useSuspense: false,
       bindI18n: 'languageChanged loaded',
@@ -262,10 +265,5 @@ if (import.meta.env.DEV) {
     console.log('Language changed to:', lng);
   });
 }
-
-// Log initialization status
-console.log('i18n initialized with languages:', i18n.options.supportedLngs);
-console.log('i18n current language:', i18n.language);
-console.log('i18n backend loadPath:', i18n.options.backend?.loadPath);
 
 export default i18n;

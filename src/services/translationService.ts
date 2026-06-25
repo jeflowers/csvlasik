@@ -1,236 +1,210 @@
-interface TranslationConfig {
-  service: 'deepl' | 'google' | 'local';
-  apiKey?: string;
-  baseUrl?: string;
-  supportedLanguages: string[];
+interface CacheEntry {
+  translation: string;
+  timestamp: number;
+  service: 'deepl' | 'google';
 }
 
 interface TranslationCache {
-  [key: string]: {
-    translation: string;
-    timestamp: number;
-    service: string;
-  };
+  [key: string]: CacheEntry;
 }
+
+interface ServiceConfig {
+  enabled: boolean;
+  apiKey: string;
+  baseUrl: string;
+}
+
+// DeepL language code mapping
+const DEEPL_LANG_MAP: Record<string, string> = {
+  'ja': 'JA',
+  'es-MX': 'ES',
+  'pt-BR': 'PT-BR',
+  'ko': 'KO',
+  'zh': 'ZH-HANS',
+  'ar': 'AR',
+  'he': 'HE'
+};
+
+// Google Translate language code mapping
+const GOOGLE_LANG_MAP: Record<string, string> = {
+  'ja': 'ja',
+  'es-MX': 'es',
+  'pt-BR': 'pt',
+  'ko': 'ko',
+  'vi': 'vi',
+  'zh': 'zh-CN',
+  'ar': 'ar',
+  'hy': 'hy',
+  'he': 'iw',
+  'tl': 'tl'
+};
+
+// Medical terms that should never be translated
+const PROTECTED_TERMS = [
+  'LASIK', 'PRK', 'ICL', 'FDA', 'Dr. Charles Flowers',
+  'Atelier', 'Visian ICL', 'Femtosecond', 'Excimer',
+  'Keratomileusis', 'Keratectomy', 'Topography', 'Wavefront',
+  'Aberrometry'
+];
+
+const CACHE_KEY = 'atelier_translation_cache';
+const CACHE_EXPIRY_MS = 24 * 60 * 60 * 1000; // 24 hours
 
 class TranslationService {
   private cache: TranslationCache = {};
-  private cacheExpiry = 24 * 60 * 60 * 1000; // 24 hours
-  
-  private services = {
-    deepl: {
-      enabled: false,
-      apiKey: '',
-      baseUrl: 'https://api-free.deepl.com/v2',
-      supportedLanguages: ['ja', 'es-MX', 'pt-BR', 'ko', 'zh', 'ar', 'he']
-    },
-    google: {
-      enabled: false,
-      apiKey: '',
-      baseUrl: 'https://translation.googleapis.com/language/translate/v2',
-      supportedLanguages: ['ja', 'es-MX', 'pt-BR', 'tl', 'ko', 'vi', 'zh', 'ar', 'hy', 'he']
-    }
-  };
-
-  // Medical terms that should never be translated
-  private protectedTerms = [
-    'LASIK', 'PRK', 'ICL', 'FDA', 'Dr. Charles Flowers',
-    'Atelier', 'Visian ICL', 'Femtosecond', 'Excimer',
-    'Keratomileusis', 'Keratectomy', 'Topography', 'Wavefront'
-  ];
+  private deepl: ServiceConfig;
+  private google: ServiceConfig;
 
   constructor() {
+    this.deepl = {
+      enabled: false,
+      apiKey: '',
+      baseUrl: import.meta.env.VITE_DEEPL_API_URL || 'https://api-free.deepl.com/v2'
+    };
+
+    this.google = {
+      enabled: false,
+      apiKey: '',
+      baseUrl: 'https://translation.googleapis.com/language/translate/v2'
+    };
+
     this.initializeServices();
-    this.loadCacheFromStorage();
+    this.loadCache();
   }
 
   private initializeServices() {
-    // Check for environment variables (client-side)
     const deeplKey = import.meta.env.VITE_DEEPL_API_KEY;
     const googleKey = import.meta.env.VITE_GOOGLE_TRANSLATE_API_KEY;
 
-    if (deeplKey) {
-      this.services.deepl.enabled = true;
-      this.services.deepl.apiKey = deeplKey;
+    if (deeplKey && deeplKey !== 'your-deepl-api-key-here') {
+      this.deepl.enabled = true;
+      this.deepl.apiKey = deeplKey;
     }
 
-    if (googleKey) {
-      this.services.google.enabled = true;
-      this.services.google.apiKey = googleKey;
+    if (googleKey && googleKey !== 'your-google-translate-api-key-here') {
+      this.google.enabled = true;
+      this.google.apiKey = googleKey;
     }
-
-    console.log('Translation services initialized:', {
-      deepl: this.services.deepl.enabled,
-      google: this.services.google.enabled
-    });
   }
 
-  private loadCacheFromStorage() {
+  private loadCache() {
     try {
-      const cached = localStorage.getItem('translation_cache');
-      if (cached) {
-        this.cache = JSON.parse(cached);
+      const stored = localStorage.getItem(CACHE_KEY);
+      if (stored) {
+        this.cache = JSON.parse(stored);
       }
-    } catch (error) {
-      console.warn('Failed to load translation cache:', error);
+    } catch {
+      this.cache = {};
     }
   }
 
-  private saveCacheToStorage() {
+  private saveCache() {
     try {
-      localStorage.setItem('translation_cache', JSON.stringify(this.cache));
-    } catch (error) {
-      console.warn('Failed to save translation cache:', error);
+      localStorage.setItem(CACHE_KEY, JSON.stringify(this.cache));
+    } catch {
+      // localStorage full or unavailable - silently continue
     }
   }
 
-  private getCacheKey(text: string, targetLang: string, sourceLang: string = 'en'): string {
-    return `${sourceLang}-${targetLang}-${this.hashString(text)}`;
+  private makeCacheKey(text: string, targetLang: string, sourceLang: string): string {
+    let hash = 0;
+    const str = `${sourceLang}:${targetLang}:${text}`;
+    for (let i = 0; i < str.length; i++) {
+      hash = ((hash << 5) - hash) + str.charCodeAt(i);
+      hash = hash & hash;
+    }
+    return hash.toString(36);
   }
 
-  private hashString(str: string): string {
+  isCacheValid(entry: CacheEntry): boolean {
+    return Date.now() - entry.timestamp < CACHE_EXPIRY_MS;
+  }
+
+  hashString(str: string): string {
     let hash = 0;
     for (let i = 0; i < str.length; i++) {
-      const char = str.charCodeAt(i);
-      hash = ((hash << 5) - hash) + char;
-      hash = hash & hash; // Convert to 32-bit integer
+      hash = ((hash << 5) - hash) + str.charCodeAt(i);
+      hash = hash & hash;
     }
     return hash.toString();
   }
 
-  private isCacheValid(cacheEntry: any): boolean {
-    return Date.now() - cacheEntry.timestamp < this.cacheExpiry;
+  private protectTerms(translated: string): string {
+    let result = translated;
+    for (const term of PROTECTED_TERMS) {
+      const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(escaped, 'gi');
+      result = result.replace(regex, term);
+    }
+    return result;
   }
 
-  private protectMedicalTerms(originalText: string, translatedText: string): string {
-    let protectedText = translatedText;
-    
-    this.protectedTerms.forEach(term => {
-      const regex = new RegExp(`\\b${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
-      protectedText = protectedText.replace(regex, term);
+  isDeeplSupported(lang: string): boolean {
+    return lang in DEEPL_LANG_MAP;
+  }
+
+  isGoogleSupported(lang: string): boolean {
+    return lang in GOOGLE_LANG_MAP;
+  }
+
+  private async callDeepL(text: string, targetLang: string, sourceLang: string): Promise<string> {
+    const deeplTarget = DEEPL_LANG_MAP[targetLang];
+    if (!deeplTarget) throw new Error(`DeepL: unsupported language ${targetLang}`);
+
+    const response = await fetch(`${this.deepl.baseUrl}/translate`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `DeepL-Auth-Key ${this.deepl.apiKey}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        text,
+        source_lang: sourceLang.toUpperCase(),
+        target_lang: deeplTarget,
+        preserve_formatting: '1'
+      })
     });
-    
-    return protectedText;
+
+    if (!response.ok) {
+      const body = await response.text().catch(() => '');
+      throw new Error(`DeepL ${response.status}: ${body}`);
+    }
+
+    const data = await response.json();
+    return data.translations[0].text;
   }
 
-  private async translateWithDeepL(text: string, targetLang: string, sourceLang: string = 'en'): Promise<string> {
-    if (!this.services.deepl.enabled) {
-      throw new Error('DeepL service not configured');
+  private async callGoogle(text: string, targetLang: string, sourceLang: string): Promise<string> {
+    const googleTarget = GOOGLE_LANG_MAP[targetLang];
+    if (!googleTarget) throw new Error(`Google: unsupported language ${targetLang}`);
+
+    const response = await fetch(`${this.google.baseUrl}?key=${this.google.apiKey}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        q: text,
+        source: sourceLang,
+        target: googleTarget,
+        format: 'text'
+      })
+    });
+
+    if (!response.ok) {
+      const body = await response.text().catch(() => '');
+      throw new Error(`Google Translate ${response.status}: ${body}`);
     }
 
-    const langMap: { [key: string]: string } = {
-      'ja': 'JA',
-      'es-MX': 'ES',
-      'pt-BR': 'PT-BR',
-      'ko': 'KO',
-      'zh': 'ZH',
-      'ar': 'AR',
-      'he': 'HE'
-    };
-
-    const deeplLang = langMap[targetLang];
-    if (!deeplLang) {
-      throw new Error(`Language ${targetLang} not supported by DeepL`);
-    }
-
-    try {
-      const response = await fetch(`${this.services.deepl.baseUrl}/translate`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `DeepL-Auth-Key ${this.services.deepl.apiKey}`,
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-          text: text,
-          source_lang: sourceLang.toUpperCase(),
-          target_lang: deeplLang,
-          preserve_formatting: '1',
-          formality: 'default'
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error(`DeepL API error: ${response.status} ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      return data.translations[0].text;
-    } catch (error) {
-      console.error('DeepL translation error:', error);
-      throw error;
-    }
+    const data = await response.json();
+    return data.data.translations[0].translatedText;
   }
 
-  private async translateWithGoogle(text: string, targetLang: string, sourceLang: string = 'en'): Promise<string> {
-    if (!this.services.google.enabled) {
-      throw new Error('Google Translate service not configured');
-    }
-
-    const langMap: { [key: string]: string } = {
-      'ja': 'ja',
-      'es-MX': 'es',
-      'pt-BR': 'pt',
-      'pt': 'pt',
-      'tl': 'tl',
-      'ko': 'ko',
-      'vi': 'vi',
-      'zh': 'zh-cn',
-      'ar': 'ar',
-      'hy': 'hy',
-      'he': 'he'
-    };
-
-    const googleLang = langMap[targetLang];
-    if (!googleLang) {
-      throw new Error(`Language ${targetLang} not supported by Google Translate`);
-    }
-
-    try {
-      const response = await fetch(`${this.services.google.baseUrl}?key=${this.services.google.apiKey}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          q: text,
-          source: sourceLang,
-          target: googleLang,
-          format: 'text'
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error(`Google Translate API error: ${response.status} ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      return data.data.translations[0].translatedText;
-    } catch (error) {
-      console.error('Google Translate error:', error);
-      throw error;
-    }
-  }
-
-  private async loadLocalTranslation(key: string, targetLang: string, namespace: string = 'common'): Promise<string | null> {
-    try {
-      const response = await fetch(`/locales/${targetLang}/${namespace}.json`);
-      if (!response.ok) return null;
-      
-      const translations = await response.json();
-      return this.getNestedValue(translations, key) || null;
-    } catch (error) {
-      console.warn(`Failed to load local translation for ${targetLang}/${namespace}:`, error);
-      return null;
-    }
-  }
-
-  private getNestedValue(obj: any, path: string): any {
-    return path.split('.').reduce((current, key) => current?.[key], obj);
-  }
-
-  public async translate(
-    text: string, 
-    targetLang: string, 
+  /**
+   * Translate text using the service chain: DeepL -> Google -> original text.
+   * Static JSON files (loaded by i18next) are checked BEFORE this service is called.
+   */
+  async translate(
+    text: string,
+    targetLang: string,
     sourceLang: string = 'en',
     options: {
       preferredService?: 'deepl' | 'google' | 'auto';
@@ -239,123 +213,107 @@ class TranslationService {
       key?: string;
     } = {}
   ): Promise<string> {
-    const { preferredService = 'auto', useCache = true, namespace = 'common', key } = options;
+    const { preferredService = 'auto', useCache = true } = options;
 
-    // Return original text if target language is source language
-    if (targetLang === sourceLang) {
-      return text;
-    }
+    if (targetLang === sourceLang || targetLang === 'en') return text;
 
-    // Check cache first
+    // Check cache
     if (useCache) {
-      const cacheKey = this.getCacheKey(text, targetLang, sourceLang);
+      const cacheKey = this.makeCacheKey(text, targetLang, sourceLang);
       const cached = this.cache[cacheKey];
-      
       if (cached && this.isCacheValid(cached)) {
         return cached.translation;
       }
     }
 
-    // Try local translation first if key is provided
-    if (key) {
-      const localTranslation = await this.loadLocalTranslation(key, targetLang, namespace);
-      if (localTranslation) {
-        return localTranslation;
-      }
+    // Determine service order based on language support
+    const tryDeepL = this.deepl.enabled && this.isDeeplSupported(targetLang);
+    const tryGoogle = this.google.enabled && this.isGoogleSupported(targetLang);
+
+    let services: Array<'deepl' | 'google'> = [];
+
+    if (preferredService === 'deepl') {
+      if (tryDeepL) services.push('deepl');
+      if (tryGoogle) services.push('google');
+    } else if (preferredService === 'google') {
+      if (tryGoogle) services.push('google');
+      if (tryDeepL) services.push('deepl');
+    } else {
+      // Auto: DeepL first (higher quality), Google as fallback
+      if (tryDeepL) services.push('deepl');
+      if (tryGoogle) services.push('google');
     }
 
-    // Determine best service
-    let service = preferredService;
-    if (service === 'auto') {
-      if (this.services.deepl.enabled && this.services.deepl.supportedLanguages.includes(targetLang)) {
-        service = 'deepl';
-      } else if (this.services.google.enabled && this.services.google.supportedLanguages.includes(targetLang)) {
-        service = 'google';
-      } else {
-        throw new Error(`No translation service available for language: ${targetLang}`);
-      }
+    if (services.length === 0) {
+      return text; // No services available, return original
     }
 
-    let translation: string;
-    let usedService: string;
-
-    try {
-      if (service === 'deepl') {
-        translation = await this.translateWithDeepL(text, targetLang, sourceLang);
-        usedService = 'deepl';
-      } else if (service === 'google') {
-        translation = await this.translateWithGoogle(text, targetLang, sourceLang);
-        usedService = 'google';
-      } else {
-        throw new Error(`Invalid service: ${service}`);
-      }
-
-      // Protect medical terms
-      translation = this.protectMedicalTerms(text, translation);
-
-      // Cache the result
-      if (useCache) {
-        const cacheKey = this.getCacheKey(text, targetLang, sourceLang);
-        this.cache[cacheKey] = {
-          translation,
-          timestamp: Date.now(),
-          service: usedService
-        };
-        this.saveCacheToStorage();
-      }
-
-      return translation;
-
-    } catch (error) {
-      console.error(`Translation failed with ${service}:`, error);
-      
-      // Try fallback service
-      const fallbackService = service === 'deepl' ? 'google' : 'deepl';
-      if (this.services[fallbackService].enabled && 
-          this.services[fallbackService].supportedLanguages.includes(targetLang)) {
-        
-        console.log(`Trying fallback service: ${fallbackService}`);
-        try {
-          if (fallbackService === 'deepl') {
-            translation = await this.translateWithDeepL(text, targetLang, sourceLang);
-          } else {
-            translation = await this.translateWithGoogle(text, targetLang, sourceLang);
-          }
-          
-          translation = this.protectMedicalTerms(text, translation);
-          
-          if (useCache) {
-            const cacheKey = this.getCacheKey(text, targetLang, sourceLang);
-            this.cache[cacheKey] = {
-              translation,
-              timestamp: Date.now(),
-              service: fallbackService
-            };
-            this.saveCacheToStorage();
-          }
-          
-          return translation;
-        } catch (fallbackError) {
-          console.error(`Fallback translation also failed:`, fallbackError);
+    for (const service of services) {
+      try {
+        let translation: string;
+        if (service === 'deepl') {
+          translation = await this.callDeepL(text, targetLang, sourceLang);
+        } else {
+          translation = await this.callGoogle(text, targetLang, sourceLang);
         }
+
+        translation = this.protectTerms(translation);
+
+        // Cache the result
+        if (useCache) {
+          const cacheKey = this.makeCacheKey(text, targetLang, sourceLang);
+          this.cache[cacheKey] = { translation, timestamp: Date.now(), service };
+          this.saveCache();
+        }
+
+        return translation;
+      } catch (error) {
+        console.warn(`Translation via ${service} failed for "${text.slice(0, 40)}..." to ${targetLang}:`, error);
+        // Continue to next service
       }
-      
-      // Final fallback to original text
-      console.warn(`All translation services failed, returning original text`);
-      return text;
     }
+
+    // All services failed - return original text
+    return text;
   }
 
-  public getServiceStatus() {
+  async batchTranslate(
+    items: Array<{ text: string; key?: string; namespace?: string }>,
+    targetLanguages: string[],
+    options: { preferredService?: 'deepl' | 'google' | 'auto' } = {}
+  ): Promise<Record<string, Record<number, string>>> {
+    const results: Record<string, Record<number, string>> = {};
+
+    for (const lang of targetLanguages) {
+      results[lang] = {};
+      for (let i = 0; i < items.length; i++) {
+        try {
+          results[lang][i] = await this.translate(items[i].text, lang, 'en', {
+            ...options,
+            key: items[i].key,
+            namespace: items[i].namespace
+          });
+          // Rate limiting delay
+          await new Promise(resolve => setTimeout(resolve, 100));
+        } catch {
+          results[lang][i] = items[i].text;
+        }
+      }
+    }
+
+    return results;
+  }
+
+  getServiceStatus() {
     return {
       deepl: {
-        enabled: this.services.deepl.enabled,
-        supportedLanguages: this.services.deepl.supportedLanguages,
+        enabled: this.deepl.enabled,
+        supportedLanguages: Object.keys(DEEPL_LANG_MAP),
         name: 'DeepL'
       },
       google: {
-        enabled: this.services.google.enabled,
-        supportedLanguages: this.services.google.supportedLanguages,
+        enabled: this.google.enabled,
+        supportedLanguages: Object.keys(GOOGLE_LANG_MAP),
         name: 'Google Translate'
       },
       cache: {
@@ -365,41 +323,14 @@ class TranslationService {
     };
   }
 
-  public clearCache() {
+  clearCache() {
     this.cache = {};
-    localStorage.removeItem('translation_cache');
+    localStorage.removeItem(CACHE_KEY);
     localStorage.setItem('translation_cache_cleared', new Date().toISOString());
   }
 
-  public async batchTranslate(
-    items: Array<{ text: string; key?: string; namespace?: string }>,
-    targetLanguages: string[],
-    options: { preferredService?: 'deepl' | 'google' | 'auto' } = {}
-  ): Promise<{ [lang: string]: { [index: number]: string } }> {
-    const results: { [lang: string]: { [index: number]: string } } = {};
-    
-    for (const lang of targetLanguages) {
-      results[lang] = {};
-      
-      for (let i = 0; i < items.length; i++) {
-        const item = items[i];
-        try {
-          results[lang][i] = await this.translate(item.text, lang, 'en', {
-            ...options,
-            key: item.key,
-            namespace: item.namespace
-          });
-          
-          // Add delay to respect API rate limits
-          await new Promise(resolve => setTimeout(resolve, 100));
-        } catch (error) {
-          console.error(`Failed to translate item ${i} to ${lang}:`, error);
-          results[lang][i] = item.text; // Fallback to original
-        }
-      }
-    }
-    
-    return results;
+  isAvailable(): boolean {
+    return this.deepl.enabled || this.google.enabled;
   }
 }
 
