@@ -26,12 +26,12 @@ const Header = () => {
             <Logo mode="dark" height={36} tagline={false} />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map(({ to, label }) => (
               <Link
                 key={to}
                 to={to}
-                className="text-sm font-light tracking-wide transition-colors duration-200"
+                className="text-sm font-light tracking-wide whitespace-nowrap transition-colors duration-200"
                 style={{
                   color: isActive(to) || isActivePath(to) ? '#FFFFFF' : 'rgba(255,255,255,0.7)',
                 }}
@@ -41,29 +41,29 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:+18449548686"
-              className="flex items-center gap-2 text-sm font-light transition-colors"
+              className="flex items-center gap-1.5 text-sm font-light whitespace-nowrap transition-colors"
               style={{ color: 'rgba(255,255,255,0.6)' }}
             >
-              <Phone className="w-3.5 h-3.5" />
+              <Phone className="w-3.5 h-3.5 flex-shrink-0" />
               <span>(844) 954-8686</span>
             </a>
-            <div className="w-px h-5" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }} />
+            <div className="w-px h-5 flex-shrink-0" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }} />
             <LanguageSelector variant="transparent" />
-            <div className="w-px h-5" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }} />
+            <div className="w-px h-5 flex-shrink-0" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }} />
             <Link
               to="/portal"
-              className="flex items-center gap-1.5 text-sm font-light transition-colors"
+              className="flex items-center gap-1.5 text-sm font-light whitespace-nowrap transition-colors"
               style={{ color: 'rgba(255,255,255,0.6)' }}
             >
-              <User className="w-3.5 h-3.5" />
+              <User className="w-3.5 h-3.5 flex-shrink-0" />
               <span>Portal</span>
             </Link>
             <Link
               to="/portal"
-              className="px-6 py-2.5 text-xs font-medium tracking-widest transition-colors duration-200 ml-2"
+              className="px-5 py-2 text-xs font-medium tracking-widest whitespace-nowrap transition-colors duration-200 ml-2"
               style={{ backgroundColor: '#D4AF37', color: '#1A1A1A' }}
             >
               BOOK CONSULT
