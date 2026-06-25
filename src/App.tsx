@@ -293,7 +293,7 @@ function App() {
                 <RTLProvider>
                   <div className="min-h-screen bg-white">
                     <Header />
-                    <main className="pt-[72px]">
+                    <main className="pt-[76px] lg:pt-[114px]">
                       <Suspense fallback={<LoadingFallback />}>
                       <Routes>
                         <Route path="/" element={<Home />} />
