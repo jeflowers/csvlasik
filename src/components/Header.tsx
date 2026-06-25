@@ -60,7 +60,7 @@ const Header = () => {
           <div className="flex items-center justify-between h-[76px]">
             {/* Logo */}
             <Link to="/" className="flex-shrink-0">
-              <Logo mode="dark" height={34} tagline={false} />
+              <Logo mode="dark" height={34} />
             </Link>
 
             {/* Desktop nav + CTA */}
