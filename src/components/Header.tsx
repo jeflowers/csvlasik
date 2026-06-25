@@ -55,11 +55,11 @@ const Header = () => {
             <div className="w-px h-5 flex-shrink-0" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }} />
             <Link
               to="/portal"
-              className="flex items-center gap-1.5 text-sm font-light whitespace-nowrap transition-colors"
+              className="p-1.5 transition-colors hover:text-white"
               style={{ color: 'rgba(255,255,255,0.6)' }}
+              title="Patient Portal"
             >
-              <User className="w-3.5 h-3.5 flex-shrink-0" />
-              <span>Portal</span>
+              <User className="w-4 h-4" />
             </Link>
             <Link
               to="/portal"

@@ -34,20 +34,36 @@ export default function Logo({
   tagline = true,
 }: LogoProps) {
   const wordColor = mode === "dark" ? CREAM : INK;
-  const word = (size: number, ls = "0.24em") => (
-    <span
-      style={{
-        fontFamily: "'Cormorant Garamond', Georgia, serif",
-        fontWeight: 600,
-        fontSize: size,
-        letterSpacing: ls,
-        paddingLeft: ls,
-        color: wordColor,
-        lineHeight: 1,
-      }}
-    >
-      ATELIER
-    </span>
+  const wordBlock = (size: number, ls = "0.24em") => (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", lineHeight: 1 }}>
+      <span
+        style={{
+          fontFamily: "'Cormorant Garamond', Georgia, serif",
+          fontWeight: 600,
+          fontSize: size,
+          letterSpacing: ls,
+          paddingLeft: ls,
+          color: wordColor,
+          lineHeight: 1,
+        }}
+      >
+        ATELIER
+      </span>
+      <span
+        style={{
+          fontFamily: "'Inter', system-ui, sans-serif",
+          fontWeight: 300,
+          fontSize: size * 0.52,
+          letterSpacing: "0.38em",
+          paddingLeft: "0.38em",
+          color: CHAMPAGNE,
+          lineHeight: 1,
+          marginTop: size * 0.12,
+        }}
+      >
+        LASIK
+      </span>
+    </div>
   );
   const tag = (size: number) => (
     <span
@@ -73,7 +89,7 @@ export default function Logo({
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: height * 0.4 }}>
         <Mark size={markH * 2.6} mode={mode} />
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: height * 0.18 }}>
-          {word(height * 0.62)}
+          {wordBlock(height * 0.62)}
           {tagline && tag(Math.max(7, height * 0.18))}
         </div>
       </div>
@@ -85,7 +101,7 @@ export default function Logo({
     <div style={{ display: "flex", alignItems: "center", gap: height * 0.34 }}>
       <Mark size={markH * 1.9} mode={mode} />
       <div style={{ display: "flex", flexDirection: "column", gap: height * 0.16 }}>
-        {word(height * 0.66)}
+        {wordBlock(height * 0.66)}
         {tagline && tag(Math.max(7, height * 0.18))}
       </div>
     </div>

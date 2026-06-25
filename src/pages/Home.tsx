@@ -24,7 +24,7 @@ const Home = () => {
   }, [nextImage]);
 
   return (
-    <div className="pt-[72px]">
+    <div>
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ backgroundColor: '#1A1A1A' }}>
         <div className="absolute inset-0 opacity-[0.03]" style={{
