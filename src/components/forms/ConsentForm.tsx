@@ -82,7 +82,7 @@ const ConsentForm: React.FC<Props> = ({
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {submitSuccess && (
-        <div className="bg-teal-50 border border-teal-200 text-teal-800 px-4 py-3 rounded-lg text-sm">
+        <div className="bg-cream border border-champagne/30 text-onyx px-4 py-3 rounded-lg text-sm">
           {t('success.consent')}
         </div>
       )}
@@ -112,7 +112,7 @@ const ConsentForm: React.FC<Props> = ({
             name="hipaaPrivacyAcknowledgment"
             checked={data.hipaaPrivacyAcknowledgment}
             onChange={handleCheckboxChange}
-            className="mt-1 h-5 w-5 text-teal-600 border-gray-300 rounded focus:ring-2 focus:ring-teal-500"
+            className="mt-1 h-5 w-5 text-champagne border-gray-300 rounded focus:ring-2 focus:ring-champagne"
             aria-required="true"
             aria-invalid={!!errors.consents}
           />
@@ -135,7 +135,7 @@ const ConsentForm: React.FC<Props> = ({
             name="consentToTreatment"
             checked={data.consentToTreatment}
             onChange={handleCheckboxChange}
-            className="mt-1 h-5 w-5 text-teal-600 border-gray-300 rounded focus:ring-2 focus:ring-teal-500"
+            className="mt-1 h-5 w-5 text-champagne border-gray-300 rounded focus:ring-2 focus:ring-champagne"
             aria-required="true"
             aria-invalid={!!errors.consents}
           />
@@ -160,7 +160,7 @@ const ConsentForm: React.FC<Props> = ({
             name="patientSignature"
             value={data.patientSignature}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent ${
               errors.patientSignature ? 'border-red-500' : 'border-gray-300'
             }`}
             placeholder={t('consent.patientSignature.placeholder')}
@@ -189,7 +189,7 @@ const ConsentForm: React.FC<Props> = ({
             name="signatureDate"
             value={data.signatureDate}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent ${
               errors.signatureDate ? 'border-red-500' : 'border-gray-300'
             }`}
             aria-required="true"
@@ -220,7 +220,7 @@ const ConsentForm: React.FC<Props> = ({
         <button
           type="submit"
           disabled={isSubmitting || !isFormValid}
-          className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
+          className="inline-flex items-center gap-2 bg-onyx text-white px-8 py-3 rounded-lg font-semibold hover:bg-graphite transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
         >
           {isSubmitting ? t('buttons.submitting') : (
             <>

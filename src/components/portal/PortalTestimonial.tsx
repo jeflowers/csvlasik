@@ -64,8 +64,8 @@ const PortalTestimonial: React.FC = () => {
     return (
       <div className="max-w-2xl mx-auto">
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-12 text-center">
-          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-teal-100 mx-auto mb-6">
-            <CheckCircle2 className="h-8 w-8 text-teal-600" />
+          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-cream mx-auto mb-6">
+            <CheckCircle2 className="h-8 w-8 text-champagne" />
           </div>
           <h2 className="text-2xl font-serif text-gray-900 mb-3">{t('testimonial.successTitle')}</h2>
           <p className="text-gray-600 max-w-md mx-auto mb-2">
@@ -77,7 +77,7 @@ const PortalTestimonial: React.FC = () => {
           <div className="flex items-center justify-center gap-3">
             <Link
               to="/portal"
-              className="px-5 py-2.5 text-sm font-medium text-white bg-teal-600 rounded-lg hover:bg-teal-700 transition-colors"
+              className="px-5 py-2.5 text-sm font-medium text-white bg-onyx rounded-lg hover:bg-graphite transition-colors"
             >
               {t('testimonial.backToDashboard')}
             </Link>
@@ -98,7 +98,7 @@ const PortalTestimonial: React.FC = () => {
       <div className="mb-8">
         <Link
           to="/portal"
-          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-teal-600 transition-colors mb-4"
+          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-champagne transition-colors mb-4"
         >
           <ArrowLeft className="h-4 w-4" />
           {t('testimonial.backToDashboard')}
@@ -124,7 +124,7 @@ const PortalTestimonial: React.FC = () => {
               id="testimonial-name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent"
               placeholder={t('testimonial.namePlaceholder')}
             />
             <p className="mt-1 text-xs text-gray-500">{t('testimonial.nameNote')}</p>
@@ -171,7 +171,7 @@ const PortalTestimonial: React.FC = () => {
               value={content}
               onChange={(e) => setContent(e.target.value)}
               rows={5}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent resize-none"
               placeholder={t('testimonial.experiencePlaceholder')}
             />
             <p className="mt-1 text-xs text-gray-500">
@@ -188,7 +188,7 @@ const PortalTestimonial: React.FC = () => {
                 id="procedure-type"
                 value={procedureType}
                 onChange={(e) => setProcedureType(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent bg-white"
               >
                 <option value="">{t('testimonial.selectProcedure')}</option>
                 <option value="LASIK">LASIK</option>
@@ -209,7 +209,7 @@ const PortalTestimonial: React.FC = () => {
                 value={procedureDate}
                 onChange={(e) => setProcedureDate(e.target.value)}
                 max={new Date().toISOString().split('T')[0]}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent"
               />
             </div>
           </div>
@@ -223,7 +223,7 @@ const PortalTestimonial: React.FC = () => {
           <button
             type="submit"
             disabled={isSubmitting || !isValid}
-            className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
+            className="inline-flex items-center gap-2 bg-onyx text-white px-8 py-3 rounded-lg font-semibold hover:bg-graphite transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
           >
             {isSubmitting ? (
               t('testimonial.submitting')

@@ -262,7 +262,7 @@ const PortalForms: React.FC = () => {
     return (
       <div className="flex items-center justify-center h-64">
         <div className="flex items-center gap-3 text-gray-500">
-          <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+          <Loader2 className="h-6 w-6 animate-spin text-champagne" />
           <span className="text-sm">{isEditMode ? t('forms.loading', { defaultValue: 'Loading your forms...' }) : t('forms.checkingStatus', { defaultValue: 'Checking status...' })}</span>
         </div>
       </div>
@@ -273,8 +273,8 @@ const PortalForms: React.FC = () => {
     return (
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-12 text-center">
-          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-teal-100 mx-auto mb-6">
-            <Check className="h-8 w-8 text-teal-600" />
+          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-cream mx-auto mb-6">
+            <Check className="h-8 w-8 text-champagne" />
           </div>
           <h2 className="text-2xl font-serif text-gray-900 mb-3">
             {submitSuccess && isEditMode
@@ -295,7 +295,7 @@ const PortalForms: React.FC = () => {
             </button>
             <button
               onClick={() => navigate('/portal')}
-              className="px-5 py-2.5 text-sm font-medium text-white bg-teal-600 rounded-lg hover:bg-teal-700 transition-colors"
+              className="px-5 py-2.5 text-sm font-medium text-white bg-onyx rounded-lg hover:bg-graphite transition-colors"
             >
               {t('forms.backToDashboard', { defaultValue: 'Back to Dashboard' })}
             </button>
@@ -343,9 +343,9 @@ const PortalForms: React.FC = () => {
                       relative flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-300
                       ${canClick ? 'cursor-pointer hover:scale-110' : !isEditMode ? 'cursor-default' : ''}
                       ${isCurrent
-                        ? 'border-teal-600 bg-teal-600 text-white shadow-lg shadow-teal-600/25'
+                        ? 'border-champagne bg-onyx text-white shadow-lg shadow-onyx/25'
                         : isCompleted
-                          ? 'border-teal-600 bg-teal-50 text-teal-600'
+                          ? 'border-champagne bg-cream text-champagne'
                           : isPast
                             ? 'border-gray-300 bg-gray-50 text-gray-500'
                             : 'border-gray-200 bg-white text-gray-400'
@@ -359,12 +359,12 @@ const PortalForms: React.FC = () => {
                       <Icon className="h-5 w-5" />
                     )}
                     {isCompleted && (
-                      <CheckCircle2 className="absolute -top-1 -right-1 h-4 w-4 text-teal-600 bg-white rounded-full" />
+                      <CheckCircle2 className="absolute -top-1 -right-1 h-4 w-4 text-champagne bg-white rounded-full" />
                     )}
                   </button>
                   <span
                     className={`text-xs font-medium text-center hidden sm:block ${
-                      isCurrent ? 'text-teal-700' : isCompleted ? 'text-teal-600' : 'text-gray-400'
+                      isCurrent ? 'text-onyx' : isCompleted ? 'text-champagne' : 'text-gray-400'
                     }`}
                   >
                     {step.label}
@@ -375,7 +375,7 @@ const PortalForms: React.FC = () => {
                   <div className="flex-1 mx-2 sm:mx-4 mb-6 sm:mb-4">
                     <div className="h-0.5 rounded-full bg-gray-200 relative">
                       <div
-                        className="absolute inset-y-0 left-0 bg-teal-600 rounded-full transition-all duration-500"
+                        className="absolute inset-y-0 left-0 bg-champagne rounded-full transition-all duration-500"
                         style={{
                           width: index < activeStep || status[statusKeys[index]] ? '100%' : '0%',
                         }}
@@ -392,7 +392,7 @@ const PortalForms: React.FC = () => {
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
         <div className="border-b border-gray-100 bg-gray-50/50 px-6 py-4">
           <div className="flex items-center gap-3">
-            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-teal-600 text-white text-xs font-bold">
+            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-onyx text-white text-xs font-bold">
               {activeStep + 1}
             </span>
             <div>

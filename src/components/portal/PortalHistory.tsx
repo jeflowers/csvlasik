@@ -13,9 +13,9 @@ import { useTranslation } from 'react-i18next';
 import { getPatientActivityLog, type ActivityLogEntry, type ActivityType } from '../../services/patientActivityService';
 
 const ACTIVITY_CONFIG: Record<ActivityType, { icon: React.ElementType; color: string; bg: string }> = {
-  login: { icon: LogIn, color: 'text-teal-600', bg: 'bg-teal-50' },
+  login: { icon: LogIn, color: 'text-champagne', bg: 'bg-cream' },
   logout: { icon: LogOut, color: 'text-gray-500', bg: 'bg-gray-100' },
-  form_submit: { icon: FileText, color: 'text-blue-600', bg: 'bg-blue-50' },
+  form_submit: { icon: FileText, color: 'text-onyx', bg: 'bg-cream' },
   form_update: { icon: Pencil, color: 'text-amber-600', bg: 'bg-amber-50' },
   testimonial_submit: { icon: Star, color: 'text-amber-500', bg: 'bg-amber-50' },
   password_reset: { icon: KeyRound, color: 'text-red-500', bg: 'bg-red-50' },
@@ -68,7 +68,7 @@ const PortalHistory: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-champagne" />
       </div>
     );
   }

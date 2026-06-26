@@ -53,7 +53,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({ items, selected, onChange
                 : selected.filter((s) => s !== item)
             );
           }}
-          className="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500 transition-colors"
+          className="h-4 w-4 rounded border-gray-300 text-champagne focus:ring-champagne transition-colors"
         />
         <span className="text-sm text-gray-700 group-hover:text-gray-900 transition-colors">
           {t(`${translationPrefix}.${item}`)}
@@ -80,7 +80,7 @@ const RadioGroup: React.FC<RadioGroupProps> = ({ name, value, options, onChange 
           value={opt.value}
           checked={value === opt.value}
           onChange={() => onChange(opt.value)}
-          className="h-4 w-4 border-gray-300 text-teal-600 focus:ring-teal-500"
+          className="h-4 w-4 border-gray-300 text-champagne focus:ring-champagne"
         />
         <span className="text-sm text-gray-700 group-hover:text-gray-900 transition-colors">
           {opt.label}
@@ -136,14 +136,14 @@ const MedicalHistoryForm: React.FC<Props> = ({ data, onChange, onPrevious, onNex
 
   const vc = data.visionCorrection || defaultVisionCorrection;
 
-  const inputClass = 'w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all';
+  const inputClass = 'w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-champagne focus:border-transparent transition-all';
   const textareaClass = `${inputClass} resize-none`;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="flex items-center gap-3 mb-2">
-        <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-teal-50">
-          <Eye className="h-5 w-5 text-teal-600" />
+        <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-cream">
+          <Eye className="h-5 w-5 text-champagne" />
         </div>
         <div>
           <h2 className="text-lg font-semibold text-gray-900">{t('medicalHistory.sectionTitle')}</h2>
@@ -160,7 +160,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ data, onChange, onPrevious, onNex
                 type="checkbox"
                 checked={vc.glasses}
                 onChange={(e) => updateVisionCorrection('glasses', e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+                className="h-4 w-4 rounded border-gray-300 text-champagne focus:ring-champagne"
               />
               <span className="text-sm text-gray-700">{t('medicalHistory.q1.glasses')}</span>
             </label>
@@ -169,14 +169,14 @@ const MedicalHistoryForm: React.FC<Props> = ({ data, onChange, onPrevious, onNex
                 type="checkbox"
                 checked={vc.contacts}
                 onChange={(e) => updateVisionCorrection('contacts', e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+                className="h-4 w-4 rounded border-gray-300 text-champagne focus:ring-champagne"
               />
               <span className="text-sm text-gray-700">{t('medicalHistory.q1.contacts')}</span>
             </label>
           </div>
 
           {vc.contacts && (
-            <div className="pl-6 border-l-2 border-teal-100 space-y-2">
+            <div className="pl-6 border-l-2 border-champagne/30 space-y-2">
               <p className="text-xs font-medium text-gray-600">{t('medicalHistory.q1.contactTypeLabel')}</p>
               <div className="flex flex-wrap gap-3">
                 {CONTACT_TYPES.map((ct) => (
@@ -187,7 +187,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ data, onChange, onPrevious, onNex
                       value={ct}
                       checked={vc.contactType === ct}
                       onChange={() => updateVisionCorrection('contactType', ct)}
-                      className="h-4 w-4 border-gray-300 text-teal-600 focus:ring-teal-500"
+                      className="h-4 w-4 border-gray-300 text-champagne focus:ring-champagne"
                     />
                     <span className="text-sm text-gray-700">{t(`medicalHistory.q1.${ct}`)}</span>
                   </label>
@@ -246,7 +246,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ data, onChange, onPrevious, onNex
                 type="checkbox"
                 checked={data.lastEyeExamMayVerify || false}
                 onChange={(e) => updateField('lastEyeExamMayVerify', e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+                className="h-4 w-4 rounded border-gray-300 text-champagne focus:ring-champagne"
               />
               <span className="text-sm text-gray-700">{t('medicalHistory.q2.mayVerify')}</span>
             </label>
@@ -335,8 +335,8 @@ const MedicalHistoryForm: React.FC<Props> = ({ data, onChange, onPrevious, onNex
       </QuestionCard>
 
       <div className="flex items-center gap-3 pt-2">
-        <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-blue-50">
-          <Stethoscope className="h-5 w-5 text-blue-600" />
+        <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-cream">
+          <Stethoscope className="h-5 w-5 text-champagne" />
         </div>
         <div>
           <h2 className="text-lg font-semibold text-gray-900">{t('medicalHistory.generalHealthTitle')}</h2>
@@ -425,7 +425,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ data, onChange, onPrevious, onNex
         <button
           type="submit"
           disabled={!isFormValid}
-          className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
+          className="inline-flex items-center gap-2 bg-onyx text-white px-8 py-3 rounded-lg font-semibold hover:bg-graphite transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
         >
           {t('buttons.next', { defaultValue: 'Save & Continue' })}
           <ArrowRight className="h-4 w-4" />

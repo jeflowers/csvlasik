@@ -81,7 +81,7 @@ const PortalDashboard: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-champagne" />
       </div>
     );
   }
@@ -96,8 +96,8 @@ const PortalDashboard: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <div className="bg-white rounded-xl border border-gray-200 p-5">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center">
-              <CheckCircle2 className="h-5 w-5 text-teal-600" />
+            <div className="w-10 h-10 rounded-lg bg-cream flex items-center justify-center">
+              <CheckCircle2 className="h-5 w-5 text-champagne" />
             </div>
             <div>
               <p className="text-2xl font-semibold text-gray-900">{completedCount}/4</p>
@@ -106,7 +106,7 @@ const PortalDashboard: React.FC = () => {
           </div>
           <div className="w-full bg-gray-100 rounded-full h-2">
             <div
-              className="bg-teal-600 h-2 rounded-full transition-all duration-500"
+              className="bg-champagne h-2 rounded-full transition-all duration-500"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
@@ -114,8 +114,8 @@ const PortalDashboard: React.FC = () => {
 
         <div className="bg-white rounded-xl border border-gray-200 p-5">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
-              <ClipboardList className="h-5 w-5 text-blue-600" />
+            <div className="w-10 h-10 rounded-lg bg-cream flex items-center justify-center">
+              <ClipboardList className="h-5 w-5 text-champagne" />
             </div>
             <div>
               <p className="text-2xl font-semibold text-gray-900">{submissionCount}</p>
@@ -126,8 +126,8 @@ const PortalDashboard: React.FC = () => {
 
         <div className="bg-white rounded-xl border border-gray-200 p-5">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center">
-              <Shield className="h-5 w-5 text-emerald-600" />
+            <div className="w-10 h-10 rounded-lg bg-cream flex items-center justify-center">
+              <Shield className="h-5 w-5 text-onyx" />
             </div>
             <div>
               <p className="text-2xl font-semibold text-gray-900">HIPAA</p>
@@ -148,7 +148,7 @@ const PortalDashboard: React.FC = () => {
               >
                 <div className="flex items-center gap-3">
                   {item.done ? (
-                    <CheckCircle2 className="h-5 w-5 text-teal-600" />
+                    <CheckCircle2 className="h-5 w-5 text-champagne" />
                   ) : (
                     <Clock className="h-5 w-5 text-gray-400" />
                   )}
@@ -157,7 +157,7 @@ const PortalDashboard: React.FC = () => {
                   </span>
                 </div>
                 {item.done ? (
-                  <span className="text-xs font-medium text-teal-600 bg-teal-50 px-2 py-1 rounded">
+                  <span className="text-xs font-medium text-champagne bg-cream px-2 py-1 rounded">
                     {t('dashboard.complete')}
                   </span>
                 ) : (
@@ -172,7 +172,7 @@ const PortalDashboard: React.FC = () => {
           {completedCount < 4 ? (
             <Link
               to="/portal/forms"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-champagne hover:text-bullion"
             >
               {t('dashboard.completeYourForms')}
               <ArrowRight className="h-4 w-4" />
@@ -180,7 +180,7 @@ const PortalDashboard: React.FC = () => {
           ) : (
             <Link
               to="/portal/forms?edit=true"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-champagne hover:text-bullion"
             >
               <Pencil className="h-3.5 w-3.5" />
               {t('dashboard.updateYourForms')}
@@ -193,10 +193,10 @@ const PortalDashboard: React.FC = () => {
           <div className="space-y-3">
             <Link
               to={completedCount === 4 ? '/portal/forms?edit=true' : '/portal/forms'}
-              className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-teal-300 hover:bg-teal-50/50 transition-all group"
+              className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-champagne/40 hover:bg-cream/50 transition-all group"
             >
-              <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center group-hover:bg-teal-100 transition-colors">
-                {completedCount === 4 ? <Pencil className="h-5 w-5 text-teal-600" /> : <FileText className="h-5 w-5 text-teal-600" />}
+              <div className="w-10 h-10 rounded-lg bg-cream flex items-center justify-center group-hover:bg-champagne/20 transition-colors">
+                {completedCount === 4 ? <Pencil className="h-5 w-5 text-champagne" /> : <FileText className="h-5 w-5 text-champagne" />}
               </div>
               <div className="flex-1">
                 <p className="text-sm font-medium text-gray-900">
@@ -206,35 +206,35 @@ const PortalDashboard: React.FC = () => {
                   {completedCount === 4 ? t('dashboard.reviewAndUpdate') : t('dashboard.fillOutForms')}
                 </p>
               </div>
-              <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-teal-600 transition-colors" />
+              <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-champagne transition-colors" />
             </Link>
 
             <Link
               to="/portal/submissions"
-              className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-teal-300 hover:bg-teal-50/50 transition-all group"
+              className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-champagne/40 hover:bg-cream/50 transition-all group"
             >
-              <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-                <ClipboardList className="h-5 w-5 text-blue-600" />
+              <div className="w-10 h-10 rounded-lg bg-cream flex items-center justify-center group-hover:bg-champagne/20 transition-colors">
+                <ClipboardList className="h-5 w-5 text-champagne" />
               </div>
               <div className="flex-1">
                 <p className="text-sm font-medium text-gray-900">{t('dashboard.viewSubmissions')}</p>
                 <p className="text-xs text-gray-500">{t('dashboard.reviewSubmitted')}</p>
               </div>
-              <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-teal-600 transition-colors" />
+              <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-champagne transition-colors" />
             </Link>
 
             <Link
               to="/portal/forms"
-              className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-teal-300 hover:bg-teal-50/50 transition-all group"
+              className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-champagne/40 hover:bg-cream/50 transition-all group"
             >
-              <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
-                <Clock className="h-5 w-5 text-emerald-600" />
+              <div className="w-10 h-10 rounded-lg bg-cream flex items-center justify-center group-hover:bg-champagne/20 transition-colors">
+                <Clock className="h-5 w-5 text-champagne" />
               </div>
               <div className="flex-1">
                 <p className="text-sm font-medium text-gray-900">{t('dashboard.bookConsultation')}</p>
                 <p className="text-xs text-gray-500">{t('dashboard.scheduleAppointment')}</p>
               </div>
-              <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-teal-600 transition-colors" />
+              <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-champagne transition-colors" />
             </Link>
           </div>
         </div>

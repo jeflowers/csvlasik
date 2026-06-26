@@ -184,7 +184,7 @@ const PatientForms: React.FC = () => {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-12">
         <div className="inline-block mb-4">
-          <span className="text-sm font-semibold tracking-widest uppercase text-teal-600">
+          <span className="text-sm font-semibold tracking-widest uppercase text-champagne">
             {t('badge')}
           </span>
         </div>
@@ -211,9 +211,9 @@ const PatientForms: React.FC = () => {
                     className={`
                       flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-300
                       ${isCurrent
-                        ? 'border-teal-600 bg-teal-600 text-white shadow-lg shadow-teal-600/25'
+                        ? 'border-champagne bg-onyx text-white shadow-lg shadow-onyx/25'
                         : isCompleted
-                          ? 'border-teal-600 bg-teal-50 text-teal-600'
+                          ? 'border-champagne bg-cream text-champagne'
                           : isPast
                             ? 'border-gray-300 bg-gray-50 text-gray-500'
                             : 'border-gray-200 bg-white text-gray-400'
@@ -228,7 +228,7 @@ const PatientForms: React.FC = () => {
                   </div>
                   <span
                     className={`text-xs font-medium text-center hidden sm:block ${
-                      isCurrent ? 'text-teal-700' : isCompleted ? 'text-teal-600' : 'text-gray-400'
+                      isCurrent ? 'text-onyx' : isCompleted ? 'text-champagne' : 'text-gray-400'
                     }`}
                   >
                     {step.label}
@@ -239,7 +239,7 @@ const PatientForms: React.FC = () => {
                   <div className="flex-1 mx-2 sm:mx-4 mb-6 sm:mb-4">
                     <div className="h-0.5 rounded-full bg-gray-200 relative">
                       <div
-                        className="absolute inset-y-0 left-0 bg-teal-600 rounded-full transition-all duration-500"
+                        className="absolute inset-y-0 left-0 bg-champagne rounded-full transition-all duration-500"
                         style={{ width: index < activeStep ? '100%' : '0%' }}
                       />
                     </div>
@@ -253,8 +253,8 @@ const PatientForms: React.FC = () => {
 
       {submitSuccess ? (
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden p-12 text-center">
-          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-teal-100 mx-auto mb-6">
-            <Check className="h-8 w-8 text-teal-600" />
+          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-cream mx-auto mb-6">
+            <Check className="h-8 w-8 text-champagne" />
           </div>
           <h2 className="text-2xl font-serif text-gray-900 mb-3">
             {t('success.allForms', { defaultValue: 'Forms Submitted Successfully' })}
@@ -267,7 +267,7 @@ const PatientForms: React.FC = () => {
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
           <div className="border-b border-gray-100 bg-gray-50/50 px-6 py-4">
             <div className="flex items-center gap-3">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-teal-600 text-white text-xs font-bold">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-onyx text-white text-xs font-bold">
                 {activeStep + 1}
               </span>
               <div>

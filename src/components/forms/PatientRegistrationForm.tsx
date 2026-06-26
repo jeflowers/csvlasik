@@ -84,7 +84,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
             name="firstName"
             value={data.firstName}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent ${
               errors.firstName ? 'border-red-500' : 'border-gray-300'
             }`}
             placeholder={t('registration.firstName.placeholder')}
@@ -108,7 +108,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
             name="lastName"
             value={data.lastName}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent ${
               errors.lastName ? 'border-red-500' : 'border-gray-300'
             }`}
             placeholder={t('registration.lastName.placeholder')}
@@ -134,7 +134,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
             name="dateOfBirth"
             value={data.dateOfBirth}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent ${
               errors.dateOfBirth ? 'border-red-500' : 'border-gray-300'
             }`}
             aria-required="true"
@@ -157,7 +157,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
             name="phoneNumber"
             value={data.phoneNumber}
             onChange={handleChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent ${
               errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
             }`}
             placeholder={t('registration.phoneNumber.placeholder')}
@@ -182,7 +182,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
           name="emailAddress"
           value={data.emailAddress}
           onChange={handleChange}
-          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
+          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent ${
             errors.emailAddress ? 'border-red-500' : 'border-gray-300'
           }`}
           placeholder={t('registration.emailAddress.placeholder')}
@@ -205,7 +205,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
           name="streetAddress"
           value={data.streetAddress}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent"
           placeholder={t('registration.streetAddress.placeholder')}
         />
       </div>
@@ -221,7 +221,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
             name="city"
             value={data.city}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent"
             placeholder={t('registration.city.placeholder')}
           />
         </div>
@@ -236,7 +236,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
             name="state"
             value={data.state}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent"
             placeholder={t('registration.state.placeholder')}
             maxLength={2}
           />
@@ -252,7 +252,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
             name="zip"
             value={data.zip}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent"
             placeholder={t('registration.zip.placeholder')}
             maxLength={10}
           />
@@ -269,7 +269,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
           value={data.reasonForVisit}
           onChange={handleChange}
           rows={4}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent"
           placeholder={t('registration.reasonForVisit.placeholder')}
         />
       </div>
@@ -278,7 +278,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
         <button
           type="submit"
           disabled={!isFormValid}
-          className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
+          className="inline-flex items-center gap-2 bg-onyx text-white px-8 py-3 rounded-lg font-semibold hover:bg-graphite transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
         >
           {t('buttons.next', { defaultValue: 'Save & Continue' })}
           <ArrowRight className="h-4 w-4" />

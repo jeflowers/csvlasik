@@ -95,22 +95,22 @@ const PortalAuth: React.FC = () => {
 
   if (!ready) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4 py-12">
-        <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-cream/30 flex items-center justify-center px-4 py-12">
+        <Loader2 className="h-6 w-6 animate-spin text-champagne" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-cream/30 flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700 mb-6 transition-colors">
             <ArrowLeft className="h-4 w-4" />
             {t('auth.backToWebsite')}
           </Link>
-          <div className="mx-auto w-14 h-14 rounded-2xl bg-teal-600 flex items-center justify-center mb-4">
-            <Shield className="h-7 w-7 text-white" />
+          <div className="mx-auto w-14 h-14 rounded-2xl bg-onyx flex items-center justify-center mb-4">
+            <Shield className="h-7 w-7 text-champagne" />
           </div>
           <h1 className="text-2xl font-serif text-gray-900">{t('auth.loginTitle')}</h1>
           <p className="text-sm text-gray-500 mt-1">{t('auth.loginSubtitle')}</p>
@@ -136,7 +136,7 @@ const PortalAuth: React.FC = () => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-champagne focus:border-transparent"
                     placeholder="you@example.com"
                     autoComplete="email"
                   />
@@ -150,7 +150,7 @@ const PortalAuth: React.FC = () => {
                       type={showPassword ? 'text' : 'password'}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent pr-10"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-champagne focus:border-transparent pr-10"
                       placeholder="Your password"
                       autoComplete="current-password"
                     />
@@ -169,7 +169,7 @@ const PortalAuth: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => switchView('forgot-password')}
-                    className="text-sm text-teal-600 hover:text-teal-700"
+                    className="text-sm text-champagne hover:text-bullion"
                   >
                     {t('auth.forgotPassword')}
                   </button>
@@ -178,7 +178,7 @@ const PortalAuth: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-teal-600 text-white py-3 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full bg-onyx text-white py-3 rounded-lg text-sm font-semibold hover:bg-graphite transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {loading && <Loader2 className="h-4 w-4 animate-spin" />}
                   {loading ? t('auth.signingIn') : t('auth.signIn')}
@@ -187,7 +187,7 @@ const PortalAuth: React.FC = () => {
 
               <p className="text-center text-sm text-gray-500 mt-6">
                 {t('auth.noAccount')}{' '}
-                <button onClick={() => switchView('register')} className="text-teal-600 hover:text-teal-700 font-medium">
+                <button onClick={() => switchView('register')} className="text-champagne hover:text-bullion font-medium">
                   {t('auth.createAccount')}
                 </button>
               </p>
@@ -206,7 +206,7 @@ const PortalAuth: React.FC = () => {
               )}
 
               {successMsg && (
-                <div className="bg-teal-50 border border-teal-200 text-teal-700 text-sm px-4 py-3 rounded-lg mb-4">
+                <div className="bg-cream border border-champagne/30 text-onyx text-sm px-4 py-3 rounded-lg mb-4">
                   {successMsg}
                 </div>
               )}
@@ -220,7 +220,7 @@ const PortalAuth: React.FC = () => {
                       type="text"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-champagne focus:border-transparent"
                       placeholder="First"
                       autoComplete="given-name"
                     />
@@ -232,7 +232,7 @@ const PortalAuth: React.FC = () => {
                       type="text"
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-champagne focus:border-transparent"
                       placeholder="Last"
                       autoComplete="family-name"
                     />
@@ -246,7 +246,7 @@ const PortalAuth: React.FC = () => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-champagne focus:border-transparent"
                     placeholder="you@example.com"
                     autoComplete="email"
                   />
@@ -260,7 +260,7 @@ const PortalAuth: React.FC = () => {
                       type={showPassword ? 'text' : 'password'}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent pr-10"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-champagne focus:border-transparent pr-10"
                       placeholder={t('auth.minCharsPlaceholder')}
                       autoComplete="new-password"
                     />
@@ -282,7 +282,7 @@ const PortalAuth: React.FC = () => {
                     type="password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-champagne focus:border-transparent"
                     placeholder={t('auth.reenterPassword')}
                     autoComplete="new-password"
                   />
@@ -291,7 +291,7 @@ const PortalAuth: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-teal-600 text-white py-3 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full bg-onyx text-white py-3 rounded-lg text-sm font-semibold hover:bg-graphite transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {loading && <Loader2 className="h-4 w-4 animate-spin" />}
                   {loading ? t('auth.creatingAccount') : t('auth.signUp')}
@@ -300,7 +300,7 @@ const PortalAuth: React.FC = () => {
 
               <p className="text-center text-sm text-gray-500 mt-6">
                 {t('auth.haveAccount')}{' '}
-                <button onClick={() => switchView('login')} className="text-teal-600 hover:text-teal-700 font-medium">
+                <button onClick={() => switchView('login')} className="text-champagne hover:text-bullion font-medium">
                   {t('auth.signInHere')}
                 </button>
               </p>
@@ -319,7 +319,7 @@ const PortalAuth: React.FC = () => {
               )}
 
               {successMsg && (
-                <div className="bg-teal-50 border border-teal-200 text-teal-700 text-sm px-4 py-3 rounded-lg mb-4">
+                <div className="bg-cream border border-champagne/30 text-onyx text-sm px-4 py-3 rounded-lg mb-4">
                   {successMsg}
                 </div>
               )}
@@ -332,7 +332,7 @@ const PortalAuth: React.FC = () => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-champagne focus:border-transparent"
                     placeholder="you@example.com"
                     autoComplete="email"
                   />
@@ -341,7 +341,7 @@ const PortalAuth: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-teal-600 text-white py-3 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full bg-onyx text-white py-3 rounded-lg text-sm font-semibold hover:bg-graphite transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {loading && <Loader2 className="h-4 w-4 animate-spin" />}
                   {t('auth.sendResetLink')}
@@ -349,7 +349,7 @@ const PortalAuth: React.FC = () => {
               </form>
 
               <p className="text-center text-sm text-gray-500 mt-6">
-                <button onClick={() => switchView('login')} className="text-teal-600 hover:text-teal-700 font-medium">
+                <button onClick={() => switchView('login')} className="text-champagne hover:text-bullion font-medium">
                   {t('auth.backToSignIn')}
                 </button>
               </p>

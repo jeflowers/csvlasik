@@ -103,9 +103,9 @@ const formatDate = (dateStr: string) => {
 
 const StatusBadge: React.FC<{ status: string }> = ({ status }) => {
   const styles: Record<string, string> = {
-    submitted: 'bg-blue-50 text-blue-700',
+    submitted: 'bg-cream text-onyx',
     in_review: 'bg-amber-50 text-amber-700',
-    processed: 'bg-teal-50 text-teal-700',
+    processed: 'bg-cream text-champagne',
     archived: 'bg-gray-100 text-gray-600',
   };
 
@@ -123,9 +123,9 @@ function wasUpdated(created: string, updated: string): boolean {
 }
 
 const FORM_SECTION_KEYS = [
-  { key: 'registration' as const, stepIndex: 0, icon: FileText, labelKey: 'dashboard.formLabels.registration', color: 'teal' },
-  { key: 'medicalHistory' as const, stepIndex: 1, icon: Clipboard, labelKey: 'dashboard.formLabels.medicalHistory', color: 'blue' },
-  { key: 'insurance' as const, stepIndex: 2, icon: CreditCard, labelKey: 'dashboard.formLabels.insurance', color: 'emerald' },
+  { key: 'registration' as const, stepIndex: 0, icon: FileText, labelKey: 'dashboard.formLabels.registration', color: 'champagne' },
+  { key: 'medicalHistory' as const, stepIndex: 1, icon: Clipboard, labelKey: 'dashboard.formLabels.medicalHistory', color: 'champagne' },
+  { key: 'insurance' as const, stepIndex: 2, icon: CreditCard, labelKey: 'dashboard.formLabels.insurance', color: 'champagne' },
   { key: 'consent' as const, stepIndex: 3, icon: Shield, labelKey: 'dashboard.formLabels.consent', color: 'amber' },
 ];
 
@@ -183,7 +183,7 @@ const PortalSubmissions: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-champagne" />
       </div>
     );
   }
@@ -239,7 +239,7 @@ const PortalSubmissions: React.FC = () => {
           <p className="text-sm text-gray-500 mb-6">{t('submissions.noSubmissionsDesc')}</p>
           <Link
             to="/portal/forms"
-            className="inline-flex items-center px-4 py-2 bg-teal-600 text-white text-sm font-medium rounded-lg hover:bg-teal-700 transition-colors"
+            className="inline-flex items-center px-4 py-2 bg-onyx text-white text-sm font-medium rounded-lg hover:bg-graphite transition-colors"
           >
             {t('submissions.goToForms')}
           </Link>
@@ -257,7 +257,7 @@ const PortalSubmissions: React.FC = () => {
               </div>
               <Link
                 to="/portal/forms?edit=true"
-                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-lg hover:bg-teal-700 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-onyx rounded-lg hover:bg-graphite transition-colors"
               >
                 <Pencil className="h-3.5 w-3.5" />
                 {t('dashboard.updateForms')}
@@ -289,7 +289,7 @@ const PortalSubmissions: React.FC = () => {
                 {updatedFormKeys.map((key) => (
                   <span
                     key={key}
-                    className="text-xs font-medium px-2 py-0.5 rounded-full bg-teal-50 text-teal-700"
+                    className="text-xs font-medium px-2 py-0.5 rounded-full bg-cream text-champagne"
                   >
                     {t(key)}
                   </span>
@@ -317,7 +317,7 @@ const PortalSubmissions: React.FC = () => {
                         <Icon className="h-5 w-5 text-gray-500" />
                         <span className="text-sm font-medium text-gray-900">{t(section.labelKey)}</span>
                         {hasRecord && wasUpdated(record.created_at, record.updated_at) && (
-                          <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-teal-50 text-teal-600">
+                          <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-cream text-champagne">
                             {t('submissions.updated')}
                           </span>
                         )}
@@ -334,7 +334,7 @@ const PortalSubmissions: React.FC = () => {
                     {hasRecord && (
                       <Link
                         to={`/portal/forms?edit=true&step=${section.stepIndex}`}
-                        className="px-4 py-4 border-l border-gray-100 text-gray-400 hover:text-teal-600 hover:bg-teal-50/50 transition-colors"
+                        className="px-4 py-4 border-l border-gray-100 text-gray-400 hover:text-champagne hover:bg-cream/50 transition-colors"
                         title={t('submissions.editForm')}
                       >
                         <Pencil className="h-4 w-4" />

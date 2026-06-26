@@ -151,8 +151,8 @@ const PortalLayout: React.FC = () => {
           <div className="p-6 border-b border-gray-100">
             <div className="flex items-center justify-between">
               <Link to="/" className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-teal-600 flex items-center justify-center">
-                  <Shield className="h-5 w-5 text-white" />
+                <div className="w-9 h-9 rounded-lg bg-onyx flex items-center justify-center">
+                  <Shield className="h-5 w-5 text-champagne" />
                 </div>
                 <div>
                   <h2 className="text-sm font-semibold text-gray-900">
@@ -173,8 +173,8 @@ const PortalLayout: React.FC = () => {
 
           <div className="px-4 py-4 border-b border-gray-100">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-teal-100 flex items-center justify-center">
-                <span className="text-sm font-semibold text-teal-700">{initials}</span>
+              <div className="w-9 h-9 rounded-full bg-cream flex items-center justify-center">
+                <span className="text-sm font-semibold text-onyx">{initials}</span>
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium text-gray-900 truncate">{displayName}</p>
@@ -196,12 +196,12 @@ const PortalLayout: React.FC = () => {
                     flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
                     transition-colors duration-150
                     ${active
-                      ? 'bg-teal-50 text-teal-700'
+                      ? 'bg-cream text-onyx'
                       : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                     }
                   `}
                 >
-                  <Icon className={`h-5 w-5 ${active ? 'text-teal-600' : 'text-gray-400'}`} />
+                  <Icon className={`h-5 w-5 ${active ? 'text-champagne' : 'text-gray-400'}`} />
                   {t(item.labelKey, { defaultValue: item.fallback })}
                 </Link>
               );

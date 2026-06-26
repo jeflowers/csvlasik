@@ -55,7 +55,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ data, onChange, onPrevious, onNext
               key={option}
               className={`flex items-center justify-center gap-2 px-4 py-3 border rounded-lg cursor-pointer transition-all text-sm font-medium ${
                 data.hasHsaFsa === option
-                  ? 'border-teal-600 bg-teal-50 text-teal-700 ring-2 ring-teal-600/20'
+                  ? 'border-champagne bg-cream text-onyx ring-2 ring-champagne/20'
                   : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
               }`}
             >
@@ -92,7 +92,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ data, onChange, onPrevious, onNext
                 name="hsaFsaProvider"
                 value={data.hsaFsaProvider}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent"
                 placeholder={t('hsaFsa.provider.placeholder')}
               />
             </div>
@@ -110,7 +110,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ data, onChange, onPrevious, onNext
                 name="accountHolderName"
                 value={data.accountHolderName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent"
                 placeholder={t('hsaFsa.accountHolder.placeholder')}
               />
             </div>
@@ -129,7 +129,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ data, onChange, onPrevious, onNext
               name="estimatedBalance"
               value={data.estimatedBalance}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent"
               placeholder={t('hsaFsa.estimatedBalance.placeholder')}
             />
           </div>
@@ -149,7 +149,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ data, onChange, onPrevious, onNext
               key={option}
               className={`flex-1 flex items-center justify-center px-4 py-3 border rounded-lg cursor-pointer transition-all text-sm font-medium ${
                 data.interestedInPaymentPlan === option
-                  ? 'border-teal-600 bg-teal-50 text-teal-700 ring-2 ring-teal-600/20'
+                  ? 'border-champagne bg-cream text-onyx ring-2 ring-champagne/20'
                   : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
               }`}
             >
@@ -180,7 +180,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ data, onChange, onPrevious, onNext
           value={data.additionalNotes}
           onChange={handleChange}
           rows={3}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-champagne focus:border-transparent"
           placeholder={t('hsaFsa.additionalNotes.placeholder')}
         />
       </div>
@@ -201,7 +201,7 @@ const InsuranceInfoForm: React.FC<Props> = ({ data, onChange, onPrevious, onNext
         <button
           type="submit"
           disabled={!isFormValid}
-          className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
+          className="inline-flex items-center gap-2 bg-onyx text-white px-8 py-3 rounded-lg font-semibold hover:bg-graphite transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none"
         >
           {t('buttons.next', { defaultValue: 'Save & Continue' })}
           <ArrowRight className="h-4 w-4" />
