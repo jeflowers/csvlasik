@@ -513,11 +513,6 @@ h1, h2, h3, h4, h5, h6 { font-family: "Cormorant Garamond", serif; font-weight: 
 .rtl .ml-4 { margin-left: 0px; margin-right: 1rem; }
 .rtl .mr-4 { margin-right: 0px; margin-left: 1rem; }
 .rtl .ml-16 { margin-left: 0px; margin-right: 4rem; }
-.rtl .flex-row-reverse { flex-direction: row; }
-.rtl .flex-row { flex-direction: row-reverse; }
-.rtl .left-0 { left: auto; right: 0px; }
-.rtl .right-0, .rtl .absolute.right-0 { right: auto; left: 0px; }
-.rtl .absolute.left-0 { left: auto; right: 0px; }
 .rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6 { font-family: "Noto Sans Arabic", "Noto Sans Hebrew", "Cormorant Garamond", serif; }
 .rtl body { font-family: "Noto Sans Arabic", "Noto Sans Hebrew", Inter, sans-serif; }
 .translation-status { position: fixed; top: 1rem; right: 1rem; z-index: 50; }

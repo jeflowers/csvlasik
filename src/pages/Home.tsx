@@ -33,16 +33,16 @@ const Home = () => {
         }} />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-28 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Text content */}
-            <div className="flex flex-col items-start">
-              <h1 className="font-serif font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.1]" style={{ color: '#FFFFFF' }}>
+            {/* Text content */}
+            <div className="flex flex-col items-start rtl:items-end">
+              <h1 className="font-serif font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.1] rtl:text-right" style={{ color: '#FFFFFF' }}>
                 {t('hero.title')}<br />
                 <span style={{ color: '#C9A96E' }}>{t('hero.titleAccent')}</span>
               </h1>
-              <p className="mt-6 font-light text-lg max-w-md leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              <p className="mt-6 font-light text-lg max-w-md leading-relaxed rtl:text-right" style={{ color: 'rgba(255,255,255,0.5)' }}>
                 {t('hero.subtitle')}
               </p>
-              <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
+              <div className="mt-10 flex flex-col sm:flex-row items-start rtl:items-end gap-4">
                 <Link
                   to="/portal"
                   className="px-8 py-4 text-xs font-medium tracking-widest transition-colors duration-200"
@@ -55,12 +55,12 @@ const Home = () => {
                   className="flex items-center gap-2 text-white/60 hover:text-white text-sm font-light transition-colors group py-4"
                 >
                   <span>{t('hero.cta.explore')}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform" />
                 </Link>
               </div>
             </div>
 
-            {/* Right: Image carousel */}
+            {/* Image carousel */}
             <div className="relative">
               <div className="aspect-[4/3] relative overflow-hidden rounded-sm">
                 {heroImages.map((src, index) => (
@@ -144,7 +144,7 @@ const Home = () => {
                 </p>
                 <span className="flex items-center gap-2 text-sm text-onyx/70 group-hover:text-onyx font-light transition-colors">
                   {t('procedures.learnMore')}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1 transition-transform" />
                 </span>
               </Link>
             ))}
@@ -174,7 +174,7 @@ const Home = () => {
                 className="inline-flex items-center gap-2 text-sm text-onyx font-light border-b border-onyx/20 pb-1 hover:border-onyx transition-colors group"
               >
                 {t('pioneer.readMore')}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1 transition-transform" />
               </Link>
             </div>
             <div className="relative">
@@ -185,7 +185,7 @@ const Home = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 shadow-chopard">
+              <div className="absolute -bottom-6 -start-6 bg-white p-6 shadow-chopard">
                 <div className="flex items-baseline gap-2">
                   <span className="font-serif font-semibold text-3xl text-onyx">{t('pioneer.stat')}</span>
                   <span className="text-xs text-champagne font-medium tracking-eyebrow uppercase">{t('pioneer.statLabel')}</span>

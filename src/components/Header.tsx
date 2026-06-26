@@ -69,15 +69,15 @@ const Header = () => {
             </Link>
 
             {/* Desktop nav + CTA */}
-            <div className="hidden lg:flex items-center">
-              <ul className="flex items-center gap-9 list-none m-0 p-0">
+            <div className="hidden lg:flex items-center gap-10">
+              <ul className="flex items-center gap-7 xl:gap-9 list-none m-0 p-0">
                 {navLinks.map(({ to, label }) => {
                   const active = isActive(to) || isActivePath(to);
                   return (
                     <li key={to}>
                       <Link
                         to={to}
-                        className={`relative text-[14px] tracking-[0.02em] font-normal transition-colors duration-200 pb-1 ${
+                        className={`relative text-[14px] tracking-[0.02em] font-normal transition-colors duration-200 pb-1 whitespace-nowrap ${
                           active
                             ? 'text-[#C9A96E]'
                             : 'text-[#E0DCD6] hover:text-[#C9A96E]'
@@ -85,7 +85,7 @@ const Header = () => {
                       >
                         {label}
                         {active && (
-                          <span className="absolute left-0 right-0 -bottom-[2px] h-[1.5px] bg-[#C9A96E]/80" />
+                          <span className="absolute inset-x-0 -bottom-[2px] h-[1.5px] bg-[#C9A96E]/80" />
                         )}
                       </Link>
                     </li>
@@ -93,14 +93,12 @@ const Header = () => {
                 })}
               </ul>
 
-              <div className="ml-10">
-                <Link
-                  to="/book-consultation"
-                  className="inline-flex items-center h-[42px] px-7 bg-[#C9A96E] text-[#13110f] text-[11px] font-semibold tracking-[0.18em] uppercase rounded-[3px] hover:bg-[#D4AF37] transition-colors duration-200"
-                >
-                  {t('bookConsultation', { defaultValue: 'BOOK CONSULTATION' })}
-                </Link>
-              </div>
+              <Link
+                to="/book-consultation"
+                className="inline-flex items-center h-[42px] px-7 bg-[#C9A96E] text-[#13110f] text-[11px] font-semibold tracking-[0.18em] uppercase rounded-[3px] hover:bg-[#D4AF37] transition-colors duration-200 whitespace-nowrap flex-shrink-0"
+              >
+                {t('bookConsultation', { defaultValue: 'BOOK CONSULTATION' })}
+              </Link>
             </div>
 
             {/* Mobile menu toggle */}
