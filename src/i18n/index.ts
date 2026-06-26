@@ -192,6 +192,75 @@ i18n
           bookConsultation: 'Book Consultation',
           closeMenu: 'Close Menu',
           openMenu: 'Open Menu'
+        },
+        home: {
+          hero: {
+            badge: 'First LASIK Pioneer in the Pacific Region',
+            title: 'Vision, perfected',
+            titleAccent: 'like fine craft.',
+            subtitle: 'Bespoke refractive surgery by Dr. Charles Flowers, MD — the first LASIK pioneer in the Pacific region.',
+            cta: {
+              schedule: 'BOOK CONSULTATION',
+              explore: 'Explore procedures'
+            }
+          },
+          procedures: {
+            eyebrow: 'Procedures',
+            title: 'Three paths to clarity',
+            lasik: {
+              title: 'LASIK',
+              description: 'Bladeless femtosecond flap creation with excimer reshaping. 15-minute procedure, next-day vision.',
+              detail: 'Most popular'
+            },
+            prk: {
+              title: 'PRK',
+              description: 'Surface ablation without a corneal flap. Ideal for thin corneas or active lifestyles.',
+              detail: 'No-flap alternative'
+            },
+            icl: {
+              title: 'ICL',
+              description: 'Implantable Collamer Lens for extreme prescriptions. Reversible, UV-protective, permanent.',
+              detail: 'High prescriptions'
+            },
+            learnMore: 'Learn more'
+          },
+          pioneer: {
+            eyebrow: 'The Pioneer',
+            title: 'Dr. Charles Flowers, MD',
+            paragraph1: 'Dr. Flowers performed the first LASIK procedures across Guam, Saipan, Palau, and the Marshall Islands — bringing sight-restoring surgery to remote Pacific communities that had never had access to refractive care.',
+            paragraph2: 'Today, that same pioneering spirit drives every procedure at Atelier. Over 30,000 successful surgeries. A 99.2% patient satisfaction rate. The precision of a craftsman applied to the gift of vision.',
+            readMore: 'Read the full story',
+            stat: '30,000+',
+            statLabel: 'procedures'
+          },
+          whyAtelier: {
+            eyebrow: 'Why Atelier',
+            title: 'Crafted with precision',
+            wavefront: {
+              title: 'Custom wavefront mapping',
+              description: 'Every eye is unique. We create a topographic map of your cornea to guide laser treatment with sub-micron accuracy.'
+            },
+            expertise: {
+              title: 'Pacific-tested expertise',
+              description: 'Dr. Flowers honed his craft in challenging conditions across remote islands. Los Angeles patients benefit from that depth of experience.'
+            },
+            consultations: {
+              title: 'Same-week consultations',
+              description: 'No waitlists. Comprehensive evaluation, honest candidacy assessment, and a clear path forward within days.'
+            }
+          },
+          testimonial: {
+            eyebrow: 'Patient Stories',
+            quote: 'I woke up the next morning and could read the clock across the room. After twenty years of glasses, it felt like a miracle.',
+            author: 'Sarah M., LASIK patient, 2024'
+          },
+          cta: {
+            eyebrow: 'Begin',
+            title: 'Your consultation awaits',
+            subtitle: 'A 90-minute evaluation to determine your candidacy, map your cornea, and design a treatment plan tailored to your eyes.',
+            schedule: 'SCHEDULE CONSULTATION',
+            orCall: 'or call (844) 954-8686'
+          }
         }
       }
     },
