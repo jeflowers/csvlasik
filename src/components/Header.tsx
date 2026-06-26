@@ -65,7 +65,7 @@ const Header = () => {
           <div className="flex items-center justify-between h-[78px]">
             {/* Logo */}
             <Link to="/" className="flex-shrink-0" aria-label="Atelier LASIK Home">
-              <Logo mode="dark" height={34} tagline={false} />
+              <Logo mode="dark" height={34} tagline={true} />
             </Link>
 
             {/* Desktop nav + CTA */}
