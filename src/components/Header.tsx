@@ -16,6 +16,7 @@ const Header = () => {
     { to: '/procedures', label: t('procedures', 'Procedures') },
     { to: '/about', label: t('drFlowers', 'Dr. Flowers') },
     { to: '/journal', label: t('journal', 'Journal') },
+    { to: '/stories', label: t('stories', 'Stories') },
     { to: '/financing', label: t('financing', 'Financing') },
     { to: '/contact', label: t('contact', 'Contact') },
   ];

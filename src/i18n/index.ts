@@ -184,6 +184,7 @@ i18n
           procedures: 'Procedures',
           drFlowers: 'Dr. Flowers',
           journal: 'Journal',
+          stories: 'Stories',
           financing: 'Financing',
           contact: 'Contact',
           phone: '(844) 954-8686',

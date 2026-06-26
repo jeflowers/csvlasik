@@ -101,6 +101,8 @@ const Technology = lazy(() => import('./pages/Technology'));
 const Financing = lazy(() => import('./pages/Financing'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Media = lazy(() => import('./pages/Media'));
+const Journal = lazy(() => import('./pages/Journal'));
+const Stories = lazy(() => import('./pages/Stories'));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
 const AppointmentCalendar = lazy(() => import('./components/booking/AppointmentCalendar'));
@@ -313,6 +315,8 @@ function App() {
                         <Route path="/calculate-financing" element={<FinancingCalculator />} />
                         <Route path="/blog" element={<Media />} />
                         <Route path="/media" element={<Media />} />
+                        <Route path="/journal" element={<Journal />} />
+                        <Route path="/stories" element={<Stories />} />
                         <Route path="/privacy-policy" element={<PrivacyPolicyDetailPage />} />
                         <Route path="/privacy" element={<PrivacyPolicy />} />
                         <Route path="/terms-of-service" element={<TermsOfService />} />
