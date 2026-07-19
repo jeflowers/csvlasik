@@ -383,7 +383,7 @@ const PacificStory = () => {
               </div>
               <ul className="space-y-3 text-teal-100">
                 <li>• Revolutionary patient experience with Pacific-proven techniques</li>
-                <li>• State-of-the-art Lakewood facility with mobile-surgery efficiency</li>
+                <li>• State-of-the-art Los Angeles facility with mobile-surgery efficiency</li>
                 <li>• Innovative approach to complex cases</li>
                 <li>• Same pioneering spirit, premium setting</li>
                 <li>• Training ground for future Pacific missionaries</li>

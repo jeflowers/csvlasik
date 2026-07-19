@@ -328,16 +328,16 @@ const Contact = () => {
               {t('map.title', 'Visit Our Office')}
             </h2>
             <p className="text-lg chopard-text-secondary max-w-2xl mx-auto font-light">
-              {t('map.subtitle', 'Find us in Lakewood, California')}
+              {t('map.subtitle', 'Find us in Los Angeles, California')}
             </p>
           </div>
 
           <div className="chopard-card rounded-2xl overflow-hidden shadow-lg">
             <GoogleMap
-              address="5750 Downey Ave, Suite 101, Lakewood, CA 90712"
+              address="1400 South Grand Avenue, Suite 605, Los Angeles, CA 90015"
               zoom={15}
               height="500px"
-              title="Atelier LASIK Lakewood Office Location"
+              title="Atelier LASIK Los Angeles Office Location"
               allowGeolocation={true}
             />
 
@@ -346,13 +346,13 @@ const Contact = () => {
                 <div className="flex items-center space-x-4">
                   <MapPin className="h-6 w-6 chopard-text-accent" />
                   <div>
-                    <p className="font-light chopard-text-primary font-semibold">Lakewood Office</p>
-                    <p className="text-sm chopard-text-secondary">5750 Downey Ave., Suite 101, Lakewood, CA 90712</p>
+                    <p className="font-light chopard-text-primary font-semibold">Los Angeles Office</p>
+                    <p className="text-sm chopard-text-secondary">1400 South Grand Avenue, Suite 605, Los Angeles, CA 90015</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <a
-                    href="https://www.google.com/maps/dir/?api=1&destination=5750+Downey+Ave+suite+101,+Lakewood,+CA+90712"
+                    href="https://www.google.com/maps/dir/?api=1&destination=1400+South+Grand+Avenue+suite+605,+Los+Angeles,+CA+90015"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="chopard-button px-6 py-3 rounded-lg text-sm font-light transition-all duration-300"
@@ -360,7 +360,7 @@ const Contact = () => {
                     Get Directions
                   </a>
                   <a
-                    href="https://www.google.com/maps/place/5750+Downey+Ave+suite+101,+Lakewood,+CA+90712"
+                    href="https://www.google.com/maps/place/1400+South+Grand+Avenue+suite+605,+Los+Angeles,+CA+90015"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="border chopard-border chopard-text-accent px-6 py-3 rounded-lg text-sm font-light hover:bg-gray-50 transition-all duration-300"

@@ -359,11 +359,11 @@ const EditSourceModal: React.FC<{
 
   const searchHint: Record<string, string> = {
     webmd: 'Search doctor.webmd.com for the provider, then copy the profile URL.',
-    vitals: 'Search vitals.com for the provider in Lakewood, CA, then copy the URL.',
-    usnews: 'Search health.usnews.com/doctors using ZIP 90712 to find the listing.',
-    healthgrades: 'Search healthgrades.com by name + Lakewood, CA, then copy the URL.',
+    vitals: 'Search vitals.com for the provider in Los Angeles, CA, then copy the URL.',
+    usnews: 'Search health.usnews.com/doctors using ZIP 90015 to find the listing.',
+    healthgrades: 'Search healthgrades.com by name + Los Angeles, CA, then copy the URL.',
     google: 'On Google Maps, find the business, click Share, and copy the link.',
-    yelp: 'On yelp.com, search the business name + Lakewood, then copy the page URL.',
+    yelp: 'On yelp.com, search the business name + Los Angeles, then copy the page URL.',
   };
 
   const handleSave = async (e: React.FormEvent) => {
@@ -397,8 +397,8 @@ const EditSourceModal: React.FC<{
         </div>
 
         <p className="text-sm text-gray-600 mb-4">
-          {searchHint[source.source_name]} Use the listing closest to the Lakewood
-          office (5750 Downey Ave., Suite 101, Lakewood, CA 90712).
+          {searchHint[source.source_name]} Use the listing closest to the Los Angeles
+          office (1400 South Grand Avenue, Suite 605, Los Angeles, CA 90015).
         </p>
 
         <form onSubmit={handleSave} className="space-y-4">

@@ -133,7 +133,7 @@ const AppointmentRequestForm: React.FC = () => {
               onChange={(e) => setFormData({ ...formData, location: e.target.value as LocationType })}
               className="w-full px-4 py-3 border chopard-border rounded-lg"
             >
-              <option value="los_angeles">Los Angeles / Lakewood</option>
+              <option value="los_angeles">Los Angeles</option>
               <option value="guam">Guam</option>
             </select>
           </div>

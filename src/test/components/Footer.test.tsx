@@ -25,7 +25,7 @@ describe('Footer Component', () => {
     
     expect(screen.getByText('(844) 954-8686')).toBeInTheDocument();
     expect(screen.getByText('info@atelierlasik.com')).toBeInTheDocument();
-    expect(screen.getByText(/Lakewood Office/)).toBeInTheDocument();
+    expect(screen.getByText(/Los Angeles, CA 90015/)).toBeInTheDocument();
   });
 
   it('shows navigation links', () => {
