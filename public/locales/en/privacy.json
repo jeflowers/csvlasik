@@ -5,6 +5,18 @@
     "effectiveDate": "November 16, 2025",
     "version": "1.0"
   },
+  "ui": {
+    "loading": "Loading privacy policy...",
+    "version": "Version {{version}}",
+    "effective": "Effective {{date}}",
+    "lastUpdated": "Last Updated: {{date}}",
+    "downloadPdf": "Download PDF",
+    "acknowledge": "Acknowledge Policy",
+    "acknowledgeThanks": "Thank you for acknowledging our privacy policy.",
+    "privacyMattersTitle": "Your Privacy Matters",
+    "privacyMattersBody": "This privacy policy complies with HIPAA, GDPR, CCPA, and other applicable privacy laws. We are committed to protecting your personal and health information with the highest standards of security and confidentiality.",
+    "questionsContact": "For questions about this privacy policy, please contact our Privacy Officer at"
+  },
   "tableOfContents": {
     "title": "Table of Contents",
     "items": [

@@ -9,19 +9,16 @@ const PrivacyPolicy: React.FC = () => {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
         <Shield className="h-12 w-12 text-teal-600 mx-auto mb-4" />
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">{t('title')}</h1>
-        <p className="text-lg text-gray-600">
-          {t('subtitle')}
-        </p>
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">{t('meta.title')}</h1>
         <p className="text-sm text-gray-500 mt-2">
-          {t('lastUpdated')}: {new Date().toLocaleDateString()}
+          {t('ui.lastUpdated', { date: t('meta.lastUpdated') })}
         </p>
       </div>
 
       <div className="prose prose-lg max-w-none">
         <section className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-            <Eye className="h-6 w-6 mr-2 text-teal-600" />
+            <Eye className="h-6 w-6 me-2 text-teal-600" />
             {t('sections.collection.title')}
           </h2>
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
@@ -31,7 +28,7 @@ const PrivacyPolicy: React.FC = () => {
           </div>
           
           <h3 className="text-xl font-semibold text-gray-800 mb-3">{t('sections.collection.personal.title')}</h3>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <ul className="list-disc ps-6 space-y-2 text-gray-700">
             <li>{t('sections.collection.personal.items.contact')}</li>
             <li>{t('sections.collection.personal.items.medical')}</li>
             <li>{t('sections.collection.personal.items.insurance')}</li>
@@ -40,7 +37,7 @@ const PrivacyPolicy: React.FC = () => {
           </ul>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">{t('sections.collection.technical.title')}</h3>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <ul className="list-disc ps-6 space-y-2 text-gray-700">
             <li>{t('sections.collection.technical.items.ip')}</li>
             <li>{t('sections.collection.technical.items.usage')}</li>
             <li>{t('sections.collection.technical.items.language')}</li>
@@ -50,12 +47,12 @@ const PrivacyPolicy: React.FC = () => {
 
         <section className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-            <Lock className="h-6 w-6 mr-2 text-teal-600" />
+            <Lock className="h-6 w-6 me-2 text-teal-600" />
             {t('sections.usage.title')}
           </h2>
           
           <h3 className="text-xl font-semibold text-gray-800 mb-3">{t('sections.usage.medical.title')}</h3>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <ul className="list-disc ps-6 space-y-2 text-gray-700">
             <li>{t('sections.usage.medical.items.consultations')}</li>
             <li>{t('sections.usage.medical.items.scheduling')}</li>
             <li>{t('sections.usage.medical.items.communication')}</li>
@@ -63,7 +60,7 @@ const PrivacyPolicy: React.FC = () => {
           </ul>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">{t('sections.usage.website.title')}</h3>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <ul className="list-disc ps-6 space-y-2 text-gray-700">
             <li>{t('sections.usage.website.items.personalization')}</li>
             <li>{t('sections.usage.website.items.language')}</li>
             <li>{t('sections.usage.website.items.improvement')}</li>
@@ -73,7 +70,7 @@ const PrivacyPolicy: React.FC = () => {
 
         <section className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-            <Globe className="h-6 w-6 mr-2 text-teal-600" />
+            <Globe className="h-6 w-6 me-2 text-teal-600" />
             {t('sections.gdpr.title')}
           </h2>
           
@@ -86,7 +83,7 @@ const PrivacyPolicy: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h3 className="text-lg font-semibold text-gray-800 mb-3">{t('sections.gdpr.rights.title')}:</h3>
-              <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <ul className="list-disc ps-6 space-y-2 text-gray-700">
                 <li><strong>{t('sections.gdpr.rights.access.title')}:</strong> {t('sections.gdpr.rights.access.description')}</li>
                 <li><strong>{t('sections.gdpr.rights.rectification.title')}:</strong> {t('sections.gdpr.rights.rectification.description')}</li>
                 <li><strong>{t('sections.gdpr.rights.erasure.title')}:</strong> {t('sections.gdpr.rights.erasure.description')}</li>
@@ -100,11 +97,11 @@ const PrivacyPolicy: React.FC = () => {
               <h3 className="text-lg font-semibold text-gray-800 mb-3">{t('sections.gdpr.exercise.title')}:</h3>
               <div className="space-y-3">
                 <div className="flex items-center">
-                  <Mail className="h-4 w-4 text-teal-600 mr-2" />
+                  <Mail className="h-4 w-4 text-teal-600 me-2" />
                   <span className="text-sm">{t('sections.gdpr.exercise.email')}: privacy@atelierlasik.com</span>
                 </div>
                 <div className="flex items-center">
-                  <Phone className="h-4 w-4 text-teal-600 mr-2" />
+                  <Phone className="h-4 w-4 text-teal-600 me-2" />
                   <span className="text-sm">{t('sections.gdpr.exercise.phone')}: <span dir="ltr">(844) 954-8686</span></span>
                 </div>
                 <p className="text-sm text-gray-600">
@@ -120,7 +117,7 @@ const PrivacyPolicy: React.FC = () => {
           <p className="text-gray-700 mb-4">
             {t('sections.security.description')}:
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <ul className="list-disc ps-6 space-y-2 text-gray-700">
             <li>{t('sections.security.measures.encryption')}</li>
             <li>{t('sections.security.measures.assessments')}</li>
             <li>{t('sections.security.measures.access')}</li>
@@ -134,7 +131,7 @@ const PrivacyPolicy: React.FC = () => {
           <p className="text-gray-700 mb-4">
             Our translation services may process data outside your country of residence. We ensure appropriate safeguards:
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700">
+          <ul className="list-disc ps-6 space-y-2 text-gray-700">
             <li>Standard Contractual Clauses with service providers</li>
             <li>Adequacy decisions where applicable</li>
             <li>Medical terminology protection during translation</li>
@@ -151,13 +148,13 @@ const PrivacyPolicy: React.FC = () => {
               <p className="text-gray-700">{t('sections.contact.dpo.address1')}</p>
               <p className="text-gray-700">{t('sections.contact.dpo.address2')}</p>
               <div className="flex items-center mt-3">
-                <Mail className="h-4 w-4 text-teal-600 mr-2" />
+                <Mail className="h-4 w-4 text-teal-600 me-2" />
                 <a href="mailto:privacy@atelierlasik.com" className="text-teal-600 hover:text-teal-700">
                   privacy@atelierlasik.com
                 </a>
               </div>
               <div className="flex items-center">
-                <Phone className="h-4 w-4 text-teal-600 mr-2" />
+                <Phone className="h-4 w-4 text-teal-600 me-2" />
                 <a href="tel:+18449548686" className="text-teal-600 hover:text-teal-700" dir="ltr">
                   (844) 954-8686
                 </a>
