@@ -4,6 +4,7 @@ import i18n from '../../i18n';
 import RTLProvider from '../../components/RTLProvider';
 import arPatientForms from '../../../public/locales/ar/patientForms.json';
 import jaPatientForms from '../../../public/locales/ja/patientForms.json';
+import hePatientForms from '../../../public/locales/he/patientForms.json';
 import enPatientForms from '../../../public/locales/en/patientForms.json';
 
 const patientState = vi.hoisted(() => ({
@@ -69,6 +70,7 @@ import { AppointmentCalendar } from '../../components/booking/AppointmentCalenda
 const bundles: Record<string, typeof enPatientForms> = {
   ar: arPatientForms,
   ja: jaPatientForms,
+  he: hePatientForms,
   en: enPatientForms,
 };
 
@@ -97,7 +99,7 @@ describe('Appointment calendar translations', () => {
     await switchTo('en');
   });
 
-  it.each(['ar', 'ja'])('shows translated labels and weekday names in %s', async (lng) => {
+  it.each(['ar', 'he', 'ja'])('shows translated labels and weekday names in %s', async (lng) => {
     const cal = bundles[lng].calendar;
     await switchTo(lng);
     render(
@@ -115,7 +117,7 @@ describe('Appointment calendar translations', () => {
     expect(names).not.toEqual(weekdays('en'));
     names.forEach((name) => expect(screen.getAllByText(name).length).toBeGreaterThan(0));
 
-    expect(document.documentElement.dir).toBe(lng === 'ar' ? 'rtl' : 'ltr');
+    expect(document.documentElement.dir).toBe(['ar', 'he'].includes(lng) ? 'rtl' : 'ltr');
 
     const nextMonth = screen.getByLabelText(cal.nextMonth);
     for (let i = 0; i < 2; i++) fireEvent.click(nextMonth);
