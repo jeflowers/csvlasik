@@ -83,7 +83,7 @@ const ConsentPreferencesCenter: React.FC = () => {
         .select('id')
         .eq('user_identifier', userId)
         .eq('is_active', true)
-        .single();
+        .maybeSingle();
 
       if (userConsents) {
         const { data: userCookiePrefs } = await supabase
@@ -115,7 +115,7 @@ const ConsentPreferencesCenter: React.FC = () => {
         .from('consent_notifications')
         .select('*')
         .eq('user_identifier', userId)
-        .single();
+        .maybeSingle();
 
       if (notifData) {
         setNotifications(notifData);
@@ -149,7 +149,7 @@ const ConsentPreferencesCenter: React.FC = () => {
         .select('id')
         .eq('user_identifier', userIdentifier)
         .eq('is_active', true)
-        .single();
+        .maybeSingle();
 
       if (!userConsents) throw new Error('No active consent found');
 

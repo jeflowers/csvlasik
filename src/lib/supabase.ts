@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { getVisitorId } from './consent';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://qdcykazqmowkmkhykepb.supabase.co';
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkY3lrYXpxbW93a21raHlrZXBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk4NjQwNzEsImV4cCI6MjA3NTQ0MDA3MX0.lDeWRNri-hPV6JMH2tRiwvYrN64hOKYuGUhre6rQeaA';
@@ -16,6 +17,12 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   global: {
     headers: {
       'x-application-name': 'atelier-lasik',
+    },
+    fetch: (input, init) => {
+      const headers = new Headers(init?.headers);
+      const visitorId = getVisitorId();
+      if (visitorId) headers.set('x-visitor-id', visitorId);
+      return fetch(input, { ...init, headers });
     },
   },
   db: {
