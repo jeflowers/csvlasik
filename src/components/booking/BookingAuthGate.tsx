@@ -157,6 +157,7 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
         )}
         <input
           type="email"
+          dir="ltr"
           className={inputClass}
           placeholder={t('bookingGate.email')}
           value={email}
@@ -166,6 +167,7 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
         />
         <input
           type="password"
+          dir="ltr"
           className={inputClass}
           placeholder={t('bookingGate.password')}
           value={password}

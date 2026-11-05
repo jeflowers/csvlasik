@@ -25,7 +25,7 @@ interface BookingFormData {
 }
 
 export const AppointmentCalendar: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<TimeSlot | null>(null);
@@ -213,16 +213,16 @@ export const AppointmentCalendar: React.FC = () => {
           </div>
 
           {selectedSlot && (
-            <div className="text-left space-y-3 mb-6">
-              <div className="flex items-center space-x-3">
+            <div className="text-start space-y-3 mb-6">
+              <div className="flex items-center gap-3">
                 <Calendar className="w-5 h-5 text-gray-400" />
                 <span className="text-gray-900">{selectedSlot.slot_date}</span>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center gap-3">
                 <Clock className="w-5 h-5 text-gray-400" />
                 <span className="text-gray-900">{formatTime(selectedSlot.slot_time)}</span>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-gray-400" />
                 <span className="text-gray-900">{selectedSlot.location}</span>
               </div>
@@ -259,7 +259,7 @@ export const AppointmentCalendar: React.FC = () => {
             onClick={() => setStep('slots')}
             className="flex items-center text-gray-600 hover:text-gray-900 mb-4"
           >
-            <ChevronLeft className="w-5 h-5 mr-1" />
+            <ChevronLeft className="w-5 h-5 me-1 rtl:rotate-180" />
             Back to time slots
           </button>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Complete Your Booking</h2>
@@ -358,7 +358,7 @@ export const AppointmentCalendar: React.FC = () => {
             </div>
           )}
 
-          <div className="flex justify-end space-x-3">
+          <div className="flex justify-end gap-3">
             <button
               type="button"
               onClick={() => setStep('slots')}
@@ -387,12 +387,12 @@ export const AppointmentCalendar: React.FC = () => {
             onClick={() => setStep('calendar')}
             className="flex items-center text-gray-600 hover:text-gray-900 mb-4"
           >
-            <ChevronLeft className="w-5 h-5 mr-1" />
+            <ChevronLeft className="w-5 h-5 me-1 rtl:rotate-180" />
             Back to calendar
           </button>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Available Time Slots</h2>
           <p className="text-gray-600">
-            {selectedDate?.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
+            {selectedDate?.toLocaleDateString(i18n.language, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
           </p>
         </div>
 
@@ -414,7 +414,7 @@ export const AppointmentCalendar: React.FC = () => {
                 className="p-4 border-2 border-gray-200 rounded-lg hover:border-teal-600 hover:bg-teal-50 transition-colors"
               >
                 <div className="flex items-center justify-center mb-2">
-                  <Clock className="w-5 h-5 text-teal-600 mr-2" />
+                  <Clock className="w-5 h-5 text-teal-600 me-2" />
                   <span className="font-semibold text-gray-900">
                     {formatTime(slot.slot_time)}
                   </span>
@@ -439,16 +439,16 @@ export const AppointmentCalendar: React.FC = () => {
             onClick={() => changeMonth(-1)}
             className="p-2 hover:bg-gray-100 rounded-lg"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-6 h-6 rtl:rotate-180" />
           </button>
           <h3 className="text-xl font-semibold">
-            {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+            {currentDate.toLocaleDateString(i18n.language, { month: 'long', year: 'numeric' })}
           </h3>
           <button
             onClick={() => changeMonth(1)}
             className="p-2 hover:bg-gray-100 rounded-lg"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-6 h-6 rtl:rotate-180" />
           </button>
         </div>
 

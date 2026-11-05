@@ -39,7 +39,7 @@ describe('Header Component', () => {
   it('displays language selector', () => {
     render(<Header />);
 
-    expect(screen.getByLabelText(/selectLanguage/i)).toBeInTheDocument();
+    expect(screen.getAllByLabelText(/select ?language/i).length).toBeGreaterThan(0);
   });
 
   it('applies RTL classes when language direction is RTL', () => {

@@ -45,7 +45,8 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'dark' })
     const panelWidth = 280;
     let left = rect.right - panelWidth;
     if (left < 8) left = 8;
-    if (isRTL) left = rect.left;
+    if (isRTL) left = Math.min(rect.left, window.innerWidth - panelWidth - 8);
+    if (left < 8) left = 8;
     return { top: rect.bottom + 8, left };
   }, [isRTL]);
 
@@ -160,9 +161,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'dark' })
       <button
         ref={buttonRef}
         onClick={handleToggle}
-        className={`flex items-center space-x-1.5 px-2 py-1.5 text-sm font-light transition-colors duration-200 ${buttonStyles} ${
-          isRTL ? 'space-x-reverse' : ''
-        }`}
+        className={`flex items-center gap-1.5 px-2 py-1.5 text-sm font-light transition-colors duration-200 ${buttonStyles}`}
         aria-label={t('selectLanguage', { ns: 'navigation' })}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -188,7 +187,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'dark' })
           role="menu"
         >
           <div className="p-3 border-b border-gray-100">
-            <h3 className={`text-sm font-medium text-gray-900 ${isRTL ? 'text-right' : 'text-left'}`}>
+            <h3 className={`text-sm font-medium text-gray-900 text-start`}>
               {t('selectLanguage', { ns: 'navigation' })}
             </h3>
           </div>
@@ -200,18 +199,18 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'dark' })
                 onClick={() => handleLanguageChange(language.code)}
                 className={`w-full flex items-center px-4 py-3 hover:bg-gray-50 transition-colors ${
                   i18n.language === language.code ? 'bg-cream text-gray-900' : 'text-gray-700'
-                } ${isRTL ? 'flex-row-reverse' : ''}`}
+                }`}
                 role="menuitem"
               >
-                <div className={`flex items-center flex-1 min-w-0 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                  <span className={`text-2xl flex-shrink-0 ${isRTL ? 'ml-3' : 'mr-3'}`}>{language.flag}</span>
-                  <div className={`flex-1 min-w-0 ${isRTL ? 'text-right' : 'text-left'}`}>
+                <div className={`flex items-center flex-1 min-w-0`}>
+                  <span className={`text-2xl flex-shrink-0 me-3`}>{language.flag}</span>
+                  <div className={`flex-1 min-w-0 text-start`}>
                     <div className="text-sm font-medium truncate">{language.nativeName}</div>
                     <div className="text-xs text-gray-500 truncate">{language.name} &bull; {language.country}</div>
                   </div>
                 </div>
                 {i18n.language === language.code && (
-                  <Check className={`h-4 w-4 text-bullion flex-shrink-0 ${isRTL ? 'mr-2' : 'ml-2'}`} />
+                  <Check className={`h-4 w-4 text-bullion flex-shrink-0 ms-2`} />
                 )}
               </button>
             ))}
@@ -230,18 +229,18 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'dark' })
                       onClick={() => handleLanguageChange(language.code)}
                       className={`w-full flex items-center px-4 py-3 hover:bg-gray-50 transition-colors ${
                         i18n.language === language.code ? 'bg-cream text-gray-900' : 'text-gray-700'
-                      } ${isRTL ? 'flex-row-reverse' : ''}`}
+                      }`}
                       role="menuitem"
                     >
-                      <div className={`flex items-center flex-1 min-w-0 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                        <span className={`text-2xl flex-shrink-0 ${isRTL ? 'ml-3' : 'mr-3'}`}>{language.flag}</span>
-                        <div className={`flex-1 min-w-0 ${isRTL ? 'text-right' : 'text-left'}`}>
+                      <div className={`flex items-center flex-1 min-w-0`}>
+                        <span className={`text-2xl flex-shrink-0 me-3`}>{language.flag}</span>
+                        <div className={`flex-1 min-w-0 text-start`}>
                           <div className="text-sm font-medium truncate">{language.nativeName}</div>
                           <div className="text-xs text-gray-500 truncate">{language.name} &bull; {language.country}</div>
                         </div>
                       </div>
                       {i18n.language === language.code && (
-                        <Check className={`h-4 w-4 text-bullion flex-shrink-0 ${isRTL ? 'mr-2' : 'ml-2'}`} />
+                        <Check className={`h-4 w-4 text-bullion flex-shrink-0 ms-2`} />
                       )}
                     </button>
                   ))}
@@ -251,7 +250,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'dark' })
           </div>
 
           <div className="p-3 border-t border-gray-100 bg-gray-50 rounded-b-lg">
-            <p className={`text-xs text-gray-500 ${isRTL ? 'text-right' : 'text-left'}`}>
+            <p className={`text-xs text-gray-500 text-start`}>
               {t('translationNote', { ns: 'navigation' })}
             </p>
           </div>

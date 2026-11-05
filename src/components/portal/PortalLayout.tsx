@@ -32,11 +32,10 @@ const navItems = [
 
 const PortalLayout: React.FC = () => {
   const { user, logout } = usePatient();
-  const { t, i18n } = useTranslation('patientForms');
+  const { t } = useTranslation('patientForms');
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const isRTL = i18n.dir() === 'rtl';
 
   const isActive = (path: string, end?: boolean) => {
     if (end) return location.pathname === path;
@@ -60,8 +59,8 @@ const PortalLayout: React.FC = () => {
       {/* Top Bar - matches main site */}
       <div className="chopard-gradient text-white relative z-30">
         <div className="max-w-full px-4 sm:px-6 lg:px-8">
-          <div className={`flex justify-between items-center py-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-            <div className={`flex items-center space-x-4 ${isRTL ? 'space-x-reverse' : ''} ${sidebarOpen ? '' : 'ml-12 lg:ml-0'}`}>
+          <div className="flex justify-between items-center py-3">
+            <div className={`flex items-center gap-4 ${sidebarOpen ? '' : 'ms-12 lg:ms-0'}`}>
               <a
                 href="https://www.instagram.com/"
                 target="_blank"
@@ -109,13 +108,13 @@ const PortalLayout: React.FC = () => {
               </a>
             </div>
 
-            <div className={`flex items-center space-x-6 text-sm font-medium ${isRTL ? 'space-x-reverse' : ''}`}>
+            <div className="flex items-center gap-6 text-sm font-medium">
               <Link to="/portal" className="hidden sm:flex items-center hover:text-gray-200 transition-colors">
-                <User className={`h-4 w-4 text-white ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                <User className="h-4 w-4 text-white me-2" />
                 <span>{portalLabel}</span>
               </Link>
               <Link to="/contact" className="hidden md:flex items-center hover:text-gray-200 transition-colors">
-                <Mail className={`h-4 w-4 text-white ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                <Mail className="h-4 w-4 text-white me-2" />
                 <span>{t('nav.contactUs', { defaultValue: 'Contact Us' })}</span>
               </Link>
               <LanguageSelector />

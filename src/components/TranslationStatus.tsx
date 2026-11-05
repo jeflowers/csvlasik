@@ -87,17 +87,15 @@ const TranslationStatus: React.FC<TranslationStatusProps> = ({
 
   return (
     <div className={`${className} ${isRTL ? 'rtl' : ''}`}>
-      <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor()} ${
-        isRTL ? 'flex-row-reverse space-x-reverse' : ''
-      }`}>
+      <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor()}`}>
         {getStatusIcon()}
-        <span className={isRTL ? 'mr-2' : 'ml-2'}>{getStatusText()}</span>
-        {!isOnline && <WifiOff className={`h-3 w-3 ${isRTL ? 'mr-2' : 'ml-2'}`} />}
-        {isOnline && <Wifi className={`h-3 w-3 ${isRTL ? 'mr-2' : 'ml-2'}`} />}
+        <span className="ms-2">{getStatusText()}</span>
+        {!isOnline && <WifiOff className="h-3 w-3 ms-2" />}
+        {isOnline && <Wifi className="h-3 w-3 ms-2" />}
       </div>
       
       {showDetails && (
-        <div className={`mt-2 text-xs text-gray-500 ${isRTL ? 'text-right' : 'text-left'}`}>
+        <div className={`mt-2 text-xs text-gray-500 text-start`}>
           <div>Language: {i18n.language}</div>
           <div>Services: {serviceStatus.deepl?.enabled ? 'DeepL ' : ''}{serviceStatus.google?.enabled ? 'Google' : ''}</div>
           <div>Cache: {serviceStatus.cache?.entries || 0} entries</div>
