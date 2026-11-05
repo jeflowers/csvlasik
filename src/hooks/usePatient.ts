@@ -6,6 +6,7 @@ import {
   signUpPatient,
   signOutPatient,
   getCurrentPatient,
+  resendPatientConfirmation,
 } from '../services/patientAuthService';
 import { logPatientActivity } from '../services/patientActivityService';
 
@@ -16,12 +17,16 @@ export interface UsePatientReturn {
   login: (email: string, password: string) => Promise<boolean>;
   register: (email: string, password: string, firstName: string, lastName: string) => Promise<boolean>;
   logout: () => Promise<void>;
+  pendingConfirmationEmail: string | null;
+  resendConfirmation: () => Promise<boolean>;
+  clearPendingConfirmation: () => void;
 }
 
 export function usePatient(): UsePatientReturn {
   const [user, setUser] = useState<PatientUser | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [pendingConfirmationEmail, setPendingConfirmationEmail] = useState<string | null>(null);
 
   useEffect(() => {
     let mounted = true;
@@ -75,15 +80,17 @@ export function usePatient(): UsePatientReturn {
     setLoading(true);
     setError(null);
 
-    const { user: loggedIn, error: loginError } = await signInPatient(email, password);
+    const { user: loggedIn, error: loginError, needsConfirmation } = await signInPatient(email, password);
 
     if (loginError) {
       setError(loginError);
+      if (needsConfirmation) setPendingConfirmationEmail(email);
       setLoading(false);
       return false;
     }
 
     setUser(loggedIn);
+    setPendingConfirmationEmail(null);
     setLoading(false);
     if (loggedIn) {
       logPatientActivity('login', 'Signed in to patient portal');
@@ -100,10 +107,16 @@ export function usePatient(): UsePatientReturn {
     setLoading(true);
     setError(null);
 
-    const { user: registered, error: regError } = await signUpPatient(email, password, firstName, lastName);
+    const { user: registered, error: regError, needsConfirmation } = await signUpPatient(email, password, firstName, lastName);
 
     if (regError) {
       setError(regError);
+      setLoading(false);
+      return false;
+    }
+
+    if (needsConfirmation) {
+      setPendingConfirmationEmail(email);
       setLoading(false);
       return false;
     }
@@ -129,5 +142,31 @@ export function usePatient(): UsePatientReturn {
     setLoading(false);
   }, []);
 
-  return { user, loading, error, login, register, logout };
+  const resendConfirmation = useCallback(async (): Promise<boolean> => {
+    if (!pendingConfirmationEmail) return false;
+    setError(null);
+    const { error: resendError } = await resendPatientConfirmation(pendingConfirmationEmail);
+    if (resendError) {
+      setError(resendError);
+      return false;
+    }
+    return true;
+  }, [pendingConfirmationEmail]);
+
+  const clearPendingConfirmation = useCallback(() => {
+    setPendingConfirmationEmail(null);
+    setError(null);
+  }, []);
+
+  return {
+    user,
+    loading,
+    error,
+    login,
+    register,
+    logout,
+    pendingConfirmationEmail,
+    resendConfirmation,
+    clearPendingConfirmation,
+  };
 }

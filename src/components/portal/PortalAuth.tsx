@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Eye, EyeOff, Shield, ArrowLeft, Loader2 } from 'lucide-react';
+import { Eye, EyeOff, Shield, ArrowLeft, Loader2, MailCheck } from 'lucide-react';
 import { usePatient } from '../../hooks/usePatient';
 import { resetPatientPassword } from '../../services/patientAuthService';
 
 type AuthView = 'login' | 'register' | 'forgot-password';
 
 const PortalAuth: React.FC = () => {
-  const { login, register, loading, error } = usePatient();
+  const { login, register, loading, error, pendingConfirmationEmail, resendConfirmation, clearPendingConfirmation } = usePatient();
   const { t, ready } = useTranslation('patientForms');
   const [view, setView] = useState<AuthView>('login');
   const [showPassword, setShowPassword] = useState(false);
   const [localError, setLocalError] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
+  const [resendState, setResendState] = useState<'idle' | 'sending' | 'sent' | 'failed'>('idle');
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -117,6 +118,57 @@ const PortalAuth: React.FC = () => {
         </div>
 
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+          {pendingConfirmationEmail ? (
+            <div data-testid="portal-confirm-email" className="text-center">
+              <div className="mx-auto w-12 h-12 rounded-full bg-cream flex items-center justify-center mb-4">
+                <MailCheck className="h-6 w-6 text-champagne" />
+              </div>
+              <h2 className="text-lg font-semibold text-gray-900 mb-2">{t('auth.checkInboxTitle')}</h2>
+              <p className="text-sm text-gray-500 mb-6 leading-relaxed">
+                {t('auth.checkInboxBody', { email: pendingConfirmationEmail })}
+              </p>
+
+              {resendState === 'sent' && (
+                <div className="bg-cream border border-champagne/30 text-onyx text-sm px-4 py-3 rounded-lg mb-4">
+                  {t('auth.confirmationResent')}
+                </div>
+              )}
+              {resendState === 'failed' && displayError && (
+                <div className="bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3 rounded-lg mb-4">
+                  {displayError}
+                </div>
+              )}
+
+              <button
+                type="button"
+                onClick={async () => {
+                  setResendState('sending');
+                  const ok = await resendConfirmation();
+                  setResendState(ok ? 'sent' : 'failed');
+                }}
+                disabled={resendState === 'sending'}
+                className="w-full bg-onyx text-white py-3 rounded-lg text-sm font-semibold hover:bg-graphite transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                {resendState === 'sending' && <Loader2 className="h-4 w-4 animate-spin" />}
+                {t('auth.resendConfirmation')}
+              </button>
+
+              <p className="text-center text-sm text-gray-500 mt-6">
+                <button
+                  type="button"
+                  onClick={() => {
+                    clearPendingConfirmation();
+                    setResendState('idle');
+                    switchView('login');
+                  }}
+                  className="text-champagne hover:text-bullion font-medium"
+                >
+                  {t('auth.backToSignIn')}
+                </button>
+              </p>
+            </div>
+          ) : (
+          <>
           {view === 'login' && (
             <>
               <h2 className="text-lg font-semibold text-gray-900 mb-1">{t('auth.welcomeBack')}</h2>
@@ -354,6 +406,8 @@ const PortalAuth: React.FC = () => {
                 </button>
               </p>
             </>
+          )}
+          </>
           )}
         </div>
 

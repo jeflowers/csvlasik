@@ -12,6 +12,39 @@ export interface PatientUser {
 export interface PatientAuthResponse {
   user: PatientUser | null;
   error: string | null;
+  needsConfirmation?: boolean;
+}
+
+function confirmationRedirectUrl(): string {
+  return `${window.location.origin}/portal`;
+}
+
+async function ensurePatientProfile(authUser: { id: string; email?: string; user_metadata?: Record<string, unknown> }) {
+  const { data: existing } = await supabase
+    .from('patient_profiles')
+    .select('id')
+    .eq('id', authUser.id)
+    .maybeSingle();
+
+  if (existing) return;
+
+  const { error: profileError } = await supabase
+    .from('patient_profiles')
+    .insert({
+      id: authUser.id,
+      email: authUser.email || '',
+      first_name: (authUser.user_metadata?.first_name as string) || '',
+      last_name: (authUser.user_metadata?.last_name as string) || '',
+    });
+
+  if (profileError && !profileError.message.includes('duplicate')) {
+    console.error('[patientAuthService] Failed to create patient profile:', profileError);
+    return;
+  }
+
+  await logPatientActivity('account_created', 'Portal account created', {
+    email: authUser.email,
+  });
 }
 
 function mapAuthUser(authUser: { id: string; email?: string; created_at: string; user_metadata?: Record<string, unknown> }): PatientUser {
@@ -35,6 +68,7 @@ export async function signUpPatient(
       email,
       password,
       options: {
+        emailRedirectTo: confirmationRedirectUrl(),
         data: {
           first_name: firstName,
           last_name: lastName,
@@ -51,22 +85,11 @@ export async function signUpPatient(
       return { user: null, error: 'Registration failed' };
     }
 
-    const { error: profileError } = await supabase
-      .from('patient_profiles')
-      .insert({
-        id: data.user.id,
-        email: data.user.email || email,
-        first_name: firstName,
-        last_name: lastName,
-      });
-
-    if (profileError && !profileError.message.includes('duplicate')) {
-      console.error('[patientAuthService] Failed to create patient profile:', profileError);
+    if (!data.session) {
+      return { user: null, error: null, needsConfirmation: true };
     }
 
-    await logPatientActivity('account_created', 'Portal account created', {
-      email: data.user.email,
-    });
+    await ensurePatientProfile(data.user);
 
     return { user: mapAuthUser(data.user), error: null };
   } catch (err) {
@@ -88,12 +111,21 @@ export async function signInPatient(
     });
 
     if (error) {
+      if (error.code === 'email_not_confirmed' || /email not confirmed/i.test(error.message)) {
+        return {
+          user: null,
+          error: 'Please confirm your email address first. Check your inbox for the confirmation link.',
+          needsConfirmation: true,
+        };
+      }
       return { user: null, error: error.message };
     }
 
     if (!data.user) {
       return { user: null, error: 'Sign in failed' };
     }
+
+    await ensurePatientProfile(data.user);
 
     return { user: mapAuthUser(data.user), error: null };
   } catch (err) {
@@ -127,6 +159,21 @@ export async function getCurrentPatient(): Promise<PatientAuthResponse> {
   } catch (err) {
     return {
       user: null,
+      error: err instanceof Error ? err.message : 'Unknown error',
+    };
+  }
+}
+
+export async function resendPatientConfirmation(email: string): Promise<{ error: string | null }> {
+  try {
+    const { error } = await supabase.auth.resend({
+      type: 'signup',
+      email,
+      options: { emailRedirectTo: confirmationRedirectUrl() },
+    });
+    return { error: error?.message || null };
+  } catch (err) {
+    return {
       error: err instanceof Error ? err.message : 'Unknown error',
     };
   }

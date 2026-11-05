@@ -41,7 +41,17 @@ export const AppointmentCalendar: React.FC = () => {
     insurance_provider: '',
     notes: '',
   });
-  const { user, loading: authLoading, error: authError, login, register, logout } = usePatient();
+  const {
+    user,
+    loading: authLoading,
+    error: authError,
+    login,
+    register,
+    logout,
+    pendingConfirmationEmail,
+    resendConfirmation,
+    clearPendingConfirmation,
+  } = usePatient();
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -175,7 +185,16 @@ export const AppointmentCalendar: React.FC = () => {
   }
 
   if (!user) {
-    return <BookingAuthGate login={login} register={register} error={authError} />;
+    return (
+      <BookingAuthGate
+        login={login}
+        register={register}
+        error={authError}
+        pendingConfirmationEmail={pendingConfirmationEmail}
+        resendConfirmation={resendConfirmation}
+        clearPendingConfirmation={clearPendingConfirmation}
+      />
+    );
   }
 
   if (step === 'confirmation') {

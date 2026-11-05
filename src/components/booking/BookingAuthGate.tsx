@@ -1,20 +1,45 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LogIn, UserPlus, Lock } from 'lucide-react';
+import { LogIn, UserPlus, Lock, MailCheck } from 'lucide-react';
 
 interface BookingAuthGateProps {
   login: (email: string, password: string) => Promise<boolean>;
   register: (email: string, password: string, firstName: string, lastName: string) => Promise<boolean>;
   error: string | null;
+  pendingConfirmationEmail?: string | null;
+  resendConfirmation?: () => Promise<boolean>;
+  clearPendingConfirmation?: () => void;
 }
 
-export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({ login, register, error }) => {
+export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
+  login,
+  register,
+  error,
+  pendingConfirmationEmail,
+  resendConfirmation,
+  clearPendingConfirmation,
+}) => {
   const [mode, setMode] = useState<'signin' | 'signup'>('signin');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [resendState, setResendState] = useState<'idle' | 'sending' | 'sent' | 'failed'>('idle');
+
+  const handleResend = async () => {
+    if (!resendConfirmation) return;
+    setResendState('sending');
+    const ok = await resendConfirmation();
+    setResendState(ok ? 'sent' : 'failed');
+  };
+
+  const handleBackToSignIn = () => {
+    clearPendingConfirmation?.();
+    setResendState('idle');
+    setPassword('');
+    setMode('signin');
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,6 +54,51 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({ login, registe
 
   const inputClass =
     'w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition';
+
+  if (pendingConfirmationEmail) {
+    return (
+      <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-8" data-testid="booking-auth-gate">
+        <div className="flex flex-col items-center text-center" data-testid="booking-confirm-email">
+          <div className="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center mb-4">
+            <MailCheck className="w-6 h-6 text-teal-600" />
+          </div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Check your inbox</h2>
+          <p className="text-gray-600 leading-relaxed mb-6">
+            We sent a confirmation link to <span className="font-medium text-gray-900">{pendingConfirmationEmail}</span>.
+            Open it to verify your email, then sign in to book your appointment.
+          </p>
+
+          {resendState === 'sent' && (
+            <p className="w-full text-sm text-teal-800 bg-teal-50 border border-teal-200 rounded-lg px-4 py-2 mb-4" role="status">
+              A new confirmation email is on its way.
+            </p>
+          )}
+          {(resendState === 'failed' || (error && resendState !== 'sent')) && (
+            <p className="w-full text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-2 mb-4" role="alert">
+              {error || 'We could not resend the email. Please try again shortly.'}
+            </p>
+          )}
+
+          <button
+            type="button"
+            onClick={handleResend}
+            disabled={resendState === 'sending' || !resendConfirmation}
+            data-testid="resend-confirmation"
+            className="w-full bg-teal-600 text-white py-3 rounded-lg font-medium hover:bg-teal-700 disabled:opacity-60 transition mb-3"
+          >
+            {resendState === 'sending' ? 'Sending...' : 'Resend confirmation email'}
+          </button>
+          <button
+            type="button"
+            onClick={handleBackToSignIn}
+            className="w-full py-3 rounded-lg font-medium text-teal-700 hover:bg-teal-50 transition"
+          >
+            Back to sign in
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-8" data-testid="booking-auth-gate">
