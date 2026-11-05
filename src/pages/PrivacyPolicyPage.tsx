@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Shield, Eye, Lock, Globe, Mail, CheckCircle, ArrowRight, Download } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { getVisitorId } from '../lib/consent';
 
 const PrivacyPolicyPage: React.FC = () => {
   const { t, i18n } = useTranslation(['privacy', 'common']);
@@ -14,7 +15,7 @@ const PrivacyPolicyPage: React.FC = () => {
   const logPolicyView = async () => {
     try {
       const { data: { user } } = await supabase.auth.getUser();
-      const userIdentifier = user?.id || 'anonymous';
+      const userIdentifier = user?.id || getVisitorId() || 'anonymous';
       await supabase.from('consent_analytics_events').insert({
         user_identifier: userIdentifier,
         event_type: 'policy_viewed',

@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import Cookies from 'js-cookie';
+import { CONSENT_COOKIE, clearVisitorId, getVisitorId } from '../lib/consent';
 
 interface CookiePreference {
   cookie_id: string;
@@ -42,7 +43,7 @@ const ConsentPreferencesCenter: React.FC = () => {
     setLoading(true);
     try {
       const { data: { user } } = await supabase.auth.getUser();
-      const userId = user?.id;
+      const userId = user?.id || getVisitorId();
       if (!userId) {
         setError('No consent record found');
         setLoading(false);
@@ -277,7 +278,8 @@ const ConsentPreferencesCenter: React.FC = () => {
       setSuccess('Consent withdrawn successfully. You will need to provide consent again to use this site.');
 
       // Clear consent cookie
-      Cookies.remove('gdpr_consent');
+      Cookies.remove(CONSENT_COOKIE);
+      clearVisitorId();
 
       setTimeout(() => {
         window.location.reload();
@@ -376,6 +378,7 @@ const ConsentPreferencesCenter: React.FC = () => {
           ].map(tab => (
             <button
               key={tab.key}
+              data-testid={`consent-tab-${tab.key}`}
               onClick={() => setActiveTab(tab.key as any)}
               className={`px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap flex items-center gap-2 ${
                 activeTab === tab.key
@@ -589,6 +592,7 @@ const ConsentPreferencesCenter: React.FC = () => {
                   You have the right to withdraw your consent at any time. This will disable all non-essential cookies and remove your consent preferences.
                 </p>
                 <button
+                  data-testid="consent-withdraw-all"
                   onClick={withdrawConsent}
                   disabled={saving}
                   className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center gap-2"

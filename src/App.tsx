@@ -90,6 +90,7 @@ const PortalHistory = lazy(() => import('./components/portal/PortalHistory'));
 
 const Home = lazy(() => import('./pages/Home'));
 const PrivacyPolicyDetailPage = lazy(() => import('./pages/PrivacyPolicyDetailPage'));
+const ConsentPreferencesCenter = lazy(() => import('./components/ConsentPreferencesCenter'));
 const About = lazy(() => import('./pages/About'));
 const Procedures = lazy(() => import('./pages/Procedures'));
 const Lasik = lazy(() => import('./pages/procedures/Lasik'));
@@ -319,6 +320,7 @@ function App() {
                         <Route path="/stories" element={<Stories />} />
                         <Route path="/privacy-policy" element={<PrivacyPolicyDetailPage />} />
                         <Route path="/privacy" element={<PrivacyPolicy />} />
+                        <Route path="/consent-preferences" element={<ConsentPreferencesCenter />} />
                         <Route path="/terms-of-service" element={<TermsOfService />} />
                       </Routes>
                     </Suspense>

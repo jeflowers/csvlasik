@@ -68,6 +68,9 @@ const Footer = () => {
             <Link to="/privacy-policy" className="text-xs text-graphite/50 hover:text-onyx font-light transition-colors">
               {t('legal.privacy')}
             </Link>
+            <Link to="/consent-preferences" className="text-xs text-graphite/50 hover:text-onyx font-light transition-colors">
+              {t('legal.cookiePreferences', 'Cookie Preferences')}
+            </Link>
             <Link to="/terms-of-service" className="text-xs text-graphite/50 hover:text-onyx font-light transition-colors">
               {t('legal.terms')}
             </Link>

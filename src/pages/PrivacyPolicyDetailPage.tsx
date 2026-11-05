@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, FileText, Download, Globe } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { getVisitorId } from '../lib/consent';
 import { useTranslation } from 'react-i18next';
+import ConsentStatusCard from '../components/ConsentStatusCard';
 
 interface PrivacyPolicyVersion {
   id: string;
@@ -106,7 +108,8 @@ const PrivacyPolicyDetailPage: React.FC = () => {
     if (!policyVersion) return;
 
     try {
-      const userIdentifier = localStorage.getItem('userEmail') || 'anonymous';
+      const { data: { user } } = await supabase.auth.getUser();
+      const userIdentifier = user?.id || getVisitorId() || 'anonymous';
 
       await supabase
         .from('user_policy_acknowledgments')
@@ -270,6 +273,8 @@ const PrivacyPolicyDetailPage: React.FC = () => {
                     </p>
                   </div>
                 </div>
+
+                <ConsentStatusCard />
 
                 <div className="mt-6 text-center text-sm text-gray-500">
                   Last Updated: {new Date(policyContent?.last_updated || '').toLocaleDateString()}

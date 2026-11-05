@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Cookie, Settings, X, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { ConsentPreferences, readConsent, writeConsent } from '../lib/consent';
+import { supabase } from '../lib/supabase';
 
 const ConsentBanner: React.FC = () => {
   const { t, i18n } = useTranslation(['cookies', 'common']);
@@ -52,29 +53,32 @@ const ConsentBanner: React.FC = () => {
   };
 
   const saveConsent = (consentData: ConsentPreferences) => {
-    writeConsent(consentData);
+    const visitorId = writeConsent(consentData);
+    logConsent(consentData, visitorId);
 
-    // Log consent for compliance
-    logConsent(consentData);
-    
     setShowBanner(false);
     setPreferences(consentData);
   };
 
-  const logConsent = async (consentData: ConsentPreferences) => {
+  const logConsent = async (consentData: ConsentPreferences, visitorId: string) => {
     try {
-      await fetch('/api/compliance/log-consent', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          consent_data: consentData,
-          language: i18n.language,
-          timestamp: new Date().toISOString(),
-          user_agent: navigator.userAgent
-        })
+      const { data: { user } } = await supabase.auth.getUser();
+      const userIdentifier = user?.id || visitorId;
+
+      await supabase
+        .from('user_consents')
+        .update({ is_active: false })
+        .eq('user_identifier', userIdentifier)
+        .eq('is_active', true);
+
+      const { error } = await supabase.from('user_consents').insert({
+        user_identifier: userIdentifier,
+        consent_method: 'banner',
+        consent_preferences: consentData,
+        language: i18n.language,
+        user_agent: navigator.userAgent
       });
+      if (error) throw error;
     } catch (error) {
       console.error('Failed to log consent:', error);
     }

@@ -10,6 +10,30 @@ export interface ConsentPreferences {
 
 export const CONSENT_COOKIE = 'gdpr_consent';
 export const CONSENT_EVENT = 'consent-updated';
+export const VISITOR_COOKIE = 'visitor_id';
+
+const cookieOptions = () => ({
+  expires: 365,
+  secure: window.location.protocol === 'https:',
+  sameSite: 'strict' as const
+});
+
+export function getVisitorId(): string | null {
+  return Cookies.get(VISITOR_COOKIE) || null;
+}
+
+// Only called from writeConsent, so the ID never exists before the visitor makes a consent choice.
+function getOrCreateVisitorId(): string {
+  const existing = getVisitorId();
+  if (existing) return existing;
+  const id = crypto.randomUUID();
+  Cookies.set(VISITOR_COOKIE, id, cookieOptions());
+  return id;
+}
+
+export function clearVisitorId() {
+  Cookies.remove(VISITOR_COOKIE);
+}
 
 export function readConsent(): ConsentPreferences | null {
   const raw = Cookies.get(CONSENT_COOKIE);
@@ -21,13 +45,11 @@ export function readConsent(): ConsentPreferences | null {
   }
 }
 
-export function writeConsent(consent: ConsentPreferences) {
-  Cookies.set(CONSENT_COOKIE, JSON.stringify(consent), {
-    expires: 365,
-    secure: window.location.protocol === 'https:',
-    sameSite: 'strict'
-  });
+export function writeConsent(consent: ConsentPreferences): string {
+  Cookies.set(CONSENT_COOKIE, JSON.stringify(consent), cookieOptions());
+  const visitorId = getOrCreateVisitorId();
   window.dispatchEvent(new Event(CONSENT_EVENT));
+  return visitorId;
 }
 
 // Third-party embeds (maps, video players) set their own cookies, so they need marketing consent to auto-load.
