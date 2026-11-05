@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MapPin, Users, Award, Calendar, ArrowRight, Globe, Heart, Plane } from 'lucide-react';
+import YouTubeEmbed from '../components/YouTubeEmbed';
 
 const PacificStory = () => {
   const { t } = useTranslation(['pacific', 'common']);
@@ -50,28 +51,16 @@ const PacificStory = () => {
           <div className="max-w-4xl mx-auto">
             <div className="relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
               <div className="aspect-video">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/smzkYORJQQc?rel=0&modestbranding=1"
+                <YouTubeEmbed
+                  videoId="smzkYORJQQc"
                   title="Dr. Charles Flowers Pacific Healthcare Mission"
                   className="w-full h-full"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  onLoad={() => console.log('YouTube iframe loaded successfully')}
-                  onError={(e) => {
-                    console.error('YouTube iframe error:', e);
-                    console.error('Error details:', e.target);
-                  }}
-                ></iframe>
+                />
               </div>
             </div>
             <div className="text-center mt-6">
               <p className="text-gray-600 italic">
                 "Bringing revolutionary healthcare to those who need it most" - Featured on KUAM News
-                <br />
-                <span className="text-sm text-gray-500">
-                  If video doesn't load, check browser console (F12) for error details
-                </span>
               </p>
             </div>
           </div>
@@ -99,7 +88,7 @@ const PacificStory = () => {
                   year: '2010',
                   title: 'The Call to Service',
                   description: 'Fresh from completing his ophthalmology residency, Dr. Flowers received an assignment to serve in the Pacific region. What he discovered shocked him: thousands of people living with preventable blindness and vision problems, with no access to modern eye care.',
-                  image: 'https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg',
+                  image: '/assets/images/stock/pexels-1032650.jpg',
                   stats: { patients: '2,000+', islands: '3', procedures: '150' },
                   side: 'left'
                 },
@@ -107,7 +96,7 @@ const PacificStory = () => {
                   year: '2012',
                   title: 'The Revolutionary Decision',
                   description: 'After two years of providing basic eye care, Dr. Flowers made a groundbreaking decision: he would bring LASIK technology to the Pacific. Against all conventional wisdom, he began planning the first mobile LASIK center for remote islands.',
-                  image: 'https://images.pexels.com/photos/5752407/pexels-photo-5752407.jpeg',
+                  image: '/assets/images/stock/pexels-5752407.jpg',
                   stats: { investment: '$2M+', preparation: '18 months', training: '50 staff' },
                   side: 'right',
                   highlight: true
@@ -124,7 +113,7 @@ const PacificStory = () => {
                   year: '2015',
                   title: 'Expanding the Revolution',
                   description: 'The success led to unprecedented demand. Dr. Flowers established permanent LASIK centers on five major islands, trained local medical staff, and developed telemedicine protocols for remote consultations.',
-                  image: 'https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg',
+                  image: '/assets/images/stock/pexels-1170986.jpg',
                   stats: { centers: '5 islands', staff: '120 trained', consultations: '10,000+' },
                   side: 'right'
                 },
@@ -132,7 +121,7 @@ const PacificStory = () => {
                   year: '2018',
                   title: 'Innovation Under Pressure',
                   description: 'Faced with challenging logistics and limited resources, Dr. Flowers pioneered new techniques in mobile surgery, developed protocols for equipment maintenance in humid climates, and created sustainable training programs.',
-                  image: 'https://images.pexels.com/photos/5998460/pexels-photo-5998460.jpeg',
+                  image: '/assets/images/stock/pexels-5752403.jpg',
                   stats: { innovations: '12 protocols', efficiency: '300%', reliability: '99.2%' },
                   side: 'left'
                 },
@@ -140,7 +129,7 @@ const PacificStory = () => {
                   year: '2020',
                   title: 'Bringing Revolution to Los Angeles',
                   description: 'With over 500 successful Pacific procedures and a revolutionary approach to patient care, Dr. Flowers established his Los Angeles practice, bringing the same pioneering spirit and innovation to Southern California.',
-                  image: 'https://images.pexels.com/photos/5214413/pexels-photo-5214413.jpeg',
+                  image: '/assets/images/stock/pexels-5214413.jpg',
                   stats: { patients: '500+', satisfaction: '98%', referrals: '95%' },
                   side: 'right'
                 },
@@ -148,7 +137,7 @@ const PacificStory = () => {
                   year: '2024',
                   title: 'The Dual Mission Continues',
                   description: 'Today, Dr. Flowers maintains his revolutionary dual mission: providing cutting-edge vision care in Los Angeles while continuing quarterly missions to the Pacific, training new surgeons, and expanding access to revolutionary eye care.',
-                  image: 'https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg',
+                  image: '/assets/images/stock/pexels-1032650.jpg',
                   stats: { total: '650+ procedures', missions: 'Quarterly', impact: 'Ongoing' },
                   side: 'left',
                   current: true
@@ -266,32 +255,32 @@ const PacificStory = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                image: 'https://images.pexels.com/photos/5752407/pexels-photo-5752407.jpeg',
+                image: '/assets/images/stock/pexels-5752407.jpg',
                 title: 'Mobile Surgery Unit',
                 description: 'State-of-the-art LASIK equipment transported to remote islands'
               },
               {
-                image: 'https://images.pexels.com/photos/5214413/pexels-photo-5214413.jpeg',
+                image: '/assets/images/stock/pexels-5214413.jpg',
                 title: 'Training Local Staff',
                 description: 'Building sustainable healthcare infrastructure through education'
               },
               {
-                image: 'https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg',
+                image: '/assets/images/stock/pexels-1032650.jpg',
                 title: 'Island Communities',
                 description: 'Reaching the most remote Pacific communities'
               },
               {
-                image: 'https://images.pexels.com/photos/5752403/pexels-photo-5752403.jpeg',
+                image: '/assets/images/stock/pexels-5752403.jpg',
                 title: 'Revolutionary Results',
                 description: 'Life-changing procedures changing communities forever'
               },
               {
-                image: 'https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg',
+                image: '/assets/images/stock/pexels-1170986.jpg',
                 title: 'Technology Innovation',
                 description: 'Adapting cutting-edge technology for challenging environments'
               },
               {
-                image: 'https://images.pexels.com/photos/5998460/pexels-photo-5998460.jpeg',
+                image: '/assets/images/stock/pexels-5752403.jpg',
                 title: 'Continuing Mission',
                 description: 'Quarterly return trips to maintain and expand services'
               }
@@ -356,7 +345,7 @@ const PacificStory = () => {
             </div>
             <div>
               <img
-                src="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg"
+                src="/assets/images/stock/pexels-1170986.jpg"
                 alt="Dr. Flowers philosophy"
                 className="rounded-2xl shadow-xl"
               />

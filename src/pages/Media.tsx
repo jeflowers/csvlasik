@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Calendar, User, ArrowRight, Eye, Globe, Lightbulb, BookOpen } from 'lucide-react';
 import { usePublicArticles, usePublicVideos } from '../hooks/useApi';
 import YouTubeEmbed from '../components/YouTubeEmbed';
+import VimeoEmbed from '../components/VimeoEmbed';
 import { apiService } from '../services/api';
 
 const Media = () => {
@@ -22,7 +23,7 @@ const Media = () => {
     author: 'Dr. Charles Flowers',
     date: 'March 15, 2024',
     readTime: '8 min read',
-    image: 'https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg',
+    image: '/assets/images/stock/pexels-1032650.jpg',
     category: 'Innovation'
   };
 
@@ -331,13 +332,10 @@ const Media = () => {
                       />
                     )}
                     {video.video_type === 'vimeo' && (
-                      <iframe
-                        src={`https://player.vimeo.com/video/${video.video_url}`}
-                        className="w-full h-full"
-                        frameBorder="0"
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowFullScreen
+                      <VimeoEmbed
+                        videoId={video.video_url}
                         title={video.title}
+                        className="w-full h-full"
                       />
                     )}
                   </div>

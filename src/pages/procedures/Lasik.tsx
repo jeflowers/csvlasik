@@ -292,7 +292,7 @@ const Lasik = () => {
                 before: '20/400',
                 after: '20/15',
                 text: 'I went from barely seeing the board to having better than perfect vision! Dr. Flowers made the entire process comfortable and stress-free.',
-                image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg'
+                image: '/assets/images/stock/pexels-1239291.jpg'
               },
               {
                 name: 'Robert K.',
@@ -300,7 +300,7 @@ const Lasik = () => {
                 before: '20/200',
                 after: '20/20',
                 text: 'My career required perfect vision. Dr. Flowers delivered exactly that with his revolutionary technique. I\'m back in the cockpit!',
-                image: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg'
+                image: '/assets/images/stock/pexels-1681010.jpg'
               },
               {
                 name: 'Maria S.',
@@ -308,7 +308,7 @@ const Lasik = () => {
                 before: '20/300',
                 after: '20/15',
                 text: 'Swimming competitively with contacts was impossible. Now I have perfect vision and the freedom to pursue my passion.',
-                image: 'https://images.pexels.com/photos/1462636/pexels-photo-1462636.jpeg'
+                image: '/assets/images/stock/pexels-1462636.jpg'
               }
             ].map((testimonial, index) => (
               <div key={index} className="chopard-card rounded-xl p-8">

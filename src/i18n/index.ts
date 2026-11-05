@@ -299,10 +299,8 @@ i18n
     defaultNS: 'navigation',
     cleanCode: true,
     detection: {
-      order: ['cookie', 'localStorage', 'navigator', 'htmlTag'],
-      caches: ['cookie', 'localStorage'],
-      cookieMinutes: 10080, // 7 days
-      lookupCookie: 'i18next',
+      order: ['localStorage', 'navigator', 'htmlTag'],
+      caches: ['localStorage'],
       lookupLocalStorage: 'i18nextLng',
       convertDetectedLanguage: (lng) => {
         // Handle Brazilian Portuguese detection

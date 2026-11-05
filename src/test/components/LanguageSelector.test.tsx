@@ -2,14 +2,6 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '../utils/testUtils';
 import LanguageSelector from '../../components/LanguageSelector';
 
-// Mock js-cookie
-vi.mock('js-cookie', () => ({
-  default: {
-    set: vi.fn(),
-    get: vi.fn()
-  }
-}));
-
 describe('LanguageSelector Component', () => {
   beforeEach(() => {
     vi.clearAllMocks();

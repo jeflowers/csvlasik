@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Cookie, Settings, X, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import Cookies from 'js-cookie';
-
-interface ConsentPreferences {
-  necessary: boolean;
-  analytics: boolean;
-  marketing: boolean;
-  personalization: boolean;
-}
+import { ConsentPreferences, readConsent, writeConsent } from '../lib/consent';
 
 const ConsentBanner: React.FC = () => {
   const { t, i18n } = useTranslation(['cookies', 'common']);
@@ -23,16 +16,11 @@ const ConsentBanner: React.FC = () => {
 
   useEffect(() => {
     // Check if user has already given consent
-    const consent = Cookies.get('gdpr_consent');
+    const consent = readConsent();
     if (!consent) {
       setShowBanner(true);
     } else {
-      try {
-        const savedPreferences = JSON.parse(consent);
-        setPreferences(savedPreferences);
-      } catch (error) {
-        setShowBanner(true);
-      }
+      setPreferences(consent);
     }
   }, []);
 
@@ -64,13 +52,8 @@ const ConsentBanner: React.FC = () => {
   };
 
   const saveConsent = (consentData: ConsentPreferences) => {
-    // Save to cookies
-    Cookies.set('gdpr_consent', JSON.stringify(consentData), { 
-      expires: 365, // 1 year
-      secure: window.location.protocol === 'https:',
-      sameSite: 'strict'
-    });
-    
+    writeConsent(consentData);
+
     // Log consent for compliance
     logConsent(consentData);
     
@@ -102,7 +85,7 @@ const ConsentBanner: React.FC = () => {
   return (
     <>
       {/* Consent Banner */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 shadow-lg z-50">
+      <div data-testid="consent-banner" className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 shadow-lg z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-start space-x-4">
@@ -123,6 +106,7 @@ const ConsentBanner: React.FC = () => {
             <div className="flex items-center space-x-3 ml-4">
               <button
                 onClick={() => setShowPreferences(true)}
+                data-testid="consent-preferences"
                 className="flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
               >
                 <Settings className="h-4 w-4 mr-2" />
@@ -130,12 +114,14 @@ const ConsentBanner: React.FC = () => {
               </button>
               <button
                 onClick={handleAcceptNecessary}
+                data-testid="consent-necessary-only"
                 className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
               >
                 {t('banner.necessaryOnly')}
               </button>
               <button
                 onClick={handleAcceptAll}
+                data-testid="consent-accept-all"
                 className="px-6 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700"
               >
                 {t('banner.acceptAll')}
@@ -234,6 +220,7 @@ const ConsentBanner: React.FC = () => {
               </button>
               <button
                 onClick={handleSavePreferences}
+                data-testid="consent-save-preferences"
                 className="px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md hover:bg-teal-700"
               >
                 <Check className="h-4 w-4 mr-2 inline" />

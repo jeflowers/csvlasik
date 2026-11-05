@@ -22,7 +22,7 @@ const Testimonials = () => {
       vision_after: '20/15',
       testimonial_text: "I couldn't see the whiteboard from just 3 feet away. Now I have better than perfect vision! Dr. Flowers didn't just change my sight—he changed my entire career. I can finally connect with my students without struggling to see their faces.",
       rating: 5,
-      image_url: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg',
+      image_url: '/assets/images/stock/pexels-1239291.jpg',
       is_featured: true
     },
     {
@@ -35,7 +35,7 @@ const Testimonials = () => {
       vision_after: '20/20',
       testimonial_text: "My career required perfect vision without glasses. Dr. Flowers' PRK gave me exactly that. The procedure was comfortable, recovery was smooth, and now I'm cleared for flight with better vision than I've had in 20 years.",
       rating: 5,
-      image_url: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg',
+      image_url: '/assets/images/stock/pexels-1681010.jpg',
       is_featured: true
     },
     {
@@ -48,7 +48,7 @@ const Testimonials = () => {
       vision_after: '20/20',
       testimonial_text: "With -15.00 prescription, LASIK wasn't an option. ICL was revolutionary for me. As a surgeon myself, I needed the absolute best vision quality. The results exceeded my expectations - crisp, clear vision without any compromise.",
       rating: 5,
-      image_url: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg',
+      image_url: '/assets/images/stock/pexels-1239291.jpg',
       is_featured: true
     }
   ];
@@ -163,7 +163,7 @@ const Testimonials = () => {
                   <div className="chopard-card p-8 rounded-2xl">
                     <div className="flex items-center mb-6">
                       <img
-                        src={story.image_url || 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg'}
+                        src={story.image_url || '/assets/images/stock/pexels-1239291.jpg'}
                         alt={story.display_name}
                         className="w-16 h-16 rounded-full object-cover mr-4"
                       />
@@ -236,7 +236,7 @@ const Testimonials = () => {
                 <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
                   <div className="relative">
                     <img
-                      src={story.image_url || 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg'}
+                      src={story.image_url || '/assets/images/stock/pexels-1239291.jpg'}
                       alt={story.display_name}
                       className="rounded-2xl shadow-xl w-full h-96 object-cover"
                     />
@@ -286,7 +286,7 @@ const Testimonials = () => {
                 before: '20/400',
                 after: '20/20',
                 impact: 'Now teaches children to read',
-                image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg'
+                image: '/assets/images/stock/pexels-1239291.jpg'
               },
               {
                 name: 'Captain James Fa\'anana',
@@ -295,7 +295,7 @@ const Testimonials = () => {
                 before: '20/300',
                 after: '20/15',
                 impact: 'Safely guides inter-island transport',
-                image: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg'
+                image: '/assets/images/stock/pexels-1681010.jpg'
               },
               {
                 name: 'Dr. Helen Kiri',
@@ -304,7 +304,7 @@ const Testimonials = () => {
                 before: '20/200',
                 after: '20/20',
                 impact: 'Trained 50+ island medical staff',
-                image: 'https://images.pexels.com/photos/1462636/pexels-photo-1462636.jpeg'
+                image: '/assets/images/stock/pexels-1462636.jpg'
               }
             ].map((story, index) => (
               <div key={index} className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6">

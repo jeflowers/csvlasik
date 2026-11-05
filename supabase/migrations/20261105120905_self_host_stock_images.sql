@@ -1,0 +1,1 @@
+UPDATE articles SET featured_image = '/assets/images/stock/pexels-1032650.jpg' WHERE featured_image LIKE '%images.pexels.com%';

@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { ChevronDown, Globe, Check } from 'lucide-react';
 import { SUPPORTED_LANGUAGES, DEMOGRAPHIC_GROUPS } from '../i18n';
-import Cookies from 'js-cookie';
 
 interface LanguageSelectorProps {
   variant?: 'transparent' | 'dark';
@@ -134,7 +133,6 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'dark' })
   const handleLanguageChange = async (languageCode: string) => {
     try {
       await i18n.changeLanguage(languageCode);
-      Cookies.set('i18next', languageCode, { expires: 365 });
 
       const language = SUPPORTED_LANGUAGES[languageCode as keyof typeof SUPPORTED_LANGUAGES];
       document.documentElement.dir = language?.rtl ? 'rtl' : 'ltr';

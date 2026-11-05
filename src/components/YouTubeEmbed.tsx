@@ -102,7 +102,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   };
 
   const getEmbedUrl = () => {
-    const baseUrl = 'https://www.youtube.com/embed';
+    const baseUrl = 'https://www.youtube-nocookie.com/embed';
     const params = new URLSearchParams();
 
     if (autoplay || isPlaying) params.append('autoplay', '1');
@@ -137,6 +137,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     return (
       <div className={`relative ${className}`}>
         <iframe
+          data-testid="youtube-iframe"
           src={getEmbedUrl()}
           title={getVideoTitle()}
           className="w-full h-full rounded-lg"
@@ -162,6 +163,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
 
   return (
     <div
+      data-testid="youtube-placeholder"
       className={`relative ${className} cursor-pointer group overflow-hidden rounded-lg`}
       onClick={handlePlay}
     >

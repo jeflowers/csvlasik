@@ -278,7 +278,7 @@ const Technology = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg"
+                src="/assets/images/stock/pexels-1170986.jpg"
                 alt="Telemedicine consultation"
                 className="rounded-2xl shadow-xl"
               />
