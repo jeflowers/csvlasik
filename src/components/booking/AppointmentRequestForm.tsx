@@ -156,7 +156,7 @@ const AppointmentRequestForm: React.FC = () => {
             className="w-full chopard-button px-8 py-4 rounded-lg flex items-center justify-center disabled:opacity-50"
           >
             {isSubmitting ? 'Submitting...' : 'Submit Request'}
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="ms-2 h-5 w-5" />
           </button>
 
           <p className="text-sm chopard-text-secondary text-center">

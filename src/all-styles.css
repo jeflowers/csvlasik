@@ -513,6 +513,13 @@ h1, h2, h3, h4, h5, h6 { font-family: "Cormorant Garamond", serif; font-weight: 
 .rtl .ml-4 { margin-left: 0px; margin-right: 1rem; }
 .rtl .mr-4 { margin-right: 0px; margin-left: 1rem; }
 .rtl .ml-16 { margin-left: 0px; margin-right: 4rem; }
+.rtl .ml-1 { margin-left: 0px; margin-right: 0.25rem; }
+.rtl .mr-1 { margin-right: 0px; margin-left: 0.25rem; }
+/* `scale` composes with Tailwind's `transform` utilities, so hover nudges still work */
+[dir="rtl"] .lucide-arrow-left, [dir="rtl"] .lucide-arrow-right,
+[dir="rtl"] .lucide-chevron-left, [dir="rtl"] .lucide-chevron-right { scale: -1 1; }
+[dir="rtl"] input[type="email"], [dir="rtl"] input[type="tel"], [dir="rtl"] input[type="password"],
+[dir="rtl"] input[type="url"], [dir="rtl"] input[type="number"] { direction: ltr; text-align: right; }
 .rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6 { font-family: "Noto Sans Arabic", "Noto Sans Hebrew", "Cormorant Garamond", serif; }
 body.rtl { font-family: "Noto Sans Arabic", "Noto Sans Hebrew", Inter, sans-serif; }
 .translation-status { position: fixed; top: 1rem; right: 1rem; z-index: 50; }

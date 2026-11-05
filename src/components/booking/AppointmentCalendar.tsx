@@ -263,7 +263,7 @@ export const AppointmentCalendar: React.FC = () => {
             onClick={() => setStep('slots')}
             className="flex items-center text-gray-600 hover:text-gray-900 mb-4"
           >
-            <ChevronLeft className="w-5 h-5 me-1 rtl:rotate-180" />
+            <ChevronLeft className="w-5 h-5 me-1" />
             {t('calendar.backToSlots')}
           </button>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('calendar.completeBooking')}</h2>
@@ -391,7 +391,7 @@ export const AppointmentCalendar: React.FC = () => {
             onClick={() => setStep('calendar')}
             className="flex items-center text-gray-600 hover:text-gray-900 mb-4"
           >
-            <ChevronLeft className="w-5 h-5 me-1 rtl:rotate-180" />
+            <ChevronLeft className="w-5 h-5 me-1" />
             {t('calendar.backToCalendar')}
           </button>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('calendar.availableSlots')}</h2>
@@ -448,7 +448,7 @@ export const AppointmentCalendar: React.FC = () => {
             aria-label={t('calendar.previousMonth')}
             className="p-2 hover:bg-gray-100 rounded-lg"
           >
-            <ChevronLeft className="w-6 h-6 rtl:rotate-180" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
           <h3 className="text-xl font-semibold">
             {currentDate.toLocaleDateString(i18n.language, { month: 'long', year: 'numeric' })}
@@ -458,7 +458,7 @@ export const AppointmentCalendar: React.FC = () => {
             aria-label={t('calendar.nextMonth')}
             className="p-2 hover:bg-gray-100 rounded-lg"
           >
-            <ChevronRight className="w-6 h-6 rtl:rotate-180" />
+            <ChevronRight className="w-6 h-6" />
           </button>
         </div>
 

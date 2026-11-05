@@ -116,7 +116,7 @@ const ConsentForm: React.FC<Props> = ({
             aria-required="true"
             aria-invalid={!!errors.consents}
           />
-          <span className="ml-3 text-sm text-gray-700">
+          <span className="ms-3 text-sm text-gray-700">
             {t('consent.hipaaCheckbox')}
           </span>
         </label>
@@ -139,7 +139,7 @@ const ConsentForm: React.FC<Props> = ({
             aria-required="true"
             aria-invalid={!!errors.consents}
           />
-          <span className="ml-3 text-sm text-gray-700">
+          <span className="ms-3 text-sm text-gray-700">
             {t('consent.treatmentCheckbox')}
           </span>
         </label>
@@ -152,7 +152,7 @@ const ConsentForm: React.FC<Props> = ({
             className="block text-sm font-semibold text-gray-700 mb-2"
           >
             {t('consent.patientSignature.label')}
-            <span className="text-red-600 ml-1">*</span>
+            <span className="text-red-600 ms-1">*</span>
           </label>
           <input
             type="text"
@@ -181,7 +181,7 @@ const ConsentForm: React.FC<Props> = ({
             className="block text-sm font-semibold text-gray-700 mb-2"
           >
             {t('consent.signatureDate.label')}
-            <span className="text-red-600 ml-1">*</span>
+            <span className="text-red-600 ms-1">*</span>
           </label>
           <input
             type="date"
