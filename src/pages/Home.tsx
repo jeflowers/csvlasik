@@ -55,7 +55,7 @@ const Home = () => {
                   className="flex items-center gap-2 text-white/60 hover:text-white text-sm font-light transition-colors group py-4"
                 >
                   <span>{t('hero.cta.explore')}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
@@ -144,7 +144,7 @@ const Home = () => {
                 </p>
                 <span className="flex items-center gap-2 text-sm text-onyx/70 group-hover:text-onyx font-light transition-colors">
                   {t('procedures.learnMore')}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>
             ))}
@@ -174,7 +174,7 @@ const Home = () => {
                 className="inline-flex items-center gap-2 text-sm text-onyx font-light border-b border-onyx/20 pb-1 hover:border-onyx transition-colors group"
               >
                 {t('pioneer.readMore')}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
             <div className="relative">

@@ -176,7 +176,7 @@ const MedicalHistoryForm: React.FC<Props> = ({ data, onChange, onPrevious, onNex
           </div>
 
           {vc.contacts && (
-            <div className="pl-6 border-l-2 border-champagne/30 space-y-2">
+            <div className="ps-6 border-s-2 border-champagne/30 space-y-2">
               <p className="text-xs font-medium text-gray-600">{t('medicalHistory.q1.contactTypeLabel')}</p>
               <div className="flex flex-wrap gap-3">
                 {CONTACT_TYPES.map((ct) => (

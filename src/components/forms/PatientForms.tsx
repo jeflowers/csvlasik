@@ -239,7 +239,7 @@ const PatientForms: React.FC = () => {
                   <div className="flex-1 mx-2 sm:mx-4 mb-6 sm:mb-4">
                     <div className="h-0.5 rounded-full bg-gray-200 relative">
                       <div
-                        className="absolute inset-y-0 left-0 bg-champagne rounded-full transition-all duration-500"
+                        className="absolute inset-y-0 start-0 bg-champagne rounded-full transition-all duration-500"
                         style={{ width: index < activeStep ? '100%' : '0%' }}
                       />
                     </div>

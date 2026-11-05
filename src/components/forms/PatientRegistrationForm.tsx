@@ -76,7 +76,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
         <div>
           <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
             {t('registration.firstName.label')}
-            <span className="text-red-600 ml-1">*</span>
+            <span className="text-red-600 ms-1">*</span>
           </label>
           <input
             type="text"
@@ -100,7 +100,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
         <div>
           <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2">
             {t('registration.lastName.label')}
-            <span className="text-red-600 ml-1">*</span>
+            <span className="text-red-600 ms-1">*</span>
           </label>
           <input
             type="text"
@@ -126,7 +126,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
         <div>
           <label htmlFor="dateOfBirth" className="block text-sm font-semibold text-gray-700 mb-2">
             {t('registration.dateOfBirth.label')}
-            <span className="text-red-600 ml-1">*</span>
+            <span className="text-red-600 ms-1">*</span>
           </label>
           <input
             type="date"
@@ -149,7 +149,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
         <div>
           <label htmlFor="phoneNumber" className="block text-sm font-semibold text-gray-700 mb-2">
             {t('registration.phoneNumber.label')}
-            <span className="text-red-600 ml-1">*</span>
+            <span className="text-red-600 ms-1">*</span>
           </label>
           <input
             type="tel"
@@ -174,7 +174,7 @@ const PatientRegistrationForm: React.FC<Props> = ({ data, onChange, onNext }) =>
       <div>
         <label htmlFor="emailAddress" className="block text-sm font-semibold text-gray-700 mb-2">
           {t('registration.emailAddress.label')}
-          <span className="text-red-600 ml-1">*</span>
+          <span className="text-red-600 ms-1">*</span>
         </label>
         <input
           type="email"
