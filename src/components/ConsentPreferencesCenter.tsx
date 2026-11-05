@@ -41,7 +41,8 @@ const ConsentPreferencesCenter: React.FC = () => {
   const loadUserData = async () => {
     setLoading(true);
     try {
-      const userId = Cookies.get('user_id');
+      const { data: { user } } = await supabase.auth.getUser();
+      const userId = user?.id;
       if (!userId) {
         setError('No consent record found');
         setLoading(false);

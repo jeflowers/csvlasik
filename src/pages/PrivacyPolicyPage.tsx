@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Shield, Eye, Lock, Globe, Mail, CheckCircle, ArrowRight, Download } from 'lucide-react';
 import { supabase } from '../lib/supabase';
-import Cookies from 'js-cookie';
 
 const PrivacyPolicyPage: React.FC = () => {
   const { t, i18n } = useTranslation(['privacy', 'common']);
@@ -13,9 +12,9 @@ const PrivacyPolicyPage: React.FC = () => {
   }, []);
 
   const logPolicyView = async () => {
-    const userIdentifier = Cookies.get('user_id') || 'anonymous';
-
     try {
+      const { data: { user } } = await supabase.auth.getUser();
+      const userIdentifier = user?.id || 'anonymous';
       await supabase.from('consent_analytics_events').insert({
         user_identifier: userIdentifier,
         event_type: 'policy_viewed',
@@ -24,32 +23,6 @@ const PrivacyPolicyPage: React.FC = () => {
       });
     } catch (error) {
       console.error('Failed to log policy view:', error);
-    }
-  };
-
-  const acknowledgePolicyacknowledgePolicy = async () => {
-    const userIdentifier = Cookies.get('user_id');
-    if (!userIdentifier) return;
-
-    try {
-      const { data: currentVersion } = await supabase
-        .from('privacy_policy_versions')
-        .select('id')
-        .eq('is_current', true)
-        .single();
-
-      if (currentVersion) {
-        await supabase.from('user_policy_acknowledgments').insert({
-          user_identifier: userIdentifier,
-          version_id: currentVersion.id,
-          ip_address: null,
-          user_agent: navigator.userAgent
-        });
-
-        alert('Thank you for acknowledging our Privacy Policy.');
-      }
-    } catch (error) {
-      console.error('Failed to acknowledge policy:', error);
     }
   };
 
