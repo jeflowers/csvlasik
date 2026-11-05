@@ -40,10 +40,6 @@ const Header = () => {
 
             <span className="w-px h-3 bg-white/[0.12]" />
 
-            <LanguageSelector variant="transparent" />
-
-            <span className="w-px h-3 bg-white/[0.12]" />
-
             <Link
               to="/portal"
               className="flex items-center gap-[6px] text-[#9B9690] hover:text-[#E2C88B] transition-colors"
@@ -93,6 +89,10 @@ const Header = () => {
                 })}
               </ul>
 
+              <div data-testid="header-language-selector" className="flex-shrink-0">
+                <LanguageSelector variant="transparent" />
+              </div>
+
               <Link
                 to="/book-consultation"
                 className="inline-flex items-center h-[42px] px-7 bg-[#C9A96E] text-[#13110f] text-[11px] font-semibold tracking-[0.18em] uppercase rounded-[3px] hover:bg-[#D4AF37] transition-colors duration-200 whitespace-nowrap flex-shrink-0"
@@ -101,15 +101,19 @@ const Header = () => {
               </Link>
             </div>
 
-            {/* Mobile menu toggle */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-white/90"
-              aria-label={isMenuOpen ? t('closeMenu', 'Close Menu') : t('openMenu', 'Open Menu')}
-              aria-expanded={isMenuOpen}
-            >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
+            <div className="lg:hidden flex items-center gap-1">
+              <div data-testid="header-language-selector-mobile">
+                <LanguageSelector variant="transparent" />
+              </div>
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2 text-white/90"
+                aria-label={isMenuOpen ? t('closeMenu', 'Close Menu') : t('openMenu', 'Open Menu')}
+                aria-expanded={isMenuOpen}
+              >
+                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile menu */}
@@ -151,9 +155,6 @@ const Header = () => {
                   <Phone className="w-4 h-4" />
                   <span>{t('phone', '(844) 954-8686')}</span>
                 </a>
-                <div className="pt-2">
-                  <LanguageSelector variant="transparent" />
-                </div>
                 <Link
                   to="/book-consultation"
                   className="inline-flex items-center justify-center h-[44px] bg-[#C9A96E] text-[#13110f] text-[11px] font-semibold tracking-[0.18em] uppercase rounded-[3px] hover:bg-[#D4AF37] transition-colors duration-200 mt-2"

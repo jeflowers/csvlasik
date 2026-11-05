@@ -1,88 +1,57 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '../utils/testUtils';
 import LanguageSelector from '../../components/LanguageSelector';
+import i18n, { SUPPORTED_LANGUAGES } from '../../i18n';
 
-describe('LanguageSelector Component', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
+const openMenu = () => fireEvent.click(screen.getByLabelText(/selectLanguage/i));
+
+describe('LanguageSelector', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
   });
 
-  it('renders current language', () => {
+  it('renders the current language code on the trigger', () => {
     render(<LanguageSelector />);
-    
-    expect(screen.getByText('English')).toBeInTheDocument();
-    expect(screen.getByText('🇺🇸')).toBeInTheDocument();
+    const trigger = screen.getByLabelText(/selectLanguage/i);
+    expect(trigger.textContent ?? '').toMatch(/[A-Z]{2}(-[A-Z]{2})?/);
   });
 
-  it('opens language dropdown when clicked', () => {
+  it('lists all supported languages', () => {
     render(<LanguageSelector />);
-    
-    const button = screen.getByLabelText(/selectLanguage/i);
-    fireEvent.click(button);
-    
-    expect(screen.getByText('Español')).toBeInTheDocument();
-    expect(screen.getByText('한국어')).toBeInTheDocument();
-    expect(screen.getByText('العربية')).toBeInTheDocument();
-  });
-
-  it('changes language when option is selected', async () => {
-    const mockChangeLanguage = vi.fn().mockResolvedValue(undefined);
-    
-    vi.doMock('react-i18next', () => ({
-      useTranslation: () => ({
-        i18n: {
-          language: 'en',
-          changeLanguage: mockChangeLanguage,
-          dir: () => 'ltr'
-        },
-        t: (key: string) => key
-      })
-    }));
-
-    render(<LanguageSelector />);
-    
-    const button = screen.getByLabelText(/selectLanguage/i);
-    fireEvent.click(button);
-    
-    const spanishOption = screen.getByText('Español');
-    fireEvent.click(spanishOption);
-    
-    await waitFor(() => {
-      expect(mockChangeLanguage).toHaveBeenCalledWith('es');
+    openMenu();
+    const langs = Object.values(SUPPORTED_LANGUAGES);
+    expect(screen.getAllByRole('menuitem')).toHaveLength(langs.length);
+    langs.forEach((lang) => {
+      expect(screen.getAllByText(lang.nativeName).length).toBeGreaterThan(0);
     });
   });
 
-  it('displays RTL languages correctly', () => {
+  it('changes language when an option is selected', async () => {
+    const spy = vi.spyOn(i18n, 'changeLanguage').mockResolvedValue(i18n.t);
     render(<LanguageSelector />);
-    
-    const button = screen.getByLabelText(/selectLanguage/i);
-    fireEvent.click(button);
-    
-    // Check for Arabic and Hebrew
+    openMenu();
+    fireEvent.click(screen.getByText('Español (Latinoamérica)'));
+    await waitFor(() => expect(spy).toHaveBeenCalledWith('es-MX'));
+  });
+
+  it('includes right-to-left languages', () => {
+    render(<LanguageSelector />);
+    openMenu();
     expect(screen.getByText('العربية')).toBeInTheDocument();
     expect(screen.getByText('עברית')).toBeInTheDocument();
   });
 
-  it('shows translation note', () => {
+  it('shows the translation note', () => {
     render(<LanguageSelector />);
-    
-    const button = screen.getByLabelText(/selectLanguage/i);
-    fireEvent.click(button);
-    
+    openMenu();
     expect(screen.getByText(/translationNote/i)).toBeInTheDocument();
   });
 
-  it('closes dropdown when clicking outside', () => {
+  it('closes when Escape is pressed', async () => {
     render(<LanguageSelector />);
-    
-    const button = screen.getByLabelText(/selectLanguage/i);
-    fireEvent.click(button);
-    
-    expect(screen.getByText('Español')).toBeInTheDocument();
-    
-    // Click outside
-    fireEvent.mouseDown(document.body);
-    
-    expect(screen.queryByText('Español')).not.toBeInTheDocument();
+    openMenu();
+    expect(screen.getByRole('menu')).toBeInTheDocument();
+    fireEvent.keyDown(document, { key: 'Escape' });
+    await waitFor(() => expect(screen.queryByRole('menu')).toBeNull());
   });
 });
