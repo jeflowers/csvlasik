@@ -2,14 +2,12 @@
   "badge": "PATIENT FORMS",
   "title": "Complete Your Forms Online",
   "subtitle": "Save time at your visit by filling out intake forms ahead of your appointment. All information is transmitted securely.",
-
   "tabs": {
     "registration": "New Patient Registration",
     "medicalHistory": "Medical History",
     "insuranceInfo": "HSA / FSA Info",
     "consent": "Consent Forms"
   },
-
   "registration": {
     "firstName": {
       "label": "First Name",
@@ -52,13 +50,11 @@
       "placeholder": "Please describe the reason for your visit"
     }
   },
-
   "medicalHistory": {
     "sectionTitle": "Eye / Medical History",
     "sectionSubtitle": "Please answer the following as accurately as possible",
     "generalHealthTitle": "General Health",
     "generalHealthSubtitle": "Medical conditions, medications, and allergies",
-
     "q1": {
       "label": "Do you wear:",
       "glasses": "Glasses",
@@ -170,7 +166,6 @@
       }
     }
   },
-
   "hsaFsa": {
     "notice": {
       "title": "LASIK is typically not covered by insurance",
@@ -209,16 +204,13 @@
       "placeholder": "Any questions about financing your procedure?"
     }
   },
-
   "consent": {
     "hipaaTitle": "HIPAA Privacy Acknowledgment",
     "hipaaBody": "I acknowledge that I have been provided with a copy of the Notice of Privacy Practices, which describes how my health information may be used and disclosed, and how I can access this information. I understand that MEC Eye Specialists has the right to change the Notice of Privacy Practices at any time.",
     "hipaaCheckbox": "I acknowledge receipt of the Notice of Privacy Practices",
-
     "treatmentTitle": "Consent to Treatment",
     "treatmentBody": "I consent to the examination and treatment by the ophthalmologist(s) at MEC Eye Specialists. I understand that no guarantees have been made regarding the outcome of any examination or treatment.",
     "treatmentCheckbox": "I consent to examination and treatment",
-
     "patientSignature": {
       "label": "Patient Signature (type full name)",
       "placeholder": "Full legal name"
@@ -228,12 +220,10 @@
       "placeholder": "mm/dd/yyyy"
     }
   },
-
   "buttons": {
     "submitForm": "Submit Form",
     "submitting": "Submitting..."
   },
-
   "validation": {
     "required": "This field is required",
     "invalidEmail": "Please enter a valid email address",
@@ -244,23 +234,19 @@
     "signatureTooShort": "Please enter your full legal name",
     "consentRequired": "You must acknowledge both consent forms to proceed"
   },
-
   "success": {
     "registration": "Registration submitted successfully! Our team will contact you soon.",
     "medicalHistory": "Medical history submitted successfully!",
     "insuranceInfo": "HSA/FSA information submitted successfully!",
     "consent": "Consent forms submitted successfully! Thank you for completing all forms."
   },
-
   "error": {
     "generic": "An error occurred while submitting the form. Please try again.",
     "network": "Network error. Please check your connection and try again."
   },
-
   "portal": {
     "title": "Patient Portal"
   },
-
   "nav": {
     "dashboard": "Dashboard",
     "patientForms": "Patient Forms",
@@ -270,7 +256,6 @@
     "backToWebsite": "Back to Website",
     "signOut": "Sign Out"
   },
-
   "dashboard": {
     "welcome": "Welcome, {{name}}",
     "welcomeGeneric": "Welcome",
@@ -298,7 +283,6 @@
       "consent": "Consent Forms"
     }
   },
-
   "forms": {
     "title": "Patient Forms",
     "editTitle": "Update Patient Forms",
@@ -315,7 +299,6 @@
     "backToDashboard": "Back to Dashboard",
     "updateAllForms": "Update All Forms"
   },
-
   "submissions": {
     "title": "My Submissions",
     "subtitle": "Review your submitted patient forms and their details.",
@@ -330,7 +313,6 @@
     "shareStoryDesc": "Had a great experience? We would love to hear about it.",
     "writeTestimonial": "Write a Testimonial"
   },
-
   "testimonial": {
     "title": "Share Your Story",
     "subtitle": "Tell us about your experience at Atelier LASIK. Your feedback helps others make informed decisions about their vision care.",
@@ -357,14 +339,12 @@
     "successNote": "We appreciate you taking the time to share your experience with Atelier LASIK.",
     "viewTestimonials": "View Testimonials"
   },
-
   "history": {
     "title": "Activity History",
     "subtitle": "A timeline of your recent activity in the patient portal.",
     "empty": "No activity yet",
     "emptyDescription": "Your login, form submission, and update history will appear here."
   },
-
   "auth": {
     "loginTitle": "Patient Portal",
     "loginSubtitle": "Atelier LASIK",
@@ -406,7 +386,6 @@
     "minCharsPlaceholder": "Min. 8 characters",
     "reenterPassword": "Re-enter password"
   },
-
   "submissionDetails": {
     "dob": "DOB",
     "phone": "Phone",
@@ -439,5 +418,28 @@
     "treatmentConsent": "Treatment Consent",
     "signedBy": "Signed by",
     "signedOn": "Signed on"
+  },
+  "bookingGate": {
+    "title": "Sign in to book",
+    "subtitle": "To protect your privacy, appointments can only be booked and viewed from your patient account.",
+    "tabSignIn": "Sign in",
+    "tabCreateAccount": "Create account",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "password": "Password",
+    "pleaseWait": "Please wait...",
+    "signInContinue": "Sign in and continue",
+    "createContinue": "Create account and continue",
+    "forgotPassword": "Forgot your password?",
+    "visitPortal": "Visit the patient portal",
+    "checkInboxTitle": "Check your inbox",
+    "checkInboxBody": "We sent a confirmation link to <strong>{{email}}</strong>. Open it to verify your email, then sign in to book your appointment.",
+    "resent": "A new confirmation email is on its way.",
+    "resendFailed": "We could not resend the email. Please try again shortly.",
+    "sending": "Sending...",
+    "resend": "Resend confirmation email",
+    "backToSignIn": "Back to sign in",
+    "emailNotConfirmed": "Please confirm your email address first. Check your inbox for the confirmation link."
   }
 }

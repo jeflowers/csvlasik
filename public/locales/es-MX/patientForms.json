@@ -2,14 +2,12 @@
   "badge": "FORMULARIOS DEL PACIENTE",
   "title": "Complete Sus Formularios en Línea",
   "subtitle": "Ahorre tiempo en su visita completando los formularios de admisión antes de su cita. Toda la información se transmite de forma segura.",
-
   "tabs": {
     "registration": "Registro de Nuevo Paciente",
     "medicalHistory": "Historia Médica",
     "insuranceInfo": "Información del Seguro",
     "consent": "Formularios de Consentimiento"
   },
-
   "registration": {
     "firstName": {
       "label": "Nombre",
@@ -52,13 +50,11 @@
       "placeholder": "Por favor describa el motivo de su visita"
     }
   },
-
   "medicalHistory": {
     "sectionTitle": "Historia Ocular / Médica",
     "sectionSubtitle": "Por favor responda lo siguiente con la mayor precisión posible",
     "generalHealthTitle": "Salud General",
     "generalHealthSubtitle": "Condiciones médicas, medicamentos y alergias",
-
     "q1": {
       "label": "¿Usted usa:",
       "glasses": "Lentes",
@@ -170,7 +166,6 @@
       }
     }
   },
-
   "insuranceInfo": {
     "insuranceProvider": {
       "label": "Proveedor de Seguro",
@@ -203,16 +198,13 @@
       "placeholder": "Proveedor de seguro secundario"
     }
   },
-
   "consent": {
     "hipaaTitle": "Reconocimiento de Privacidad HIPAA",
     "hipaaBody": "Reconozco que se me ha proporcionado una copia del Aviso de Prácticas de Privacidad, que describe cómo se puede usar y divulgar mi información de salud, y cómo puedo acceder a esta información. Entiendo que MEC Eye Specialists tiene el derecho de cambiar el Aviso de Prácticas de Privacidad en cualquier momento.",
     "hipaaCheckbox": "Reconozco recibo del Aviso de Prácticas de Privacidad",
-
     "treatmentTitle": "Consentimiento para Tratamiento",
     "treatmentBody": "Consiento el examen y tratamiento por el(los) oftalmólogo(s) en MEC Eye Specialists. Entiendo que no se han hecho garantías con respecto al resultado de cualquier examen o tratamiento.",
     "treatmentCheckbox": "Consiento examen y tratamiento",
-
     "patientSignature": {
       "label": "Firma del Paciente (escriba nombre completo)",
       "placeholder": "Nombre legal completo"
@@ -222,12 +214,10 @@
       "placeholder": "dd/mm/aaaa"
     }
   },
-
   "buttons": {
     "submitForm": "Enviar Formulario",
     "submitting": "Enviando..."
   },
-
   "validation": {
     "required": "Este campo es obligatorio",
     "invalidEmail": "Por favor ingrese un correo electrónico válido",
@@ -238,23 +228,19 @@
     "signatureTooShort": "Por favor ingrese su nombre legal completo",
     "consentRequired": "Debe reconocer ambos formularios de consentimiento para continuar"
   },
-
   "success": {
     "registration": "¡Registro enviado exitosamente! Nuestro equipo se pondrá en contacto pronto.",
     "medicalHistory": "¡Historia médica enviada exitosamente!",
     "insuranceInfo": "¡Información de seguro enviada exitosamente!",
     "consent": "¡Formularios de consentimiento enviados exitosamente! Gracias por completar todos los formularios."
   },
-
   "error": {
     "generic": "Ocurrió un error al enviar el formulario. Por favor intente nuevamente.",
     "network": "Error de red. Por favor verifique su conexión e intente nuevamente."
   },
-
   "portal": {
     "title": "Portal del Paciente"
   },
-
   "nav": {
     "dashboard": "Panel Principal",
     "patientForms": "Formularios",
@@ -264,7 +250,6 @@
     "backToWebsite": "Volver al Sitio Web",
     "signOut": "Cerrar Sesión"
   },
-
   "dashboard": {
     "welcome": "Bienvenido/a, {{name}}",
     "welcomeGeneric": "Bienvenido/a",
@@ -292,7 +277,6 @@
       "consent": "Formularios de Consentimiento"
     }
   },
-
   "forms": {
     "title": "Formularios del Paciente",
     "editTitle": "Actualizar Formularios",
@@ -309,7 +293,6 @@
     "backToDashboard": "Volver al Panel",
     "updateAllForms": "Actualizar Todos los Formularios"
   },
-
   "submissions": {
     "title": "Mis Envíos",
     "subtitle": "Revise sus formularios de paciente enviados y sus detalles.",
@@ -324,7 +307,6 @@
     "shareStoryDesc": "¿Tuvo una gran experiencia? Nos encantaría escuchar sobre ella.",
     "writeTestimonial": "Escribir un Testimonio"
   },
-
   "testimonial": {
     "title": "Comparta Su Historia",
     "subtitle": "Cuéntenos sobre su experiencia en Atelier LASIK. Sus comentarios ayudan a otros a tomar decisiones informadas sobre su cuidado visual.",
@@ -351,14 +333,12 @@
     "successNote": "Agradecemos que se haya tomado el tiempo de compartir su experiencia con Atelier LASIK.",
     "viewTestimonials": "Ver Testimonios"
   },
-
   "history": {
     "title": "Historial de Actividad",
     "subtitle": "Un cronograma de su actividad reciente en el portal del paciente.",
     "empty": "Sin actividad aún",
     "emptyDescription": "Su historial de inicio de sesión, envío de formularios y actualizaciones aparecerá aquí."
   },
-
   "auth": {
     "loginTitle": "Portal del Paciente",
     "loginSubtitle": "Atelier LASIK",
@@ -400,7 +380,6 @@
     "minCharsPlaceholder": "Mín. 8 caracteres",
     "reenterPassword": "Ingrese la contraseña nuevamente"
   },
-
   "submissionDetails": {
     "dob": "Fecha de Nac.",
     "phone": "Teléfono",
@@ -433,5 +412,28 @@
     "treatmentConsent": "Consentimiento de Tratamiento",
     "signedBy": "Firmado por",
     "signedOn": "Firmado el"
+  },
+  "bookingGate": {
+    "title": "Inicia sesión para agendar",
+    "subtitle": "Para proteger tu privacidad, las citas solo pueden agendarse y consultarse desde tu cuenta de paciente.",
+    "tabSignIn": "Iniciar sesión",
+    "tabCreateAccount": "Crear cuenta",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "pleaseWait": "Espera un momento...",
+    "signInContinue": "Iniciar sesión y continuar",
+    "createContinue": "Crear cuenta y continuar",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "visitPortal": "Visita el portal del paciente",
+    "checkInboxTitle": "Revisa tu bandeja de entrada",
+    "checkInboxBody": "Enviamos un enlace de confirmación a <strong>{{email}}</strong>. Ábrelo para verificar tu correo y luego inicia sesión para agendar tu cita.",
+    "resent": "Un nuevo correo de confirmación va en camino.",
+    "resendFailed": "No pudimos reenviar el correo. Inténtalo de nuevo en unos momentos.",
+    "sending": "Enviando...",
+    "resend": "Reenviar correo de confirmación",
+    "backToSignIn": "Volver a iniciar sesión",
+    "emailNotConfirmed": "Primero confirma tu correo electrónico. Revisa tu bandeja de entrada para encontrar el enlace de confirmación."
   }
 }

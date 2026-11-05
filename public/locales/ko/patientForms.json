@@ -2,14 +2,12 @@
   "badge": "환자 양식",
   "title": "온라인으로 양식을 작성하세요",
   "subtitle": "예약 전에 접수 양식을 미리 작성하여 방문 시간을 절약하세요. 모든 정보는 안전하게 전송됩니다.",
-
   "tabs": {
     "registration": "신규 환자 등록",
     "medicalHistory": "병력",
     "insuranceInfo": "보험 정보",
     "consent": "동의서"
   },
-
   "registration": {
     "firstName": {
       "label": "이름",
@@ -52,13 +50,11 @@
       "placeholder": "방문 사유를 설명해 주세요"
     }
   },
-
   "medicalHistory": {
     "sectionTitle": "안과 / 병력",
     "sectionSubtitle": "가능한 정확하게 답변해 주세요",
     "generalHealthTitle": "일반 건강",
     "generalHealthSubtitle": "질환, 약물, 알레르기",
-
     "q1": {
       "label": "착용하시는 것:",
       "glasses": "안경",
@@ -170,7 +166,6 @@
       }
     }
   },
-
   "insuranceInfo": {
     "insuranceProvider": {
       "label": "보험 회사",
@@ -203,16 +198,13 @@
       "placeholder": "2차 보험 회사"
     }
   },
-
   "consent": {
     "hipaaTitle": "HIPAA 개인정보 확인",
     "hipaaBody": "본인은 건강 정보가 어떻게 사용 및 공개될 수 있는지, 그리고 이 정보에 어떻게 접근할 수 있는지 설명하는 개인정보 관행 고지의 사본을 받았음을 확인합니다. MEC Eye Specialists는 언제든지 개인정보 관행 고지를 변경할 권리가 있음을 이해합니다.",
     "hipaaCheckbox": "개인정보 관행 고지 수령을 확인합니다",
-
     "treatmentTitle": "치료 동의",
     "treatmentBody": "MEC Eye Specialists의 안과 의사에 의한 검사 및 치료에 동의합니다. 검사 또는 치료 결과에 대해 어떠한 보장도 이루어지지 않았음을 이해합니다.",
     "treatmentCheckbox": "검사 및 치료에 동의합니다",
-
     "patientSignature": {
       "label": "환자 서명 (전체 이름 입력)",
       "placeholder": "법적 성명"
@@ -222,12 +214,10 @@
       "placeholder": "년/월/일"
     }
   },
-
   "buttons": {
     "submitForm": "양식 제출",
     "submitting": "제출 중..."
   },
-
   "validation": {
     "required": "이 항목은 필수입니다",
     "invalidEmail": "유효한 이메일 주소를 입력해 주세요",
@@ -238,23 +228,19 @@
     "signatureTooShort": "법적 성명을 입력해 주세요",
     "consentRequired": "계속하려면 두 동의서를 모두 확인해야 합니다"
   },
-
   "success": {
     "registration": "등록이 성공적으로 제출되었습니다! 곧 연락드리겠습니다.",
     "medicalHistory": "병력이 성공적으로 제출되었습니다!",
     "insuranceInfo": "보험 정보가 성공적으로 제출되었습니다!",
     "consent": "동의서가 성공적으로 제출되었습니다! 모든 양식을 작성해 주셔서 감사합니다."
   },
-
   "error": {
     "generic": "양식 제출 중 오류가 발생했습니다. 다시 시도해 주세요.",
     "network": "네트워크 오류입니다. 연결을 확인하고 다시 시도해 주세요."
   },
-
   "portal": {
     "title": "환자 포털"
   },
-
   "nav": {
     "dashboard": "대시보드",
     "patientForms": "환자 양식",
@@ -264,7 +250,6 @@
     "backToWebsite": "웹사이트로 돌아가기",
     "signOut": "로그아웃"
   },
-
   "dashboard": {
     "welcome": "환영합니다, {{name}}님",
     "welcomeGeneric": "환영합니다",
@@ -292,7 +277,6 @@
       "consent": "동의서"
     }
   },
-
   "forms": {
     "title": "환자 양식",
     "editTitle": "환자 양식 업데이트",
@@ -309,7 +293,6 @@
     "backToDashboard": "대시보드로 돌아가기",
     "updateAllForms": "모든 양식 업데이트"
   },
-
   "submissions": {
     "title": "내 제출 내역",
     "subtitle": "제출된 환자 양식과 세부 사항을 검토하세요.",
@@ -324,7 +307,6 @@
     "shareStoryDesc": "좋은 경험을 하셨나요? 여러분의 이야기를 듣고 싶습니다.",
     "writeTestimonial": "후기 작성하기"
   },
-
   "testimonial": {
     "title": "경험 공유하기",
     "subtitle": "Atelier LASIK에서의 경험을 알려주세요. 여러분의 피드백은 다른 분들이 시력 관리에 대해 올바른 결정을 내리는 데 도움이 됩니다.",
@@ -351,14 +333,12 @@
     "successNote": "Atelier LASIK에서의 경험을 공유해 주셔서 감사합니다.",
     "viewTestimonials": "후기 보기"
   },
-
   "history": {
     "title": "활동 내역",
     "subtitle": "환자 포털에서의 최근 활동 타임라인입니다.",
     "empty": "아직 활동이 없습니다",
     "emptyDescription": "로그인, 양식 제출 및 업데이트 내역이 여기에 표시됩니다."
   },
-
   "auth": {
     "loginTitle": "환자 포털",
     "loginSubtitle": "Atelier LASIK",
@@ -400,7 +380,6 @@
     "minCharsPlaceholder": "최소 8자",
     "reenterPassword": "비밀번호 재입력"
   },
-
   "submissionDetails": {
     "dob": "생년월일",
     "phone": "전화번호",
@@ -433,5 +412,28 @@
     "treatmentConsent": "치료 동의",
     "signedBy": "서명자",
     "signedOn": "서명 날짜"
+  },
+  "bookingGate": {
+    "title": "로그인 후 예약하기",
+    "subtitle": "개인정보 보호를 위해 예약은 환자 계정에서만 하고 확인할 수 있습니다.",
+    "tabSignIn": "로그인",
+    "tabCreateAccount": "계정 만들기",
+    "firstName": "이름",
+    "lastName": "성",
+    "email": "이메일",
+    "password": "비밀번호",
+    "pleaseWait": "잠시만 기다려 주세요...",
+    "signInContinue": "로그인하고 계속하기",
+    "createContinue": "계정 만들고 계속하기",
+    "forgotPassword": "비밀번호를 잊으셨나요?",
+    "visitPortal": "환자 포털 방문하기",
+    "checkInboxTitle": "받은편지함을 확인하세요",
+    "checkInboxBody": "<strong>{{email}}</strong>(으)로 확인 링크를 보냈습니다. 링크를 열어 이메일을 인증한 후 로그인하여 예약해 주세요.",
+    "resent": "새 확인 이메일을 보내드렸습니다.",
+    "resendFailed": "이메일을 다시 보내지 못했습니다. 잠시 후 다시 시도해 주세요.",
+    "sending": "보내는 중...",
+    "resend": "확인 이메일 다시 보내기",
+    "backToSignIn": "로그인으로 돌아가기",
+    "emailNotConfirmed": "먼저 이메일 주소를 인증해 주세요. 받은편지함에서 인증 링크를 확인하세요."
   }
 }

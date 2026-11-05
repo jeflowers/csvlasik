@@ -2,14 +2,12 @@
   "badge": "BIỂU MẪU BỆNH NHÂN",
   "title": "Hoàn thành biểu mẫu trực tuyến",
   "subtitle": "Tiết kiệm thời gian khi đến khám bằng cách điền các biểu mẫu tiếp nhận trước cuộc hẹn. Tất cả thông tin được truyền tải an toàn.",
-
   "tabs": {
     "registration": "Đăng ký bệnh nhân mới",
     "medicalHistory": "Tiền sử bệnh",
     "insuranceInfo": "Thông tin bảo hiểm",
     "consent": "Biểu mẫu đồng ý"
   },
-
   "registration": {
     "firstName": {
       "label": "Tên",
@@ -52,13 +50,11 @@
       "placeholder": "Vui lòng mô tả lý do khám của bạn"
     }
   },
-
   "medicalHistory": {
     "sectionTitle": "Lịch Sử Mắt / Y Khoa",
     "sectionSubtitle": "Vui lòng trả lời các câu hỏi sau đây chính xác nhất có thể",
     "generalHealthTitle": "Sức Khỏe Tổng Quát",
     "generalHealthSubtitle": "Tình trạng bệnh, thuốc và dị ứng",
-
     "q1": {
       "label": "Bạn có đeo:",
       "glasses": "Kính mắt",
@@ -170,7 +166,6 @@
       }
     }
   },
-
   "insuranceInfo": {
     "insuranceProvider": {
       "label": "Công ty bảo hiểm",
@@ -203,16 +198,13 @@
       "placeholder": "Công ty bảo hiểm phụ"
     }
   },
-
   "consent": {
     "hipaaTitle": "Xác nhận quyền riêng tư HIPAA",
     "hipaaBody": "Tôi xác nhận rằng tôi đã được cung cấp bản sao Thông báo về Thực hành Bảo mật, mô tả cách thông tin sức khỏe của tôi có thể được sử dụng và tiết lộ, và cách tôi có thể truy cập thông tin này. Tôi hiểu rằng MEC Eye Specialists có quyền thay đổi Thông báo về Thực hành Bảo mật bất cứ lúc nào.",
     "hipaaCheckbox": "Tôi xác nhận đã nhận Thông báo về Thực hành Bảo mật",
-
     "treatmentTitle": "Đồng ý điều trị",
     "treatmentBody": "Tôi đồng ý để bác sĩ nhãn khoa tại MEC Eye Specialists khám và điều trị. Tôi hiểu rằng không có bảo đảm nào được đưa ra về kết quả của bất kỳ cuộc khám hoặc điều trị nào.",
     "treatmentCheckbox": "Tôi đồng ý khám và điều trị",
-
     "patientSignature": {
       "label": "Chữ ký bệnh nhân (nhập họ tên đầy đủ)",
       "placeholder": "Họ tên pháp lý đầy đủ"
@@ -222,12 +214,10 @@
       "placeholder": "ngày/tháng/năm"
     }
   },
-
   "buttons": {
     "submitForm": "Gửi biểu mẫu",
     "submitting": "Đang gửi..."
   },
-
   "validation": {
     "required": "Trường này là bắt buộc",
     "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ",
@@ -238,23 +228,19 @@
     "signatureTooShort": "Vui lòng nhập họ tên pháp lý đầy đủ",
     "consentRequired": "Bạn phải xác nhận cả hai biểu mẫu đồng ý để tiếp tục"
   },
-
   "success": {
     "registration": "Đăng ký đã được gửi thành công! Đội ngũ của chúng tôi sẽ liên hệ với bạn sớm.",
     "medicalHistory": "Tiền sử bệnh đã được gửi thành công!",
     "insuranceInfo": "Thông tin bảo hiểm đã được gửi thành công!",
     "consent": "Biểu mẫu đồng ý đã được gửi thành công! Cảm ơn bạn đã hoàn thành tất cả biểu mẫu."
   },
-
   "error": {
     "generic": "Đã xảy ra lỗi khi gửi biểu mẫu. Vui lòng thử lại.",
     "network": "Lỗi mạng. Vui lòng kiểm tra kết nối và thử lại."
   },
-
   "portal": {
     "title": "Cổng Bệnh Nhân"
   },
-
   "nav": {
     "dashboard": "Bảng điều khiển",
     "patientForms": "Biểu mẫu bệnh nhân",
@@ -264,7 +250,6 @@
     "backToWebsite": "Quay lại trang web",
     "signOut": "Đăng xuất"
   },
-
   "dashboard": {
     "welcome": "Xin chào, {{name}}",
     "welcomeGeneric": "Xin chào",
@@ -292,7 +277,6 @@
       "consent": "Biểu mẫu đồng ý"
     }
   },
-
   "forms": {
     "title": "Biểu mẫu bệnh nhân",
     "editTitle": "Cập nhật biểu mẫu bệnh nhân",
@@ -309,7 +293,6 @@
     "backToDashboard": "Quay lại bảng điều khiển",
     "updateAllForms": "Cập nhật tất cả biểu mẫu"
   },
-
   "submissions": {
     "title": "Bài đã gửi",
     "subtitle": "Xem lại biểu mẫu bệnh nhân đã gửi và chi tiết của chúng.",
@@ -324,7 +307,6 @@
     "shareStoryDesc": "Bạn có trải nghiệm tốt? Chúng tôi rất muốn nghe về điều đó.",
     "writeTestimonial": "Viết lời chứng thực"
   },
-
   "testimonial": {
     "title": "Chia sẻ câu chuyện của bạn",
     "subtitle": "Hãy cho chúng tôi biết về trải nghiệm của bạn tại Atelier LASIK. Phản hồi của bạn giúp người khác đưa ra quyết định sáng suốt về chăm sóc thị lực.",
@@ -351,14 +333,12 @@
     "successNote": "Chúng tôi trân trọng việc bạn dành thời gian chia sẻ trải nghiệm với Atelier LASIK.",
     "viewTestimonials": "Xem lời chứng thực"
   },
-
   "history": {
     "title": "Lịch sử hoạt động",
     "subtitle": "Dòng thời gian hoạt động gần đây của bạn trong cổng bệnh nhân.",
     "empty": "Chưa có hoạt động nào",
     "emptyDescription": "Lịch sử đăng nhập, gửi biểu mẫu và cập nhật của bạn sẽ xuất hiện ở đây."
   },
-
   "auth": {
     "loginTitle": "Cổng Bệnh Nhân",
     "loginSubtitle": "Atelier LASIK",
@@ -400,7 +380,6 @@
     "minCharsPlaceholder": "Tối thiểu 8 ký tự",
     "reenterPassword": "Nhập lại mật khẩu"
   },
-
   "submissionDetails": {
     "dob": "Ngày sinh",
     "phone": "Điện thoại",
@@ -433,5 +412,28 @@
     "treatmentConsent": "Đồng ý điều trị",
     "signedBy": "Ký bởi",
     "signedOn": "Ký ngày"
+  },
+  "bookingGate": {
+    "title": "Đăng nhập để đặt lịch",
+    "subtitle": "Để bảo vệ quyền riêng tư của bạn, lịch hẹn chỉ có thể được đặt và xem từ tài khoản bệnh nhân của bạn.",
+    "tabSignIn": "Đăng nhập",
+    "tabCreateAccount": "Tạo tài khoản",
+    "firstName": "Tên",
+    "lastName": "Họ",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "pleaseWait": "Vui lòng đợi...",
+    "signInContinue": "Đăng nhập và tiếp tục",
+    "createContinue": "Tạo tài khoản và tiếp tục",
+    "forgotPassword": "Quên mật khẩu?",
+    "visitPortal": "Truy cập cổng thông tin bệnh nhân",
+    "checkInboxTitle": "Kiểm tra hộp thư của bạn",
+    "checkInboxBody": "Chúng tôi đã gửi liên kết xác nhận đến <strong>{{email}}</strong>. Hãy mở liên kết để xác minh email, sau đó đăng nhập để đặt lịch hẹn.",
+    "resent": "Email xác nhận mới đang được gửi đến bạn.",
+    "resendFailed": "Không thể gửi lại email. Vui lòng thử lại sau ít phút.",
+    "sending": "Đang gửi...",
+    "resend": "Gửi lại email xác nhận",
+    "backToSignIn": "Quay lại đăng nhập",
+    "emailNotConfirmed": "Vui lòng xác nhận địa chỉ email của bạn trước. Hãy kiểm tra hộp thư đến để tìm liên kết xác nhận."
   }
 }

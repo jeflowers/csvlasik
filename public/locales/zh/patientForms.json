@@ -2,14 +2,12 @@
   "badge": "患者表格",
   "title": "在线填写您的表格",
   "subtitle": "在就诊前填写接诊表格，节省就诊时间。所有信息均通过安全方式传输。",
-
   "tabs": {
     "registration": "新患者注册",
     "medicalHistory": "病史",
     "insuranceInfo": "保险信息",
     "consent": "知情同意书"
   },
-
   "registration": {
     "firstName": {
       "label": "名",
@@ -52,13 +50,11 @@
       "placeholder": "请描述您的就诊原因"
     }
   },
-
   "medicalHistory": {
     "sectionTitle": "眼科/病史",
     "sectionSubtitle": "请尽可能准确地回答以下问题",
     "generalHealthTitle": "一般健康状况",
     "generalHealthSubtitle": "医疗状况、药物和过敏",
-
     "q1": {
       "label": "您佩戴：",
       "glasses": "眼镜",
@@ -170,7 +166,6 @@
       }
     }
   },
-
   "insuranceInfo": {
     "insuranceProvider": {
       "label": "保险公司",
@@ -203,16 +198,13 @@
       "placeholder": "次要保险公司"
     }
   },
-
   "consent": {
     "hipaaTitle": "HIPAA隐私确认",
     "hipaaBody": "本人确认已收到《隐私惯例通知》副本，该通知描述了本人的健康信息如何被使用和披露，以及本人如何获取该信息。本人理解MEC Eye Specialists有权随时更改《隐私惯例通知》。",
     "hipaaCheckbox": "本人确认收到《隐私惯例通知》",
-
     "treatmentTitle": "治疗同意书",
     "treatmentBody": "本人同意接受MEC Eye Specialists眼科医生的检查和治疗。本人理解，对于任何检查或治疗的结果，未作出任何保证。",
     "treatmentCheckbox": "本人同意接受检查和治疗",
-
     "patientSignature": {
       "label": "患者签名（输入全名）",
       "placeholder": "法定全名"
@@ -222,12 +214,10 @@
       "placeholder": "年/月/日"
     }
   },
-
   "buttons": {
     "submitForm": "提交表格",
     "submitting": "提交中..."
   },
-
   "validation": {
     "required": "此字段为必填项",
     "invalidEmail": "请输入有效的电子邮件地址",
@@ -238,21 +228,19 @@
     "signatureTooShort": "请输入您的法定全名",
     "consentRequired": "您必须确认两份同意书才能继续"
   },
-
   "success": {
     "registration": "注册提交成功！我们的团队将尽快与您联系。",
     "medicalHistory": "病史提交成功！",
     "insuranceInfo": "保险信息提交成功！",
     "consent": "知情同意书提交成功！感谢您完成所有表格。"
   },
-
   "error": {
     "generic": "提交表格时发生错误。请重试。",
     "network": "网络错误。请检查您的连接并重试。"
   },
-
-  "portal": { "title": "患者门户" },
-
+  "portal": {
+    "title": "患者门户"
+  },
   "nav": {
     "dashboard": "仪表板",
     "patientForms": "患者表格",
@@ -262,7 +250,6 @@
     "backToWebsite": "返回网站",
     "signOut": "退出登录"
   },
-
   "dashboard": {
     "welcome": "欢迎，{{name}}",
     "welcomeGeneric": "欢迎",
@@ -290,7 +277,6 @@
       "consent": "知情同意书"
     }
   },
-
   "forms": {
     "title": "患者表格",
     "editTitle": "更新患者表格",
@@ -307,7 +293,6 @@
     "backToDashboard": "返回仪表板",
     "updateAllForms": "更新所有表格"
   },
-
   "submissions": {
     "title": "我的提交",
     "subtitle": "查看您已提交的患者表格及其详细信息。",
@@ -322,7 +307,6 @@
     "shareStoryDesc": "体验不错？我们期待听到您的反馈。",
     "writeTestimonial": "撰写感言"
   },
-
   "testimonial": {
     "title": "分享您的故事",
     "subtitle": "请告诉我们您在Atelier LASIK的体验。您的反馈将帮助其他人就视力护理做出明智的决定。",
@@ -350,14 +334,12 @@
     "viewTestimonials": "查看感言",
     "other": "其他"
   },
-
   "history": {
     "title": "活动历史",
     "subtitle": "您在患者门户中的近期活动时间线。",
     "empty": "暂无活动",
     "emptyDescription": "您的登录、表格提交和更新历史将显示在此处。"
   },
-
   "auth": {
     "loginTitle": "患者门户",
     "loginSubtitle": "Atelier LASIK",
@@ -399,7 +381,6 @@
     "minCharsPlaceholder": "至少8个字符",
     "reenterPassword": "重新输入密码"
   },
-
   "submissionDetails": {
     "dob": "出生日期",
     "phone": "电话",
@@ -432,5 +413,28 @@
     "treatmentConsent": "治疗同意",
     "signedBy": "签署人",
     "signedOn": "签署日期"
+  },
+  "bookingGate": {
+    "title": "登录以预约",
+    "subtitle": "为保护您的隐私，只能通过您的患者账户预约和查看预约。",
+    "tabSignIn": "登录",
+    "tabCreateAccount": "创建账户",
+    "firstName": "名",
+    "lastName": "姓",
+    "email": "电子邮箱",
+    "password": "密码",
+    "pleaseWait": "请稍候...",
+    "signInContinue": "登录并继续",
+    "createContinue": "创建账户并继续",
+    "forgotPassword": "忘记密码？",
+    "visitPortal": "访问患者门户",
+    "checkInboxTitle": "请查收您的邮件",
+    "checkInboxBody": "我们已向 <strong>{{email}}</strong> 发送了确认链接。请打开链接验证您的邮箱，然后登录预约。",
+    "resent": "新的确认邮件正在发送中。",
+    "resendFailed": "无法重新发送邮件，请稍后再试。",
+    "sending": "发送中...",
+    "resend": "重新发送确认邮件",
+    "backToSignIn": "返回登录",
+    "emailNotConfirmed": "请先确认您的电子邮件地址。请在收件箱中查找确认链接。"
   }
 }

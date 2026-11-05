@@ -2,14 +2,12 @@
   "badge": "患者フォーム",
   "title": "オンラインでフォームを記入",
   "subtitle": "ご予約前に受付フォームを記入して、来院時の時間を節約しましょう。すべての情報は安全に送信されます。",
-
   "tabs": {
     "registration": "新規患者登録",
     "medicalHistory": "病歴",
     "insuranceInfo": "保険情報",
     "consent": "同意書"
   },
-
   "registration": {
     "firstName": {
       "label": "名",
@@ -52,13 +50,11 @@
       "placeholder": "来院の理由をご記入ください"
     }
   },
-
   "medicalHistory": {
     "sectionTitle": "眼科・医療歴",
     "sectionSubtitle": "できるだけ正確にご回答ください",
     "generalHealthTitle": "一般的な健康状態",
     "generalHealthSubtitle": "病状、薬、アレルギーについて",
-
     "q1": {
       "label": "使用しているもの：",
       "glasses": "メガネ",
@@ -170,7 +166,6 @@
       }
     }
   },
-
   "insuranceInfo": {
     "insuranceProvider": {
       "label": "保険会社",
@@ -203,16 +198,13 @@
       "placeholder": "二次保険会社"
     }
   },
-
   "consent": {
     "hipaaTitle": "HIPAAプライバシー確認",
     "hipaaBody": "私は、健康情報がどのように使用・開示されるか、またその情報へのアクセス方法を説明したプライバシー慣行通知のコピーを受け取ったことを確認します。MEC Eye Specialistsはプライバシー慣行通知をいつでも変更する権利を有することを理解しています。",
     "hipaaCheckbox": "プライバシー慣行通知の受領を確認します",
-
     "treatmentTitle": "治療への同意",
     "treatmentBody": "MEC Eye Specialistsの眼科医による検査および治療に同意します。検査または治療の結果について、いかなる保証もなされていないことを理解しています。",
     "treatmentCheckbox": "検査および治療に同意します",
-
     "patientSignature": {
       "label": "患者署名（フルネームを入力）",
       "placeholder": "正式な氏名"
@@ -222,12 +214,10 @@
       "placeholder": "年/月/日"
     }
   },
-
   "buttons": {
     "submitForm": "フォームを送信",
     "submitting": "送信中..."
   },
-
   "validation": {
     "required": "この項目は必須です",
     "invalidEmail": "有効なメールアドレスを入力してください",
@@ -238,23 +228,19 @@
     "signatureTooShort": "正式な氏名を入力してください",
     "consentRequired": "続行するには両方の同意書を確認する必要があります"
   },
-
   "success": {
     "registration": "登録が正常に送信されました！チームからまもなくご連絡いたします。",
     "medicalHistory": "病歴が正常に送信されました！",
     "insuranceInfo": "保険情報が正常に送信されました！",
     "consent": "同意書が正常に送信されました！すべてのフォームを完了していただきありがとうございます。"
   },
-
   "error": {
     "generic": "フォームの送信中にエラーが発生しました。もう一度お試しください。",
     "network": "ネットワークエラーです。接続を確認して、もう一度お試しください。"
   },
-
   "portal": {
     "title": "患者ポータル"
   },
-
   "nav": {
     "dashboard": "ダッシュボード",
     "patientForms": "患者フォーム",
@@ -264,7 +250,6 @@
     "backToWebsite": "ウェブサイトに戻る",
     "signOut": "ログアウト"
   },
-
   "dashboard": {
     "welcome": "ようこそ、{{name}}さん",
     "welcomeGeneric": "ようこそ",
@@ -292,7 +277,6 @@
       "consent": "同意書"
     }
   },
-
   "forms": {
     "title": "患者フォーム",
     "editTitle": "患者フォームの更新",
@@ -309,7 +293,6 @@
     "backToDashboard": "ダッシュボードに戻る",
     "updateAllForms": "すべてのフォームを更新"
   },
-
   "submissions": {
     "title": "提出履歴",
     "subtitle": "提出済みの患者フォームとその詳細を確認できます。",
@@ -324,7 +307,6 @@
     "shareStoryDesc": "良い体験をされましたか？ぜひお聞かせください。",
     "writeTestimonial": "体験談を書く"
   },
-
   "testimonial": {
     "title": "体験談を共有",
     "subtitle": "Atelier LASIKでの体験をお聞かせください。あなたのフィードバックは、他の方が視力ケアについて十分な情報に基づいた決定をするのに役立ちます。",
@@ -351,14 +333,12 @@
     "successNote": "Atelier LASIKでの体験を共有していただき、ありがとうございます。",
     "viewTestimonials": "体験談を見る"
   },
-
   "history": {
     "title": "アクティビティ履歴",
     "subtitle": "患者ポータルでの最近のアクティビティのタイムラインです。",
     "empty": "まだアクティビティがありません",
     "emptyDescription": "ログイン、フォーム提出、更新の履歴がここに表示されます。"
   },
-
   "auth": {
     "loginTitle": "患者ポータル",
     "loginSubtitle": "Atelier LASIK",
@@ -400,7 +380,6 @@
     "minCharsPlaceholder": "8文字以上",
     "reenterPassword": "パスワードを再入力"
   },
-
   "submissionDetails": {
     "dob": "生年月日",
     "phone": "電話番号",
@@ -433,5 +412,28 @@
     "treatmentConsent": "治療同意",
     "signedBy": "署名者",
     "signedOn": "署名日"
+  },
+  "bookingGate": {
+    "title": "ログインして予約",
+    "subtitle": "プライバシー保護のため、予約の作成と確認は患者アカウントからのみ行えます。",
+    "tabSignIn": "ログイン",
+    "tabCreateAccount": "アカウント作成",
+    "firstName": "名",
+    "lastName": "姓",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "pleaseWait": "お待ちください...",
+    "signInContinue": "ログインして続行",
+    "createContinue": "アカウントを作成して続行",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "visitPortal": "患者ポータルへ",
+    "checkInboxTitle": "受信トレイをご確認ください",
+    "checkInboxBody": "<strong>{{email}}</strong> に確認リンクを送信しました。リンクを開いてメールアドレスを確認した後、ログインしてご予約ください。",
+    "resent": "新しい確認メールを送信しました。",
+    "resendFailed": "メールを再送信できませんでした。しばらくしてから再度お試しください。",
+    "sending": "送信中...",
+    "resend": "確認メールを再送信",
+    "backToSignIn": "ログインに戻る",
+    "emailNotConfirmed": "まずメールアドレスを確認してください。受信トレイに届いた確認リンクをご確認ください。"
   }
 }

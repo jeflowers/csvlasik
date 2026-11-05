@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 import { LogIn, UserPlus, Lock, MailCheck } from 'lucide-react';
 
 interface BookingAuthGateProps {
@@ -19,6 +20,7 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
   resendConfirmation,
   clearPendingConfirmation,
 }) => {
+  const { t } = useTranslation('patientForms');
   const [mode, setMode] = useState<'signin' | 'signup'>('signin');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -55,6 +57,9 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
   const inputClass =
     'w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition';
 
+  const displayError =
+    error && error.startsWith('Please confirm your email address first') ? t('bookingGate.emailNotConfirmed') : error;
+
   if (pendingConfirmationEmail) {
     return (
       <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-8" data-testid="booking-auth-gate">
@@ -62,20 +67,24 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
           <div className="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center mb-4">
             <MailCheck className="w-6 h-6 text-teal-600" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Check your inbox</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('bookingGate.checkInboxTitle')}</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            We sent a confirmation link to <span className="font-medium text-gray-900">{pendingConfirmationEmail}</span>.
-            Open it to verify your email, then sign in to book your appointment.
+            <Trans
+              t={t}
+              i18nKey="bookingGate.checkInboxBody"
+              values={{ email: pendingConfirmationEmail }}
+              components={{ strong: <span className="font-medium text-gray-900" /> }}
+            />
           </p>
 
           {resendState === 'sent' && (
             <p className="w-full text-sm text-teal-800 bg-teal-50 border border-teal-200 rounded-lg px-4 py-2 mb-4" role="status">
-              A new confirmation email is on its way.
+              {t('bookingGate.resent')}
             </p>
           )}
-          {(resendState === 'failed' || (error && resendState !== 'sent')) && (
+          {(resendState === 'failed' || (displayError && resendState !== 'sent')) && (
             <p className="w-full text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-2 mb-4" role="alert">
-              {error || 'We could not resend the email. Please try again shortly.'}
+              {displayError || t('bookingGate.resendFailed')}
             </p>
           )}
 
@@ -86,14 +95,14 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
             data-testid="resend-confirmation"
             className="w-full bg-teal-600 text-white py-3 rounded-lg font-medium hover:bg-teal-700 disabled:opacity-60 transition mb-3"
           >
-            {resendState === 'sending' ? 'Sending...' : 'Resend confirmation email'}
+            {resendState === 'sending' ? t('bookingGate.sending') : t('bookingGate.resend')}
           </button>
           <button
             type="button"
             onClick={handleBackToSignIn}
             className="w-full py-3 rounded-lg font-medium text-teal-700 hover:bg-teal-50 transition"
           >
-            Back to sign in
+            {t('bookingGate.backToSignIn')}
           </button>
         </div>
       </div>
@@ -106,10 +115,8 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
         <div className="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center mb-4">
           <Lock className="w-6 h-6 text-teal-600" />
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Sign in to book</h2>
-        <p className="text-gray-600 leading-relaxed">
-          To protect your privacy, appointments can only be booked and viewed from your patient account.
-        </p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('bookingGate.title')}</h2>
+        <p className="text-gray-600 leading-relaxed">{t('bookingGate.subtitle')}</p>
       </div>
 
       <div className="grid grid-cols-2 gap-2 p-1 bg-gray-100 rounded-lg mb-6">
@@ -122,7 +129,7 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
               mode === m ? 'bg-white text-teal-700 shadow-sm' : 'text-gray-600 hover:text-gray-900'
             }`}
           >
-            {m === 'signin' ? 'Sign in' : 'Create account'}
+            {m === 'signin' ? t('bookingGate.tabSignIn') : t('bookingGate.tabCreateAccount')}
           </button>
         ))}
       </div>
@@ -132,7 +139,7 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
           <div className="grid grid-cols-2 gap-4">
             <input
               className={inputClass}
-              placeholder="First name"
+              placeholder={t('bookingGate.firstName')}
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               required
@@ -140,7 +147,7 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
             />
             <input
               className={inputClass}
-              placeholder="Last name"
+              placeholder={t('bookingGate.lastName')}
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
@@ -151,7 +158,7 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
         <input
           type="email"
           className={inputClass}
-          placeholder="Email"
+          placeholder={t('bookingGate.email')}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -160,7 +167,7 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
         <input
           type="password"
           className={inputClass}
-          placeholder="Password"
+          placeholder={t('bookingGate.password')}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -168,9 +175,9 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
           autoComplete={mode === 'signin' ? 'current-password' : 'new-password'}
         />
 
-        {error && (
+        {displayError && (
           <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-2" role="alert">
-            {error}
+            {displayError}
           </p>
         )}
 
@@ -180,14 +187,18 @@ export const BookingAuthGate: React.FC<BookingAuthGateProps> = ({
           className="w-full flex items-center justify-center gap-2 bg-teal-600 text-white py-3 rounded-lg font-medium hover:bg-teal-700 disabled:opacity-60 transition"
         >
           {mode === 'signin' ? <LogIn className="w-4 h-4" /> : <UserPlus className="w-4 h-4" />}
-          {submitting ? 'Please wait...' : mode === 'signin' ? 'Sign in and continue' : 'Create account and continue'}
+          {submitting
+            ? t('bookingGate.pleaseWait')
+            : mode === 'signin'
+              ? t('bookingGate.signInContinue')
+              : t('bookingGate.createContinue')}
         </button>
       </form>
 
       <p className="text-center text-sm text-gray-500 mt-6">
-        Forgot your password?{' '}
+        {t('bookingGate.forgotPassword')}{' '}
         <Link to="/portal/login" className="text-teal-600 hover:text-teal-700 font-medium">
-          Visit the patient portal
+          {t('bookingGate.visitPortal')}
         </Link>
       </p>
     </div>

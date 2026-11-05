@@ -2,14 +2,12 @@
   "badge": "MGA FORM NG PASYENTE",
   "title": "Kumpletuhin ang Iyong mga Form Online",
   "subtitle": "Makatipid ng oras sa iyong pagbisita sa pamamagitan ng pagkumpleto ng mga intake form bago ang iyong appointment. Lahat ng impormasyon ay ligtas na ipinapadala.",
-
   "tabs": {
     "registration": "Pagpaparehistro ng Bagong Pasyente",
     "medicalHistory": "Medikal na Kasaysayan",
     "insuranceInfo": "Impormasyon ng Insurance",
     "consent": "Mga Form ng Pahintulot"
   },
-
   "registration": {
     "firstName": {
       "label": "Pangalan",
@@ -52,13 +50,11 @@
       "placeholder": "Mangyaring ilarawan ang dahilan ng iyong pagbisita"
     }
   },
-
   "medicalHistory": {
     "sectionTitle": "Kasaysayan ng Mata / Medikal",
     "sectionSubtitle": "Mangyaring sagutin ang sumusunod nang tumpak hangga't maaari",
     "generalHealthTitle": "Pangkalahatang Kalusugan",
     "generalHealthSubtitle": "Mga kondisyong medikal, gamot at alerhiya",
-
     "q1": {
       "label": "Gumagamit ka ba ng:",
       "glasses": "Salamin sa mata",
@@ -170,7 +166,6 @@
       }
     }
   },
-
   "insuranceInfo": {
     "insuranceProvider": {
       "label": "Insurance Provider",
@@ -203,16 +198,13 @@
       "placeholder": "Pangalawang insurance provider"
     }
   },
-
   "consent": {
     "hipaaTitle": "Pagkilala sa Privacy ng HIPAA",
     "hipaaBody": "Kinikilala ko na nabigyan ako ng kopya ng Abiso ng mga Kasanayan sa Privacy, na naglalarawan kung paano maaaring gamitin at ibunyag ang aking impormasyon sa kalusugan, at kung paano ko ma-access ang impormasyong ito. Nauunawaan ko na may karapatan ang MEC Eye Specialists na baguhin ang Abiso ng mga Kasanayan sa Privacy sa anumang oras.",
     "hipaaCheckbox": "Kinikilala ko ang pagtanggap ng Abiso ng mga Kasanayan sa Privacy",
-
     "treatmentTitle": "Pahintulot sa Paggamot",
     "treatmentBody": "Pumapayag ako sa pagsusuri at paggamot ng (mga) ophthalmologist sa MEC Eye Specialists. Nauunawaan ko na walang mga garantiya na ginawa tungkol sa resulta ng anumang pagsusuri o paggamot.",
     "treatmentCheckbox": "Pumapayag ako sa pagsusuri at paggamot",
-
     "patientSignature": {
       "label": "Lagda ng Pasyente (i-type ang buong pangalan)",
       "placeholder": "Buong legal na pangalan"
@@ -222,12 +214,10 @@
       "placeholder": "mm/dd/yyyy"
     }
   },
-
   "buttons": {
     "submitForm": "Isumite ang Form",
     "submitting": "Isinusumite..."
   },
-
   "validation": {
     "required": "Kinakailangan ang field na ito",
     "invalidEmail": "Mangyaring maglagay ng wastong email address",
@@ -238,23 +228,19 @@
     "signatureTooShort": "Mangyaring ilagay ang iyong buong legal na pangalan",
     "consentRequired": "Kailangan mong kilalanin ang parehong form ng pahintulot upang magpatuloy"
   },
-
   "success": {
     "registration": "Matagumpay na naisumite ang rehistrasyon! Makikipag-ugnayan sa iyo ang aming team sa lalong madaling panahon.",
     "medicalHistory": "Matagumpay na naisumite ang medikal na kasaysayan!",
     "insuranceInfo": "Matagumpay na naisumite ang impormasyon ng insurance!",
     "consent": "Matagumpay na naisumite ang mga form ng pahintulot! Salamat sa pagkumpleto ng lahat ng form."
   },
-
   "error": {
     "generic": "May naganap na error habang isinusumite ang form. Pakisubukang muli.",
     "network": "Error sa network. Suriin ang iyong koneksyon at subukang muli."
   },
-
   "portal": {
     "title": "Portal ng Pasyente"
   },
-
   "nav": {
     "dashboard": "Dashboard",
     "patientForms": "Mga Form ng Pasyente",
@@ -264,7 +250,6 @@
     "backToWebsite": "Bumalik sa Website",
     "signOut": "Mag-sign Out"
   },
-
   "dashboard": {
     "welcome": "Maligayang pagbabalik, {{name}}",
     "welcomeGeneric": "Maligayang pagbabalik",
@@ -292,7 +277,6 @@
       "consent": "Mga Form ng Pahintulot"
     }
   },
-
   "forms": {
     "title": "Mga Form ng Pasyente",
     "editTitle": "I-update ang mga Form ng Pasyente",
@@ -309,7 +293,6 @@
     "backToDashboard": "Bumalik sa Dashboard",
     "updateAllForms": "I-update ang Lahat ng Form"
   },
-
   "submissions": {
     "title": "Aking mga Pagsusumite",
     "subtitle": "Suriin ang iyong mga isinumiteng form ng pasyente at ang mga detalye nito.",
@@ -324,7 +307,6 @@
     "shareStoryDesc": "Maganda ba ang iyong karanasan? Gusto naming marinig ang tungkol dito.",
     "writeTestimonial": "Sumulat ng Testimonya"
   },
-
   "testimonial": {
     "title": "Ibahagi ang Iyong Kwento",
     "subtitle": "Sabihin sa amin ang iyong karanasan sa Atelier LASIK. Ang iyong feedback ay nakakatulong sa iba na gumawa ng tamang desisyon tungkol sa pangangalaga ng kanilang paningin.",
@@ -351,14 +333,12 @@
     "successNote": "Pinahahalagahan namin ang iyong oras sa pagbabahagi ng iyong karanasan sa Atelier LASIK.",
     "viewTestimonials": "Tingnan ang mga Testimonya"
   },
-
   "history": {
     "title": "Kasaysayan ng Aktibidad",
     "subtitle": "Isang timeline ng iyong kamakailang aktibidad sa portal ng pasyente.",
     "empty": "Wala pang aktibidad",
     "emptyDescription": "Ang iyong kasaysayan ng pag-login, pagsusumite ng form, at pag-update ay lalabas dito."
   },
-
   "auth": {
     "loginTitle": "Portal ng Pasyente",
     "loginSubtitle": "Atelier LASIK",
@@ -400,7 +380,6 @@
     "minCharsPlaceholder": "Min. 8 karakter",
     "reenterPassword": "Ilagay muli ang password"
   },
-
   "submissionDetails": {
     "dob": "Petsa ng Kapanganakan",
     "phone": "Telepono",
@@ -433,5 +412,28 @@
     "treatmentConsent": "Pahintulot sa Paggamot",
     "signedBy": "Pinirmahan ni",
     "signedOn": "Pinirmahan noong"
+  },
+  "bookingGate": {
+    "title": "Mag-sign in para mag-book",
+    "subtitle": "Para maprotektahan ang iyong privacy, maaari lamang mag-book at tumingin ng mga appointment mula sa iyong patient account.",
+    "tabSignIn": "Mag-sign in",
+    "tabCreateAccount": "Gumawa ng account",
+    "firstName": "Pangalan",
+    "lastName": "Apelyido",
+    "email": "Email",
+    "password": "Password",
+    "pleaseWait": "Sandali lang...",
+    "signInContinue": "Mag-sign in at magpatuloy",
+    "createContinue": "Gumawa ng account at magpatuloy",
+    "forgotPassword": "Nakalimutan ang password?",
+    "visitPortal": "Bisitahin ang patient portal",
+    "checkInboxTitle": "Tingnan ang iyong inbox",
+    "checkInboxBody": "Nagpadala kami ng confirmation link sa <strong>{{email}}</strong>. Buksan ito para ma-verify ang iyong email, pagkatapos ay mag-sign in para i-book ang iyong appointment.",
+    "resent": "Paparating na ang bagong confirmation email.",
+    "resendFailed": "Hindi namin naipadala muli ang email. Pakisubukang muli mamaya.",
+    "sending": "Ipinapadala...",
+    "resend": "Ipadala muli ang confirmation email",
+    "backToSignIn": "Bumalik sa pag-sign in",
+    "emailNotConfirmed": "Pakikumpirma muna ang iyong email address. Tingnan ang iyong inbox para sa link ng kumpirmasyon."
   }
 }
