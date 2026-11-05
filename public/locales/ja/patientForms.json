@@ -435,5 +435,37 @@
     "resend": "確認メールを再送信",
     "backToSignIn": "ログインに戻る",
     "emailNotConfirmed": "まずメールアドレスを確認してください。受信トレイに届いた確認リンクをご確認ください。"
+  },
+  "calendar": {
+    "selectDate": "予約日を選択してください",
+    "availableSlots": "空き時間",
+    "noSlots": "この日は空き枠がありません。別の日を選択してください。",
+    "backToCalendar": "カレンダーに戻る",
+    "backToSlots": "時間選択に戻る",
+    "appointmentConfirmed": "予約が確定しました！",
+    "bookedMessage": "ご予約が完了しました。まもなく確認メールが届きます。",
+    "confirmationCode": "確認コード",
+    "returnHome": "ホームに戻る",
+    "signedInAs": "{{email}} でログイン中",
+    "signOut": "ログアウト",
+    "completeBooking": "予約を完了する",
+    "dateAtTime": "{{date}} {{time}}",
+    "fullName": "氏名 *",
+    "email": "メールアドレス *",
+    "phone": "電話番号 *",
+    "procedureType": "施術の種類 *",
+    "insurance": "保険会社（任意）",
+    "notes": "備考（任意）",
+    "cancel": "キャンセル",
+    "booking": "予約中...",
+    "confirmBooking": "予約を確定する",
+    "bookingError": "予約を完了できませんでした。もう一度お試しください。",
+    "previousMonth": "前の月",
+    "nextMonth": "次の月",
+    "loading": "読み込み中...",
+    "procedures": {
+      "cataract": "白内障手術",
+      "consultation": "一般診察"
+    }
   }
 }

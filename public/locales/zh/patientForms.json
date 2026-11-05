@@ -436,5 +436,37 @@
     "resend": "重新发送确认邮件",
     "backToSignIn": "返回登录",
     "emailNotConfirmed": "请先确认您的电子邮件地址。请在收件箱中查找确认链接。"
+  },
+  "calendar": {
+    "selectDate": "选择预约日期",
+    "availableSlots": "可预约时段",
+    "noSlots": "该日期没有可预约的时段，请选择其他日期。",
+    "backToCalendar": "返回日历",
+    "backToSlots": "返回时段",
+    "appointmentConfirmed": "预约成功！",
+    "bookedMessage": "您的预约已成功。您将很快收到确认邮件。",
+    "confirmationCode": "确认码",
+    "returnHome": "返回首页",
+    "signedInAs": "已登录：{{email}}",
+    "signOut": "退出登录",
+    "completeBooking": "完成预约",
+    "dateAtTime": "{{date}} {{time}}",
+    "fullName": "姓名 *",
+    "email": "电子邮箱 *",
+    "phone": "电话号码 *",
+    "procedureType": "手术类型 *",
+    "insurance": "保险公司（可选）",
+    "notes": "附加说明（可选）",
+    "cancel": "取消",
+    "booking": "正在预约...",
+    "confirmBooking": "确认预约",
+    "bookingError": "无法完成预约，请重试。",
+    "previousMonth": "上个月",
+    "nextMonth": "下个月",
+    "loading": "加载中...",
+    "procedures": {
+      "cataract": "白内障手术",
+      "consultation": "综合咨询"
+    }
   }
 }

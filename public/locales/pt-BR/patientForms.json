@@ -435,5 +435,37 @@
     "resend": "Reenviar e-mail de confirmação",
     "backToSignIn": "Voltar para entrar",
     "emailNotConfirmed": "Confirme seu endereço de e-mail primeiro. Verifique sua caixa de entrada para encontrar o link de confirmação."
+  },
+  "calendar": {
+    "selectDate": "Selecione uma data para a consulta",
+    "availableSlots": "Horários disponíveis",
+    "noSlots": "Não há horários disponíveis para esta data. Selecione outra data.",
+    "backToCalendar": "Voltar ao calendário",
+    "backToSlots": "Voltar aos horários",
+    "appointmentConfirmed": "Consulta confirmada!",
+    "bookedMessage": "Sua consulta foi agendada com sucesso. Você receberá um e-mail de confirmação em breve.",
+    "confirmationCode": "Código de confirmação",
+    "returnHome": "Voltar ao início",
+    "signedInAs": "Conectado como {{email}}",
+    "signOut": "Sair",
+    "completeBooking": "Conclua seu agendamento",
+    "dateAtTime": "{{date}} às {{time}}",
+    "fullName": "Nome completo *",
+    "email": "Endereço de e-mail *",
+    "phone": "Número de telefone *",
+    "procedureType": "Tipo de procedimento *",
+    "insurance": "Plano de saúde (opcional)",
+    "notes": "Observações adicionais (opcional)",
+    "cancel": "Cancelar",
+    "booking": "Agendando...",
+    "confirmBooking": "Confirmar agendamento",
+    "bookingError": "Não foi possível concluir seu agendamento. Tente novamente.",
+    "previousMonth": "Mês anterior",
+    "nextMonth": "Próximo mês",
+    "loading": "Carregando...",
+    "procedures": {
+      "cataract": "Cirurgia de catarata",
+      "consultation": "Consulta geral"
+    }
   }
 }

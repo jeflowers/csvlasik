@@ -441,5 +441,37 @@
     "resend": "Resend confirmation email",
     "backToSignIn": "Back to sign in",
     "emailNotConfirmed": "Please confirm your email address first. Check your inbox for the confirmation link."
+  },
+  "calendar": {
+    "selectDate": "Select an Appointment Date",
+    "availableSlots": "Available Time Slots",
+    "noSlots": "No available slots for this date. Please select another date.",
+    "backToCalendar": "Back to calendar",
+    "backToSlots": "Back to time slots",
+    "appointmentConfirmed": "Appointment Confirmed!",
+    "bookedMessage": "Your appointment has been successfully booked. You will receive a confirmation email shortly.",
+    "confirmationCode": "Confirmation Code",
+    "returnHome": "Return to Home",
+    "signedInAs": "Signed in as {{email}}",
+    "signOut": "Sign out",
+    "completeBooking": "Complete Your Booking",
+    "dateAtTime": "{{date}} at {{time}}",
+    "fullName": "Full Name *",
+    "email": "Email Address *",
+    "phone": "Phone Number *",
+    "procedureType": "Procedure Type *",
+    "insurance": "Insurance Provider (Optional)",
+    "notes": "Additional Notes (Optional)",
+    "cancel": "Cancel",
+    "booking": "Booking...",
+    "confirmBooking": "Confirm Booking",
+    "bookingError": "We couldn't complete your booking. Please try again.",
+    "previousMonth": "Previous month",
+    "nextMonth": "Next month",
+    "loading": "Loading...",
+    "procedures": {
+      "cataract": "Cataract Surgery",
+      "consultation": "General Consultation"
+    }
   }
 }

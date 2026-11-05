@@ -435,5 +435,37 @@
     "resend": "Ipadala muli ang confirmation email",
     "backToSignIn": "Bumalik sa pag-sign in",
     "emailNotConfirmed": "Pakikumpirma muna ang iyong email address. Tingnan ang iyong inbox para sa link ng kumpirmasyon."
+  },
+  "calendar": {
+    "selectDate": "Pumili ng Petsa ng Appointment",
+    "availableSlots": "Mga Available na Oras",
+    "noSlots": "Walang available na oras para sa petsang ito. Pumili ng ibang petsa.",
+    "backToCalendar": "Bumalik sa kalendaryo",
+    "backToSlots": "Bumalik sa mga oras",
+    "appointmentConfirmed": "Kumpirmado na ang Appointment!",
+    "bookedMessage": "Matagumpay na na-book ang iyong appointment. Makakatanggap ka ng confirmation email sa lalong madaling panahon.",
+    "confirmationCode": "Confirmation Code",
+    "returnHome": "Bumalik sa Home",
+    "signedInAs": "Naka-sign in bilang {{email}}",
+    "signOut": "Mag-sign out",
+    "completeBooking": "Kumpletuhin ang Iyong Booking",
+    "dateAtTime": "{{date}} nang {{time}}",
+    "fullName": "Buong Pangalan *",
+    "email": "Email Address *",
+    "phone": "Numero ng Telepono *",
+    "procedureType": "Uri ng Procedure *",
+    "insurance": "Insurance Provider (Opsyonal)",
+    "notes": "Karagdagang Tala (Opsyonal)",
+    "cancel": "Kanselahin",
+    "booking": "Nagbu-book...",
+    "confirmBooking": "Kumpirmahin ang Booking",
+    "bookingError": "Hindi namin makumpleto ang iyong booking. Pakisubukang muli.",
+    "previousMonth": "Nakaraang buwan",
+    "nextMonth": "Susunod na buwan",
+    "loading": "Naglo-load...",
+    "procedures": {
+      "cataract": "Operasyon sa Katarata",
+      "consultation": "Pangkalahatang Konsultasyon"
+    }
   }
 }

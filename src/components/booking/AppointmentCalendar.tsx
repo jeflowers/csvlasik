@@ -25,7 +25,7 @@ interface BookingFormData {
 }
 
 export const AppointmentCalendar: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('patientForms');
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<TimeSlot | null>(null);
@@ -126,7 +126,7 @@ export const AppointmentCalendar: React.FC = () => {
       setStep('confirmation');
     } catch (error) {
       console.error('Failed to book appointment:', error);
-      setSubmitError('We could not book this appointment. The time may no longer be available. Please try again or pick another time.');
+      setSubmitError(t('calendar.bookingError'));
     } finally {
       setLoading(false);
     }
@@ -167,11 +167,11 @@ export const AppointmentCalendar: React.FC = () => {
   };
 
   const formatTime = (timeString: string) => {
-    const [hours, minutes] = timeString.split(':');
-    const hour = parseInt(hours, 10);
-    const ampm = hour >= 12 ? 'PM' : 'AM';
-    const displayHour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour;
-    return `${displayHour}:${minutes} ${ampm}`;
+    const [hours, minutes] = timeString.split(':').map((part) => parseInt(part, 10));
+    return new Date(2000, 0, 1, hours, minutes).toLocaleTimeString(i18n.language, {
+      hour: 'numeric',
+      minute: '2-digit',
+    });
   };
 
   const days = getDaysInMonth(currentDate);
@@ -179,7 +179,11 @@ export const AppointmentCalendar: React.FC = () => {
   if (authLoading) {
     return (
       <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8 flex justify-center">
-        <div className="w-8 h-8 border-4 border-teal-600 border-t-transparent rounded-full animate-spin" />
+        <div
+          role="status"
+          aria-label={t('calendar.loading')}
+          className="w-8 h-8 border-4 border-teal-600 border-t-transparent rounded-full animate-spin"
+        />
       </div>
     );
   }
@@ -202,13 +206,13 @@ export const AppointmentCalendar: React.FC = () => {
       <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <div className="text-center">
           <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Appointment Confirmed!</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('calendar.appointmentConfirmed')}</h2>
           <p className="text-gray-600 mb-6">
-            Your appointment has been successfully booked. You will receive a confirmation email shortly.
+            {t('calendar.bookedMessage')}
           </p>
 
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-            <p className="text-sm text-gray-600 mb-2">Confirmation Code</p>
+            <p className="text-sm text-gray-600 mb-2">{t('calendar.confirmationCode')}</p>
             <p className="text-3xl font-bold text-blue-600 tracking-wider">{confirmationCode}</p>
           </div>
 
@@ -233,7 +237,7 @@ export const AppointmentCalendar: React.FC = () => {
             onClick={() => window.location.href = '/'}
             className="px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700"
           >
-            Return to Home
+            {t('calendar.returnHome')}
           </button>
         </div>
       </div>
@@ -244,14 +248,14 @@ export const AppointmentCalendar: React.FC = () => {
     return (
       <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <div className="flex items-center justify-between gap-4 mb-6 px-4 py-3 bg-teal-50 border border-teal-100 rounded-lg text-sm">
-          <span className="text-teal-900 truncate">Signed in as {user.email}</span>
+          <span className="text-teal-900 truncate">{t('calendar.signedInAs', { email: user.email })}</span>
           <button
             type="button"
             onClick={logout}
             className="flex items-center gap-1 text-teal-700 hover:text-teal-900 shrink-0"
           >
             <LogOut className="w-4 h-4" />
-            Sign out
+            {t('calendar.signOut')}
           </button>
         </div>
         <div className="mb-6">
@@ -260,12 +264,12 @@ export const AppointmentCalendar: React.FC = () => {
             className="flex items-center text-gray-600 hover:text-gray-900 mb-4"
           >
             <ChevronLeft className="w-5 h-5 me-1 rtl:rotate-180" />
-            Back to time slots
+            {t('calendar.backToSlots')}
           </button>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Complete Your Booking</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('calendar.completeBooking')}</h2>
           {selectedSlot && (
             <p className="text-gray-600">
-              {selectedSlot.slot_date} at {formatTime(selectedSlot.slot_time)}
+              {t('calendar.dateAtTime', { date: selectedSlot.slot_date, time: formatTime(selectedSlot.slot_time) })}
             </p>
           )}
         </div>
@@ -273,7 +277,7 @@ export const AppointmentCalendar: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Full Name *
+              {t('calendar.fullName')}
             </label>
             <input
               type="text"
@@ -286,7 +290,7 @@ export const AppointmentCalendar: React.FC = () => {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Email Address *
+              {t('calendar.email')}
             </label>
             <input
               type="email"
@@ -299,7 +303,7 @@ export const AppointmentCalendar: React.FC = () => {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Phone Number *
+              {t('calendar.phone')}
             </label>
             <input
               type="tel"
@@ -312,7 +316,7 @@ export const AppointmentCalendar: React.FC = () => {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Procedure Type *
+              {t('calendar.procedureType')}
             </label>
             <select
               required
@@ -323,14 +327,14 @@ export const AppointmentCalendar: React.FC = () => {
               <option value="LASIK">LASIK</option>
               <option value="PRK">PRK</option>
               <option value="ICL">ICL</option>
-              <option value="Cataract">Cataract Surgery</option>
-              <option value="Consultation">General Consultation</option>
+              <option value="Cataract">{t('calendar.procedures.cataract')}</option>
+              <option value="Consultation">{t('calendar.procedures.consultation')}</option>
             </select>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Insurance Provider (Optional)
+              {t('calendar.insurance')}
             </label>
             <input
               type="text"
@@ -342,7 +346,7 @@ export const AppointmentCalendar: React.FC = () => {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Additional Notes (Optional)
+              {t('calendar.notes')}
             </label>
             <textarea
               value={formData.notes}
@@ -364,14 +368,14 @@ export const AppointmentCalendar: React.FC = () => {
               onClick={() => setStep('slots')}
               className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50"
             >
-              Cancel
+              {t('calendar.cancel')}
             </button>
             <button
               type="submit"
               disabled={loading}
               className="px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 disabled:opacity-50"
             >
-              {loading ? 'Booking...' : 'Confirm Booking'}
+              {loading ? t('calendar.booking') : t('calendar.confirmBooking')}
             </button>
           </div>
         </form>
@@ -388,9 +392,9 @@ export const AppointmentCalendar: React.FC = () => {
             className="flex items-center text-gray-600 hover:text-gray-900 mb-4"
           >
             <ChevronLeft className="w-5 h-5 me-1 rtl:rotate-180" />
-            Back to calendar
+            {t('calendar.backToCalendar')}
           </button>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Available Time Slots</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('calendar.availableSlots')}</h2>
           <p className="text-gray-600">
             {selectedDate?.toLocaleDateString(i18n.language, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
           </p>
@@ -398,12 +402,16 @@ export const AppointmentCalendar: React.FC = () => {
 
         {loading ? (
           <div className="flex justify-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+            <div
+              role="status"
+              aria-label={t('calendar.loading')}
+              className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"
+            />
           </div>
         ) : availableSlots.length === 0 ? (
           <div className="text-center py-12">
             <Clock className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-            <p className="text-gray-600">No available slots for this date. Please select another date.</p>
+            <p className="text-gray-600">{t('calendar.noSlots')}</p>
           </div>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -431,12 +439,13 @@ export const AppointmentCalendar: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">Select an Appointment Date</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('calendar.selectDate')}</h2>
 
       <div className="mb-6">
         <div className="flex justify-between items-center mb-4">
           <button
             onClick={() => changeMonth(-1)}
+            aria-label={t('calendar.previousMonth')}
             className="p-2 hover:bg-gray-100 rounded-lg"
           >
             <ChevronLeft className="w-6 h-6 rtl:rotate-180" />
@@ -446,6 +455,7 @@ export const AppointmentCalendar: React.FC = () => {
           </h3>
           <button
             onClick={() => changeMonth(1)}
+            aria-label={t('calendar.nextMonth')}
             className="p-2 hover:bg-gray-100 rounded-lg"
           >
             <ChevronRight className="w-6 h-6 rtl:rotate-180" />
@@ -453,8 +463,10 @@ export const AppointmentCalendar: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-7 gap-2">
-          {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
-            <div key={day} className="text-center text-sm font-medium text-gray-600 py-2">
+          {Array.from({ length: 7 }, (_, i) =>
+            new Date(2024, 0, 7 + i).toLocaleDateString(i18n.language, { weekday: 'short' })
+          ).map((day, i) => (
+            <div key={i} className="text-center text-sm font-medium text-gray-600 py-2">
               {day}
             </div>
           ))}

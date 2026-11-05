@@ -435,5 +435,37 @@
     "resend": "Gửi lại email xác nhận",
     "backToSignIn": "Quay lại đăng nhập",
     "emailNotConfirmed": "Vui lòng xác nhận địa chỉ email của bạn trước. Hãy kiểm tra hộp thư đến để tìm liên kết xác nhận."
+  },
+  "calendar": {
+    "selectDate": "Chọn ngày hẹn",
+    "availableSlots": "Khung giờ còn trống",
+    "noSlots": "Không còn khung giờ trống cho ngày này. Vui lòng chọn ngày khác.",
+    "backToCalendar": "Quay lại lịch",
+    "backToSlots": "Quay lại khung giờ",
+    "appointmentConfirmed": "Đã xác nhận lịch hẹn!",
+    "bookedMessage": "Lịch hẹn của bạn đã được đặt thành công. Bạn sẽ sớm nhận được email xác nhận.",
+    "confirmationCode": "Mã xác nhận",
+    "returnHome": "Về trang chủ",
+    "signedInAs": "Đã đăng nhập với {{email}}",
+    "signOut": "Đăng xuất",
+    "completeBooking": "Hoàn tất đặt lịch",
+    "dateAtTime": "{{date}} lúc {{time}}",
+    "fullName": "Họ và tên *",
+    "email": "Địa chỉ email *",
+    "phone": "Số điện thoại *",
+    "procedureType": "Loại thủ thuật *",
+    "insurance": "Nhà cung cấp bảo hiểm (Tùy chọn)",
+    "notes": "Ghi chú thêm (Tùy chọn)",
+    "cancel": "Hủy",
+    "booking": "Đang đặt lịch...",
+    "confirmBooking": "Xác nhận đặt lịch",
+    "bookingError": "Không thể hoàn tất đặt lịch. Vui lòng thử lại.",
+    "previousMonth": "Tháng trước",
+    "nextMonth": "Tháng sau",
+    "loading": "Đang tải...",
+    "procedures": {
+      "cataract": "Phẫu thuật đục thủy tinh thể",
+      "consultation": "Tư vấn tổng quát"
+    }
   }
 }

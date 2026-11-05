@@ -435,5 +435,37 @@
     "resend": "Reenviar correo de confirmación",
     "backToSignIn": "Volver a iniciar sesión",
     "emailNotConfirmed": "Primero confirma tu correo electrónico. Revisa tu bandeja de entrada para encontrar el enlace de confirmación."
+  },
+  "calendar": {
+    "selectDate": "Seleccione una fecha para su cita",
+    "availableSlots": "Horarios disponibles",
+    "noSlots": "No hay horarios disponibles para esta fecha. Por favor seleccione otra fecha.",
+    "backToCalendar": "Volver al calendario",
+    "backToSlots": "Volver a los horarios",
+    "appointmentConfirmed": "¡Cita confirmada!",
+    "bookedMessage": "Su cita se reservó con éxito. En breve recibirá un correo de confirmación.",
+    "confirmationCode": "Código de confirmación",
+    "returnHome": "Volver al inicio",
+    "signedInAs": "Sesión iniciada como {{email}}",
+    "signOut": "Cerrar sesión",
+    "completeBooking": "Complete su reservación",
+    "dateAtTime": "{{date}} a las {{time}}",
+    "fullName": "Nombre completo *",
+    "email": "Correo electrónico *",
+    "phone": "Número de teléfono *",
+    "procedureType": "Tipo de procedimiento *",
+    "insurance": "Aseguradora (opcional)",
+    "notes": "Notas adicionales (opcional)",
+    "cancel": "Cancelar",
+    "booking": "Reservando...",
+    "confirmBooking": "Confirmar reservación",
+    "bookingError": "No pudimos completar su reservación. Por favor intente de nuevo.",
+    "previousMonth": "Mes anterior",
+    "nextMonth": "Mes siguiente",
+    "loading": "Cargando...",
+    "procedures": {
+      "cataract": "Cirugía de cataratas",
+      "consultation": "Consulta general"
+    }
   }
 }

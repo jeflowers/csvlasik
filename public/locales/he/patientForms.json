@@ -435,5 +435,37 @@
     "resend": "שליחה חוזרת של הודעת האימות",
     "backToSignIn": "חזרה להתחברות",
     "emailNotConfirmed": "יש לאשר תחילה את כתובת האימייל שלך. בדקו את תיבת הדואר הנכנס לקישור האישור."
+  },
+  "calendar": {
+    "selectDate": "בחרו תאריך לתור",
+    "availableSlots": "שעות פנויות",
+    "noSlots": "אין שעות פנויות בתאריך זה. אנא בחרו תאריך אחר.",
+    "backToCalendar": "חזרה ללוח השנה",
+    "backToSlots": "חזרה לשעות",
+    "appointmentConfirmed": "התור אושר!",
+    "bookedMessage": "התור שלכם נקבע בהצלחה. בקרוב תקבלו הודעת אישור בדוא״ל.",
+    "confirmationCode": "קוד אישור",
+    "returnHome": "חזרה לדף הבית",
+    "signedInAs": "מחובר/ת כ-{{email}}",
+    "signOut": "התנתקות",
+    "completeBooking": "השלימו את ההזמנה",
+    "dateAtTime": "{{date}} בשעה {{time}}",
+    "fullName": "שם מלא *",
+    "email": "כתובת דוא״ל *",
+    "phone": "מספר טלפון *",
+    "procedureType": "סוג הטיפול *",
+    "insurance": "חברת ביטוח (אופציונלי)",
+    "notes": "הערות נוספות (אופציונלי)",
+    "cancel": "ביטול",
+    "booking": "מזמין...",
+    "confirmBooking": "אישור הזמנה",
+    "bookingError": "לא הצלחנו להשלים את ההזמנה. אנא נסו שוב.",
+    "previousMonth": "החודש הקודם",
+    "nextMonth": "החודש הבא",
+    "loading": "טוען...",
+    "procedures": {
+      "cataract": "ניתוח קטרקט",
+      "consultation": "ייעוץ כללי"
+    }
   }
 }
