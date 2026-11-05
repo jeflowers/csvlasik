@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Clock, MapPin, ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react';
+import { Calendar, Clock, MapPin, ChevronLeft, ChevronRight, CheckCircle, LogOut } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
+import { usePatient } from '../../hooks/usePatient';
+import { BookingAuthGate } from './BookingAuthGate';
 import { useTranslation } from 'react-i18next';
 
 interface TimeSlot {
@@ -39,6 +41,18 @@ export const AppointmentCalendar: React.FC = () => {
     insurance_provider: '',
     notes: '',
   });
+  const { user, loading: authLoading, error: authError, login, register, logout } = usePatient();
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!user) return;
+    const fullName = [user.firstName, user.lastName].filter(Boolean).join(' ');
+    setFormData((prev) => ({
+      ...prev,
+      patient_name: prev.patient_name || fullName,
+      patient_email: prev.patient_email || user.email,
+    }));
+  }, [user]);
 
   const loadSlotsForDate = async (date: Date) => {
     try {
@@ -75,6 +89,7 @@ export const AppointmentCalendar: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedSlot) return;
+    setSubmitError(null);
 
     try {
       setLoading(true);
@@ -91,50 +106,17 @@ export const AppointmentCalendar: React.FC = () => {
           status: 'pending',
           booking_source: 'website',
         })
-        .select()
-        .single();
+        .select('confirmation_code')
+        .maybeSingle();
 
       if (error) throw error;
+      if (!data) throw new Error('Booking was not saved');
 
       setConfirmationCode(data.confirmation_code);
       setStep('confirmation');
-
-      await supabase.from('email_queue').insert({
-        to_email: formData.patient_email,
-        from_email: 'appointments@atelierlasik.com',
-        subject: 'Appointment Booking Confirmation',
-        html_body: `
-          <h1>Appointment Confirmed!</h1>
-          <p>Dear ${formData.patient_name},</p>
-          <p>Your appointment has been successfully booked.</p>
-          <p><strong>Confirmation Code:</strong> ${data.confirmation_code}</p>
-          <p><strong>Date:</strong> ${selectedSlot.slot_date}</p>
-          <p><strong>Time:</strong> ${selectedSlot.slot_time}</p>
-          <p><strong>Location:</strong> ${selectedSlot.location}</p>
-          <p><strong>Procedure:</strong> ${formData.procedure_type}</p>
-          <p>We look forward to seeing you!</p>
-        `,
-        text_body: `
-Appointment Confirmed!
-
-Dear ${formData.patient_name},
-
-Your appointment has been successfully booked.
-
-Confirmation Code: ${data.confirmation_code}
-Date: ${selectedSlot.slot_date}
-Time: ${selectedSlot.slot_time}
-Location: ${selectedSlot.location}
-Procedure: ${formData.procedure_type}
-
-We look forward to seeing you!
-        `,
-        status: 'pending',
-        scheduled_for: new Date().toISOString(),
-      });
     } catch (error) {
       console.error('Failed to book appointment:', error);
-      alert('Failed to book appointment. Please try again.');
+      setSubmitError('We could not book this appointment. The time may no longer be available. Please try again or pick another time.');
     } finally {
       setLoading(false);
     }
@@ -184,6 +166,18 @@ We look forward to seeing you!
 
   const days = getDaysInMonth(currentDate);
 
+  if (authLoading) {
+    return (
+      <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8 flex justify-center">
+        <div className="w-8 h-8 border-4 border-teal-600 border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <BookingAuthGate login={login} register={register} error={authError} />;
+  }
+
   if (step === 'confirmation') {
     return (
       <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
@@ -230,6 +224,17 @@ We look forward to seeing you!
   if (step === 'form') {
     return (
       <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <div className="flex items-center justify-between gap-4 mb-6 px-4 py-3 bg-teal-50 border border-teal-100 rounded-lg text-sm">
+          <span className="text-teal-900 truncate">Signed in as {user.email}</span>
+          <button
+            type="button"
+            onClick={logout}
+            className="flex items-center gap-1 text-teal-700 hover:text-teal-900 shrink-0"
+          >
+            <LogOut className="w-4 h-4" />
+            Sign out
+          </button>
+        </div>
         <div className="mb-6">
           <button
             onClick={() => setStep('slots')}
@@ -327,6 +332,12 @@ We look forward to seeing you!
               className="w-full border border-gray-300 rounded-lg px-4 py-2"
             />
           </div>
+
+          {submitError && (
+            <div role="alert" className="bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">
+              {submitError}
+            </div>
+          )}
 
           <div className="flex justify-end space-x-3">
             <button
